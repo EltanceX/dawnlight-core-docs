@@ -57,7 +57,7 @@ test('navigation, theme, copy button and baseline download work', async ({ page 
   expect(baseline.verification.driverStatus).toBe('notProvided')
 })
 
-test('404 keeps project navigation and local assets', async ({ page }) => {
+test('404 keeps site navigation and local assets', async ({ page }) => {
   const response = await page.goto('missing-w2-page')
   // Preview servers may serve a fallback; Pages must return a real 404 after deployment.
   if (process.env.SITE_URL) expect(response?.status()).toBe(404)

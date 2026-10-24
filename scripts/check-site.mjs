@@ -8,6 +8,9 @@ import { expectedPages, pagePaths, localePrefixes } from './lib/site-pages.mjs';
 const pkg = await readJson(path.join(ROOT, 'package.json'));
 assert.equal(process.versions.node, pkg.engines.node, `Use Node ${pkg.engines.node} from .node-version`);
 const lock = await loadLock();
+assert.equal(lock.website.pagesBase, '/');
+assert.equal(lock.website.pagesUrl, `https://${lock.website.customDomain}/`);
+assert.equal((await fs.readFile(path.join(ROOT, 'site/public/CNAME'), 'utf8')).trim(), lock.website.customDomain);
 for (const item of [...Object.values(lock.discoveryRecords), lock.tool.distribution.inventory, lock.w1Verification, ...(lock.w2Verification ? [lock.w2Verification] : [])]) {
   await assertFingerprint(path.join(ROOT, item.path), item);
 }
@@ -40,7 +43,7 @@ for (const name of siteFiles.filter(f => !f.startsWith('public/'))) {
   const content = await fs.readFile(path.join(ROOT, 'site', name), 'utf8');
   assert.doesNotMatch(content, /vendor[/\\]dawnlight|(?:ghp_|github_pat_)[A-Za-z0-9_]{25,}/, `Private import or credential in ${name}`);
 }
-assert.deepEqual(siteFiles.filter(f => f.startsWith('public/')).sort(), ['public/downloads/site-baseline.json', 'public/favicon.svg']);
+assert.deepEqual(siteFiles.filter(f => f.startsWith('public/')).sort(), ['public/CNAME', 'public/downloads/site-baseline.json', 'public/favicon.svg']);
 const tracked = run('git', ['ls-files', '-z'], { allowFailure: true });
 let trackedFiles = 0;
 if (tracked.status === 0) {

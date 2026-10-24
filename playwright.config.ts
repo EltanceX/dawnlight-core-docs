@@ -10,7 +10,7 @@ export default defineConfig({
   retries: process.env.CI ? 1 : 0,
   reporter: [['list'], ['json', { outputFile: 'artifacts/w2/browser-results.json' }]],
   use: {
-    baseURL: deployed ?? 'http://127.0.0.1:4173/dawnlight-core-docs/',
+    baseURL: deployed ?? 'http://127.0.0.1:4173/',
     browserName: 'chromium',
     permissions: ['clipboard-read', 'clipboard-write'],
     colorScheme: 'light',
@@ -24,7 +24,7 @@ export default defineConfig({
   ],
   webServer: deployed ? undefined : {
     command: 'npm run docs:preview -- --port 4173',
-    url: 'http://127.0.0.1:4173/dawnlight-core-docs/',
+    url: 'http://127.0.0.1:4173/',
     reuseExistingServer: !process.env.CI
   }
 })

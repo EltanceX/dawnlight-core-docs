@@ -218,7 +218,7 @@
     "remoteStatus": "verified-public",
     "intendedDefaultBranch": "main",
     "intendedDefaultBranchStatus": "observed-main",
-    "pagesBase": "/dawnlight-core-docs/",
+    "pagesBase": "/",
     "plannedPagesUrl": "https://eltancex.github.io/dawnlight-core-docs/",
     "deployed": true,
     "framework": "VitePress",
@@ -232,7 +232,8 @@
     "owner": "EltanceX",
     "repositoryUrl": "https://github.com/EltanceX/dawnlight-core-docs",
     "defaultBranch": "main",
-    "pagesUrl": "https://eltancex.github.io/dawnlight-core-docs/",
+    "pagesUrl": "https://core.eltancex.top/",
+    "customDomain": "core.eltancex.top",
     "buildType": "workflow",
     "firstVerifiedDeployment": {
       "commit": "1c7602c5d26eb1c9ae81b6e10c1e63f09a683dc0",

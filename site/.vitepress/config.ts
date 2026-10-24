@@ -1,7 +1,8 @@
 import { defineConfig, type DefaultTheme } from 'vitepress'
 import lock from '../../upstream.lock.json'
 
-const base = '/dawnlight-core-docs/'
+const base = lock.website.pagesBase
+const siteUrl = lock.website.pagesUrl
 const source = 'https://gitea.com/EltanceX/DawnlightCore'
 
 const chinese: DefaultTheme.Config = {
@@ -81,7 +82,25 @@ export default defineConfig({
       themeConfig: english
     }
   },
-  sitemap: { hostname: 'https://eltancex.github.io/dawnlight-core-docs/' },
+  sitemap: {
+    hostname: siteUrl,
+    transformItems: items => items.filter(item => !/(^|\/)404$/.test(item.url))
+  },
+  transformPageData: pageData => {
+    const head = pageData.frontmatter.head ??= []
+    if (/(^|\/)404\.md$/.test(pageData.relativePath)) {
+      return
+    }
+    const route = pageData.relativePath.replace(/(^|\/)index\.md$/, '$1').replace(/\.md$/, '')
+    const chineseRoute = route.replace(/^en\//, '')
+    const canonical = new URL(route, siteUrl).href
+    head.push(
+      ['link', { rel: 'canonical', href: canonical }],
+      ['link', { rel: 'alternate', hreflang: 'zh-CN', href: new URL(chineseRoute, siteUrl).href }],
+      ['link', { rel: 'alternate', hreflang: 'en-US', href: new URL('en/' + chineseRoute, siteUrl).href }],
+      ['meta', { property: 'og:url', content: canonical }]
+    )
+  },
   head: [
     ['link', { rel: 'icon', type: 'image/svg+xml', href: base + 'favicon.svg' }],
     ['meta', { name: 'theme-color', content: '#23634f' }],

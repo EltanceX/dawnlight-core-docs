@@ -1,4 +1,5 @@
 import { test, expect, type Page } from '@playwright/test'
+import lock from '../upstream.lock.json' with { type: 'json' }
 
 const routes = [
   ['', 'Shader pack author documentation'],
@@ -49,17 +50,19 @@ test('English pages, localized components and deep reloads render correctly', as
 })
 
 for (const [route] of routes) {
-  test(`top bar switches corresponding pages: ${route || 'home'}`, async ({ page }) => {
+  test(`top bar switches corresponding pages: ${route || 'home'}`, async ({ page, baseURL }) => {
     await page.goto(route || './')
     await expect(page.locator('.VPNavBarTranslations')).toBeVisible()
     await switchLanguage(page, 'English')
-    await expect(page).toHaveURL(new RegExp('/en/' + route.replaceAll('/', '\\/') + '$'))
+    await expect(page).toHaveURL(new URL('en/' + route, baseURL!).href)
+    await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', new URL('en/' + route, lock.website.pagesUrl).href)
     await expect(page.locator('html')).toHaveAttribute('lang', 'en-US')
     await expect(page.locator('.VPNavBarTranslations button')).toHaveAttribute('aria-label', 'Change language')
     await switchLanguage(page, '简体中文')
     await expect(page.locator('html')).toHaveAttribute('lang', 'zh-CN')
     await expect(page).not.toHaveURL(/\/en\//)
-    await expect(page).toHaveURL(new RegExp('/dawnlight-core-docs/' + route.replaceAll('/', '\\/') + '$'))
+    await expect(page).toHaveURL(new URL(route, baseURL!).href)
+    await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', new URL(route, lock.website.pagesUrl).href)
   })
 }
 
@@ -69,7 +72,7 @@ test('language switching preserves the current section and old Chinese anchors',
   await expect(page).toHaveURL(/\/en\/compatibility\/current-baseline#support-boundaries$/)
   await expect(page.locator('#support-boundaries')).toHaveText('Support boundaries')
   await switchLanguage(page, '简体中文')
-  await expect(page).toHaveURL(/\/dawnlight-core-docs\/compatibility\/current-baseline#support-boundaries$/)
+  await expect(page).toHaveURL(/\/compatibility\/current-baseline#support-boundaries$/)
   await expect(page.locator('#support-boundaries')).toHaveText('支持边界')
   await page.goto('compatibility/current-baseline#支持边界')
   await expect(page.locator('[id="支持边界"]')).toHaveCount(1)
@@ -89,7 +92,7 @@ for (const [query, destination] of [
     const results = page.locator('.VPLocalSearchBox a.result')
     await expect(page.locator(`.VPLocalSearchBox a[href*="/en/${destination}"]`).first()).toBeVisible()
     for (const href of await results.evaluateAll(links => links.map(link => link.getAttribute('href')))) {
-      expect(href).toContain('/dawnlight-core-docs/en/')
+      expect(href).toMatch(/^\/en\//)
     }
   })
 }
@@ -109,7 +112,9 @@ test('English navigation, theme and 404 return stay in English', async ({ page }
   if (process.env.SITE_URL) expect(response?.status()).toBe(404)
   await expect(page.getByRole('heading', { name: 'Page not found', exact: true })).toBeVisible()
   await page.getByRole('link', { name: 'Back to documentation', exact: true }).click()
-  await expect(page).toHaveURL(/\/dawnlight-core-docs\/en\/$/)
+  await expect(page).toHaveURL(/\/en\/$/)
+  await expect(page.locator('meta[name="robots"]')).toHaveCount(0)
+  await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', new URL('en/', lock.website.pagesUrl).href)
   await expect(page.getByRole('link', { name: 'Start reading →', exact: true })).toBeVisible()
 })
 
