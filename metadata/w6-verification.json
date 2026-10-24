@@ -1,0 +1,127 @@
+{
+  "schemaVersion": 1,
+  "stage": "W6",
+  "observedOn": "2026-10-24",
+  "timezone": "America/New_York",
+  "status": "pack-course-delivered-bounded-runtime-human-trial-pending",
+  "baselineId": "candidate-f8aaa5c4",
+  "sourceCommit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+  "evidence": [
+    {
+      "path": "metadata/w6-example-releases.json",
+      "length": 1625,
+      "sha256": "a166030161924ce2d9db2044a7671bf2ddea3fd8adcff79eff8ddbfd177cc8a5"
+    },
+    {
+      "path": "metadata/w6-examples-validation.json",
+      "length": 139076,
+      "sha256": "09553da27067abdfee7a95dcd8c3e7bfdfc4981d257b15c8c404da2f309cc20b"
+    },
+    {
+      "path": "metadata/w6-runtime.json",
+      "length": 11733,
+      "sha256": "3bc50a0893835ec6bbf0a2588d86fbb1e17cdeddae821e50b4e5902979996de9"
+    },
+    {
+      "path": "docs/baseline/W6PackCourseAudit.zh-CN.md",
+      "length": 6190,
+      "sha256": "ea4edc674f47bdfb82a0d5506ebd0092703eaacb0bae636730b70b348468f6a0"
+    },
+    {
+      "path": "docs/maintenance/CoursePacks.zh-CN.md",
+      "length": 3813,
+      "sha256": "a8e51e2083268a824c7ff6560ab3f352473f8c61e5ccca73c7f23fd2b0c61b0f"
+    }
+  ],
+  "coverage": {
+    "bilingualChapters": 6,
+    "bilingualRuntimePages": 2,
+    "independentPacks": 6,
+    "totalCoursePacks": 11,
+    "optionBranches": 26,
+    "style": "Amber",
+    "presets": [
+      "balanced",
+      "economy",
+      "neutral"
+    ],
+    "hostPresetAutoDiscovery": false
+  },
+  "static": {
+    "analyzerInvocations": 438,
+    "sourceAndFreshArchiveAgree": true,
+    "diagnostics": 0,
+    "receiptReproduced": true,
+    "graphTransport": "json-rpc-dawnlight/dumpGraph-contract-2-explicit-inputs.options",
+    "numberOverridesKeepDecimalEndpoints": true,
+    "programInterfaceContract": 2,
+    "activeResourceCommandProgramAndServiceClosuresChecked": true
+  },
+  "runtime": {
+    "isolatedWindowsHost": true,
+    "sourceWorktreeClean": true,
+    "originalRuntimeModified": false,
+    "packLifecycles": 6,
+    "optionBranches": 26,
+    "programsLinked": true,
+    "framebuffersComplete": true,
+    "linkedClosureMatchesStatic": true,
+    "actualResize": true,
+    "builtInRestored": true,
+    "dataInterfaceStatus": "matched",
+    "dataValueReadback": "notProvided",
+    "sameWorldMaterialResolution": true,
+    "settingsUiApplied": true,
+    "freshFinalZipReproduction": true,
+    "independentHumanReader": false,
+    "performanceGatePassed": null
+  },
+  "checks": {
+    "contentRegression": 51,
+    "localBrowserUniqueCoverage": 84,
+    "localBrowserInitial": {
+      "total": 84,
+      "passed": 83,
+      "failed": 1,
+      "failure": "tools/analyzer initial navigation net::ERR_ABORTED"
+    },
+    "unchangedTargetedRecheck": {
+      "total": 3,
+      "passed": 3
+    },
+    "generatedFiles": 205,
+    "htmlPages": 104,
+    "localLinks": 7247,
+    "assetReferences": 1287,
+    "anchors": 1391,
+    "visualReviewed": [
+      "desktop-course",
+      "mobile-course",
+      "settings"
+    ]
+  },
+  "preservation": {
+    "w0ThroughW5FrozenRecords": true,
+    "oldFiveCourseSourcesAndArchiveIdentities": true,
+    "privateHostSourcePublished": false,
+    "fullVendorSnapshotPublished": false,
+    "rawDriverOrWorldReportsPublished": false,
+    "domainSettingsChanged": false
+  },
+  "publicCi": {
+    "mode": "pinned-public-inputs-matching-receipts-regeneration-and-browser",
+    "requiresPrivateAssets": false,
+    "liveAnalyzerRun": false,
+    "liveGameRun": false
+  },
+  "limitations": [
+    "independent-human-reader-trial-pending",
+    "no-uniform-or-ssbo-numeric-readback",
+    "single-windows-nvidia-device-single-world-main-view",
+    "android-vr-multiple-views-device-loss-other-drivers-not-accepted",
+    "performance-gate-not-run",
+    "large-compatibility-page-and-search-index-to-review-at-W8",
+    "not-upstream-P11-release-acceptance"
+  ],
+  "deploymentEvidence": "main Pages workflow and ignored artifacts/w6 online browser report are recorded after publishing"
+}

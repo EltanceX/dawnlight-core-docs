@@ -87,3 +87,5 @@ $analyzer = "C:\Tools\Dawnlight\shaderpack-analyzer.exe"
 在副本将 DEBUG_VIEW 从 1 改为 2，看低位标识符可视化，再改为 0 恢复颜色。为改动副本重跑接口检查和驱动验证；说明为什么“存在三个附件”不等于“每个场景类别都写三个附件”。
 
 [运行方法与证据](/tutorial/runtime) · [回顾资源模型](/concepts/resources-targets)
+
+[下一章：可选效果与设置](/tutorial/05-options)

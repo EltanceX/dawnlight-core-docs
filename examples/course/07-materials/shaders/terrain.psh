@@ -1,0 +1,19 @@
+#version 320 es
+// <Sampler Name='u_samplerState' Texture='u_texture' />
+precision highp float;
+precision highp int;
+#include "/dawnlight/materials-v1.glsl"
+uniform sampler2D u_texture;
+in vec2 v_texcoord;
+in vec4 v_color;
+flat in highp uint v_identifier;
+layout(location = 0) out vec4 o_sceneColor;
+void main() {
+    vec4 albedo = texture(u_texture, v_texcoord) * v_color;
+    highp uint record = LookupMaterial(v_identifier);
+    vec3 tint = AmberTint(record).rgb;
+    float response = AmberResponse(record);
+    if (MaterialHasTag(record, AMBER_MINERAL) && MaterialShaderId(record) == 1u)
+        response *= 0.75;
+    o_sceneColor = vec4(albedo.rgb * mix(vec3(1.0), tint, response), albedo.a);
+}

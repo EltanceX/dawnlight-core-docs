@@ -19,7 +19,7 @@ export function frontmatter(text, file) {
 export function courseIncludes(content, context, file) {
   return [...content.matchAll(/^<<<\s+(.+)$/gm)].map(match => {
     const spec = match[1].trim();
-    assert.match(spec, /^@\/\.\.\/examples\/course\/[a-z0-9-]+\/(?:shaderpack\.json|shaders\/[a-z0-9.-]+)(?:\{glsl\})?$/, `${file}: unsafe or unsupported source include ${spec}`);
+    assert.match(spec, /^@\/\.\.\/examples\/course\/[a-z0-9-]+\/(?:shaderpack\.json|settings\.json|README\.md|(?:shaders|manifest|presets)\/[a-z0-9.-]+)(?:\{glsl\})?$/, `${file}: unsafe or unsupported source include ${spec}`);
     const name = spec.replace(/^@\/\.\.\//, '').replace(/\{glsl\}$/, '');
     const example = context.examples.find(item => name.startsWith(item.root + '/'));
     assert.ok(example && example.snippets.some(item => example.root + '/' + item.file === name && !item.pointer && !item.region), `${file}: unregistered full-source include ${name}`);
@@ -52,6 +52,28 @@ export function snippet(example, spec) {
   return { ...spec, code, sourceSha256: hash(input.bytes), snippetSha256: hash(Buffer.from(code)) };
 }
 
+// A source projection for inventories and expectations. The pinned Loader remains
+// authoritative and validates the actual composition for every source/ZIP pair.
+export function composeExampleManifest(entries, entrypoint = 'shaderpack.json') {
+  const get = name => {
+    relativeName(name);
+    const entry = entries.find(e => e.path === name);
+    assert.ok(entry, `Missing manifest fragment: ${name}`);
+    return JSON.parse(entry.bytes);
+  };
+  const root = get(entrypoint), result = { ...root };
+  for (const name of root.fragments ?? []) {
+    const fragment = get(name);
+    assert.ok(!fragment.fragments, 'Nested course fragments are unsupported');
+    for (const [key, value] of Object.entries(fragment)) {
+      assert.ok(['options', 'resources', 'programs', 'passes', 'sceneCategories', 'materials', 'customData'].includes(key), `Unsupported course fragment field: ${key}`);
+      if (Array.isArray(value)) result[key] = [...result[key] ?? [], ...value];
+      else { assert.ok(!Object.hasOwn(result, key), `Duplicate course fragment field: ${key}`); result[key] = value; }
+    }
+  }
+  return result;
+}
+
 export async function loadExamples(root = ROOT) {
   const lock = await readJson(path.join(root, 'upstream.lock.json'));
   const registry = await readJson(path.join(root, 'examples/registry.json'));
@@ -78,7 +100,15 @@ export async function loadExamples(root = ROOT) {
     assert.equal(definition.manifestVersion, lock.authoring.primaryManifestVersion, fail('manifest baseline mismatch'));
     assert.equal(definition.sceneAbiVersion, lock.authoring.sceneAbiVersion, fail('scene ABI mismatch'));
     assert.equal(definition.entrypoint, 'shaderpack.json', fail('entrypoint'));
-    assert.deepEqual(definition.variants, [{ id: 'default', options: {}, capabilities: 'host-default' }], fail('The course currently supports unconditional examples; new branches need explicit validation support'));
+    if (definition.validationStage === 'w6') {
+      assert.ok(definition.variants.length >= 3, fail('W6 needs explicit branch validation'));
+      assert.equal(new Set(definition.variants.map(v => v.id)).size, definition.variants.length, fail('duplicate variant'));
+      for (const variant of definition.variants) {
+        assert.match(variant.id, /^[a-z0-9-]+$/);
+        assert.equal(variant.capabilities, 'host-default');
+        assert.ok(variant.options && typeof variant.options === 'object' && !Array.isArray(variant.options));
+      }
+    } else assert.deepEqual(definition.variants, [{ id: 'default', options: {}, capabilities: 'host-default' }], fail('The course currently supports unconditional examples; new branches need explicit validation support'));
     assert.deepEqual(definition.runtimeEvidence, evidenceBoundary, fail('unverified runtime evidence'));
     for (const language of ['zh-CN', 'en-US']) assert.ok(definition.titles[language], fail(`missing title: ${language}`));
     const actual = await files(inside(root, definition.root));
@@ -92,15 +122,16 @@ export async function loadExamples(root = ROOT) {
     }));
     const inventory = entries.map(entry => ({ path: entry.path, length: entry.bytes.length, sha256: hash(entry.bytes) }));
     const sourceFingerprint = hash(jsonBytes({ baselineId: lock.baselineId, sourceCommit: lock.upstream.commit, id: definition.id, files: inventory }));
-    const manifest = JSON.parse(entries.find(entry => entry.path === definition.entrypoint).bytes);
+    const manifest = composeExampleManifest(entries, definition.entrypoint);
     assert.equal(manifest.manifestVersion, definition.manifestVersion, fail('shaderpack.json: manifest version'));
     assert.equal(manifest.sceneAbiVersion, definition.sceneAbiVersion, fail('shaderpack.json: scene ABI'));
     assert.deepEqual(manifest.programs.map(program => program.id).sort(), [...definition.programs].sort(), fail('shaderpack.json: program IDs'));
-    assert.deepEqual(manifest.options, [], fail('starter unexpectedly declares options'));
+    if (definition.validationStage !== 'w6') assert.deepEqual(manifest.options, [], fail('starter unexpectedly declares options'));
+    else for (const variant of definition.variants) for (const id of Object.keys(variant.options)) assert.ok(manifest.options.some(option => option.id === id), fail(`unknown variant option: ${id}`));
     const overrides = manifest.sceneCategories.filter(route => route.mode === 'override').map(route => route.id).sort();
     assert.deepEqual(overrides, [...definition.expected.overrides ?? []].sort(), fail('shaderpack.json: expected override routes'));
     const archiveBytes = zipEntries(entries);
-    const example = { ...definition, entries, inventory, sourceFingerprint, definitionSha256: hash(jsonBytes(definition)), archiveBytes, archiveSha256: hash(archiveBytes), archiveLength: archiveBytes.length };
+    const example = { ...definition, manifest, entries, inventory, sourceFingerprint, definitionSha256: hash(jsonBytes(definition)), archiveBytes, archiveSha256: hash(archiveBytes), archiveLength: archiveBytes.length };
     assert.equal(new Set(definition.snippets.map(spec => spec.id)).size, definition.snippets.length, fail('duplicate snippet ID'));
     example.snippets = definition.snippets.map(spec => snippet(example, spec));
     examples.push(example);
@@ -109,7 +140,16 @@ export async function loadExamples(root = ROOT) {
 }
 
 export async function loadReceipts(context) {
-  const report = await readJson(path.join(context.root, 'metadata/examples-validation.json'));
+  const legacy = await readJson(path.join(context.root, 'metadata/examples-validation.json'));
+  const stages = [legacy];
+  if (context.examples.some(e => e.validationStage === 'w6')) stages.push(await readJson(path.join(context.root, 'metadata/w6-examples-validation.json')));
+  for (const stage of stages) {
+    assert.equal(stage.schemaVersion, 1, 'Example receipt schema');
+    assert.equal(stage.baselineId, context.lock.baselineId, 'Example receipt baseline');
+    assert.equal(stage.sourceCommit, context.lock.upstream.commit, 'Example receipt commit');
+    assert.equal(stage.toolInventorySha256, context.lock.tool.distribution.inventory.sha256, 'Example receipt tool');
+  }
+  const report = { ...legacy, examples: stages.flatMap(stage => stage.examples) };
   assert.equal(report.schemaVersion, 1, 'Example receipt schema');
   assert.equal(report.baselineId, context.lock.baselineId, 'Example receipt baseline');
   assert.equal(report.sourceCommit, context.lock.upstream.commit, 'Example receipt commit');
@@ -121,7 +161,8 @@ export async function loadReceipts(context) {
     assert.equal(receipt.status, 'passed', `${example.id}: static validation failed`);
     assert.deepEqual(receipt.runtimeEvidence, evidenceBoundary, `${example.id}: runtime claims`);
     assert.deepEqual(receipt.files, example.inventory, `${example.id}: receipt file inventory`);
-    assert.deepEqual(receipt.checks.map(check => check.id).sort(), ['pack', 'scene', 'graph', ...example.programs.map(id => `interface:${id}`)].sort(), `${example.id}: incomplete checks`);
+    const ids = ['pack', 'scene', 'graph', ...example.programs.map(id => `interface:${id}`), ...(example.validationStage === 'w6' ? ['data', ...(example.manifest.materials ? ['materials'] : [])] : [])];
+    assert.deepEqual(receipt.checks.map(check => `${check.variant}:${check.id}`).sort(), example.variants.flatMap(v => ids.map(id => `${v.id}:${id}`)).sort(), `${example.id}: incomplete checks`);
     for (const check of receipt.checks) {
       assert.equal(check.exitCode, 0, `${example.id}: ${check.id}`);
       assert.equal(check.archiveExitCode, 0, `${example.id}: archive ${check.id}`);
@@ -130,7 +171,8 @@ export async function loadReceipts(context) {
       assert.equal(check.manifestHash, receipt.manifestHash, `${example.id}: ${check.id}: manifest mismatch`);
     }
   }
-  const releases = await readJson(path.join(context.root, 'metadata/example-releases.json'));
+  const legacyReleases = await readJson(path.join(context.root, 'metadata/example-releases.json'));
+  const releases = { ...legacyReleases, examples: [...legacyReleases.examples, ...(context.examples.some(e => e.validationStage === 'w6') ? (await readJson(path.join(context.root, 'metadata/w6-example-releases.json'))).examples : [])] };
   assert.equal(releases.schemaVersion, 1, 'Published example index schema');
   for (const release of releases.examples) {
     const example = context.examples.find(item => item.id === release.id);

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "defaultLocale": "en-US",
+  "translations": {
+    "zh-CN": {
+      "page.amber": "琥珀课程",
+      "course:grade": "调色",
+      "course:strength": "调色强度（重新编译）",
+      "course:gain": "曝光增益"
+    },
+    "en-US": {
+      "page.amber": "Amber course",
+      "course:grade": "Color grade",
+      "course:strength": "Grade strength (recompile)",
+      "course:gain": "Exposure gain"
+    }
+  },
+  "pages": [
+    {
+      "id": "amber",
+      "title": "page.amber",
+      "groups": [
+        {
+          "id": "look",
+          "controls": [
+            {
+              "id": "grade",
+              "option": "course:grade",
+              "widget": "toggle",
+              "label": "course:grade"
+            },
+            {
+              "id": "strength",
+              "option": "course:strength",
+              "widget": "slider",
+              "label": "course:strength",
+              "min": 0,
+              "max": 1,
+              "step": 0.05,
+              "format": "0.00",
+              "enabledWhen": [
+                {
+                  "option": "course:grade",
+                  "equals": true
+                }
+              ]
+            },
+            {
+              "id": "gain",
+              "option": "course:gain",
+              "widget": "slider",
+              "label": "course:gain",
+              "min": 0.5,
+              "max": 1.5,
+              "step": 0.05,
+              "format": "0.00",
+              "enabledWhen": [
+                {
+                  "option": "course:grade",
+                  "equals": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

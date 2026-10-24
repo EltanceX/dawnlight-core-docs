@@ -1,12 +1,13 @@
 # DawnlightCore 作者文档站
 
-本工程按 [网站实现方案](docs/WebsiteImplementationPlan.zh-CN.md) 建设，使用 VitePress 维护中英文作者文档。当前 38 组内容页面覆盖环境与 GLSL 入门、00～04 连续课程、JSON 与 ABI 参考、概念、工具、版本、五份独立快照及实机记录，可在桌面和手机顶栏切换。
+本工程按 [网站实现方案](docs/WebsiteImplementationPlan.zh-CN.md) 建设，使用 VitePress 维护中英文作者文档。当前 51 组内容页面覆盖环境与 GLSL 入门、00～10 连续课程、JSON 与 ABI 参考、概念、工具、版本、十一份独立快照及实机记录，可在桌面和手机顶栏切换。
 
 - 网站：[DawnlightCore 作者文档](https://core.eltancex.top/)。
 - English：[DawnlightCore author documentation](https://core.eltancex.top/en/)。
 - 示例：[外置起步包、源码与下载](https://core.eltancex.top/examples/course-starter)。
 - 课程：[从加载起步包到 Terrain / MRT](https://core.eltancex.top/tutorial/00-starter)。
 - 实机范围：[宿主、报告、画面与复现](https://core.eltancex.top/tutorial/runtime)。
+- 独立光影包：[05～10 课程](https://core.eltancex.top/tutorial/05-options) · [最终 Amber 包](https://core.eltancex.top/examples/10-distribution) · [W6 运行范围](https://core.eltancex.top/tutorial/pack-runtime)。
 - 字段参考：[公开 JSON、ABI、Catalog 与兼容性](https://core.eltancex.top/reference/)。
 - 公开上游：[EltanceX/DawnlightCore（Gitea）](https://gitea.com/EltanceX/DawnlightCore)。
 - 网站源码：[EltanceX/dawnlight-core-docs](https://github.com/EltanceX/dawnlight-core-docs)。
@@ -44,11 +45,13 @@ Windows 已安装 Edge 时可在 PowerShell 中使用 `$env:PLAYWRIGHT_CHANNEL='
 
 PR 执行公开构建与浏览器检查；`main` 执行同样检查后，通过 GitHub Actions 将同一份产物部署到 Pages。检查不需要私有资产凭据。部署失败时，上一份已成功发布的站点继续服务；回退页面可 revert 对应提交并等待部署成功。
 
-五个章节快照的唯一源码为 `examples/course/00-starter/` 至 `04-mrt/`，`examples/registry.json` 登记片段与文件白名单。网页代码、ZIP 和 Analyzer 输入使用同一份精确文件字节；下载地址包含基线和源码指纹，已发布身份锁定在 `metadata/example-releases.json`。W3 起步包字节和历史收据保持不变；W4 另记同源快照的有限实机观察。
+十一个章节快照的唯一源码为 `examples/course/00-starter/` 至 `10-distribution/`，`examples/registry.json` 登记片段与文件白名单。网页代码、ZIP 和 Analyzer 输入使用同一份精确文件字节；下载地址包含基线和源码指纹，已发布身份锁定在 `metadata/example-releases.json`（00–04）与 `metadata/w6-example-releases.json`（05–10）。W3 起步包字节和历史收据保持不变；W4 另记同源快照的有限实机观察。
 
-`npm run docs:generate` 只生成派生内容；`npm run examples:check` 使用固定 Windows Analyzer 验证源码及新解压 ZIP；`npm run examples:package` 复验收据并生成下载；`npm run authoring:check` 串联原始指南与课程检查。公开 Linux CI 使用与输入匹配的已提交收据，不重新执行 Windows Analyzer。详见[示例与内容生成维护](docs/maintenance/ExamplesAndGeneration.zh-CN.md)。
+`npm run docs:generate` 只生成派生内容；`npm run examples:check` 复核 00–04，`npm run examples:w6:verify` 使用固定 Windows Analyzer 复现 05–10 的选项分支与源码/ZIP 收据；`npm run examples:package` 复验收据并生成下载；`npm run authoring:check` 串联原始指南与课程检查。公开 Linux CI 使用与输入匹配的已提交收据，不重新执行 Windows Analyzer。详见[示例与内容生成维护](docs/maintenance/ExamplesAndGeneration.zh-CN.md)。
 
 W4 在用户更正的 DawnlightCore 构建副本上完成五包加载、同包重载、窗口尺寸变化、返回 BuiltIn、驱动与包接口匹配，并从新目录重走第一个效果。`metadata/w4-runtime.json` 绑定源码、驱动报告、生命周期与真实窗口截图；构建会检查证据文件长度、哈希和身份关联。仅覆盖一台 Windows / NVIDIA 设备、一个创意世界，独立真人试读、device reset、其他平台与性能仍待验证。见 [W4 验收](docs/baseline/W4CourseAudit.zh-CN.md) 和[实机观察维护](docs/maintenance/RuntimeCourse.zh-CN.md)。
+
+W6 增加可选效果与 UI、typed customData、稳定内容材质、独立多级后处理、fragment 组合、预设配方和分发 README。26 个分支的 438 次源码/ZIP Analyzer 调用通过；六个包在隔离宿主完成实际生命周期与分支切换，最终 ZIP 已按新目录流程复现。Data 接口 matched 不冒充数值读回，独立真人试读与额外平台仍待验证。见[课程维护](docs/maintenance/CoursePacks.zh-CN.md)和 [W6 验收](docs/baseline/W6PackCourseAudit.zh-CN.md)。
 
 当前域名为 `core.eltancex.top`，地址与 base 集中维护在 `upstream.lock.json.website`，`site/public/CNAME` 随产物保留域名声明。域名迁移与 HTTPS 运维见 [自定义域名决策](docs/adr/0004-custom-domain.md)。
 

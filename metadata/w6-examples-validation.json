@@ -1,0 +1,3181 @@
+{
+  "schemaVersion": 1,
+  "baselineId": "candidate-f8aaa5c4",
+  "sourceCommit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+  "toolInventorySha256": "548c685ff8ccc23283cd6b803a595cc2fed35b2df1444dc0327e1baf847ffb54",
+  "examples": [
+    {
+      "id": "course/05-options",
+      "status": "passed",
+      "sourceFingerprint": "9b79e19737d998178227184552c9221bf12b05fa1b27f9d551519cfbf7293770",
+      "definitionSha256": "187f38a5219748b6bc9670efa8c2e83d31ed111fdcbec679daf0742fc54d4d5d",
+      "archiveSha256": "6a0ddf77300c99a49fce65f7f894adac9ffed250c317477048f2c8549f5e9d40",
+      "archiveLength": 5583,
+      "files": [
+        {
+          "path": "README.md",
+          "length": 2124,
+          "sha256": "8a1032ab81e7764f152773b3133907af35aaa56da40fda9e54c8adbaea69faf2"
+        },
+        {
+          "path": "settings.json",
+          "length": 1177,
+          "sha256": "47bd0f66156b1acb6cd13c0c652d2e9c7f859f1c9b00d2ead1c61d0f9d439e40"
+        },
+        {
+          "path": "shaderpack.json",
+          "length": 13303,
+          "sha256": "432a0053103bcbdd58874554f592cec329e89bba5a54c33eb3d42cab254d1849"
+        },
+        {
+          "path": "shaders/fullscreen.vsh",
+          "length": 298,
+          "sha256": "77e9c0fcd7803893b121b69daf13380f20b109f2d4e23964014b367531053c92"
+        },
+        {
+          "path": "shaders/grade.psh",
+          "length": 358,
+          "sha256": "777d1306760897c76d8dd5b1516346589a948a5185c2e1c641c6c3ad96b8c0a2"
+        },
+        {
+          "path": "shaders/present.psh",
+          "length": 181,
+          "sha256": "d8ef4f9a0e1b4be69e9b6a1f841e80252e1bf797f98f036a1938c14165bdb787"
+        },
+        {
+          "path": "shaders/terrain.psh",
+          "length": 374,
+          "sha256": "2abeb15d0bf6c54f729451fd1be6713c331138dbb19803d8bfc8bcbdafe77c9d"
+        },
+        {
+          "path": "shaders/terrain.vsh",
+          "length": 1489,
+          "sha256": "cbc201620a46e6e5ec802aae4b9d569129a21b3af97016f6b98bb5506b112fb1"
+        }
+      ],
+      "manifestHash": "d18765d20318f8cf825429a3e9d4a0d05f5072af7f4804befabe78a5c01e5923",
+      "checks": [
+        {
+          "id": "pack",
+          "variant": "default",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "0d91c9f799cf3e725ad088e965e02002ce6debffa3ef0d40989f14183a78a0fa",
+          "archiveOutputSha256": "0d91c9f799cf3e725ad088e965e02002ce6debffa3ef0d40989f14183a78a0fa",
+          "manifestHash": "d18765d20318f8cf825429a3e9d4a0d05f5072af7f4804befabe78a5c01e5923"
+        },
+        {
+          "id": "scene",
+          "variant": "default",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "f66b33a3157e98b9459eab950c9bc35815514ef5863189ae254421e8fba1253b",
+          "archiveOutputSha256": "f66b33a3157e98b9459eab950c9bc35815514ef5863189ae254421e8fba1253b",
+          "manifestHash": "d18765d20318f8cf825429a3e9d4a0d05f5072af7f4804befabe78a5c01e5923"
+        },
+        {
+          "id": "graph",
+          "variant": "default",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "bfd106f37ee05f91d38c81691a7b0a4df8fa3aefeba29ffba0653c59c16c874c",
+          "archiveOutputSha256": "bfd106f37ee05f91d38c81691a7b0a4df8fa3aefeba29ffba0653c59c16c874c",
+          "manifestHash": "d18765d20318f8cf825429a3e9d4a0d05f5072af7f4804befabe78a5c01e5923"
+        },
+        {
+          "id": "interface:course:scene/terrain",
+          "variant": "default",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "dd6aa015a5827100d4a967f142deae98fb49e8dfefe277b053dc519892c76922",
+          "archiveOutputSha256": "dd6aa015a5827100d4a967f142deae98fb49e8dfefe277b053dc519892c76922",
+          "manifestHash": "d18765d20318f8cf825429a3e9d4a0d05f5072af7f4804befabe78a5c01e5923"
+        },
+        {
+          "id": "interface:course:post/grade",
+          "variant": "default",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "8d9b0b442e83c2f388a210e891ede2a578bf6e2ba6b74aeaf51a65d51eb6a093",
+          "archiveOutputSha256": "8d9b0b442e83c2f388a210e891ede2a578bf6e2ba6b74aeaf51a65d51eb6a093",
+          "manifestHash": "d18765d20318f8cf825429a3e9d4a0d05f5072af7f4804befabe78a5c01e5923"
+        },
+        {
+          "id": "interface:course:post/present",
+          "variant": "default",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "b1e0a6adeb3d9638250d6c6f3cdbccd19e2afa4c941c1c3e6d6a526c52f09fb2",
+          "archiveOutputSha256": "b1e0a6adeb3d9638250d6c6f3cdbccd19e2afa4c941c1c3e6d6a526c52f09fb2",
+          "manifestHash": "d18765d20318f8cf825429a3e9d4a0d05f5072af7f4804befabe78a5c01e5923"
+        },
+        {
+          "id": "data",
+          "variant": "default",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "fe9ce4ce712549724938fbc82c3c9ec6d064c9e5c76ae6b4ab379755122e7c46",
+          "archiveOutputSha256": "fe9ce4ce712549724938fbc82c3c9ec6d064c9e5c76ae6b4ab379755122e7c46",
+          "manifestHash": "d18765d20318f8cf825429a3e9d4a0d05f5072af7f4804befabe78a5c01e5923"
+        },
+        {
+          "id": "pack",
+          "variant": "grade-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "0d91c9f799cf3e725ad088e965e02002ce6debffa3ef0d40989f14183a78a0fa",
+          "archiveOutputSha256": "0d91c9f799cf3e725ad088e965e02002ce6debffa3ef0d40989f14183a78a0fa",
+          "manifestHash": "d18765d20318f8cf825429a3e9d4a0d05f5072af7f4804befabe78a5c01e5923"
+        },
+        {
+          "id": "scene",
+          "variant": "grade-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "f66b33a3157e98b9459eab950c9bc35815514ef5863189ae254421e8fba1253b",
+          "archiveOutputSha256": "f66b33a3157e98b9459eab950c9bc35815514ef5863189ae254421e8fba1253b",
+          "manifestHash": "d18765d20318f8cf825429a3e9d4a0d05f5072af7f4804befabe78a5c01e5923"
+        },
+        {
+          "id": "graph",
+          "variant": "grade-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "5c7932ad46d17bafec67107bacb1f1204342f1e4be440a9e7d51188664f2e1ae",
+          "archiveOutputSha256": "5c7932ad46d17bafec67107bacb1f1204342f1e4be440a9e7d51188664f2e1ae",
+          "manifestHash": "d18765d20318f8cf825429a3e9d4a0d05f5072af7f4804befabe78a5c01e5923"
+        },
+        {
+          "id": "interface:course:scene/terrain",
+          "variant": "grade-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "dd6aa015a5827100d4a967f142deae98fb49e8dfefe277b053dc519892c76922",
+          "archiveOutputSha256": "dd6aa015a5827100d4a967f142deae98fb49e8dfefe277b053dc519892c76922",
+          "manifestHash": "d18765d20318f8cf825429a3e9d4a0d05f5072af7f4804befabe78a5c01e5923"
+        },
+        {
+          "id": "interface:course:post/grade",
+          "variant": "grade-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "8d9b0b442e83c2f388a210e891ede2a578bf6e2ba6b74aeaf51a65d51eb6a093",
+          "archiveOutputSha256": "8d9b0b442e83c2f388a210e891ede2a578bf6e2ba6b74aeaf51a65d51eb6a093",
+          "manifestHash": "d18765d20318f8cf825429a3e9d4a0d05f5072af7f4804befabe78a5c01e5923"
+        },
+        {
+          "id": "interface:course:post/present",
+          "variant": "grade-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "b1e0a6adeb3d9638250d6c6f3cdbccd19e2afa4c941c1c3e6d6a526c52f09fb2",
+          "archiveOutputSha256": "b1e0a6adeb3d9638250d6c6f3cdbccd19e2afa4c941c1c3e6d6a526c52f09fb2",
+          "manifestHash": "d18765d20318f8cf825429a3e9d4a0d05f5072af7f4804befabe78a5c01e5923"
+        },
+        {
+          "id": "data",
+          "variant": "grade-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "fe9ce4ce712549724938fbc82c3c9ec6d064c9e5c76ae6b4ab379755122e7c46",
+          "archiveOutputSha256": "fe9ce4ce712549724938fbc82c3c9ec6d064c9e5c76ae6b4ab379755122e7c46",
+          "manifestHash": "d18765d20318f8cf825429a3e9d4a0d05f5072af7f4804befabe78a5c01e5923"
+        },
+        {
+          "id": "pack",
+          "variant": "strength-max",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "0d91c9f799cf3e725ad088e965e02002ce6debffa3ef0d40989f14183a78a0fa",
+          "archiveOutputSha256": "0d91c9f799cf3e725ad088e965e02002ce6debffa3ef0d40989f14183a78a0fa",
+          "manifestHash": "d18765d20318f8cf825429a3e9d4a0d05f5072af7f4804befabe78a5c01e5923"
+        },
+        {
+          "id": "scene",
+          "variant": "strength-max",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "f66b33a3157e98b9459eab950c9bc35815514ef5863189ae254421e8fba1253b",
+          "archiveOutputSha256": "f66b33a3157e98b9459eab950c9bc35815514ef5863189ae254421e8fba1253b",
+          "manifestHash": "d18765d20318f8cf825429a3e9d4a0d05f5072af7f4804befabe78a5c01e5923"
+        },
+        {
+          "id": "graph",
+          "variant": "strength-max",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "8b9f26fa878cd6643eced92b3a27f1bb5243f73dfaa2c34382fd46de66194a18",
+          "archiveOutputSha256": "8b9f26fa878cd6643eced92b3a27f1bb5243f73dfaa2c34382fd46de66194a18",
+          "manifestHash": "d18765d20318f8cf825429a3e9d4a0d05f5072af7f4804befabe78a5c01e5923"
+        },
+        {
+          "id": "interface:course:scene/terrain",
+          "variant": "strength-max",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "dd6aa015a5827100d4a967f142deae98fb49e8dfefe277b053dc519892c76922",
+          "archiveOutputSha256": "dd6aa015a5827100d4a967f142deae98fb49e8dfefe277b053dc519892c76922",
+          "manifestHash": "d18765d20318f8cf825429a3e9d4a0d05f5072af7f4804befabe78a5c01e5923"
+        },
+        {
+          "id": "interface:course:post/grade",
+          "variant": "strength-max",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "57c2f16714f0805adf47dbbd01919ed8fbd64e1a3361eaa3e7f3e34b49a4968e",
+          "archiveOutputSha256": "57c2f16714f0805adf47dbbd01919ed8fbd64e1a3361eaa3e7f3e34b49a4968e",
+          "manifestHash": "d18765d20318f8cf825429a3e9d4a0d05f5072af7f4804befabe78a5c01e5923"
+        },
+        {
+          "id": "interface:course:post/present",
+          "variant": "strength-max",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "b1e0a6adeb3d9638250d6c6f3cdbccd19e2afa4c941c1c3e6d6a526c52f09fb2",
+          "archiveOutputSha256": "b1e0a6adeb3d9638250d6c6f3cdbccd19e2afa4c941c1c3e6d6a526c52f09fb2",
+          "manifestHash": "d18765d20318f8cf825429a3e9d4a0d05f5072af7f4804befabe78a5c01e5923"
+        },
+        {
+          "id": "data",
+          "variant": "strength-max",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "fe9ce4ce712549724938fbc82c3c9ec6d064c9e5c76ae6b4ab379755122e7c46",
+          "archiveOutputSha256": "fe9ce4ce712549724938fbc82c3c9ec6d064c9e5c76ae6b4ab379755122e7c46",
+          "manifestHash": "d18765d20318f8cf825429a3e9d4a0d05f5072af7f4804befabe78a5c01e5923"
+        }
+      ],
+      "branches": [
+        {
+          "id": "default",
+          "options": {},
+          "activeResources": [
+            "resource:course:post/color",
+            "resource:course:scene/color",
+            "resource:course:scene/depth"
+          ],
+          "activeCommands": [
+            "command:course:grade:0",
+            "command:course:present-grade:0",
+            "command:course:terrain_alpha_tested:0",
+            "command:course:terrain_opaque:0",
+            "command:course:terrain_sorted_translucent:0",
+            "command:course:terrain_transparent:0"
+          ],
+          "activePrograms": [
+            "program:course:post/grade",
+            "program:course:post/present",
+            "program:course:scene/terrain",
+            "program:dawnlight:scene_fallback/terrain_alpha_tested",
+            "program:dawnlight:scene_fallback/terrain_sorted_translucent",
+            "program:dawnlight:scene_fallback/terrain_transparent"
+          ],
+          "activeServices": []
+        },
+        {
+          "id": "grade-off",
+          "options": {
+            "course:grade": false
+          },
+          "activeResources": [
+            "resource:course:scene/color",
+            "resource:course:scene/depth"
+          ],
+          "activeCommands": [
+            "command:course:present-raw:0",
+            "command:course:terrain_alpha_tested:0",
+            "command:course:terrain_opaque:0",
+            "command:course:terrain_sorted_translucent:0",
+            "command:course:terrain_transparent:0"
+          ],
+          "activePrograms": [
+            "program:course:post/present",
+            "program:course:scene/terrain",
+            "program:dawnlight:scene_fallback/terrain_alpha_tested",
+            "program:dawnlight:scene_fallback/terrain_sorted_translucent",
+            "program:dawnlight:scene_fallback/terrain_transparent"
+          ],
+          "activeServices": []
+        },
+        {
+          "id": "strength-max",
+          "options": {
+            "course:strength": 1
+          },
+          "activeResources": [
+            "resource:course:post/color",
+            "resource:course:scene/color",
+            "resource:course:scene/depth"
+          ],
+          "activeCommands": [
+            "command:course:grade:0",
+            "command:course:present-grade:0",
+            "command:course:terrain_alpha_tested:0",
+            "command:course:terrain_opaque:0",
+            "command:course:terrain_sorted_translucent:0",
+            "command:course:terrain_transparent:0"
+          ],
+          "activePrograms": [
+            "program:course:post/grade",
+            "program:course:post/present",
+            "program:course:scene/terrain",
+            "program:dawnlight:scene_fallback/terrain_alpha_tested",
+            "program:dawnlight:scene_fallback/terrain_sorted_translucent",
+            "program:dawnlight:scene_fallback/terrain_transparent"
+          ],
+          "activeServices": []
+        }
+      ],
+      "runtimeEvidence": {
+        "driverStatus": "notProvided",
+        "runtimeEvaluated": false,
+        "liveWorldVerified": false,
+        "visual": "notRun"
+      }
+    },
+    {
+      "id": "course/06-custom-data",
+      "status": "passed",
+      "sourceFingerprint": "781e156768206d9c6a346cc084496bc1d19feee3def62a0142cd27a49b922907",
+      "definitionSha256": "8943fb66ed63f5fe6988862b6ef3547b7712a3dc07f0f06771ea615dcb6d94cc",
+      "archiveSha256": "5d51722f523368c3824a8d7bbfc3cd21baf7f10792206811cff65f394fedf63b",
+      "archiveLength": 6150,
+      "files": [
+        {
+          "path": "README.md",
+          "length": 2341,
+          "sha256": "c1017ec06bd35d1ab6d520aaedd456478628026a637108059e906ad9a0b80e87"
+        },
+        {
+          "path": "settings.json",
+          "length": 1692,
+          "sha256": "1bea3c2253bcb9ca560a3fba9e36c78d6645561cea3edb7ea8b3b5abaaf0523f"
+        },
+        {
+          "path": "shaderpack.json",
+          "length": 15012,
+          "sha256": "2de29fa11869b219f7c2c43aa3d712eee085e3fc9c4642bc058c9f53a5527735"
+        },
+        {
+          "path": "shaders/fullscreen.vsh",
+          "length": 298,
+          "sha256": "77e9c0fcd7803893b121b69daf13380f20b109f2d4e23964014b367531053c92"
+        },
+        {
+          "path": "shaders/grade.psh",
+          "length": 644,
+          "sha256": "18ac438c83ac99b44e8f59142a92a9183b8ac083abf04678691c07c46ae45c2c"
+        },
+        {
+          "path": "shaders/present.psh",
+          "length": 181,
+          "sha256": "d8ef4f9a0e1b4be69e9b6a1f841e80252e1bf797f98f036a1938c14165bdb787"
+        },
+        {
+          "path": "shaders/terrain.psh",
+          "length": 374,
+          "sha256": "2abeb15d0bf6c54f729451fd1be6713c331138dbb19803d8bfc8bcbdafe77c9d"
+        },
+        {
+          "path": "shaders/terrain.vsh",
+          "length": 1489,
+          "sha256": "cbc201620a46e6e5ec802aae4b9d569129a21b3af97016f6b98bb5506b112fb1"
+        }
+      ],
+      "manifestHash": "37b0e5490ebc1d122b2ffd81724beecba7387811598ff239521ab95bd13aaf74",
+      "checks": [
+        {
+          "id": "pack",
+          "variant": "default",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "262cbf4afb092371e16dabbb93244b62ce2342ef165b1f5e4dd72d995a42e8e9",
+          "archiveOutputSha256": "262cbf4afb092371e16dabbb93244b62ce2342ef165b1f5e4dd72d995a42e8e9",
+          "manifestHash": "37b0e5490ebc1d122b2ffd81724beecba7387811598ff239521ab95bd13aaf74"
+        },
+        {
+          "id": "scene",
+          "variant": "default",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "6424c977061ca7340adc45180b965398105ae16de5ae622924898e596d10e835",
+          "archiveOutputSha256": "6424c977061ca7340adc45180b965398105ae16de5ae622924898e596d10e835",
+          "manifestHash": "37b0e5490ebc1d122b2ffd81724beecba7387811598ff239521ab95bd13aaf74"
+        },
+        {
+          "id": "graph",
+          "variant": "default",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "7d75021441ee70ff407035e635fbc287fc25e5da2ada2dc0c74f5bcdd306ca8b",
+          "archiveOutputSha256": "7d75021441ee70ff407035e635fbc287fc25e5da2ada2dc0c74f5bcdd306ca8b",
+          "manifestHash": "37b0e5490ebc1d122b2ffd81724beecba7387811598ff239521ab95bd13aaf74"
+        },
+        {
+          "id": "interface:course:scene/terrain",
+          "variant": "default",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "3e8ea4ab487d36a7a9abd8ff190994882dbd0f655b93a8802b27db0d792c4445",
+          "archiveOutputSha256": "3e8ea4ab487d36a7a9abd8ff190994882dbd0f655b93a8802b27db0d792c4445",
+          "manifestHash": "37b0e5490ebc1d122b2ffd81724beecba7387811598ff239521ab95bd13aaf74"
+        },
+        {
+          "id": "interface:course:post/grade",
+          "variant": "default",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "f6677744fbaf7e3e56eebb51a7cc6acd9964331656306f9c752eb98d278260b8",
+          "archiveOutputSha256": "f6677744fbaf7e3e56eebb51a7cc6acd9964331656306f9c752eb98d278260b8",
+          "manifestHash": "37b0e5490ebc1d122b2ffd81724beecba7387811598ff239521ab95bd13aaf74"
+        },
+        {
+          "id": "interface:course:post/present",
+          "variant": "default",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "1680d1a25a99b0f5f75e6f3130022eaba4e73838bb78be6df9cb7b1b92ca5ae5",
+          "archiveOutputSha256": "1680d1a25a99b0f5f75e6f3130022eaba4e73838bb78be6df9cb7b1b92ca5ae5",
+          "manifestHash": "37b0e5490ebc1d122b2ffd81724beecba7387811598ff239521ab95bd13aaf74"
+        },
+        {
+          "id": "data",
+          "variant": "default",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "42718c84f29e32c9f00a2b84c6dad1fdd5e7a159bc0efa2c82d48df9944369eb",
+          "archiveOutputSha256": "42718c84f29e32c9f00a2b84c6dad1fdd5e7a159bc0efa2c82d48df9944369eb",
+          "manifestHash": "37b0e5490ebc1d122b2ffd81724beecba7387811598ff239521ab95bd13aaf74"
+        },
+        {
+          "id": "pack",
+          "variant": "grade-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "262cbf4afb092371e16dabbb93244b62ce2342ef165b1f5e4dd72d995a42e8e9",
+          "archiveOutputSha256": "262cbf4afb092371e16dabbb93244b62ce2342ef165b1f5e4dd72d995a42e8e9",
+          "manifestHash": "37b0e5490ebc1d122b2ffd81724beecba7387811598ff239521ab95bd13aaf74"
+        },
+        {
+          "id": "scene",
+          "variant": "grade-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "6424c977061ca7340adc45180b965398105ae16de5ae622924898e596d10e835",
+          "archiveOutputSha256": "6424c977061ca7340adc45180b965398105ae16de5ae622924898e596d10e835",
+          "manifestHash": "37b0e5490ebc1d122b2ffd81724beecba7387811598ff239521ab95bd13aaf74"
+        },
+        {
+          "id": "graph",
+          "variant": "grade-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "b9d4a3502c7571b2ce6145b1e01458e605bf319d72947c6d8e6ebe0f7fa999f3",
+          "archiveOutputSha256": "b9d4a3502c7571b2ce6145b1e01458e605bf319d72947c6d8e6ebe0f7fa999f3",
+          "manifestHash": "37b0e5490ebc1d122b2ffd81724beecba7387811598ff239521ab95bd13aaf74"
+        },
+        {
+          "id": "interface:course:scene/terrain",
+          "variant": "grade-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "3e8ea4ab487d36a7a9abd8ff190994882dbd0f655b93a8802b27db0d792c4445",
+          "archiveOutputSha256": "3e8ea4ab487d36a7a9abd8ff190994882dbd0f655b93a8802b27db0d792c4445",
+          "manifestHash": "37b0e5490ebc1d122b2ffd81724beecba7387811598ff239521ab95bd13aaf74"
+        },
+        {
+          "id": "interface:course:post/grade",
+          "variant": "grade-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "f6677744fbaf7e3e56eebb51a7cc6acd9964331656306f9c752eb98d278260b8",
+          "archiveOutputSha256": "f6677744fbaf7e3e56eebb51a7cc6acd9964331656306f9c752eb98d278260b8",
+          "manifestHash": "37b0e5490ebc1d122b2ffd81724beecba7387811598ff239521ab95bd13aaf74"
+        },
+        {
+          "id": "interface:course:post/present",
+          "variant": "grade-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "1680d1a25a99b0f5f75e6f3130022eaba4e73838bb78be6df9cb7b1b92ca5ae5",
+          "archiveOutputSha256": "1680d1a25a99b0f5f75e6f3130022eaba4e73838bb78be6df9cb7b1b92ca5ae5",
+          "manifestHash": "37b0e5490ebc1d122b2ffd81724beecba7387811598ff239521ab95bd13aaf74"
+        },
+        {
+          "id": "data",
+          "variant": "grade-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "42718c84f29e32c9f00a2b84c6dad1fdd5e7a159bc0efa2c82d48df9944369eb",
+          "archiveOutputSha256": "42718c84f29e32c9f00a2b84c6dad1fdd5e7a159bc0efa2c82d48df9944369eb",
+          "manifestHash": "37b0e5490ebc1d122b2ffd81724beecba7387811598ff239521ab95bd13aaf74"
+        },
+        {
+          "id": "pack",
+          "variant": "strength-max",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "262cbf4afb092371e16dabbb93244b62ce2342ef165b1f5e4dd72d995a42e8e9",
+          "archiveOutputSha256": "262cbf4afb092371e16dabbb93244b62ce2342ef165b1f5e4dd72d995a42e8e9",
+          "manifestHash": "37b0e5490ebc1d122b2ffd81724beecba7387811598ff239521ab95bd13aaf74"
+        },
+        {
+          "id": "scene",
+          "variant": "strength-max",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "6424c977061ca7340adc45180b965398105ae16de5ae622924898e596d10e835",
+          "archiveOutputSha256": "6424c977061ca7340adc45180b965398105ae16de5ae622924898e596d10e835",
+          "manifestHash": "37b0e5490ebc1d122b2ffd81724beecba7387811598ff239521ab95bd13aaf74"
+        },
+        {
+          "id": "graph",
+          "variant": "strength-max",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "624cf9cfd1acb3eef36d86f5042eb31ded0c90ccc839d0919ebe558c760c3282",
+          "archiveOutputSha256": "624cf9cfd1acb3eef36d86f5042eb31ded0c90ccc839d0919ebe558c760c3282",
+          "manifestHash": "37b0e5490ebc1d122b2ffd81724beecba7387811598ff239521ab95bd13aaf74"
+        },
+        {
+          "id": "interface:course:scene/terrain",
+          "variant": "strength-max",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "d5ac1b638fc9327abb65613178b3a4cfe9c956a7edd910e299f8268c021deefb",
+          "archiveOutputSha256": "d5ac1b638fc9327abb65613178b3a4cfe9c956a7edd910e299f8268c021deefb",
+          "manifestHash": "37b0e5490ebc1d122b2ffd81724beecba7387811598ff239521ab95bd13aaf74"
+        },
+        {
+          "id": "interface:course:post/grade",
+          "variant": "strength-max",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "267f2a248dba22b57cf1d29ab52fc436552a09f00cfd01c2e206647d0cf656df",
+          "archiveOutputSha256": "267f2a248dba22b57cf1d29ab52fc436552a09f00cfd01c2e206647d0cf656df",
+          "manifestHash": "37b0e5490ebc1d122b2ffd81724beecba7387811598ff239521ab95bd13aaf74"
+        },
+        {
+          "id": "interface:course:post/present",
+          "variant": "strength-max",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "f14fa6c7d832fd0910ea84fd256016846872ac616dd8432f55aff01c58b214b5",
+          "archiveOutputSha256": "f14fa6c7d832fd0910ea84fd256016846872ac616dd8432f55aff01c58b214b5",
+          "manifestHash": "37b0e5490ebc1d122b2ffd81724beecba7387811598ff239521ab95bd13aaf74"
+        },
+        {
+          "id": "data",
+          "variant": "strength-max",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "ece6dc0d02faf7ae6cf145d9d78c10b83992f90edd810a0b9f1b6566b74c95bb",
+          "archiveOutputSha256": "ece6dc0d02faf7ae6cf145d9d78c10b83992f90edd810a0b9f1b6566b74c95bb",
+          "manifestHash": "37b0e5490ebc1d122b2ffd81724beecba7387811598ff239521ab95bd13aaf74"
+        }
+      ],
+      "branches": [
+        {
+          "id": "default",
+          "options": {},
+          "activeResources": [
+            "resource:course:post/color",
+            "resource:course:scene/color",
+            "resource:course:scene/depth"
+          ],
+          "activeCommands": [
+            "command:course:grade:0",
+            "command:course:present-grade:0",
+            "command:course:terrain_alpha_tested:0",
+            "command:course:terrain_opaque:0",
+            "command:course:terrain_sorted_translucent:0",
+            "command:course:terrain_transparent:0"
+          ],
+          "activePrograms": [
+            "program:course:post/grade",
+            "program:course:post/present",
+            "program:course:scene/terrain",
+            "program:dawnlight:scene_fallback/terrain_alpha_tested",
+            "program:dawnlight:scene_fallback/terrain_sorted_translucent",
+            "program:dawnlight:scene_fallback/terrain_transparent"
+          ],
+          "activeServices": []
+        },
+        {
+          "id": "grade-off",
+          "options": {
+            "course:grade": false
+          },
+          "activeResources": [
+            "resource:course:scene/color",
+            "resource:course:scene/depth"
+          ],
+          "activeCommands": [
+            "command:course:present-raw:0",
+            "command:course:terrain_alpha_tested:0",
+            "command:course:terrain_opaque:0",
+            "command:course:terrain_sorted_translucent:0",
+            "command:course:terrain_transparent:0"
+          ],
+          "activePrograms": [
+            "program:course:post/present",
+            "program:course:scene/terrain",
+            "program:dawnlight:scene_fallback/terrain_alpha_tested",
+            "program:dawnlight:scene_fallback/terrain_sorted_translucent",
+            "program:dawnlight:scene_fallback/terrain_transparent"
+          ],
+          "activeServices": []
+        },
+        {
+          "id": "strength-max",
+          "options": {
+            "course:strength": 1,
+            "course:gain": 1.2
+          },
+          "activeResources": [
+            "resource:course:post/color",
+            "resource:course:scene/color",
+            "resource:course:scene/depth"
+          ],
+          "activeCommands": [
+            "command:course:grade:0",
+            "command:course:present-grade:0",
+            "command:course:terrain_alpha_tested:0",
+            "command:course:terrain_opaque:0",
+            "command:course:terrain_sorted_translucent:0",
+            "command:course:terrain_transparent:0"
+          ],
+          "activePrograms": [
+            "program:course:post/grade",
+            "program:course:post/present",
+            "program:course:scene/terrain",
+            "program:dawnlight:scene_fallback/terrain_alpha_tested",
+            "program:dawnlight:scene_fallback/terrain_sorted_translucent",
+            "program:dawnlight:scene_fallback/terrain_transparent"
+          ],
+          "activeServices": []
+        }
+      ],
+      "runtimeEvidence": {
+        "driverStatus": "notProvided",
+        "runtimeEvaluated": false,
+        "liveWorldVerified": false,
+        "visual": "notRun"
+      }
+    },
+    {
+      "id": "course/07-materials",
+      "status": "passed",
+      "sourceFingerprint": "8c37adf9fd9eaa14e45f8a4e1cd8a81a525798813551d0dcc856dab4c250a04a",
+      "definitionSha256": "ed6e536ea97a154c09ad63c3d45dba2e150038d1bf488a3dabab1a08383f4c40",
+      "archiveSha256": "2c9bfd035270cc5121c0de2d4deae6becd56ca219ddda5f89f238594c9d3dbc9",
+      "archiveLength": 6835,
+      "files": [
+        {
+          "path": "README.md",
+          "length": 2464,
+          "sha256": "8d1189a3222ece06e1264cdec9d72b59246acdf41bd668ac2aaafc6e343b6e0c"
+        },
+        {
+          "path": "settings.json",
+          "length": 1692,
+          "sha256": "1bea3c2253bcb9ca560a3fba9e36c78d6645561cea3edb7ea8b3b5abaaf0523f"
+        },
+        {
+          "path": "shaderpack.json",
+          "length": 17378,
+          "sha256": "7b544ed02b40727c5a889b8b7f12bfdc79b461b0f145418face1b048d7ff55e8"
+        },
+        {
+          "path": "shaders/fullscreen.vsh",
+          "length": 298,
+          "sha256": "77e9c0fcd7803893b121b69daf13380f20b109f2d4e23964014b367531053c92"
+        },
+        {
+          "path": "shaders/grade.psh",
+          "length": 644,
+          "sha256": "18ac438c83ac99b44e8f59142a92a9183b8ac083abf04678691c07c46ae45c2c"
+        },
+        {
+          "path": "shaders/present.psh",
+          "length": 181,
+          "sha256": "d8ef4f9a0e1b4be69e9b6a1f841e80252e1bf797f98f036a1938c14165bdb787"
+        },
+        {
+          "path": "shaders/terrain.psh",
+          "length": 700,
+          "sha256": "b801ead820b63c86048803e885f4d78876552dce6dbc43e8ef88e753eadd6524"
+        },
+        {
+          "path": "shaders/terrain.vsh",
+          "length": 1489,
+          "sha256": "cbc201620a46e6e5ec802aae4b9d569129a21b3af97016f6b98bb5506b112fb1"
+        }
+      ],
+      "manifestHash": "4403938fc47f6d6eca457cdafe20caebc67aa5540a8a7a461fb7d45ebcd00031",
+      "checks": [
+        {
+          "id": "pack",
+          "variant": "default",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "e8735df154180b2256f4deac06a3124d0bb6441f78f8a47b10e9e5e0391479db",
+          "archiveOutputSha256": "e8735df154180b2256f4deac06a3124d0bb6441f78f8a47b10e9e5e0391479db",
+          "manifestHash": "4403938fc47f6d6eca457cdafe20caebc67aa5540a8a7a461fb7d45ebcd00031"
+        },
+        {
+          "id": "scene",
+          "variant": "default",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "587f1bcf725ae5bec70b8d76d459125ccb483672c5a3eb300b2d855cdbbb074c",
+          "archiveOutputSha256": "587f1bcf725ae5bec70b8d76d459125ccb483672c5a3eb300b2d855cdbbb074c",
+          "manifestHash": "4403938fc47f6d6eca457cdafe20caebc67aa5540a8a7a461fb7d45ebcd00031"
+        },
+        {
+          "id": "graph",
+          "variant": "default",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "bd6f9ba849d7e0123bd50b53c5b41798f1b8675e71ad4af6b6a6c4f0d9e8fe30",
+          "archiveOutputSha256": "bd6f9ba849d7e0123bd50b53c5b41798f1b8675e71ad4af6b6a6c4f0d9e8fe30",
+          "manifestHash": "4403938fc47f6d6eca457cdafe20caebc67aa5540a8a7a461fb7d45ebcd00031"
+        },
+        {
+          "id": "interface:course:scene/terrain",
+          "variant": "default",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "8762f31b44d240a67a39c8fd89eee5ed5f99c95b3b6c560e627c5dc632cea913",
+          "archiveOutputSha256": "8762f31b44d240a67a39c8fd89eee5ed5f99c95b3b6c560e627c5dc632cea913",
+          "manifestHash": "4403938fc47f6d6eca457cdafe20caebc67aa5540a8a7a461fb7d45ebcd00031"
+        },
+        {
+          "id": "interface:course:post/grade",
+          "variant": "default",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "9cbfc23de7f1608a29f31a30a6f8a489cdbbf6e72dc5c8f43e14c2f16789ba1e",
+          "archiveOutputSha256": "9cbfc23de7f1608a29f31a30a6f8a489cdbbf6e72dc5c8f43e14c2f16789ba1e",
+          "manifestHash": "4403938fc47f6d6eca457cdafe20caebc67aa5540a8a7a461fb7d45ebcd00031"
+        },
+        {
+          "id": "interface:course:post/present",
+          "variant": "default",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "c5cf553be0de499ce605b537eb5dba36cc76e88792184305765eecdbf00e56ae",
+          "archiveOutputSha256": "c5cf553be0de499ce605b537eb5dba36cc76e88792184305765eecdbf00e56ae",
+          "manifestHash": "4403938fc47f6d6eca457cdafe20caebc67aa5540a8a7a461fb7d45ebcd00031"
+        },
+        {
+          "id": "data",
+          "variant": "default",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "5a157464e7bfacdf365a6696d9b1473bd92d8751bc60a04f5912f78709ccbbf7",
+          "archiveOutputSha256": "5a157464e7bfacdf365a6696d9b1473bd92d8751bc60a04f5912f78709ccbbf7",
+          "manifestHash": "4403938fc47f6d6eca457cdafe20caebc67aa5540a8a7a461fb7d45ebcd00031"
+        },
+        {
+          "id": "materials",
+          "variant": "default",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "1077a42d11d26a8daff1b685234895801c4d4a0b08f0da2f3af0501909c06289",
+          "archiveOutputSha256": "1077a42d11d26a8daff1b685234895801c4d4a0b08f0da2f3af0501909c06289",
+          "manifestHash": "4403938fc47f6d6eca457cdafe20caebc67aa5540a8a7a461fb7d45ebcd00031"
+        },
+        {
+          "id": "pack",
+          "variant": "grade-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "e8735df154180b2256f4deac06a3124d0bb6441f78f8a47b10e9e5e0391479db",
+          "archiveOutputSha256": "e8735df154180b2256f4deac06a3124d0bb6441f78f8a47b10e9e5e0391479db",
+          "manifestHash": "4403938fc47f6d6eca457cdafe20caebc67aa5540a8a7a461fb7d45ebcd00031"
+        },
+        {
+          "id": "scene",
+          "variant": "grade-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "587f1bcf725ae5bec70b8d76d459125ccb483672c5a3eb300b2d855cdbbb074c",
+          "archiveOutputSha256": "587f1bcf725ae5bec70b8d76d459125ccb483672c5a3eb300b2d855cdbbb074c",
+          "manifestHash": "4403938fc47f6d6eca457cdafe20caebc67aa5540a8a7a461fb7d45ebcd00031"
+        },
+        {
+          "id": "graph",
+          "variant": "grade-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "c5a671588ba8c94be20dd44f4d0eb0f66e372c35328bbfbd3734757bd12fb5a0",
+          "archiveOutputSha256": "c5a671588ba8c94be20dd44f4d0eb0f66e372c35328bbfbd3734757bd12fb5a0",
+          "manifestHash": "4403938fc47f6d6eca457cdafe20caebc67aa5540a8a7a461fb7d45ebcd00031"
+        },
+        {
+          "id": "interface:course:scene/terrain",
+          "variant": "grade-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "8762f31b44d240a67a39c8fd89eee5ed5f99c95b3b6c560e627c5dc632cea913",
+          "archiveOutputSha256": "8762f31b44d240a67a39c8fd89eee5ed5f99c95b3b6c560e627c5dc632cea913",
+          "manifestHash": "4403938fc47f6d6eca457cdafe20caebc67aa5540a8a7a461fb7d45ebcd00031"
+        },
+        {
+          "id": "interface:course:post/grade",
+          "variant": "grade-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "9cbfc23de7f1608a29f31a30a6f8a489cdbbf6e72dc5c8f43e14c2f16789ba1e",
+          "archiveOutputSha256": "9cbfc23de7f1608a29f31a30a6f8a489cdbbf6e72dc5c8f43e14c2f16789ba1e",
+          "manifestHash": "4403938fc47f6d6eca457cdafe20caebc67aa5540a8a7a461fb7d45ebcd00031"
+        },
+        {
+          "id": "interface:course:post/present",
+          "variant": "grade-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "c5cf553be0de499ce605b537eb5dba36cc76e88792184305765eecdbf00e56ae",
+          "archiveOutputSha256": "c5cf553be0de499ce605b537eb5dba36cc76e88792184305765eecdbf00e56ae",
+          "manifestHash": "4403938fc47f6d6eca457cdafe20caebc67aa5540a8a7a461fb7d45ebcd00031"
+        },
+        {
+          "id": "data",
+          "variant": "grade-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "5a157464e7bfacdf365a6696d9b1473bd92d8751bc60a04f5912f78709ccbbf7",
+          "archiveOutputSha256": "5a157464e7bfacdf365a6696d9b1473bd92d8751bc60a04f5912f78709ccbbf7",
+          "manifestHash": "4403938fc47f6d6eca457cdafe20caebc67aa5540a8a7a461fb7d45ebcd00031"
+        },
+        {
+          "id": "materials",
+          "variant": "grade-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "1077a42d11d26a8daff1b685234895801c4d4a0b08f0da2f3af0501909c06289",
+          "archiveOutputSha256": "1077a42d11d26a8daff1b685234895801c4d4a0b08f0da2f3af0501909c06289",
+          "manifestHash": "4403938fc47f6d6eca457cdafe20caebc67aa5540a8a7a461fb7d45ebcd00031"
+        },
+        {
+          "id": "pack",
+          "variant": "strength-max",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "e8735df154180b2256f4deac06a3124d0bb6441f78f8a47b10e9e5e0391479db",
+          "archiveOutputSha256": "e8735df154180b2256f4deac06a3124d0bb6441f78f8a47b10e9e5e0391479db",
+          "manifestHash": "4403938fc47f6d6eca457cdafe20caebc67aa5540a8a7a461fb7d45ebcd00031"
+        },
+        {
+          "id": "scene",
+          "variant": "strength-max",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "587f1bcf725ae5bec70b8d76d459125ccb483672c5a3eb300b2d855cdbbb074c",
+          "archiveOutputSha256": "587f1bcf725ae5bec70b8d76d459125ccb483672c5a3eb300b2d855cdbbb074c",
+          "manifestHash": "4403938fc47f6d6eca457cdafe20caebc67aa5540a8a7a461fb7d45ebcd00031"
+        },
+        {
+          "id": "graph",
+          "variant": "strength-max",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "84a9ff1456133596378db92659ed32e7411aaf79dd117619b9436cc532e61ed7",
+          "archiveOutputSha256": "84a9ff1456133596378db92659ed32e7411aaf79dd117619b9436cc532e61ed7",
+          "manifestHash": "4403938fc47f6d6eca457cdafe20caebc67aa5540a8a7a461fb7d45ebcd00031"
+        },
+        {
+          "id": "interface:course:scene/terrain",
+          "variant": "strength-max",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "ce0e7462f5aed62e3f530d64dfaeafe9b294134261b0290c48df3c454e3544b8",
+          "archiveOutputSha256": "ce0e7462f5aed62e3f530d64dfaeafe9b294134261b0290c48df3c454e3544b8",
+          "manifestHash": "4403938fc47f6d6eca457cdafe20caebc67aa5540a8a7a461fb7d45ebcd00031"
+        },
+        {
+          "id": "interface:course:post/grade",
+          "variant": "strength-max",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "d49c972d2ad3984ca6337e1d42b997b7fc7371d2818ebf43c2aa2a7a88fef07c",
+          "archiveOutputSha256": "d49c972d2ad3984ca6337e1d42b997b7fc7371d2818ebf43c2aa2a7a88fef07c",
+          "manifestHash": "4403938fc47f6d6eca457cdafe20caebc67aa5540a8a7a461fb7d45ebcd00031"
+        },
+        {
+          "id": "interface:course:post/present",
+          "variant": "strength-max",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "7142ba936ae2ad96dfbf06379ddd10ff3b1d0f83d029b6f71a907c7a47b70a4b",
+          "archiveOutputSha256": "7142ba936ae2ad96dfbf06379ddd10ff3b1d0f83d029b6f71a907c7a47b70a4b",
+          "manifestHash": "4403938fc47f6d6eca457cdafe20caebc67aa5540a8a7a461fb7d45ebcd00031"
+        },
+        {
+          "id": "data",
+          "variant": "strength-max",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "e6b2c068555dc3a34ce22cc8fe414c25ef229b9af1a0fbab7b2c0c885fa3c902",
+          "archiveOutputSha256": "e6b2c068555dc3a34ce22cc8fe414c25ef229b9af1a0fbab7b2c0c885fa3c902",
+          "manifestHash": "4403938fc47f6d6eca457cdafe20caebc67aa5540a8a7a461fb7d45ebcd00031"
+        },
+        {
+          "id": "materials",
+          "variant": "strength-max",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "1077a42d11d26a8daff1b685234895801c4d4a0b08f0da2f3af0501909c06289",
+          "archiveOutputSha256": "1077a42d11d26a8daff1b685234895801c4d4a0b08f0da2f3af0501909c06289",
+          "manifestHash": "4403938fc47f6d6eca457cdafe20caebc67aa5540a8a7a461fb7d45ebcd00031"
+        }
+      ],
+      "branches": [
+        {
+          "id": "default",
+          "options": {},
+          "activeResources": [
+            "resource:course:materials",
+            "resource:course:post/color",
+            "resource:course:scene/color",
+            "resource:course:scene/depth"
+          ],
+          "activeCommands": [
+            "command:course:grade:0",
+            "command:course:present-grade:0",
+            "command:course:terrain_alpha_tested:0",
+            "command:course:terrain_opaque:0",
+            "command:course:terrain_sorted_translucent:0",
+            "command:course:terrain_transparent:0"
+          ],
+          "activePrograms": [
+            "program:course:post/grade",
+            "program:course:post/present",
+            "program:course:scene/terrain",
+            "program:dawnlight:scene_fallback/terrain_alpha_tested",
+            "program:dawnlight:scene_fallback/terrain_sorted_translucent",
+            "program:dawnlight:scene_fallback/terrain_transparent"
+          ],
+          "activeServices": []
+        },
+        {
+          "id": "grade-off",
+          "options": {
+            "course:grade": false
+          },
+          "activeResources": [
+            "resource:course:materials",
+            "resource:course:scene/color",
+            "resource:course:scene/depth"
+          ],
+          "activeCommands": [
+            "command:course:present-raw:0",
+            "command:course:terrain_alpha_tested:0",
+            "command:course:terrain_opaque:0",
+            "command:course:terrain_sorted_translucent:0",
+            "command:course:terrain_transparent:0"
+          ],
+          "activePrograms": [
+            "program:course:post/present",
+            "program:course:scene/terrain",
+            "program:dawnlight:scene_fallback/terrain_alpha_tested",
+            "program:dawnlight:scene_fallback/terrain_sorted_translucent",
+            "program:dawnlight:scene_fallback/terrain_transparent"
+          ],
+          "activeServices": []
+        },
+        {
+          "id": "strength-max",
+          "options": {
+            "course:strength": 1,
+            "course:gain": 1.2
+          },
+          "activeResources": [
+            "resource:course:materials",
+            "resource:course:post/color",
+            "resource:course:scene/color",
+            "resource:course:scene/depth"
+          ],
+          "activeCommands": [
+            "command:course:grade:0",
+            "command:course:present-grade:0",
+            "command:course:terrain_alpha_tested:0",
+            "command:course:terrain_opaque:0",
+            "command:course:terrain_sorted_translucent:0",
+            "command:course:terrain_transparent:0"
+          ],
+          "activePrograms": [
+            "program:course:post/grade",
+            "program:course:post/present",
+            "program:course:scene/terrain",
+            "program:dawnlight:scene_fallback/terrain_alpha_tested",
+            "program:dawnlight:scene_fallback/terrain_sorted_translucent",
+            "program:dawnlight:scene_fallback/terrain_transparent"
+          ],
+          "activeServices": []
+        }
+      ],
+      "runtimeEvidence": {
+        "driverStatus": "notProvided",
+        "runtimeEvaluated": false,
+        "liveWorldVerified": false,
+        "visual": "notRun"
+      }
+    },
+    {
+      "id": "course/08-post-chain",
+      "status": "passed",
+      "sourceFingerprint": "9dd946ffa7f6f666b3b3b60d6107fde0646da1513717dca3f6cb2073c4207943",
+      "definitionSha256": "435b851970f74633dc31d83ce4a348ba8137774a20af082a7461791d32eef7b7",
+      "archiveSha256": "bc94ab93df3be1b19363f5f0513f744330f10c505886cf1e0a3924d695e9f87f",
+      "archiveLength": 7524,
+      "files": [
+        {
+          "path": "README.md",
+          "length": 2674,
+          "sha256": "01602dd7851606322565951b2dc87bb67adfd1e9e05dfc7ce656fbe7e73c254f"
+        },
+        {
+          "path": "settings.json",
+          "length": 1947,
+          "sha256": "42b145f416b0332241ef930b72dfcce4c278c4794bb05e99a3ce59f1ac31d095"
+        },
+        {
+          "path": "shaderpack.json",
+          "length": 20872,
+          "sha256": "847f5279260556b5499f0f236b00d3f6281821bbb7754c1d428ef6c2ec127662"
+        },
+        {
+          "path": "shaders/fullscreen.vsh",
+          "length": 298,
+          "sha256": "77e9c0fcd7803893b121b69daf13380f20b109f2d4e23964014b367531053c92"
+        },
+        {
+          "path": "shaders/glow.psh",
+          "length": 649,
+          "sha256": "217f4b4405eaed3c5afea9c1b5ca4f3e1b5a78d5e3ed637cec708dcf9e624819"
+        },
+        {
+          "path": "shaders/grade.psh",
+          "length": 644,
+          "sha256": "18ac438c83ac99b44e8f59142a92a9183b8ac083abf04678691c07c46ae45c2c"
+        },
+        {
+          "path": "shaders/present.psh",
+          "length": 181,
+          "sha256": "d8ef4f9a0e1b4be69e9b6a1f841e80252e1bf797f98f036a1938c14165bdb787"
+        },
+        {
+          "path": "shaders/terrain.psh",
+          "length": 700,
+          "sha256": "b801ead820b63c86048803e885f4d78876552dce6dbc43e8ef88e753eadd6524"
+        },
+        {
+          "path": "shaders/terrain.vsh",
+          "length": 1489,
+          "sha256": "cbc201620a46e6e5ec802aae4b9d569129a21b3af97016f6b98bb5506b112fb1"
+        }
+      ],
+      "manifestHash": "5c8e01e903979386fb6ab2bc4c9637db59b64dbf1eb49e38ffbb4782be1467e3",
+      "checks": [
+        {
+          "id": "pack",
+          "variant": "default",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "179995cefeab12655fc1d36500e12bb439f879800fb490e2284aa9cb093b4ae6",
+          "archiveOutputSha256": "179995cefeab12655fc1d36500e12bb439f879800fb490e2284aa9cb093b4ae6",
+          "manifestHash": "5c8e01e903979386fb6ab2bc4c9637db59b64dbf1eb49e38ffbb4782be1467e3"
+        },
+        {
+          "id": "scene",
+          "variant": "default",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "3b33f0ae24c7643a290c35aeaa29ef05e0253ddd036e5efc2d85536b8966827c",
+          "archiveOutputSha256": "3b33f0ae24c7643a290c35aeaa29ef05e0253ddd036e5efc2d85536b8966827c",
+          "manifestHash": "5c8e01e903979386fb6ab2bc4c9637db59b64dbf1eb49e38ffbb4782be1467e3"
+        },
+        {
+          "id": "graph",
+          "variant": "default",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "347e8fea82901c1f15d44445d63a40ee72da974a62ffff91210d37de1c747689",
+          "archiveOutputSha256": "347e8fea82901c1f15d44445d63a40ee72da974a62ffff91210d37de1c747689",
+          "manifestHash": "5c8e01e903979386fb6ab2bc4c9637db59b64dbf1eb49e38ffbb4782be1467e3"
+        },
+        {
+          "id": "interface:course:scene/terrain",
+          "variant": "default",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "cf4e7d1f8d0fe35b9995809702f603dee818d63c00ee397cfb7ed00d70dbbb5f",
+          "archiveOutputSha256": "cf4e7d1f8d0fe35b9995809702f603dee818d63c00ee397cfb7ed00d70dbbb5f",
+          "manifestHash": "5c8e01e903979386fb6ab2bc4c9637db59b64dbf1eb49e38ffbb4782be1467e3"
+        },
+        {
+          "id": "interface:course:post/grade",
+          "variant": "default",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "a4814a783193c5583d7c28e5d4026a5ee7f35d6d4d2b27ebee4928bd64994e7e",
+          "archiveOutputSha256": "a4814a783193c5583d7c28e5d4026a5ee7f35d6d4d2b27ebee4928bd64994e7e",
+          "manifestHash": "5c8e01e903979386fb6ab2bc4c9637db59b64dbf1eb49e38ffbb4782be1467e3"
+        },
+        {
+          "id": "interface:course:post/present",
+          "variant": "default",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "cdfeba5fc5265aaa9be3c55dcfa604d66dbbea9f00c2cdc1ee988a2e2ef4a302",
+          "archiveOutputSha256": "cdfeba5fc5265aaa9be3c55dcfa604d66dbbea9f00c2cdc1ee988a2e2ef4a302",
+          "manifestHash": "5c8e01e903979386fb6ab2bc4c9637db59b64dbf1eb49e38ffbb4782be1467e3"
+        },
+        {
+          "id": "interface:course:post/glow",
+          "variant": "default",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "860b3476a5ee8a835204e829cd007499efd6cd94e2a6c6b22f4dde4ec5591e12",
+          "archiveOutputSha256": "860b3476a5ee8a835204e829cd007499efd6cd94e2a6c6b22f4dde4ec5591e12",
+          "manifestHash": "5c8e01e903979386fb6ab2bc4c9637db59b64dbf1eb49e38ffbb4782be1467e3"
+        },
+        {
+          "id": "data",
+          "variant": "default",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "a1ddb8aa3cdce67e3f5b70da915a4aa59142e8e0d439228ec0bfae78febbcd03",
+          "archiveOutputSha256": "a1ddb8aa3cdce67e3f5b70da915a4aa59142e8e0d439228ec0bfae78febbcd03",
+          "manifestHash": "5c8e01e903979386fb6ab2bc4c9637db59b64dbf1eb49e38ffbb4782be1467e3"
+        },
+        {
+          "id": "materials",
+          "variant": "default",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "837e6193d4d1ce2014508e7af9d0c59ac9a0d0c786b66df56b3e4d3a0e557f5e",
+          "archiveOutputSha256": "837e6193d4d1ce2014508e7af9d0c59ac9a0d0c786b66df56b3e4d3a0e557f5e",
+          "manifestHash": "5c8e01e903979386fb6ab2bc4c9637db59b64dbf1eb49e38ffbb4782be1467e3"
+        },
+        {
+          "id": "pack",
+          "variant": "grade-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "179995cefeab12655fc1d36500e12bb439f879800fb490e2284aa9cb093b4ae6",
+          "archiveOutputSha256": "179995cefeab12655fc1d36500e12bb439f879800fb490e2284aa9cb093b4ae6",
+          "manifestHash": "5c8e01e903979386fb6ab2bc4c9637db59b64dbf1eb49e38ffbb4782be1467e3"
+        },
+        {
+          "id": "scene",
+          "variant": "grade-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "3b33f0ae24c7643a290c35aeaa29ef05e0253ddd036e5efc2d85536b8966827c",
+          "archiveOutputSha256": "3b33f0ae24c7643a290c35aeaa29ef05e0253ddd036e5efc2d85536b8966827c",
+          "manifestHash": "5c8e01e903979386fb6ab2bc4c9637db59b64dbf1eb49e38ffbb4782be1467e3"
+        },
+        {
+          "id": "graph",
+          "variant": "grade-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "90a99e87d26dfcd3d66ffb3e76c6f4e7ffa94ba075a92985b03d2d072e505e45",
+          "archiveOutputSha256": "90a99e87d26dfcd3d66ffb3e76c6f4e7ffa94ba075a92985b03d2d072e505e45",
+          "manifestHash": "5c8e01e903979386fb6ab2bc4c9637db59b64dbf1eb49e38ffbb4782be1467e3"
+        },
+        {
+          "id": "interface:course:scene/terrain",
+          "variant": "grade-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "cf4e7d1f8d0fe35b9995809702f603dee818d63c00ee397cfb7ed00d70dbbb5f",
+          "archiveOutputSha256": "cf4e7d1f8d0fe35b9995809702f603dee818d63c00ee397cfb7ed00d70dbbb5f",
+          "manifestHash": "5c8e01e903979386fb6ab2bc4c9637db59b64dbf1eb49e38ffbb4782be1467e3"
+        },
+        {
+          "id": "interface:course:post/grade",
+          "variant": "grade-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "a4814a783193c5583d7c28e5d4026a5ee7f35d6d4d2b27ebee4928bd64994e7e",
+          "archiveOutputSha256": "a4814a783193c5583d7c28e5d4026a5ee7f35d6d4d2b27ebee4928bd64994e7e",
+          "manifestHash": "5c8e01e903979386fb6ab2bc4c9637db59b64dbf1eb49e38ffbb4782be1467e3"
+        },
+        {
+          "id": "interface:course:post/present",
+          "variant": "grade-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "cdfeba5fc5265aaa9be3c55dcfa604d66dbbea9f00c2cdc1ee988a2e2ef4a302",
+          "archiveOutputSha256": "cdfeba5fc5265aaa9be3c55dcfa604d66dbbea9f00c2cdc1ee988a2e2ef4a302",
+          "manifestHash": "5c8e01e903979386fb6ab2bc4c9637db59b64dbf1eb49e38ffbb4782be1467e3"
+        },
+        {
+          "id": "interface:course:post/glow",
+          "variant": "grade-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "860b3476a5ee8a835204e829cd007499efd6cd94e2a6c6b22f4dde4ec5591e12",
+          "archiveOutputSha256": "860b3476a5ee8a835204e829cd007499efd6cd94e2a6c6b22f4dde4ec5591e12",
+          "manifestHash": "5c8e01e903979386fb6ab2bc4c9637db59b64dbf1eb49e38ffbb4782be1467e3"
+        },
+        {
+          "id": "data",
+          "variant": "grade-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "a1ddb8aa3cdce67e3f5b70da915a4aa59142e8e0d439228ec0bfae78febbcd03",
+          "archiveOutputSha256": "a1ddb8aa3cdce67e3f5b70da915a4aa59142e8e0d439228ec0bfae78febbcd03",
+          "manifestHash": "5c8e01e903979386fb6ab2bc4c9637db59b64dbf1eb49e38ffbb4782be1467e3"
+        },
+        {
+          "id": "materials",
+          "variant": "grade-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "837e6193d4d1ce2014508e7af9d0c59ac9a0d0c786b66df56b3e4d3a0e557f5e",
+          "archiveOutputSha256": "837e6193d4d1ce2014508e7af9d0c59ac9a0d0c786b66df56b3e4d3a0e557f5e",
+          "manifestHash": "5c8e01e903979386fb6ab2bc4c9637db59b64dbf1eb49e38ffbb4782be1467e3"
+        },
+        {
+          "id": "pack",
+          "variant": "strength-max",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "179995cefeab12655fc1d36500e12bb439f879800fb490e2284aa9cb093b4ae6",
+          "archiveOutputSha256": "179995cefeab12655fc1d36500e12bb439f879800fb490e2284aa9cb093b4ae6",
+          "manifestHash": "5c8e01e903979386fb6ab2bc4c9637db59b64dbf1eb49e38ffbb4782be1467e3"
+        },
+        {
+          "id": "scene",
+          "variant": "strength-max",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "3b33f0ae24c7643a290c35aeaa29ef05e0253ddd036e5efc2d85536b8966827c",
+          "archiveOutputSha256": "3b33f0ae24c7643a290c35aeaa29ef05e0253ddd036e5efc2d85536b8966827c",
+          "manifestHash": "5c8e01e903979386fb6ab2bc4c9637db59b64dbf1eb49e38ffbb4782be1467e3"
+        },
+        {
+          "id": "graph",
+          "variant": "strength-max",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "dfdadea0d739cd01275d291f9b0393a7bc638e7962d85a9c74082fd1ebf7182f",
+          "archiveOutputSha256": "dfdadea0d739cd01275d291f9b0393a7bc638e7962d85a9c74082fd1ebf7182f",
+          "manifestHash": "5c8e01e903979386fb6ab2bc4c9637db59b64dbf1eb49e38ffbb4782be1467e3"
+        },
+        {
+          "id": "interface:course:scene/terrain",
+          "variant": "strength-max",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "7b773d2f09ff83b76c02efc2a6427bbf9a9367cdea880fa359803141cbc44851",
+          "archiveOutputSha256": "7b773d2f09ff83b76c02efc2a6427bbf9a9367cdea880fa359803141cbc44851",
+          "manifestHash": "5c8e01e903979386fb6ab2bc4c9637db59b64dbf1eb49e38ffbb4782be1467e3"
+        },
+        {
+          "id": "interface:course:post/grade",
+          "variant": "strength-max",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "6c52cbf0af958c7fc95898809e58c27c5d55dd35adb8c41605da9e1ab208a97e",
+          "archiveOutputSha256": "6c52cbf0af958c7fc95898809e58c27c5d55dd35adb8c41605da9e1ab208a97e",
+          "manifestHash": "5c8e01e903979386fb6ab2bc4c9637db59b64dbf1eb49e38ffbb4782be1467e3"
+        },
+        {
+          "id": "interface:course:post/present",
+          "variant": "strength-max",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "72ec7b9ef57de7f5d275b2f6acab3ceb28dd2164174d09558f52782b59cb1f68",
+          "archiveOutputSha256": "72ec7b9ef57de7f5d275b2f6acab3ceb28dd2164174d09558f52782b59cb1f68",
+          "manifestHash": "5c8e01e903979386fb6ab2bc4c9637db59b64dbf1eb49e38ffbb4782be1467e3"
+        },
+        {
+          "id": "interface:course:post/glow",
+          "variant": "strength-max",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "e3d4fc463a63095803006fa19c1ab99f3449ca596440483f2c16fddf36c6d911",
+          "archiveOutputSha256": "e3d4fc463a63095803006fa19c1ab99f3449ca596440483f2c16fddf36c6d911",
+          "manifestHash": "5c8e01e903979386fb6ab2bc4c9637db59b64dbf1eb49e38ffbb4782be1467e3"
+        },
+        {
+          "id": "data",
+          "variant": "strength-max",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "a46a7e08757123632ac48504b46c5901fca3e51533ff12a61003f6b0a5773ed2",
+          "archiveOutputSha256": "a46a7e08757123632ac48504b46c5901fca3e51533ff12a61003f6b0a5773ed2",
+          "manifestHash": "5c8e01e903979386fb6ab2bc4c9637db59b64dbf1eb49e38ffbb4782be1467e3"
+        },
+        {
+          "id": "materials",
+          "variant": "strength-max",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "837e6193d4d1ce2014508e7af9d0c59ac9a0d0c786b66df56b3e4d3a0e557f5e",
+          "archiveOutputSha256": "837e6193d4d1ce2014508e7af9d0c59ac9a0d0c786b66df56b3e4d3a0e557f5e",
+          "manifestHash": "5c8e01e903979386fb6ab2bc4c9637db59b64dbf1eb49e38ffbb4782be1467e3"
+        },
+        {
+          "id": "pack",
+          "variant": "glow-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "179995cefeab12655fc1d36500e12bb439f879800fb490e2284aa9cb093b4ae6",
+          "archiveOutputSha256": "179995cefeab12655fc1d36500e12bb439f879800fb490e2284aa9cb093b4ae6",
+          "manifestHash": "5c8e01e903979386fb6ab2bc4c9637db59b64dbf1eb49e38ffbb4782be1467e3"
+        },
+        {
+          "id": "scene",
+          "variant": "glow-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "3b33f0ae24c7643a290c35aeaa29ef05e0253ddd036e5efc2d85536b8966827c",
+          "archiveOutputSha256": "3b33f0ae24c7643a290c35aeaa29ef05e0253ddd036e5efc2d85536b8966827c",
+          "manifestHash": "5c8e01e903979386fb6ab2bc4c9637db59b64dbf1eb49e38ffbb4782be1467e3"
+        },
+        {
+          "id": "graph",
+          "variant": "glow-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "015875879d92a24564ae952032c5397aa8227a86c67e0c4f516d020a8ad4fe5b",
+          "archiveOutputSha256": "015875879d92a24564ae952032c5397aa8227a86c67e0c4f516d020a8ad4fe5b",
+          "manifestHash": "5c8e01e903979386fb6ab2bc4c9637db59b64dbf1eb49e38ffbb4782be1467e3"
+        },
+        {
+          "id": "interface:course:scene/terrain",
+          "variant": "glow-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "cf4e7d1f8d0fe35b9995809702f603dee818d63c00ee397cfb7ed00d70dbbb5f",
+          "archiveOutputSha256": "cf4e7d1f8d0fe35b9995809702f603dee818d63c00ee397cfb7ed00d70dbbb5f",
+          "manifestHash": "5c8e01e903979386fb6ab2bc4c9637db59b64dbf1eb49e38ffbb4782be1467e3"
+        },
+        {
+          "id": "interface:course:post/grade",
+          "variant": "glow-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "a4814a783193c5583d7c28e5d4026a5ee7f35d6d4d2b27ebee4928bd64994e7e",
+          "archiveOutputSha256": "a4814a783193c5583d7c28e5d4026a5ee7f35d6d4d2b27ebee4928bd64994e7e",
+          "manifestHash": "5c8e01e903979386fb6ab2bc4c9637db59b64dbf1eb49e38ffbb4782be1467e3"
+        },
+        {
+          "id": "interface:course:post/present",
+          "variant": "glow-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "cdfeba5fc5265aaa9be3c55dcfa604d66dbbea9f00c2cdc1ee988a2e2ef4a302",
+          "archiveOutputSha256": "cdfeba5fc5265aaa9be3c55dcfa604d66dbbea9f00c2cdc1ee988a2e2ef4a302",
+          "manifestHash": "5c8e01e903979386fb6ab2bc4c9637db59b64dbf1eb49e38ffbb4782be1467e3"
+        },
+        {
+          "id": "interface:course:post/glow",
+          "variant": "glow-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "860b3476a5ee8a835204e829cd007499efd6cd94e2a6c6b22f4dde4ec5591e12",
+          "archiveOutputSha256": "860b3476a5ee8a835204e829cd007499efd6cd94e2a6c6b22f4dde4ec5591e12",
+          "manifestHash": "5c8e01e903979386fb6ab2bc4c9637db59b64dbf1eb49e38ffbb4782be1467e3"
+        },
+        {
+          "id": "data",
+          "variant": "glow-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "a1ddb8aa3cdce67e3f5b70da915a4aa59142e8e0d439228ec0bfae78febbcd03",
+          "archiveOutputSha256": "a1ddb8aa3cdce67e3f5b70da915a4aa59142e8e0d439228ec0bfae78febbcd03",
+          "manifestHash": "5c8e01e903979386fb6ab2bc4c9637db59b64dbf1eb49e38ffbb4782be1467e3"
+        },
+        {
+          "id": "materials",
+          "variant": "glow-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "837e6193d4d1ce2014508e7af9d0c59ac9a0d0c786b66df56b3e4d3a0e557f5e",
+          "archiveOutputSha256": "837e6193d4d1ce2014508e7af9d0c59ac9a0d0c786b66df56b3e4d3a0e557f5e",
+          "manifestHash": "5c8e01e903979386fb6ab2bc4c9637db59b64dbf1eb49e38ffbb4782be1467e3"
+        },
+        {
+          "id": "pack",
+          "variant": "all-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "179995cefeab12655fc1d36500e12bb439f879800fb490e2284aa9cb093b4ae6",
+          "archiveOutputSha256": "179995cefeab12655fc1d36500e12bb439f879800fb490e2284aa9cb093b4ae6",
+          "manifestHash": "5c8e01e903979386fb6ab2bc4c9637db59b64dbf1eb49e38ffbb4782be1467e3"
+        },
+        {
+          "id": "scene",
+          "variant": "all-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "3b33f0ae24c7643a290c35aeaa29ef05e0253ddd036e5efc2d85536b8966827c",
+          "archiveOutputSha256": "3b33f0ae24c7643a290c35aeaa29ef05e0253ddd036e5efc2d85536b8966827c",
+          "manifestHash": "5c8e01e903979386fb6ab2bc4c9637db59b64dbf1eb49e38ffbb4782be1467e3"
+        },
+        {
+          "id": "graph",
+          "variant": "all-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "49211cb0e22d299ef073c36a8336007e691015bc2af4d468ddc4f34252d2694f",
+          "archiveOutputSha256": "49211cb0e22d299ef073c36a8336007e691015bc2af4d468ddc4f34252d2694f",
+          "manifestHash": "5c8e01e903979386fb6ab2bc4c9637db59b64dbf1eb49e38ffbb4782be1467e3"
+        },
+        {
+          "id": "interface:course:scene/terrain",
+          "variant": "all-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "cf4e7d1f8d0fe35b9995809702f603dee818d63c00ee397cfb7ed00d70dbbb5f",
+          "archiveOutputSha256": "cf4e7d1f8d0fe35b9995809702f603dee818d63c00ee397cfb7ed00d70dbbb5f",
+          "manifestHash": "5c8e01e903979386fb6ab2bc4c9637db59b64dbf1eb49e38ffbb4782be1467e3"
+        },
+        {
+          "id": "interface:course:post/grade",
+          "variant": "all-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "a4814a783193c5583d7c28e5d4026a5ee7f35d6d4d2b27ebee4928bd64994e7e",
+          "archiveOutputSha256": "a4814a783193c5583d7c28e5d4026a5ee7f35d6d4d2b27ebee4928bd64994e7e",
+          "manifestHash": "5c8e01e903979386fb6ab2bc4c9637db59b64dbf1eb49e38ffbb4782be1467e3"
+        },
+        {
+          "id": "interface:course:post/present",
+          "variant": "all-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "cdfeba5fc5265aaa9be3c55dcfa604d66dbbea9f00c2cdc1ee988a2e2ef4a302",
+          "archiveOutputSha256": "cdfeba5fc5265aaa9be3c55dcfa604d66dbbea9f00c2cdc1ee988a2e2ef4a302",
+          "manifestHash": "5c8e01e903979386fb6ab2bc4c9637db59b64dbf1eb49e38ffbb4782be1467e3"
+        },
+        {
+          "id": "interface:course:post/glow",
+          "variant": "all-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "860b3476a5ee8a835204e829cd007499efd6cd94e2a6c6b22f4dde4ec5591e12",
+          "archiveOutputSha256": "860b3476a5ee8a835204e829cd007499efd6cd94e2a6c6b22f4dde4ec5591e12",
+          "manifestHash": "5c8e01e903979386fb6ab2bc4c9637db59b64dbf1eb49e38ffbb4782be1467e3"
+        },
+        {
+          "id": "data",
+          "variant": "all-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "a1ddb8aa3cdce67e3f5b70da915a4aa59142e8e0d439228ec0bfae78febbcd03",
+          "archiveOutputSha256": "a1ddb8aa3cdce67e3f5b70da915a4aa59142e8e0d439228ec0bfae78febbcd03",
+          "manifestHash": "5c8e01e903979386fb6ab2bc4c9637db59b64dbf1eb49e38ffbb4782be1467e3"
+        },
+        {
+          "id": "materials",
+          "variant": "all-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "837e6193d4d1ce2014508e7af9d0c59ac9a0d0c786b66df56b3e4d3a0e557f5e",
+          "archiveOutputSha256": "837e6193d4d1ce2014508e7af9d0c59ac9a0d0c786b66df56b3e4d3a0e557f5e",
+          "manifestHash": "5c8e01e903979386fb6ab2bc4c9637db59b64dbf1eb49e38ffbb4782be1467e3"
+        }
+      ],
+      "branches": [
+        {
+          "id": "default",
+          "options": {},
+          "activeResources": [
+            "resource:course:materials",
+            "resource:course:post/color",
+            "resource:course:post/glow",
+            "resource:course:scene/color",
+            "resource:course:scene/depth"
+          ],
+          "activeCommands": [
+            "command:course:glow:0",
+            "command:course:grade:0",
+            "command:course:present-glow:0",
+            "command:course:terrain_alpha_tested:0",
+            "command:course:terrain_opaque:0",
+            "command:course:terrain_sorted_translucent:0",
+            "command:course:terrain_transparent:0"
+          ],
+          "activePrograms": [
+            "program:course:post/glow",
+            "program:course:post/grade",
+            "program:course:post/present",
+            "program:course:scene/terrain",
+            "program:dawnlight:scene_fallback/terrain_alpha_tested",
+            "program:dawnlight:scene_fallback/terrain_sorted_translucent",
+            "program:dawnlight:scene_fallback/terrain_transparent"
+          ],
+          "activeServices": []
+        },
+        {
+          "id": "grade-off",
+          "options": {
+            "course:grade": false
+          },
+          "activeResources": [
+            "resource:course:materials",
+            "resource:course:scene/color",
+            "resource:course:scene/depth"
+          ],
+          "activeCommands": [
+            "command:course:present-raw:0",
+            "command:course:terrain_alpha_tested:0",
+            "command:course:terrain_opaque:0",
+            "command:course:terrain_sorted_translucent:0",
+            "command:course:terrain_transparent:0"
+          ],
+          "activePrograms": [
+            "program:course:post/present",
+            "program:course:scene/terrain",
+            "program:dawnlight:scene_fallback/terrain_alpha_tested",
+            "program:dawnlight:scene_fallback/terrain_sorted_translucent",
+            "program:dawnlight:scene_fallback/terrain_transparent"
+          ],
+          "activeServices": []
+        },
+        {
+          "id": "strength-max",
+          "options": {
+            "course:strength": 1,
+            "course:gain": 1.2
+          },
+          "activeResources": [
+            "resource:course:materials",
+            "resource:course:post/color",
+            "resource:course:post/glow",
+            "resource:course:scene/color",
+            "resource:course:scene/depth"
+          ],
+          "activeCommands": [
+            "command:course:glow:0",
+            "command:course:grade:0",
+            "command:course:present-glow:0",
+            "command:course:terrain_alpha_tested:0",
+            "command:course:terrain_opaque:0",
+            "command:course:terrain_sorted_translucent:0",
+            "command:course:terrain_transparent:0"
+          ],
+          "activePrograms": [
+            "program:course:post/glow",
+            "program:course:post/grade",
+            "program:course:post/present",
+            "program:course:scene/terrain",
+            "program:dawnlight:scene_fallback/terrain_alpha_tested",
+            "program:dawnlight:scene_fallback/terrain_sorted_translucent",
+            "program:dawnlight:scene_fallback/terrain_transparent"
+          ],
+          "activeServices": []
+        },
+        {
+          "id": "glow-off",
+          "options": {
+            "course:glow": false
+          },
+          "activeResources": [
+            "resource:course:materials",
+            "resource:course:post/color",
+            "resource:course:scene/color",
+            "resource:course:scene/depth"
+          ],
+          "activeCommands": [
+            "command:course:grade:0",
+            "command:course:present-grade:0",
+            "command:course:terrain_alpha_tested:0",
+            "command:course:terrain_opaque:0",
+            "command:course:terrain_sorted_translucent:0",
+            "command:course:terrain_transparent:0"
+          ],
+          "activePrograms": [
+            "program:course:post/grade",
+            "program:course:post/present",
+            "program:course:scene/terrain",
+            "program:dawnlight:scene_fallback/terrain_alpha_tested",
+            "program:dawnlight:scene_fallback/terrain_sorted_translucent",
+            "program:dawnlight:scene_fallback/terrain_transparent"
+          ],
+          "activeServices": []
+        },
+        {
+          "id": "all-off",
+          "options": {
+            "course:grade": false,
+            "course:glow": false
+          },
+          "activeResources": [
+            "resource:course:materials",
+            "resource:course:scene/color",
+            "resource:course:scene/depth"
+          ],
+          "activeCommands": [
+            "command:course:present-raw:0",
+            "command:course:terrain_alpha_tested:0",
+            "command:course:terrain_opaque:0",
+            "command:course:terrain_sorted_translucent:0",
+            "command:course:terrain_transparent:0"
+          ],
+          "activePrograms": [
+            "program:course:post/present",
+            "program:course:scene/terrain",
+            "program:dawnlight:scene_fallback/terrain_alpha_tested",
+            "program:dawnlight:scene_fallback/terrain_sorted_translucent",
+            "program:dawnlight:scene_fallback/terrain_transparent"
+          ],
+          "activeServices": []
+        }
+      ],
+      "runtimeEvidence": {
+        "driverStatus": "notProvided",
+        "runtimeEvaluated": false,
+        "liveWorldVerified": false,
+        "visual": "notRun"
+      }
+    },
+    {
+      "id": "course/09-complete-pack",
+      "status": "passed",
+      "sourceFingerprint": "2753e348e5f83c84d1814aab1c40778a86d955a4312816ac3c4d8c5008cbe4cc",
+      "definitionSha256": "8ac61c2e445425b2903c97dcaed8f1294d0fc15dd814e5e9b8811f6089e6598a",
+      "archiveSha256": "922ac418657ebab39666b9d4d89e074660809e8bd5fbf5a184edc4e7d8ee4c63",
+      "archiveLength": 9473,
+      "files": [
+        {
+          "path": "README.md",
+          "length": 3163,
+          "sha256": "6b9eb160a266d924e538b3df376233d876c19120b3e93c1c176d18c8d56b603c"
+        },
+        {
+          "path": "manifest/data.json",
+          "length": 3313,
+          "sha256": "8f0179aa357205ae8cce8f7c7b36423885bcb26c4edc14afe4056593367449c9"
+        },
+        {
+          "path": "manifest/options.json",
+          "length": 662,
+          "sha256": "460cbe38cc3b5dc20657a3a7cd4b62f8f9cdae44bb10364e0e0f3e3d9cd345fc"
+        },
+        {
+          "path": "manifest/passes.json",
+          "length": 14412,
+          "sha256": "007add48380360859b8aa7bb5d2104551d76f0949ee86b5554fa7d4a7a14451e"
+        },
+        {
+          "path": "manifest/programs.json",
+          "length": 835,
+          "sha256": "0f8cec51d48e6f899db75c200cf4f78da4fad787a1cce56e48b1e63e561d6160"
+        },
+        {
+          "path": "manifest/resources.json",
+          "length": 1021,
+          "sha256": "644928aa0af3553422c90b63ef57d10a5c3eb88571c4929dece384fefe782778"
+        },
+        {
+          "path": "presets/balanced.json",
+          "length": 99,
+          "sha256": "a16352ff7d4699f650ec821410566a78e7b8a5f5dceb1d52a47f80db0efc07d5"
+        },
+        {
+          "path": "presets/economy.json",
+          "length": 99,
+          "sha256": "4957175c76b9776b0dff219ba02a0a4aaeca431b84d624703f4a57c3f1b98abc"
+        },
+        {
+          "path": "presets/neutral.json",
+          "length": 101,
+          "sha256": "14a18a716c6e8afcd9e119714fa074b000c198129a45df21659cb3f6015315ea"
+        },
+        {
+          "path": "settings.json",
+          "length": 1947,
+          "sha256": "42b145f416b0332241ef930b72dfcce4c278c4794bb05e99a3ce59f1ac31d095"
+        },
+        {
+          "path": "shaderpack.json",
+          "length": 1088,
+          "sha256": "a35e581c7dc0ce9ae020d7d130bb03ada2f92c72e85939789875cd1c61a1708e"
+        },
+        {
+          "path": "shaders/fullscreen.vsh",
+          "length": 298,
+          "sha256": "77e9c0fcd7803893b121b69daf13380f20b109f2d4e23964014b367531053c92"
+        },
+        {
+          "path": "shaders/glow.psh",
+          "length": 649,
+          "sha256": "217f4b4405eaed3c5afea9c1b5ca4f3e1b5a78d5e3ed637cec708dcf9e624819"
+        },
+        {
+          "path": "shaders/grade.psh",
+          "length": 644,
+          "sha256": "18ac438c83ac99b44e8f59142a92a9183b8ac083abf04678691c07c46ae45c2c"
+        },
+        {
+          "path": "shaders/present.psh",
+          "length": 181,
+          "sha256": "d8ef4f9a0e1b4be69e9b6a1f841e80252e1bf797f98f036a1938c14165bdb787"
+        },
+        {
+          "path": "shaders/terrain.psh",
+          "length": 700,
+          "sha256": "b801ead820b63c86048803e885f4d78876552dce6dbc43e8ef88e753eadd6524"
+        },
+        {
+          "path": "shaders/terrain.vsh",
+          "length": 1489,
+          "sha256": "cbc201620a46e6e5ec802aae4b9d569129a21b3af97016f6b98bb5506b112fb1"
+        }
+      ],
+      "manifestHash": "46be1c4361a03b7fd26a5cfc6f9908645d19ea3f7718039fec2d96804810483a",
+      "checks": [
+        {
+          "id": "pack",
+          "variant": "default",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "cc7cb50050e2c929c661dd3ecf68e75b05d2bf1cc315c16ac2808921906b9379",
+          "archiveOutputSha256": "cc7cb50050e2c929c661dd3ecf68e75b05d2bf1cc315c16ac2808921906b9379",
+          "manifestHash": "46be1c4361a03b7fd26a5cfc6f9908645d19ea3f7718039fec2d96804810483a"
+        },
+        {
+          "id": "scene",
+          "variant": "default",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "fdc651a16e342c0df2dd7d9f503d626a9b337b306c4a10254912ee94586bcac4",
+          "archiveOutputSha256": "fdc651a16e342c0df2dd7d9f503d626a9b337b306c4a10254912ee94586bcac4",
+          "manifestHash": "46be1c4361a03b7fd26a5cfc6f9908645d19ea3f7718039fec2d96804810483a"
+        },
+        {
+          "id": "graph",
+          "variant": "default",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "24e9a294f64327be829ad631dfd8d7e9d66651a6ed634d0fc44449fb430deb27",
+          "archiveOutputSha256": "24e9a294f64327be829ad631dfd8d7e9d66651a6ed634d0fc44449fb430deb27",
+          "manifestHash": "46be1c4361a03b7fd26a5cfc6f9908645d19ea3f7718039fec2d96804810483a"
+        },
+        {
+          "id": "interface:course:scene/terrain",
+          "variant": "default",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "e5c4a98a844e98d3139510585a5e04cc2463d185267fe969141df04a8555e26e",
+          "archiveOutputSha256": "e5c4a98a844e98d3139510585a5e04cc2463d185267fe969141df04a8555e26e",
+          "manifestHash": "46be1c4361a03b7fd26a5cfc6f9908645d19ea3f7718039fec2d96804810483a"
+        },
+        {
+          "id": "interface:course:post/grade",
+          "variant": "default",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "3b4abd3499911bcdb423e0ad951d083d3d39aa6394ad68b090c348f5692ed0fb",
+          "archiveOutputSha256": "3b4abd3499911bcdb423e0ad951d083d3d39aa6394ad68b090c348f5692ed0fb",
+          "manifestHash": "46be1c4361a03b7fd26a5cfc6f9908645d19ea3f7718039fec2d96804810483a"
+        },
+        {
+          "id": "interface:course:post/present",
+          "variant": "default",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "7e7ab5c203af57dc2c54dcc92ade09ff4a11f13653d18816907cc817343ab941",
+          "archiveOutputSha256": "7e7ab5c203af57dc2c54dcc92ade09ff4a11f13653d18816907cc817343ab941",
+          "manifestHash": "46be1c4361a03b7fd26a5cfc6f9908645d19ea3f7718039fec2d96804810483a"
+        },
+        {
+          "id": "interface:course:post/glow",
+          "variant": "default",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "b9dd910568368a3612e69bae9f853324797e26acf9594eb3ec020f6785ea5009",
+          "archiveOutputSha256": "b9dd910568368a3612e69bae9f853324797e26acf9594eb3ec020f6785ea5009",
+          "manifestHash": "46be1c4361a03b7fd26a5cfc6f9908645d19ea3f7718039fec2d96804810483a"
+        },
+        {
+          "id": "data",
+          "variant": "default",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "203f3e24044334f33b02272cf6017a018c83e0fe182c244a4eea73ad5f39a661",
+          "archiveOutputSha256": "203f3e24044334f33b02272cf6017a018c83e0fe182c244a4eea73ad5f39a661",
+          "manifestHash": "46be1c4361a03b7fd26a5cfc6f9908645d19ea3f7718039fec2d96804810483a"
+        },
+        {
+          "id": "materials",
+          "variant": "default",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "90349d162f58155d69d68608cd31d6c59e053f11dd32bd00d7fb70549f1025da",
+          "archiveOutputSha256": "90349d162f58155d69d68608cd31d6c59e053f11dd32bd00d7fb70549f1025da",
+          "manifestHash": "46be1c4361a03b7fd26a5cfc6f9908645d19ea3f7718039fec2d96804810483a"
+        },
+        {
+          "id": "pack",
+          "variant": "grade-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "cc7cb50050e2c929c661dd3ecf68e75b05d2bf1cc315c16ac2808921906b9379",
+          "archiveOutputSha256": "cc7cb50050e2c929c661dd3ecf68e75b05d2bf1cc315c16ac2808921906b9379",
+          "manifestHash": "46be1c4361a03b7fd26a5cfc6f9908645d19ea3f7718039fec2d96804810483a"
+        },
+        {
+          "id": "scene",
+          "variant": "grade-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "fdc651a16e342c0df2dd7d9f503d626a9b337b306c4a10254912ee94586bcac4",
+          "archiveOutputSha256": "fdc651a16e342c0df2dd7d9f503d626a9b337b306c4a10254912ee94586bcac4",
+          "manifestHash": "46be1c4361a03b7fd26a5cfc6f9908645d19ea3f7718039fec2d96804810483a"
+        },
+        {
+          "id": "graph",
+          "variant": "grade-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "5436f91fc12434a4ef280d75cb763e22fba6e7087d8b15bb9c6dfc8569d05814",
+          "archiveOutputSha256": "5436f91fc12434a4ef280d75cb763e22fba6e7087d8b15bb9c6dfc8569d05814",
+          "manifestHash": "46be1c4361a03b7fd26a5cfc6f9908645d19ea3f7718039fec2d96804810483a"
+        },
+        {
+          "id": "interface:course:scene/terrain",
+          "variant": "grade-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "e5c4a98a844e98d3139510585a5e04cc2463d185267fe969141df04a8555e26e",
+          "archiveOutputSha256": "e5c4a98a844e98d3139510585a5e04cc2463d185267fe969141df04a8555e26e",
+          "manifestHash": "46be1c4361a03b7fd26a5cfc6f9908645d19ea3f7718039fec2d96804810483a"
+        },
+        {
+          "id": "interface:course:post/grade",
+          "variant": "grade-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "3b4abd3499911bcdb423e0ad951d083d3d39aa6394ad68b090c348f5692ed0fb",
+          "archiveOutputSha256": "3b4abd3499911bcdb423e0ad951d083d3d39aa6394ad68b090c348f5692ed0fb",
+          "manifestHash": "46be1c4361a03b7fd26a5cfc6f9908645d19ea3f7718039fec2d96804810483a"
+        },
+        {
+          "id": "interface:course:post/present",
+          "variant": "grade-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "7e7ab5c203af57dc2c54dcc92ade09ff4a11f13653d18816907cc817343ab941",
+          "archiveOutputSha256": "7e7ab5c203af57dc2c54dcc92ade09ff4a11f13653d18816907cc817343ab941",
+          "manifestHash": "46be1c4361a03b7fd26a5cfc6f9908645d19ea3f7718039fec2d96804810483a"
+        },
+        {
+          "id": "interface:course:post/glow",
+          "variant": "grade-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "b9dd910568368a3612e69bae9f853324797e26acf9594eb3ec020f6785ea5009",
+          "archiveOutputSha256": "b9dd910568368a3612e69bae9f853324797e26acf9594eb3ec020f6785ea5009",
+          "manifestHash": "46be1c4361a03b7fd26a5cfc6f9908645d19ea3f7718039fec2d96804810483a"
+        },
+        {
+          "id": "data",
+          "variant": "grade-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "203f3e24044334f33b02272cf6017a018c83e0fe182c244a4eea73ad5f39a661",
+          "archiveOutputSha256": "203f3e24044334f33b02272cf6017a018c83e0fe182c244a4eea73ad5f39a661",
+          "manifestHash": "46be1c4361a03b7fd26a5cfc6f9908645d19ea3f7718039fec2d96804810483a"
+        },
+        {
+          "id": "materials",
+          "variant": "grade-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "90349d162f58155d69d68608cd31d6c59e053f11dd32bd00d7fb70549f1025da",
+          "archiveOutputSha256": "90349d162f58155d69d68608cd31d6c59e053f11dd32bd00d7fb70549f1025da",
+          "manifestHash": "46be1c4361a03b7fd26a5cfc6f9908645d19ea3f7718039fec2d96804810483a"
+        },
+        {
+          "id": "pack",
+          "variant": "strength-max",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "cc7cb50050e2c929c661dd3ecf68e75b05d2bf1cc315c16ac2808921906b9379",
+          "archiveOutputSha256": "cc7cb50050e2c929c661dd3ecf68e75b05d2bf1cc315c16ac2808921906b9379",
+          "manifestHash": "46be1c4361a03b7fd26a5cfc6f9908645d19ea3f7718039fec2d96804810483a"
+        },
+        {
+          "id": "scene",
+          "variant": "strength-max",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "fdc651a16e342c0df2dd7d9f503d626a9b337b306c4a10254912ee94586bcac4",
+          "archiveOutputSha256": "fdc651a16e342c0df2dd7d9f503d626a9b337b306c4a10254912ee94586bcac4",
+          "manifestHash": "46be1c4361a03b7fd26a5cfc6f9908645d19ea3f7718039fec2d96804810483a"
+        },
+        {
+          "id": "graph",
+          "variant": "strength-max",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "34582835555b8cd279df8881257a39d7a6c888c0cb4051d048883761a2a8524b",
+          "archiveOutputSha256": "34582835555b8cd279df8881257a39d7a6c888c0cb4051d048883761a2a8524b",
+          "manifestHash": "46be1c4361a03b7fd26a5cfc6f9908645d19ea3f7718039fec2d96804810483a"
+        },
+        {
+          "id": "interface:course:scene/terrain",
+          "variant": "strength-max",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "2a01153b2c8c6e9faf383e85699d0edde1f86be2b96aa97a3502cf919e86fb09",
+          "archiveOutputSha256": "2a01153b2c8c6e9faf383e85699d0edde1f86be2b96aa97a3502cf919e86fb09",
+          "manifestHash": "46be1c4361a03b7fd26a5cfc6f9908645d19ea3f7718039fec2d96804810483a"
+        },
+        {
+          "id": "interface:course:post/grade",
+          "variant": "strength-max",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "6472df3ff1772ec67aaa30502ae81caa9947d3b896910962272c41118ac6e3b5",
+          "archiveOutputSha256": "6472df3ff1772ec67aaa30502ae81caa9947d3b896910962272c41118ac6e3b5",
+          "manifestHash": "46be1c4361a03b7fd26a5cfc6f9908645d19ea3f7718039fec2d96804810483a"
+        },
+        {
+          "id": "interface:course:post/present",
+          "variant": "strength-max",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "902424d8c056b50f8aaf2f218c0d82b9467063c486abb4728919a6c3948c9a6c",
+          "archiveOutputSha256": "902424d8c056b50f8aaf2f218c0d82b9467063c486abb4728919a6c3948c9a6c",
+          "manifestHash": "46be1c4361a03b7fd26a5cfc6f9908645d19ea3f7718039fec2d96804810483a"
+        },
+        {
+          "id": "interface:course:post/glow",
+          "variant": "strength-max",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "e26b09fddcbd3aa1257dba02fd91a3e408eb2e5f0e0bf9633d899971d2af1dd3",
+          "archiveOutputSha256": "e26b09fddcbd3aa1257dba02fd91a3e408eb2e5f0e0bf9633d899971d2af1dd3",
+          "manifestHash": "46be1c4361a03b7fd26a5cfc6f9908645d19ea3f7718039fec2d96804810483a"
+        },
+        {
+          "id": "data",
+          "variant": "strength-max",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "62d8dc920ea5e936f088c2916828c285ab694dc1e781fcd50c4a0359e9eb876b",
+          "archiveOutputSha256": "62d8dc920ea5e936f088c2916828c285ab694dc1e781fcd50c4a0359e9eb876b",
+          "manifestHash": "46be1c4361a03b7fd26a5cfc6f9908645d19ea3f7718039fec2d96804810483a"
+        },
+        {
+          "id": "materials",
+          "variant": "strength-max",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "90349d162f58155d69d68608cd31d6c59e053f11dd32bd00d7fb70549f1025da",
+          "archiveOutputSha256": "90349d162f58155d69d68608cd31d6c59e053f11dd32bd00d7fb70549f1025da",
+          "manifestHash": "46be1c4361a03b7fd26a5cfc6f9908645d19ea3f7718039fec2d96804810483a"
+        },
+        {
+          "id": "pack",
+          "variant": "glow-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "cc7cb50050e2c929c661dd3ecf68e75b05d2bf1cc315c16ac2808921906b9379",
+          "archiveOutputSha256": "cc7cb50050e2c929c661dd3ecf68e75b05d2bf1cc315c16ac2808921906b9379",
+          "manifestHash": "46be1c4361a03b7fd26a5cfc6f9908645d19ea3f7718039fec2d96804810483a"
+        },
+        {
+          "id": "scene",
+          "variant": "glow-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "fdc651a16e342c0df2dd7d9f503d626a9b337b306c4a10254912ee94586bcac4",
+          "archiveOutputSha256": "fdc651a16e342c0df2dd7d9f503d626a9b337b306c4a10254912ee94586bcac4",
+          "manifestHash": "46be1c4361a03b7fd26a5cfc6f9908645d19ea3f7718039fec2d96804810483a"
+        },
+        {
+          "id": "graph",
+          "variant": "glow-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "e77ed660477e7a4f8ed7d68dfe6bb12469ccff3ce6713fcec76ea6b8b12a3d12",
+          "archiveOutputSha256": "e77ed660477e7a4f8ed7d68dfe6bb12469ccff3ce6713fcec76ea6b8b12a3d12",
+          "manifestHash": "46be1c4361a03b7fd26a5cfc6f9908645d19ea3f7718039fec2d96804810483a"
+        },
+        {
+          "id": "interface:course:scene/terrain",
+          "variant": "glow-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "e5c4a98a844e98d3139510585a5e04cc2463d185267fe969141df04a8555e26e",
+          "archiveOutputSha256": "e5c4a98a844e98d3139510585a5e04cc2463d185267fe969141df04a8555e26e",
+          "manifestHash": "46be1c4361a03b7fd26a5cfc6f9908645d19ea3f7718039fec2d96804810483a"
+        },
+        {
+          "id": "interface:course:post/grade",
+          "variant": "glow-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "3b4abd3499911bcdb423e0ad951d083d3d39aa6394ad68b090c348f5692ed0fb",
+          "archiveOutputSha256": "3b4abd3499911bcdb423e0ad951d083d3d39aa6394ad68b090c348f5692ed0fb",
+          "manifestHash": "46be1c4361a03b7fd26a5cfc6f9908645d19ea3f7718039fec2d96804810483a"
+        },
+        {
+          "id": "interface:course:post/present",
+          "variant": "glow-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "7e7ab5c203af57dc2c54dcc92ade09ff4a11f13653d18816907cc817343ab941",
+          "archiveOutputSha256": "7e7ab5c203af57dc2c54dcc92ade09ff4a11f13653d18816907cc817343ab941",
+          "manifestHash": "46be1c4361a03b7fd26a5cfc6f9908645d19ea3f7718039fec2d96804810483a"
+        },
+        {
+          "id": "interface:course:post/glow",
+          "variant": "glow-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "b9dd910568368a3612e69bae9f853324797e26acf9594eb3ec020f6785ea5009",
+          "archiveOutputSha256": "b9dd910568368a3612e69bae9f853324797e26acf9594eb3ec020f6785ea5009",
+          "manifestHash": "46be1c4361a03b7fd26a5cfc6f9908645d19ea3f7718039fec2d96804810483a"
+        },
+        {
+          "id": "data",
+          "variant": "glow-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "203f3e24044334f33b02272cf6017a018c83e0fe182c244a4eea73ad5f39a661",
+          "archiveOutputSha256": "203f3e24044334f33b02272cf6017a018c83e0fe182c244a4eea73ad5f39a661",
+          "manifestHash": "46be1c4361a03b7fd26a5cfc6f9908645d19ea3f7718039fec2d96804810483a"
+        },
+        {
+          "id": "materials",
+          "variant": "glow-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "90349d162f58155d69d68608cd31d6c59e053f11dd32bd00d7fb70549f1025da",
+          "archiveOutputSha256": "90349d162f58155d69d68608cd31d6c59e053f11dd32bd00d7fb70549f1025da",
+          "manifestHash": "46be1c4361a03b7fd26a5cfc6f9908645d19ea3f7718039fec2d96804810483a"
+        },
+        {
+          "id": "pack",
+          "variant": "all-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "cc7cb50050e2c929c661dd3ecf68e75b05d2bf1cc315c16ac2808921906b9379",
+          "archiveOutputSha256": "cc7cb50050e2c929c661dd3ecf68e75b05d2bf1cc315c16ac2808921906b9379",
+          "manifestHash": "46be1c4361a03b7fd26a5cfc6f9908645d19ea3f7718039fec2d96804810483a"
+        },
+        {
+          "id": "scene",
+          "variant": "all-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "fdc651a16e342c0df2dd7d9f503d626a9b337b306c4a10254912ee94586bcac4",
+          "archiveOutputSha256": "fdc651a16e342c0df2dd7d9f503d626a9b337b306c4a10254912ee94586bcac4",
+          "manifestHash": "46be1c4361a03b7fd26a5cfc6f9908645d19ea3f7718039fec2d96804810483a"
+        },
+        {
+          "id": "graph",
+          "variant": "all-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "f5e81e371c17de7eeb51374181091f0f9382a7af20808c8f4d8da6922d275cf9",
+          "archiveOutputSha256": "f5e81e371c17de7eeb51374181091f0f9382a7af20808c8f4d8da6922d275cf9",
+          "manifestHash": "46be1c4361a03b7fd26a5cfc6f9908645d19ea3f7718039fec2d96804810483a"
+        },
+        {
+          "id": "interface:course:scene/terrain",
+          "variant": "all-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "e5c4a98a844e98d3139510585a5e04cc2463d185267fe969141df04a8555e26e",
+          "archiveOutputSha256": "e5c4a98a844e98d3139510585a5e04cc2463d185267fe969141df04a8555e26e",
+          "manifestHash": "46be1c4361a03b7fd26a5cfc6f9908645d19ea3f7718039fec2d96804810483a"
+        },
+        {
+          "id": "interface:course:post/grade",
+          "variant": "all-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "3b4abd3499911bcdb423e0ad951d083d3d39aa6394ad68b090c348f5692ed0fb",
+          "archiveOutputSha256": "3b4abd3499911bcdb423e0ad951d083d3d39aa6394ad68b090c348f5692ed0fb",
+          "manifestHash": "46be1c4361a03b7fd26a5cfc6f9908645d19ea3f7718039fec2d96804810483a"
+        },
+        {
+          "id": "interface:course:post/present",
+          "variant": "all-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "7e7ab5c203af57dc2c54dcc92ade09ff4a11f13653d18816907cc817343ab941",
+          "archiveOutputSha256": "7e7ab5c203af57dc2c54dcc92ade09ff4a11f13653d18816907cc817343ab941",
+          "manifestHash": "46be1c4361a03b7fd26a5cfc6f9908645d19ea3f7718039fec2d96804810483a"
+        },
+        {
+          "id": "interface:course:post/glow",
+          "variant": "all-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "b9dd910568368a3612e69bae9f853324797e26acf9594eb3ec020f6785ea5009",
+          "archiveOutputSha256": "b9dd910568368a3612e69bae9f853324797e26acf9594eb3ec020f6785ea5009",
+          "manifestHash": "46be1c4361a03b7fd26a5cfc6f9908645d19ea3f7718039fec2d96804810483a"
+        },
+        {
+          "id": "data",
+          "variant": "all-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "203f3e24044334f33b02272cf6017a018c83e0fe182c244a4eea73ad5f39a661",
+          "archiveOutputSha256": "203f3e24044334f33b02272cf6017a018c83e0fe182c244a4eea73ad5f39a661",
+          "manifestHash": "46be1c4361a03b7fd26a5cfc6f9908645d19ea3f7718039fec2d96804810483a"
+        },
+        {
+          "id": "materials",
+          "variant": "all-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "90349d162f58155d69d68608cd31d6c59e053f11dd32bd00d7fb70549f1025da",
+          "archiveOutputSha256": "90349d162f58155d69d68608cd31d6c59e053f11dd32bd00d7fb70549f1025da",
+          "manifestHash": "46be1c4361a03b7fd26a5cfc6f9908645d19ea3f7718039fec2d96804810483a"
+        },
+        {
+          "id": "pack",
+          "variant": "economy",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "cc7cb50050e2c929c661dd3ecf68e75b05d2bf1cc315c16ac2808921906b9379",
+          "archiveOutputSha256": "cc7cb50050e2c929c661dd3ecf68e75b05d2bf1cc315c16ac2808921906b9379",
+          "manifestHash": "46be1c4361a03b7fd26a5cfc6f9908645d19ea3f7718039fec2d96804810483a"
+        },
+        {
+          "id": "scene",
+          "variant": "economy",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "fdc651a16e342c0df2dd7d9f503d626a9b337b306c4a10254912ee94586bcac4",
+          "archiveOutputSha256": "fdc651a16e342c0df2dd7d9f503d626a9b337b306c4a10254912ee94586bcac4",
+          "manifestHash": "46be1c4361a03b7fd26a5cfc6f9908645d19ea3f7718039fec2d96804810483a"
+        },
+        {
+          "id": "graph",
+          "variant": "economy",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "b0ae4079df1bc251d75e7527c84d603eb201e0e4c7502a7c6f11d3621f4a9eda",
+          "archiveOutputSha256": "b0ae4079df1bc251d75e7527c84d603eb201e0e4c7502a7c6f11d3621f4a9eda",
+          "manifestHash": "46be1c4361a03b7fd26a5cfc6f9908645d19ea3f7718039fec2d96804810483a"
+        },
+        {
+          "id": "interface:course:scene/terrain",
+          "variant": "economy",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "e5c4a98a844e98d3139510585a5e04cc2463d185267fe969141df04a8555e26e",
+          "archiveOutputSha256": "e5c4a98a844e98d3139510585a5e04cc2463d185267fe969141df04a8555e26e",
+          "manifestHash": "46be1c4361a03b7fd26a5cfc6f9908645d19ea3f7718039fec2d96804810483a"
+        },
+        {
+          "id": "interface:course:post/grade",
+          "variant": "economy",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "dee455dbf84a348363d377f353353f343d14e4740fc1cab18ea75fef9deda3de",
+          "archiveOutputSha256": "dee455dbf84a348363d377f353353f343d14e4740fc1cab18ea75fef9deda3de",
+          "manifestHash": "46be1c4361a03b7fd26a5cfc6f9908645d19ea3f7718039fec2d96804810483a"
+        },
+        {
+          "id": "interface:course:post/present",
+          "variant": "economy",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "7e7ab5c203af57dc2c54dcc92ade09ff4a11f13653d18816907cc817343ab941",
+          "archiveOutputSha256": "7e7ab5c203af57dc2c54dcc92ade09ff4a11f13653d18816907cc817343ab941",
+          "manifestHash": "46be1c4361a03b7fd26a5cfc6f9908645d19ea3f7718039fec2d96804810483a"
+        },
+        {
+          "id": "interface:course:post/glow",
+          "variant": "economy",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "b9dd910568368a3612e69bae9f853324797e26acf9594eb3ec020f6785ea5009",
+          "archiveOutputSha256": "b9dd910568368a3612e69bae9f853324797e26acf9594eb3ec020f6785ea5009",
+          "manifestHash": "46be1c4361a03b7fd26a5cfc6f9908645d19ea3f7718039fec2d96804810483a"
+        },
+        {
+          "id": "data",
+          "variant": "economy",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "203f3e24044334f33b02272cf6017a018c83e0fe182c244a4eea73ad5f39a661",
+          "archiveOutputSha256": "203f3e24044334f33b02272cf6017a018c83e0fe182c244a4eea73ad5f39a661",
+          "manifestHash": "46be1c4361a03b7fd26a5cfc6f9908645d19ea3f7718039fec2d96804810483a"
+        },
+        {
+          "id": "materials",
+          "variant": "economy",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "90349d162f58155d69d68608cd31d6c59e053f11dd32bd00d7fb70549f1025da",
+          "archiveOutputSha256": "90349d162f58155d69d68608cd31d6c59e053f11dd32bd00d7fb70549f1025da",
+          "manifestHash": "46be1c4361a03b7fd26a5cfc6f9908645d19ea3f7718039fec2d96804810483a"
+        }
+      ],
+      "branches": [
+        {
+          "id": "default",
+          "options": {},
+          "activeResources": [
+            "resource:course:materials",
+            "resource:course:post/color",
+            "resource:course:post/glow",
+            "resource:course:scene/color",
+            "resource:course:scene/depth"
+          ],
+          "activeCommands": [
+            "command:course:glow:0",
+            "command:course:grade:0",
+            "command:course:present-glow:0",
+            "command:course:terrain_alpha_tested:0",
+            "command:course:terrain_opaque:0",
+            "command:course:terrain_sorted_translucent:0",
+            "command:course:terrain_transparent:0"
+          ],
+          "activePrograms": [
+            "program:course:post/glow",
+            "program:course:post/grade",
+            "program:course:post/present",
+            "program:course:scene/terrain",
+            "program:dawnlight:scene_fallback/terrain_alpha_tested",
+            "program:dawnlight:scene_fallback/terrain_sorted_translucent",
+            "program:dawnlight:scene_fallback/terrain_transparent"
+          ],
+          "activeServices": []
+        },
+        {
+          "id": "grade-off",
+          "options": {
+            "course:grade": false
+          },
+          "activeResources": [
+            "resource:course:materials",
+            "resource:course:scene/color",
+            "resource:course:scene/depth"
+          ],
+          "activeCommands": [
+            "command:course:present-raw:0",
+            "command:course:terrain_alpha_tested:0",
+            "command:course:terrain_opaque:0",
+            "command:course:terrain_sorted_translucent:0",
+            "command:course:terrain_transparent:0"
+          ],
+          "activePrograms": [
+            "program:course:post/present",
+            "program:course:scene/terrain",
+            "program:dawnlight:scene_fallback/terrain_alpha_tested",
+            "program:dawnlight:scene_fallback/terrain_sorted_translucent",
+            "program:dawnlight:scene_fallback/terrain_transparent"
+          ],
+          "activeServices": []
+        },
+        {
+          "id": "strength-max",
+          "options": {
+            "course:strength": 1,
+            "course:gain": 1.2
+          },
+          "activeResources": [
+            "resource:course:materials",
+            "resource:course:post/color",
+            "resource:course:post/glow",
+            "resource:course:scene/color",
+            "resource:course:scene/depth"
+          ],
+          "activeCommands": [
+            "command:course:glow:0",
+            "command:course:grade:0",
+            "command:course:present-glow:0",
+            "command:course:terrain_alpha_tested:0",
+            "command:course:terrain_opaque:0",
+            "command:course:terrain_sorted_translucent:0",
+            "command:course:terrain_transparent:0"
+          ],
+          "activePrograms": [
+            "program:course:post/glow",
+            "program:course:post/grade",
+            "program:course:post/present",
+            "program:course:scene/terrain",
+            "program:dawnlight:scene_fallback/terrain_alpha_tested",
+            "program:dawnlight:scene_fallback/terrain_sorted_translucent",
+            "program:dawnlight:scene_fallback/terrain_transparent"
+          ],
+          "activeServices": []
+        },
+        {
+          "id": "glow-off",
+          "options": {
+            "course:glow": false
+          },
+          "activeResources": [
+            "resource:course:materials",
+            "resource:course:post/color",
+            "resource:course:scene/color",
+            "resource:course:scene/depth"
+          ],
+          "activeCommands": [
+            "command:course:grade:0",
+            "command:course:present-grade:0",
+            "command:course:terrain_alpha_tested:0",
+            "command:course:terrain_opaque:0",
+            "command:course:terrain_sorted_translucent:0",
+            "command:course:terrain_transparent:0"
+          ],
+          "activePrograms": [
+            "program:course:post/grade",
+            "program:course:post/present",
+            "program:course:scene/terrain",
+            "program:dawnlight:scene_fallback/terrain_alpha_tested",
+            "program:dawnlight:scene_fallback/terrain_sorted_translucent",
+            "program:dawnlight:scene_fallback/terrain_transparent"
+          ],
+          "activeServices": []
+        },
+        {
+          "id": "all-off",
+          "options": {
+            "course:grade": false,
+            "course:glow": false
+          },
+          "activeResources": [
+            "resource:course:materials",
+            "resource:course:scene/color",
+            "resource:course:scene/depth"
+          ],
+          "activeCommands": [
+            "command:course:present-raw:0",
+            "command:course:terrain_alpha_tested:0",
+            "command:course:terrain_opaque:0",
+            "command:course:terrain_sorted_translucent:0",
+            "command:course:terrain_transparent:0"
+          ],
+          "activePrograms": [
+            "program:course:post/present",
+            "program:course:scene/terrain",
+            "program:dawnlight:scene_fallback/terrain_alpha_tested",
+            "program:dawnlight:scene_fallback/terrain_sorted_translucent",
+            "program:dawnlight:scene_fallback/terrain_transparent"
+          ],
+          "activeServices": []
+        },
+        {
+          "id": "economy",
+          "options": {
+            "course:grade": true,
+            "course:glow": false,
+            "course:strength": 0.4,
+            "course:gain": 1
+          },
+          "activeResources": [
+            "resource:course:materials",
+            "resource:course:post/color",
+            "resource:course:scene/color",
+            "resource:course:scene/depth"
+          ],
+          "activeCommands": [
+            "command:course:grade:0",
+            "command:course:present-grade:0",
+            "command:course:terrain_alpha_tested:0",
+            "command:course:terrain_opaque:0",
+            "command:course:terrain_sorted_translucent:0",
+            "command:course:terrain_transparent:0"
+          ],
+          "activePrograms": [
+            "program:course:post/grade",
+            "program:course:post/present",
+            "program:course:scene/terrain",
+            "program:dawnlight:scene_fallback/terrain_alpha_tested",
+            "program:dawnlight:scene_fallback/terrain_sorted_translucent",
+            "program:dawnlight:scene_fallback/terrain_transparent"
+          ],
+          "activeServices": []
+        }
+      ],
+      "runtimeEvidence": {
+        "driverStatus": "notProvided",
+        "runtimeEvaluated": false,
+        "liveWorldVerified": false,
+        "visual": "notRun"
+      }
+    },
+    {
+      "id": "course/10-distribution",
+      "status": "passed",
+      "sourceFingerprint": "79ed24ac3d796f5ed8b60dcea274cf4de7e3cac0a43c792652d2f5fb62bdffc3",
+      "definitionSha256": "7f376e30cd02839397233124355d127d35c33610cbb388a40ea763e5eae5e6d3",
+      "archiveSha256": "94c232295f739d510d33d509503073a149db58825618444d9704ecc4560f636c",
+      "archiveLength": 9468,
+      "files": [
+        {
+          "path": "README.md",
+          "length": 3158,
+          "sha256": "a6a5e8a87452b20c3b55a3f246dacca2d3a1e846b7015cd8ddbfb63f386ad14c"
+        },
+        {
+          "path": "manifest/data.json",
+          "length": 3313,
+          "sha256": "8f0179aa357205ae8cce8f7c7b36423885bcb26c4edc14afe4056593367449c9"
+        },
+        {
+          "path": "manifest/options.json",
+          "length": 662,
+          "sha256": "460cbe38cc3b5dc20657a3a7cd4b62f8f9cdae44bb10364e0e0f3e3d9cd345fc"
+        },
+        {
+          "path": "manifest/passes.json",
+          "length": 14412,
+          "sha256": "007add48380360859b8aa7bb5d2104551d76f0949ee86b5554fa7d4a7a14451e"
+        },
+        {
+          "path": "manifest/programs.json",
+          "length": 835,
+          "sha256": "0f8cec51d48e6f899db75c200cf4f78da4fad787a1cce56e48b1e63e561d6160"
+        },
+        {
+          "path": "manifest/resources.json",
+          "length": 1021,
+          "sha256": "644928aa0af3553422c90b63ef57d10a5c3eb88571c4929dece384fefe782778"
+        },
+        {
+          "path": "presets/balanced.json",
+          "length": 99,
+          "sha256": "a16352ff7d4699f650ec821410566a78e7b8a5f5dceb1d52a47f80db0efc07d5"
+        },
+        {
+          "path": "presets/economy.json",
+          "length": 99,
+          "sha256": "4957175c76b9776b0dff219ba02a0a4aaeca431b84d624703f4a57c3f1b98abc"
+        },
+        {
+          "path": "presets/neutral.json",
+          "length": 101,
+          "sha256": "14a18a716c6e8afcd9e119714fa074b000c198129a45df21659cb3f6015315ea"
+        },
+        {
+          "path": "settings.json",
+          "length": 1947,
+          "sha256": "42b145f416b0332241ef930b72dfcce4c278c4794bb05e99a3ce59f1ac31d095"
+        },
+        {
+          "path": "shaderpack.json",
+          "length": 1086,
+          "sha256": "cc3f5a7b8093c7a1ec80e2f324cd092f9abd8a452da0eccbfeee2ba9a4874baf"
+        },
+        {
+          "path": "shaders/fullscreen.vsh",
+          "length": 298,
+          "sha256": "77e9c0fcd7803893b121b69daf13380f20b109f2d4e23964014b367531053c92"
+        },
+        {
+          "path": "shaders/glow.psh",
+          "length": 649,
+          "sha256": "217f4b4405eaed3c5afea9c1b5ca4f3e1b5a78d5e3ed637cec708dcf9e624819"
+        },
+        {
+          "path": "shaders/grade.psh",
+          "length": 644,
+          "sha256": "18ac438c83ac99b44e8f59142a92a9183b8ac083abf04678691c07c46ae45c2c"
+        },
+        {
+          "path": "shaders/present.psh",
+          "length": 181,
+          "sha256": "d8ef4f9a0e1b4be69e9b6a1f841e80252e1bf797f98f036a1938c14165bdb787"
+        },
+        {
+          "path": "shaders/terrain.psh",
+          "length": 700,
+          "sha256": "b801ead820b63c86048803e885f4d78876552dce6dbc43e8ef88e753eadd6524"
+        },
+        {
+          "path": "shaders/terrain.vsh",
+          "length": 1489,
+          "sha256": "cbc201620a46e6e5ec802aae4b9d569129a21b3af97016f6b98bb5506b112fb1"
+        }
+      ],
+      "manifestHash": "39fa637f175a5510ccb6e969bf84315fd684ddf3130bda698c87ad39499e8f81",
+      "checks": [
+        {
+          "id": "pack",
+          "variant": "default",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "5c51a29ccc83877cd7427940589412fad34e7af7fcfbb1777ec257e9c20a8460",
+          "archiveOutputSha256": "5c51a29ccc83877cd7427940589412fad34e7af7fcfbb1777ec257e9c20a8460",
+          "manifestHash": "39fa637f175a5510ccb6e969bf84315fd684ddf3130bda698c87ad39499e8f81"
+        },
+        {
+          "id": "scene",
+          "variant": "default",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "be387b104a6b23fc42ed3a1f99868d69009f25606e3a9d54ff0ebdef3d32f5dc",
+          "archiveOutputSha256": "be387b104a6b23fc42ed3a1f99868d69009f25606e3a9d54ff0ebdef3d32f5dc",
+          "manifestHash": "39fa637f175a5510ccb6e969bf84315fd684ddf3130bda698c87ad39499e8f81"
+        },
+        {
+          "id": "graph",
+          "variant": "default",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "bbf65adb0f8b8d80b868ed7392da22622be5011a3fafbb4338207656a461f4dc",
+          "archiveOutputSha256": "bbf65adb0f8b8d80b868ed7392da22622be5011a3fafbb4338207656a461f4dc",
+          "manifestHash": "39fa637f175a5510ccb6e969bf84315fd684ddf3130bda698c87ad39499e8f81"
+        },
+        {
+          "id": "interface:course:scene/terrain",
+          "variant": "default",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "97481223305430dfb1777112fd43d6a0e12a9833df7c4e1070d86a1b4093c998",
+          "archiveOutputSha256": "97481223305430dfb1777112fd43d6a0e12a9833df7c4e1070d86a1b4093c998",
+          "manifestHash": "39fa637f175a5510ccb6e969bf84315fd684ddf3130bda698c87ad39499e8f81"
+        },
+        {
+          "id": "interface:course:post/grade",
+          "variant": "default",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "1702f64b29bf5605ea54035ab556af9773cb727f4cfa4c8ffda17f301cafcb20",
+          "archiveOutputSha256": "1702f64b29bf5605ea54035ab556af9773cb727f4cfa4c8ffda17f301cafcb20",
+          "manifestHash": "39fa637f175a5510ccb6e969bf84315fd684ddf3130bda698c87ad39499e8f81"
+        },
+        {
+          "id": "interface:course:post/present",
+          "variant": "default",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "366622ac0e49876114f30b5ce1974dbd0476715f45a2ad7b3bce796e08de0b13",
+          "archiveOutputSha256": "366622ac0e49876114f30b5ce1974dbd0476715f45a2ad7b3bce796e08de0b13",
+          "manifestHash": "39fa637f175a5510ccb6e969bf84315fd684ddf3130bda698c87ad39499e8f81"
+        },
+        {
+          "id": "interface:course:post/glow",
+          "variant": "default",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "5d6f2336fef35d4262f1928a6629e97ec30614c01408ba0dde14df04cd0bc26f",
+          "archiveOutputSha256": "5d6f2336fef35d4262f1928a6629e97ec30614c01408ba0dde14df04cd0bc26f",
+          "manifestHash": "39fa637f175a5510ccb6e969bf84315fd684ddf3130bda698c87ad39499e8f81"
+        },
+        {
+          "id": "data",
+          "variant": "default",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "3dc4b6b96aa10bbbb88bcd6a68437082e1af065ae64718e13ee44fa474de7941",
+          "archiveOutputSha256": "3dc4b6b96aa10bbbb88bcd6a68437082e1af065ae64718e13ee44fa474de7941",
+          "manifestHash": "39fa637f175a5510ccb6e969bf84315fd684ddf3130bda698c87ad39499e8f81"
+        },
+        {
+          "id": "materials",
+          "variant": "default",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "a43551935b699a519c8667685a3f1819cc83a0834eadac7b6d58b13766945d80",
+          "archiveOutputSha256": "a43551935b699a519c8667685a3f1819cc83a0834eadac7b6d58b13766945d80",
+          "manifestHash": "39fa637f175a5510ccb6e969bf84315fd684ddf3130bda698c87ad39499e8f81"
+        },
+        {
+          "id": "pack",
+          "variant": "grade-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "5c51a29ccc83877cd7427940589412fad34e7af7fcfbb1777ec257e9c20a8460",
+          "archiveOutputSha256": "5c51a29ccc83877cd7427940589412fad34e7af7fcfbb1777ec257e9c20a8460",
+          "manifestHash": "39fa637f175a5510ccb6e969bf84315fd684ddf3130bda698c87ad39499e8f81"
+        },
+        {
+          "id": "scene",
+          "variant": "grade-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "be387b104a6b23fc42ed3a1f99868d69009f25606e3a9d54ff0ebdef3d32f5dc",
+          "archiveOutputSha256": "be387b104a6b23fc42ed3a1f99868d69009f25606e3a9d54ff0ebdef3d32f5dc",
+          "manifestHash": "39fa637f175a5510ccb6e969bf84315fd684ddf3130bda698c87ad39499e8f81"
+        },
+        {
+          "id": "graph",
+          "variant": "grade-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "19bc0979acfaf576e763453ffd650975740f8940dec2791f7584b9991349dae5",
+          "archiveOutputSha256": "19bc0979acfaf576e763453ffd650975740f8940dec2791f7584b9991349dae5",
+          "manifestHash": "39fa637f175a5510ccb6e969bf84315fd684ddf3130bda698c87ad39499e8f81"
+        },
+        {
+          "id": "interface:course:scene/terrain",
+          "variant": "grade-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "97481223305430dfb1777112fd43d6a0e12a9833df7c4e1070d86a1b4093c998",
+          "archiveOutputSha256": "97481223305430dfb1777112fd43d6a0e12a9833df7c4e1070d86a1b4093c998",
+          "manifestHash": "39fa637f175a5510ccb6e969bf84315fd684ddf3130bda698c87ad39499e8f81"
+        },
+        {
+          "id": "interface:course:post/grade",
+          "variant": "grade-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "1702f64b29bf5605ea54035ab556af9773cb727f4cfa4c8ffda17f301cafcb20",
+          "archiveOutputSha256": "1702f64b29bf5605ea54035ab556af9773cb727f4cfa4c8ffda17f301cafcb20",
+          "manifestHash": "39fa637f175a5510ccb6e969bf84315fd684ddf3130bda698c87ad39499e8f81"
+        },
+        {
+          "id": "interface:course:post/present",
+          "variant": "grade-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "366622ac0e49876114f30b5ce1974dbd0476715f45a2ad7b3bce796e08de0b13",
+          "archiveOutputSha256": "366622ac0e49876114f30b5ce1974dbd0476715f45a2ad7b3bce796e08de0b13",
+          "manifestHash": "39fa637f175a5510ccb6e969bf84315fd684ddf3130bda698c87ad39499e8f81"
+        },
+        {
+          "id": "interface:course:post/glow",
+          "variant": "grade-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "5d6f2336fef35d4262f1928a6629e97ec30614c01408ba0dde14df04cd0bc26f",
+          "archiveOutputSha256": "5d6f2336fef35d4262f1928a6629e97ec30614c01408ba0dde14df04cd0bc26f",
+          "manifestHash": "39fa637f175a5510ccb6e969bf84315fd684ddf3130bda698c87ad39499e8f81"
+        },
+        {
+          "id": "data",
+          "variant": "grade-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "3dc4b6b96aa10bbbb88bcd6a68437082e1af065ae64718e13ee44fa474de7941",
+          "archiveOutputSha256": "3dc4b6b96aa10bbbb88bcd6a68437082e1af065ae64718e13ee44fa474de7941",
+          "manifestHash": "39fa637f175a5510ccb6e969bf84315fd684ddf3130bda698c87ad39499e8f81"
+        },
+        {
+          "id": "materials",
+          "variant": "grade-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "a43551935b699a519c8667685a3f1819cc83a0834eadac7b6d58b13766945d80",
+          "archiveOutputSha256": "a43551935b699a519c8667685a3f1819cc83a0834eadac7b6d58b13766945d80",
+          "manifestHash": "39fa637f175a5510ccb6e969bf84315fd684ddf3130bda698c87ad39499e8f81"
+        },
+        {
+          "id": "pack",
+          "variant": "strength-max",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "5c51a29ccc83877cd7427940589412fad34e7af7fcfbb1777ec257e9c20a8460",
+          "archiveOutputSha256": "5c51a29ccc83877cd7427940589412fad34e7af7fcfbb1777ec257e9c20a8460",
+          "manifestHash": "39fa637f175a5510ccb6e969bf84315fd684ddf3130bda698c87ad39499e8f81"
+        },
+        {
+          "id": "scene",
+          "variant": "strength-max",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "be387b104a6b23fc42ed3a1f99868d69009f25606e3a9d54ff0ebdef3d32f5dc",
+          "archiveOutputSha256": "be387b104a6b23fc42ed3a1f99868d69009f25606e3a9d54ff0ebdef3d32f5dc",
+          "manifestHash": "39fa637f175a5510ccb6e969bf84315fd684ddf3130bda698c87ad39499e8f81"
+        },
+        {
+          "id": "graph",
+          "variant": "strength-max",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "a89a647bfea556066e7b3285e34e55150a7497d3d3a7255eaf7f28ff5e6f9328",
+          "archiveOutputSha256": "a89a647bfea556066e7b3285e34e55150a7497d3d3a7255eaf7f28ff5e6f9328",
+          "manifestHash": "39fa637f175a5510ccb6e969bf84315fd684ddf3130bda698c87ad39499e8f81"
+        },
+        {
+          "id": "interface:course:scene/terrain",
+          "variant": "strength-max",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "96aa1b0020028d032341b64b081eb269afd31490da205dc455485bb7cd599d9f",
+          "archiveOutputSha256": "96aa1b0020028d032341b64b081eb269afd31490da205dc455485bb7cd599d9f",
+          "manifestHash": "39fa637f175a5510ccb6e969bf84315fd684ddf3130bda698c87ad39499e8f81"
+        },
+        {
+          "id": "interface:course:post/grade",
+          "variant": "strength-max",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "c05e4b5542d44d30a24e473df71cecf531f9a2359c75971d2021f4e25a3baa17",
+          "archiveOutputSha256": "c05e4b5542d44d30a24e473df71cecf531f9a2359c75971d2021f4e25a3baa17",
+          "manifestHash": "39fa637f175a5510ccb6e969bf84315fd684ddf3130bda698c87ad39499e8f81"
+        },
+        {
+          "id": "interface:course:post/present",
+          "variant": "strength-max",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "dd58542c912f0287fc4ba43323067bdb30b9d95c09751c114fc93b9c9f7d677a",
+          "archiveOutputSha256": "dd58542c912f0287fc4ba43323067bdb30b9d95c09751c114fc93b9c9f7d677a",
+          "manifestHash": "39fa637f175a5510ccb6e969bf84315fd684ddf3130bda698c87ad39499e8f81"
+        },
+        {
+          "id": "interface:course:post/glow",
+          "variant": "strength-max",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "a436d52d159401c070e767bd04c17aa70a3c9d377f02055271b5632d63f22843",
+          "archiveOutputSha256": "a436d52d159401c070e767bd04c17aa70a3c9d377f02055271b5632d63f22843",
+          "manifestHash": "39fa637f175a5510ccb6e969bf84315fd684ddf3130bda698c87ad39499e8f81"
+        },
+        {
+          "id": "data",
+          "variant": "strength-max",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "c83a765c7af01c6aabb78f58ac6e9fdc4fb4b2758ff0c063d6cff8a96e867505",
+          "archiveOutputSha256": "c83a765c7af01c6aabb78f58ac6e9fdc4fb4b2758ff0c063d6cff8a96e867505",
+          "manifestHash": "39fa637f175a5510ccb6e969bf84315fd684ddf3130bda698c87ad39499e8f81"
+        },
+        {
+          "id": "materials",
+          "variant": "strength-max",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "a43551935b699a519c8667685a3f1819cc83a0834eadac7b6d58b13766945d80",
+          "archiveOutputSha256": "a43551935b699a519c8667685a3f1819cc83a0834eadac7b6d58b13766945d80",
+          "manifestHash": "39fa637f175a5510ccb6e969bf84315fd684ddf3130bda698c87ad39499e8f81"
+        },
+        {
+          "id": "pack",
+          "variant": "glow-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "5c51a29ccc83877cd7427940589412fad34e7af7fcfbb1777ec257e9c20a8460",
+          "archiveOutputSha256": "5c51a29ccc83877cd7427940589412fad34e7af7fcfbb1777ec257e9c20a8460",
+          "manifestHash": "39fa637f175a5510ccb6e969bf84315fd684ddf3130bda698c87ad39499e8f81"
+        },
+        {
+          "id": "scene",
+          "variant": "glow-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "be387b104a6b23fc42ed3a1f99868d69009f25606e3a9d54ff0ebdef3d32f5dc",
+          "archiveOutputSha256": "be387b104a6b23fc42ed3a1f99868d69009f25606e3a9d54ff0ebdef3d32f5dc",
+          "manifestHash": "39fa637f175a5510ccb6e969bf84315fd684ddf3130bda698c87ad39499e8f81"
+        },
+        {
+          "id": "graph",
+          "variant": "glow-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "7c581a632b309236e5bf6c1dd522e9b15f0305994929c759ac51041f3f6e922c",
+          "archiveOutputSha256": "7c581a632b309236e5bf6c1dd522e9b15f0305994929c759ac51041f3f6e922c",
+          "manifestHash": "39fa637f175a5510ccb6e969bf84315fd684ddf3130bda698c87ad39499e8f81"
+        },
+        {
+          "id": "interface:course:scene/terrain",
+          "variant": "glow-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "97481223305430dfb1777112fd43d6a0e12a9833df7c4e1070d86a1b4093c998",
+          "archiveOutputSha256": "97481223305430dfb1777112fd43d6a0e12a9833df7c4e1070d86a1b4093c998",
+          "manifestHash": "39fa637f175a5510ccb6e969bf84315fd684ddf3130bda698c87ad39499e8f81"
+        },
+        {
+          "id": "interface:course:post/grade",
+          "variant": "glow-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "1702f64b29bf5605ea54035ab556af9773cb727f4cfa4c8ffda17f301cafcb20",
+          "archiveOutputSha256": "1702f64b29bf5605ea54035ab556af9773cb727f4cfa4c8ffda17f301cafcb20",
+          "manifestHash": "39fa637f175a5510ccb6e969bf84315fd684ddf3130bda698c87ad39499e8f81"
+        },
+        {
+          "id": "interface:course:post/present",
+          "variant": "glow-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "366622ac0e49876114f30b5ce1974dbd0476715f45a2ad7b3bce796e08de0b13",
+          "archiveOutputSha256": "366622ac0e49876114f30b5ce1974dbd0476715f45a2ad7b3bce796e08de0b13",
+          "manifestHash": "39fa637f175a5510ccb6e969bf84315fd684ddf3130bda698c87ad39499e8f81"
+        },
+        {
+          "id": "interface:course:post/glow",
+          "variant": "glow-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "5d6f2336fef35d4262f1928a6629e97ec30614c01408ba0dde14df04cd0bc26f",
+          "archiveOutputSha256": "5d6f2336fef35d4262f1928a6629e97ec30614c01408ba0dde14df04cd0bc26f",
+          "manifestHash": "39fa637f175a5510ccb6e969bf84315fd684ddf3130bda698c87ad39499e8f81"
+        },
+        {
+          "id": "data",
+          "variant": "glow-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "3dc4b6b96aa10bbbb88bcd6a68437082e1af065ae64718e13ee44fa474de7941",
+          "archiveOutputSha256": "3dc4b6b96aa10bbbb88bcd6a68437082e1af065ae64718e13ee44fa474de7941",
+          "manifestHash": "39fa637f175a5510ccb6e969bf84315fd684ddf3130bda698c87ad39499e8f81"
+        },
+        {
+          "id": "materials",
+          "variant": "glow-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "a43551935b699a519c8667685a3f1819cc83a0834eadac7b6d58b13766945d80",
+          "archiveOutputSha256": "a43551935b699a519c8667685a3f1819cc83a0834eadac7b6d58b13766945d80",
+          "manifestHash": "39fa637f175a5510ccb6e969bf84315fd684ddf3130bda698c87ad39499e8f81"
+        },
+        {
+          "id": "pack",
+          "variant": "all-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "5c51a29ccc83877cd7427940589412fad34e7af7fcfbb1777ec257e9c20a8460",
+          "archiveOutputSha256": "5c51a29ccc83877cd7427940589412fad34e7af7fcfbb1777ec257e9c20a8460",
+          "manifestHash": "39fa637f175a5510ccb6e969bf84315fd684ddf3130bda698c87ad39499e8f81"
+        },
+        {
+          "id": "scene",
+          "variant": "all-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "be387b104a6b23fc42ed3a1f99868d69009f25606e3a9d54ff0ebdef3d32f5dc",
+          "archiveOutputSha256": "be387b104a6b23fc42ed3a1f99868d69009f25606e3a9d54ff0ebdef3d32f5dc",
+          "manifestHash": "39fa637f175a5510ccb6e969bf84315fd684ddf3130bda698c87ad39499e8f81"
+        },
+        {
+          "id": "graph",
+          "variant": "all-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "51287355427243d2a40c6a25363df1789187d006411376e085e56df716e3f580",
+          "archiveOutputSha256": "51287355427243d2a40c6a25363df1789187d006411376e085e56df716e3f580",
+          "manifestHash": "39fa637f175a5510ccb6e969bf84315fd684ddf3130bda698c87ad39499e8f81"
+        },
+        {
+          "id": "interface:course:scene/terrain",
+          "variant": "all-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "97481223305430dfb1777112fd43d6a0e12a9833df7c4e1070d86a1b4093c998",
+          "archiveOutputSha256": "97481223305430dfb1777112fd43d6a0e12a9833df7c4e1070d86a1b4093c998",
+          "manifestHash": "39fa637f175a5510ccb6e969bf84315fd684ddf3130bda698c87ad39499e8f81"
+        },
+        {
+          "id": "interface:course:post/grade",
+          "variant": "all-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "1702f64b29bf5605ea54035ab556af9773cb727f4cfa4c8ffda17f301cafcb20",
+          "archiveOutputSha256": "1702f64b29bf5605ea54035ab556af9773cb727f4cfa4c8ffda17f301cafcb20",
+          "manifestHash": "39fa637f175a5510ccb6e969bf84315fd684ddf3130bda698c87ad39499e8f81"
+        },
+        {
+          "id": "interface:course:post/present",
+          "variant": "all-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "366622ac0e49876114f30b5ce1974dbd0476715f45a2ad7b3bce796e08de0b13",
+          "archiveOutputSha256": "366622ac0e49876114f30b5ce1974dbd0476715f45a2ad7b3bce796e08de0b13",
+          "manifestHash": "39fa637f175a5510ccb6e969bf84315fd684ddf3130bda698c87ad39499e8f81"
+        },
+        {
+          "id": "interface:course:post/glow",
+          "variant": "all-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "5d6f2336fef35d4262f1928a6629e97ec30614c01408ba0dde14df04cd0bc26f",
+          "archiveOutputSha256": "5d6f2336fef35d4262f1928a6629e97ec30614c01408ba0dde14df04cd0bc26f",
+          "manifestHash": "39fa637f175a5510ccb6e969bf84315fd684ddf3130bda698c87ad39499e8f81"
+        },
+        {
+          "id": "data",
+          "variant": "all-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "3dc4b6b96aa10bbbb88bcd6a68437082e1af065ae64718e13ee44fa474de7941",
+          "archiveOutputSha256": "3dc4b6b96aa10bbbb88bcd6a68437082e1af065ae64718e13ee44fa474de7941",
+          "manifestHash": "39fa637f175a5510ccb6e969bf84315fd684ddf3130bda698c87ad39499e8f81"
+        },
+        {
+          "id": "materials",
+          "variant": "all-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "a43551935b699a519c8667685a3f1819cc83a0834eadac7b6d58b13766945d80",
+          "archiveOutputSha256": "a43551935b699a519c8667685a3f1819cc83a0834eadac7b6d58b13766945d80",
+          "manifestHash": "39fa637f175a5510ccb6e969bf84315fd684ddf3130bda698c87ad39499e8f81"
+        },
+        {
+          "id": "pack",
+          "variant": "economy",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "5c51a29ccc83877cd7427940589412fad34e7af7fcfbb1777ec257e9c20a8460",
+          "archiveOutputSha256": "5c51a29ccc83877cd7427940589412fad34e7af7fcfbb1777ec257e9c20a8460",
+          "manifestHash": "39fa637f175a5510ccb6e969bf84315fd684ddf3130bda698c87ad39499e8f81"
+        },
+        {
+          "id": "scene",
+          "variant": "economy",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "be387b104a6b23fc42ed3a1f99868d69009f25606e3a9d54ff0ebdef3d32f5dc",
+          "archiveOutputSha256": "be387b104a6b23fc42ed3a1f99868d69009f25606e3a9d54ff0ebdef3d32f5dc",
+          "manifestHash": "39fa637f175a5510ccb6e969bf84315fd684ddf3130bda698c87ad39499e8f81"
+        },
+        {
+          "id": "graph",
+          "variant": "economy",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "9ef61c018ff6021f49f4cb0ec606b8465800e98356b91b69025189318820bd25",
+          "archiveOutputSha256": "9ef61c018ff6021f49f4cb0ec606b8465800e98356b91b69025189318820bd25",
+          "manifestHash": "39fa637f175a5510ccb6e969bf84315fd684ddf3130bda698c87ad39499e8f81"
+        },
+        {
+          "id": "interface:course:scene/terrain",
+          "variant": "economy",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "97481223305430dfb1777112fd43d6a0e12a9833df7c4e1070d86a1b4093c998",
+          "archiveOutputSha256": "97481223305430dfb1777112fd43d6a0e12a9833df7c4e1070d86a1b4093c998",
+          "manifestHash": "39fa637f175a5510ccb6e969bf84315fd684ddf3130bda698c87ad39499e8f81"
+        },
+        {
+          "id": "interface:course:post/grade",
+          "variant": "economy",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "9917c3c4617c60d0fac4e9e483f4a0df1d88b8ed308660b61124b4e3a64f5bc4",
+          "archiveOutputSha256": "9917c3c4617c60d0fac4e9e483f4a0df1d88b8ed308660b61124b4e3a64f5bc4",
+          "manifestHash": "39fa637f175a5510ccb6e969bf84315fd684ddf3130bda698c87ad39499e8f81"
+        },
+        {
+          "id": "interface:course:post/present",
+          "variant": "economy",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "366622ac0e49876114f30b5ce1974dbd0476715f45a2ad7b3bce796e08de0b13",
+          "archiveOutputSha256": "366622ac0e49876114f30b5ce1974dbd0476715f45a2ad7b3bce796e08de0b13",
+          "manifestHash": "39fa637f175a5510ccb6e969bf84315fd684ddf3130bda698c87ad39499e8f81"
+        },
+        {
+          "id": "interface:course:post/glow",
+          "variant": "economy",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "5d6f2336fef35d4262f1928a6629e97ec30614c01408ba0dde14df04cd0bc26f",
+          "archiveOutputSha256": "5d6f2336fef35d4262f1928a6629e97ec30614c01408ba0dde14df04cd0bc26f",
+          "manifestHash": "39fa637f175a5510ccb6e969bf84315fd684ddf3130bda698c87ad39499e8f81"
+        },
+        {
+          "id": "data",
+          "variant": "economy",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "3dc4b6b96aa10bbbb88bcd6a68437082e1af065ae64718e13ee44fa474de7941",
+          "archiveOutputSha256": "3dc4b6b96aa10bbbb88bcd6a68437082e1af065ae64718e13ee44fa474de7941",
+          "manifestHash": "39fa637f175a5510ccb6e969bf84315fd684ddf3130bda698c87ad39499e8f81"
+        },
+        {
+          "id": "materials",
+          "variant": "economy",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "a43551935b699a519c8667685a3f1819cc83a0834eadac7b6d58b13766945d80",
+          "archiveOutputSha256": "a43551935b699a519c8667685a3f1819cc83a0834eadac7b6d58b13766945d80",
+          "manifestHash": "39fa637f175a5510ccb6e969bf84315fd684ddf3130bda698c87ad39499e8f81"
+        }
+      ],
+      "branches": [
+        {
+          "id": "default",
+          "options": {},
+          "activeResources": [
+            "resource:course:materials",
+            "resource:course:post/color",
+            "resource:course:post/glow",
+            "resource:course:scene/color",
+            "resource:course:scene/depth"
+          ],
+          "activeCommands": [
+            "command:course:glow:0",
+            "command:course:grade:0",
+            "command:course:present-glow:0",
+            "command:course:terrain_alpha_tested:0",
+            "command:course:terrain_opaque:0",
+            "command:course:terrain_sorted_translucent:0",
+            "command:course:terrain_transparent:0"
+          ],
+          "activePrograms": [
+            "program:course:post/glow",
+            "program:course:post/grade",
+            "program:course:post/present",
+            "program:course:scene/terrain",
+            "program:dawnlight:scene_fallback/terrain_alpha_tested",
+            "program:dawnlight:scene_fallback/terrain_sorted_translucent",
+            "program:dawnlight:scene_fallback/terrain_transparent"
+          ],
+          "activeServices": []
+        },
+        {
+          "id": "grade-off",
+          "options": {
+            "course:grade": false
+          },
+          "activeResources": [
+            "resource:course:materials",
+            "resource:course:scene/color",
+            "resource:course:scene/depth"
+          ],
+          "activeCommands": [
+            "command:course:present-raw:0",
+            "command:course:terrain_alpha_tested:0",
+            "command:course:terrain_opaque:0",
+            "command:course:terrain_sorted_translucent:0",
+            "command:course:terrain_transparent:0"
+          ],
+          "activePrograms": [
+            "program:course:post/present",
+            "program:course:scene/terrain",
+            "program:dawnlight:scene_fallback/terrain_alpha_tested",
+            "program:dawnlight:scene_fallback/terrain_sorted_translucent",
+            "program:dawnlight:scene_fallback/terrain_transparent"
+          ],
+          "activeServices": []
+        },
+        {
+          "id": "strength-max",
+          "options": {
+            "course:strength": 1,
+            "course:gain": 1.2
+          },
+          "activeResources": [
+            "resource:course:materials",
+            "resource:course:post/color",
+            "resource:course:post/glow",
+            "resource:course:scene/color",
+            "resource:course:scene/depth"
+          ],
+          "activeCommands": [
+            "command:course:glow:0",
+            "command:course:grade:0",
+            "command:course:present-glow:0",
+            "command:course:terrain_alpha_tested:0",
+            "command:course:terrain_opaque:0",
+            "command:course:terrain_sorted_translucent:0",
+            "command:course:terrain_transparent:0"
+          ],
+          "activePrograms": [
+            "program:course:post/glow",
+            "program:course:post/grade",
+            "program:course:post/present",
+            "program:course:scene/terrain",
+            "program:dawnlight:scene_fallback/terrain_alpha_tested",
+            "program:dawnlight:scene_fallback/terrain_sorted_translucent",
+            "program:dawnlight:scene_fallback/terrain_transparent"
+          ],
+          "activeServices": []
+        },
+        {
+          "id": "glow-off",
+          "options": {
+            "course:glow": false
+          },
+          "activeResources": [
+            "resource:course:materials",
+            "resource:course:post/color",
+            "resource:course:scene/color",
+            "resource:course:scene/depth"
+          ],
+          "activeCommands": [
+            "command:course:grade:0",
+            "command:course:present-grade:0",
+            "command:course:terrain_alpha_tested:0",
+            "command:course:terrain_opaque:0",
+            "command:course:terrain_sorted_translucent:0",
+            "command:course:terrain_transparent:0"
+          ],
+          "activePrograms": [
+            "program:course:post/grade",
+            "program:course:post/present",
+            "program:course:scene/terrain",
+            "program:dawnlight:scene_fallback/terrain_alpha_tested",
+            "program:dawnlight:scene_fallback/terrain_sorted_translucent",
+            "program:dawnlight:scene_fallback/terrain_transparent"
+          ],
+          "activeServices": []
+        },
+        {
+          "id": "all-off",
+          "options": {
+            "course:grade": false,
+            "course:glow": false
+          },
+          "activeResources": [
+            "resource:course:materials",
+            "resource:course:scene/color",
+            "resource:course:scene/depth"
+          ],
+          "activeCommands": [
+            "command:course:present-raw:0",
+            "command:course:terrain_alpha_tested:0",
+            "command:course:terrain_opaque:0",
+            "command:course:terrain_sorted_translucent:0",
+            "command:course:terrain_transparent:0"
+          ],
+          "activePrograms": [
+            "program:course:post/present",
+            "program:course:scene/terrain",
+            "program:dawnlight:scene_fallback/terrain_alpha_tested",
+            "program:dawnlight:scene_fallback/terrain_sorted_translucent",
+            "program:dawnlight:scene_fallback/terrain_transparent"
+          ],
+          "activeServices": []
+        },
+        {
+          "id": "economy",
+          "options": {
+            "course:grade": true,
+            "course:glow": false,
+            "course:strength": 0.4,
+            "course:gain": 1
+          },
+          "activeResources": [
+            "resource:course:materials",
+            "resource:course:post/color",
+            "resource:course:scene/color",
+            "resource:course:scene/depth"
+          ],
+          "activeCommands": [
+            "command:course:grade:0",
+            "command:course:present-grade:0",
+            "command:course:terrain_alpha_tested:0",
+            "command:course:terrain_opaque:0",
+            "command:course:terrain_sorted_translucent:0",
+            "command:course:terrain_transparent:0"
+          ],
+          "activePrograms": [
+            "program:course:post/grade",
+            "program:course:post/present",
+            "program:course:scene/terrain",
+            "program:dawnlight:scene_fallback/terrain_alpha_tested",
+            "program:dawnlight:scene_fallback/terrain_sorted_translucent",
+            "program:dawnlight:scene_fallback/terrain_transparent"
+          ],
+          "activeServices": []
+        }
+      ],
+      "runtimeEvidence": {
+        "driverStatus": "notProvided",
+        "runtimeEvaluated": false,
+        "liveWorldVerified": false,
+        "visual": "notRun"
+      }
+    }
+  ]
+}

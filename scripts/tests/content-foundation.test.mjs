@@ -19,14 +19,14 @@ async function fixture(t) {
   });
   for (const name of ['examples', 'metadata']) await fs.mkdir(path.join(root, name));
   await fs.cp(path.join(ROOT, 'examples'), path.join(root, 'examples'), { recursive: true });
-  for (const name of ['upstream.lock.json', 'metadata/examples-validation.json', 'metadata/source-map.json', 'metadata/pages.json', 'metadata/example-releases.json']) await fs.copyFile(path.join(ROOT, name), path.join(root, name));
+  for (const name of ['upstream.lock.json', 'metadata/examples-validation.json', 'metadata/w6-examples-validation.json', 'metadata/w6-example-releases.json', 'metadata/source-map.json', 'metadata/pages.json', 'metadata/example-releases.json']) await fs.copyFile(path.join(ROOT, name), path.join(root, name));
   return root;
 }
 
 test('the public source and committed receipt agree', async () => {
   const context = await loadExamples();
   const report = await loadReceipts(context);
-  assert.equal(report.examples.length, 5);
+  assert.equal(report.examples.length, 11);
   assert.equal(report.examples[0].checks.length, 4);
 });
 

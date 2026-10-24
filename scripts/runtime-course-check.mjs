@@ -17,7 +17,7 @@ async function invoke(code) {
   const until = Date.now()+15000;
   while (Date.now()<until) {
     await new Promise(resolve=>setTimeout(resolve,250));
-    let text; try { text=await fs.readFile(path.join(runtime,'w4-result.txt'),'utf8'); } catch { continue; }
+    let text; try { text=(await fs.readFile(path.join(runtime,'w4-result.txt'),'utf8')).replace(/^\uFEFF/,''); } catch { continue; }
     if (text.includes(tag)) return JSON.parse(text.replace(/^\uFEFF/, '')).value;
     if (text.startsWith('Error:')||text.startsWith('TypeError:')||text.startsWith('ReferenceError:')) throw Error(text);
   }

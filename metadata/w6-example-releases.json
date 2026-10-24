@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "examples": [
+    {
+      "id": "course/05-options",
+      "sourceFingerprint": "9b79e19737d998178227184552c9221bf12b05fa1b27f9d551519cfbf7293770",
+      "archiveSha256": "6a0ddf77300c99a49fce65f7f894adac9ffed250c317477048f2c8549f5e9d40",
+      "archiveLength": 5583
+    },
+    {
+      "id": "course/06-custom-data",
+      "sourceFingerprint": "781e156768206d9c6a346cc084496bc1d19feee3def62a0142cd27a49b922907",
+      "archiveSha256": "5d51722f523368c3824a8d7bbfc3cd21baf7f10792206811cff65f394fedf63b",
+      "archiveLength": 6150
+    },
+    {
+      "id": "course/07-materials",
+      "sourceFingerprint": "8c37adf9fd9eaa14e45f8a4e1cd8a81a525798813551d0dcc856dab4c250a04a",
+      "archiveSha256": "2c9bfd035270cc5121c0de2d4deae6becd56ca219ddda5f89f238594c9d3dbc9",
+      "archiveLength": 6835
+    },
+    {
+      "id": "course/08-post-chain",
+      "sourceFingerprint": "9dd946ffa7f6f666b3b3b60d6107fde0646da1513717dca3f6cb2073c4207943",
+      "archiveSha256": "bc94ab93df3be1b19363f5f0513f744330f10c505886cf1e0a3924d695e9f87f",
+      "archiveLength": 7524
+    },
+    {
+      "id": "course/09-complete-pack",
+      "sourceFingerprint": "2753e348e5f83c84d1814aab1c40778a86d955a4312816ac3c4d8c5008cbe4cc",
+      "archiveSha256": "922ac418657ebab39666b9d4d89e074660809e8bd5fbf5a184edc4e7d8ee4c63",
+      "archiveLength": 9473
+    },
+    {
+      "id": "course/10-distribution",
+      "sourceFingerprint": "79ed24ac3d796f5ed8b60dcea274cf4de7e3cac0a43c792652d2f5fb62bdffc3",
+      "archiveSha256": "94c232295f739d510d33d509503073a149db58825618444d9704ecc4560f636c",
+      "archiveLength": 9468
+    }
+  ]
+}

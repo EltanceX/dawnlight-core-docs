@@ -8,6 +8,7 @@ import { loadExamples, loadReceipts } from './lib/content-foundation.mjs';
 import { loadReference } from './lib/reference-foundation.mjs';
 import { siteOutputs } from './lib/site-generator.mjs';
 import { loadRuntimeEvidence } from './lib/runtime-evidence.mjs';
+import { loadPackRuntimeEvidence } from './lib/pack-runtime-evidence.mjs';
 
 const pkg = await readJson(path.join(ROOT, 'package.json'));
 assert.equal(process.versions.node, pkg.engines.node, `Use Node ${pkg.engines.node} from .node-version`);
@@ -15,15 +16,16 @@ const lock = await loadLock();
 assert.equal(lock.website.pagesBase, '/');
 assert.equal(lock.website.pagesUrl, `https://${lock.website.customDomain}/`);
 assert.equal((await fs.readFile(path.join(ROOT, 'site/public/CNAME'), 'utf8')).trim(), lock.website.customDomain);
-for (const item of [...Object.values(lock.discoveryRecords), lock.tool.distribution.inventory, lock.w1Verification, ...[lock.w2Verification, lock.w3Verification, lock.w4Verification, lock.w5Verification].filter(Boolean)]) {
+for (const item of [...Object.values(lock.discoveryRecords), lock.tool.distribution.inventory, lock.w1Verification, ...[lock.w2Verification, lock.w3Verification, lock.w4Verification, lock.w5Verification, lock.w6Verification].filter(Boolean)]) {
   await assertFingerprint(path.join(ROOT, item.path), item);
 }
-if (lock.w4Verification) {
-  const stage = await readJson(path.join(ROOT, lock.w4Verification.path));
-  for (const item of stage.evidence) await assertFingerprint(path.join(ROOT, item.path), item);
-}
-if (lock.w5Verification) {
-  const stage = await readJson(path.join(ROOT, lock.w5Verification.path));
+for (const number of [4, 5, 6]) {
+  const pointer = lock[`w${number}Verification`];
+  if (!pointer) continue;
+  const stage = await readJson(path.join(ROOT, pointer.path));
+  assert.equal(stage.stage, `W${number}`);
+  assert.equal(stage.baselineId, lock.baselineId);
+  assert.equal(stage.sourceCommit, lock.upstream.commit);
   for (const item of stage.evidence) await assertFingerprint(path.join(ROOT, item.path), item);
 }
 const source = await readJson(path.join(ROOT, 'metadata/public-source.json'));
@@ -59,7 +61,8 @@ const examples = await loadExamples();
 const generated = await siteOutputs(examples, await loadReceipts(examples), await loadReference(examples), await readJson(path.join(ROOT, 'metadata/pages.json')));
 const generatedPublic = [...generated.keys()].filter(name => name.startsWith('site/public/')).map(name => name.slice('site/'.length));
 const runtime = await loadRuntimeEvidence(examples, await loadReceipts(examples));
-assert.deepEqual(siteFiles.filter(f => f.startsWith('public/')).sort(), ['public/CNAME', 'public/downloads/site-baseline.json', 'public/favicon.svg', ...generatedPublic, ...runtime.publicFiles.map(file => 'public/' + file.path)].sort());
+const packRuntime = await loadPackRuntimeEvidence(examples, await loadReceipts(examples));
+assert.deepEqual(siteFiles.filter(f => f.startsWith('public/')).sort(), ['public/CNAME', 'public/downloads/site-baseline.json', 'public/favicon.svg', ...generatedPublic, ...[...runtime.publicFiles, ...packRuntime.publicFiles].map(file => 'public/' + file.path)].sort());
 const tracked = run('git', ['ls-files', '-z'], { allowFailure: true });
 let trackedFiles = 0;
 if (tracked.status === 0) {

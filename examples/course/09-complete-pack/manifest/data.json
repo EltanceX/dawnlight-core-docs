@@ -1,0 +1,167 @@
+{
+  "materials": {
+    "abiVersion": 1,
+    "fallback": "course:neutral",
+    "properties": [
+      {
+        "id": "course:tint",
+        "type": "vec4",
+        "default": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "glsl": "AmberTint"
+      },
+      {
+        "id": "course:response",
+        "type": "float",
+        "default": 0,
+        "range": [
+          0,
+          1
+        ],
+        "glsl": "AmberResponse"
+      }
+    ],
+    "tags": [
+      {
+        "id": "course:mineral",
+        "glsl": "AMBER_MINERAL"
+      }
+    ],
+    "definitions": [
+      {
+        "id": "course:neutral",
+        "shaderId": 0
+      },
+      {
+        "id": "course:stone",
+        "shaderId": 1,
+        "tags": [
+          "course:mineral"
+        ],
+        "values": {
+          "course:tint": [
+            1.08,
+            1.01,
+            0.92,
+            1
+          ],
+          "course:response": 0.25
+        }
+      },
+      {
+        "id": "course:sand",
+        "shaderId": 2,
+        "values": {
+          "course:tint": [
+            1.06,
+            1.02,
+            0.94,
+            1
+          ],
+          "course:response": 0.4
+        }
+      }
+    ],
+    "contentGroups": [
+      {
+        "id": "course:stones",
+        "ids": [
+          "survivalcraft:GraniteBlock",
+          "survivalcraft:BasaltBlock"
+        ]
+      }
+    ],
+    "mappings": [
+      {
+        "id": "course:stone-map",
+        "match": {
+          "groups": [
+            "course:stones"
+          ]
+        },
+        "material": "course:stone",
+        "priority": 10,
+        "onMissing": "skip"
+      },
+      {
+        "id": "course:sand-map",
+        "match": {
+          "ids": [
+            "survivalcraft:SandBlock"
+          ]
+        },
+        "material": "course:sand",
+        "priority": 10,
+        "onMissing": "skip"
+      },
+      {
+        "id": "course:optional-mod-stone",
+        "match": {
+          "ids": [
+            "amberdemo:MarbleBlock"
+          ]
+        },
+        "material": "course:stone",
+        "priority": 20,
+        "onMissing": "skip"
+      }
+    ]
+  },
+  "customData": {
+    "abiVersion": 1,
+    "variables": [
+      {
+        "id": "course:gain",
+        "type": "float",
+        "frequency": "generation",
+        "default": 1,
+        "onError": "useDefault",
+        "expression": {
+          "option": "course:gain",
+          "as": "float"
+        }
+      },
+      {
+        "id": "course:day",
+        "type": "float",
+        "frequency": "frame",
+        "unit": "day_fraction",
+        "default": 0.5,
+        "onError": "useDefault",
+        "expression": {
+          "input": "dawnlight:data/day_time",
+          "version": 1
+        }
+      },
+      {
+        "id": "course:rain",
+        "type": "float",
+        "frequency": "frame",
+        "unit": "dimensionless",
+        "default": 0,
+        "onError": "useDefault",
+        "expression": {
+          "call": "clamp",
+          "args": [
+            {
+              "input": "dawnlight:data/weather_precipitation",
+              "version": 1
+            },
+            {
+              "literal": 0,
+              "type": "float"
+            },
+            {
+              "literal": 1,
+              "type": "float"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

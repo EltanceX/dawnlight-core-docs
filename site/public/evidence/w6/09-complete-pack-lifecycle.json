@@ -1,0 +1,749 @@
+{
+  "id": "course/09-complete-pack",
+  "sourceFingerprint": "2753e348e5f83c84d1814aab1c40778a86d955a4312816ac3c4d8c5008cbe4cc",
+  "archiveSha256": "922ac418657ebab39666b9d4d89e074660809e8bd5fbf5a184edc4e7d8ee4c63",
+  "status": "passed",
+  "loaded": {
+    "active": "External:09-complete-pack",
+    "published": 34,
+    "pending": 0,
+    "error": null,
+    "size": {
+      "x": 2048,
+      "y": 1222
+    }
+  },
+  "reloaded": {
+    "active": "External:09-complete-pack",
+    "published": 35,
+    "pending": 0,
+    "error": null,
+    "size": {
+      "x": 2048,
+      "y": 1222
+    }
+  },
+  "resized": {
+    "active": "External:09-complete-pack",
+    "published": 35,
+    "pending": 0,
+    "error": null,
+    "size": {
+      "x": 1024,
+      "y": 640
+    }
+  },
+  "builtIn": {
+    "active": "BuiltIn",
+    "published": 46,
+    "pending": 0,
+    "error": null,
+    "size": {
+      "x": 2048,
+      "y": 1222
+    }
+  },
+  "variants": [
+    {
+      "id": "default",
+      "options": {},
+      "status": {
+        "active": "External:09-complete-pack",
+        "published": 35,
+        "pending": 0,
+        "error": null,
+        "size": {
+          "x": 2048,
+          "y": 1222
+        }
+      },
+      "header": {
+        "packId": "course:09-complete-pack",
+        "manifestVersion": 5,
+        "manifestHash": "46be1c4361a03b7fd26a5cfc6f9908645d19ea3f7718039fec2d96804810483a",
+        "catalogHash": "4bc28c17beffea2311a422fff9f633d2e4f03784460d0254adda8af2e766d84c",
+        "sceneAbiHash": "4bc28c17beffea2311a422fff9f633d2e4f03784460d0254adda8af2e766d84c",
+        "generationId": 35,
+        "generationSourceFingerprint": "fef0cf5c2d68003e7c3de1dd87231e72aaaec941a2156b7d5fbb5039bdbab79a",
+        "deviceEpoch": 0,
+        "graphicsApi": "OpenGL ES 3.2 NVIDIA 566.07",
+        "driverVendor": "NVIDIA Corporation",
+        "driverRenderer": "NVIDIA GeForce RTX 4050 Laptop GPU/PCIe/SSE2",
+        "shaderLanguageVersion": "OpenGL ES GLSL ES 3.20",
+        "engineBuild": "2.4.0.0",
+        "options": [
+          {
+            "id": "course:gain",
+            "type": "number",
+            "value": "1"
+          },
+          {
+            "id": "course:glow",
+            "type": "boolean",
+            "value": "true"
+          },
+          {
+            "id": "course:grade",
+            "type": "boolean",
+            "value": "true"
+          },
+          {
+            "id": "course:strength",
+            "type": "number",
+            "value": "0.65"
+          }
+        ],
+        "capabilities": [
+          {
+            "id": "dawnlight:model_shadow/max_instances",
+            "type": "integer",
+            "value": "7"
+          },
+          {
+            "id": "dawnlight:model_shadow/max_joints",
+            "type": "integer",
+            "value": "128"
+          }
+        ]
+      },
+      "linkedPrograms": [
+        "course:post/glow",
+        "course:post/grade",
+        "course:post/present",
+        "course:scene/terrain",
+        "dawnlight:scene_fallback/terrain_alpha_tested",
+        "dawnlight:scene_fallback/terrain_sorted_translucent",
+        "dawnlight:scene_fallback/terrain_transparent"
+      ],
+      "framebuffersComplete": true,
+      "driver": {
+        "length": 22085,
+        "sha256": "ff1d092a1a2205ca4bf45ce0bc267b6b96f3c0ada0ab6f86914e6d72107294d9",
+        "reportHash": "e8e204761322d34956e15f7693ec0cd40411276da4ea897281ec10caf4d823b9",
+        "published": true,
+        "linked": true,
+        "framebuffersComplete": true
+      },
+      "data": {
+        "length": 243867,
+        "sha256": "9168affaa16ed009299d7f8514431161c46ce51387ac16fad00e693b9b6ff0bd",
+        "reportHash": "cb3ebd197a78d72a9cea3cc7d7ef50173bb740690196747848d0c385a675047e",
+        "driverStatus": "matched",
+        "interfaceComplete": true,
+        "valueReadback": "notProvided",
+        "liveWorldVerified": false,
+        "preparedBindings": [
+          {
+            "symbol": "u_day",
+            "variable": "course:day",
+            "type": "Float"
+          },
+          {
+            "symbol": "u_gain",
+            "variable": "course:gain",
+            "type": "Float"
+          },
+          {
+            "symbol": "u_rain",
+            "variable": "course:rain",
+            "type": "Float"
+          }
+        ],
+        "materials": {
+          "definitionHash": "e1c53eceed056b45ae1ae433e49de039bc17bd34bb79d1d847c0e4d74c4db301",
+          "layoutHash": "d01beeb0b2e6c925e3c9bd8fb1defffa63c373aa5105af64a35e4012c8652e6c",
+          "mappingHash": "b1e4a6ae813751187f4deaeaf68d3811d97ff418375a48d10ad6de6bd9788f97",
+          "payloadHash": "247487bf2a724c841c95f4ac7158b34689a3549eb5522ef32f32cfcd335e4c76",
+          "byteSize": 8368,
+          "identifierCount": 2051,
+          "recordCount": 3,
+          "propertyCount": 2,
+          "worldResolutionPassed": true
+        }
+      }
+    },
+    {
+      "id": "grade-off",
+      "options": {
+        "course:grade": false
+      },
+      "status": {
+        "active": "External:09-complete-pack",
+        "published": 36,
+        "pending": 0,
+        "error": null,
+        "size": {
+          "x": 2048,
+          "y": 1222
+        }
+      },
+      "header": {
+        "packId": "course:09-complete-pack",
+        "manifestVersion": 5,
+        "manifestHash": "46be1c4361a03b7fd26a5cfc6f9908645d19ea3f7718039fec2d96804810483a",
+        "catalogHash": "4bc28c17beffea2311a422fff9f633d2e4f03784460d0254adda8af2e766d84c",
+        "sceneAbiHash": "4bc28c17beffea2311a422fff9f633d2e4f03784460d0254adda8af2e766d84c",
+        "generationId": 36,
+        "generationSourceFingerprint": "fef0cf5c2d68003e7c3de1dd87231e72aaaec941a2156b7d5fbb5039bdbab79a",
+        "deviceEpoch": 0,
+        "graphicsApi": "OpenGL ES 3.2 NVIDIA 566.07",
+        "driverVendor": "NVIDIA Corporation",
+        "driverRenderer": "NVIDIA GeForce RTX 4050 Laptop GPU/PCIe/SSE2",
+        "shaderLanguageVersion": "OpenGL ES GLSL ES 3.20",
+        "engineBuild": "2.4.0.0",
+        "options": [
+          {
+            "id": "course:gain",
+            "type": "number",
+            "value": "1"
+          },
+          {
+            "id": "course:glow",
+            "type": "boolean",
+            "value": "true"
+          },
+          {
+            "id": "course:grade",
+            "type": "boolean",
+            "value": "false"
+          },
+          {
+            "id": "course:strength",
+            "type": "number",
+            "value": "0.65"
+          }
+        ],
+        "capabilities": [
+          {
+            "id": "dawnlight:model_shadow/max_instances",
+            "type": "integer",
+            "value": "7"
+          },
+          {
+            "id": "dawnlight:model_shadow/max_joints",
+            "type": "integer",
+            "value": "128"
+          }
+        ]
+      },
+      "linkedPrograms": [
+        "course:post/present",
+        "course:scene/terrain",
+        "dawnlight:scene_fallback/terrain_alpha_tested",
+        "dawnlight:scene_fallback/terrain_sorted_translucent",
+        "dawnlight:scene_fallback/terrain_transparent"
+      ],
+      "framebuffersComplete": true,
+      "driver": {
+        "length": 19240,
+        "sha256": "9df4ae9b9229073d6d9032a044d98b0074ef6f036ca06e2861a06969b2841ddd",
+        "reportHash": "b077163409fba1eeb6329c9a85f22edf5b3b1f7a94638103ba8ff783a2e2adb5",
+        "published": true,
+        "linked": true,
+        "framebuffersComplete": true
+      },
+      "data": {
+        "length": 241209,
+        "sha256": "62a96feb7a1c32b1d7397db4ca5e1e5461acd6db278a05cbdb0fcdeb454da983",
+        "reportHash": "e4e28e812ea0feeb6daaeb9de67c199f26316148d3815e1f85a826c13629d928",
+        "driverStatus": "matched",
+        "interfaceComplete": true,
+        "valueReadback": "notProvided",
+        "liveWorldVerified": false,
+        "preparedBindings": [],
+        "materials": {
+          "definitionHash": "e1c53eceed056b45ae1ae433e49de039bc17bd34bb79d1d847c0e4d74c4db301",
+          "layoutHash": "d01beeb0b2e6c925e3c9bd8fb1defffa63c373aa5105af64a35e4012c8652e6c",
+          "mappingHash": "b1e4a6ae813751187f4deaeaf68d3811d97ff418375a48d10ad6de6bd9788f97",
+          "payloadHash": "247487bf2a724c841c95f4ac7158b34689a3549eb5522ef32f32cfcd335e4c76",
+          "byteSize": 8368,
+          "identifierCount": 2051,
+          "recordCount": 3,
+          "propertyCount": 2,
+          "worldResolutionPassed": true
+        }
+      }
+    },
+    {
+      "id": "strength-max",
+      "options": {
+        "course:strength": 1,
+        "course:gain": 1.2
+      },
+      "status": {
+        "active": "External:09-complete-pack",
+        "published": 39,
+        "pending": 0,
+        "error": null,
+        "size": {
+          "x": 2048,
+          "y": 1222
+        }
+      },
+      "header": {
+        "packId": "course:09-complete-pack",
+        "manifestVersion": 5,
+        "manifestHash": "46be1c4361a03b7fd26a5cfc6f9908645d19ea3f7718039fec2d96804810483a",
+        "catalogHash": "4bc28c17beffea2311a422fff9f633d2e4f03784460d0254adda8af2e766d84c",
+        "sceneAbiHash": "4bc28c17beffea2311a422fff9f633d2e4f03784460d0254adda8af2e766d84c",
+        "generationId": 39,
+        "generationSourceFingerprint": "d15f123c7177d4bb147a23b727f6944dc2d88d4a14ed8576ebaabb16cc31bb3e",
+        "deviceEpoch": 0,
+        "graphicsApi": "OpenGL ES 3.2 NVIDIA 566.07",
+        "driverVendor": "NVIDIA Corporation",
+        "driverRenderer": "NVIDIA GeForce RTX 4050 Laptop GPU/PCIe/SSE2",
+        "shaderLanguageVersion": "OpenGL ES GLSL ES 3.20",
+        "engineBuild": "2.4.0.0",
+        "options": [
+          {
+            "id": "course:gain",
+            "type": "number",
+            "value": "1.2"
+          },
+          {
+            "id": "course:glow",
+            "type": "boolean",
+            "value": "true"
+          },
+          {
+            "id": "course:grade",
+            "type": "boolean",
+            "value": "true"
+          },
+          {
+            "id": "course:strength",
+            "type": "number",
+            "value": "1"
+          }
+        ],
+        "capabilities": [
+          {
+            "id": "dawnlight:model_shadow/max_instances",
+            "type": "integer",
+            "value": "7"
+          },
+          {
+            "id": "dawnlight:model_shadow/max_joints",
+            "type": "integer",
+            "value": "128"
+          }
+        ]
+      },
+      "linkedPrograms": [
+        "course:post/glow",
+        "course:post/grade",
+        "course:post/present",
+        "course:scene/terrain",
+        "dawnlight:scene_fallback/terrain_alpha_tested",
+        "dawnlight:scene_fallback/terrain_sorted_translucent",
+        "dawnlight:scene_fallback/terrain_transparent"
+      ],
+      "framebuffersComplete": true,
+      "driver": {
+        "length": 22082,
+        "sha256": "eccf1316afc64b5141be9f7471edadf43eb8f80aa99165381f2dc2bb6b2902fe",
+        "reportHash": "3e496507fd46aa6d04a67281877b9201c0eaf59c33b56ad1e2f722e0c17320d4",
+        "published": true,
+        "linked": true,
+        "framebuffersComplete": true
+      },
+      "data": {
+        "length": 243861,
+        "sha256": "d4e0d0ec90b889eb53ef3f112161eeaec35857339e816d6972262b32151c6ac0",
+        "reportHash": "acc53395936b1918e9a4b145a494077b5a2b360fb9f57b76e33187bcf29c9617",
+        "driverStatus": "matched",
+        "interfaceComplete": true,
+        "valueReadback": "notProvided",
+        "liveWorldVerified": false,
+        "preparedBindings": [
+          {
+            "symbol": "u_day",
+            "variable": "course:day",
+            "type": "Float"
+          },
+          {
+            "symbol": "u_gain",
+            "variable": "course:gain",
+            "type": "Float"
+          },
+          {
+            "symbol": "u_rain",
+            "variable": "course:rain",
+            "type": "Float"
+          }
+        ],
+        "materials": {
+          "definitionHash": "e1c53eceed056b45ae1ae433e49de039bc17bd34bb79d1d847c0e4d74c4db301",
+          "layoutHash": "d01beeb0b2e6c925e3c9bd8fb1defffa63c373aa5105af64a35e4012c8652e6c",
+          "mappingHash": "b1e4a6ae813751187f4deaeaf68d3811d97ff418375a48d10ad6de6bd9788f97",
+          "payloadHash": "247487bf2a724c841c95f4ac7158b34689a3549eb5522ef32f32cfcd335e4c76",
+          "byteSize": 8368,
+          "identifierCount": 2051,
+          "recordCount": 3,
+          "propertyCount": 2,
+          "worldResolutionPassed": true
+        }
+      }
+    },
+    {
+      "id": "glow-off",
+      "options": {
+        "course:glow": false
+      },
+      "status": {
+        "active": "External:09-complete-pack",
+        "published": 42,
+        "pending": 0,
+        "error": null,
+        "size": {
+          "x": 2048,
+          "y": 1222
+        }
+      },
+      "header": {
+        "packId": "course:09-complete-pack",
+        "manifestVersion": 5,
+        "manifestHash": "46be1c4361a03b7fd26a5cfc6f9908645d19ea3f7718039fec2d96804810483a",
+        "catalogHash": "4bc28c17beffea2311a422fff9f633d2e4f03784460d0254adda8af2e766d84c",
+        "sceneAbiHash": "4bc28c17beffea2311a422fff9f633d2e4f03784460d0254adda8af2e766d84c",
+        "generationId": 42,
+        "generationSourceFingerprint": "fef0cf5c2d68003e7c3de1dd87231e72aaaec941a2156b7d5fbb5039bdbab79a",
+        "deviceEpoch": 0,
+        "graphicsApi": "OpenGL ES 3.2 NVIDIA 566.07",
+        "driverVendor": "NVIDIA Corporation",
+        "driverRenderer": "NVIDIA GeForce RTX 4050 Laptop GPU/PCIe/SSE2",
+        "shaderLanguageVersion": "OpenGL ES GLSL ES 3.20",
+        "engineBuild": "2.4.0.0",
+        "options": [
+          {
+            "id": "course:gain",
+            "type": "number",
+            "value": "1"
+          },
+          {
+            "id": "course:glow",
+            "type": "boolean",
+            "value": "false"
+          },
+          {
+            "id": "course:grade",
+            "type": "boolean",
+            "value": "true"
+          },
+          {
+            "id": "course:strength",
+            "type": "number",
+            "value": "0.65"
+          }
+        ],
+        "capabilities": [
+          {
+            "id": "dawnlight:model_shadow/max_instances",
+            "type": "integer",
+            "value": "7"
+          },
+          {
+            "id": "dawnlight:model_shadow/max_joints",
+            "type": "integer",
+            "value": "128"
+          }
+        ]
+      },
+      "linkedPrograms": [
+        "course:post/grade",
+        "course:post/present",
+        "course:scene/terrain",
+        "dawnlight:scene_fallback/terrain_alpha_tested",
+        "dawnlight:scene_fallback/terrain_sorted_translucent",
+        "dawnlight:scene_fallback/terrain_transparent"
+      ],
+      "framebuffersComplete": true,
+      "driver": {
+        "length": 20860,
+        "sha256": "5a721b6a39cb0e877f64e4b3a6fb89ba84d27b182d3df0401f4d53ad21801dfb",
+        "reportHash": "01803044d971a4f52b55b0f106b50ff72755d1652fb99ca3d359222fca5a3729",
+        "published": true,
+        "linked": true,
+        "framebuffersComplete": true
+      },
+      "data": {
+        "length": 243052,
+        "sha256": "5c5ac89c64abde711cbd2a82cce6612d094ee3b2f7e160b4d4967b19c955f6e6",
+        "reportHash": "02b98539e1370896f375d5a5a11f71887f50b12262aeaeacdb970ab3e3aff51e",
+        "driverStatus": "matched",
+        "interfaceComplete": true,
+        "valueReadback": "notProvided",
+        "liveWorldVerified": false,
+        "preparedBindings": [
+          {
+            "symbol": "u_day",
+            "variable": "course:day",
+            "type": "Float"
+          },
+          {
+            "symbol": "u_gain",
+            "variable": "course:gain",
+            "type": "Float"
+          },
+          {
+            "symbol": "u_rain",
+            "variable": "course:rain",
+            "type": "Float"
+          }
+        ],
+        "materials": {
+          "definitionHash": "e1c53eceed056b45ae1ae433e49de039bc17bd34bb79d1d847c0e4d74c4db301",
+          "layoutHash": "d01beeb0b2e6c925e3c9bd8fb1defffa63c373aa5105af64a35e4012c8652e6c",
+          "mappingHash": "b1e4a6ae813751187f4deaeaf68d3811d97ff418375a48d10ad6de6bd9788f97",
+          "payloadHash": "247487bf2a724c841c95f4ac7158b34689a3549eb5522ef32f32cfcd335e4c76",
+          "byteSize": 8368,
+          "identifierCount": 2051,
+          "recordCount": 3,
+          "propertyCount": 2,
+          "worldResolutionPassed": true
+        }
+      }
+    },
+    {
+      "id": "all-off",
+      "options": {
+        "course:grade": false,
+        "course:glow": false
+      },
+      "status": {
+        "active": "External:09-complete-pack",
+        "published": 43,
+        "pending": 0,
+        "error": null,
+        "size": {
+          "x": 2048,
+          "y": 1222
+        }
+      },
+      "header": {
+        "packId": "course:09-complete-pack",
+        "manifestVersion": 5,
+        "manifestHash": "46be1c4361a03b7fd26a5cfc6f9908645d19ea3f7718039fec2d96804810483a",
+        "catalogHash": "4bc28c17beffea2311a422fff9f633d2e4f03784460d0254adda8af2e766d84c",
+        "sceneAbiHash": "4bc28c17beffea2311a422fff9f633d2e4f03784460d0254adda8af2e766d84c",
+        "generationId": 43,
+        "generationSourceFingerprint": "fef0cf5c2d68003e7c3de1dd87231e72aaaec941a2156b7d5fbb5039bdbab79a",
+        "deviceEpoch": 0,
+        "graphicsApi": "OpenGL ES 3.2 NVIDIA 566.07",
+        "driverVendor": "NVIDIA Corporation",
+        "driverRenderer": "NVIDIA GeForce RTX 4050 Laptop GPU/PCIe/SSE2",
+        "shaderLanguageVersion": "OpenGL ES GLSL ES 3.20",
+        "engineBuild": "2.4.0.0",
+        "options": [
+          {
+            "id": "course:gain",
+            "type": "number",
+            "value": "1"
+          },
+          {
+            "id": "course:glow",
+            "type": "boolean",
+            "value": "false"
+          },
+          {
+            "id": "course:grade",
+            "type": "boolean",
+            "value": "false"
+          },
+          {
+            "id": "course:strength",
+            "type": "number",
+            "value": "0.65"
+          }
+        ],
+        "capabilities": [
+          {
+            "id": "dawnlight:model_shadow/max_instances",
+            "type": "integer",
+            "value": "7"
+          },
+          {
+            "id": "dawnlight:model_shadow/max_joints",
+            "type": "integer",
+            "value": "128"
+          }
+        ]
+      },
+      "linkedPrograms": [
+        "course:post/present",
+        "course:scene/terrain",
+        "dawnlight:scene_fallback/terrain_alpha_tested",
+        "dawnlight:scene_fallback/terrain_sorted_translucent",
+        "dawnlight:scene_fallback/terrain_transparent"
+      ],
+      "framebuffersComplete": true,
+      "driver": {
+        "length": 19238,
+        "sha256": "31add47a8bfd68b61b1a268661eee2e2807ed047e733a395cdef57acf8824741",
+        "reportHash": "752e3a68e57dffc78a360de52719d00e44c7a1a177cbe76fa6bd62f80b314723",
+        "published": true,
+        "linked": true,
+        "framebuffersComplete": true
+      },
+      "data": {
+        "length": 241207,
+        "sha256": "061f058c7d894929b00acc61c723a9da435dcd223df0f6247d9dfe7ba61f41e5",
+        "reportHash": "5b1f8b764893a3c0ad85a5eef9b79f454164efc6bc245035464d6af67bdc5c65",
+        "driverStatus": "matched",
+        "interfaceComplete": true,
+        "valueReadback": "notProvided",
+        "liveWorldVerified": false,
+        "preparedBindings": [],
+        "materials": {
+          "definitionHash": "e1c53eceed056b45ae1ae433e49de039bc17bd34bb79d1d847c0e4d74c4db301",
+          "layoutHash": "d01beeb0b2e6c925e3c9bd8fb1defffa63c373aa5105af64a35e4012c8652e6c",
+          "mappingHash": "b1e4a6ae813751187f4deaeaf68d3811d97ff418375a48d10ad6de6bd9788f97",
+          "payloadHash": "247487bf2a724c841c95f4ac7158b34689a3549eb5522ef32f32cfcd335e4c76",
+          "byteSize": 8368,
+          "identifierCount": 2051,
+          "recordCount": 3,
+          "propertyCount": 2,
+          "worldResolutionPassed": true
+        }
+      }
+    },
+    {
+      "id": "economy",
+      "options": {
+        "course:grade": true,
+        "course:glow": false,
+        "course:strength": 0.4,
+        "course:gain": 1
+      },
+      "status": {
+        "active": "External:09-complete-pack",
+        "published": 45,
+        "pending": 0,
+        "error": null,
+        "size": {
+          "x": 2048,
+          "y": 1222
+        }
+      },
+      "header": {
+        "packId": "course:09-complete-pack",
+        "manifestVersion": 5,
+        "manifestHash": "46be1c4361a03b7fd26a5cfc6f9908645d19ea3f7718039fec2d96804810483a",
+        "catalogHash": "4bc28c17beffea2311a422fff9f633d2e4f03784460d0254adda8af2e766d84c",
+        "sceneAbiHash": "4bc28c17beffea2311a422fff9f633d2e4f03784460d0254adda8af2e766d84c",
+        "generationId": 45,
+        "generationSourceFingerprint": "c745753c45ff528bdca0d62213a538572d3b649a84a4d06946935a017d225b86",
+        "deviceEpoch": 0,
+        "graphicsApi": "OpenGL ES 3.2 NVIDIA 566.07",
+        "driverVendor": "NVIDIA Corporation",
+        "driverRenderer": "NVIDIA GeForce RTX 4050 Laptop GPU/PCIe/SSE2",
+        "shaderLanguageVersion": "OpenGL ES GLSL ES 3.20",
+        "engineBuild": "2.4.0.0",
+        "options": [
+          {
+            "id": "course:gain",
+            "type": "number",
+            "value": "1"
+          },
+          {
+            "id": "course:glow",
+            "type": "boolean",
+            "value": "false"
+          },
+          {
+            "id": "course:grade",
+            "type": "boolean",
+            "value": "true"
+          },
+          {
+            "id": "course:strength",
+            "type": "number",
+            "value": "0.4"
+          }
+        ],
+        "capabilities": [
+          {
+            "id": "dawnlight:model_shadow/max_instances",
+            "type": "integer",
+            "value": "7"
+          },
+          {
+            "id": "dawnlight:model_shadow/max_joints",
+            "type": "integer",
+            "value": "128"
+          }
+        ]
+      },
+      "linkedPrograms": [
+        "course:post/grade",
+        "course:post/present",
+        "course:scene/terrain",
+        "dawnlight:scene_fallback/terrain_alpha_tested",
+        "dawnlight:scene_fallback/terrain_sorted_translucent",
+        "dawnlight:scene_fallback/terrain_transparent"
+      ],
+      "framebuffersComplete": true,
+      "driver": {
+        "length": 20857,
+        "sha256": "ae174a63d14c8804c316b09a544393ac5a1f31bce6ba17b3e111f93f07180d3e",
+        "reportHash": "41639f48e3909b652adc76048384e70260a3f5b707530cb5fa4aa4aa2d213f4b",
+        "published": true,
+        "linked": true,
+        "framebuffersComplete": true
+      },
+      "data": {
+        "length": 243049,
+        "sha256": "f04cefe2f0883aa608cd544861a0937b2de45d3c6670a29112b2aeb47fa0c14c",
+        "reportHash": "2537100ff340aca07dc93f321354651ce6552322ece9ca0113f5fa7fa592a0ac",
+        "driverStatus": "matched",
+        "interfaceComplete": true,
+        "valueReadback": "notProvided",
+        "liveWorldVerified": false,
+        "preparedBindings": [
+          {
+            "symbol": "u_day",
+            "variable": "course:day",
+            "type": "Float"
+          },
+          {
+            "symbol": "u_gain",
+            "variable": "course:gain",
+            "type": "Float"
+          },
+          {
+            "symbol": "u_rain",
+            "variable": "course:rain",
+            "type": "Float"
+          }
+        ],
+        "materials": {
+          "definitionHash": "e1c53eceed056b45ae1ae433e49de039bc17bd34bb79d1d847c0e4d74c4db301",
+          "layoutHash": "d01beeb0b2e6c925e3c9bd8fb1defffa63c373aa5105af64a35e4012c8652e6c",
+          "mappingHash": "b1e4a6ae813751187f4deaeaf68d3811d97ff418375a48d10ad6de6bd9788f97",
+          "payloadHash": "247487bf2a724c841c95f4ac7158b34689a3549eb5522ef32f32cfcd335e4c76",
+          "byteSize": 8368,
+          "identifierCount": 2051,
+          "recordCount": 3,
+          "propertyCount": 2,
+          "worldResolutionPassed": true
+        }
+      }
+    }
+  ],
+  "checkedAt": "2026-10-24T22:36:28.135Z",
+  "capture": {
+    "id": "course/09-complete-pack",
+    "sourceFingerprint": "2753e348e5f83c84d1814aab1c40778a86d955a4312816ac3c4d8c5008cbe4cc",
+    "archiveSha256": "922ac418657ebab39666b9d4d89e074660809e8bd5fbf5a184edc4e7d8ee4c63",
+    "status": {
+      "active": "External:09-complete-pack",
+      "published": 76,
+      "pending": 0,
+      "error": null,
+      "size": {
+        "x": 2048,
+        "y": 1222
+      }
+    }
+  }
+}

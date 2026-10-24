@@ -387,5 +387,10 @@
     "path": "metadata/w5-verification.json",
     "length": 5185,
     "sha256": "8c73b802c7d931a084604ab203d2a547d2abb6f394870a6ff111ce028916c62c"
+  },
+  "w6Verification": {
+    "path": "metadata/w6-verification.json",
+    "length": 3947,
+    "sha256": "99acc0128307d4b21573b8ae0cf45be8a0bbc71caa50d4750551880b0ce54a68"
   }
 }

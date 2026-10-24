@@ -1,0 +1,37 @@
+{
+  "programs": [
+    {
+      "id": "course:scene/terrain",
+      "kind": "graphics",
+      "vertex": "terrain.vsh",
+      "fragment": "terrain.psh",
+      "compileMode": "officialCompatible"
+    },
+    {
+      "id": "course:post/grade",
+      "kind": "graphics",
+      "vertex": "fullscreen.vsh",
+      "fragment": "grade.psh",
+      "compileMode": "manifestDriven",
+      "defines": {
+        "GRADE_STRENGTH": {
+          "option": "course:strength"
+        }
+      }
+    },
+    {
+      "id": "course:post/present",
+      "kind": "graphics",
+      "vertex": "fullscreen.vsh",
+      "fragment": "present.psh",
+      "compileMode": "manifestDriven"
+    },
+    {
+      "id": "course:post/glow",
+      "kind": "graphics",
+      "vertex": "fullscreen.vsh",
+      "fragment": "glow.psh",
+      "compileMode": "manifestDriven"
+    }
+  ]
+}

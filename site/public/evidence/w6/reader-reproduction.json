@@ -1,0 +1,152 @@
+{
+  "status": "passed",
+  "method": "agent proxy: final deterministic ZIP freshly extracted and inventory verified; README preset recipes applied; saved GLSL edit reloaded and restored; actual resize and BuiltIn restoration",
+  "independentHumanReader": false,
+  "archiveSha256": "94c232295f739d510d33d509503073a149db58825618444d9704ecc4560f636c",
+  "sourceFingerprint": "79ed24ac3d796f5ed8b60dcea274cf4de7e3cac0a43c792652d2f5fb62bdffc3",
+  "loaded": {
+    "active": "External:reader-amber-w6",
+    "published": 79,
+    "pending": 0,
+    "error": null,
+    "size": {
+      "x": 2048,
+      "y": 1222
+    }
+  },
+  "presets": [
+    {
+      "id": "balanced",
+      "values": {
+        "course:grade": true,
+        "course:glow": true,
+        "course:strength": 0.65,
+        "course:gain": 1
+      },
+      "status": {
+        "active": "External:reader-amber-w6",
+        "published": 80,
+        "pending": 0,
+        "error": null,
+        "size": {
+          "x": 2048,
+          "y": 1222
+        }
+      },
+      "manifestHash": "39fa637f175a5510ccb6e969bf84315fd684ddf3130bda698c87ad39499e8f81",
+      "linkedPrograms": [
+        "course:post/glow",
+        "course:post/grade",
+        "course:post/present",
+        "course:scene/terrain",
+        "dawnlight:scene_fallback/terrain_alpha_tested",
+        "dawnlight:scene_fallback/terrain_sorted_translucent",
+        "dawnlight:scene_fallback/terrain_transparent"
+      ],
+      "driverReportHash": "20189d2a132e579c7a68cfa9427b3e1cd39b31d5a93e8735517d2461b0cb9dca"
+    },
+    {
+      "id": "economy",
+      "values": {
+        "course:grade": true,
+        "course:glow": false,
+        "course:strength": 0.4,
+        "course:gain": 1
+      },
+      "status": {
+        "active": "External:reader-amber-w6",
+        "published": 82,
+        "pending": 0,
+        "error": null,
+        "size": {
+          "x": 2048,
+          "y": 1222
+        }
+      },
+      "manifestHash": "39fa637f175a5510ccb6e969bf84315fd684ddf3130bda698c87ad39499e8f81",
+      "linkedPrograms": [
+        "course:post/grade",
+        "course:post/present",
+        "course:scene/terrain",
+        "dawnlight:scene_fallback/terrain_alpha_tested",
+        "dawnlight:scene_fallback/terrain_sorted_translucent",
+        "dawnlight:scene_fallback/terrain_transparent"
+      ],
+      "driverReportHash": "ce46282232210235d00a3bc8a3fde8bc1ca8bc9c9bf5c184a3cf18d326f3d4a1"
+    },
+    {
+      "id": "neutral",
+      "values": {
+        "course:grade": false,
+        "course:glow": false,
+        "course:strength": 0.65,
+        "course:gain": 1
+      },
+      "status": {
+        "active": "External:reader-amber-w6",
+        "published": 84,
+        "pending": 0,
+        "error": null,
+        "size": {
+          "x": 2048,
+          "y": 1222
+        }
+      },
+      "manifestHash": "39fa637f175a5510ccb6e969bf84315fd684ddf3130bda698c87ad39499e8f81",
+      "linkedPrograms": [
+        "course:post/present",
+        "course:scene/terrain",
+        "dawnlight:scene_fallback/terrain_alpha_tested",
+        "dawnlight:scene_fallback/terrain_sorted_translucent",
+        "dawnlight:scene_fallback/terrain_transparent"
+      ],
+      "driverReportHash": "43f046be9caeccf834c2e232ea96d2af8333445e0ea824b1030476aa05bfd9ae"
+    }
+  ],
+  "edit": {
+    "file": "shaders/glow.psh",
+    "originalSha256": "217f4b4405eaed3c5afea9c1b5ca4f3e1b5a78d5e3ed637cec708dcf9e624819",
+    "modifiedSha256": "99320b13a469433cdb99bc2b4becced184b5cb4284b06c846d9ea0b2d40c2ee5",
+    "edited": {
+      "active": "External:reader-amber-w6",
+      "published": 87,
+      "pending": 0,
+      "error": null,
+      "size": {
+        "x": 2048,
+        "y": 1222
+      }
+    },
+    "restoredSource": {
+      "active": "External:reader-amber-w6",
+      "published": 88,
+      "pending": 0,
+      "error": null,
+      "size": {
+        "x": 2048,
+        "y": 1222
+      }
+    }
+  },
+  "resized": {
+    "active": "External:reader-amber-w6",
+    "published": 88,
+    "pending": 0,
+    "error": null,
+    "size": {
+      "x": 1024,
+      "y": 640
+    }
+  },
+  "restored": {
+    "active": "BuiltIn",
+    "published": 89,
+    "pending": 0,
+    "error": null,
+    "size": {
+      "x": 2048,
+      "y": 1222
+    }
+  },
+  "originalInventoryRestored": true
+}

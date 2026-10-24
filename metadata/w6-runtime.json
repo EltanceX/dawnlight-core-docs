@@ -1,0 +1,230 @@
+{
+  "schemaVersion": 1,
+  "baselineId": "candidate-f8aaa5c4",
+  "sourceCommit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+  "status": "observed-with-limits",
+  "observedOn": "2026-10-24",
+  "host": {
+    "sourceHead": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+    "sourceWorktree": "clean",
+    "copiedBinaries": true,
+    "originalRuntimeModified": false,
+    "binaries": [
+      {
+        "file": "Survivalcraft.exe",
+        "sha256": "37c5f9bba3546e762d44737778b9ad7f35aa5fa6121b87a1192bddea8e8ef884"
+      },
+      {
+        "file": "Survivalcraft.dll",
+        "sha256": "3183ff20c2c540429a558408c06ba6d9d322907bbe625528f091a039ffbf461d"
+      },
+      {
+        "file": "Engine.dll",
+        "sha256": "c0e645058a2ac3127b3049d0920441d9f319a3c8f47f4263253d8000e585f239"
+      },
+      {
+        "file": "Content.zip",
+        "sha256": "2d894f4596bd239e0d861774d851d5e9e719ba4c6ea4a39ae0a1d8a949a25787"
+      }
+    ]
+  },
+  "method": {
+    "independentHumanReader": false,
+    "isolatedRuntime": true,
+    "creativeWorld": true,
+    "mainViewOnly": true,
+    "visual": "actual-window-screenshots",
+    "numericValueReadback": false,
+    "performanceGatePassed": null
+  },
+  "examples": [
+    {
+      "id": "course/05-options",
+      "sourceFingerprint": "9b79e19737d998178227184552c9221bf12b05fa1b27f9d551519cfbf7293770",
+      "archiveSha256": "6a0ddf77300c99a49fce65f7f894adac9ffed250c317477048f2c8549f5e9d40",
+      "manifestHash": "d18765d20318f8cf825429a3e9d4a0d05f5072af7f4804befabe78a5c01e5923",
+      "lifecycle": "/evidence/w6/05-options-lifecycle.json",
+      "image": "/media/w6/05-options.jpg",
+      "branches": 3,
+      "summary": {
+        "zh": "已在隔离创造世界完成 3 个选项分支的加载/切换、同名重载、真实窗口尺寸变化与返回 BuiltIn。Program 链接与帧缓冲完整；此章不声明自定义数据。",
+        "en": "Observed 3 option branches, loading/switching, same-pack reload, actual window resizing and return to BuiltIn in the isolated creative world. Programs linked and framebuffers were complete. This chapter declares no custom data."
+      },
+      "caption": {
+        "zh": "默认配置下的实际游戏窗口；裁去标题栏并缩小。截图不作性能或数值证据。",
+        "en": "Actual game window with defaults; title bar cropped and image resized. This image is not performance or numeric evidence."
+      }
+    },
+    {
+      "id": "course/06-custom-data",
+      "sourceFingerprint": "781e156768206d9c6a346cc084496bc1d19feee3def62a0142cd27a49b922907",
+      "archiveSha256": "5d51722f523368c3824a8d7bbfc3cd21baf7f10792206811cff65f394fedf63b",
+      "manifestHash": "37b0e5490ebc1d122b2ffd81724beecba7387811598ff239521ab95bd13aaf74",
+      "lifecycle": "/evidence/w6/06-custom-data-lifecycle.json",
+      "image": "/media/w6/06-custom-data.jpg",
+      "branches": 3,
+      "summary": {
+        "zh": "已在隔离创造世界完成 3 个选项分支的加载/切换、同名重载、真实窗口尺寸变化与返回 BuiltIn。Program 链接与帧缓冲完整；Data 接口报告匹配，未进行数值读回。",
+        "en": "Observed 3 option branches, loading/switching, same-pack reload, actual window resizing and return to BuiltIn in the isolated creative world. Programs linked and framebuffers were complete. Data interfaces matched; no numeric readback was performed."
+      },
+      "caption": {
+        "zh": "默认配置下的实际游戏窗口；裁去标题栏并缩小。截图不作性能或数值证据。",
+        "en": "Actual game window with defaults; title bar cropped and image resized. This image is not performance or numeric evidence."
+      }
+    },
+    {
+      "id": "course/07-materials",
+      "sourceFingerprint": "8c37adf9fd9eaa14e45f8a4e1cd8a81a525798813551d0dcc856dab4c250a04a",
+      "archiveSha256": "2c9bfd035270cc5121c0de2d4deae6becd56ca219ddda5f89f238594c9d3dbc9",
+      "manifestHash": "4403938fc47f6d6eca457cdafe20caebc67aa5540a8a7a461fb7d45ebcd00031",
+      "lifecycle": "/evidence/w6/07-materials-lifecycle.json",
+      "image": "/media/w6/07-materials.jpg",
+      "branches": 3,
+      "summary": {
+        "zh": "已在隔离创造世界完成 3 个选项分支的加载/切换、同名重载、真实窗口尺寸变化与返回 BuiltIn。Program 链接与帧缓冲完整；Data 接口报告匹配，未进行数值读回。",
+        "en": "Observed 3 option branches, loading/switching, same-pack reload, actual window resizing and return to BuiltIn in the isolated creative world. Programs linked and framebuffers were complete. Data interfaces matched; no numeric readback was performed."
+      },
+      "caption": {
+        "zh": "默认配置下的实际游戏窗口；裁去标题栏并缩小。截图不作性能或数值证据。",
+        "en": "Actual game window with defaults; title bar cropped and image resized. This image is not performance or numeric evidence."
+      }
+    },
+    {
+      "id": "course/08-post-chain",
+      "sourceFingerprint": "9dd946ffa7f6f666b3b3b60d6107fde0646da1513717dca3f6cb2073c4207943",
+      "archiveSha256": "bc94ab93df3be1b19363f5f0513f744330f10c505886cf1e0a3924d695e9f87f",
+      "manifestHash": "5c8e01e903979386fb6ab2bc4c9637db59b64dbf1eb49e38ffbb4782be1467e3",
+      "lifecycle": "/evidence/w6/08-post-chain-lifecycle.json",
+      "image": "/media/w6/08-post-chain.jpg",
+      "branches": 5,
+      "summary": {
+        "zh": "已在隔离创造世界完成 5 个选项分支的加载/切换、同名重载、真实窗口尺寸变化与返回 BuiltIn。Program 链接与帧缓冲完整；Data 接口报告匹配，未进行数值读回。",
+        "en": "Observed 5 option branches, loading/switching, same-pack reload, actual window resizing and return to BuiltIn in the isolated creative world. Programs linked and framebuffers were complete. Data interfaces matched; no numeric readback was performed."
+      },
+      "caption": {
+        "zh": "默认配置下的实际游戏窗口；裁去标题栏并缩小。截图不作性能或数值证据。",
+        "en": "Actual game window with defaults; title bar cropped and image resized. This image is not performance or numeric evidence."
+      }
+    },
+    {
+      "id": "course/09-complete-pack",
+      "sourceFingerprint": "2753e348e5f83c84d1814aab1c40778a86d955a4312816ac3c4d8c5008cbe4cc",
+      "archiveSha256": "922ac418657ebab39666b9d4d89e074660809e8bd5fbf5a184edc4e7d8ee4c63",
+      "manifestHash": "46be1c4361a03b7fd26a5cfc6f9908645d19ea3f7718039fec2d96804810483a",
+      "lifecycle": "/evidence/w6/09-complete-pack-lifecycle.json",
+      "image": "/media/w6/09-complete-pack.jpg",
+      "branches": 6,
+      "summary": {
+        "zh": "已在隔离创造世界完成 6 个选项分支的加载/切换、同名重载、真实窗口尺寸变化与返回 BuiltIn。Program 链接与帧缓冲完整；Data 接口报告匹配，未进行数值读回。",
+        "en": "Observed 6 option branches, loading/switching, same-pack reload, actual window resizing and return to BuiltIn in the isolated creative world. Programs linked and framebuffers were complete. Data interfaces matched; no numeric readback was performed."
+      },
+      "caption": {
+        "zh": "默认配置下的实际游戏窗口；裁去标题栏并缩小。截图不作性能或数值证据。",
+        "en": "Actual game window with defaults; title bar cropped and image resized. This image is not performance or numeric evidence."
+      }
+    },
+    {
+      "id": "course/10-distribution",
+      "sourceFingerprint": "79ed24ac3d796f5ed8b60dcea274cf4de7e3cac0a43c792652d2f5fb62bdffc3",
+      "archiveSha256": "94c232295f739d510d33d509503073a149db58825618444d9704ecc4560f636c",
+      "manifestHash": "39fa637f175a5510ccb6e969bf84315fd684ddf3130bda698c87ad39499e8f81",
+      "lifecycle": "/evidence/w6/10-distribution-lifecycle.json",
+      "image": "/media/w6/10-distribution.jpg",
+      "branches": 6,
+      "summary": {
+        "zh": "已在隔离创造世界完成 6 个选项分支的加载/切换、同名重载、真实窗口尺寸变化与返回 BuiltIn。Program 链接与帧缓冲完整；Data 接口报告匹配，未进行数值读回。",
+        "en": "Observed 6 option branches, loading/switching, same-pack reload, actual window resizing and return to BuiltIn in the isolated creative world. Programs linked and framebuffers were complete. Data interfaces matched; no numeric readback was performed."
+      },
+      "caption": {
+        "zh": "默认配置下的实际游戏窗口；裁去标题栏并缩小。截图不作性能或数值证据。",
+        "en": "Actual game window with defaults; title bar cropped and image resized. This image is not performance or numeric evidence."
+      }
+    }
+  ],
+  "readerReproduction": "/evidence/w6/reader-reproduction.json",
+  "settingsImage": "/media/w6/settings.jpg",
+  "publicFiles": [
+    {
+      "path": "evidence/w6/05-options-lifecycle.json",
+      "length": 8303,
+      "sha256": "b722ee46c1c8af58ac48b925ad5bd5f2b29fb87c3bc03f12dafb7b1aecc9d6f4"
+    },
+    {
+      "path": "evidence/w6/06-custom-data-lifecycle.json",
+      "length": 10778,
+      "sha256": "7ee7170b7025c1e40b7a2f5e60c93d1e74d94107378893e06cc342822b1eeffa"
+    },
+    {
+      "path": "evidence/w6/07-materials-lifecycle.json",
+      "length": 12381,
+      "sha256": "82d9f8de04885945764bf392722ff3f9a300f9ec754bb306e1dab65f88907ce6"
+    },
+    {
+      "path": "evidence/w6/08-post-chain-lifecycle.json",
+      "length": 20268,
+      "sha256": "2ce77cdd35253f42e00910b9ea066dfadf392b7ed0fc6b2c80532800859309dc"
+    },
+    {
+      "path": "evidence/w6/09-complete-pack-lifecycle.json",
+      "length": 24330,
+      "sha256": "b3f9320ce7d4fd0befb544076885b4e7ef99c2ede2c287b440c3acf0a486b5e2"
+    },
+    {
+      "path": "evidence/w6/10-distribution-lifecycle.json",
+      "length": 24312,
+      "sha256": "a230a3977bc1aaff4a6bb1c2a037f44446b3cb15c30e109b9b45dc09f4950416"
+    },
+    {
+      "path": "evidence/w6/reader-reproduction.json",
+      "length": 4250,
+      "sha256": "d1a9b834bb21bbc1ff6bd4936b2ccb1a2b380ac3ad6b1cd6767618997fd51581"
+    },
+    {
+      "path": "evidence/w6/settings-observation.json",
+      "length": 992,
+      "sha256": "ebe65c94475d1889785d55c6c5dd722f098267e7edaf169bb9f598293d0bb410"
+    },
+    {
+      "path": "media/w6/05-options.jpg",
+      "length": 179724,
+      "sha256": "22b5c9b1ad4471a7309d55c43a96e86244d33b38baa78c87853ea04af59cfe42"
+    },
+    {
+      "path": "media/w6/06-custom-data.jpg",
+      "length": 180426,
+      "sha256": "80ba0bc9f0b4580e70d900ff2e9b939b716358d87226ae205b7f67a5f5dcb266"
+    },
+    {
+      "path": "media/w6/07-materials.jpg",
+      "length": 182057,
+      "sha256": "9481ed8d7203c6c59ea86c138ef278887398ef0eb3e52aabad811a9b60bae01c"
+    },
+    {
+      "path": "media/w6/08-post-chain.jpg",
+      "length": 184279,
+      "sha256": "8bec55ef4bf5900bb1d58285c67039885a2a4b9ba35fc8c3a32c5037d6c88b6a"
+    },
+    {
+      "path": "media/w6/09-complete-pack.jpg",
+      "length": 183161,
+      "sha256": "2c3627c17a8c8703c1fe1cd373f5c348107e3ee1d9b8bd1254fae455d005eeb2"
+    },
+    {
+      "path": "media/w6/10-distribution.jpg",
+      "length": 182847,
+      "sha256": "7300fd512dd88365833f197d2478ee461ae3716031f6eb1b02673ef45a898f91"
+    },
+    {
+      "path": "media/w6/settings-applied.jpg",
+      "length": 201381,
+      "sha256": "d1899deb7b8ccb239203646c8c3a93839a38adc57f17bac671eea9f655e48891"
+    },
+    {
+      "path": "media/w6/settings.jpg",
+      "length": 202797,
+      "sha256": "1a3557efa6989e26de2aced18c5fd431037a5ac5f047319525b3ea4280cf95a5"
+    }
+  ],
+  "settingsObservation": "/evidence/w6/settings-observation.json",
+  "settingsAppliedImage": "/media/w6/settings-applied.jpg"
+}

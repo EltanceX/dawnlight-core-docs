@@ -32,6 +32,15 @@ const chinese: DefaultTheme.Config = {
       { text: '04 · MRT 数据', link: '/tutorial/04-mrt' },
       { text: '实机验证记录', link: '/tutorial/runtime' }
     ] },
+    { text: '制作独立光影包', items: [
+      { text: '05 · 可选效果与设置', link: '/tutorial/05-options' },
+      { text: '06 · 时间、天气与数据', link: '/tutorial/06-custom-data' },
+      { text: '07 · 稳定内容与材质', link: '/tutorial/07-materials' },
+      { text: '08 · 后处理链与成本', link: '/tutorial/08-post-chain' },
+      { text: '09 · 完整琥珀光影包', link: '/tutorial/09-complete-pack' },
+      { text: '10 · 验证与分发', link: '/tutorial/10-distribution' },
+      { text: '光影包实机记录', link: '/tutorial/pack-runtime' }
+    ] },
     { text: 'JSON 与 ABI 参考', collapsed: true, items: reference.pages.map(page => ({
       text: page.titles['zh-CN'], link: '/reference/' + (page.id === 'index' ? '' : page.id)
     })) },
@@ -78,6 +87,15 @@ const english: DefaultTheme.Config = {
       { text: '03 · Opaque Terrain', link: '/en/tutorial/03-scene' },
       { text: '04 · MRT data', link: '/en/tutorial/04-mrt' },
       { text: 'Runtime observations', link: '/en/tutorial/runtime' }
+    ] },
+    { text: 'Build an independent pack', items: [
+      { text: '05 · Options and settings', link: '/en/tutorial/05-options' },
+      { text: '06 · Time, weather and data', link: '/en/tutorial/06-custom-data' },
+      { text: '07 · Stable content and materials', link: '/en/tutorial/07-materials' },
+      { text: '08 · Post chain and cost', link: '/en/tutorial/08-post-chain' },
+      { text: '09 · Complete Amber pack', link: '/en/tutorial/09-complete-pack' },
+      { text: '10 · Verify and distribute', link: '/en/tutorial/10-distribution' },
+      { text: 'Pack runtime observations', link: '/en/tutorial/pack-runtime' }
     ] },
     { text: 'JSON and ABI reference', collapsed: true, items: reference.pages.map(page => ({
       text: page.titles['en-US'], link: '/en/reference/' + (page.id === 'index' ? '' : page.id)

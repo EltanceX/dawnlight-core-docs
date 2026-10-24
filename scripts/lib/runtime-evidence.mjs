@@ -29,7 +29,7 @@ export async function loadRuntimeEvidence(context, receipts) {
     if (sha256) assert.equal(file.sha256, sha256, `Runtime asset identity: ${url}`);
     return inside(publicRoot, file.path);
   }
-  assert.deepEqual(record.examples.map(item => item.id).sort(), context.examples.map(item => item.id).sort(), 'Runtime example IDs');
+  assert.deepEqual(record.examples.map(item => item.id).sort(), context.examples.filter(item => item.validationStage !== 'w6').map(item => item.id).sort(), 'Runtime example IDs');
   for (const item of record.examples) {
     const example = context.examples.find(example => example.id === item.id);
     const receipt = receipts.examples.find(example => example.id === item.id);

@@ -1183,6 +1183,387 @@
           "path": "reference/prose/en/examples.md"
         }
       ]
+    },
+    {
+      "path": "tutorial/05-options.md",
+      "publication": "published",
+      "generated": false,
+      "manifestVersions": [
+        5
+      ],
+      "sceneAbiVersions": [
+        2
+      ],
+      "sourceRefs": [
+        {
+          "repository": "website",
+          "path": "examples/registry.json"
+        },
+        {
+          "repository": "website",
+          "path": "examples/course/05-options/shaderpack.json"
+        },
+        {
+          "repository": "website",
+          "path": "metadata/w6-examples-validation.json"
+        },
+        {
+          "repository": "website",
+          "path": "metadata/w6-runtime.json"
+        }
+      ],
+      "example": "course/05-options"
+    },
+    {
+      "path": "examples/05-options.md",
+      "publication": "published",
+      "generated": true,
+      "manifestVersions": [
+        5
+      ],
+      "sceneAbiVersions": [
+        2
+      ],
+      "sourceRefs": [
+        {
+          "repository": "website",
+          "path": "examples/registry.json"
+        },
+        {
+          "repository": "website",
+          "path": "examples/course/05-options/shaderpack.json"
+        },
+        {
+          "repository": "website",
+          "path": "metadata/w6-examples-validation.json"
+        },
+        {
+          "repository": "website",
+          "path": "metadata/w6-runtime.json"
+        }
+      ],
+      "example": "course/05-options"
+    },
+    {
+      "path": "tutorial/06-custom-data.md",
+      "publication": "published",
+      "generated": false,
+      "manifestVersions": [
+        5
+      ],
+      "sceneAbiVersions": [
+        2
+      ],
+      "sourceRefs": [
+        {
+          "repository": "website",
+          "path": "examples/registry.json"
+        },
+        {
+          "repository": "website",
+          "path": "examples/course/06-custom-data/shaderpack.json"
+        },
+        {
+          "repository": "website",
+          "path": "metadata/w6-examples-validation.json"
+        },
+        {
+          "repository": "website",
+          "path": "metadata/w6-runtime.json"
+        }
+      ],
+      "example": "course/06-custom-data"
+    },
+    {
+      "path": "examples/06-custom-data.md",
+      "publication": "published",
+      "generated": true,
+      "manifestVersions": [
+        5
+      ],
+      "sceneAbiVersions": [
+        2
+      ],
+      "sourceRefs": [
+        {
+          "repository": "website",
+          "path": "examples/registry.json"
+        },
+        {
+          "repository": "website",
+          "path": "examples/course/06-custom-data/shaderpack.json"
+        },
+        {
+          "repository": "website",
+          "path": "metadata/w6-examples-validation.json"
+        },
+        {
+          "repository": "website",
+          "path": "metadata/w6-runtime.json"
+        }
+      ],
+      "example": "course/06-custom-data"
+    },
+    {
+      "path": "tutorial/07-materials.md",
+      "publication": "published",
+      "generated": false,
+      "manifestVersions": [
+        5
+      ],
+      "sceneAbiVersions": [
+        2
+      ],
+      "sourceRefs": [
+        {
+          "repository": "website",
+          "path": "examples/registry.json"
+        },
+        {
+          "repository": "website",
+          "path": "examples/course/07-materials/shaderpack.json"
+        },
+        {
+          "repository": "website",
+          "path": "metadata/w6-examples-validation.json"
+        },
+        {
+          "repository": "website",
+          "path": "metadata/w6-runtime.json"
+        }
+      ],
+      "example": "course/07-materials"
+    },
+    {
+      "path": "examples/07-materials.md",
+      "publication": "published",
+      "generated": true,
+      "manifestVersions": [
+        5
+      ],
+      "sceneAbiVersions": [
+        2
+      ],
+      "sourceRefs": [
+        {
+          "repository": "website",
+          "path": "examples/registry.json"
+        },
+        {
+          "repository": "website",
+          "path": "examples/course/07-materials/shaderpack.json"
+        },
+        {
+          "repository": "website",
+          "path": "metadata/w6-examples-validation.json"
+        },
+        {
+          "repository": "website",
+          "path": "metadata/w6-runtime.json"
+        }
+      ],
+      "example": "course/07-materials"
+    },
+    {
+      "path": "tutorial/08-post-chain.md",
+      "publication": "published",
+      "generated": false,
+      "manifestVersions": [
+        5
+      ],
+      "sceneAbiVersions": [
+        2
+      ],
+      "sourceRefs": [
+        {
+          "repository": "website",
+          "path": "examples/registry.json"
+        },
+        {
+          "repository": "website",
+          "path": "examples/course/08-post-chain/shaderpack.json"
+        },
+        {
+          "repository": "website",
+          "path": "metadata/w6-examples-validation.json"
+        },
+        {
+          "repository": "website",
+          "path": "metadata/w6-runtime.json"
+        }
+      ],
+      "example": "course/08-post-chain"
+    },
+    {
+      "path": "examples/08-post-chain.md",
+      "publication": "published",
+      "generated": true,
+      "manifestVersions": [
+        5
+      ],
+      "sceneAbiVersions": [
+        2
+      ],
+      "sourceRefs": [
+        {
+          "repository": "website",
+          "path": "examples/registry.json"
+        },
+        {
+          "repository": "website",
+          "path": "examples/course/08-post-chain/shaderpack.json"
+        },
+        {
+          "repository": "website",
+          "path": "metadata/w6-examples-validation.json"
+        },
+        {
+          "repository": "website",
+          "path": "metadata/w6-runtime.json"
+        }
+      ],
+      "example": "course/08-post-chain"
+    },
+    {
+      "path": "tutorial/09-complete-pack.md",
+      "publication": "published",
+      "generated": false,
+      "manifestVersions": [
+        5
+      ],
+      "sceneAbiVersions": [
+        2
+      ],
+      "sourceRefs": [
+        {
+          "repository": "website",
+          "path": "examples/registry.json"
+        },
+        {
+          "repository": "website",
+          "path": "examples/course/09-complete-pack/shaderpack.json"
+        },
+        {
+          "repository": "website",
+          "path": "metadata/w6-examples-validation.json"
+        },
+        {
+          "repository": "website",
+          "path": "metadata/w6-runtime.json"
+        }
+      ],
+      "example": "course/09-complete-pack"
+    },
+    {
+      "path": "examples/09-complete-pack.md",
+      "publication": "published",
+      "generated": true,
+      "manifestVersions": [
+        5
+      ],
+      "sceneAbiVersions": [
+        2
+      ],
+      "sourceRefs": [
+        {
+          "repository": "website",
+          "path": "examples/registry.json"
+        },
+        {
+          "repository": "website",
+          "path": "examples/course/09-complete-pack/shaderpack.json"
+        },
+        {
+          "repository": "website",
+          "path": "metadata/w6-examples-validation.json"
+        },
+        {
+          "repository": "website",
+          "path": "metadata/w6-runtime.json"
+        }
+      ],
+      "example": "course/09-complete-pack"
+    },
+    {
+      "path": "tutorial/10-distribution.md",
+      "publication": "published",
+      "generated": false,
+      "manifestVersions": [
+        5
+      ],
+      "sceneAbiVersions": [
+        2
+      ],
+      "sourceRefs": [
+        {
+          "repository": "website",
+          "path": "examples/registry.json"
+        },
+        {
+          "repository": "website",
+          "path": "examples/course/10-distribution/shaderpack.json"
+        },
+        {
+          "repository": "website",
+          "path": "metadata/w6-examples-validation.json"
+        },
+        {
+          "repository": "website",
+          "path": "metadata/w6-runtime.json"
+        }
+      ],
+      "example": "course/10-distribution"
+    },
+    {
+      "path": "examples/10-distribution.md",
+      "publication": "published",
+      "generated": true,
+      "manifestVersions": [
+        5
+      ],
+      "sceneAbiVersions": [
+        2
+      ],
+      "sourceRefs": [
+        {
+          "repository": "website",
+          "path": "examples/registry.json"
+        },
+        {
+          "repository": "website",
+          "path": "examples/course/10-distribution/shaderpack.json"
+        },
+        {
+          "repository": "website",
+          "path": "metadata/w6-examples-validation.json"
+        },
+        {
+          "repository": "website",
+          "path": "metadata/w6-runtime.json"
+        }
+      ],
+      "example": "course/10-distribution"
+    },
+    {
+      "path": "tutorial/pack-runtime.md",
+      "publication": "published",
+      "generated": false,
+      "manifestVersions": [
+        5
+      ],
+      "sceneAbiVersions": [
+        2
+      ],
+      "sourceRefs": [
+        {
+          "repository": "website",
+          "path": "metadata/w6-runtime.json"
+        },
+        {
+          "repository": "website",
+          "path": "metadata/w6-examples-validation.json"
+        }
+      ]
     }
   ]
 }

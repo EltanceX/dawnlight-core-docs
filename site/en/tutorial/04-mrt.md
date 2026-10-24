@@ -87,3 +87,5 @@ Gray output: verify opaque writes A=1, then inspect grade bindings. Color withou
 In a copy change DEBUG_VIEW from 1 to 2 for identifier visualization, then to 0 for color. Recheck interfaces and driver compilation for changed source. Explain why three named attachments do not mean every scene category writes all three.
 
 [Runtime method and evidence](/en/tutorial/runtime) · [Review the resource model](/en/concepts/resources-targets)
+
+[Next: options and settings](/en/tutorial/05-options)

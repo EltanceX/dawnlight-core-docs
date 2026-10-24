@@ -22,7 +22,7 @@ dawnlight:
 
 DawnlightCore is a shader-focused modification of Survivalcraft. It connects resource declarations, shader registration and rendering commands through a general-purpose pipeline. Shader pack authors use JSON to organize execution and GLSL to implement visual effects.
 
-This documentation is for authors creating independent shader packs. Start with [environment setup](./environment) and [GLSL essentials](./glsl), then follow chapters 00–04 through loading, grading, separate resources, Terrain integration and MRT data. Each chapter supplies complete source, an independent download, a static receipt and separately recorded game observations. The [JSON and ABI reference](../reference/) covers fields, behavior constraints, public catalogs and version differences.
+This documentation is for authors creating independent shader packs. Start with [environment setup](./environment) and [GLSL essentials](./glsl), then follow chapters 00–10 through loading, grading, separate resources, Terrain integration and MRT data. Each chapter supplies complete source, an independent download, a static receipt and separately recorded game observations. The [JSON and ABI reference](../reference/) covers fields, behavior constraints, public catalogs and version differences.
 
 <div id="需要哪些基础" class="legacy-anchor" aria-hidden="true"></div>
 
@@ -45,6 +45,12 @@ Writing a shader pack primarily involves JSON and GLSL. The host's C# code provi
 | [02 · Separate resource](../tutorial/02-resources) | Trace writers, readers and ordering |
 | [03 · Scene integration](../tutorial/03-scene) | Override opaque Terrain |
 | [04 · MRT data](../tutorial/04-mrt) | Write normals and teaching identifiers |
+| [05 · Options and settings](/en/tutorial/05-options) | Build and validate this independent snapshot |
+| [06 · Time, weather and custom data](/en/tutorial/06-custom-data) | Build and validate this independent snapshot |
+| [07 · Stable content and materials](/en/tutorial/07-materials) | Build and validate this independent snapshot |
+| [08 · A post chain and its cost](/en/tutorial/08-post-chain) | Build and validate this independent snapshot |
+| [09 · Compose an independent pack](/en/tutorial/09-complete-pack) | Build and validate this independent snapshot |
+| [10 · Verify and distribute](/en/tutorial/10-distribution) | Build and validate this independent snapshot |
 
 Use the following concepts alongside the course. The [runtime record](../tutorial/runtime) states the actual test scope.
 

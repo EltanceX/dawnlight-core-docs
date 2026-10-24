@@ -68,8 +68,9 @@ test('native source includes copy authoritative shader bytes', async ({ page }) 
 test('all five complete archives and raw source downloads match their inventories', async ({ request }) => {
   test.setTimeout(90_000)
   const index = await (await request.get('downloads/examples/index.json')).json()
-  expect(index.examples.map((item: { id: string }) => item.id)).toEqual(ids.map(id => 'course/' + id))
-  for (const example of index.examples) {
+  const historical = index.examples.filter((item: { id: string }) => ids.some(id => item.id === 'course/' + id))
+  expect(historical.map((item: { id: string }) => item.id)).toEqual(ids.map(id => 'course/' + id))
+  for (const example of historical) {
     const archive = await request.get(example.downloadUrl)
     expect(archive.ok()).toBe(true)
     expect(sha256(await archive.body())).toBe(example.archiveSha256)

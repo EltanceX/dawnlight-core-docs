@@ -1,0 +1,54 @@
+{
+  "resources": [
+    {
+      "id": "course:scene/color",
+      "kind": "texture2D",
+      "lifetime": "persistent",
+      "size": {
+        "mode": "viewport"
+      },
+      "format": "rgba8"
+    },
+    {
+      "id": "course:scene/depth",
+      "kind": "texture2D",
+      "lifetime": "persistent",
+      "size": {
+        "mode": "viewport"
+      },
+      "format": "depth24"
+    },
+    {
+      "id": "course:post/color",
+      "kind": "texture2D",
+      "lifetime": "persistent",
+      "size": {
+        "mode": "viewport"
+      },
+      "format": "rgba8"
+    },
+    {
+      "id": "course:materials",
+      "kind": "buffer",
+      "lifetime": "persistent",
+      "usage": "staticDraw",
+      "content": {
+        "type": "materialTable",
+        "version": 1
+      }
+    },
+    {
+      "id": "course:post/glow",
+      "kind": "texture2D",
+      "lifetime": "persistent",
+      "size": {
+        "mode": "viewport",
+        "scale": [
+          0.5,
+          0.5
+        ]
+      },
+      "format": "rgba8"
+    }
+  ]
+}

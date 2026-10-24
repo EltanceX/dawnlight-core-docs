@@ -1,0 +1,277 @@
+{
+  "id": "course/05-options",
+  "sourceFingerprint": "9b79e19737d998178227184552c9221bf12b05fa1b27f9d551519cfbf7293770",
+  "archiveSha256": "6a0ddf77300c99a49fce65f7f894adac9ffed250c317477048f2c8549f5e9d40",
+  "status": "passed",
+  "loaded": {
+    "active": "External:05-options",
+    "published": 3,
+    "pending": 0,
+    "error": null,
+    "size": {
+      "x": 2048,
+      "y": 1222
+    }
+  },
+  "reloaded": {
+    "active": "External:05-options",
+    "published": 4,
+    "pending": 0,
+    "error": null,
+    "size": {
+      "x": 2048,
+      "y": 1222
+    }
+  },
+  "resized": {
+    "active": "External:05-options",
+    "published": 4,
+    "pending": 0,
+    "error": null,
+    "size": {
+      "x": 1024,
+      "y": 640
+    }
+  },
+  "builtIn": {
+    "active": "BuiltIn",
+    "published": 8,
+    "pending": 0,
+    "error": null,
+    "size": {
+      "x": 2048,
+      "y": 1222
+    }
+  },
+  "variants": [
+    {
+      "id": "default",
+      "options": {},
+      "status": {
+        "active": "External:05-options",
+        "published": 4,
+        "pending": 0,
+        "error": null,
+        "size": {
+          "x": 2048,
+          "y": 1222
+        }
+      },
+      "header": {
+        "packId": "course:05-options",
+        "manifestVersion": 5,
+        "manifestHash": "d18765d20318f8cf825429a3e9d4a0d05f5072af7f4804befabe78a5c01e5923",
+        "catalogHash": "4bc28c17beffea2311a422fff9f633d2e4f03784460d0254adda8af2e766d84c",
+        "sceneAbiHash": "4bc28c17beffea2311a422fff9f633d2e4f03784460d0254adda8af2e766d84c",
+        "generationId": 4,
+        "generationSourceFingerprint": "d217adf668866670d82da79cef0eee53eb65da423daadde2ce00bcfb58cf63b2",
+        "deviceEpoch": 0,
+        "graphicsApi": "OpenGL ES 3.2 NVIDIA 566.07",
+        "driverVendor": "NVIDIA Corporation",
+        "driverRenderer": "NVIDIA GeForce RTX 4050 Laptop GPU/PCIe/SSE2",
+        "shaderLanguageVersion": "OpenGL ES GLSL ES 3.20",
+        "engineBuild": "2.4.0.0",
+        "options": [
+          {
+            "id": "course:grade",
+            "type": "boolean",
+            "value": "true"
+          },
+          {
+            "id": "course:strength",
+            "type": "number",
+            "value": "0.65"
+          }
+        ],
+        "capabilities": [
+          {
+            "id": "dawnlight:model_shadow/max_instances",
+            "type": "integer",
+            "value": "7"
+          },
+          {
+            "id": "dawnlight:model_shadow/max_joints",
+            "type": "integer",
+            "value": "128"
+          }
+        ]
+      },
+      "linkedPrograms": [
+        "course:post/grade",
+        "course:post/present",
+        "course:scene/terrain",
+        "dawnlight:scene_fallback/terrain_alpha_tested",
+        "dawnlight:scene_fallback/terrain_sorted_translucent",
+        "dawnlight:scene_fallback/terrain_transparent"
+      ],
+      "framebuffersComplete": true,
+      "driver": {
+        "length": 19991,
+        "sha256": "44e30ca3cc792d80f2892651063676d910a16f19836387599e140837cc6d46b7",
+        "reportHash": "554f1a7b4875a09c55711fcaa29e1cc460d0f4def441cf34f02636cefdea31e4",
+        "published": true,
+        "linked": true,
+        "framebuffersComplete": true
+      }
+    },
+    {
+      "id": "grade-off",
+      "options": {
+        "course:grade": false
+      },
+      "status": {
+        "active": "External:05-options",
+        "published": 5,
+        "pending": 0,
+        "error": null,
+        "size": {
+          "x": 2048,
+          "y": 1222
+        }
+      },
+      "header": {
+        "packId": "course:05-options",
+        "manifestVersion": 5,
+        "manifestHash": "d18765d20318f8cf825429a3e9d4a0d05f5072af7f4804befabe78a5c01e5923",
+        "catalogHash": "4bc28c17beffea2311a422fff9f633d2e4f03784460d0254adda8af2e766d84c",
+        "sceneAbiHash": "4bc28c17beffea2311a422fff9f633d2e4f03784460d0254adda8af2e766d84c",
+        "generationId": 5,
+        "generationSourceFingerprint": "d217adf668866670d82da79cef0eee53eb65da423daadde2ce00bcfb58cf63b2",
+        "deviceEpoch": 0,
+        "graphicsApi": "OpenGL ES 3.2 NVIDIA 566.07",
+        "driverVendor": "NVIDIA Corporation",
+        "driverRenderer": "NVIDIA GeForce RTX 4050 Laptop GPU/PCIe/SSE2",
+        "shaderLanguageVersion": "OpenGL ES GLSL ES 3.20",
+        "engineBuild": "2.4.0.0",
+        "options": [
+          {
+            "id": "course:grade",
+            "type": "boolean",
+            "value": "false"
+          },
+          {
+            "id": "course:strength",
+            "type": "number",
+            "value": "0.65"
+          }
+        ],
+        "capabilities": [
+          {
+            "id": "dawnlight:model_shadow/max_instances",
+            "type": "integer",
+            "value": "7"
+          },
+          {
+            "id": "dawnlight:model_shadow/max_joints",
+            "type": "integer",
+            "value": "128"
+          }
+        ]
+      },
+      "linkedPrograms": [
+        "course:post/present",
+        "course:scene/terrain",
+        "dawnlight:scene_fallback/terrain_alpha_tested",
+        "dawnlight:scene_fallback/terrain_sorted_translucent",
+        "dawnlight:scene_fallback/terrain_transparent"
+      ],
+      "framebuffersComplete": true,
+      "driver": {
+        "length": 18762,
+        "sha256": "d72f19ad4e220a1853c2ee9fe0acce5d16d593611290c305258967c4d9280981",
+        "reportHash": "bfcef6e61c108531509a11538093b5cf51c1ea451a0027773fda503edced3104",
+        "published": true,
+        "linked": true,
+        "framebuffersComplete": true
+      }
+    },
+    {
+      "id": "strength-max",
+      "options": {
+        "course:strength": 1
+      },
+      "status": {
+        "active": "External:05-options",
+        "published": 7,
+        "pending": 0,
+        "error": null,
+        "size": {
+          "x": 2048,
+          "y": 1222
+        }
+      },
+      "header": {
+        "packId": "course:05-options",
+        "manifestVersion": 5,
+        "manifestHash": "d18765d20318f8cf825429a3e9d4a0d05f5072af7f4804befabe78a5c01e5923",
+        "catalogHash": "4bc28c17beffea2311a422fff9f633d2e4f03784460d0254adda8af2e766d84c",
+        "sceneAbiHash": "4bc28c17beffea2311a422fff9f633d2e4f03784460d0254adda8af2e766d84c",
+        "generationId": 7,
+        "generationSourceFingerprint": "cb2501b5324719f51eb14da6377908fe5915f5d2cf938190a570247ab4cff6c3",
+        "deviceEpoch": 0,
+        "graphicsApi": "OpenGL ES 3.2 NVIDIA 566.07",
+        "driverVendor": "NVIDIA Corporation",
+        "driverRenderer": "NVIDIA GeForce RTX 4050 Laptop GPU/PCIe/SSE2",
+        "shaderLanguageVersion": "OpenGL ES GLSL ES 3.20",
+        "engineBuild": "2.4.0.0",
+        "options": [
+          {
+            "id": "course:grade",
+            "type": "boolean",
+            "value": "true"
+          },
+          {
+            "id": "course:strength",
+            "type": "number",
+            "value": "1"
+          }
+        ],
+        "capabilities": [
+          {
+            "id": "dawnlight:model_shadow/max_instances",
+            "type": "integer",
+            "value": "7"
+          },
+          {
+            "id": "dawnlight:model_shadow/max_joints",
+            "type": "integer",
+            "value": "128"
+          }
+        ]
+      },
+      "linkedPrograms": [
+        "course:post/grade",
+        "course:post/present",
+        "course:scene/terrain",
+        "dawnlight:scene_fallback/terrain_alpha_tested",
+        "dawnlight:scene_fallback/terrain_sorted_translucent",
+        "dawnlight:scene_fallback/terrain_transparent"
+      ],
+      "framebuffersComplete": true,
+      "driver": {
+        "length": 19988,
+        "sha256": "d1a57cc4698d56aab473971d15a0880abb3e51a5e1ae45ae8daf6f421c2ec1d0",
+        "reportHash": "99e16d8e7313ac60cd916a25beb3d53c084619fd0f4a4e75320ed2bad6488c99",
+        "published": true,
+        "linked": true,
+        "framebuffersComplete": true
+      }
+    }
+  ],
+  "checkedAt": "2026-10-24T22:35:19.326Z",
+  "capture": {
+    "id": "course/05-options",
+    "sourceFingerprint": "9b79e19737d998178227184552c9221bf12b05fa1b27f9d551519cfbf7293770",
+    "archiveSha256": "6a0ddf77300c99a49fce65f7f894adac9ffed250c317477048f2c8549f5e9d40",
+    "status": {
+      "active": "External:05-options",
+      "published": 64,
+      "pending": 0,
+      "error": null,
+      "size": {
+        "x": 2048,
+        "y": 1222
+      }
+    }
+  }
+}

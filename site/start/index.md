@@ -22,7 +22,7 @@ dawnlight:
 
 DawnlightCore 是 Survivalcraft 的光影改版。它将资源声明、着色器注册和渲染命令连接到一套通用管线，让光影包作者通过 JSON 组织执行关系，通过 GLSL 实现具体效果。
 
-这份文档面向希望制作独立光影包的作者。从[环境准备](./environment)和 [GLSL 基础](./glsl)开始，按第 00～04 章完成加载、调色、独立资源、Terrain 接入和 MRT 数据写入。每章提供完整源码、独立下载、静态收据及单独记录的实机观察；[JSON 与 ABI 参考](../reference/)提供字段、行为约束、公共目录和版本差异。
+这份文档面向希望制作独立光影包的作者。从[环境准备](./environment)和 [GLSL 基础](./glsl)开始，按第 00～10 章完成加载、调色、独立资源、Terrain 接入和 MRT 数据写入。每章提供完整源码、独立下载、静态收据及单独记录的实机观察；[JSON 与 ABI 参考](../reference/)提供字段、行为约束、公共目录和版本差异。
 
 <div id="需要哪些基础" class="legacy-anchor" aria-hidden="true"></div>
 
@@ -45,6 +45,12 @@ DawnlightCore 是 Survivalcraft 的光影改版。它将资源声明、着色器
 | [02 · 独立资源](../tutorial/02-resources) | 追踪写者、读者和顺序 |
 | [03 · 场景接入](../tutorial/03-scene) | 接管 opaque Terrain |
 | [04 · MRT 数据](../tutorial/04-mrt) | 写入法线和教学标识符 |
+| [05 · 可选效果与设置](/tutorial/05-options) | 制作并验证本章完整独立包 |
+| [06 · 时间、天气与自定义数据](/tutorial/06-custom-data) | 制作并验证本章完整独立包 |
+| [07 · 稳定内容与材质表](/tutorial/07-materials) | 制作并验证本章完整独立包 |
+| [08 · 多级后处理与成本](/tutorial/08-post-chain) | 制作并验证本章完整独立包 |
+| [09 · 组合独立光影包](/tutorial/09-complete-pack) | 制作并验证本章完整独立包 |
+| [10 · 验证与分发](/tutorial/10-distribution) | 制作并验证本章完整独立包 |
 
 以下概念页可与课程交叉阅读；[实机记录](../tutorial/runtime)说明实际测试范围。
 

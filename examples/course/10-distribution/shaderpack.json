@@ -1,0 +1,44 @@
+{
+  "manifestVersion": 5,
+  "sceneAbiVersion": 2,
+  "expectedCatalogSha256": "4bc28c17beffea2311a422fff9f633d2e4f03784460d0254adda8af2e766d84c",
+  "id": "course:10-distribution",
+  "name": "Dawnlight Course · Amber 10-distribution",
+  "version": "1.0.0",
+  "author": "EltanceX",
+  "description": "Website-authored Amber course snapshot; see README for tested scope.",
+  "shaderRoot": "shaders",
+  "frameTarget": {
+    "targets": {
+      "colors": [
+        {
+          "location": 0,
+          "resource": "course:scene/color",
+          "loadOp": "clear",
+          "storeOp": "store",
+          "clearValue": [
+            0,
+            0,
+            0,
+            1
+          ]
+        }
+      ],
+      "depth": {
+        "resource": "course:scene/depth",
+        "loadOp": "clear",
+        "storeOp": "store",
+        "clearValue": 1
+      }
+    }
+  },
+  "settings": "settings.json",
+  "sourceFormatVersion": 1,
+  "fragments": [
+    "manifest/options.json",
+    "manifest/resources.json",
+    "manifest/programs.json",
+    "manifest/passes.json",
+    "manifest/data.json"
+  ]
+}

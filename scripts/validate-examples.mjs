@@ -18,7 +18,7 @@ try {
   const tool = await verifyTool(toolRoot, lock);
   temporary = await fs.mkdtemp(path.join(os.tmpdir(), 'dawnlight-examples-'));
   const results = [];
-  for (const example of context.examples) {
+  for (const example of context.examples.filter(e => e.validationStage !== 'w6')) {
     const prefix = example.id.replaceAll('/', '-');
     const archive = path.join(temporary, prefix + '.zip');
     const unpacked = path.join(temporary, prefix);
@@ -76,7 +76,7 @@ try {
   const report = { schemaVersion: 1, baselineId: lock.baselineId, sourceCommit: lock.upstream.commit, toolInventorySha256: lock.tool.distribution.inventory.sha256, examples: results };
   if (verifyOnly) {
     const previous = await loadReceipts(context);
-    assert.equal(hash(jsonBytes(previous)), hash(jsonBytes(report)), 'Analyzer receipt differs from committed evidence');
+    assert.equal(hash(jsonBytes({ ...previous, examples: previous.examples.filter(e => !context.examples.find(x => x.id === e.id)?.validationStage) })), hash(jsonBytes(report)), 'Analyzer receipt differs from committed evidence');
   } else {
     await writeJson(path.join(ROOT, 'metadata/examples-validation.json'), report);
   }

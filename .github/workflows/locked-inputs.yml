@@ -29,6 +29,8 @@ jobs:
         run: npm run authoring:check
       - name: Reproduce public reference receipts
         run: npm run reference:verify
+      - name: Reproduce independent pack branch receipts
+        run: npm run examples:w6:verify
       - name: Verify corruption rejection and Windows checkout
         run: node --test scripts/tests/locked-inputs.test.mjs
       - uses: actions/upload-artifact@v7.0.2
@@ -38,3 +40,4 @@ jobs:
           path: |
             artifacts/w3
             artifacts/w5
+            artifacts/w6/validation
