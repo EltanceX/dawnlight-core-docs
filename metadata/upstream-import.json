@@ -1,0 +1,319 @@
+{
+  "schemaVersion": 1,
+  "baselineId": "candidate-f8aaa5c4",
+  "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+  "bytePolicy": "git-blob-exact",
+  "scope": "Explicit files plus complete selected example trees; no worktree byte normalization.",
+  "rules": [
+    {
+      "kind": "tree",
+      "source": "Survivalcraft/shaderpacks/Dawnlight_v3.1",
+      "target": "examples/Dawnlight_v3.1"
+    },
+    {
+      "kind": "tree",
+      "source": "Survivalcraft/shaderpacks/SceneAbiLab_v0.1",
+      "target": "examples/SceneAbiLab_v0.1"
+    },
+    {
+      "kind": "tree",
+      "source": "Survivalcraft/shaderpack-candidates/CustomDataLab_Both",
+      "target": "examples/CustomDataLab_Both"
+    },
+    {
+      "kind": "tree",
+      "source": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21",
+      "target": "examples/MakeUpUltraFast_SC_v0.21"
+    },
+    {
+      "kind": "tree",
+      "source": "docs/schemas",
+      "target": "authoring/docs/schemas"
+    },
+    {
+      "kind": "tree",
+      "source": "docs/schemas-v5",
+      "target": "authoring/docs/schemas-v5"
+    },
+    {
+      "kind": "file",
+      "source": ".gitattributes",
+      "target": "source-excerpts/upstream.gitattributes.txt"
+    },
+    {
+      "kind": "file",
+      "source": "Survivalcraft.Pipeline.Tests/ComparisonSamplingTests.cs",
+      "target": "source-excerpts/Survivalcraft.Pipeline.Tests/ComparisonSamplingTests.cs"
+    },
+    {
+      "kind": "file",
+      "source": "Survivalcraft.Pipeline.Tests/LightFrustumGeometryTests.cs",
+      "target": "source-excerpts/Survivalcraft.Pipeline.Tests/LightFrustumGeometryTests.cs"
+    },
+    {
+      "kind": "file",
+      "source": "Survivalcraft.Pipeline.Tests/P10H7CompatibilityAndAcceptanceTests.cs",
+      "target": "source-excerpts/Survivalcraft.Pipeline.Tests/P10H7CompatibilityAndAcceptanceTests.cs"
+    },
+    {
+      "kind": "file",
+      "source": "Survivalcraft.Pipeline.Tests/P10IFrameTargetOwnershipTests.cs",
+      "target": "source-excerpts/Survivalcraft.Pipeline.Tests/P10IFrameTargetOwnershipTests.cs"
+    },
+    {
+      "kind": "file",
+      "source": "Survivalcraft.Pipeline.Tests/P11GDataDriverAndPublishTests.cs",
+      "target": "source-excerpts/Survivalcraft.Pipeline.Tests/P11GDataDriverAndPublishTests.cs"
+    },
+    {
+      "kind": "file",
+      "source": "Survivalcraft.Pipeline.Tests/P11GToolsAndEvidenceTests.cs",
+      "target": "source-excerpts/Survivalcraft.Pipeline.Tests/P11GToolsAndEvidenceTests.cs"
+    },
+    {
+      "kind": "file",
+      "source": "Survivalcraft.Pipeline.Tests/ShaderPackManifestCompositionTests.cs",
+      "target": "source-excerpts/Survivalcraft.Pipeline.Tests/ShaderPackManifestCompositionTests.cs"
+    },
+    {
+      "kind": "file",
+      "source": "Survivalcraft.Pipeline.Tests/ViewJitterTests.cs",
+      "target": "source-excerpts/Survivalcraft.Pipeline.Tests/ViewJitterTests.cs"
+    },
+    {
+      "kind": "file",
+      "source": "Survivalcraft/Content/Assets/Shaders/Opaque.psh",
+      "target": "authoring/builtin-fallback/Shaders/Opaque.psh"
+    },
+    {
+      "kind": "file",
+      "source": "Survivalcraft/Content/Assets/Shaders/Opaque.vsh",
+      "target": "authoring/builtin-fallback/Shaders/Opaque.vsh"
+    },
+    {
+      "kind": "file",
+      "source": "Survivalcraft/Content/Assets/Shaders/Transparent.psh",
+      "target": "authoring/builtin-fallback/Shaders/Transparent.psh"
+    },
+    {
+      "kind": "file",
+      "source": "Survivalcraft/Content/Assets/Shaders/Transparent.vsh",
+      "target": "authoring/builtin-fallback/Shaders/Transparent.vsh"
+    },
+    {
+      "kind": "file",
+      "source": "Survivalcraft/Dawnlight/PipeLine/Core/ViewTemporalState.cs",
+      "target": "source-excerpts/Survivalcraft/Dawnlight/PipeLine/Core/ViewTemporalState.cs"
+    },
+    {
+      "kind": "file",
+      "source": "Survivalcraft/Dawnlight/PipeLine/CustomData/BuiltInCustomDataInputs.cs",
+      "target": "source-excerpts/Survivalcraft/Dawnlight/PipeLine/CustomData/BuiltInCustomDataInputs.cs"
+    },
+    {
+      "kind": "file",
+      "source": "Survivalcraft/Dawnlight/PipeLine/CustomData/DataAbiCatalog.cs",
+      "target": "source-excerpts/Survivalcraft/Dawnlight/PipeLine/CustomData/DataAbiCatalog.cs"
+    },
+    {
+      "kind": "file",
+      "source": "Survivalcraft/Dawnlight/PipeLine/README.md",
+      "target": "source-excerpts/Survivalcraft/Dawnlight/PipeLine/README.md"
+    },
+    {
+      "kind": "file",
+      "source": "Survivalcraft/Dawnlight/PipeLine/Services/LightFrustumGeometry.cs",
+      "target": "source-excerpts/Survivalcraft/Dawnlight/PipeLine/Services/LightFrustumGeometry.cs"
+    },
+    {
+      "kind": "file",
+      "source": "Survivalcraft/Dawnlight/PipeLine/Services/ViewJitter.cs",
+      "target": "source-excerpts/Survivalcraft/Dawnlight/PipeLine/Services/ViewJitter.cs"
+    },
+    {
+      "kind": "file",
+      "source": "Survivalcraft/Dawnlight/PipeLine/Shaders/Configuration/Domain/Data/ShaderPackDataAuthoringContract.cs",
+      "target": "source-excerpts/Survivalcraft/Dawnlight/PipeLine/Shaders/Configuration/Domain/Data/ShaderPackDataAuthoringContract.cs"
+    },
+    {
+      "kind": "file",
+      "source": "Survivalcraft/Dawnlight/PipeLine/Shaders/Configuration/Domain/Programs/DepthComparisonSampling.cs",
+      "target": "source-excerpts/Survivalcraft/Dawnlight/PipeLine/Shaders/Configuration/Domain/Programs/DepthComparisonSampling.cs"
+    },
+    {
+      "kind": "file",
+      "source": "Survivalcraft/Dawnlight/PipeLine/Shaders/Configuration/Domain/ShaderPackManifestAuthoringContract.cs",
+      "target": "source-excerpts/Survivalcraft/Dawnlight/PipeLine/Shaders/Configuration/Domain/ShaderPackManifestAuthoringContract.cs"
+    },
+    {
+      "kind": "file",
+      "source": "Survivalcraft/Dawnlight/PipeLine/Shaders/Configuration/Loading/ShaderPackManifestComposer.cs",
+      "target": "source-excerpts/Survivalcraft/Dawnlight/PipeLine/Shaders/Configuration/Loading/ShaderPackManifestComposer.cs"
+    },
+    {
+      "kind": "file",
+      "source": "Survivalcraft/Dawnlight/PipeLine/Shaders/Configuration/Loading/ShaderPackManifestLoader.cs",
+      "target": "source-excerpts/Survivalcraft/Dawnlight/PipeLine/Shaders/Configuration/Loading/ShaderPackManifestLoader.cs"
+    },
+    {
+      "kind": "file",
+      "source": "Survivalcraft/Dawnlight/PipeLine/Shaders/Configuration/Runtime/BuiltInProgramInvocationCatalog.cs",
+      "target": "source-excerpts/Survivalcraft/Dawnlight/PipeLine/Shaders/Configuration/Runtime/BuiltInProgramInvocationCatalog.cs"
+    },
+    {
+      "kind": "file",
+      "source": "Survivalcraft/Dawnlight/PipeLine/Shaders/Configuration/Runtime/ShaderPackResourceDescriptorConverter.cs",
+      "target": "source-excerpts/Survivalcraft/Dawnlight/PipeLine/Shaders/Configuration/Runtime/ShaderPackResourceDescriptorConverter.cs"
+    },
+    {
+      "kind": "file",
+      "source": "docs/AndroidReleasePreparation.md",
+      "target": "authoring/docs/AndroidReleasePreparation.md"
+    },
+    {
+      "kind": "file",
+      "source": "docs/Architecture.md",
+      "target": "authoring/docs/Architecture.md"
+    },
+    {
+      "kind": "file",
+      "source": "docs/DawnlightGenericCommandTypes.md",
+      "target": "authoring/docs/DawnlightGenericCommandTypes.md"
+    },
+    {
+      "kind": "file",
+      "source": "docs/DawnlightLightFrustumGeometryABI.md",
+      "target": "authoring/docs/DawnlightLightFrustumGeometryABI.md"
+    },
+    {
+      "kind": "file",
+      "source": "docs/DawnlightPipelineResourceLifetimeAndAliasingPlan.md",
+      "target": "authoring/docs/DawnlightPipelineResourceLifetimeAndAliasingPlan.md"
+    },
+    {
+      "kind": "file",
+      "source": "docs/DawnlightResourceContentAndFactoryServices.md",
+      "target": "authoring/docs/DawnlightResourceContentAndFactoryServices.md"
+    },
+    {
+      "kind": "file",
+      "source": "docs/DawnlightSemanticProviderCatalog.md",
+      "target": "authoring/docs/DawnlightSemanticProviderCatalog.md"
+    },
+    {
+      "kind": "file",
+      "source": "docs/DawnlightTemporalViewABI.md",
+      "target": "authoring/docs/DawnlightTemporalViewABI.md"
+    },
+    {
+      "kind": "file",
+      "source": "docs/MakeUpUltraFastSCMU32TemporalViewRuntime.md",
+      "target": "authoring/docs/MakeUpUltraFastSCMU32TemporalViewRuntime.md"
+    },
+    {
+      "kind": "file",
+      "source": "docs/MakeUpUltraFastSCMU33FullSceneJitter.md",
+      "target": "authoring/docs/MakeUpUltraFastSCMU33FullSceneJitter.md"
+    },
+    {
+      "kind": "file",
+      "source": "docs/MakeUpUltraFastSCMU45Comparison.md",
+      "target": "authoring/docs/MakeUpUltraFastSCMU45Comparison.md"
+    },
+    {
+      "kind": "file",
+      "source": "docs/ShaderPackAuthorGuide.md",
+      "target": "authoring/docs/ShaderPackAuthorGuide.md"
+    },
+    {
+      "kind": "file",
+      "source": "docs/ShaderPackAuthorGuideP11V5.md",
+      "target": "authoring/docs/ShaderPackAuthorGuideP11V5.md"
+    },
+    {
+      "kind": "file",
+      "source": "docs/ShaderPackDeveloperFreedomAssessment.md",
+      "target": "authoring/docs/ShaderPackDeveloperFreedomAssessment.md"
+    },
+    {
+      "kind": "file",
+      "source": "docs/ShaderPackDiagnosticReference.md",
+      "target": "authoring/docs/ShaderPackDiagnosticReference.md"
+    },
+    {
+      "kind": "file",
+      "source": "docs/ShaderPackManifestComposition.md",
+      "target": "authoring/docs/ShaderPackManifestComposition.md"
+    },
+    {
+      "kind": "file",
+      "source": "docs/ShaderPackSettingsUiReference.md",
+      "target": "authoring/docs/ShaderPackSettingsUiReference.md"
+    },
+    {
+      "kind": "file",
+      "source": "docs/ShaderPipelineP10I8ParticleSceneContract.md",
+      "target": "authoring/docs/ShaderPipelineP10I8ParticleSceneContract.md"
+    },
+    {
+      "kind": "file",
+      "source": "docs/ShaderPipelineP11GToolsSchemaAndAuthorDocumentation.md",
+      "target": "authoring/docs/ShaderPipelineP11GToolsSchemaAndAuthorDocumentation.md"
+    },
+    {
+      "kind": "file",
+      "source": "docs/contracts/DawnlightTemporalView-v1.json",
+      "target": "authoring/docs/contracts/DawnlightTemporalView-v1.json"
+    },
+    {
+      "kind": "file",
+      "source": "tools/ShaderPackAnalyzer/AuthoringDocumentationApplicationService.cs",
+      "target": "source-excerpts/tools/ShaderPackAnalyzer/AuthoringDocumentationApplicationService.cs"
+    },
+    {
+      "kind": "file",
+      "source": "tools/ShaderPackAnalyzer/CatalogApplicationService.cs",
+      "target": "source-excerpts/tools/ShaderPackAnalyzer/CatalogApplicationService.cs"
+    },
+    {
+      "kind": "file",
+      "source": "tools/ShaderPackAnalyzer/Program.cs",
+      "target": "source-excerpts/tools/ShaderPackAnalyzer/Program.cs"
+    },
+    {
+      "kind": "file",
+      "source": "tools/ShaderPackAnalyzer/Properties/PublishProfiles/win-x64.pubxml",
+      "target": "source-excerpts/tools/ShaderPackAnalyzer/Properties/PublishProfiles/win-x64.pubxml"
+    },
+    {
+      "kind": "file",
+      "source": "tools/ShaderPackAnalyzer/README.md",
+      "target": "source-excerpts/tools/ShaderPackAnalyzer/README.md"
+    },
+    {
+      "kind": "file",
+      "source": "tools/ShaderPackAnalyzer/SchemaBundleApplicationService.cs",
+      "target": "source-excerpts/tools/ShaderPackAnalyzer/SchemaBundleApplicationService.cs"
+    },
+    {
+      "kind": "file",
+      "source": "tools/ShaderPackAnalyzer/ShaderPackAnalyzer.csproj",
+      "target": "source-excerpts/tools/ShaderPackAnalyzer/ShaderPackAnalyzer.csproj"
+    },
+    {
+      "kind": "file",
+      "source": "tools/ShaderPackAnalyzer/ShaderPackDataSchemaGenerator.cs",
+      "target": "source-excerpts/tools/ShaderPackAnalyzer/ShaderPackDataSchemaGenerator.cs"
+    },
+    {
+      "kind": "file",
+      "source": "tools/ShaderPackAnalyzer/ShaderPackManifestSchemaGenerator.cs",
+      "target": "source-excerpts/tools/ShaderPackAnalyzer/ShaderPackManifestSchemaGenerator.cs"
+    },
+    {
+      "kind": "file",
+      "source": "tools/ShaderPackAnalyzer/builtin-fallback-assets.v1.json",
+      "target": "authoring/builtin-fallback/builtin-fallback-assets.v1.json"
+    }
+  ]
+}

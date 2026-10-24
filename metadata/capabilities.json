@@ -1,0 +1,793 @@
+{
+  "schemaVersion": 1,
+  "baselineId": "candidate-f8aaa5c4",
+  "inspectedOn": "2026-10-23",
+  "statusVocabulary": {
+    "implemented": "当前实现或合同可确认；具体验证层级看 currentInspection，不能推导实机成功。",
+    "experimental": "实现或有限范围证据存在，仍有限制、待验收项或发布边界。",
+    "planned": "计划或预留结构，当前不能作为可用实现。",
+    "unsupported": "本基线不支持。"
+  },
+  "evidencePolicy": {
+    "currentRun": "GL-free only",
+    "driverStatus": "notProvided",
+    "gameLaunched": false,
+    "testSourceReferencesExecuted": false,
+    "historicalRuntimeEvidenceReverified": false,
+    "countsAreBaselineFactsNotPermanentLimits": true
+  },
+  "catalogSummary": {
+    "contractVersion": 2,
+    "hash": "4bffe7124912432af9101957ae54405f962d2b9bcd6e545bd6902e0941aae0e4",
+    "sceneAbiHash": "4bc28c17beffea2311a422fff9f633d2e4f03784460d0254adda8af2e766d84c",
+    "collections": {
+      "stageTemplates": 7,
+      "services": 9,
+      "semantics": 41,
+      "engineDrawProviders": 26,
+      "capabilities": 2,
+      "resourceFormats": 9,
+      "sceneCategories": 4,
+      "sceneDrawProviders": 8,
+      "sceneVertexAbis": 1,
+      "sceneSystemBindings": 41,
+      "sceneFallbacks": 4
+    },
+    "dataAbi": {
+      "contractVersion": 1,
+      "abiVersion": 1,
+      "hash": "cc014b0fb2e578da45b5c96bcb15ec4c03a211f0260a2624862687057a382cb0",
+      "types": 9,
+      "functions": 35,
+      "inputs": 23
+    },
+    "worldPhaseTokens": [
+      "modelShadow",
+      "framePrepare",
+      "shadow",
+      "opaque",
+      "sky",
+      "transparent",
+      "cloudReflection",
+      "shaftPrepare",
+      "shaftSun",
+      "cloud",
+      "particles",
+      "afterDraw",
+      "afterFinal",
+      "screenOutput"
+    ],
+    "resourceKinds": [
+      "texture2D",
+      "textureCube",
+      "buffer"
+    ],
+    "bindingKinds": [
+      "sampler2D",
+      "sampler2DShadow",
+      "samplerCube",
+      "image2D",
+      "uniformBuffer",
+      "storageBuffer"
+    ]
+  },
+  "capabilities": [
+    {
+      "id": "manifest-composition",
+      "title": "多文件 Manifest 组合",
+      "support": "implemented",
+      "manifestVersions": [
+        3,
+        4,
+        5
+      ],
+      "documentationPhase": "v1",
+      "sourceIds": [
+        "manifest-composer",
+        "data-contract",
+        "composition-doc",
+        "makeup-readme"
+      ],
+      "currentInspection": {
+        "checkIds": [
+          "pack-v3-dawnlight",
+          "pack-v5-makeup"
+        ],
+        "driverObserved": false
+      },
+      "constraints": [
+        "按 fragments 顺序组合；根与片段字段归属按版本核对；W0 未复制完整包。"
+      ]
+    },
+    {
+      "id": "programs-and-source-owner",
+      "title": "程序、编译模式、define、variant 与源码所有权",
+      "support": "implemented",
+      "manifestVersions": [
+        3,
+        4,
+        5
+      ],
+      "documentationPhase": "v1",
+      "sourceIds": [
+        "manifest-contract",
+        "guide-v34",
+        "manifest-loader"
+      ],
+      "currentInspection": {
+        "checkIds": [
+          "scene-v4",
+          "scene-v5",
+          "data-v5"
+        ],
+        "driverObserved": false
+      },
+      "constraints": [
+        "每个 Program 一个 source owner；v3 与 v4/v5 fallback 语义分别说明。"
+      ]
+    },
+    {
+      "id": "generic-commands",
+      "title": "七类通用 Command",
+      "support": "implemented",
+      "manifestVersions": [
+        3,
+        4,
+        5
+      ],
+      "documentationPhase": "v1",
+      "sourceIds": [
+        "commands-doc",
+        "manifest-contract",
+        "manifest-loader"
+      ],
+      "currentInspection": {
+        "checkIds": [
+          "pack-v3-dawnlight",
+          "pack-v5-makeup"
+        ],
+        "driverObserved": false
+      },
+      "constraints": [
+        "fullscreen、compute、copy、clear、present、engineDraw、historyCommit；不将结构支持扩展为任意 GPU 能力。"
+      ]
+    },
+    {
+      "id": "resource-kinds",
+      "title": "texture2D、textureCube 与 buffer",
+      "support": "implemented",
+      "manifestVersions": [
+        3,
+        4,
+        5
+      ],
+      "documentationPhase": "v1",
+      "sourceIds": [
+        "resource-converter",
+        "resources-doc",
+        "completion-v2"
+      ],
+      "currentInspection": {
+        "checkIds": [
+          "pack-v5-makeup",
+          "materials-v5"
+        ],
+        "driverObserved": false
+      },
+      "constraints": [
+        "支持组合依赖 lifetime、content、格式、view 和命令；buffer 当前为 persistent。"
+      ]
+    },
+    {
+      "id": "resource-history",
+      "title": "2D History 与显式提交",
+      "support": "implemented",
+      "manifestVersions": [
+        3,
+        4,
+        5
+      ],
+      "documentationPhase": "v1",
+      "sourceIds": [
+        "resource-converter",
+        "commands-doc",
+        "temporal-doc"
+      ],
+      "currentInspection": {
+        "checkIds": [
+          "pack-v5-makeup"
+        ],
+        "driverObserved": false
+      },
+      "constraints": [
+        "只声明实际受支持的资源组合；W0 未执行 history 生命周期验证。"
+      ]
+    },
+    {
+      "id": "frame-transient-aliasing",
+      "title": "Frame/Transient 内容生命周期与别名分配",
+      "support": "planned",
+      "manifestVersions": [
+        3,
+        4,
+        5
+      ],
+      "documentationPhase": "later",
+      "sourceIds": [
+        "resource-converter",
+        "lifetime-plan",
+        "schema-v5"
+      ],
+      "currentInspection": {
+        "checkIds": [],
+        "driverObserved": false
+      },
+      "constraints": [
+        "Schema/token 存在；当前资源转换路径明确拒绝 Frame/Transient，不能写为可用功能。"
+      ]
+    },
+    {
+      "id": "texture3d-arrays",
+      "title": "3D/Array 纹理的通用声明",
+      "support": "unsupported",
+      "manifestVersions": [
+        3,
+        4,
+        5
+      ],
+      "documentationPhase": "later",
+      "sourceIds": [
+        "completion-v2",
+        "schema-v5",
+        "resource-converter"
+      ],
+      "currentInspection": {
+        "checkIds": [],
+        "driverObserved": false
+      },
+      "constraints": [
+        "当前 resourceKind 不包含这些类型，不发布虚构配置示例。"
+      ]
+    },
+    {
+      "id": "graph-and-hazards",
+      "title": "活动闭包、资源图与访问约束",
+      "support": "implemented",
+      "manifestVersions": [
+        3,
+        4,
+        5
+      ],
+      "documentationPhase": "v1",
+      "sourceIds": [
+        "analyzer-readme",
+        "commands-doc"
+      ],
+      "currentInspection": {
+        "checkIds": [
+          "graph-v5",
+          "scene-v5"
+        ],
+        "driverObserved": false
+      },
+      "constraints": [
+        "图解析不证明驱动编译；disabled route 的诊断保留。"
+      ]
+    },
+    {
+      "id": "scene-routing",
+      "title": "四类 Terrain Scene 路由",
+      "support": "implemented",
+      "manifestVersions": [
+        4,
+        5
+      ],
+      "documentationPhase": "v1",
+      "sourceIds": [
+        "guide-v34",
+        "manifest-loader",
+        "sceneabi-manifest",
+        "makeup-manifest"
+      ],
+      "currentInspection": {
+        "checkIds": [
+          "scene-v4",
+          "scene-v5"
+        ],
+        "driverObserved": false
+      },
+      "constraints": [
+        "override、builtin、disabled；Terrain 路由不能替代所有世界 renderer 的几何 ABI。"
+      ]
+    },
+    {
+      "id": "frame-target",
+      "title": "整帧主绘制目标 frameTarget",
+      "support": "implemented",
+      "manifestVersions": [
+        4,
+        5
+      ],
+      "documentationPhase": "v1",
+      "sourceIds": [
+        "guide-v34",
+        "manifest-contract",
+        "frame-target-tests",
+        "makeup-manifest"
+      ],
+      "currentInspection": {
+        "checkIds": [
+          "pack-v5-makeup",
+          "scene-v5"
+        ],
+        "driverObserved": false
+      },
+      "constraints": [
+        "persistent direct texture2D，同尺寸、明确 clear/store；W0 未实测整场景画面。"
+      ]
+    },
+    {
+      "id": "draw-buffers",
+      "title": "命名目标拓扑与活动 drawBuffers",
+      "support": "implemented",
+      "manifestVersions": [
+        4,
+        5
+      ],
+      "documentationPhase": "v1",
+      "sourceIds": [
+        "guide-v34",
+        "manifest-loader",
+        "schema-v4",
+        "schema-v5"
+      ],
+      "currentInspection": {
+        "checkIds": [
+          "scene-v4",
+          "scene-v5"
+        ],
+        "driverObserved": false
+      },
+      "constraints": [
+        "location 与 attachment 的约束按命令合同；不承诺任意交换/重映射。"
+      ]
+    },
+    {
+      "id": "builtin-fallback",
+      "title": "Program 级 BuiltIn fallback",
+      "support": "implemented",
+      "manifestVersions": [
+        4,
+        5
+      ],
+      "documentationPhase": "v1",
+      "sourceIds": [
+        "guide-v34",
+        "builtin-invocations",
+        "compatibility-tests"
+      ],
+      "currentInspection": {
+        "checkIds": [
+          "scene-v4"
+        ],
+        "driverObserved": false
+      },
+      "constraints": [
+        "BuiltIn 源码在 headless 中可能为 resolvedDescriptorFallback；不能当作驱动证据。"
+      ]
+    },
+    {
+      "id": "builtin-minimal",
+      "title": "BuiltIn Minimal 零扩展基线",
+      "support": "implemented",
+      "manifestVersions": [
+        3
+      ],
+      "documentationPhase": "v1",
+      "sourceIds": [
+        "settings-doc",
+        "compatibility-tests",
+        "builtin-invocations"
+      ],
+      "currentInspection": {
+        "checkIds": [],
+        "driverObserved": false
+      },
+      "constraints": [
+        "内部 descriptor 与 External Complete 的必需合同不同；外置课程起步包留到 W3 验证。"
+      ]
+    },
+    {
+      "id": "options-settings",
+      "title": "选项、条件与设置 UI",
+      "support": "implemented",
+      "manifestVersions": [
+        3,
+        4,
+        5
+      ],
+      "documentationPhase": "v1",
+      "sourceIds": [
+        "settings-doc",
+        "manifest-contract",
+        "customdata-manifest",
+        "makeup-manifest"
+      ],
+      "currentInspection": {
+        "checkIds": [
+          "pack-v5-customdata",
+          "pack-v5-makeup"
+        ],
+        "driverObserved": false
+      },
+      "constraints": [
+        "UI 编辑 Manifest option；选项变更影响 uniform/program/pipeline/resources；W0 未测试 UI 操作。"
+      ]
+    },
+    {
+      "id": "materials",
+      "title": "v5 内容映射与材质 SSBO",
+      "support": "implemented",
+      "manifestVersions": [
+        5
+      ],
+      "documentationPhase": "v1",
+      "sourceIds": [
+        "guide-v5",
+        "data-contract",
+        "data-catalog-code"
+      ],
+      "currentInspection": {
+        "checkIds": [
+          "pack-v5-customdata",
+          "materials-v5",
+          "data-v5"
+        ],
+        "driverObserved": false
+      },
+      "constraints": [
+        "无最终世界快照时 mapping deferred；不写运行时 block index；W0 无 GPU 读回。"
+      ]
+    },
+    {
+      "id": "typed-custom-data",
+      "title": "类型化表达式与 customBindings",
+      "support": "implemented",
+      "manifestVersions": [
+        5
+      ],
+      "documentationPhase": "v1",
+      "sourceIds": [
+        "data-contract",
+        "data-catalog-code",
+        "data-inputs-code",
+        "guide-v5"
+      ],
+      "currentInspection": {
+        "checkIds": [
+          "data-v5",
+          "graph-v5"
+        ],
+        "driverObserved": false
+      },
+      "constraints": [
+        "9 种类型、35 个函数、23 项公共输入；频率、空间与预算按当前 Catalog。"
+      ]
+    },
+    {
+      "id": "sky-phase",
+      "title": "v5 world/sky 与宿主天空背景 Provider",
+      "support": "implemented",
+      "manifestVersions": [
+        5
+      ],
+      "documentationPhase": "v1",
+      "sourceIds": [
+        "guide-v5",
+        "data-schema-generator",
+        "catalog-service",
+        "manifest-loader"
+      ],
+      "currentInspection": {
+        "checkIds": [
+          "catalog-v2",
+          "schema-v5",
+          "pack-v5-makeup"
+        ],
+        "driverObserved": false
+      },
+      "constraints": [
+        "保留宿主背景、替代云时使用独立 scratch，避免 framebuffer feedback。"
+      ]
+    },
+    {
+      "id": "temporal-view",
+      "title": "公共时序 view 输入与状态",
+      "support": "experimental",
+      "manifestVersions": [
+        5
+      ],
+      "documentationPhase": "v1",
+      "sourceIds": [
+        "temporal-doc",
+        "temporal-runtime-doc",
+        "view-temporal-code",
+        "completion-v2"
+      ],
+      "currentInspection": {
+        "checkIds": [
+          "schema-v5",
+          "pack-v5-makeup"
+        ],
+        "driverObserved": false
+      },
+      "constraints": [
+        "已有运行实现；首版限单主 view，历史机器合同 runtimeReady=false 是冻结时点；本轮没有实机重验。"
+      ]
+    },
+    {
+      "id": "view-jitter",
+      "title": "显式 view jitter 服务",
+      "support": "experimental",
+      "manifestVersions": [
+        5
+      ],
+      "documentationPhase": "v1",
+      "sourceIds": [
+        "jitter-doc",
+        "view-jitter-code",
+        "catalog-service",
+        "jitter-tests"
+      ],
+      "currentInspection": {
+        "checkIds": [
+          "catalog-v2",
+          "pack-v5-makeup"
+        ],
+        "driverObserved": false
+      },
+      "constraints": [
+        "必须显式 opt-in；消费 temporal 输入本身不会自动启用 jitter。"
+      ]
+    },
+    {
+      "id": "light-frustum",
+      "title": "光源视锥几何 ABI",
+      "support": "experimental",
+      "manifestVersions": [
+        5
+      ],
+      "documentationPhase": "v1",
+      "sourceIds": [
+        "light-geometry-doc",
+        "light-geometry-code",
+        "light-geometry-tests",
+        "catalog-service"
+      ],
+      "currentInspection": {
+        "checkIds": [
+          "catalog-v2",
+          "pack-v5-makeup"
+        ],
+        "driverObserved": false
+      },
+      "constraints": [
+        "按公开 Provider/Service 合同接入，不将单个案例证据推广到任意阴影方案。"
+      ]
+    },
+    {
+      "id": "comparison-sampling",
+      "title": "G9 v1 深度比较采样",
+      "support": "experimental",
+      "manifestVersions": [
+        5
+      ],
+      "documentationPhase": "v1",
+      "sourceIds": [
+        "comparison-doc",
+        "comparison-code",
+        "comparison-tests",
+        "data-schema-generator",
+        "manifest-loader"
+      ],
+      "currentInspection": {
+        "checkIds": [
+          "schema-v5",
+          "pack-v5-makeup"
+        ],
+        "driverObserved": false
+      },
+      "constraints": [
+        "sampler2DShadow + comparison；direct persistent depth 2D、LEQUAL、nearest/linear；不支持 compute host。"
+      ]
+    },
+    {
+      "id": "shader-stages",
+      "title": "graphics vertex/fragment 与 compute",
+      "support": "implemented",
+      "manifestVersions": [
+        3,
+        4,
+        5
+      ],
+      "documentationPhase": "v1",
+      "sourceIds": [
+        "manifest-contract",
+        "schema-v5",
+        "manifest-loader"
+      ],
+      "currentInspection": {
+        "checkIds": [
+          "pack-v5-makeup"
+        ],
+        "driverObserved": false
+      },
+      "constraints": [
+        "不发布 Geometry/Tessellation stage 配置；dispatch 以当前 Loader 接受的字段为准。"
+      ]
+    },
+    {
+      "id": "reload-lifecycle",
+      "title": "generation 发布、回滚与资源生命周期",
+      "support": "implemented",
+      "manifestVersions": [
+        3,
+        4,
+        5
+      ],
+      "documentationPhase": "v1",
+      "sourceIds": [
+        "pipeline-readme",
+        "guide-v34",
+        "temporal-doc"
+      ],
+      "currentInspection": {
+        "checkIds": [],
+        "driverObserved": false
+      },
+      "constraints": [
+        "本轮只核对合同与实现来源；教程示例需要 W4/W6 实际验证。"
+      ]
+    },
+    {
+      "id": "offline-authoring",
+      "title": "Schema、Analyzer 与解释工具",
+      "support": "implemented",
+      "manifestVersions": [
+        3,
+        4,
+        5
+      ],
+      "documentationPhase": "v1",
+      "sourceIds": [
+        "analyzer-readme",
+        "schema-service",
+        "guide-checker"
+      ],
+      "currentInspection": {
+        "checkIds": [
+          "schema-v4",
+          "schema-v5",
+          "guide-v4",
+          "data-v5",
+          "scene-v5",
+          "graph-v5"
+        ],
+        "driverObserved": false
+      },
+      "constraints": [
+        "v5 原始指南的重建校验当前失败 DLTOOL2001；本轮尚未定位到可供 CI 使用的版本化作者工具资产。"
+      ]
+    },
+    {
+      "id": "production-release-evidence",
+      "title": "P11 正式发布与性能验收",
+      "support": "experimental",
+      "manifestVersions": [
+        5
+      ],
+      "documentationPhase": "v1",
+      "sourceIds": [
+        "guide-v5",
+        "analyzer-readme",
+        "data-publish-tests",
+        "temporal-doc"
+      ],
+      "currentInspection": {
+        "checkIds": [],
+        "driverObserved": false
+      },
+      "constraints": [
+        "performanceGatePassed 仍待实机证据；不能把 Loader passed 写成 release-ready。"
+      ]
+    },
+    {
+      "id": "windows-platform",
+      "title": "Windows / .NET 10 / GLES 3.2",
+      "support": "implemented",
+      "manifestVersions": [
+        3,
+        4,
+        5
+      ],
+      "documentationPhase": "v1",
+      "sourceIds": [
+        "architecture",
+        "analyzer-project"
+      ],
+      "currentInspection": {
+        "checkIds": [],
+        "driverObserved": false
+      },
+      "constraints": [
+        "本次 Analyzer 构建与静态检查在 Windows x64；本轮未启动游戏。"
+      ]
+    },
+    {
+      "id": "android-platform",
+      "title": "Android ARM64",
+      "support": "experimental",
+      "manifestVersions": [
+        3,
+        4,
+        5
+      ],
+      "documentationPhase": "later",
+      "sourceIds": [
+        "architecture",
+        "android-doc"
+      ],
+      "currentInspection": {
+        "checkIds": [],
+        "driverObserved": false
+      },
+      "constraints": [
+        "Release 构建准备有记录，真机验证待进行；不作为首版教程运行基线。"
+      ]
+    },
+    {
+      "id": "vr-platform",
+      "title": "VR 光影完整管线",
+      "support": "unsupported",
+      "manifestVersions": [
+        3,
+        4,
+        5
+      ],
+      "documentationPhase": "later",
+      "sourceIds": [
+        "architecture",
+        "temporal-doc"
+      ],
+      "currentInspection": {
+        "checkIds": [],
+        "driverObserved": false
+      },
+      "constraints": [
+        "VR 走独立路径，不宣称完整管线/temporal 支持。"
+      ]
+    },
+    {
+      "id": "split-screen",
+      "title": "分屏光影",
+      "support": "unsupported",
+      "manifestVersions": [
+        3,
+        4,
+        5
+      ],
+      "documentationPhase": "later",
+      "sourceIds": [
+        "architecture",
+        "temporal-doc"
+      ],
+      "currentInspection": {
+        "checkIds": [],
+        "driverObserved": false
+      },
+      "constraints": [
+        "当前光影加载器明确不支持分屏。"
+      ]
+    }
+  ]
+}

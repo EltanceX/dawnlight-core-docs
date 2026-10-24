@@ -1,0 +1,32 @@
+{
+  "name": "dawnlight-core-docs",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "npm@11.19.0",
+  "engines": {
+    "node": "24.22.1",
+    "npm": "11.19.0"
+  },
+  "scripts": {
+    "docs:dev": "vitepress dev site --host 127.0.0.1",
+    "docs:check": "node scripts/check-site.mjs",
+    "docs:build": "npm run docs:check && vitepress build site && node scripts/check-site-build.mjs",
+    "docs:preview": "vitepress preview site --host 127.0.0.1",
+    "test:site": "playwright test",
+    "upstream:verify": "node scripts/verify-upstream.mjs",
+    "upstream:restore": "node scripts/restore-upstream.mjs"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.64.1",
+    "vitepress": "1.6.4",
+    "vue": "3.5.44"
+  },
+  "allowScripts": {
+    "esbuild@0.25.12": true
+  },
+  "overrides": {
+    "vite": "6.4.5",
+    "esbuild": "0.25.12"
+  }
+}

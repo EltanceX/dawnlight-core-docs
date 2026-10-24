@@ -1,0 +1,7 @@
+/artifacts/
+/.cache/
+/node_modules/
+/site/.vitepress/cache/
+/site/.vitepress/dist/
+# Full upstream snapshots stay local or in the pinned private release assets.
+/vendor/

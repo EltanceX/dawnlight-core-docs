@@ -1,0 +1,29 @@
+name: Documentation checks
+on:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v7.1.0
+        with:
+          node-version-file: .node-version
+          cache: npm
+      - run: npm install --global npm@11.19.0
+      - run: npm ci
+      - run: npm run docs:build
+      - run: npx playwright install --with-deps chromium --only-shell
+      - run: npm run test:site
+      - uses: actions/upload-artifact@v7.0.2
+        if: always()
+        with:
+          name: site-check-report
+          path: |
+            artifacts/w2/site-build.json
+            artifacts/w2/browser-results.json

@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "purpose": "documentation-baseline-not-a-shaderpack",
+  "baselineId": "candidate-f8aaa5c4",
+  "source": {
+    "repositoryUrl": "https://gitea.com/EltanceX/DawnlightCore",
+    "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+    "anonymousAccessVerified": true
+  },
+  "authoring": {
+    "primaryManifestVersion": 5,
+    "compatibilityManifestVersions": [
+      3,
+      4
+    ],
+    "sceneAbiVersion": 2,
+    "materialsAbiVersion": 1,
+    "customDataAbiVersion": 1,
+    "sourceFormatVersion": 1,
+    "runtimeBaseline": {
+      "platform": "windows-x64",
+      "targetFramework": "net10.0",
+      "graphicsApi": "OpenGL ES 3.2",
+      "viewScope": "single-main-view"
+    }
+  },
+  "contracts": {
+    "catalog": 2,
+    "graph": 2,
+    "programInterfaceForV5": 2,
+    "catalogHash": "4bffe7124912432af9101957ae54405f962d2b9bcd6e545bd6902e0941aae0e4",
+    "sceneAbiHash": "4bc28c17beffea2311a422fff9f633d2e4f03784460d0254adda8af2e766d84c"
+  },
+  "verification": {
+    "ordinarySuccesses": 18,
+    "expectedOriginalGuideFailures": 1,
+    "originalGuideDiagnostic": "DLTOOL2001",
+    "regressionTestsPassed": 6,
+    "driverStatus": "notProvided",
+    "mappingStatus": "deferred",
+    "runtimeEvaluated": false,
+    "liveWorldVerified": false,
+    "gpuRunPerformed": false
+  }
+}

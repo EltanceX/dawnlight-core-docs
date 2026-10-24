@@ -1,0 +1,11 @@
+* text=auto
+*.mjs text eol=lf
+*.md text eol=lf
+*.json text eol=lf
+*.yml text eol=lf
+*.ts text eol=lf
+*.vue text eol=lf
+*.css text eol=lf
+*.svg text eol=lf
+# The complete vendor snapshot is hashed as exact bytes, including mixed EOLs.
+/vendor/dawnlight/** -text

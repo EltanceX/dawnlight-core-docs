@@ -1,0 +1,346 @@
+{
+  "schemaVersion": 1,
+  "baselineId": "candidate-f8aaa5c4",
+  "status": "locked-inputs-verified-with-runtime-open-items",
+  "stage": "W2",
+  "frozenOn": "2026-10-23",
+  "decision": "accepted-for-documentation-toolchain-not-runtime-release",
+  "upstream": {
+    "repositoryUrl": "https://github.com/EltanceX/DawnlightCore",
+    "cloneUrl": "git@github.com:EltanceX/DawnlightCore.git",
+    "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+    "selectedBranchObserved": "codex/api-1.9.5.1",
+    "remoteDefaultBranchObserved": "codex/api-1.9.3.1",
+    "pinPolicy": "exact-commit",
+    "sourceBytePolicy": "git-blob-exact-preserve-frozen-asset-bytes",
+    "visibility": "private",
+    "worktreeClean": true,
+    "catalogHostLabel": {
+      "id": "dawnlight",
+      "displayName": "Dawnlight",
+      "version": "3.1",
+      "build": "unknown"
+    },
+    "catalogHostLabelIsReleaseIdentity": false,
+    "publicRepositoryUrl": "https://gitea.com/EltanceX/DawnlightCore",
+    "publicSourceEvidence": "metadata/public-source.json"
+  },
+  "authoring": {
+    "primaryManifestVersion": 5,
+    "compatibilityManifestVersions": [
+      3,
+      4
+    ],
+    "sceneAbiVersion": 2,
+    "materialsAbiVersion": 1,
+    "customDataAbiVersion": 1,
+    "sourceFormatVersion": 1,
+    "runtimeBaseline": {
+      "platform": "windows-x64",
+      "targetFramework": "net10.0",
+      "graphicsApi": "OpenGL ES 3.2",
+      "viewScope": "single-main-view"
+    }
+  },
+  "contracts": {
+    "analyzerProtocolsSupported": [
+      1,
+      2,
+      3
+    ],
+    "analyzerProtocolForV5": 3,
+    "catalogContractVersion": 2,
+    "catalogHash": "4bffe7124912432af9101957ae54405f962d2b9bcd6e545bd6902e0941aae0e4",
+    "sceneAbiHash": "4bc28c17beffea2311a422fff9f633d2e4f03784460d0254adda8af2e766d84c",
+    "graphContractVersion": 2,
+    "v5GraphIrVersion": 7,
+    "programInterfaceContractForV5": 2,
+    "sceneExplainContractVersion": 1,
+    "dataAbiCatalogContractVersion": 1,
+    "dataAbiHash": "cc014b0fb2e578da45b5c96bcb15ec4c03a211f0260a2624862687057a382cb0",
+    "schemaBundles": [
+      {
+        "manifestVersions": [
+          3,
+          4
+        ],
+        "schemaBundleContractVersion": 1,
+        "rpcRequestVersion": 1,
+        "schemaIndexContractVersion": 1,
+        "cliExecutionEnvelopeContractVersion": 1,
+        "completionContractVersion": 1,
+        "catalogProjection": "legacy-with-v5-additions-removed",
+        "catalogHash": "751f68d2928f48ba49e1c6d56bcc01b5cd5c08f08b263ed6fca55e024eed0f00",
+        "index": {
+          "path": "docs/schemas/dawnlight.shaderpack.schema-index.v1.json",
+          "length": 1054,
+          "sha256": "9be412355ea204d18777763da523c57fefcadb4964f3810deea2029627191007"
+        },
+        "verificationCheck": "schema-v4",
+        "artifacts": [
+          {
+            "path": "docs/schemas/dawnlight.shaderpack.v3.schema.json",
+            "length": 54675,
+            "sha256": "7191d01af17204b203eeb54db283253e98766a16a62333e5aa64c73207c60537"
+          },
+          {
+            "path": "docs/schemas/dawnlight.shaderpack.v4.schema.json",
+            "length": 56098,
+            "sha256": "7b76c4b1e806f96a8a3de593c574a7fcf4d82d80720819e4b165b9d747441320"
+          },
+          {
+            "path": "docs/schemas/dawnlight.shaderpack.completions.v1.json",
+            "length": 74074,
+            "sha256": "950cb7bb86b4d4c04aca0f9d1f848c25b98d11259c358b568a6c60488308f7e2"
+          },
+          {
+            "path": "docs/schemas/dawnlight.shaderpack.schema-index.v1.json",
+            "length": 1054,
+            "sha256": "9be412355ea204d18777763da523c57fefcadb4964f3810deea2029627191007"
+          }
+        ]
+      },
+      {
+        "manifestVersions": [
+          5
+        ],
+        "schemaBundleContractVersion": 2,
+        "rpcRequestVersion": 2,
+        "schemaIndexContractVersion": 2,
+        "cliExecutionEnvelopeContractVersion": 1,
+        "completionContractVersion": 2,
+        "catalogProjection": "current-v2",
+        "catalogHash": "4bffe7124912432af9101957ae54405f962d2b9bcd6e545bd6902e0941aae0e4",
+        "index": {
+          "path": "docs/schemas-v5/dawnlight.shaderpack.schema-index.v2.json",
+          "length": 769,
+          "sha256": "de23b3be447ac89e0871737c6f42456df460b0f283f72f423056161b881e0849"
+        },
+        "verificationCheck": "schema-v5",
+        "artifacts": [
+          {
+            "path": "docs/schemas-v5/dawnlight.shaderpack.v5.schema.json",
+            "length": 115503,
+            "sha256": "afc9ad7c137379a98a6ba99e9daeffeb836b84eb41fdded060904e32c712b133"
+          },
+          {
+            "path": "docs/schemas-v5/dawnlight.shaderpack.completions.v2.json",
+            "length": 94891,
+            "sha256": "a363f852dbbc9edcfe47dd119d5183b2ae6b9a9516fed6ccd090de1fb73cfaac"
+          },
+          {
+            "path": "docs/schemas-v5/dawnlight.shaderpack.schema-index.v2.json",
+            "length": 769,
+            "sha256": "de23b3be447ac89e0871737c6f42456df460b0f283f72f423056161b881e0849"
+          }
+        ]
+      }
+    ]
+  },
+  "tool": {
+    "project": "tools/ShaderPackAnalyzer/ShaderPackAnalyzer.csproj",
+    "sdkObserved": "10.0.301",
+    "currentInspectionBuild": {
+      "configuration": "Debug",
+      "frameworkDependent": true,
+      "freshBuild": true,
+      "artifacts": [
+        {
+          "path": "tools/ShaderPackAnalyzer/bin/Debug/net10.0/shaderpack-analyzer.dll",
+          "length": 481792,
+          "sha256": "ab17acdf2cc4afc72e7ff993a5f606e740775947e8e77e288f32f0c56ace0fe2"
+        },
+        {
+          "path": "tools/ShaderPackAnalyzer/bin/Debug/net10.0/Survivalcraft.dll",
+          "length": 7721984,
+          "sha256": "bacea03c57122ba3fe4fd5d6199bad7498ed12d007f46105592089b0b2e81149"
+        },
+        {
+          "path": "tools/ShaderPackAnalyzer/bin/Debug/net10.0/Engine.dll",
+          "length": 810496,
+          "sha256": "89dab9d1e6acafb2f1644dc52c4b469789f056de571c1b3deadcef6186e7b1ab"
+        },
+        {
+          "path": "tools/ShaderPackAnalyzer/bin/Debug/net10.0/EntitySystem.dll",
+          "length": 71168,
+          "sha256": "822871f4f70771eb41982199f15182aaabc8d0a312d12a48b446a09d68ba1ebe"
+        },
+        {
+          "path": "tools/ShaderPackAnalyzer/bin/Debug/net10.0/shaderpack-analyzer.deps.json",
+          "length": 40545,
+          "sha256": "8f6a230c5c595ac078b1c950963d789ecea100997382b5d4da2a9ba0025ff967"
+        },
+        {
+          "path": "tools/ShaderPackAnalyzer/bin/Debug/net10.0/shaderpack-analyzer.runtimeconfig.json",
+          "length": 270,
+          "sha256": "256dda2706e1151bb95987b6b5be610bf68d64e058285b19e7e958222fc90414"
+        }
+      ]
+    },
+    "distribution": {
+      "id": "docs-tools-f8aaa5c4-w1.1",
+      "status": "published-and-download-verified",
+      "repository": "EltanceX/DawnlightCore",
+      "tag": "docs-tools-f8aaa5c4-w1.1",
+      "intendedPlatform": "win-x64",
+      "publishProfile": "tools/ShaderPackAnalyzer/Properties/PublishProfiles/win-x64.pubxml",
+      "releaseUrl": "https://github.com/EltanceX/DawnlightCore/releases/tag/docs-tools-f8aaa5c4-w1.1",
+      "access": "private-repository-read-token-required",
+      "entrypoint": "shaderpack-analyzer.exe",
+      "inventory": {
+        "path": "metadata/tool-assets.json",
+        "length": 46605,
+        "sha256": "548c685ff8ccc23283cd6b803a595cc2fed35b2df1444dc0327e1baf847ffb54"
+      },
+      "archive": {
+        "name": "shaderpack-analyzer-docs-tools-f8aaa5c4-w1.1-win-x64.zip",
+        "length": 45926098,
+        "sha256": "df350f286f76045c346045f353a4e25364b83a9418c50225f12a3e1bf59b4b3a",
+        "repository": "EltanceX/DawnlightCore",
+        "tag": "docs-tools-f8aaa5c4-w1.1",
+        "assetId": 671012178,
+        "url": "https://github.com/EltanceX/DawnlightCore/releases/download/docs-tools-f8aaa5c4-w1.1/shaderpack-analyzer-docs-tools-f8aaa5c4-w1.1-win-x64.zip"
+      },
+      "release": {
+        "id": 422459804,
+        "publishedAt": "2026-10-24T02:14:06Z",
+        "prerelease": true,
+        "tagTargetCommit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7"
+      }
+    }
+  },
+  "website": {
+    "repositoryName": "dawnlight-core-docs",
+    "repositoryNameSource": "user-confirmed",
+    "ownerCandidate": "EltanceX",
+    "ownerSource": "inferred-from-upstream-remote",
+    "plannedRepositoryUrl": "https://github.com/EltanceX/dawnlight-core-docs",
+    "remoteStatus": "created-public",
+    "intendedDefaultBranch": "main",
+    "intendedDefaultBranchStatus": "local-main-awaiting-first-push",
+    "pagesBase": "/dawnlight-core-docs/",
+    "plannedPagesUrl": "https://eltancex.github.io/dawnlight-core-docs/",
+    "deployed": false,
+    "framework": "VitePress",
+    "frameworkVersion": "1.6.4",
+    "packageManager": "npm",
+    "nodeVersion": "24.22.1",
+    "firstLanguage": "zh-CN",
+    "visibility": "public",
+    "npmVersion": "11.19.0",
+    "publicationPolicy": "website-and-public-docs-only-no-full-upstream-snapshot"
+  },
+  "discoveryRecords": {
+    "sourceMap": {
+      "path": "metadata/source-map.json",
+      "length": 55395,
+      "sha256": "27b8f252d0ce20ac68c03ee9f75abaddbae4ce216890a1231fdee514f7502c28"
+    },
+    "capabilities": {
+      "path": "metadata/capabilities.json",
+      "length": 19691,
+      "sha256": "5e78a3f76ba89b6d0b978d95fbd43c30280f6e33a368b5e956cf651186162295"
+    },
+    "verification": {
+      "path": "metadata/w0-verification.json",
+      "length": 21232,
+      "sha256": "cf1939b8d392fb57e06bc280769f90d22d4763d344ae2ffb1f0e9878b085adb0"
+    }
+  },
+  "importInventory": {
+    "path": "vendor/dawnlight/source-inventory.json",
+    "length": 170749,
+    "sha256": "590e8f64b7a4271e734373d3afd2ec780eef426acb767ba07d0f0b3838b286f7"
+  },
+  "originalV5GuideGate": {
+    "status": "failed",
+    "code": "DLTOOL2001",
+    "checkId": "guide-v5",
+    "diagnosticDerivedGuidePassed": true,
+    "originalSourceRemainsUnmodified": true,
+    "websiteVariant": {
+      "id": "dawnlight-v5-guide-site-v1",
+      "status": "verified",
+      "path": "vendor/dawnlight/authoring/site-variants/ShaderPackAuthorGuideP11V5.site-v1.md",
+      "length": 35063,
+      "sha256": "80127106bd92eac34518b64f94c5797435f13c7fe8fd2afcaee82371f0d1e9f1",
+      "reconstruction": "seven-files-byte-identical-to-locked-CustomDataLab_Both"
+    }
+  },
+  "pendingItems": [
+    {
+      "id": "W0-03",
+      "title": "配置网站远程仓库、分支和 Pages",
+      "phase": "W2",
+      "gate": "deployment",
+      "action": "实施时解析或创建目标基础设施，核实 owner、main 与项目 base；当前 404 不作为存在性证明。"
+    },
+    {
+      "id": "W0-04",
+      "title": "验证外置最小教学包与完整场景路径",
+      "phase": "W3-W4",
+      "gate": "tutorial-runtime-claims",
+      "action": "制作独立起步包，核对必需 host、fallback 和 frameTarget，在真实游戏运行。"
+    },
+    {
+      "id": "W0-05",
+      "title": "保留 P11 性能与正式发布待验收边界",
+      "phase": "W1-W9",
+      "gate": "production-release-claims-only",
+      "action": "按实机证据更新；不阻止准确标注范围的作者文档，不把静态成功改写成 release-ready。"
+    }
+  ],
+  "importPolicy": {
+    "path": "metadata/upstream-import.json",
+    "length": 12057,
+    "sha256": "d5b185083320f11bdd2ed4168ab3ed57ca6e521e8da846bff9a239fe5f1ef985"
+  },
+  "snapshotArchive": {
+    "name": "dawnlight-authoring-docs-tools-f8aaa5c4-w1.1.zip",
+    "length": 10113471,
+    "sha256": "3afae7e62933c98a52e4942b61327b60263d7ae8d0e4c03defb26fe57f110576",
+    "repository": "EltanceX/DawnlightCore",
+    "tag": "docs-tools-f8aaa5c4-w1.1",
+    "access": "private-repository-read-token-required",
+    "content": "Complete vendor/dawnlight tree including exact-byte source inventory",
+    "assetId": 671012167,
+    "url": "https://github.com/EltanceX/DawnlightCore/releases/download/docs-tools-f8aaa5c4-w1.1/dawnlight-authoring-docs-tools-f8aaa5c4-w1.1.zip"
+  },
+  "resolvedItems": [
+    {
+      "id": "W0-01",
+      "title": "修复原始 v5 指南的可重建代码块合同",
+      "phase": "W1",
+      "gate": "W1-original-guide-verification",
+      "action": "上游移出普通示例片段或显式扩展文档合同后固定新来源；若采用网站专用变体，记录补丁、原始失败和独立身份，不能伪装原始指南通过。",
+      "status": "resolved-for-website-toolchain",
+      "resolvedIn": "W1",
+      "resolution": "The independently identified dawnlight-v5-guide-site-v1 transformation passes docs verify-v5 and extraction parity; original DLTOOL2001 failure remains explicit."
+    },
+    {
+      "id": "W0-02",
+      "title": "建立 CI 可获取的作者工具资产",
+      "phase": "W1",
+      "gate": "W1-tool-acquisition",
+      "action": "私有源码没有可见 Release 资产；发布/配置带 provenance 和 SHA-256 的工具与文档包。",
+      "status": "resolved-for-website-toolchain",
+      "resolvedIn": "W1",
+      "resolution": "Private versioned GitHub Release assets were uploaded, pinned by full SHA-256 inventories, and actually downloaded and validated from a new empty-cache directory. CI needs source repository read credentials."
+    },
+    {
+      "id": "W0-06",
+      "title": "在 Git blob 精确字节域完成导入和复验",
+      "phase": "W1",
+      "gate": "W1-source-byte-reproducibility",
+      "action": "保留 .gitattributes 的不可变资源字节，区分工作树 CRLF 与 Git blob LF；W0 当前工具输入为本地工作树，W1 对实际导入产物重新验证和冻结哈希。",
+      "status": "resolved-for-website-toolchain",
+      "resolvedIn": "W1",
+      "resolution": "432 exact Git blobs were imported; repeated import is deterministic, canonical inputs were revalidated, and core.autocrlf=true commit/clone preserves all vendor bytes."
+    }
+  ],
+  "w1Verification": {
+    "path": "metadata/w1-verification.json",
+    "length": 22160,
+    "sha256": "a5decad5a682f6c0db015658de70bff9e7b78f398d6024f7aaa473de08548384"
+  }
+}

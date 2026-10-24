@@ -1,0 +1,1249 @@
+{
+  "schemaVersion": 1,
+  "baselineId": "candidate-f8aaa5c4",
+  "inspectedOn": "2026-10-23",
+  "status": "w0-discovery-inventory",
+  "upstream": {
+    "repositoryUrl": "https://github.com/EltanceX/DawnlightCore",
+    "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+    "visibility": "private"
+  },
+  "scopeNote": "主指纹为固定 commit 的 Git blob 精确字节；另记本轮实际工作树字节，不是 W1 完整示例闭包或导入资产清单。",
+  "sources": [
+    {
+      "id": "eol-policy",
+      "path": ".gitattributes",
+      "length": 11210,
+      "sha256": "18954e188158a40ea7b5de13014813a4286940cdd47a40809367e6eff5c1bc57",
+      "observedWorktree": {
+        "path": ".gitattributes",
+        "length": 11403,
+        "sha256": "160de9d173f4959ee8c6b460f1dccd1a7a99d3300784c4f550210d59bd15b13f"
+      },
+      "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+      "role": "source-byte-policy",
+      "plannedPages": [
+        "contributing/toolchain"
+      ],
+      "sourceUrl": "https://github.com/EltanceX/DawnlightCore/blob/f8aaa5c4218f54536ccf994a2d512aed2e3678b7/.gitattributes",
+      "publicAccess": "private-repository",
+      "authorityNote": null
+    },
+    {
+      "id": "architecture",
+      "path": "docs/Architecture.md",
+      "length": 14628,
+      "sha256": "0189936ba85ccb657daa07d89ffb868278ab35058f5d3d6ce27d6fdf78c4e4a0",
+      "observedWorktree": {
+        "path": "docs/Architecture.md",
+        "length": 14975,
+        "sha256": "0be9df059f4ec15297c8049f3dba90c3707ea2a5387be707cb40ad4fcd946da1"
+      },
+      "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+      "role": "platform-contract",
+      "plannedPages": [
+        "start/environment",
+        "compatibility/platforms"
+      ],
+      "sourceUrl": "https://github.com/EltanceX/DawnlightCore/blob/f8aaa5c4218f54536ccf994a2d512aed2e3678b7/docs/Architecture.md",
+      "publicAccess": "private-repository",
+      "authorityNote": null
+    },
+    {
+      "id": "pipeline-readme",
+      "path": "Survivalcraft/Dawnlight/PipeLine/README.md",
+      "length": 3158,
+      "sha256": "afa63f7f898ba3ca8a8c6764496127c9280330d319676597a5ed67a26519a42a",
+      "observedWorktree": {
+        "path": "Survivalcraft/Dawnlight/PipeLine/README.md",
+        "length": 3212,
+        "sha256": "5eff903cbebb80d78245e1b90b9d2a7c6f5a5bd96ef764fd47bc9a2a38f5e94c"
+      },
+      "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+      "role": "implementation-overview",
+      "plannedPages": [
+        "concepts/pipeline",
+        "tools/publication"
+      ],
+      "sourceUrl": "https://github.com/EltanceX/DawnlightCore/blob/f8aaa5c4218f54536ccf994a2d512aed2e3678b7/Survivalcraft/Dawnlight/PipeLine/README.md",
+      "publicAccess": "private-repository",
+      "authorityNote": null
+    },
+    {
+      "id": "guide-v34",
+      "path": "docs/ShaderPackAuthorGuide.md",
+      "length": 25870,
+      "sha256": "45a49957a89628b8b622a6693e1471d7e081dad700e442d2aa2709665f31d485",
+      "observedWorktree": {
+        "path": "docs/ShaderPackAuthorGuide.md",
+        "length": 25870,
+        "sha256": "45a49957a89628b8b622a6693e1471d7e081dad700e442d2aa2709665f31d485"
+      },
+      "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+      "role": "author-guide",
+      "plannedPages": [
+        "start/pack-layout",
+        "reference/scene-abi",
+        "compatibility/manifest-versions"
+      ],
+      "sourceUrl": "https://github.com/EltanceX/DawnlightCore/blob/f8aaa5c4218f54536ccf994a2d512aed2e3678b7/docs/ShaderPackAuthorGuide.md",
+      "publicAccess": "private-repository",
+      "authorityNote": null
+    },
+    {
+      "id": "guide-v5",
+      "path": "docs/ShaderPackAuthorGuideP11V5.md",
+      "length": 34790,
+      "sha256": "f6f2f7b33837fce17f318989c4ac2a3558e116bd0517de67b651efbe16375cea",
+      "observedWorktree": {
+        "path": "docs/ShaderPackAuthorGuideP11V5.md",
+        "length": 35913,
+        "sha256": "cb415673bffc67d626d613b21fb89bd3b7e0d577d92aef70aa06fff23a5366d9"
+      },
+      "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+      "role": "author-guide-with-open-issue",
+      "plannedPages": [
+        "reference/custom-data",
+        "reference/materials",
+        "reference/bindings"
+      ],
+      "sourceUrl": "https://github.com/EltanceX/DawnlightCore/blob/f8aaa5c4218f54536ccf994a2d512aed2e3678b7/docs/ShaderPackAuthorGuideP11V5.md",
+      "publicAccess": "private-repository",
+      "authorityNote": null
+    },
+    {
+      "id": "composition-doc",
+      "path": "docs/ShaderPackManifestComposition.md",
+      "length": 3328,
+      "sha256": "34a19143a782f6bd1e40dabd3d0a4c9cb7c2c17960c5c3e9e7554d3e71d4edf5",
+      "observedWorktree": {
+        "path": "docs/ShaderPackManifestComposition.md",
+        "length": 3399,
+        "sha256": "83bfcfce40dc4bcb529bfa418f46ff44e50e6b2e60b61671a4422434a2853e25"
+      },
+      "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+      "role": "historical-author-guide",
+      "plannedPages": [
+        "reference/manifest",
+        "tutorial/09-complete-pack"
+      ],
+      "sourceUrl": "https://github.com/EltanceX/DawnlightCore/blob/f8aaa5c4218f54536ccf994a2d512aed2e3678b7/docs/ShaderPackManifestComposition.md",
+      "publicAccess": "private-repository",
+      "authorityNote": "历史或计划资料，不能单独证明当前运行支持。"
+    },
+    {
+      "id": "settings-doc",
+      "path": "docs/ShaderPackSettingsUiReference.md",
+      "length": 11251,
+      "sha256": "8c03a4c4d3719f0f2e625692f6227bc5fd889cb20684179831121391b2e71d8f",
+      "observedWorktree": {
+        "path": "docs/ShaderPackSettingsUiReference.md",
+        "length": 11498,
+        "sha256": "c63e9ce92b560192fa4a21457e71bcf41c99f37cdce43eb71da1a7810f708278"
+      },
+      "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+      "role": "author-reference",
+      "plannedPages": [
+        "reference/settings-ui",
+        "tutorial/05-options"
+      ],
+      "sourceUrl": "https://github.com/EltanceX/DawnlightCore/blob/f8aaa5c4218f54536ccf994a2d512aed2e3678b7/docs/ShaderPackSettingsUiReference.md",
+      "publicAccess": "private-repository",
+      "authorityNote": null
+    },
+    {
+      "id": "commands-doc",
+      "path": "docs/DawnlightGenericCommandTypes.md",
+      "length": 3474,
+      "sha256": "bdde493fe6a0a6446aaec4a84a7cb29d872323c81015bce177be585f802b9f7a",
+      "observedWorktree": {
+        "path": "docs/DawnlightGenericCommandTypes.md",
+        "length": 3523,
+        "sha256": "c7ee4ab1dddba4047a27eab55ad5ab16b71917b37d61082e49c076631ad8454e"
+      },
+      "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+      "role": "author-reference",
+      "plannedPages": [
+        "reference/commands",
+        "concepts/pipeline"
+      ],
+      "sourceUrl": "https://github.com/EltanceX/DawnlightCore/blob/f8aaa5c4218f54536ccf994a2d512aed2e3678b7/docs/DawnlightGenericCommandTypes.md",
+      "publicAccess": "private-repository",
+      "authorityNote": null
+    },
+    {
+      "id": "resources-doc",
+      "path": "docs/DawnlightResourceContentAndFactoryServices.md",
+      "length": 2763,
+      "sha256": "e4e2fc7beb5096cf09e096f73d3c262d66bee77ce072afad66082a2b45e929e7",
+      "observedWorktree": {
+        "path": "docs/DawnlightResourceContentAndFactoryServices.md",
+        "length": 2816,
+        "sha256": "73157572eed522a6ad33f92ffcd5d7c2fd89b48599c2ceb35bd8430e2e24773e"
+      },
+      "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+      "role": "author-reference",
+      "plannedPages": [
+        "reference/resources",
+        "reference/catalog"
+      ],
+      "sourceUrl": "https://github.com/EltanceX/DawnlightCore/blob/f8aaa5c4218f54536ccf994a2d512aed2e3678b7/docs/DawnlightResourceContentAndFactoryServices.md",
+      "publicAccess": "private-repository",
+      "authorityNote": null
+    },
+    {
+      "id": "semantics-doc",
+      "path": "docs/DawnlightSemanticProviderCatalog.md",
+      "length": 1350,
+      "sha256": "4ecd32ee78320ac7794834a1057c3143dcc4cfa565d67b2d53faacd162c76c69",
+      "observedWorktree": {
+        "path": "docs/DawnlightSemanticProviderCatalog.md",
+        "length": 1382,
+        "sha256": "d70f5bb028502edf0b16b566031de898f32c1b7ce9210e51f7132755390c60bd"
+      },
+      "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+      "role": "author-reference",
+      "plannedPages": [
+        "reference/bindings",
+        "reference/catalog"
+      ],
+      "sourceUrl": "https://github.com/EltanceX/DawnlightCore/blob/f8aaa5c4218f54536ccf994a2d512aed2e3678b7/docs/DawnlightSemanticProviderCatalog.md",
+      "publicAccess": "private-repository",
+      "authorityNote": null
+    },
+    {
+      "id": "temporal-doc",
+      "path": "docs/DawnlightTemporalViewABI.md",
+      "length": 12274,
+      "sha256": "89a51d40086bddc8b5d62ada2aa29ae0b1cf3e7d83acf855c684ca228f50c5ad",
+      "observedWorktree": {
+        "path": "docs/DawnlightTemporalViewABI.md",
+        "length": 12426,
+        "sha256": "fc2b167bac7409bf76b56725521c84b20da2670c6985c0969d6184de02d501b2"
+      },
+      "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+      "role": "versioned-contract-history",
+      "plannedPages": [
+        "concepts/history-lifecycle",
+        "reference/custom-data",
+        "recipes/temporal"
+      ],
+      "sourceUrl": "https://github.com/EltanceX/DawnlightCore/blob/f8aaa5c4218f54536ccf994a2d512aed2e3678b7/docs/DawnlightTemporalViewABI.md",
+      "publicAccess": "private-repository",
+      "authorityNote": null
+    },
+    {
+      "id": "temporal-frozen-contract",
+      "path": "docs/contracts/DawnlightTemporalView-v1.json",
+      "length": 12027,
+      "sha256": "db4bfd75007410d32b06eb037c96a49dd28f4ce53eae16e1d89787476553c242",
+      "observedWorktree": {
+        "path": "docs/contracts/DawnlightTemporalView-v1.json",
+        "length": 12161,
+        "sha256": "a72601a219599f8389d62115d7111fde6aae791e33889e5f7970d022d0888d1a"
+      },
+      "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+      "role": "historical-machine-contract",
+      "plannedPages": [
+        "recipes/temporal"
+      ],
+      "sourceUrl": "https://github.com/EltanceX/DawnlightCore/blob/f8aaa5c4218f54536ccf994a2d512aed2e3678b7/docs/contracts/DawnlightTemporalView-v1.json",
+      "publicAccess": "private-repository",
+      "authorityNote": "历史或计划资料，不能单独证明当前运行支持。"
+    },
+    {
+      "id": "light-geometry-doc",
+      "path": "docs/DawnlightLightFrustumGeometryABI.md",
+      "length": 5328,
+      "sha256": "eb63e1ed8ff34f0019c0f263323a6989a4e2ccc7bad67b86d2a022424955f121",
+      "observedWorktree": {
+        "path": "docs/DawnlightLightFrustumGeometryABI.md",
+        "length": 5407,
+        "sha256": "f6a3d82dce4e341651da7fc211aef86f2a305be2b13eb3cf5f24154d293f4f55"
+      },
+      "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+      "role": "versioned-contract",
+      "plannedPages": [
+        "reference/catalog",
+        "recipes/shadows"
+      ],
+      "sourceUrl": "https://github.com/EltanceX/DawnlightCore/blob/f8aaa5c4218f54536ccf994a2d512aed2e3678b7/docs/DawnlightLightFrustumGeometryABI.md",
+      "publicAccess": "private-repository",
+      "authorityNote": null
+    },
+    {
+      "id": "comparison-doc",
+      "path": "docs/MakeUpUltraFastSCMU45Comparison.md",
+      "length": 16338,
+      "sha256": "2a8ff45ce8c05f7973bde1ff58c785a13cd112ba46c6784cb86822a2b6f17e3f",
+      "observedWorktree": {
+        "path": "docs/MakeUpUltraFastSCMU45Comparison.md",
+        "length": 16531,
+        "sha256": "a2502a76b521d5e2152051c4896b20eb52c0312cda03ccf63aebaa8ccaa73e6d"
+      },
+      "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+      "role": "scoped-evidence-document",
+      "plannedPages": [
+        "reference/bindings",
+        "recipes/shadows"
+      ],
+      "sourceUrl": "https://github.com/EltanceX/DawnlightCore/blob/f8aaa5c4218f54536ccf994a2d512aed2e3678b7/docs/MakeUpUltraFastSCMU45Comparison.md",
+      "publicAccess": "private-repository",
+      "authorityNote": null
+    },
+    {
+      "id": "temporal-runtime-doc",
+      "path": "docs/MakeUpUltraFastSCMU32TemporalViewRuntime.md",
+      "length": 11199,
+      "sha256": "19ca4967ca92414e282fb2bd58b700a0d321433c3edfe844a6d39b613a938e3d",
+      "observedWorktree": {
+        "path": "docs/MakeUpUltraFastSCMU32TemporalViewRuntime.md",
+        "length": 11199,
+        "sha256": "19ca4967ca92414e282fb2bd58b700a0d321433c3edfe844a6d39b613a938e3d"
+      },
+      "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+      "role": "scoped-evidence-document",
+      "plannedPages": [
+        "recipes/temporal"
+      ],
+      "sourceUrl": "https://github.com/EltanceX/DawnlightCore/blob/f8aaa5c4218f54536ccf994a2d512aed2e3678b7/docs/MakeUpUltraFastSCMU32TemporalViewRuntime.md",
+      "publicAccess": "private-repository",
+      "authorityNote": null
+    },
+    {
+      "id": "jitter-doc",
+      "path": "docs/MakeUpUltraFastSCMU33FullSceneJitter.md",
+      "length": 12909,
+      "sha256": "05f2c885ca23244f6120328f588f9d96ccdbfafd065fd484dc586d7984c91273",
+      "observedWorktree": {
+        "path": "docs/MakeUpUltraFastSCMU33FullSceneJitter.md",
+        "length": 12909,
+        "sha256": "05f2c885ca23244f6120328f588f9d96ccdbfafd065fd484dc586d7984c91273"
+      },
+      "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+      "role": "scoped-evidence-document",
+      "plannedPages": [
+        "recipes/temporal"
+      ],
+      "sourceUrl": "https://github.com/EltanceX/DawnlightCore/blob/f8aaa5c4218f54536ccf994a2d512aed2e3678b7/docs/MakeUpUltraFastSCMU33FullSceneJitter.md",
+      "publicAccess": "private-repository",
+      "authorityNote": null
+    },
+    {
+      "id": "android-doc",
+      "path": "docs/AndroidReleasePreparation.md",
+      "length": 8915,
+      "sha256": "433345aa7c95b46cb9797171d15daca6ba85361f28aa0914088eff42ff91128e",
+      "observedWorktree": {
+        "path": "docs/AndroidReleasePreparation.md",
+        "length": 8915,
+        "sha256": "433345aa7c95b46cb9797171d15daca6ba85361f28aa0914088eff42ff91128e"
+      },
+      "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+      "role": "platform-evidence-document",
+      "plannedPages": [
+        "compatibility/platforms"
+      ],
+      "sourceUrl": "https://github.com/EltanceX/DawnlightCore/blob/f8aaa5c4218f54536ccf994a2d512aed2e3678b7/docs/AndroidReleasePreparation.md",
+      "publicAccess": "private-repository",
+      "authorityNote": null
+    },
+    {
+      "id": "freedom-assessment",
+      "path": "docs/ShaderPackDeveloperFreedomAssessment.md",
+      "length": 58253,
+      "sha256": "415ab0f6b731a7d8840b3d8e20dc11e13c76b4c95033fc28575ebee6a4e1e873",
+      "observedWorktree": {
+        "path": "docs/ShaderPackDeveloperFreedomAssessment.md",
+        "length": 59035,
+        "sha256": "4ddf339646e6f77831ffd47f150bbf77ef9d577b0e3eca9b4a3bcf4028e2a874"
+      },
+      "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+      "role": "historical-assessment",
+      "plannedPages": [
+        "compatibility/support-matrix"
+      ],
+      "sourceUrl": "https://github.com/EltanceX/DawnlightCore/blob/f8aaa5c4218f54536ccf994a2d512aed2e3678b7/docs/ShaderPackDeveloperFreedomAssessment.md",
+      "publicAccess": "private-repository",
+      "authorityNote": "历史或计划资料，不能单独证明当前运行支持。"
+    },
+    {
+      "id": "lifetime-plan",
+      "path": "docs/DawnlightPipelineResourceLifetimeAndAliasingPlan.md",
+      "length": 26871,
+      "sha256": "5007c1f76992b610c3ee7c03c4257c1bc453f2de22936306b4f8707bb3dd86fc",
+      "observedWorktree": {
+        "path": "docs/DawnlightPipelineResourceLifetimeAndAliasingPlan.md",
+        "length": 27562,
+        "sha256": "75c3a2469b5553ce228a9ebbae6c2eb6d31735949e02138d9a8079fcfd1d692d"
+      },
+      "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+      "role": "implementation-plan",
+      "plannedPages": [
+        "reference/resources",
+        "compatibility/support-matrix"
+      ],
+      "sourceUrl": "https://github.com/EltanceX/DawnlightCore/blob/f8aaa5c4218f54536ccf994a2d512aed2e3678b7/docs/DawnlightPipelineResourceLifetimeAndAliasingPlan.md",
+      "publicAccess": "private-repository",
+      "authorityNote": "历史或计划资料，不能单独证明当前运行支持。"
+    },
+    {
+      "id": "diagnostics-doc",
+      "path": "docs/ShaderPackDiagnosticReference.md",
+      "length": 26889,
+      "sha256": "e515b85d6dac38b8142767b6ff264cc8aeb706a43aceb5081e328de52d665ca7",
+      "observedWorktree": {
+        "path": "docs/ShaderPackDiagnosticReference.md",
+        "length": 26889,
+        "sha256": "e515b85d6dac38b8142767b6ff264cc8aeb706a43aceb5081e328de52d665ca7"
+      },
+      "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+      "role": "generated-and-authored-reference",
+      "plannedPages": [
+        "reference/diagnostics",
+        "troubleshooting/index"
+      ],
+      "sourceUrl": "https://github.com/EltanceX/DawnlightCore/blob/f8aaa5c4218f54536ccf994a2d512aed2e3678b7/docs/ShaderPackDiagnosticReference.md",
+      "publicAccess": "private-repository",
+      "authorityNote": null
+    },
+    {
+      "id": "analyzer-readme",
+      "path": "tools/ShaderPackAnalyzer/README.md",
+      "length": 25563,
+      "sha256": "3323dc7c9f7ff0727a1cd366c39d63a118dfa4a77dc2ca0fbdebaf0a9d0c9187",
+      "observedWorktree": {
+        "path": "tools/ShaderPackAnalyzer/README.md",
+        "length": 25975,
+        "sha256": "aa198e1462c83b5bd93fdcd15623f71b956123eb03882b32023835ba1376dc10"
+      },
+      "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+      "role": "tool-contract",
+      "plannedPages": [
+        "tools/analyzer",
+        "tools/reports",
+        "tools/publication"
+      ],
+      "sourceUrl": "https://github.com/EltanceX/DawnlightCore/blob/f8aaa5c4218f54536ccf994a2d512aed2e3678b7/tools/ShaderPackAnalyzer/README.md",
+      "publicAccess": "private-repository",
+      "authorityNote": null
+    },
+    {
+      "id": "analyzer-project",
+      "path": "tools/ShaderPackAnalyzer/ShaderPackAnalyzer.csproj",
+      "length": 2866,
+      "sha256": "be83879bee6f1513e3413f81635c93f4499e50f3556bf88bf799c2e8829bdab8",
+      "observedWorktree": {
+        "path": "tools/ShaderPackAnalyzer/ShaderPackAnalyzer.csproj",
+        "length": 2919,
+        "sha256": "2c295fdcd6bef7e9f973dd186eddda0d9abf6edb82aa5ac6affa436ebca59608"
+      },
+      "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+      "role": "tool-build-contract",
+      "plannedPages": [
+        "contributing/toolchain"
+      ],
+      "sourceUrl": "https://github.com/EltanceX/DawnlightCore/blob/f8aaa5c4218f54536ccf994a2d512aed2e3678b7/tools/ShaderPackAnalyzer/ShaderPackAnalyzer.csproj",
+      "publicAccess": "private-repository",
+      "authorityNote": null
+    },
+    {
+      "id": "analyzer-publish-profile",
+      "path": "tools/ShaderPackAnalyzer/Properties/PublishProfiles/win-x64.pubxml",
+      "length": 691,
+      "sha256": "3956b03185d6dc8ce45e36e20eb2d9532b035f9cd242da1e652faf7da89c4f82",
+      "observedWorktree": {
+        "path": "tools/ShaderPackAnalyzer/Properties/PublishProfiles/win-x64.pubxml",
+        "length": 707,
+        "sha256": "75d5b722a2f65cc191c9de65a81d1c98882a662ce08b17a1b358bbabcc8de1fb"
+      },
+      "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+      "role": "tool-build-contract",
+      "plannedPages": [
+        "contributing/toolchain"
+      ],
+      "sourceUrl": "https://github.com/EltanceX/DawnlightCore/blob/f8aaa5c4218f54536ccf994a2d512aed2e3678b7/tools/ShaderPackAnalyzer/Properties/PublishProfiles/win-x64.pubxml",
+      "publicAccess": "private-repository",
+      "authorityNote": null
+    },
+    {
+      "id": "analyzer-program",
+      "path": "tools/ShaderPackAnalyzer/Program.cs",
+      "length": 94687,
+      "sha256": "e9c6e74bf68eaf9738875963984a17b3dd8c662c1e1f191389c15690c8e0d56e",
+      "observedWorktree": {
+        "path": "tools/ShaderPackAnalyzer/Program.cs",
+        "length": 96558,
+        "sha256": "b5799c0db89c39af8b0e69d812f9f595f58c1de219a0ceb6c4b93cfd4cb280a6"
+      },
+      "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+      "role": "tool-implementation",
+      "plannedPages": [
+        "tools/analyzer"
+      ],
+      "sourceUrl": "https://github.com/EltanceX/DawnlightCore/blob/f8aaa5c4218f54536ccf994a2d512aed2e3678b7/tools/ShaderPackAnalyzer/Program.cs",
+      "publicAccess": "private-repository",
+      "authorityNote": null
+    },
+    {
+      "id": "catalog-service",
+      "path": "tools/ShaderPackAnalyzer/CatalogApplicationService.cs",
+      "length": 19714,
+      "sha256": "24c3ddd542a0cdfd0f076d0b4945ef6fd1bbfc68cdb68bf6e3c470e826c5b3e5",
+      "observedWorktree": {
+        "path": "tools/ShaderPackAnalyzer/CatalogApplicationService.cs",
+        "length": 20123,
+        "sha256": "8c8322e66035f74d8ec653cbe76a0d8e86b0c8ee43a8ac707958e442c792f8d0"
+      },
+      "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+      "role": "catalog-implementation",
+      "plannedPages": [
+        "reference/catalog",
+        "compatibility/manifest-versions"
+      ],
+      "sourceUrl": "https://github.com/EltanceX/DawnlightCore/blob/f8aaa5c4218f54536ccf994a2d512aed2e3678b7/tools/ShaderPackAnalyzer/CatalogApplicationService.cs",
+      "publicAccess": "private-repository",
+      "authorityNote": null
+    },
+    {
+      "id": "schema-service",
+      "path": "tools/ShaderPackAnalyzer/SchemaBundleApplicationService.cs",
+      "length": 11425,
+      "sha256": "b919d1f2a9d33e13f22dcad9f2908c1225f1b8f793e5ef47b2956f9ff6c6b871",
+      "observedWorktree": {
+        "path": "tools/ShaderPackAnalyzer/SchemaBundleApplicationService.cs",
+        "length": 11709,
+        "sha256": "901936f1ab9dd8c58a56edbbd0c0b464d7db6b251e041d0dd4fa23644a6ee6ce"
+      },
+      "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+      "role": "schema-implementation",
+      "plannedPages": [
+        "tools/schema",
+        "compatibility/manifest-versions"
+      ],
+      "sourceUrl": "https://github.com/EltanceX/DawnlightCore/blob/f8aaa5c4218f54536ccf994a2d512aed2e3678b7/tools/ShaderPackAnalyzer/SchemaBundleApplicationService.cs",
+      "publicAccess": "private-repository",
+      "authorityNote": null
+    },
+    {
+      "id": "schema-generator",
+      "path": "tools/ShaderPackAnalyzer/ShaderPackManifestSchemaGenerator.cs",
+      "length": 38879,
+      "sha256": "6e14909e8c7d74f262d67fd791ad8c943bdcf0e3ff08c79f71ef45ab5d8036ad",
+      "observedWorktree": {
+        "path": "tools/ShaderPackAnalyzer/ShaderPackManifestSchemaGenerator.cs",
+        "length": 39735,
+        "sha256": "9c9b3b8ba5517c7ef692b45c3ac2947a20d670f51ff1753a7ade3c9f511e268f"
+      },
+      "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+      "role": "schema-implementation",
+      "plannedPages": [
+        "reference/manifest",
+        "tools/schema"
+      ],
+      "sourceUrl": "https://github.com/EltanceX/DawnlightCore/blob/f8aaa5c4218f54536ccf994a2d512aed2e3678b7/tools/ShaderPackAnalyzer/ShaderPackManifestSchemaGenerator.cs",
+      "publicAccess": "private-repository",
+      "authorityNote": null
+    },
+    {
+      "id": "data-schema-generator",
+      "path": "tools/ShaderPackAnalyzer/ShaderPackDataSchemaGenerator.cs",
+      "length": 16549,
+      "sha256": "b1fb7b9a7ec4880b9bc2d0fbe719612b8d4633e771123247bee91765ff0c2d5a",
+      "observedWorktree": {
+        "path": "tools/ShaderPackAnalyzer/ShaderPackDataSchemaGenerator.cs",
+        "length": 16767,
+        "sha256": "ca11401adff47468b82a541a8ebcfd3b91a0a9f23cbe796d37969d70fd06ca03"
+      },
+      "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+      "role": "schema-implementation",
+      "plannedPages": [
+        "reference/custom-data",
+        "reference/bindings",
+        "reference/passes"
+      ],
+      "sourceUrl": "https://github.com/EltanceX/DawnlightCore/blob/f8aaa5c4218f54536ccf994a2d512aed2e3678b7/tools/ShaderPackAnalyzer/ShaderPackDataSchemaGenerator.cs",
+      "publicAccess": "private-repository",
+      "authorityNote": null
+    },
+    {
+      "id": "guide-checker",
+      "path": "tools/ShaderPackAnalyzer/AuthoringDocumentationApplicationService.cs",
+      "length": 28727,
+      "sha256": "5c831beacbbc1880c9e5a31e0d9a13d40c6a9fd96dd5b19b6620b39918f1c10d",
+      "observedWorktree": {
+        "path": "tools/ShaderPackAnalyzer/AuthoringDocumentationApplicationService.cs",
+        "length": 29173,
+        "sha256": "f9d735b5627d3116b8aff528e675a4f5ae6d8d6b9e6580080ac1c4afdb5f40a0"
+      },
+      "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+      "role": "documentation-contract-implementation",
+      "plannedPages": [
+        "contributing/content-verification"
+      ],
+      "sourceUrl": "https://github.com/EltanceX/DawnlightCore/blob/f8aaa5c4218f54536ccf994a2d512aed2e3678b7/tools/ShaderPackAnalyzer/AuthoringDocumentationApplicationService.cs",
+      "publicAccess": "private-repository",
+      "authorityNote": null
+    },
+    {
+      "id": "manifest-contract",
+      "path": "Survivalcraft/Dawnlight/PipeLine/Shaders/Configuration/Domain/ShaderPackManifestAuthoringContract.cs",
+      "length": 10271,
+      "sha256": "7ce688c2ba1a1e243e0fe26b345aa99e0451aa832d7a3ba76c6aff55ba065fa0",
+      "observedWorktree": {
+        "path": "Survivalcraft/Dawnlight/PipeLine/Shaders/Configuration/Domain/ShaderPackManifestAuthoringContract.cs",
+        "length": 10416,
+        "sha256": "f5f729c3be53b0e07ce355f8fbbc45a0f3813f297d763f955b34e7cfb4ae702d"
+      },
+      "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+      "role": "authoring-contract",
+      "plannedPages": [
+        "reference/manifest",
+        "reference/commands",
+        "reference/programs"
+      ],
+      "sourceUrl": "https://github.com/EltanceX/DawnlightCore/blob/f8aaa5c4218f54536ccf994a2d512aed2e3678b7/Survivalcraft/Dawnlight/PipeLine/Shaders/Configuration/Domain/ShaderPackManifestAuthoringContract.cs",
+      "publicAccess": "private-repository",
+      "authorityNote": null
+    },
+    {
+      "id": "data-contract",
+      "path": "Survivalcraft/Dawnlight/PipeLine/Shaders/Configuration/Domain/Data/ShaderPackDataAuthoringContract.cs",
+      "length": 3999,
+      "sha256": "0c0838189e2c2e03304451e6572a2ea4e69b46541e03bfba118c08e00f68142f",
+      "observedWorktree": {
+        "path": "Survivalcraft/Dawnlight/PipeLine/Shaders/Configuration/Domain/Data/ShaderPackDataAuthoringContract.cs",
+        "length": 4056,
+        "sha256": "524a6e6c34c65f90cf90148692383391f191f62703355aa86fc0d21313677163"
+      },
+      "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+      "role": "authoring-contract",
+      "plannedPages": [
+        "reference/materials",
+        "reference/custom-data"
+      ],
+      "sourceUrl": "https://github.com/EltanceX/DawnlightCore/blob/f8aaa5c4218f54536ccf994a2d512aed2e3678b7/Survivalcraft/Dawnlight/PipeLine/Shaders/Configuration/Domain/Data/ShaderPackDataAuthoringContract.cs",
+      "publicAccess": "private-repository",
+      "authorityNote": null
+    },
+    {
+      "id": "manifest-loader",
+      "path": "Survivalcraft/Dawnlight/PipeLine/Shaders/Configuration/Loading/ShaderPackManifestLoader.cs",
+      "length": 254589,
+      "sha256": "1f01dab81f3060058fd5a4b940292eaad867c39099a8dba32532b9f257aeffd3",
+      "observedWorktree": {
+        "path": "Survivalcraft/Dawnlight/PipeLine/Shaders/Configuration/Loading/ShaderPackManifestLoader.cs",
+        "length": 260122,
+        "sha256": "d308a798c6a11deda88be10d5dd19389c9472f74167ef861f2c8d09031c8fc10"
+      },
+      "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+      "role": "production-loader",
+      "plannedPages": [
+        "reference/manifest",
+        "reference/scene-abi",
+        "reference/bindings"
+      ],
+      "sourceUrl": "https://github.com/EltanceX/DawnlightCore/blob/f8aaa5c4218f54536ccf994a2d512aed2e3678b7/Survivalcraft/Dawnlight/PipeLine/Shaders/Configuration/Loading/ShaderPackManifestLoader.cs",
+      "publicAccess": "private-repository",
+      "authorityNote": null
+    },
+    {
+      "id": "manifest-composer",
+      "path": "Survivalcraft/Dawnlight/PipeLine/Shaders/Configuration/Loading/ShaderPackManifestComposer.cs",
+      "length": 27792,
+      "sha256": "cd71f80a1b04f9ee67851158e9d7e9380194e538ee366e8fe007834b6eb87b8f",
+      "observedWorktree": {
+        "path": "Survivalcraft/Dawnlight/PipeLine/Shaders/Configuration/Loading/ShaderPackManifestComposer.cs",
+        "length": 28406,
+        "sha256": "32e98c4f640bd9788bb29a26631392de3031362d14d9b02d84eb374dba1ace77"
+      },
+      "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+      "role": "production-composer",
+      "plannedPages": [
+        "reference/manifest"
+      ],
+      "sourceUrl": "https://github.com/EltanceX/DawnlightCore/blob/f8aaa5c4218f54536ccf994a2d512aed2e3678b7/Survivalcraft/Dawnlight/PipeLine/Shaders/Configuration/Loading/ShaderPackManifestComposer.cs",
+      "publicAccess": "private-repository",
+      "authorityNote": null
+    },
+    {
+      "id": "resource-converter",
+      "path": "Survivalcraft/Dawnlight/PipeLine/Shaders/Configuration/Runtime/ShaderPackResourceDescriptorConverter.cs",
+      "length": 8208,
+      "sha256": "9d3e013b33a758a2a8b9130d18f16dba024bc932960df3e13b243d68d7416a47",
+      "observedWorktree": {
+        "path": "Survivalcraft/Dawnlight/PipeLine/Shaders/Configuration/Runtime/ShaderPackResourceDescriptorConverter.cs",
+        "length": 8360,
+        "sha256": "5ecde3fe3e4296083fce0cee52e26eb92528b80de8b02c9140e575f3e9c9d429"
+      },
+      "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+      "role": "allocation-contract",
+      "plannedPages": [
+        "reference/resources"
+      ],
+      "sourceUrl": "https://github.com/EltanceX/DawnlightCore/blob/f8aaa5c4218f54536ccf994a2d512aed2e3678b7/Survivalcraft/Dawnlight/PipeLine/Shaders/Configuration/Runtime/ShaderPackResourceDescriptorConverter.cs",
+      "publicAccess": "private-repository",
+      "authorityNote": null
+    },
+    {
+      "id": "builtin-invocations",
+      "path": "Survivalcraft/Dawnlight/PipeLine/Shaders/Configuration/Runtime/BuiltInProgramInvocationCatalog.cs",
+      "length": 1606,
+      "sha256": "28992a3a67ee6d5252b639ddf6cf5b3d003ef33a92deb923f1d155278d525927",
+      "observedWorktree": {
+        "path": "Survivalcraft/Dawnlight/PipeLine/Shaders/Configuration/Runtime/BuiltInProgramInvocationCatalog.cs",
+        "length": 1640,
+        "sha256": "7b55f94560e8557321cbbed64579288a9b76e08cfbd68edc7d34529eeb356e91"
+      },
+      "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+      "role": "fallback-contract",
+      "plannedPages": [
+        "concepts/source-ownership",
+        "reference/scene-abi"
+      ],
+      "sourceUrl": "https://github.com/EltanceX/DawnlightCore/blob/f8aaa5c4218f54536ccf994a2d512aed2e3678b7/Survivalcraft/Dawnlight/PipeLine/Shaders/Configuration/Runtime/BuiltInProgramInvocationCatalog.cs",
+      "publicAccess": "private-repository",
+      "authorityNote": null
+    },
+    {
+      "id": "data-catalog-code",
+      "path": "Survivalcraft/Dawnlight/PipeLine/CustomData/DataAbiCatalog.cs",
+      "length": 2263,
+      "sha256": "08a0fc2c2db7313f57db1c700d46b0837b1b39583bda55235b01d5a42f181416",
+      "observedWorktree": {
+        "path": "Survivalcraft/Dawnlight/PipeLine/CustomData/DataAbiCatalog.cs",
+        "length": 2299,
+        "sha256": "7011c13ecdb2f5cb65ec682196f2104e861c1e14b2f2c12f6f9b2245e199dd87"
+      },
+      "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+      "role": "data-catalog-implementation",
+      "plannedPages": [
+        "reference/custom-data",
+        "reference/catalog"
+      ],
+      "sourceUrl": "https://github.com/EltanceX/DawnlightCore/blob/f8aaa5c4218f54536ccf994a2d512aed2e3678b7/Survivalcraft/Dawnlight/PipeLine/CustomData/DataAbiCatalog.cs",
+      "publicAccess": "private-repository",
+      "authorityNote": null
+    },
+    {
+      "id": "data-inputs-code",
+      "path": "Survivalcraft/Dawnlight/PipeLine/CustomData/BuiltInCustomDataInputs.cs",
+      "length": 9612,
+      "sha256": "bf6b765f17e55e86346a043d879f9756a2cc64dca9d903aaa28a593e4a6c2887",
+      "observedWorktree": {
+        "path": "Survivalcraft/Dawnlight/PipeLine/CustomData/BuiltInCustomDataInputs.cs",
+        "length": 9739,
+        "sha256": "c1c4a38b04a5c28f0497cf27e27541099516a5076fba897cfe28549219b89544"
+      },
+      "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+      "role": "data-provider-implementation",
+      "plannedPages": [
+        "reference/custom-data"
+      ],
+      "sourceUrl": "https://github.com/EltanceX/DawnlightCore/blob/f8aaa5c4218f54536ccf994a2d512aed2e3678b7/Survivalcraft/Dawnlight/PipeLine/CustomData/BuiltInCustomDataInputs.cs",
+      "publicAccess": "private-repository",
+      "authorityNote": null
+    },
+    {
+      "id": "view-temporal-code",
+      "path": "Survivalcraft/Dawnlight/PipeLine/Core/ViewTemporalState.cs",
+      "length": 10622,
+      "sha256": "b2f8e1d58cb493417d18047b62962425663b81de6689320adb80df88bf51d6b7",
+      "observedWorktree": {
+        "path": "Survivalcraft/Dawnlight/PipeLine/Core/ViewTemporalState.cs",
+        "length": 10792,
+        "sha256": "4e3146d2246d633d0796e6185c27e645e06aa4f125fa36911f2978424717e411"
+      },
+      "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+      "role": "runtime-implementation",
+      "plannedPages": [
+        "concepts/history-lifecycle"
+      ],
+      "sourceUrl": "https://github.com/EltanceX/DawnlightCore/blob/f8aaa5c4218f54536ccf994a2d512aed2e3678b7/Survivalcraft/Dawnlight/PipeLine/Core/ViewTemporalState.cs",
+      "publicAccess": "private-repository",
+      "authorityNote": null
+    },
+    {
+      "id": "view-jitter-code",
+      "path": "Survivalcraft/Dawnlight/PipeLine/Services/ViewJitter.cs",
+      "length": 3236,
+      "sha256": "1860888aa2cb8e9b9ab5b6c4ace36d6c5f281fb894b24b075e8d4fd31e500120",
+      "observedWorktree": {
+        "path": "Survivalcraft/Dawnlight/PipeLine/Services/ViewJitter.cs",
+        "length": 3300,
+        "sha256": "ab12f8fd13fbf16abd518d91450495d2194f0b2936530cd00f81d0974ac35ddf"
+      },
+      "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+      "role": "runtime-implementation",
+      "plannedPages": [
+        "recipes/temporal"
+      ],
+      "sourceUrl": "https://github.com/EltanceX/DawnlightCore/blob/f8aaa5c4218f54536ccf994a2d512aed2e3678b7/Survivalcraft/Dawnlight/PipeLine/Services/ViewJitter.cs",
+      "publicAccess": "private-repository",
+      "authorityNote": null
+    },
+    {
+      "id": "light-geometry-code",
+      "path": "Survivalcraft/Dawnlight/PipeLine/Services/LightFrustumGeometry.cs",
+      "length": 8850,
+      "sha256": "e6f16bd84a05ffca5d1b1a49dd219900179e285d5806c3d4889c140b4d6ce631",
+      "observedWorktree": {
+        "path": "Survivalcraft/Dawnlight/PipeLine/Services/LightFrustumGeometry.cs",
+        "length": 9004,
+        "sha256": "de48f02f277c91733c56e6b000ef011fc23af7d50e5fdbf35a97b173d2d60457"
+      },
+      "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+      "role": "runtime-implementation",
+      "plannedPages": [
+        "recipes/shadows"
+      ],
+      "sourceUrl": "https://github.com/EltanceX/DawnlightCore/blob/f8aaa5c4218f54536ccf994a2d512aed2e3678b7/Survivalcraft/Dawnlight/PipeLine/Services/LightFrustumGeometry.cs",
+      "publicAccess": "private-repository",
+      "authorityNote": null
+    },
+    {
+      "id": "comparison-code",
+      "path": "Survivalcraft/Dawnlight/PipeLine/Shaders/Configuration/Domain/Programs/DepthComparisonSampling.cs",
+      "length": 672,
+      "sha256": "fcac08fe293cd61c3cb116672813fde9cb287a6ecdde9190c8056315264d3162",
+      "observedWorktree": {
+        "path": "Survivalcraft/Dawnlight/PipeLine/Shaders/Configuration/Domain/Programs/DepthComparisonSampling.cs",
+        "length": 688,
+        "sha256": "c34fc9db94886a680d15c09adca8ef91d9d82a8c4a9a52e5498b369e8a29a57e"
+      },
+      "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+      "role": "binding-contract",
+      "plannedPages": [
+        "reference/bindings"
+      ],
+      "sourceUrl": "https://github.com/EltanceX/DawnlightCore/blob/f8aaa5c4218f54536ccf994a2d512aed2e3678b7/Survivalcraft/Dawnlight/PipeLine/Shaders/Configuration/Domain/Programs/DepthComparisonSampling.cs",
+      "publicAccess": "private-repository",
+      "authorityNote": null
+    },
+    {
+      "id": "compatibility-tests",
+      "path": "Survivalcraft.Pipeline.Tests/P10H7CompatibilityAndAcceptanceTests.cs",
+      "length": 18583,
+      "sha256": "2eee7b95396bb78cfe6796337198b478b88ea7182aefd3310c6b1354a524fcae",
+      "observedWorktree": {
+        "path": "Survivalcraft.Pipeline.Tests/P10H7CompatibilityAndAcceptanceTests.cs",
+        "length": 18972,
+        "sha256": "b9f06f3a7cb486a0bfda266df7fb1446ff833dd2f7ad70426a597346f92ddefd"
+      },
+      "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+      "role": "test-source-not-executed",
+      "plannedPages": [
+        "compatibility/support-matrix"
+      ],
+      "sourceUrl": "https://github.com/EltanceX/DawnlightCore/blob/f8aaa5c4218f54536ccf994a2d512aed2e3678b7/Survivalcraft.Pipeline.Tests/P10H7CompatibilityAndAcceptanceTests.cs",
+      "publicAccess": "private-repository",
+      "authorityNote": null
+    },
+    {
+      "id": "frame-target-tests",
+      "path": "Survivalcraft.Pipeline.Tests/P10IFrameTargetOwnershipTests.cs",
+      "length": 10171,
+      "sha256": "474d69bc69d447bd8d06092caae3e861f0d6543fd517c3f707a75467e57f0d44",
+      "observedWorktree": {
+        "path": "Survivalcraft.Pipeline.Tests/P10IFrameTargetOwnershipTests.cs",
+        "length": 10394,
+        "sha256": "9e65c1f81edd64c9b3566735e1cd589ab066aeec31e44e8d4f9a769cfd3475eb"
+      },
+      "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+      "role": "test-source-not-executed",
+      "plannedPages": [
+        "reference/scene-abi"
+      ],
+      "sourceUrl": "https://github.com/EltanceX/DawnlightCore/blob/f8aaa5c4218f54536ccf994a2d512aed2e3678b7/Survivalcraft.Pipeline.Tests/P10IFrameTargetOwnershipTests.cs",
+      "publicAccess": "private-repository",
+      "authorityNote": null
+    },
+    {
+      "id": "composition-tests",
+      "path": "Survivalcraft.Pipeline.Tests/ShaderPackManifestCompositionTests.cs",
+      "length": 22333,
+      "sha256": "6b570b73e2816ff647734b2e0dc54c8e9f2f77cad6f6862dabfc1118be95d486",
+      "observedWorktree": {
+        "path": "Survivalcraft.Pipeline.Tests/ShaderPackManifestCompositionTests.cs",
+        "length": 22859,
+        "sha256": "51fb3412090a2fb0fae567cb8763381be1fa521b386c4890e419e6f64286a42b"
+      },
+      "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+      "role": "test-source-not-executed",
+      "plannedPages": [
+        "reference/manifest"
+      ],
+      "sourceUrl": "https://github.com/EltanceX/DawnlightCore/blob/f8aaa5c4218f54536ccf994a2d512aed2e3678b7/Survivalcraft.Pipeline.Tests/ShaderPackManifestCompositionTests.cs",
+      "publicAccess": "private-repository",
+      "authorityNote": null
+    },
+    {
+      "id": "comparison-tests",
+      "path": "Survivalcraft.Pipeline.Tests/ComparisonSamplingTests.cs",
+      "length": 21918,
+      "sha256": "9d0be6d78260424f25b797f5ff02dd9a46d118e77c8fc4d1a06296ae97b1cc85",
+      "observedWorktree": {
+        "path": "Survivalcraft.Pipeline.Tests/ComparisonSamplingTests.cs",
+        "length": 22224,
+        "sha256": "b2b6ae0725982370728ffd21fb678643f250a4ca65a959124ceb8a964e941657"
+      },
+      "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+      "role": "test-source-not-executed",
+      "plannedPages": [
+        "reference/bindings"
+      ],
+      "sourceUrl": "https://github.com/EltanceX/DawnlightCore/blob/f8aaa5c4218f54536ccf994a2d512aed2e3678b7/Survivalcraft.Pipeline.Tests/ComparisonSamplingTests.cs",
+      "publicAccess": "private-repository",
+      "authorityNote": null
+    },
+    {
+      "id": "light-geometry-tests",
+      "path": "Survivalcraft.Pipeline.Tests/LightFrustumGeometryTests.cs",
+      "length": 10184,
+      "sha256": "152e3b53326ce8756e126dced1adc60c9e38b5f343261f1824947a60af49430d",
+      "observedWorktree": {
+        "path": "Survivalcraft.Pipeline.Tests/LightFrustumGeometryTests.cs",
+        "length": 10365,
+        "sha256": "7810083aa4d8c69fbdfbaab07eac4d6709552a2d94bf5cad5a622e3168825fbc"
+      },
+      "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+      "role": "test-source-not-executed",
+      "plannedPages": [
+        "recipes/shadows"
+      ],
+      "sourceUrl": "https://github.com/EltanceX/DawnlightCore/blob/f8aaa5c4218f54536ccf994a2d512aed2e3678b7/Survivalcraft.Pipeline.Tests/LightFrustumGeometryTests.cs",
+      "publicAccess": "private-repository",
+      "authorityNote": null
+    },
+    {
+      "id": "jitter-tests",
+      "path": "Survivalcraft.Pipeline.Tests/ViewJitterTests.cs",
+      "length": 11171,
+      "sha256": "2244b395ddb62a03e4943ae83b4307dc31ce548e07593b1f5f32ad2d3a045c64",
+      "observedWorktree": {
+        "path": "Survivalcraft.Pipeline.Tests/ViewJitterTests.cs",
+        "length": 11350,
+        "sha256": "19ca6dd4a637e690381889c5e49fd1d50a828dc85a302be5fe822d9d8831767c"
+      },
+      "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+      "role": "test-source-not-executed",
+      "plannedPages": [
+        "recipes/temporal"
+      ],
+      "sourceUrl": "https://github.com/EltanceX/DawnlightCore/blob/f8aaa5c4218f54536ccf994a2d512aed2e3678b7/Survivalcraft.Pipeline.Tests/ViewJitterTests.cs",
+      "publicAccess": "private-repository",
+      "authorityNote": null
+    },
+    {
+      "id": "data-tools-tests",
+      "path": "Survivalcraft.Pipeline.Tests/P11GToolsAndEvidenceTests.cs",
+      "length": 19011,
+      "sha256": "1a555bbfb064ef1cceda81d4f73beaa513d4405f7d778f0ec7476f9782771553",
+      "observedWorktree": {
+        "path": "Survivalcraft.Pipeline.Tests/P11GToolsAndEvidenceTests.cs",
+        "length": 19283,
+        "sha256": "3b409d5e545a0f1f5f4d1e1ca988f5176e3bac4669f7ecbaa3f2fb46029f51bf"
+      },
+      "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+      "role": "test-source-not-executed",
+      "plannedPages": [
+        "tools/analyzer"
+      ],
+      "sourceUrl": "https://github.com/EltanceX/DawnlightCore/blob/f8aaa5c4218f54536ccf994a2d512aed2e3678b7/Survivalcraft.Pipeline.Tests/P11GToolsAndEvidenceTests.cs",
+      "publicAccess": "private-repository",
+      "authorityNote": null
+    },
+    {
+      "id": "data-publish-tests",
+      "path": "Survivalcraft.Pipeline.Tests/P11GDataDriverAndPublishTests.cs",
+      "length": 29161,
+      "sha256": "5264de363da76b1ad7bd1a3214dd6476ce290e93db70b240ab8e1d6708809eb6",
+      "observedWorktree": {
+        "path": "Survivalcraft.Pipeline.Tests/P11GDataDriverAndPublishTests.cs",
+        "length": 29601,
+        "sha256": "a64c9d86144628db9a0053dbe244418436c16867eb5566ba5eabb718568a31f5"
+      },
+      "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+      "role": "test-source-not-executed",
+      "plannedPages": [
+        "tools/publication"
+      ],
+      "sourceUrl": "https://github.com/EltanceX/DawnlightCore/blob/f8aaa5c4218f54536ccf994a2d512aed2e3678b7/Survivalcraft.Pipeline.Tests/P11GDataDriverAndPublishTests.cs",
+      "publicAccess": "private-repository",
+      "authorityNote": null
+    },
+    {
+      "id": "sceneabi-readme",
+      "path": "Survivalcraft/shaderpacks/SceneAbiLab_v0.1/README.md",
+      "length": 1437,
+      "sha256": "810d978b27364f43ffce26d5eb7abd0e6d7d2b0aa6113eeb101959b2fd185767",
+      "observedWorktree": {
+        "path": "Survivalcraft/shaderpacks/SceneAbiLab_v0.1/README.md",
+        "length": 1437,
+        "sha256": "810d978b27364f43ffce26d5eb7abd0e6d7d2b0aa6113eeb101959b2fd185767"
+      },
+      "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+      "role": "canonical-example-description",
+      "plannedPages": [
+        "examples/scene-abi"
+      ],
+      "sourceUrl": "https://github.com/EltanceX/DawnlightCore/blob/f8aaa5c4218f54536ccf994a2d512aed2e3678b7/Survivalcraft/shaderpacks/SceneAbiLab_v0.1/README.md",
+      "publicAccess": "private-repository",
+      "authorityNote": null
+    },
+    {
+      "id": "sceneabi-manifest",
+      "path": "Survivalcraft/shaderpacks/SceneAbiLab_v0.1/shaderpack.json",
+      "length": 11974,
+      "sha256": "a7f53e710907f451512ed84801585f0c68ee382b6f4568c2388f652f876d4166",
+      "observedWorktree": {
+        "path": "Survivalcraft/shaderpacks/SceneAbiLab_v0.1/shaderpack.json",
+        "length": 11974,
+        "sha256": "a7f53e710907f451512ed84801585f0c68ee382b6f4568c2388f652f876d4166"
+      },
+      "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+      "role": "canonical-example-entry",
+      "plannedPages": [
+        "examples/scene-abi"
+      ],
+      "sourceUrl": "https://github.com/EltanceX/DawnlightCore/blob/f8aaa5c4218f54536ccf994a2d512aed2e3678b7/Survivalcraft/shaderpacks/SceneAbiLab_v0.1/shaderpack.json",
+      "publicAccess": "private-repository",
+      "authorityNote": null
+    },
+    {
+      "id": "customdata-readme",
+      "path": "Survivalcraft/shaderpack-candidates/CustomDataLab_Both/README.md",
+      "length": 534,
+      "sha256": "49fd1a476db8ea83063b906da8d36f41eeac4e5cda37a95267c93c5d6c018d40",
+      "observedWorktree": {
+        "path": "Survivalcraft/shaderpack-candidates/CustomDataLab_Both/README.md",
+        "length": 539,
+        "sha256": "2a228dfcfcb71e8ff1ded044cd54d5b3ef6d8596e4d0841e678e206270c5b4ad"
+      },
+      "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+      "role": "canonical-example-description",
+      "plannedPages": [
+        "examples/custom-data"
+      ],
+      "sourceUrl": "https://github.com/EltanceX/DawnlightCore/blob/f8aaa5c4218f54536ccf994a2d512aed2e3678b7/Survivalcraft/shaderpack-candidates/CustomDataLab_Both/README.md",
+      "publicAccess": "private-repository",
+      "authorityNote": null
+    },
+    {
+      "id": "customdata-manifest",
+      "path": "Survivalcraft/shaderpack-candidates/CustomDataLab_Both/shaderpack.json",
+      "length": 18382,
+      "sha256": "f70396834a0f3a810372bd5e552eda14586d4593314f3ea7f9514f37b622e2b9",
+      "observedWorktree": {
+        "path": "Survivalcraft/shaderpack-candidates/CustomDataLab_Both/shaderpack.json",
+        "length": 19180,
+        "sha256": "6c497f4cbbe654b184ab27fdd30016a81958dba8ae149408816b750707bd3292"
+      },
+      "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+      "role": "canonical-example-entry",
+      "plannedPages": [
+        "examples/custom-data"
+      ],
+      "sourceUrl": "https://github.com/EltanceX/DawnlightCore/blob/f8aaa5c4218f54536ccf994a2d512aed2e3678b7/Survivalcraft/shaderpack-candidates/CustomDataLab_Both/shaderpack.json",
+      "publicAccess": "private-repository",
+      "authorityNote": null
+    },
+    {
+      "id": "dawnlight-manifest",
+      "path": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaderpack.json",
+      "length": 1533,
+      "sha256": "a179a8dc91fe6da9f044a01493d20d30e99ea5e2bfada0bba3004aee6c77001c",
+      "observedWorktree": {
+        "path": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaderpack.json",
+        "length": 1533,
+        "sha256": "a179a8dc91fe6da9f044a01493d20d30e99ea5e2bfada0bba3004aee6c77001c"
+      },
+      "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+      "role": "legacy-production-example-entry",
+      "plannedPages": [
+        "examples/dawnlight",
+        "compatibility/manifest-versions"
+      ],
+      "sourceUrl": "https://github.com/EltanceX/DawnlightCore/blob/f8aaa5c4218f54536ccf994a2d512aed2e3678b7/Survivalcraft/shaderpacks/Dawnlight_v3.1/shaderpack.json",
+      "publicAccess": "private-repository",
+      "authorityNote": null
+    },
+    {
+      "id": "makeup-readme",
+      "path": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/README.md",
+      "length": 3178,
+      "sha256": "d20c09b3af8a86c17d672ba2d7f351f79cd49a6b6ac9799e76106d3f716c8479",
+      "observedWorktree": {
+        "path": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/README.md",
+        "length": 3178,
+        "sha256": "d20c09b3af8a86c17d672ba2d7f351f79cd49a6b6ac9799e76106d3f716c8479"
+      },
+      "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+      "role": "integration-example-description",
+      "plannedPages": [
+        "examples/makeup",
+        "reference/manifest"
+      ],
+      "sourceUrl": "https://github.com/EltanceX/DawnlightCore/blob/f8aaa5c4218f54536ccf994a2d512aed2e3678b7/Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/README.md",
+      "publicAccess": "private-repository",
+      "authorityNote": null
+    },
+    {
+      "id": "makeup-manifest",
+      "path": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/shaderpack.json",
+      "length": 6104,
+      "sha256": "1334a862f808c292aae20e304245e8f878176dfa99f722c6be68da66b80281bd",
+      "observedWorktree": {
+        "path": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/shaderpack.json",
+        "length": 6104,
+        "sha256": "1334a862f808c292aae20e304245e8f878176dfa99f722c6be68da66b80281bd"
+      },
+      "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+      "role": "integration-example-entry",
+      "plannedPages": [
+        "examples/makeup"
+      ],
+      "sourceUrl": "https://github.com/EltanceX/DawnlightCore/blob/f8aaa5c4218f54536ccf994a2d512aed2e3678b7/Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/shaderpack.json",
+      "publicAccess": "private-repository",
+      "authorityNote": null
+    },
+    {
+      "id": "schema-v3",
+      "path": "docs/schemas/dawnlight.shaderpack.v3.schema.json",
+      "length": 54675,
+      "sha256": "7191d01af17204b203eeb54db283253e98766a16a62333e5aa64c73207c60537",
+      "observedWorktree": {
+        "path": "docs/schemas/dawnlight.shaderpack.v3.schema.json",
+        "length": 54675,
+        "sha256": "7191d01af17204b203eeb54db283253e98766a16a62333e5aa64c73207c60537"
+      },
+      "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+      "role": "generated-schema",
+      "plannedPages": [
+        "reference/manifest",
+        "tools/schema"
+      ],
+      "sourceUrl": "https://github.com/EltanceX/DawnlightCore/blob/f8aaa5c4218f54536ccf994a2d512aed2e3678b7/docs/schemas/dawnlight.shaderpack.v3.schema.json",
+      "publicAccess": "private-repository",
+      "authorityNote": null
+    },
+    {
+      "id": "schema-v4",
+      "path": "docs/schemas/dawnlight.shaderpack.v4.schema.json",
+      "length": 56098,
+      "sha256": "7b76c4b1e806f96a8a3de593c574a7fcf4d82d80720819e4b165b9d747441320",
+      "observedWorktree": {
+        "path": "docs/schemas/dawnlight.shaderpack.v4.schema.json",
+        "length": 56098,
+        "sha256": "7b76c4b1e806f96a8a3de593c574a7fcf4d82d80720819e4b165b9d747441320"
+      },
+      "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+      "role": "generated-schema",
+      "plannedPages": [
+        "reference/manifest",
+        "tools/schema"
+      ],
+      "sourceUrl": "https://github.com/EltanceX/DawnlightCore/blob/f8aaa5c4218f54536ccf994a2d512aed2e3678b7/docs/schemas/dawnlight.shaderpack.v4.schema.json",
+      "publicAccess": "private-repository",
+      "authorityNote": null
+    },
+    {
+      "id": "completion-v1",
+      "path": "docs/schemas/dawnlight.shaderpack.completions.v1.json",
+      "length": 74074,
+      "sha256": "950cb7bb86b4d4c04aca0f9d1f848c25b98d11259c358b568a6c60488308f7e2",
+      "observedWorktree": {
+        "path": "docs/schemas/dawnlight.shaderpack.completions.v1.json",
+        "length": 74074,
+        "sha256": "950cb7bb86b4d4c04aca0f9d1f848c25b98d11259c358b568a6c60488308f7e2"
+      },
+      "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+      "role": "generated-legacy-completion",
+      "plannedPages": [
+        "reference/catalog",
+        "tools/schema"
+      ],
+      "sourceUrl": "https://github.com/EltanceX/DawnlightCore/blob/f8aaa5c4218f54536ccf994a2d512aed2e3678b7/docs/schemas/dawnlight.shaderpack.completions.v1.json",
+      "publicAccess": "private-repository",
+      "authorityNote": null
+    },
+    {
+      "id": "schema-index-v1",
+      "path": "docs/schemas/dawnlight.shaderpack.schema-index.v1.json",
+      "length": 1054,
+      "sha256": "9be412355ea204d18777763da523c57fefcadb4964f3810deea2029627191007",
+      "observedWorktree": {
+        "path": "docs/schemas/dawnlight.shaderpack.schema-index.v1.json",
+        "length": 1054,
+        "sha256": "9be412355ea204d18777763da523c57fefcadb4964f3810deea2029627191007"
+      },
+      "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+      "role": "generated-schema-index",
+      "plannedPages": [
+        "compatibility/manifest-versions"
+      ],
+      "sourceUrl": "https://github.com/EltanceX/DawnlightCore/blob/f8aaa5c4218f54536ccf994a2d512aed2e3678b7/docs/schemas/dawnlight.shaderpack.schema-index.v1.json",
+      "publicAccess": "private-repository",
+      "authorityNote": null
+    },
+    {
+      "id": "schema-v5",
+      "path": "docs/schemas-v5/dawnlight.shaderpack.v5.schema.json",
+      "length": 115503,
+      "sha256": "afc9ad7c137379a98a6ba99e9daeffeb836b84eb41fdded060904e32c712b133",
+      "observedWorktree": {
+        "path": "docs/schemas-v5/dawnlight.shaderpack.v5.schema.json",
+        "length": 115503,
+        "sha256": "afc9ad7c137379a98a6ba99e9daeffeb836b84eb41fdded060904e32c712b133"
+      },
+      "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+      "role": "generated-schema",
+      "plannedPages": [
+        "reference/manifest",
+        "tools/schema"
+      ],
+      "sourceUrl": "https://github.com/EltanceX/DawnlightCore/blob/f8aaa5c4218f54536ccf994a2d512aed2e3678b7/docs/schemas-v5/dawnlight.shaderpack.v5.schema.json",
+      "publicAccess": "private-repository",
+      "authorityNote": null
+    },
+    {
+      "id": "completion-v2",
+      "path": "docs/schemas-v5/dawnlight.shaderpack.completions.v2.json",
+      "length": 94891,
+      "sha256": "a363f852dbbc9edcfe47dd119d5183b2ae6b9a9516fed6ccd090de1fb73cfaac",
+      "observedWorktree": {
+        "path": "docs/schemas-v5/dawnlight.shaderpack.completions.v2.json",
+        "length": 94891,
+        "sha256": "a363f852dbbc9edcfe47dd119d5183b2ae6b9a9516fed6ccd090de1fb73cfaac"
+      },
+      "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+      "role": "generated-current-completion",
+      "plannedPages": [
+        "reference/catalog",
+        "reference/custom-data"
+      ],
+      "sourceUrl": "https://github.com/EltanceX/DawnlightCore/blob/f8aaa5c4218f54536ccf994a2d512aed2e3678b7/docs/schemas-v5/dawnlight.shaderpack.completions.v2.json",
+      "publicAccess": "private-repository",
+      "authorityNote": null
+    },
+    {
+      "id": "schema-index-v2",
+      "path": "docs/schemas-v5/dawnlight.shaderpack.schema-index.v2.json",
+      "length": 769,
+      "sha256": "de23b3be447ac89e0871737c6f42456df460b0f283f72f423056161b881e0849",
+      "observedWorktree": {
+        "path": "docs/schemas-v5/dawnlight.shaderpack.schema-index.v2.json",
+        "length": 769,
+        "sha256": "de23b3be447ac89e0871737c6f42456df460b0f283f72f423056161b881e0849"
+      },
+      "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+      "role": "generated-schema-index",
+      "plannedPages": [
+        "compatibility/manifest-versions"
+      ],
+      "sourceUrl": "https://github.com/EltanceX/DawnlightCore/blob/f8aaa5c4218f54536ccf994a2d512aed2e3678b7/docs/schemas-v5/dawnlight.shaderpack.schema-index.v2.json",
+      "publicAccess": "private-repository",
+      "authorityNote": null
+    }
+  ]
+}

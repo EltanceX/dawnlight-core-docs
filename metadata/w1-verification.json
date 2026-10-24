@@ -1,0 +1,689 @@
+{
+  "schemaVersion": 1,
+  "stage": "W1",
+  "verifiedOn": "2026-10-23",
+  "timezone": "America/New_York",
+  "status": "complete",
+  "baselineId": "candidate-f8aaa5c4",
+  "sourceCommit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+  "snapshot": {
+    "inventory": {
+      "path": "vendor/dawnlight/source-inventory.json",
+      "length": 170749,
+      "sha256": "590e8f64b7a4271e734373d3afd2ec780eef426acb767ba07d0f0b3838b286f7"
+    },
+    "policy": {
+      "path": "metadata/upstream-import.json",
+      "length": 12057,
+      "sha256": "d5b185083320f11bdd2ed4168ab3ed57ca6e521e8da846bff9a239fe5f1ef985"
+    },
+    "totalFiles": 438,
+    "managedFiles": 437,
+    "gitBlobFiles": 432,
+    "gitBlobBytes": 17944114,
+    "bytePolicy": "git-blob-exact",
+    "repeatImportSha256": "590e8f64b7a4271e734373d3afd2ec780eef426acb767ba07d0f0b3838b286f7",
+    "windowsAutocrlfCloneVerified": true
+  },
+  "tool": {
+    "id": "docs-tools-f8aaa5c4-w1.1",
+    "inventory": {
+      "path": "metadata/tool-assets.json",
+      "length": 46605,
+      "sha256": "548c685ff8ccc23283cd6b803a595cc2fed35b2df1444dc0327e1baf847ffb54"
+    },
+    "files": 278,
+    "bytes": 106773046,
+    "sdkVersion": "10.0.301",
+    "configuration": "Release",
+    "selfContained": true,
+    "buildErrors": 0,
+    "buildWarningLines": 86,
+    "publishLog": {
+      "path": "artifacts/w1/tool-publish.stdout.txt",
+      "length": 27710,
+      "sha256": "edb9d23db1dad4ce91bd52910aa735fb60d6a5618af3733d0ec119d9435ee7c9"
+    },
+    "bitReproducibleRebuildClaim": false
+  },
+  "originalGuide": {
+    "status": "expected-upstream-failure",
+    "exitCode": 1,
+    "code": "DLTOOL2001",
+    "unchanged": true,
+    "websiteVariant": {
+      "id": "dawnlight-v5-guide-site-v1",
+      "contractVersion": 1,
+      "sourcePath": "authoring/docs/ShaderPackAuthorGuideP11V5.md",
+      "outputPath": "authoring/site-variants/ShaderPackAuthorGuideP11V5.site-v1.md",
+      "source": {
+        "length": 34790,
+        "sha256": "f6f2f7b33837fce17f318989c4ac2a3558e116bd0517de67b651efbe16375cea"
+      },
+      "output": {
+        "length": 35063,
+        "sha256": "80127106bd92eac34518b64f94c5797435f13c7fe8fd2afcaee82371f0d1e9f1"
+      },
+      "transformation": "Add variant notice; change the sole explanatory JSON fence pair to tilde fences. All seven file= blocks remain byte-identical.",
+      "edits": [
+        {
+          "sourceLine": 113,
+          "before": "```json",
+          "after": "~~~json"
+        },
+        {
+          "sourceLine": 121,
+          "before": "```",
+          "after": "~~~"
+        }
+      ],
+      "originalGuideExpectedFailure": {
+        "exitCode": 1,
+        "code": "DLTOOL2001"
+      }
+    }
+  },
+  "validation": {
+    "status": "passed-with-explicit-upstream-guide-failure",
+    "checks": [
+      {
+        "id": "catalog",
+        "status": "passed",
+        "exitCode": 0,
+        "args": [
+          "catalog",
+          "list",
+          "--contract",
+          "2",
+          "--format",
+          "json"
+        ],
+        "stdout": {
+          "file": "catalog.stdout.json",
+          "length": 43608,
+          "sha256": "5be2affb0f59336b7e7fb8361f8637ac15df1d0f65b018683d4822349cdba6b3"
+        },
+        "stderr": {
+          "file": "catalog.stderr.txt",
+          "length": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "id": "schema-v4",
+        "status": "passed",
+        "exitCode": 0,
+        "args": [
+          "schema",
+          "verify",
+          "--manifest-version",
+          "4",
+          "--output",
+          "<vendor>\\authoring\\docs\\schemas"
+        ],
+        "stdout": {
+          "file": "schema-v4.stdout.json",
+          "length": 1036,
+          "sha256": "873acaf09133d6e4c62cbb885eb589854a198b10d51460fdeaf2fa8577c8d1a3"
+        },
+        "stderr": {
+          "file": "schema-v4.stderr.txt",
+          "length": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "id": "schema-v5",
+        "status": "passed",
+        "exitCode": 0,
+        "args": [
+          "schema",
+          "verify",
+          "--manifest-version",
+          "5",
+          "--output",
+          "<vendor>\\authoring\\docs\\schemas-v5"
+        ],
+        "stdout": {
+          "file": "schema-v5.stdout.json",
+          "length": 866,
+          "sha256": "165327a47466539726034bc1aa6fc19abbd33f2755960f2b43efc6459655a38f"
+        },
+        "stderr": {
+          "file": "schema-v5.stderr.txt",
+          "length": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "id": "guide-v5-original",
+        "status": "expected-upstream-failure-confirmed",
+        "exitCode": 1,
+        "args": [
+          "docs",
+          "verify-v5",
+          "--guide",
+          "<vendor>\\authoring\\docs\\ShaderPackAuthorGuideP11V5.md",
+          "--diagnostics",
+          "<vendor>\\authoring\\docs\\ShaderPackDiagnosticReference.md",
+          "--temp",
+          "<external>\\original-v5"
+        ],
+        "stdout": {
+          "file": "guide-v5-original.stdout.txt",
+          "length": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "file": "guide-v5-original.stderr.txt",
+          "length": 129,
+          "sha256": "1d7dbe47ebe2052bbf0dde7802ff0170209579abc68f95a29ce2578a1dfad071"
+        }
+      },
+      {
+        "id": "guide-v4",
+        "status": "passed",
+        "exitCode": 0,
+        "args": [
+          "docs",
+          "verify",
+          "--guide",
+          "<vendor>\\authoring\\docs\\ShaderPackAuthorGuide.md",
+          "--diagnostics",
+          "<vendor>\\authoring\\docs\\ShaderPackDiagnosticReference.md",
+          "--temp",
+          "<external>\\guide-v4"
+        ],
+        "stdout": {
+          "file": "guide-v4.stdout.json",
+          "length": 984,
+          "sha256": "8514cf4e0cb1892929cf69439bfce99144952050d45f36bda44aa5ac4bff2910"
+        },
+        "stderr": {
+          "file": "guide-v4.stderr.txt",
+          "length": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "id": "guide-v5-site",
+        "status": "passed",
+        "exitCode": 0,
+        "args": [
+          "docs",
+          "verify-v5",
+          "--guide",
+          "<vendor>\\authoring\\site-variants\\ShaderPackAuthorGuideP11V5.site-v1.md",
+          "--diagnostics",
+          "<vendor>\\authoring\\docs\\ShaderPackDiagnosticReference.md",
+          "--temp",
+          "<external>\\guide-v5-site"
+        ],
+        "stdout": {
+          "file": "guide-v5-site.stdout.json",
+          "length": 981,
+          "sha256": "329f21b79147948251d2cf299b18b73819c853656979e74ddb2e25558fd7a798"
+        },
+        "stderr": {
+          "file": "guide-v5-site.stderr.txt",
+          "length": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "id": "diagnostic-table",
+        "status": "passed",
+        "exitCode": 0,
+        "args": [
+          "docs",
+          "diagnostics"
+        ],
+        "stdout": {
+          "file": "diagnostic-table.stdout.txt",
+          "length": 23215,
+          "sha256": "831bd2ea22f1de394d681190eea8a28f6a8766b951aa0c353fea1a33df98b88f"
+        },
+        "stderr": {
+          "file": "diagnostic-table.stderr.txt",
+          "length": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "id": "pack-Dawnlight_v3.1",
+        "status": "passed",
+        "exitCode": 0,
+        "args": [
+          "pack",
+          "validate",
+          "<vendor>\\examples\\Dawnlight_v3.1",
+          "--format",
+          "json"
+        ],
+        "stdout": {
+          "file": "pack-Dawnlight_v3.1.stdout.json",
+          "length": 115,
+          "sha256": "19b648010e804fb15f056b6698e702575c4cf67b1dd186d588e5eaa557273d5e"
+        },
+        "stderr": {
+          "file": "pack-Dawnlight_v3.1.stderr.txt",
+          "length": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "id": "pack-SceneAbiLab_v0.1",
+        "status": "passed",
+        "exitCode": 0,
+        "args": [
+          "pack",
+          "validate",
+          "<vendor>\\examples\\SceneAbiLab_v0.1",
+          "--format",
+          "json"
+        ],
+        "stdout": {
+          "file": "pack-SceneAbiLab_v0.1.stdout.json",
+          "length": 115,
+          "sha256": "2e7306869bceb951f352105aa4c7ed971dbf84cfeb1d485188c87856d9fbbeb1"
+        },
+        "stderr": {
+          "file": "pack-SceneAbiLab_v0.1.stderr.txt",
+          "length": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "id": "pack-CustomDataLab_Both",
+        "status": "passed",
+        "exitCode": 0,
+        "args": [
+          "pack",
+          "validate",
+          "<vendor>\\examples\\CustomDataLab_Both",
+          "--format",
+          "json"
+        ],
+        "stdout": {
+          "file": "pack-CustomDataLab_Both.stdout.json",
+          "length": 115,
+          "sha256": "27ca56b81a7f6fc78d1fd2c3991e1911b2eb464e0ed6171edc608af25bf3b1e9"
+        },
+        "stderr": {
+          "file": "pack-CustomDataLab_Both.stderr.txt",
+          "length": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "id": "pack-MakeUpUltraFast_SC_v0.21",
+        "status": "passed",
+        "exitCode": 0,
+        "args": [
+          "pack",
+          "validate",
+          "<vendor>\\examples\\MakeUpUltraFast_SC_v0.21",
+          "--format",
+          "json"
+        ],
+        "stdout": {
+          "file": "pack-MakeUpUltraFast_SC_v0.21.stdout.json",
+          "length": 115,
+          "sha256": "65127156d5c2a2f1a1ebe21e66223835b1831802085a1f9409efae8f8676157c"
+        },
+        "stderr": {
+          "file": "pack-MakeUpUltraFast_SC_v0.21.stderr.txt",
+          "length": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "id": "scene-SceneAbiLab_v0.1",
+        "status": "passed",
+        "exitCode": 0,
+        "args": [
+          "scene",
+          "explain",
+          "<vendor>\\examples\\SceneAbiLab_v0.1",
+          "--include-inactive",
+          "--format",
+          "json"
+        ],
+        "stdout": {
+          "file": "scene-SceneAbiLab_v0.1.stdout.json",
+          "length": 11639,
+          "sha256": "3f28c288aab6717e37c353f669e60bfcedadf8c8674c3172a6d4073542935de9"
+        },
+        "stderr": {
+          "file": "scene-SceneAbiLab_v0.1.stderr.txt",
+          "length": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "id": "scene-CustomDataLab_Both",
+        "status": "passed",
+        "exitCode": 0,
+        "args": [
+          "scene",
+          "explain",
+          "<vendor>\\examples\\CustomDataLab_Both",
+          "--include-inactive",
+          "--format",
+          "json"
+        ],
+        "stdout": {
+          "file": "scene-CustomDataLab_Both.stdout.json",
+          "length": 10253,
+          "sha256": "fc49084c6a3989880760f75d37c25235bcbff4aace9d90eebbc056c4cba5fda9"
+        },
+        "stderr": {
+          "file": "scene-CustomDataLab_Both.stderr.txt",
+          "length": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "id": "scene-MakeUpUltraFast_SC_v0.21",
+        "status": "passed",
+        "exitCode": 0,
+        "args": [
+          "scene",
+          "explain",
+          "<vendor>\\examples\\MakeUpUltraFast_SC_v0.21",
+          "--include-inactive",
+          "--format",
+          "json"
+        ],
+        "stdout": {
+          "file": "scene-MakeUpUltraFast_SC_v0.21.stdout.json",
+          "length": 16722,
+          "sha256": "f3d97b524e1e36b13bb17b556df2ecec7475ae32d93514623355538def2fc831"
+        },
+        "stderr": {
+          "file": "scene-MakeUpUltraFast_SC_v0.21.stderr.txt",
+          "length": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "id": "graph-v5",
+        "status": "passed",
+        "exitCode": 0,
+        "args": [
+          "graph",
+          "dump",
+          "<vendor>\\examples\\CustomDataLab_Both",
+          "--contract",
+          "2",
+          "--include-inactive"
+        ],
+        "stdout": {
+          "file": "graph-v5.stdout.json",
+          "length": 64910,
+          "sha256": "0bfb146dba7f6b721aee8c85a601f21a5f3c5d9a5dedc91c1d17f973e7ba52b7"
+        },
+        "stderr": {
+          "file": "graph-v5.stderr.txt",
+          "length": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "id": "materials-explain",
+        "status": "passed",
+        "exitCode": 0,
+        "args": [
+          "materials",
+          "explain",
+          "<vendor>\\examples\\CustomDataLab_Both",
+          "--format",
+          "json"
+        ],
+        "stdout": {
+          "file": "materials-explain.stdout.json",
+          "length": 12399,
+          "sha256": "4d3569475fec87e58741deed2a4f0431e24bbc961f030aa4613ff2cbbfdc0788"
+        },
+        "stderr": {
+          "file": "materials-explain.stderr.txt",
+          "length": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "id": "materials-layout",
+        "status": "passed",
+        "exitCode": 0,
+        "args": [
+          "materials",
+          "layout",
+          "<vendor>\\examples\\CustomDataLab_Both",
+          "--format",
+          "json"
+        ],
+        "stdout": {
+          "file": "materials-layout.stdout.json",
+          "length": 12398,
+          "sha256": "43f18f83fb8a33dc975025538f73427b5e3fd9eb94a6aef79559c6eb6e5b39c5"
+        },
+        "stderr": {
+          "file": "materials-layout.stderr.txt",
+          "length": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "id": "data-interface",
+        "status": "passed",
+        "exitCode": 0,
+        "args": [
+          "data",
+          "interface",
+          "<vendor>\\examples\\CustomDataLab_Both",
+          "--format",
+          "json"
+        ],
+        "stdout": {
+          "file": "data-interface.stdout.json",
+          "length": 25139,
+          "sha256": "a0ada276f25ee8caa9b503cb2fdda813d20c78626fc3a79ab577a9bffab62453"
+        },
+        "stderr": {
+          "file": "data-interface.stderr.txt",
+          "length": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "id": "program-interface",
+        "status": "passed",
+        "exitCode": 0,
+        "args": [
+          "program",
+          "interface",
+          "<vendor>\\examples\\CustomDataLab_Both",
+          "--program",
+          "materiallab:scene/terrain_opaque",
+          "--contract",
+          "2"
+        ],
+        "stdout": {
+          "file": "program-interface.stdout.json",
+          "length": 23046,
+          "sha256": "8bde6be912185a50c12f7c1bdfbf8f27866d7016b03ca53d37c82136cef521d5"
+        },
+        "stderr": {
+          "file": "program-interface.stderr.txt",
+          "length": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    ],
+    "ordinarySuccesses": 18,
+    "expectedUpstreamFailures": 1,
+    "externalWorkingDirectory": true,
+    "rawEvidence": {
+      "root": ".cache/rehearsal-riupBv/artifacts/w1/validation",
+      "summary": {
+        "length": 12915,
+        "sha256": "15e3960ae0015a58ca8e07aba8dff8756f94eae55790bc8620f397e2ab3e2c22"
+      }
+    }
+  },
+  "regression": {
+    "tests": 6,
+    "passed": 6,
+    "failed": 0,
+    "tap": {
+      "path": "artifacts/w1/toolchain-tests.tap",
+      "length": 1382,
+      "sha256": "2c5a083a20b66c9a81459bbc1815d86e6ade1a75ee1ea6d2b9fc7ddcdf19232b"
+    }
+  },
+  "acquisition": {
+    "release": {
+      "schemaVersion": 1,
+      "repository": "EltanceX/DawnlightCore",
+      "releaseId": 422459804,
+      "tag": "docs-tools-f8aaa5c4-w1.1",
+      "url": "https://github.com/EltanceX/DawnlightCore/releases/tag/docs-tools-f8aaa5c4-w1.1",
+      "draft": false,
+      "prerelease": true,
+      "publishedAt": "2026-10-24T02:14:06Z",
+      "tagObject": {
+        "sha": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+        "type": "commit",
+        "url": "https://api.github.com/repos/EltanceX/DawnlightCore/git/commits/f8aaa5c4218f54536ccf994a2d512aed2e3678b7"
+      },
+      "assets": [
+        {
+          "id": 671012167,
+          "name": "dawnlight-authoring-docs-tools-f8aaa5c4-w1.1.zip",
+          "length": 10113471,
+          "digest": "sha256:3afae7e62933c98a52e4942b61327b60263d7ae8d0e4c03defb26fe57f110576",
+          "state": "uploaded",
+          "url": "https://github.com/EltanceX/DawnlightCore/releases/download/docs-tools-f8aaa5c4-w1.1/dawnlight-authoring-docs-tools-f8aaa5c4-w1.1.zip"
+        },
+        {
+          "id": 671012165,
+          "name": "release-manifest.json",
+          "length": 1718,
+          "digest": "sha256:e9ef8430905e23829636d61b5e8b018af26521791742d4fc66bd834a76115de4",
+          "state": "uploaded",
+          "url": "https://github.com/EltanceX/DawnlightCore/releases/download/docs-tools-f8aaa5c4-w1.1/release-manifest.json"
+        },
+        {
+          "id": 671012263,
+          "name": "SHA256SUMS",
+          "length": 506,
+          "digest": "sha256:70172561f143acde06f01709f757774980c84ff13a53ae190bffe242b13e251f",
+          "state": "uploaded",
+          "url": "https://github.com/EltanceX/DawnlightCore/releases/download/docs-tools-f8aaa5c4-w1.1/SHA256SUMS"
+        },
+        {
+          "id": 671012178,
+          "name": "shaderpack-analyzer-docs-tools-f8aaa5c4-w1.1-win-x64.zip",
+          "length": 45926098,
+          "digest": "sha256:df350f286f76045c346045f353a4e25364b83a9418c50225f12a3e1bf59b4b3a",
+          "state": "uploaded",
+          "url": "https://github.com/EltanceX/DawnlightCore/releases/download/docs-tools-f8aaa5c4-w1.1/shaderpack-analyzer-docs-tools-f8aaa5c4-w1.1-win-x64.zip"
+        },
+        {
+          "id": 671012164,
+          "name": "tool-assets.json",
+          "length": 46605,
+          "digest": "sha256:548c685ff8ccc23283cd6b803a595cc2fed35b2df1444dc0327e1baf847ffb54",
+          "state": "uploaded",
+          "url": "https://github.com/EltanceX/DawnlightCore/releases/download/docs-tools-f8aaa5c4-w1.1/tool-assets.json"
+        },
+        {
+          "id": 671012176,
+          "name": "upstream-source-inventory.json",
+          "length": 170749,
+          "digest": "sha256:590e8f64b7a4271e734373d3afd2ec780eef426acb767ba07d0f0b3838b286f7",
+          "state": "uploaded",
+          "url": "https://github.com/EltanceX/DawnlightCore/releases/download/docs-tools-f8aaa5c4-w1.1/upstream-source-inventory.json"
+        }
+      ]
+    },
+    "rehearsal": {
+      "schemaVersion": 1,
+      "sourceCommit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+      "mode": "authenticated-github-release-download",
+      "freshDirectory": ".cache/rehearsal-riupBv",
+      "initialContents": [
+        "scripts",
+        "metadata",
+        "upstream.lock.json",
+        ".gitattributes"
+      ],
+      "sourceCheckoutCopied": false,
+      "vendorCopied": false,
+      "toolCacheCopied": false,
+      "nodeModulesCopied": false,
+      "toolArchiveSha256": "df350f286f76045c346045f353a4e25364b83a9418c50225f12a3e1bf59b4b3a",
+      "snapshotArchiveSha256": "3afae7e62933c98a52e4942b61327b60263d7ae8d0e4c03defb26fe57f110576",
+      "validation": {
+        "length": 12915,
+        "sha256": "15e3960ae0015a58ca8e07aba8dff8756f94eae55790bc8620f397e2ab3e2c22",
+        "checks": 19,
+        "expectedUpstreamFailures": 1
+      },
+      "steps": [
+        {
+          "script": "acquire-tool.mjs",
+          "exitCode": 0,
+          "result": "Acquired and verified: docs-tools-f8aaa5c4-w1.1"
+        },
+        {
+          "script": "restore-upstream.mjs",
+          "exitCode": 0,
+          "result": {
+            "status": "restored",
+            "baselineId": "candidate-f8aaa5c4",
+            "files": 437,
+            "gitBlobFiles": 432,
+            "sha256": "590e8f64b7a4271e734373d3afd2ec780eef426acb767ba07d0f0b3838b286f7"
+          }
+        },
+        {
+          "script": "verify-upstream.mjs",
+          "exitCode": 0,
+          "result": {
+            "status": "verified",
+            "baselineId": "candidate-f8aaa5c4",
+            "files": 437,
+            "gitBlobFiles": 432,
+            "sha256": "590e8f64b7a4271e734373d3afd2ec780eef426acb767ba07d0f0b3838b286f7"
+          }
+        },
+        {
+          "script": "validate-upstream.mjs",
+          "exitCode": 0,
+          "result": {
+            "status": "passed-with-explicit-upstream-guide-failure",
+            "checks": 19,
+            "ordinarySuccesses": 18,
+            "expectedUpstreamFailures": 1,
+            "summary": "E:\\Projects\\document-site\\dawnlight-core\\.cache\\rehearsal-riupBv\\artifacts\\w1\\validation\\summary.json"
+          }
+        }
+      ]
+    },
+    "networkNote": "Initial API/GraphQL EOF was a failed acquisition attempt. Bounded transient-network retries were added; a subsequent new-directory download and validation passed."
+  },
+  "sourceWorktreeCleanAfterVerification": true,
+  "githubActions": {
+    "status": "not-executed",
+    "reason": "Website repository, secret configuration, and first Actions execution are W2 infrastructure work."
+  },
+  "runtimeEvidence": {
+    "driverStatus": "notProvided",
+    "mappingStatus": "deferred",
+    "runtimeEvaluated": false,
+    "liveWorldVerified": false,
+    "gpuRunPerformed": false
+  },
+  "audit": "docs/baseline/W1ToolchainAudit.zh-CN.md"
+}

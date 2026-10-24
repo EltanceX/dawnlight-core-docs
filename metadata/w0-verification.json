@@ -1,0 +1,634 @@
+{
+  "schemaVersion": 1,
+  "baselineId": "candidate-f8aaa5c4",
+  "inspectedOn": "2026-10-23",
+  "stage": "W0",
+  "build": {
+    "project": "tools/ShaderPackAnalyzer/ShaderPackAnalyzer.csproj",
+    "configuration": "Debug",
+    "command": [
+      "dotnet",
+      "build",
+      "./tools/ShaderPackAnalyzer/ShaderPackAnalyzer.csproj",
+      "-c",
+      "Debug",
+      "--no-restore",
+      "-v",
+      "minimal"
+    ],
+    "exitCode": 0,
+    "warnings": 66,
+    "errors": 0,
+    "sdkVersion": "10.0.301",
+    "sourceCommit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+    "warningScope": "既有编译与依赖审计警告；W0 未修改依赖，也未执行 ReleaseCandidate 发布门。"
+  },
+  "environment": {
+    "platform": "win-x64",
+    "dotnetSdk": "10.0.301",
+    "dotnetRuntime": "10.0.9",
+    "nodeObserved": "26.7.0",
+    "nodeVersionSelectedForSite": null
+  },
+  "networkObservations": {
+    "method": "Authenticated GitHub CLI read-only API",
+    "sourceRepository": {
+      "fullName": "EltanceX/DawnlightCore",
+      "private": true,
+      "defaultBranch": "codex/api-1.9.3.1",
+      "exactCommitAccessible": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+      "visibleReleaseCount": 0
+    },
+    "siteRepository": {
+      "fullName": "EltanceX/dawnlight-core-docs",
+      "httpStatus": 404,
+      "interpretation": "not-found-or-not-accessible",
+      "createdByThisRun": false
+    }
+  },
+  "checks": [
+    {
+      "id": "catalog-v2",
+      "executable": "dotnet",
+      "analyzer": "{HOST}/tools/ShaderPackAnalyzer/bin/Debug/net10.0/shaderpack-analyzer.dll",
+      "args": [
+        "catalog",
+        "list",
+        "--contract",
+        "2",
+        "--format",
+        "json"
+      ],
+      "workingDirectory": "{SITE}",
+      "clearedProcessEnvironmentPrefix": "DAWNLIGHT_",
+      "exitCode": 0,
+      "result": "passed",
+      "inputKind": "original-source-input",
+      "gateMeaning": null,
+      "success": true,
+      "driverStatus": "notProvided",
+      "diagnostics": [],
+      "stderrCode": null,
+      "stdout": {
+        "path": "artifacts/w0/catalog-v2.stdout.json",
+        "length": 43608,
+        "sha256": "5be2affb0f59336b7e7fb8361f8637ac15df1d0f65b018683d4822349cdba6b3"
+      },
+      "stderr": {
+        "path": "artifacts/w0/catalog-v2.stderr.txt",
+        "length": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "id": "schema-v4",
+      "executable": "dotnet",
+      "analyzer": "{HOST}/tools/ShaderPackAnalyzer/bin/Debug/net10.0/shaderpack-analyzer.dll",
+      "args": [
+        "schema",
+        "verify",
+        "--manifest-version",
+        "4",
+        "--output",
+        "{HOST}/docs/schemas"
+      ],
+      "workingDirectory": "{SITE}",
+      "clearedProcessEnvironmentPrefix": "DAWNLIGHT_",
+      "exitCode": 0,
+      "result": "passed",
+      "inputKind": "original-source-input",
+      "gateMeaning": null,
+      "success": true,
+      "driverStatus": "notProvided",
+      "diagnostics": [],
+      "stderrCode": null,
+      "stdout": {
+        "path": "artifacts/w0/schema-v4.stdout.json",
+        "length": 979,
+        "sha256": "4c4bcc864ae4b47e36228bb3f3937f931edb3d9e765958cd46713692c8ac51e3"
+      },
+      "stderr": {
+        "path": "artifacts/w0/schema-v4.stderr.txt",
+        "length": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "id": "schema-v5",
+      "executable": "dotnet",
+      "analyzer": "{HOST}/tools/ShaderPackAnalyzer/bin/Debug/net10.0/shaderpack-analyzer.dll",
+      "args": [
+        "schema",
+        "verify",
+        "--manifest-version",
+        "5",
+        "--output",
+        "{HOST}/docs/schemas-v5"
+      ],
+      "workingDirectory": "{SITE}",
+      "clearedProcessEnvironmentPrefix": "DAWNLIGHT_",
+      "exitCode": 0,
+      "result": "passed",
+      "inputKind": "original-source-input",
+      "gateMeaning": null,
+      "success": true,
+      "driverStatus": "notProvided",
+      "diagnostics": [],
+      "stderrCode": null,
+      "stdout": {
+        "path": "artifacts/w0/schema-v5.stdout.json",
+        "length": 809,
+        "sha256": "fe9c61f234a2210850854c3ec12f9428bacbe43fe56c45e1b8d6a4ef7f899622"
+      },
+      "stderr": {
+        "path": "artifacts/w0/schema-v5.stderr.txt",
+        "length": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "id": "pack-v3-dawnlight",
+      "executable": "dotnet",
+      "analyzer": "{HOST}/tools/ShaderPackAnalyzer/bin/Debug/net10.0/shaderpack-analyzer.dll",
+      "args": [
+        "pack",
+        "validate",
+        "{HOST}/Survivalcraft/shaderpacks/Dawnlight_v3.1",
+        "--format",
+        "json"
+      ],
+      "workingDirectory": "{SITE}",
+      "clearedProcessEnvironmentPrefix": "DAWNLIGHT_",
+      "exitCode": 0,
+      "result": "passed",
+      "inputKind": "original-source-input",
+      "gateMeaning": null,
+      "success": true,
+      "driverStatus": "notProvided",
+      "diagnostics": [],
+      "stderrCode": null,
+      "stdout": {
+        "path": "artifacts/w0/pack-v3-dawnlight.stdout.json",
+        "length": 115,
+        "sha256": "19b648010e804fb15f056b6698e702575c4cf67b1dd186d588e5eaa557273d5e"
+      },
+      "stderr": {
+        "path": "artifacts/w0/pack-v3-dawnlight.stderr.txt",
+        "length": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "id": "pack-v4-sceneabi",
+      "executable": "dotnet",
+      "analyzer": "{HOST}/tools/ShaderPackAnalyzer/bin/Debug/net10.0/shaderpack-analyzer.dll",
+      "args": [
+        "pack",
+        "validate",
+        "{HOST}/Survivalcraft/shaderpacks/SceneAbiLab_v0.1",
+        "--format",
+        "json"
+      ],
+      "workingDirectory": "{SITE}",
+      "clearedProcessEnvironmentPrefix": "DAWNLIGHT_",
+      "exitCode": 0,
+      "result": "passed",
+      "inputKind": "original-source-input",
+      "gateMeaning": null,
+      "success": true,
+      "driverStatus": "notProvided",
+      "diagnostics": [],
+      "stderrCode": null,
+      "stdout": {
+        "path": "artifacts/w0/pack-v4-sceneabi.stdout.json",
+        "length": 115,
+        "sha256": "2e7306869bceb951f352105aa4c7ed971dbf84cfeb1d485188c87856d9fbbeb1"
+      },
+      "stderr": {
+        "path": "artifacts/w0/pack-v4-sceneabi.stderr.txt",
+        "length": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "id": "pack-v5-customdata",
+      "executable": "dotnet",
+      "analyzer": "{HOST}/tools/ShaderPackAnalyzer/bin/Debug/net10.0/shaderpack-analyzer.dll",
+      "args": [
+        "pack",
+        "validate",
+        "{HOST}/Survivalcraft/shaderpack-candidates/CustomDataLab_Both",
+        "--format",
+        "json"
+      ],
+      "workingDirectory": "{SITE}",
+      "clearedProcessEnvironmentPrefix": "DAWNLIGHT_",
+      "exitCode": 0,
+      "result": "passed",
+      "inputKind": "original-source-input",
+      "gateMeaning": null,
+      "success": true,
+      "driverStatus": "notProvided",
+      "diagnostics": [],
+      "stderrCode": null,
+      "stdout": {
+        "path": "artifacts/w0/pack-v5-customdata.stdout.json",
+        "length": 115,
+        "sha256": "27ca56b81a7f6fc78d1fd2c3991e1911b2eb464e0ed6171edc608af25bf3b1e9"
+      },
+      "stderr": {
+        "path": "artifacts/w0/pack-v5-customdata.stderr.txt",
+        "length": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "id": "pack-v5-makeup",
+      "executable": "dotnet",
+      "analyzer": "{HOST}/tools/ShaderPackAnalyzer/bin/Debug/net10.0/shaderpack-analyzer.dll",
+      "args": [
+        "pack",
+        "validate",
+        "{HOST}/Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21",
+        "--format",
+        "json"
+      ],
+      "workingDirectory": "{SITE}",
+      "clearedProcessEnvironmentPrefix": "DAWNLIGHT_",
+      "exitCode": 0,
+      "result": "passed",
+      "inputKind": "original-source-input",
+      "gateMeaning": null,
+      "success": true,
+      "driverStatus": "notProvided",
+      "diagnostics": [],
+      "stderrCode": null,
+      "stdout": {
+        "path": "artifacts/w0/pack-v5-makeup.stdout.json",
+        "length": 115,
+        "sha256": "65127156d5c2a2f1a1ebe21e66223835b1831802085a1f9409efae8f8676157c"
+      },
+      "stderr": {
+        "path": "artifacts/w0/pack-v5-makeup.stderr.txt",
+        "length": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "id": "guide-v4",
+      "executable": "dotnet",
+      "analyzer": "{HOST}/tools/ShaderPackAnalyzer/bin/Debug/net10.0/shaderpack-analyzer.dll",
+      "args": [
+        "docs",
+        "verify",
+        "--guide",
+        "{HOST}/docs/ShaderPackAuthorGuide.md",
+        "--diagnostics",
+        "{HOST}/docs/ShaderPackDiagnosticReference.md",
+        "--temp",
+        "{SITE}/artifacts/w0/guide-v4-extracted"
+      ],
+      "workingDirectory": "{SITE}",
+      "clearedProcessEnvironmentPrefix": "DAWNLIGHT_",
+      "exitCode": 0,
+      "result": "passed",
+      "inputKind": "original-source-input",
+      "gateMeaning": null,
+      "success": true,
+      "driverStatus": "notProvided",
+      "diagnostics": [],
+      "stderrCode": null,
+      "stdout": {
+        "path": "artifacts/w0/guide-v4.stdout.json",
+        "length": 1014,
+        "sha256": "81d584010d5a7daacbd493587c31a3f8787e71c166c641b62cd64cd7d2c58aa4"
+      },
+      "stderr": {
+        "path": "artifacts/w0/guide-v4.stderr.txt",
+        "length": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "id": "guide-v5",
+      "executable": "dotnet",
+      "analyzer": "{HOST}/tools/ShaderPackAnalyzer/bin/Debug/net10.0/shaderpack-analyzer.dll",
+      "args": [
+        "docs",
+        "verify-v5",
+        "--guide",
+        "{HOST}/docs/ShaderPackAuthorGuideP11V5.md",
+        "--diagnostics",
+        "{HOST}/docs/ShaderPackDiagnosticReference.md",
+        "--temp",
+        "{SITE}/artifacts/w0/guide-v5-extracted"
+      ],
+      "workingDirectory": "{SITE}",
+      "clearedProcessEnvironmentPrefix": "DAWNLIGHT_",
+      "exitCode": 1,
+      "result": "failed",
+      "inputKind": "original-source-input",
+      "gateMeaning": null,
+      "success": false,
+      "driverStatus": "notProvided",
+      "diagnostics": [],
+      "stderrCode": "DLTOOL2001",
+      "stdout": {
+        "path": "artifacts/w0/guide-v5.stdout.json",
+        "length": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr": {
+        "path": "artifacts/w0/guide-v5.stderr.txt",
+        "length": 129,
+        "sha256": "1d7dbe47ebe2052bbf0dde7802ff0170209579abc68f95a29ce2578a1dfad071"
+      }
+    },
+    {
+      "id": "guide-v5-diagnostic",
+      "executable": "dotnet",
+      "analyzer": "{HOST}/tools/ShaderPackAnalyzer/bin/Debug/net10.0/shaderpack-analyzer.dll",
+      "args": [
+        "docs",
+        "verify-v5",
+        "--guide",
+        "{SITE}/artifacts/w0/guide-v5-file-blocks-only.md",
+        "--diagnostics",
+        "{HOST}/docs/ShaderPackDiagnosticReference.md",
+        "--temp",
+        "{SITE}/artifacts/w0/guide-v5-diagnostic-extracted"
+      ],
+      "workingDirectory": "{SITE}",
+      "clearedProcessEnvironmentPrefix": "DAWNLIGHT_",
+      "exitCode": 0,
+      "result": "passed",
+      "inputKind": "diagnostic-derived-input",
+      "gateMeaning": "只定位原始指南失败原因，不替代原始输入校验。",
+      "success": true,
+      "driverStatus": "notProvided",
+      "diagnostics": [],
+      "stderrCode": null,
+      "stdout": {
+        "path": "artifacts/w0/guide-v5-diagnostic.stdout.json",
+        "length": 1017,
+        "sha256": "30e763b62c29d52b18afe1cda695f0c53309dbc60a5e63b257f29fded05acb5b"
+      },
+      "stderr": {
+        "path": "artifacts/w0/guide-v5-diagnostic.stderr.txt",
+        "length": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "id": "scene-v4",
+      "executable": "dotnet",
+      "analyzer": "{HOST}/tools/ShaderPackAnalyzer/bin/Debug/net10.0/shaderpack-analyzer.dll",
+      "args": [
+        "scene",
+        "explain",
+        "{HOST}/Survivalcraft/shaderpacks/SceneAbiLab_v0.1",
+        "--include-inactive",
+        "--format",
+        "json"
+      ],
+      "workingDirectory": "{SITE}",
+      "clearedProcessEnvironmentPrefix": "DAWNLIGHT_",
+      "exitCode": 0,
+      "result": "passed",
+      "inputKind": "original-source-input",
+      "gateMeaning": null,
+      "success": true,
+      "driverStatus": "notProvided",
+      "diagnostics": [
+        {
+          "code": "DLABI2005",
+          "severity": "warning",
+          "family": "routeOwnership"
+        }
+      ],
+      "stderrCode": null,
+      "stdout": {
+        "path": "artifacts/w0/scene-v4.stdout.json",
+        "length": 11639,
+        "sha256": "3f28c288aab6717e37c353f669e60bfcedadf8c8674c3172a6d4073542935de9"
+      },
+      "stderr": {
+        "path": "artifacts/w0/scene-v4.stderr.txt",
+        "length": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "id": "scene-v5",
+      "executable": "dotnet",
+      "analyzer": "{HOST}/tools/ShaderPackAnalyzer/bin/Debug/net10.0/shaderpack-analyzer.dll",
+      "args": [
+        "scene",
+        "explain",
+        "{HOST}/Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21",
+        "--include-inactive",
+        "--format",
+        "json"
+      ],
+      "workingDirectory": "{SITE}",
+      "clearedProcessEnvironmentPrefix": "DAWNLIGHT_",
+      "exitCode": 0,
+      "result": "passed",
+      "inputKind": "original-source-input",
+      "gateMeaning": null,
+      "success": true,
+      "driverStatus": "notProvided",
+      "diagnostics": [],
+      "stderrCode": null,
+      "stdout": {
+        "path": "artifacts/w0/scene-v5.stdout.json",
+        "length": 16722,
+        "sha256": "f3d97b524e1e36b13bb17b556df2ecec7475ae32d93514623355538def2fc831"
+      },
+      "stderr": {
+        "path": "artifacts/w0/scene-v5.stderr.txt",
+        "length": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "id": "data-v5",
+      "executable": "dotnet",
+      "analyzer": "{HOST}/tools/ShaderPackAnalyzer/bin/Debug/net10.0/shaderpack-analyzer.dll",
+      "args": [
+        "data",
+        "interface",
+        "{HOST}/Survivalcraft/shaderpack-candidates/CustomDataLab_Both",
+        "--format",
+        "json"
+      ],
+      "workingDirectory": "{SITE}",
+      "clearedProcessEnvironmentPrefix": "DAWNLIGHT_",
+      "exitCode": 0,
+      "result": "passed",
+      "inputKind": "original-source-input",
+      "gateMeaning": null,
+      "success": true,
+      "driverStatus": "notProvided",
+      "diagnostics": [],
+      "stderrCode": null,
+      "stdout": {
+        "path": "artifacts/w0/data-v5.stdout.json",
+        "length": 25139,
+        "sha256": "dd6a4064e0ff567e92c7bf6ff11fc3bdabf1d186746f9df09c0e3fe0a8052c54"
+      },
+      "stderr": {
+        "path": "artifacts/w0/data-v5.stderr.txt",
+        "length": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "id": "materials-v5",
+      "executable": "dotnet",
+      "analyzer": "{HOST}/tools/ShaderPackAnalyzer/bin/Debug/net10.0/shaderpack-analyzer.dll",
+      "args": [
+        "materials",
+        "layout",
+        "{HOST}/Survivalcraft/shaderpack-candidates/CustomDataLab_Both",
+        "--format",
+        "json"
+      ],
+      "workingDirectory": "{SITE}",
+      "clearedProcessEnvironmentPrefix": "DAWNLIGHT_",
+      "exitCode": 0,
+      "result": "passed",
+      "inputKind": "original-source-input",
+      "gateMeaning": null,
+      "success": true,
+      "driverStatus": "notProvided",
+      "diagnostics": [],
+      "stderrCode": null,
+      "stdout": {
+        "path": "artifacts/w0/materials-v5.stdout.json",
+        "length": 12398,
+        "sha256": "43f18f83fb8a33dc975025538f73427b5e3fd9eb94a6aef79559c6eb6e5b39c5"
+      },
+      "stderr": {
+        "path": "artifacts/w0/materials-v5.stderr.txt",
+        "length": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "id": "graph-v5",
+      "executable": "dotnet",
+      "analyzer": "{HOST}/tools/ShaderPackAnalyzer/bin/Debug/net10.0/shaderpack-analyzer.dll",
+      "args": [
+        "graph",
+        "dump",
+        "{HOST}/Survivalcraft/shaderpack-candidates/CustomDataLab_Both",
+        "--contract",
+        "2",
+        "--include-inactive"
+      ],
+      "workingDirectory": "{SITE}",
+      "clearedProcessEnvironmentPrefix": "DAWNLIGHT_",
+      "exitCode": 0,
+      "result": "passed",
+      "inputKind": "original-source-input",
+      "gateMeaning": null,
+      "success": true,
+      "driverStatus": "notProvided",
+      "diagnostics": [
+        {
+          "code": "DLABI2005",
+          "severity": "warning",
+          "family": "routeOwnership"
+        }
+      ],
+      "stderrCode": null,
+      "stdout": {
+        "path": "artifacts/w0/graph-v5.stdout.json",
+        "length": 64910,
+        "sha256": "0f20159553723cf30f70d296c21d92c732d96ee2e50fece4c21192e80f2f7a5c"
+      },
+      "stderr": {
+        "path": "artifacts/w0/graph-v5.stderr.txt",
+        "length": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    }
+  ],
+  "summary": {
+    "total": 15,
+    "passed": 14,
+    "failed": 1,
+    "originalV5GuideVerified": false,
+    "diagnosticV5SevenFileGitBlobParity": true,
+    "diagnosticV5SevenFileWorktreeByteParity": false,
+    "gameLaunched": false,
+    "driverObserved": false,
+    "lifecycleTested": false,
+    "performanceTested": false,
+    "upstreamWorktreeClean": true
+  },
+  "dataEvidence": {
+    "graphIrVersion": 7,
+    "driverStatus": "notProvided",
+    "liveWorldVerified": false,
+    "mappingStatus": "deferred",
+    "runtimeEvaluated": false
+  },
+  "sourceBytePolicy": {
+    "frozenSourceDomain": "git-blob-exact",
+    "currentAnalyzerInputDomain": "local-worktree-exact",
+    "note": "Windows autocrlf 导致 CustomDataLab_Both 与 v5 指南工作树为 CRLF；派生抽取与 Git blob LF 七文件匹配，原始指南门仍失败。W1 使用选定字节域后重新验证。"
+  },
+  "diagnosticV5ExtractedParity": [
+    {
+      "path": "README.md",
+      "extractedSha256": "49fd1a476db8ea83063b906da8d36f41eeac4e5cda37a95267c93c5d6c018d40",
+      "authoritativeGitBlobSha256": "49fd1a476db8ea83063b906da8d36f41eeac4e5cda37a95267c93c5d6c018d40",
+      "observedWorktreeSha256": "2a228dfcfcb71e8ff1ded044cd54d5b3ef6d8596e4d0841e678e206270c5b4ad",
+      "observedWorktreeByteEqual": false
+    },
+    {
+      "path": "settings.json",
+      "extractedSha256": "53706a64a14141da1fe0e217bcb273642175aeffa1b064dfefef390c796c6c37",
+      "authoritativeGitBlobSha256": "53706a64a14141da1fe0e217bcb273642175aeffa1b064dfefef390c796c6c37",
+      "observedWorktreeSha256": "acb2e4c9ef19c3fb826bb9de684eedf87f980950c119be6425ff27a9f59197b3",
+      "observedWorktreeByteEqual": false
+    },
+    {
+      "path": "shaderpack.json",
+      "extractedSha256": "f70396834a0f3a810372bd5e552eda14586d4593314f3ea7f9514f37b622e2b9",
+      "authoritativeGitBlobSha256": "f70396834a0f3a810372bd5e552eda14586d4593314f3ea7f9514f37b622e2b9",
+      "observedWorktreeSha256": "6c497f4cbbe654b184ab27fdd30016a81958dba8ae149408816b750707bd3292",
+      "observedWorktreeByteEqual": false
+    },
+    {
+      "path": "shaders/fullscreen.vsh",
+      "extractedSha256": "d05d1a30fdfb51574037033343c1fbc78a54214f09296c9bd8169614055261c2",
+      "authoritativeGitBlobSha256": "d05d1a30fdfb51574037033343c1fbc78a54214f09296c9bd8169614055261c2",
+      "observedWorktreeSha256": "7a3bacc27cb0930b1c1f8a64542aba87cd03a0d67d4c05ba982628bde8acace2",
+      "observedWorktreeByteEqual": false
+    },
+    {
+      "path": "shaders/present.psh",
+      "extractedSha256": "567be60eed1a6e9480b54923b95cdd431c1747dba2dde7ec9503eee1c9e666d0",
+      "authoritativeGitBlobSha256": "567be60eed1a6e9480b54923b95cdd431c1747dba2dde7ec9503eee1c9e666d0",
+      "observedWorktreeSha256": "24e4af1c604a79511894c6a996423976962a1d28ba394c200d6395112a9aa4b9",
+      "observedWorktreeByteEqual": false
+    },
+    {
+      "path": "shaders/terrain.psh",
+      "extractedSha256": "38df0e3b073d0211b86bf7073787796507ae4a9450058ff16d3f9b80e94f7cc4",
+      "authoritativeGitBlobSha256": "38df0e3b073d0211b86bf7073787796507ae4a9450058ff16d3f9b80e94f7cc4",
+      "observedWorktreeSha256": "71d69c20e7f0de3cb402bdd864c58742b6ceddd75c6e9f248be65ffca4018ff9",
+      "observedWorktreeByteEqual": false
+    },
+    {
+      "path": "shaders/terrain.vsh",
+      "extractedSha256": "9fadb46e379aeba9afd379404a44e88c8b82dd46f8d4e0fc4e993b3b0460d7ee",
+      "authoritativeGitBlobSha256": "9fadb46e379aeba9afd379404a44e88c8b82dd46f8d4e0fc4e993b3b0460d7ee",
+      "observedWorktreeSha256": "5264e793c74f8d102edb1e2d2831378f0c37400798242c9597b2cf2af7f1ff65",
+      "observedWorktreeByteEqual": false
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+:root {
+  --vp-c-brand-1: #23634f;
+  --vp-c-brand-2: #2f7b61;
+  --vp-c-brand-3: #23634f;
+  --vp-c-brand-soft: rgba(49, 119, 88, .11);
+  --vp-c-bg: #fbfcf9;
+  --vp-c-bg-alt: #f1f4ee;
+  --vp-c-bg-soft: #f0f4ee;
+  --vp-c-text-1: #23362e;
+  --vp-c-text-2: #56665d;
+  --vp-font-family-base: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  --vp-home-hero-name-color: #23634f;
+  --vp-home-hero-image-background-image: none;
+  --vp-home-hero-name-background: none;
+}
+.dark {
+  --vp-c-brand-1: #8bc7a8;
+  --vp-c-brand-2: #a1d4bb;
+  --vp-c-brand-3: #367e60;
+  --vp-c-bg: #151e1a;
+  --vp-c-bg-alt: #101813;
+  --vp-c-bg-soft: #1c2922;
+  --vp-c-text-1: #e3ede5;
+  --vp-c-text-2: #acbbb0;
+  --vp-home-hero-name-color: #8bc7a8;
+}
+.VPNavBarTitle .logo { width: 28px; height: 28px; }
+.VPHomeHero { position: relative; padding-bottom: 48px !important; }
+.VPHomeHero .name { letter-spacing: -.045em; }
+.VPHomeHero .text { max-width: 850px; letter-spacing: -.035em; font-size: 42px; line-height: 1.28; }
+.VPHomeHero .tagline { max-width: 690px; font-size: 18px; line-height: 1.8; }
+.VPHomeHero .image-container { display: none; }
+.vp-doc h2 { letter-spacing: -.015em; }
+.vp-doc a { text-underline-offset: 4px; }
+.baseline-note { display: flex; gap: 9px; flex-wrap: wrap; align-items: center; border: 1px solid var(--vp-c-divider); border-radius: 9px; padding: 12px 15px; margin: 22px 0 26px; font-size: 12px; line-height: 1.8; color: var(--vp-c-text-2); background: var(--vp-c-bg-soft); }
+.baseline-note a { margin-left: auto; font-size: 12px; }
+.baseline-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--vp-c-brand-1); flex-shrink: 0; }
+.source-note { border-left: 2px solid var(--vp-c-divider); padding-left: 12px; font-size: 12px; line-height: 1.8; overflow-wrap: anywhere; }
+.source-note span { color: var(--vp-c-text-2); }
+.home-overview { max-width: 1152px; margin: 0 auto 80px; padding: 12px 0; display: grid; grid-template-columns: 1.4fr 1fr; gap: 64px; }
+.home-reading h2 { margin: 14px 0 17px; font-size: 25px; font-weight: 650; line-height: 1.5; letter-spacing: -.03em; }
+.home-reading > p:not(.eyebrow) { color: var(--vp-c-text-2); line-height: 1.9; font-size: 15px; max-width: 510px; margin-bottom: 22px; }
+.eyebrow { color: var(--vp-c-brand-1); font-size: 11px; font-weight: 700; letter-spacing: .16em; }
+.reading-step { display: flex; align-items: center; gap: 18px; padding: 17px 0; border-bottom: 1px solid var(--vp-c-divider); transition: color .2s; }
+.reading-step:hover { color: var(--vp-c-brand-1); }
+.reading-step > span { color: var(--vp-c-text-2); font-family: var(--vp-font-family-mono); font-size: 12px; }
+.reading-step strong { display: block; font-size: 15px; font-weight: 600; }
+.reading-step small { display: block; color: var(--vp-c-text-2); margin-top: 4px; font-size: 12px; line-height: 1.7; }
+.reading-step b { margin-left: auto; font-size: 19px; font-weight: 400; }
+.home-scope { align-self: start; background: var(--vp-c-bg-soft); border: 1px solid var(--vp-c-divider); border-radius: 14px; padding: 27px 28px; }
+.home-scope h3 { margin: 14px 0 22px; font-size: 20px; line-height: 1.5; font-weight: 650; }
+.home-scope dl > div { display: flex; justify-content: space-between; gap: 15px; padding: 12px 0; border-bottom: 1px solid var(--vp-c-divider); font-size: 12px; }
+.home-scope dt { color: var(--vp-c-text-2); min-width: 5em; flex-shrink: 0; }
+.home-scope dd { text-align: right; }
+.home-scope > p:not(.eyebrow) { color: var(--vp-c-text-2); font-size: 12px; line-height: 1.9; margin: 20px 0 15px; }
+.home-scope > a { color: var(--vp-c-brand-1); font-size: 13px; font-weight: 600; }
+@media (min-width: 960px) { .VPHomeHero .text { font-size: 48px; } }
+@media (max-width: 1279px) { .home-overview { margin-left: 64px; margin-right: 64px; gap: 40px; } }
+@media (max-width: 767px) {
+  .VPHomeHero .text { font-size: 32px; }
+  .VPHomeHero .tagline { font-size: 16px; }
+  .home-overview { grid-template-columns: 1fr; margin: 0 24px 48px; gap: 32px; }
+  .home-reading h2 { font-size: 23px; }
+  .baseline-note a { margin-left: 16px; }
+}

@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "repositoryUrl": "https://gitea.com/EltanceX/DawnlightCore",
+  "visibility": "public",
+  "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+  "verifiedOn": "2026-10-23",
+  "anonymousAccessVerified": true,
+  "repositoryApiStatus": 200,
+  "commitApiStatus": 200,
+  "sampleBlob": {
+    "path": "docs/ShaderPackAuthorGuideP11V5.md",
+    "length": 34790,
+    "sha256": "f6f2f7b33837fce17f318989c4ac2a3558e116bd0517de67b651efbe16375cea",
+    "matchesLockedGitBlob": true
+  }
+}
