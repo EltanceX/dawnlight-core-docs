@@ -1,7 +1,70 @@
-import { defineConfig } from 'vitepress'
+import { defineConfig, type DefaultTheme } from 'vitepress'
 import lock from '../../upstream.lock.json'
 
 const base = '/dawnlight-core-docs/'
+const source = 'https://gitea.com/EltanceX/DawnlightCore'
+
+const chinese: DefaultTheme.Config = {
+  outline: { level: [2, 3], label: '本页内容' },
+  nav: [
+    { text: '开始阅读', link: '/start/' },
+    { text: '管线概念', link: '/concepts/pipeline' },
+    { text: '当前基线', link: '/compatibility/current-baseline' },
+    { text: '上游源码', link: source }
+  ],
+  sidebar: [
+    { text: '开始使用', items: [
+      { text: '阅读路线', link: '/start/' },
+      { text: '版本与支持范围', link: '/compatibility/current-baseline' }
+    ] },
+    { text: '理解管线', items: [
+      { text: '从配置到一帧画面', link: '/concepts/pipeline' },
+      { text: '资源、目标与 drawBuffers', link: '/concepts/resources-targets' }
+    ] },
+    { text: '验证与排错', items: [
+      { text: 'Analyzer 与证据边界', link: '/tools/analyzer' }
+    ] }
+  ],
+  editLink: { pattern: 'https://github.com/EltanceX/dawnlight-core-docs/edit/main/site/:path', text: '在 GitHub 编辑本页' },
+  docFooter: { prev: '上一篇', next: '下一篇' },
+  lastUpdated: { text: '最后更新', formatOptions: { dateStyle: 'medium' } },
+  langMenuLabel: '切换语言', skipToContentLabel: '跳转到正文',
+  darkModeSwitchLabel: '切换主题', lightModeSwitchTitle: '切换到浅色', darkModeSwitchTitle: '切换到深色',
+  sidebarMenuLabel: '目录', returnToTopLabel: '返回顶部',
+  notFound: { code: '404', title: '页面未找到', quote: '链接可能已变更。可以返回首页，或搜索字段与概念。', linkLabel: '返回文档首页', linkText: '返回文档首页' },
+  footer: { message: '作者文档 · Manifest v' + lock.authoring.primaryManifestVersion + ' / Scene ABI v' + lock.authoring.sceneAbiVersion, copyright: 'DawnlightCore · Survivalcraft' }
+}
+
+const english: DefaultTheme.Config = {
+  outline: { level: [2, 3], label: 'On this page' },
+  nav: [
+    { text: 'Get started', link: '/en/start/' },
+    { text: 'Pipeline concepts', link: '/en/concepts/pipeline' },
+    { text: 'Current baseline', link: '/en/compatibility/current-baseline' },
+    { text: 'Upstream source', link: source }
+  ],
+  sidebar: [
+    { text: 'Getting started', items: [
+      { text: 'Reading guide', link: '/en/start/' },
+      { text: 'Versions and support', link: '/en/compatibility/current-baseline' }
+    ] },
+    { text: 'Understanding the pipeline', items: [
+      { text: 'From configuration to a frame', link: '/en/concepts/pipeline' },
+      { text: 'Resources, targets and drawBuffers', link: '/en/concepts/resources-targets' }
+    ] },
+    { text: 'Validation and troubleshooting', items: [
+      { text: 'Analyzer and evidence', link: '/en/tools/analyzer' }
+    ] }
+  ],
+  editLink: { pattern: 'https://github.com/EltanceX/dawnlight-core-docs/edit/main/site/:path', text: 'Edit this page on GitHub' },
+  docFooter: { prev: 'Previous page', next: 'Next page' },
+  lastUpdated: { text: 'Last updated', formatOptions: { dateStyle: 'medium' } },
+  langMenuLabel: 'Change language', skipToContentLabel: 'Skip to content',
+  darkModeSwitchLabel: 'Appearance', lightModeSwitchTitle: 'Switch to light theme', darkModeSwitchTitle: 'Switch to dark theme',
+  sidebarMenuLabel: 'Menu', returnToTopLabel: 'Back to top',
+  notFound: { code: '404', title: 'Page not found', quote: 'The link may have changed. Return home or search for a field or concept.', linkLabel: 'Back to documentation', linkText: 'Back to documentation' },
+  footer: { message: 'Author documentation · Manifest v' + lock.authoring.primaryManifestVersion + ' / Scene ABI v' + lock.authoring.sceneAbiVersion, copyright: 'DawnlightCore · Survivalcraft' }
+}
 
 export default defineConfig({
   lang: 'zh-CN',
@@ -10,9 +73,17 @@ export default defineConfig({
   base,
   cleanUrls: true,
   lastUpdated: true,
+  locales: {
+    root: { label: '简体中文', lang: 'zh-CN', themeConfig: chinese },
+    en: {
+      label: 'English', lang: 'en-US',
+      description: 'Shader pack author documentation for Survivalcraft DawnlightCore: rendering pipelines, JSON configuration and public shader contracts.',
+      themeConfig: english
+    }
+  },
   sitemap: { hostname: 'https://eltancex.github.io/dawnlight-core-docs/' },
   head: [
-    ['link', { rel: 'icon', type: 'image/svg+xml', href: `${base}favicon.svg` }],
+    ['link', { rel: 'icon', type: 'image/svg+xml', href: base + 'favicon.svg' }],
     ['meta', { name: 'theme-color', content: '#23634f' }],
     ['meta', { property: 'og:type', content: 'website' }]
   ],
@@ -23,26 +94,6 @@ export default defineConfig({
   themeConfig: {
     logo: '/favicon.svg',
     siteTitle: 'DawnlightCore',
-    outline: { level: [2, 3], label: '本页内容' },
-    nav: [
-      { text: '开始阅读', link: '/start/' },
-      { text: '管线概念', link: '/concepts/pipeline' },
-      { text: '当前基线', link: '/compatibility/current-baseline' },
-      { text: '上游源码 ↗', link: 'https://gitea.com/EltanceX/DawnlightCore' }
-    ],
-    sidebar: [
-      { text: '开始使用', items: [
-        { text: '阅读路线', link: '/start/' },
-        { text: '版本与支持范围', link: '/compatibility/current-baseline' }
-      ] },
-      { text: '理解管线', items: [
-        { text: '从配置到一帧画面', link: '/concepts/pipeline' },
-        { text: '资源、目标与 drawBuffers', link: '/concepts/resources-targets' }
-      ] },
-      { text: '验证与排错', items: [
-        { text: 'Analyzer 与证据边界', link: '/tools/analyzer' }
-      ] }
-    ],
     search: {
       provider: 'local',
       options: {
@@ -55,9 +106,21 @@ export default defineConfig({
             footer: { selectText: '选择', navigateText: '切换', closeText: '关闭' }
           }
         },
+        locales: {
+          en: {
+            translations: {
+              button: { buttonText: 'Search docs', buttonAriaLabel: 'Search docs' },
+              modal: {
+                displayDetails: 'Display detailed results', resetButtonTitle: 'Clear search',
+                backButtonTitle: 'Back', noResultsText: 'No results found',
+                footer: { selectText: 'select', navigateText: 'navigate', closeText: 'close' }
+              }
+            }
+          }
+        },
         miniSearch: {
           options: {
-            // Preserve API identifiers; Chinese bigrams allow substring recall.
+            // Keep identifiers intact and add Chinese bigrams for substring recall.
             tokenize: (text: string) => {
               const tokens = text.match(/[\p{Script=Han}]+|[A-Za-z0-9_:@./-]+/gu) ?? []
               const result: string[] = []
@@ -75,13 +138,6 @@ export default defineConfig({
         }
       }
     },
-    socialLinks: [{ icon: 'github', link: 'https://github.com/EltanceX/dawnlight-core-docs' }],
-    editLink: { pattern: 'https://github.com/EltanceX/dawnlight-core-docs/edit/main/site/:path', text: '在 GitHub 编辑本页' },
-    docFooter: { prev: '上一篇', next: '下一篇' },
-    lastUpdated: { text: '最后更新', formatOptions: { dateStyle: 'medium' } },
-    darkModeSwitchLabel: '切换主题', lightModeSwitchTitle: '切换到浅色', darkModeSwitchTitle: '切换到深色',
-    sidebarMenuLabel: '目录', returnToTopLabel: '返回顶部',
-    notFound: { code: '404', title: '页面未找到', quote: '链接可能已变更。可以返回首页，或搜索字段与概念。', linkLabel: '返回文档首页', linkText: '返回文档首页' },
-    footer: { message: `作者文档 · Manifest v${lock.authoring.primaryManifestVersion} / Scene ABI v${lock.authoring.sceneAbiVersion}`, copyright: 'DawnlightCore · Survivalcraft' }
+    socialLinks: [{ icon: 'github', link: 'https://github.com/EltanceX/dawnlight-core-docs' }]
   }
 })

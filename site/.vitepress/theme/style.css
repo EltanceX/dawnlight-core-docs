@@ -25,6 +25,9 @@
   --vp-home-hero-name-color: #8bc7a8;
 }
 .VPNavBarTitle .logo { width: 28px; height: 28px; }
+.VPNavBarTranslations { display: flex !important; align-items: center; }
+.VPNavBarExtra .translations { display: none; }
+.legacy-anchor { scroll-margin-top: 100px; }
 .VPHomeHero { position: relative; padding-bottom: 48px !important; }
 .VPHomeHero .name { letter-spacing: -.045em; }
 .VPHomeHero .text { max-width: 850px; letter-spacing: -.035em; font-size: 42px; line-height: 1.28; }
@@ -56,10 +59,25 @@
 .home-scope > a { color: var(--vp-c-brand-1); font-size: 13px; font-weight: 600; }
 @media (min-width: 960px) { .VPHomeHero .text { font-size: 48px; } }
 @media (max-width: 1279px) { .home-overview { margin-left: 64px; margin-right: 64px; gap: 40px; } }
+@media (min-width: 768px) and (max-width: 1023px) {
+  .VPNavBar .VPNavBarMenu, .VPNavBar .VPNavBarExtra { display: none; }
+  .VPNavBar .VPNavBarHamburger { display: flex; }
+  .VPNavScreen { display: block !important; }
+}
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .VPNavBarSearch .DocSearch-Button-Placeholder, .VPNavBarSearch .DocSearch-Button-Keys { display: none; }
+  .VPNavBarSearch .DocSearch-Button { width: 36px; padding: 0; justify-content: center; }
+  .VPNavBarSearch { padding-left: 12px; }
+}
 @media (max-width: 767px) {
+  .VPNavBarTranslations::before { display: none; }
+  .VPNavBarTranslations .button { padding: 0 8px; }
+  .VPNavBar .DocSearch-Button { width: 32px; }
   .VPHomeHero .text { font-size: 32px; }
   .VPHomeHero .tagline { font-size: 16px; }
   .home-overview { grid-template-columns: 1fr; margin: 0 24px 48px; gap: 32px; }
   .home-reading h2 { font-size: 23px; }
+  .home-scope dl > div { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); gap: 12px; }
+  .home-scope dt { min-width: 0; }
   .baseline-note a { margin-left: 16px; }
 }

@@ -3,13 +3,17 @@ title: 从配置到一帧画面
 description: 理解 DawnlightCore 中 Phase、Pass、Command、Program 和 Resource 的职责及其执行关系。
 ---
 
-# 从配置到一帧画面
+<div id="从配置到一帧画面" class="legacy-anchor" aria-hidden="true"></div>
+
+# 从配置到一帧画面 {#configuration-to-frame}
 
 <BaselineNote />
 
 一个光影包需要同时回答两类问题：GLSL 怎样计算颜色，以及这些计算什么时候执行、读取什么、写到哪里。JSON 描述后者，并将各个着色器程序连接为可执行的资源与命令关系。
 
-## 五个核心概念
+<div id="五个核心概念" class="legacy-anchor" aria-hidden="true"></div>
+
+## 五个核心概念 {#core-concepts}
 
 | 概念 | 职责 | 阅读配置时关注什么 |
 | --- | --- | --- |
@@ -21,7 +25,9 @@ description: 理解 DawnlightCore 中 Phase、Pass、Command、Program 和 Resou
 
 Provider 提供宿主几何提交或其他公共能力，Service 处理相应的宿主服务与状态。它们的 ID 和版本来自当前 Catalog，不能任意编造一个同名字符串就获得新能力。
 
-## 从声明到执行
+<div id="从声明到执行" class="legacy-anchor" aria-hidden="true"></div>
+
+## 从声明到执行 {#declarations-to-execution}
 
 可以沿着这条路径阅读一个包：
 
@@ -39,7 +45,9 @@ Manifest 与组合文件
 
 在 `dawnlight:command_list@1` Stage 中，命令按 Manifest 中的顺序执行。跨 Pass 的依赖、读写危害和阶段方向仍需通过加载与图分析检查，不能把某段文本顺序直接推广为所有阶段的排序规则。
 
-## 七类通用命令
+<div id="七类通用命令" class="legacy-anchor" aria-hidden="true"></div>
+
+## 七类通用命令 {#command-types}
 
 | `type` | 工作 | `program` 规则 |
 | --- | --- | --- |
@@ -55,7 +63,9 @@ Manifest 与组合文件
 
 <SourceNote path="docs/DawnlightGenericCommandTypes.md" label="通用 Command 合同与 History 约束" />
 
-## JSON、GLSL 与宿主怎样分工
+<div id="json、glsl-与宿主怎样分工" class="legacy-anchor" aria-hidden="true"></div>
+
+## JSON、GLSL 与宿主怎样分工 {#json-glsl-host}
 
 假设你要在场景结果上增加调色：
 
@@ -67,7 +77,9 @@ Manifest 与组合文件
 
 这段说明只建立职责关系。一个合法的外置完整包还必须处理宿主场景接管、整帧目标和回退路径，不能把“有一个后处理着色器”当成“完整场景已经接好”。
 
-## 读一个包时先找什么
+<div id="读一个包时先找什么" class="legacy-anchor" aria-hidden="true"></div>
+
+## 读一个包时先找什么 {#reading-a-pack}
 
 先在资源列表中找到场景颜色与深度，再找到生产它们的命令；然后追踪后处理链，直到最终输出。对每条边确认输入 ID、目标、格式和生命周期。
 

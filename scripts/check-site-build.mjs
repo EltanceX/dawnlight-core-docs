@@ -2,17 +2,18 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { ROOT, files, writeJson, fingerprint } from './lib/locked-inputs.mjs';
+import { expectedPages } from './lib/site-pages.mjs';
 
 const dist = path.join(ROOT, 'site/.vitepress/dist');
 const base = '/dawnlight-core-docs/';
 const host = 'https://eltancex.github.io';
 const names = await files(dist), htmlFiles = names.filter(f => f.endsWith('.html'));
-assert.equal(htmlFiles.length, 7);
+assert.deepEqual(htmlFiles.sort(), expectedPages.map(page => page.replace(/\.md$/, '.html')).sort());
 const contents = new Map(await Promise.all(htmlFiles.map(async f => [f, await fs.readFile(path.join(dist, f), 'utf8')])));
 const ids = new Map([...contents].map(([file, html]) => [file, new Set([...html.matchAll(/\bid="([^"]+)"/g)].map(m => m[1]))]));
 let localLinks = 0, assets = 0, anchors = 0;
 for (const [file, html] of contents) {
-  assert.match(html, /<html[^>]+lang="zh-CN"/);
+  assert.match(html, file.startsWith('en/') ? /<html[^>]+lang="en-US"/ : /<html[^>]+lang="zh-CN"/);
   for (const match of html.matchAll(/<(a|link|script|img)\b[^>]*?\b(?:href|src)="([^"]+)"/g)) {
     const href = match[2].replaceAll('&amp;', '&');
     if (!href || /^(?:data:|mailto:|tel:|javascript:)/.test(href)) continue;
@@ -32,6 +33,7 @@ for (const [file, html] of contents) {
 }
 const sitemap = await fs.readFile(path.join(dist, 'sitemap.xml'), 'utf8');
 assert.match(sitemap, /https:\/\/eltancex\.github\.io\/dawnlight-core-docs\/concepts\/pipeline/);
+assert.match(sitemap, /https:\/\/eltancex\.github\.io\/dawnlight-core-docs\/en\/concepts\/pipeline/);
 assert.ok(!sitemap.includes('/dawnlight-core-docs/dawnlight-core-docs/'));
 for (const name of ['index.html', 'concepts/pipeline.html', 'compatibility/current-baseline.html', '404.html', 'downloads/site-baseline.json']) assert.ok(names.includes(name));
 assert.ok(names.some(f => /(?:zh|localSearchIndex|local-search-index|hashmap)/i.test(f)), 'Built search data missing');

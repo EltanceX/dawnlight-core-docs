@@ -3,13 +3,17 @@ title: 资源、目标与 drawBuffers
 description: 区分资源声明、目标附件、输出 location 与活动 drawBuffers，理解渲染结果的读写关系。
 ---
 
-# 资源、目标与 drawBuffers
+<div id="资源、目标与-drawbuffers" class="legacy-anchor" aria-hidden="true"></div>
+
+# 资源、目标与 drawBuffers {#resources-targets}
 
 <BaselineNote />
 
 一张纹理只是可存储数据的资源。要把一次绘制的输出写进去，还需要声明绘制目标，并确定着色器输出和目标附件之间的对应关系。
 
-## 资源声明解决存储问题
+<div id="资源声明解决存储问题" class="legacy-anchor" aria-hidden="true"></div>
+
+## 资源声明解决存储问题 {#resource-storage}
 
 资源 ID 用于在配置中引用同一份对象；格式、大小和生命周期决定如何创建和管理它。当前公开资源类型包含 `texture2D`、`textureCube` 和 `buffer`。
 
@@ -29,7 +33,9 @@ description: 区分资源声明、目标附件、输出 location 与活动 drawB
 
 <SourceNote path="docs/ShaderPackAuthorGuideP11V5.md" label="v5 作者指南中的资源与可重建示例" />
 
-## 把四个层次分开
+<div id="把四个层次分开" class="legacy-anchor" aria-hidden="true"></div>
+
+## 把四个层次分开 {#four-layers}
 
 | 层次 | 解决的问题 |
 | --- | --- |
@@ -42,7 +48,9 @@ description: 区分资源声明、目标附件、输出 location 与活动 drawB
 
 深度附件也有独立用途。它参与深度测试和相应深度操作，不能直接当作普通的颜色输出 location 使用。
 
-## 多个颜色输出：MRT
+<div id="多个颜色输出-mrt" class="legacy-anchor" aria-hidden="true"></div>
+
+## 多个颜色输出：MRT {#mrt}
 
 MRT 让一次绘制产生多个颜色结果。例如一个包可以约定将最终颜色、法线编码和材质信息分别写入不同的颜色附件。
 
@@ -52,7 +60,9 @@ GLSL 中声明多个 `layout(location = ...) out` 变量以后，还需核对配
 
 <SourceNote path="docs/ShaderPackAuthorGuide.md" label="v3/v4 指南中的 Scene ABI 与 MRT 示例" />
 
-## 写入和采样分别建立关系
+<div id="写入和采样分别建立关系" class="legacy-anchor" aria-hidden="true"></div>
+
+## 写入和采样分别建立关系 {#writes-and-sampling}
 
 一个后处理读取前一步颜色时，检查以下路径：
 
@@ -64,7 +74,9 @@ GLSL 中声明多个 `layout(location = ...) out` 变量以后，还需核对配
 
 还要检查资源尺寸是否符合预期、数据是否需要保留、生产者是否在当前选项下启用，以及当前调用是否存在读写危害。
 
-## 常见排查顺序
+<div id="常见排查顺序" class="legacy-anchor" aria-hidden="true"></div>
+
+## 常见排查顺序 {#troubleshooting}
 
 画面全黑或某个附件没有预期内容时，先核对：
 

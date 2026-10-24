@@ -1,8 +1,9 @@
 # DawnlightCore 作者文档站
 
-本工程按 [网站实现方案](docs/WebsiteImplementationPlan.zh-CN.md) 建设，使用 VitePress 维护中文作者文档。W2 提供首页、阅读路线、管线概念、资源与目标、Analyzer、版本范围六个可阅读页面。
+本工程按 [网站实现方案](docs/WebsiteImplementationPlan.zh-CN.md) 建设，使用 VitePress 维护中英文作者文档。首页、阅读路线、管线概念、资源与目标、Analyzer、版本范围各有完整的中英文页面，可在桌面和手机顶栏切换。
 
 - 网站：[DawnlightCore 作者文档](https://eltancex.github.io/dawnlight-core-docs/)。
+- English：[DawnlightCore author documentation](https://eltancex.github.io/dawnlight-core-docs/en/)。
 - 公开上游：[EltanceX/DawnlightCore（Gitea）](https://gitea.com/EltanceX/DawnlightCore)。
 - 网站源码：[EltanceX/dawnlight-core-docs](https://github.com/EltanceX/dawnlight-core-docs)。
 
@@ -21,7 +22,7 @@ npm run docs:preview
 
 `docs:build` 检查基线投影、页面来源元数据、公开资源和 Git 文件边界，构建后检查项目 base、链接、锚点及静态资产。预览地址使用 `/dawnlight-core-docs/`，与部署路径一致。
 
-浏览器验收覆盖 1440px 桌面和 390px 移动端、中文/标识符/诊断码搜索、导航、主题、代码复制、基线下载及 404：
+浏览器验收覆盖 1440px 桌面和 390px 移动端、中英文搜索、逐页与章节语言切换、导航、主题、代码复制、基线下载及双语 404，并检查 320px 窄屏顶栏：
 
 ```sh
 npx playwright install --with-deps chromium --only-shell
@@ -31,6 +32,8 @@ npm run test:site
 Windows 已安装 Edge 时可在 PowerShell 中使用 `$env:PLAYWRIGHT_CHANNEL='msedge'`；配置 `SITE_URL=https://eltancex.github.io/dawnlight-core-docs/` 后，同一套测试会直接验收线上网站。
 
 ## 发布与维护
+
+中文保留根路径，英文位于 `/en/`；语言切换保留对应页面与章节。新增公开页面需提供双语配对并更新 `scripts/lib/site-pages.mjs`。共用章节 ID，保留旧中文锚点；JSON 与命令示例须在翻译间保持一致。维护约定见 [双语页面维护](docs/maintenance/Locales.zh-CN.md)。
 
 PR 执行公开构建与浏览器检查；`main` 执行同样检查后，通过 GitHub Actions 将同一份产物部署到 Pages。检查不需要私有资产凭据。部署失败时，上一份已成功发布的站点继续服务；回退页面可 revert 对应提交并等待部署成功。
 

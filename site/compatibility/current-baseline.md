@@ -3,13 +3,17 @@ title: 版本与支持范围
 description: 当前文档的宿主 commit、Manifest v5、Scene ABI v2、工具身份和支持边界。
 ---
 
-# 版本与支持范围
+<div id="版本与支持范围" class="legacy-anchor" aria-hidden="true"></div>
+
+# 版本与支持范围 {#versions-support}
 
 <BaselineNote />
 
 本版文档围绕一个固定宿主基线编写。主线讲解 Manifest v5 / Scene ABI v2；v3/v4 的历史示例用于兼容说明，不能直接替代新的 v5 课程包。
 
-## 版本身份
+<div id="版本身份" class="legacy-anchor" aria-hidden="true"></div>
+
+## 版本身份 {#version-identities}
 
 | 项目 | 当前值 |
 | --- | --- |
@@ -26,7 +30,9 @@ description: 当前文档的宿主 commit、Manifest v5、Scene ABI v2、工具�
 
 公开源码入口为 [Gitea / EltanceX / DawnlightCore](https://gitea.com/EltanceX/DawnlightCore)。本轮已匿名核实该仓库和上述 commit 可访问。正文来源链接固定 commit，升级上游默认分支不会自动改变本文基线。
 
-## 支持边界
+<div id="支持边界" class="legacy-anchor" aria-hidden="true"></div>
+
+## 支持边界 {#support-boundaries}
 
 | 范围 | 当前说明 |
 | --- | --- |
@@ -41,14 +47,18 @@ description: 当前文档的宿主 commit、Manifest v5、Scene ABI v2、工具�
 
 G9 比较采样、公共时序 view、jitter 与光源几何均有各自的版本与能力边界。后续参考页会分别展开，不能因为一个 token 已出现就推导任意执行环境都支持。
 
-## 本轮已核对什么
+<div id="本轮已核对什么" class="legacy-anchor" aria-hidden="true"></div>
+
+## 本轮已核对什么 {#verified-scope}
 
 锁定输入与工具链完成了 19 项 GL-free 检查：18 项成功，1 项确认原始指南的已知 `DLTOOL2001` 失败。独立网站指南变体通过重建校验；四套代表性上游包通过 Loader。另有 6 项工程回归测试覆盖篡改拒绝、换行保留与恢复等行为。
 
 这些结果记录在对应基线，不能推广为每一种包配置都能运行。当前没有新增 GPU 运行、游戏截图、运行时材质映射或性能验收。
 
-## 文档建设进度
+<div id="文档建设进度" class="legacy-anchor" aria-hidden="true"></div>
 
-目前可阅读：阅读路线、管线模型、资源与目标、Analyzer 和版本范围。连续教程、起步包、下载示例与完整字段参考仍待后续阶段实现，未完成页面不会进入导航。
+## 文档建设进度 {#documentation-progress}
+
+目前提供中英文阅读路线、管线模型、资源与目标、Analyzer 和版本范围，可在顶栏切换语言。连续教程、起步包、下载示例与完整字段参考仍待后续阶段实现，未完成页面不会进入导航。
 
 网站源码与正文公开，完整上游快照继续保留在本地和固定私有资产中。网站静态构建只使用已提交的公开页面和锁定元数据；上游完整 Analyzer 验证通过独立流程执行。

@@ -3,13 +3,17 @@ title: Analyzer 与证据边界
 description: 使用 ShaderPackAnalyzer 检查光影包，区分 Loader、离线接口、驱动与游戏运行证据，并理解 DLTOOL2001。
 ---
 
-# Analyzer 与证据边界
+<div id="analyzer-与证据边界" class="legacy-anchor" aria-hidden="true"></div>
+
+# Analyzer 与证据边界 {#analyzer-evidence}
 
 <BaselineNote />
 
 ShaderPackAnalyzer 使用生产 Loader 进行包验证，并提供 Schema、资源图、场景路由和公开接口解释。它能帮助你在运行游戏之前发现一批结构与语义问题。
 
-## 获取当前工具
+<div id="获取当前工具" class="legacy-anchor" aria-hidden="true"></div>
+
+## 获取当前工具 {#get-the-tool}
 
 本轮锁定工具身份为 `docs-tools-f8aaa5c4-w1.1`，平台为 Windows x64，自包含 .NET 运行时。当前二进制资产位于需要读取权限的 GitHub Release，尚不是匿名下载入口。
 
@@ -17,7 +21,9 @@ ShaderPackAnalyzer 使用生产 Loader 进行包验证，并提供 Schema、资�
 
 <SourceNote path="tools/ShaderPackAnalyzer/README.md" label="Analyzer 构建、发布与命令说明" />
 
-## 从包验证开始
+<div id="从包验证开始" class="legacy-anchor" aria-hidden="true"></div>
+
+## 从包验证开始 {#pack-validation}
 
 ```powershell
 shaderpack-analyzer.exe pack validate ./MyPack --format json
@@ -27,7 +33,9 @@ shaderpack-analyzer.exe pack validate ./MyPack --format json
 
 这些命令中的 `./MyPack` 是你自己的包目录，不是网站提供的已下载示例。
 
-## 按问题选择解释命令
+<div id="按问题选择解释命令" class="legacy-anchor" aria-hidden="true"></div>
+
+## 按问题选择解释命令 {#explanation-commands}
 
 ::: code-group
 
@@ -51,7 +59,9 @@ shaderpack-analyzer.exe data interface ./MyPack --format json
 
 `yourpack:post/present` 需要替换为自己包中真实存在的 Program ID。v5 Program interface 要显式选择合同 2；省略时仍可能使用旧接口投影。
 
-## 不同的成功分别意味着什么
+<div id="不同的成功分别意味着什么" class="legacy-anchor" aria-hidden="true"></div>
+
+## 不同的成功分别意味着什么 {#evidence-levels}
 
 | 结果 | 可以说明什么 | 还需什么证据 |
 | --- | --- | --- |
@@ -63,7 +73,9 @@ shaderpack-analyzer.exe data interface ./MyPack --format json
 
 当前网站基线的检查保留 `driverStatus=notProvided`、`mappingStatus=deferred`、`runtimeEvaluated=false` 与 `liveWorldVerified=false`。单次离线成功不能将这些字段改写成已经实机验证。
 
-## 一个真实诊断：DLTOOL2001
+<div id="一个真实诊断-dltool2001" class="legacy-anchor" aria-hidden="true"></div>
+
+## 一个真实诊断：DLTOOL2001 {#dltool2001}
 
 原始 v5 指南的 `docs verify-v5` 会报告 `DLTOOL2001`：可重建指南中的三反引号代码块需要语言标记与 `file=<relative-path>`。该指南包含一段普通说明性 JSON 块，未满足这个提取合同。
 

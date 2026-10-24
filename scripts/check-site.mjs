@@ -3,6 +3,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { ROOT, readJson, loadLock, files, run, assertFingerprint, jsonBytes } from './lib/locked-inputs.mjs';
 import { publicBaseline } from './sync-site-baseline.mjs';
+import { expectedPages, pagePaths, localePrefixes } from './lib/site-pages.mjs';
 
 const pkg = await readJson(path.join(ROOT, 'package.json'));
 assert.equal(process.versions.node, pkg.engines.node, `Use Node ${pkg.engines.node} from .node-version`);
@@ -18,14 +19,22 @@ const expected = jsonBytes(await publicBaseline());
 assert.ok((await fs.readFile(path.join(ROOT, 'site/public/downloads/site-baseline.json'))).equals(expected), 'Public baseline projection must match lock');
 const siteFiles = (await files(path.join(ROOT, 'site'))).filter(f => !f.startsWith('.vitepress/dist/') && !f.startsWith('.vitepress/cache/'));
 const pages = siteFiles.filter(f => f.endsWith('.md'));
-assert.equal(pages.length, 7, 'W2 publishes six readable pages plus 404');
+assert.deepEqual(pages.sort(), expectedPages, 'Each published page needs a Chinese and English counterpart');
 for (const name of pages) {
   const content = await fs.readFile(path.join(ROOT, 'site', name), 'utf8');
   assert.match(content, /^---\r?\n[\s\S]*?title:/);
-  if (!['index.md', '404.md'].includes(name)) {
+  const relativePage = name.replace(/^en\//, '');
+  if (!['index.md', '404.md'].includes(relativePage)) {
     assert.match(content, /description:/); assert.match(content, /<BaselineNote\s*\/>/);
   }
   assert.doesNotMatch(content, /(?:TODO|TBD|待编写页面|E:\\sc\\)/);
+}
+for (const page of pagePaths) {
+  const [zh, en] = await Promise.all(localePrefixes.map(prefix => fs.readFile(path.join(ROOT, 'site', prefix + page), 'utf8')));
+  const examples = content => [...content.replaceAll('\r', '').matchAll(/^```(json|powershell)[^\n]*\n([\s\S]*?)^```/gm)].map(m => ({ language: m[1], code: m[2] }));
+  assert.deepEqual(examples(en), examples(zh), `Technical examples must stay identical: ${page}`);
+  const anchors = content => [...content.matchAll(/\{#([\w-]+)\}/g)].map(m => m[1]);
+  assert.deepEqual(anchors(en), anchors(zh), `Section anchors must match between languages: ${page}`);
 }
 for (const name of siteFiles.filter(f => !f.startsWith('public/'))) {
   const content = await fs.readFile(path.join(ROOT, 'site', name), 'utf8');
@@ -39,4 +48,4 @@ if (tracked.status === 0) {
   trackedFiles = names.length;
   for (const name of names) assert.doesNotMatch(name, /^(?:vendor|artifacts|\.cache|node_modules)\/|\.(?:dll|exe|zip|tar)$/i, `Unexpected published source file ${name}`);
 }
-console.log(JSON.stringify({ status: 'passed', publicPages: 6, notFoundPages: 1, sourceCommit: lock.upstream.commit, privateSnapshotRequired: false, trackedFiles }, null, 2));
+console.log(JSON.stringify({ status: 'passed', locales: ['zh-CN', 'en-US'], publicPages: 12, notFoundPages: 2, sourceCommit: lock.upstream.commit, privateSnapshotRequired: false, trackedFiles }, null, 2));

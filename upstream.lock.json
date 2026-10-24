@@ -239,7 +239,16 @@
       "runId": 40055814317,
       "runUrl": "https://github.com/EltanceX/dawnlight-core-docs/actions/runs/40055814317",
       "completedAt": "2026-10-24T02:51:16Z"
-    }
+    },
+    "languages": [
+      "zh-CN",
+      "en-US"
+    ],
+    "localePaths": {
+      "en-US": "/en/",
+      "zh-CN": "/"
+    },
+    "languageSwitch": "top-bar-corresponding-page-and-shared-section"
   },
   "discoveryRecords": {
     "sourceMap": {
