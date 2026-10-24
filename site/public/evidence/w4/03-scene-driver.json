@@ -1,0 +1,657 @@
+{
+  "contractVersion": 3,
+  "evidence": "driverObserved",
+  "published": true,
+  "result": "prepared",
+  "header": {
+    "packId": "course:03-scene",
+    "manifestVersion": 5,
+    "manifestHash": "8e3ad866ec4391bfb46ec0a5603b8fc7df9e82454ee1e97dc181862c31e20577",
+    "catalogHash": "4bc28c17beffea2311a422fff9f633d2e4f03784460d0254adda8af2e766d84c",
+    "sceneAbiHash": "4bc28c17beffea2311a422fff9f633d2e4f03784460d0254adda8af2e766d84c",
+    "generationId": 16,
+    "generationSourceFingerprint": "014abd444f3c27ad74a014acdaf9f40f840993a641ea8a00d6eaa684254e48f9",
+    "deviceEpoch": 0,
+    "graphicsApi": "OpenGL ES 3.2 NVIDIA 566.07",
+    "driverVendor": "NVIDIA Corporation",
+    "driverRenderer": "NVIDIA GeForce RTX 4050 Laptop GPU/PCIe/SSE2",
+    "shaderLanguageVersion": "OpenGL ES GLSL ES 3.20",
+    "engineBuild": "2.4.0.0",
+    "options": [],
+    "capabilities": [
+      {
+        "id": "dawnlight:model_shadow/max_instances",
+        "type": "integer",
+        "value": "7"
+      },
+      {
+        "id": "dawnlight:model_shadow/max_joints",
+        "type": "integer",
+        "value": "128"
+      }
+    ]
+  },
+  "programs": [
+    {
+      "programId": "course:post/grade",
+      "sourceOwner": "pack",
+      "sourceClosureSha256": "c88157d8bcf839521fc8b1dcbc3390406c309a96c013e7d692b88250f76bfa7d",
+      "effectiveCompilationFingerprint": "c46850a82695875e0a7d3765c7774d5a74764c2f763df6ca982fecb99edacbc6",
+      "generationSourceFingerprint": "014abd444f3c27ad74a014acdaf9f40f840993a641ea8a00d6eaa684254e48f9",
+      "deviceEpoch": 0,
+      "nativeIdentity": {
+        "deviceEpoch": 0,
+        "allocationSerial": 169,
+        "handle": 123
+      },
+      "deviceLimits": {
+        "textureBindings": 192,
+        "uniformBufferBindings": 84,
+        "storageBufferBindings": 96,
+        "vertexAttributes": 16,
+        "drawBuffers": 8,
+        "colorAttachments": 8
+      },
+      "uniforms": [
+        {
+          "symbol": "u_sceneColor",
+          "location": 0,
+          "type": "Texture2D",
+          "count": 1
+        }
+      ],
+      "uniformBlocks": [],
+      "storageBlocks": [],
+      "vertexInputs": [],
+      "fragmentOutputs": [
+        {
+          "location": 0,
+          "numericType": "float",
+          "componentCount": 4,
+          "count": 1
+        }
+      ],
+      "linked": true
+    },
+    {
+      "programId": "course:post/present",
+      "sourceOwner": "pack",
+      "sourceClosureSha256": "e05d626e36452e7c3556461f0b989cc44b197ff117e69b08fcafe80faf41e30e",
+      "effectiveCompilationFingerprint": "372c00976bb82aa64e2046e61e954c8ea33e82579eb0f076567a221a73293ca2",
+      "generationSourceFingerprint": "014abd444f3c27ad74a014acdaf9f40f840993a641ea8a00d6eaa684254e48f9",
+      "deviceEpoch": 0,
+      "nativeIdentity": {
+        "deviceEpoch": 0,
+        "allocationSerial": 170,
+        "handle": 126
+      },
+      "deviceLimits": {
+        "textureBindings": 192,
+        "uniformBufferBindings": 84,
+        "storageBufferBindings": 96,
+        "vertexAttributes": 16,
+        "drawBuffers": 8,
+        "colorAttachments": 8
+      },
+      "uniforms": [
+        {
+          "symbol": "u_postColor",
+          "location": 0,
+          "type": "Texture2D",
+          "count": 1
+        }
+      ],
+      "uniformBlocks": [],
+      "storageBlocks": [],
+      "vertexInputs": [],
+      "fragmentOutputs": [
+        {
+          "location": 0,
+          "numericType": "float",
+          "componentCount": 4,
+          "count": 1
+        }
+      ],
+      "linked": true
+    },
+    {
+      "programId": "course:scene/terrain",
+      "sourceOwner": "pack",
+      "sourceClosureSha256": "777d96d01252cf3979b634002a2441ee136566eabc091953a9ece8c2a0ccabec",
+      "effectiveCompilationFingerprint": "ac676af768bfbf29dc2b17d735cb00b744ed476bcb5edcf0a23dd11677ca98ea",
+      "generationSourceFingerprint": "014abd444f3c27ad74a014acdaf9f40f840993a641ea8a00d6eaa684254e48f9",
+      "deviceEpoch": 0,
+      "nativeIdentity": {
+        "deviceEpoch": 0,
+        "allocationSerial": 168,
+        "handle": 120
+      },
+      "deviceLimits": {
+        "textureBindings": 192,
+        "uniformBufferBindings": 84,
+        "storageBufferBindings": 96,
+        "vertexAttributes": 16,
+        "drawBuffers": 8,
+        "colorAttachments": 8
+      },
+      "uniforms": [
+        {
+          "symbol": "u_lightTable",
+          "location": 1,
+          "type": "Float",
+          "count": 96
+        },
+        {
+          "symbol": "u_origin",
+          "location": 97,
+          "type": "Vector2",
+          "count": 1
+        },
+        {
+          "symbol": "u_texture",
+          "location": 98,
+          "type": "Texture2D",
+          "count": 1
+        },
+        {
+          "symbol": "u_viewProjectionMatrix",
+          "location": 99,
+          "type": "Matrix",
+          "count": 1
+        }
+      ],
+      "uniformBlocks": [],
+      "storageBlocks": [],
+      "vertexInputs": [
+        {
+          "location": 0,
+          "numericType": "float",
+          "componentCount": 2
+        },
+        {
+          "location": 1,
+          "numericType": "float",
+          "componentCount": 3
+        },
+        {
+          "location": 2,
+          "numericType": "float",
+          "componentCount": 4
+        },
+        {
+          "location": 5,
+          "numericType": "float",
+          "componentCount": 1
+        }
+      ],
+      "fragmentOutputs": [
+        {
+          "location": 0,
+          "numericType": "float",
+          "componentCount": 4,
+          "count": 1
+        }
+      ],
+      "linked": true
+    },
+    {
+      "programId": "dawnlight:scene_fallback/terrain_alpha_tested",
+      "sourceOwner": "builtIn",
+      "sourceClosureSha256": "8973bc8825c5d75bee9f2068dc544e1835d760c43597ff6ffe50c9a58fb5e50c",
+      "effectiveCompilationFingerprint": "92d7bb7b1e8de74ce1a88e52208398b1626fdcc7718dc1318b8b1fadd7e927f4",
+      "generationSourceFingerprint": "014abd444f3c27ad74a014acdaf9f40f840993a641ea8a00d6eaa684254e48f9",
+      "deviceEpoch": 0,
+      "nativeIdentity": {
+        "deviceEpoch": 0,
+        "allocationSerial": 171,
+        "handle": 129
+      },
+      "deviceLimits": {
+        "textureBindings": 192,
+        "uniformBufferBindings": 84,
+        "storageBufferBindings": 96,
+        "vertexAttributes": 16,
+        "drawBuffers": 8,
+        "colorAttachments": 8
+      },
+      "uniforms": [
+        {
+          "symbol": "u_origin",
+          "location": 1,
+          "type": "Vector2",
+          "count": 1
+        },
+        {
+          "symbol": "u_texture",
+          "location": 2,
+          "type": "Texture2D",
+          "count": 1
+        },
+        {
+          "symbol": "u_viewProjectionMatrix",
+          "location": 3,
+          "type": "Matrix",
+          "count": 1
+        }
+      ],
+      "uniformBlocks": [],
+      "storageBlocks": [],
+      "vertexInputs": [
+        {
+          "location": 0,
+          "numericType": "float",
+          "componentCount": 2
+        },
+        {
+          "location": 1,
+          "numericType": "float",
+          "componentCount": 3
+        },
+        {
+          "location": 2,
+          "numericType": "float",
+          "componentCount": 4
+        }
+      ],
+      "fragmentOutputs": [
+        {
+          "location": 0,
+          "numericType": "float",
+          "componentCount": 4,
+          "count": 1
+        }
+      ],
+      "linked": true
+    },
+    {
+      "programId": "dawnlight:scene_fallback/terrain_sorted_translucent",
+      "sourceOwner": "builtIn",
+      "sourceClosureSha256": "8973bc8825c5d75bee9f2068dc544e1835d760c43597ff6ffe50c9a58fb5e50c",
+      "effectiveCompilationFingerprint": "1c9970d6eb37f05815021bf66a45baca2a94731bf067efa96e4c189bc34e16db",
+      "generationSourceFingerprint": "014abd444f3c27ad74a014acdaf9f40f840993a641ea8a00d6eaa684254e48f9",
+      "deviceEpoch": 0,
+      "nativeIdentity": {
+        "deviceEpoch": 0,
+        "allocationSerial": 172,
+        "handle": 132
+      },
+      "deviceLimits": {
+        "textureBindings": 192,
+        "uniformBufferBindings": 84,
+        "storageBufferBindings": 96,
+        "vertexAttributes": 16,
+        "drawBuffers": 8,
+        "colorAttachments": 8
+      },
+      "uniforms": [
+        {
+          "symbol": "u_origin",
+          "location": 1,
+          "type": "Vector2",
+          "count": 1
+        },
+        {
+          "symbol": "u_texture",
+          "location": 2,
+          "type": "Texture2D",
+          "count": 1
+        },
+        {
+          "symbol": "u_viewProjectionMatrix",
+          "location": 3,
+          "type": "Matrix",
+          "count": 1
+        }
+      ],
+      "uniformBlocks": [],
+      "storageBlocks": [],
+      "vertexInputs": [
+        {
+          "location": 0,
+          "numericType": "float",
+          "componentCount": 2
+        },
+        {
+          "location": 1,
+          "numericType": "float",
+          "componentCount": 3
+        },
+        {
+          "location": 2,
+          "numericType": "float",
+          "componentCount": 4
+        }
+      ],
+      "fragmentOutputs": [
+        {
+          "location": 0,
+          "numericType": "float",
+          "componentCount": 4,
+          "count": 1
+        }
+      ],
+      "linked": true
+    },
+    {
+      "programId": "dawnlight:scene_fallback/terrain_transparent",
+      "sourceOwner": "builtIn",
+      "sourceClosureSha256": "d9599775ba5756c93a176efaa8df90881e6fef42e06809777d5a3ea1fc88f259",
+      "effectiveCompilationFingerprint": "d59a47642317e06ca890ff5c035786be9ee04c0a76755806f74ac8f0270ebed4",
+      "generationSourceFingerprint": "014abd444f3c27ad74a014acdaf9f40f840993a641ea8a00d6eaa684254e48f9",
+      "deviceEpoch": 0,
+      "nativeIdentity": {
+        "deviceEpoch": 0,
+        "allocationSerial": 173,
+        "handle": 135
+      },
+      "deviceLimits": {
+        "textureBindings": 192,
+        "uniformBufferBindings": 84,
+        "storageBufferBindings": 96,
+        "vertexAttributes": 16,
+        "drawBuffers": 8,
+        "colorAttachments": 8
+      },
+      "uniforms": [
+        {
+          "symbol": "u_origin",
+          "location": 1,
+          "type": "Vector2",
+          "count": 1
+        },
+        {
+          "symbol": "u_texture",
+          "location": 2,
+          "type": "Texture2D",
+          "count": 1
+        },
+        {
+          "symbol": "u_viewProjectionMatrix",
+          "location": 3,
+          "type": "Matrix",
+          "count": 1
+        }
+      ],
+      "uniformBlocks": [],
+      "storageBlocks": [],
+      "vertexInputs": [
+        {
+          "location": 0,
+          "numericType": "float",
+          "componentCount": 2
+        },
+        {
+          "location": 1,
+          "numericType": "float",
+          "componentCount": 3
+        },
+        {
+          "location": 2,
+          "numericType": "float",
+          "componentCount": 4
+        }
+      ],
+      "fragmentOutputs": [
+        {
+          "location": 0,
+          "numericType": "float",
+          "componentCount": 4,
+          "count": 1
+        }
+      ],
+      "linked": true
+    }
+  ],
+  "commands": [
+    {
+      "pipelineIndex": 0,
+      "stageId": "course:terrain_alpha_tested",
+      "commandIndex": 0,
+      "category": "dawnlight:scene/terrain_alpha_tested@1",
+      "provider": "dawnlight:scene_draw/terrain_alpha_tested@2",
+      "programId": "dawnlight:scene_fallback/terrain_alpha_tested",
+      "targetLayoutSignature": "color|1:0|18:course:scene/color|16:dawnlight:direct|1:0|4:Load|5:Store|4:none|depth|18:course:scene/depth|16:dawnlight:direct|1:0|4:Load|5:Store|4:none|",
+      "activeDrawBuffers": [
+        0
+      ],
+      "prepared": true
+    },
+    {
+      "pipelineIndex": 0,
+      "stageId": "course:terrain_opaque",
+      "commandIndex": 0,
+      "category": "dawnlight:scene/terrain_opaque@1",
+      "provider": "dawnlight:scene_draw/terrain_opaque@2",
+      "programId": "course:scene/terrain",
+      "targetLayoutSignature": "color|1:0|18:course:scene/color|16:dawnlight:direct|1:0|4:Load|5:Store|4:none|depth|18:course:scene/depth|16:dawnlight:direct|1:0|5:Clear|5:Store|8:3f800000|",
+      "activeDrawBuffers": [
+        0
+      ],
+      "prepared": true
+    },
+    {
+      "pipelineIndex": 0,
+      "stageId": "course:terrain_sorted_translucent",
+      "commandIndex": 0,
+      "category": "dawnlight:scene/terrain_sorted_translucent@1",
+      "provider": "dawnlight:scene_draw/terrain_sorted_translucent@2",
+      "programId": "dawnlight:scene_fallback/terrain_sorted_translucent",
+      "targetLayoutSignature": "color|1:0|18:course:scene/color|16:dawnlight:direct|1:0|4:Load|5:Store|4:none|depth|18:course:scene/depth|16:dawnlight:direct|1:0|4:Load|5:Store|4:none|",
+      "activeDrawBuffers": [
+        0
+      ],
+      "prepared": true
+    },
+    {
+      "pipelineIndex": 0,
+      "stageId": "course:terrain_transparent",
+      "commandIndex": 0,
+      "category": "dawnlight:scene/terrain_transparent@1",
+      "provider": "dawnlight:scene_draw/terrain_transparent@2",
+      "programId": "dawnlight:scene_fallback/terrain_transparent",
+      "targetLayoutSignature": "color|1:0|18:course:scene/color|16:dawnlight:direct|1:0|4:Load|5:Store|4:none|depth|18:course:scene/depth|16:dawnlight:direct|1:0|4:Load|5:Store|4:none|",
+      "activeDrawBuffers": [
+        0
+      ],
+      "prepared": true
+    }
+  ],
+  "framebuffers": [
+    {
+      "pipelineIndex": 0,
+      "preparePhase": "candidatePrepare",
+      "layoutSignature": "color|1:0|18:course:scene/color|16:dawnlight:direct|1:0|4:Load|5:Store|4:none|depth|18:course:scene/depth|16:dawnlight:direct|1:0|4:Load|5:Store|4:none|",
+      "attachmentFingerprintSignature": "3:115|3:116|4:2048|4:1222|",
+      "width": 2048,
+      "height": 1222,
+      "colors": [
+        {
+          "location": 0,
+          "resource": "course:scene/color",
+          "view": "dawnlight:direct",
+          "framesAgo": 0,
+          "format": "rgba8",
+          "nativeIdentity": {
+            "deviceEpoch": 0,
+            "allocationSerial": 160,
+            "handle": 115
+          }
+        }
+      ],
+      "depth": {
+        "resource": "course:scene/depth",
+        "view": "dawnlight:direct",
+        "framesAgo": 0,
+        "format": "depth24",
+        "nativeIdentity": {
+          "deviceEpoch": 0,
+          "allocationSerial": 161,
+          "handle": 116
+        }
+      },
+      "nativeIdentity": {
+        "deviceEpoch": 0,
+        "allocationSerial": 164,
+        "handle": 13
+      },
+      "complete": true
+    },
+    {
+      "pipelineIndex": 0,
+      "preparePhase": "candidatePrepare",
+      "layoutSignature": "color|1:0|18:course:scene/color|16:dawnlight:direct|1:0|4:Load|5:Store|4:none|depth|18:course:scene/depth|16:dawnlight:direct|1:0|4:Load|5:Store|4:none|",
+      "attachmentFingerprintSignature": "3:115|3:116|4:2048|4:1222|",
+      "width": 2048,
+      "height": 1222,
+      "colors": [
+        {
+          "location": 0,
+          "resource": "course:scene/color",
+          "view": "dawnlight:direct",
+          "framesAgo": 0,
+          "format": "rgba8",
+          "nativeIdentity": {
+            "deviceEpoch": 0,
+            "allocationSerial": 160,
+            "handle": 115
+          }
+        }
+      ],
+      "depth": {
+        "resource": "course:scene/depth",
+        "view": "dawnlight:direct",
+        "framesAgo": 0,
+        "format": "depth24",
+        "nativeIdentity": {
+          "deviceEpoch": 0,
+          "allocationSerial": 161,
+          "handle": 116
+        }
+      },
+      "nativeIdentity": {
+        "deviceEpoch": 0,
+        "allocationSerial": 165,
+        "handle": 14
+      },
+      "complete": true
+    },
+    {
+      "pipelineIndex": 0,
+      "preparePhase": "candidatePrepare",
+      "layoutSignature": "color|1:0|18:course:scene/color|16:dawnlight:direct|1:0|4:Load|5:Store|4:none|depth|18:course:scene/depth|16:dawnlight:direct|1:0|4:Load|5:Store|4:none|",
+      "attachmentFingerprintSignature": "3:115|3:116|4:2048|4:1222|",
+      "width": 2048,
+      "height": 1222,
+      "colors": [
+        {
+          "location": 0,
+          "resource": "course:scene/color",
+          "view": "dawnlight:direct",
+          "framesAgo": 0,
+          "format": "rgba8",
+          "nativeIdentity": {
+            "deviceEpoch": 0,
+            "allocationSerial": 160,
+            "handle": 115
+          }
+        }
+      ],
+      "depth": {
+        "resource": "course:scene/depth",
+        "view": "dawnlight:direct",
+        "framesAgo": 0,
+        "format": "depth24",
+        "nativeIdentity": {
+          "deviceEpoch": 0,
+          "allocationSerial": 161,
+          "handle": 116
+        }
+      },
+      "nativeIdentity": {
+        "deviceEpoch": 0,
+        "allocationSerial": 166,
+        "handle": 15
+      },
+      "complete": true
+    },
+    {
+      "pipelineIndex": 0,
+      "preparePhase": "candidatePrepare",
+      "layoutSignature": "color|1:0|18:course:scene/color|16:dawnlight:direct|1:0|4:Load|5:Store|4:none|depth|18:course:scene/depth|16:dawnlight:direct|1:0|5:Clear|5:Store|8:3f800000|",
+      "attachmentFingerprintSignature": "3:115|3:116|4:2048|4:1222|",
+      "width": 2048,
+      "height": 1222,
+      "colors": [
+        {
+          "location": 0,
+          "resource": "course:scene/color",
+          "view": "dawnlight:direct",
+          "framesAgo": 0,
+          "format": "rgba8",
+          "nativeIdentity": {
+            "deviceEpoch": 0,
+            "allocationSerial": 160,
+            "handle": 115
+          }
+        }
+      ],
+      "depth": {
+        "resource": "course:scene/depth",
+        "view": "dawnlight:direct",
+        "framesAgo": 0,
+        "format": "depth24",
+        "nativeIdentity": {
+          "deviceEpoch": 0,
+          "allocationSerial": 161,
+          "handle": 116
+        }
+      },
+      "nativeIdentity": {
+        "deviceEpoch": 0,
+        "allocationSerial": 163,
+        "handle": 12
+      },
+      "complete": true
+    },
+    {
+      "pipelineIndex": 0,
+      "preparePhase": "candidatePrepare",
+      "layoutSignature": "color|1:0|18:course:scene/color|16:dawnlight:direct|1:0|5:Clear|5:Store|8:00000000|8:00000000|8:00000000|8:3f800000|depth|18:course:scene/depth|16:dawnlight:direct|1:0|5:Clear|5:Store|8:3f800000|",
+      "attachmentFingerprintSignature": "3:115|3:116|4:2048|4:1222|",
+      "width": 2048,
+      "height": 1222,
+      "colors": [
+        {
+          "location": 0,
+          "resource": "course:scene/color",
+          "view": "dawnlight:direct",
+          "framesAgo": 0,
+          "format": "rgba8",
+          "nativeIdentity": {
+            "deviceEpoch": 0,
+            "allocationSerial": 160,
+            "handle": 115
+          }
+        }
+      ],
+      "depth": {
+        "resource": "course:scene/depth",
+        "view": "dawnlight:direct",
+        "framesAgo": 0,
+        "format": "depth24",
+        "nativeIdentity": {
+          "deviceEpoch": 0,
+          "allocationSerial": 161,
+          "handle": 116
+        }
+      },
+      "nativeIdentity": {
+        "deviceEpoch": 0,
+        "allocationSerial": 167,
+        "handle": 16
+      },
+      "complete": true
+    }
+  ],
+  "reportHash": "0977ef33ba79192fbd2b48edd5522058a97b40ec412902f6734fcc35f0a6725d"
+}

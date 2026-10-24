@@ -1,0 +1,22 @@
+#version 320 es
+// <Sampler Name='u_samplerState' Texture='u_texture' />
+precision highp float;
+precision highp int;
+uniform sampler2D u_texture;
+in vec2 v_texcoord;
+in vec4 v_color;
+in vec3 v_normalEncoded;
+flat in uint v_identifier;
+layout(location = 0) out vec4 o_sceneColor;
+layout(location = 1) out vec4 o_sceneNormal;
+layout(location = 2) out vec4 o_sceneMaterial;
+void main() {
+    vec4 albedo = texture(u_texture, v_texcoord) * v_color;
+    o_sceneColor = vec4(albedo.rgb * vec3(0.92, 1.0, 0.92), albedo.a);
+    o_sceneNormal = vec4(v_normalEncoded, 1.0);
+    // Pack convention: two identifier bytes, demonstration luminance, validity.
+    float lowByte = float(v_identifier & 255u) / 255.0;
+    float highByte = float((v_identifier >> 8u) & 255u) / 255.0;
+    float luminance = dot(albedo.rgb, vec3(0.2126, 0.7152, 0.0722));
+    o_sceneMaterial = vec4(lowByte, highByte, clamp(luminance, 0.0, 1.0), 1.0);
+}

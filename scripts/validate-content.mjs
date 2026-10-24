@@ -2,10 +2,12 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { ROOT, readJson, files, relativeName, inside } from './lib/locked-inputs.mjs';
-import { loadExamples, loadReceipts, frontmatter, evidenceBoundary } from './lib/content-foundation.mjs';
+import { loadExamples, loadReceipts, frontmatter, evidenceBoundary, courseIncludes } from './lib/content-foundation.mjs';
+import { loadRuntimeEvidence } from './lib/runtime-evidence.mjs';
 
 const context = await loadExamples();
-await loadReceipts(context);
+const receipts = await loadReceipts(context);
+await loadRuntimeEvidence(context, receipts);
 const registry = await readJson(path.join(ROOT, 'metadata/pages.json'));
 const sourceMap = await readJson(path.join(ROOT, 'metadata/source-map.json'));
 assert.equal(registry.schemaVersion, 1, 'metadata/pages.json: schema version');
@@ -28,12 +30,17 @@ for (const record of registry.pages) {
       assert.ok((await fs.stat(inside(ROOT, source.path))).isFile(), `${record.path}: missing source ${source.path}`);
     }
   }
-  if (record.example) assert.ok(context.examples.some(example => example.id === record.example && example.page === record.path), `${record.path}: unregistered example`);
+  if (record.example) assert.ok(context.examples.some(example => example.id === record.example && (!record.generated || example.page === record.path)), `${record.path}: unregistered example`);
+  let pairedIncludes;
   for (const [language, prefix] of Object.entries(registry.locales)) {
     const file = 'site/' + prefix + record.path;
     expectedPages.push(prefix + record.path);
     const content = await fs.readFile(inside(ROOT, file), 'utf8');
     const fm = frontmatter(content, file);
+    const includes = courseIncludes(content, context, file);
+    if (pairedIncludes) assert.deepEqual(includes, pairedIncludes, `${file}: translated source includes differ`);
+    pairedIncludes = includes;
+    if (record.example && !record.generated) assert.ok(includes.length && includes.every(name => name.startsWith(`examples/${record.example}/`)), `${file}: chapter must include its own snapshot`);
     assert.ok(typeof fm.title === 'string' && fm.title.length && typeof fm.description === 'string' && fm.description.length, `${file}: title and description required`);
     assert.equal(fm.lang, language, `${file}: language mismatch`);
     const expected = { publication: record.publication, baseline: context.lock.baselineId, manifestVersions: record.manifestVersions, sceneAbiVersions: record.sceneAbiVersions, sourceRefs: record.sourceRefs, ...(record.example ? { example: record.example, verification: { static: 'passed', ...evidenceBoundary } } : {}) };

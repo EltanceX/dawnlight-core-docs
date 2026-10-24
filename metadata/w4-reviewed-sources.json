@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "baselineId": "candidate-f8aaa5c4",
+  "sourceCommit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+  "purpose": "Supplementary W4 source review; frozen W0 source-map unchanged",
+  "sources": [
+    {
+      "path": "Survivalcraft/Dawnlight/Extends/HalfNormalVertex.cs",
+      "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+      "byteDomain": "git-blob",
+      "length": 1473,
+      "sha256": "7994dd44badfde658bc5200f13e001cb6c214610dab97c8fe1b109c379b54f86",
+      "fact": "OctNormal stores oct-encoded R/G and the sign of Z in N.",
+      "url": "https://gitea.com/EltanceX/DawnlightCore/src/commit/f8aaa5c4218f54536ccf994a2d512aed2e3678b7/Survivalcraft/Dawnlight/Extends/HalfNormalVertex.cs"
+    },
+    {
+      "path": "Survivalcraft/Dawnlight/Extends/TerrainVertexEx.cs",
+      "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+      "byteDomain": "git-blob",
+      "length": 285,
+      "sha256": "3363f44d20a91f85bff1ed37e0d0fdb62c3989782edace88da8f4800384b4a92",
+      "fact": "Terrain extras contain ushort Identifier and OctNormal.",
+      "url": "https://gitea.com/EltanceX/DawnlightCore/src/commit/f8aaa5c4218f54536ccf994a2d512aed2e3678b7/Survivalcraft/Dawnlight/Extends/TerrainVertexEx.cs"
+    },
+    {
+      "path": "Survivalcraft/Dawnlight/PipeLine/Shaders/DawnlightShaderPack.cs",
+      "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+      "byteDomain": "git-blob",
+      "length": 47058,
+      "sha256": "bf0ffc5146896c96c3b57542de3f96d0bc30e3b6aa6a4aa11b5e332819de92ed",
+      "fact": "Windows external packs use AppContext.BaseDirectory/shaderpacks.",
+      "url": "https://gitea.com/EltanceX/DawnlightCore/src/commit/f8aaa5c4218f54536ccf994a2d512aed2e3678b7/Survivalcraft/Dawnlight/PipeLine/Shaders/DawnlightShaderPack.cs"
+    },
+    {
+      "path": "Survivalcraft/Dawnlight/PipeLine/Shaders/Configuration/Loading/ShaderPackSourceCatalog.cs",
+      "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+      "byteDomain": "git-blob",
+      "length": 15054,
+      "sha256": "5c4007a142022057427d9f1ad548665d749c2b9875d9e5a21e2b86bb2020c66f",
+      "fact": "Discovery scans direct child directories.",
+      "url": "https://gitea.com/EltanceX/DawnlightCore/src/commit/f8aaa5c4218f54536ccf994a2d512aed2e3678b7/Survivalcraft/Dawnlight/PipeLine/Shaders/Configuration/Loading/ShaderPackSourceCatalog.cs"
+    },
+    {
+      "path": "Survivalcraft/DawnlightExtends/MenuMod/GameSettingMenu.cs",
+      "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+      "byteDomain": "git-blob",
+      "length": 11802,
+      "sha256": "e6f94c24d1db58602981a47e3c8fa55de2911094e97d5f8f1ed62b057681d6aa",
+      "fact": "U hotkey and Shader Packs page.",
+      "url": "https://gitea.com/EltanceX/DawnlightCore/src/commit/f8aaa5c4218f54536ccf994a2d512aed2e3678b7/Survivalcraft/DawnlightExtends/MenuMod/GameSettingMenu.cs"
+    },
+    {
+      "path": "Survivalcraft/DawnlightExtends/MenuMod/GameSettingMenu.ShaderPackCatalog.cs",
+      "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+      "byteDomain": "git-blob",
+      "length": 38378,
+      "sha256": "edd2f95774851ba45bfca6c92330c0035fc88ac8deb9c8ab85ea64e952d84bfe",
+      "fact": "Selection, Apply, refresh and force reload actions.",
+      "url": "https://gitea.com/EltanceX/DawnlightCore/src/commit/f8aaa5c4218f54536ccf994a2d512aed2e3678b7/Survivalcraft/DawnlightExtends/MenuMod/GameSettingMenu.ShaderPackCatalog.cs"
+    }
+  ]
+}

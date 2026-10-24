@@ -8,7 +8,7 @@ import { analyzerRunner } from './lib/analyzer-runner.mjs';
 
 const verifyOnly = process.argv.includes('--verify-receipt');
 assert.ok(process.argv.slice(2).every(arg => arg === '--verify-receipt'), 'Usage: validate-examples.mjs [--verify-receipt]');
-const output = path.join(ROOT, 'artifacts/w3/validation');
+const output = path.join(ROOT, 'artifacts/w4/validation');
 let temporary;
 try {
   const context = await loadExamples();
@@ -16,7 +16,7 @@ try {
   if (verifyOnly) await loadReceipts(context);
   const toolRoot = defaultToolRoot(lock);
   const tool = await verifyTool(toolRoot, lock);
-  temporary = await fs.mkdtemp(path.join(os.tmpdir(), 'dawnlight-w3-'));
+  temporary = await fs.mkdtemp(path.join(os.tmpdir(), 'dawnlight-examples-'));
   const results = [];
   for (const example of context.examples) {
     const prefix = example.id.replaceAll('/', '-');
@@ -46,10 +46,13 @@ try {
           assert.equal(value.sceneAbiHash, lock.contracts.sceneAbiHash);
           assert.equal(value.routes.length, example.expected.terrainRoutes);
           for (const route of value.routes) {
-            assert.equal(route.resolved.mode, example.expected.routeMode);
+            const overridden = (example.expected.overrides ?? []).includes(route.category.id);
+            assert.equal(route.resolved.mode, overridden ? 'override' : example.expected.routeMode, `${example.id}: ${route.category.id}: route mode`);
             assert.equal(route.resolved.active, true);
-            assert.equal(route.resolved.program.sourceOwner, 'builtIn');
-            assert.equal(route.resolved.fallback.materialized, true);
+            assert.equal(route.resolved.program.sourceOwner, overridden ? 'pack' : 'builtIn');
+            assert.equal(route.resolved.fallback?.materialized ?? false, !overridden);
+            assert.equal(route.resolved.targets.colors.length, example.expected.sceneColors ?? 1);
+            assert.deepEqual(route.resolved.drawBuffers.filter(buffer => buffer.enabled).map(buffer => buffer.outputLocation), overridden ? Array.from({ length: example.expected.sceneColors ?? 1 }, (_, i) => i) : [0]);
           }
         }
         if (id === 'graph') {
@@ -86,7 +89,7 @@ try {
 } finally {
   if (temporary) {
     const resolved = path.resolve(temporary), parent = path.resolve(os.tmpdir());
-    assert.ok(path.dirname(resolved) === parent && path.basename(resolved).startsWith('dawnlight-w3-'));
+    assert.ok(path.dirname(resolved) === parent && path.basename(resolved).startsWith('dawnlight-examples-'));
     await fs.rm(resolved, { recursive: true, force: true });
   }
 }

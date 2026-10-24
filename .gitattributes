@@ -1,4 +1,5 @@
 * text=auto
+.gitattributes text eol=lf
 *.mjs text eol=lf
 *.md text eol=lf
 *.json text eol=lf
@@ -7,6 +8,10 @@
 *.vue text eol=lf
 *.css text eol=lf
 *.svg text eol=lf
+*.js text eol=lf
+*.jpg -text
 /examples/** text eol=lf
 # The complete vendor snapshot is hashed as exact bytes, including mixed EOLs.
 /vendor/dawnlight/** -text
+# Runtime exports retain the exact bytes hashed in the observation inventory.
+/site/public/evidence/w4/** -text

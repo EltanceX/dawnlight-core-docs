@@ -1,0 +1,57 @@
+{
+  "status": "passed",
+  "method": "fresh deterministic chapter ZIP extracted to a new direct child; two saved GLSL edits recompiled through the real frame-boundary coordinator",
+  "archiveSha256": "8f856c88429f6f3bcab9a48101e23badd686d4a08af824b375134606d17f78e0",
+  "sourceFingerprint": "588f68099eaaf03bd7835e7d591d84bcc8f5fbe6453fcf1bb9f356621ef4474e",
+  "loaded": {
+    "active": "External:reader-first-post",
+    "published": 34,
+    "pending": 0,
+    "error": null,
+    "size": {
+      "x": 2048,
+      "y": 1222
+    }
+  },
+  "variants": [
+    {
+      "strength": "0.0",
+      "shaderSha256": "026536c64d3e28575e9222338e876f0d66d714751aa5ff192b292e2079cded93",
+      "result": {
+        "active": "External:reader-first-post",
+        "published": 35,
+        "pending": 0,
+        "error": null,
+        "size": {
+          "x": 2048,
+          "y": 1222
+        }
+      }
+    },
+    {
+      "strength": "1.0",
+      "shaderSha256": "a981e7133fbd8b474d52e481d23208ddb07e65b5e6ef5810364aa1ffa6e17443",
+      "result": {
+        "active": "External:reader-first-post",
+        "published": 36,
+        "pending": 0,
+        "error": null,
+        "size": {
+          "x": 2048,
+          "y": 1222
+        }
+      }
+    }
+  ],
+  "restored": {
+    "active": "BuiltIn",
+    "published": 37,
+    "pending": 0,
+    "error": null,
+    "size": {
+      "x": 2048,
+      "y": 1222
+    }
+  },
+  "independentHumanReader": false
+}

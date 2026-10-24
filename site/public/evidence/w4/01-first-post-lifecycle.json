@@ -1,0 +1,51 @@
+{
+  "id": "01-first-post",
+  "status": "passed",
+  "loaded": {
+    "active": "External:01-first-post",
+    "published": 9,
+    "pending": 0,
+    "error": null,
+    "size": {
+      "x": 2048,
+      "y": 1222
+    }
+  },
+  "reloaded": {
+    "active": "External:01-first-post",
+    "published": 10,
+    "pending": 0,
+    "error": null,
+    "size": {
+      "x": 2048,
+      "y": 1222
+    }
+  },
+  "resized": {
+    "active": "External:01-first-post",
+    "published": 10,
+    "pending": 0,
+    "error": null,
+    "size": {
+      "x": 1024,
+      "y": 640
+    }
+  },
+  "builtIn": {
+    "active": "BuiltIn",
+    "published": 11,
+    "pending": 0,
+    "error": null,
+    "size": {
+      "x": 2048,
+      "y": 1222
+    }
+  },
+  "driver": {
+    "manifestHash": "e91ce41f7aa25cf73f157e6302d56ad0017331eb4b77cb464a3eeb901a39ce82",
+    "generationId": 10,
+    "programs": 5,
+    "linked": true
+  },
+  "checkedAt": "2026-10-24T07:36:44.392Z"
+}

@@ -5,31 +5,537 @@
   "examples": [
     {
       "id": "course/00-starter",
-      "titles": { "zh-CN": "00 · 外置起步包", "en-US": "00 · External starter" },
+      "titles": {
+        "zh-CN": "00 · 外置起步包",
+        "en-US": "00 · External starter"
+      },
       "sourceType": "website-authored",
       "root": "examples/course/00-starter",
       "entrypoint": "shaderpack.json",
       "page": "examples/course-starter.md",
       "manifestVersion": 5,
       "sceneAbiVersion": 2,
-      "programs": ["course:post/present"],
-      "capabilities": ["dawnlight:command_list@1", "dawnlight:scene_draw/terrain_opaque@2", "dawnlight:scene_draw/terrain_alpha_tested@2", "dawnlight:scene_draw/terrain_transparent@2", "dawnlight:scene_draw/terrain_sorted_translucent@2"],
-      "requires": { "worldContentSnapshot": false, "driverReportForStaticChecks": false, "graphicsApiForRuntime": "OpenGL ES 3.2" },
-      "variants": [{ "id": "default", "options": {}, "capabilities": "host-default" }],
-      "expected": { "terrainRoutes": 4, "routeMode": "builtIn", "resources": 2, "passes": 5, "optionalEffects": false },
-      "files": ["README.md", "shaderpack.json", "shaders/fullscreen.vsh", "shaders/present.psh"],
+      "programs": [
+        "course:post/present"
+      ],
+      "capabilities": [
+        "dawnlight:command_list@1",
+        "dawnlight:scene_draw/terrain_opaque@2",
+        "dawnlight:scene_draw/terrain_alpha_tested@2",
+        "dawnlight:scene_draw/terrain_transparent@2",
+        "dawnlight:scene_draw/terrain_sorted_translucent@2"
+      ],
+      "requires": {
+        "worldContentSnapshot": false,
+        "driverReportForStaticChecks": false,
+        "graphicsApiForRuntime": "OpenGL ES 3.2"
+      },
+      "variants": [
+        {
+          "id": "default",
+          "options": {},
+          "capabilities": "host-default"
+        }
+      ],
+      "expected": {
+        "terrainRoutes": 4,
+        "routeMode": "builtIn",
+        "resources": 2,
+        "passes": 5,
+        "optionalEffects": false
+      },
+      "files": [
+        "README.md",
+        "shaderpack.json",
+        "shaders/fullscreen.vsh",
+        "shaders/present.psh"
+      ],
       "snippets": [
-        { "id": "manifest", "file": "shaderpack.json", "language": "json" },
-        { "id": "frame-target", "file": "shaderpack.json", "language": "json", "pointer": "/frameTarget" },
-        { "id": "routes", "file": "shaderpack.json", "language": "json", "pointer": "/sceneCategories" },
-        { "id": "fullscreen", "file": "shaders/fullscreen.vsh", "language": "glsl" },
-        { "id": "present", "file": "shaders/present.psh", "language": "glsl" }
+        {
+          "id": "manifest",
+          "file": "shaderpack.json",
+          "language": "json"
+        },
+        {
+          "id": "frame-target",
+          "file": "shaderpack.json",
+          "language": "json",
+          "pointer": "/frameTarget"
+        },
+        {
+          "id": "routes",
+          "file": "shaderpack.json",
+          "language": "json",
+          "pointer": "/sceneCategories"
+        },
+        {
+          "id": "fullscreen",
+          "file": "shaders/fullscreen.vsh",
+          "language": "glsl"
+        },
+        {
+          "id": "present",
+          "file": "shaders/present.psh",
+          "language": "glsl"
+        }
       ],
       "sourceRefs": [
-        { "repository": "upstream", "path": "docs/ShaderPackAuthorGuide.md", "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7" },
-        { "repository": "upstream", "path": "docs/ShaderPackAuthorGuideP11V5.md", "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7" }
+        {
+          "repository": "upstream",
+          "path": "docs/ShaderPackAuthorGuide.md",
+          "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7"
+        },
+        {
+          "repository": "upstream",
+          "path": "docs/ShaderPackAuthorGuideP11V5.md",
+          "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7"
+        }
       ],
-      "runtimeEvidence": { "driverStatus": "notProvided", "runtimeEvaluated": false, "liveWorldVerified": false, "visual": "notRun" }
+      "runtimeEvidence": {
+        "driverStatus": "notProvided",
+        "runtimeEvaluated": false,
+        "liveWorldVerified": false,
+        "visual": "notRun"
+      }
+    },
+    {
+      "id": "course/01-first-post",
+      "titles": {
+        "zh-CN": "01 · 第一个调色效果",
+        "en-US": "01 · Your first color effect"
+      },
+      "sourceType": "website-authored",
+      "root": "examples/course/01-first-post",
+      "entrypoint": "shaderpack.json",
+      "page": "examples/01-first-post.md",
+      "manifestVersion": 5,
+      "sceneAbiVersion": 2,
+      "programs": [
+        "course:post/present"
+      ],
+      "capabilities": [
+        "dawnlight:command_list@1",
+        "dawnlight:scene_draw/terrain_opaque@2",
+        "dawnlight:scene_draw/terrain_alpha_tested@2",
+        "dawnlight:scene_draw/terrain_transparent@2",
+        "dawnlight:scene_draw/terrain_sorted_translucent@2"
+      ],
+      "requires": {
+        "worldContentSnapshot": false,
+        "driverReportForStaticChecks": false,
+        "graphicsApiForRuntime": "OpenGL ES 3.2"
+      },
+      "variants": [
+        {
+          "id": "default",
+          "options": {},
+          "capabilities": "host-default"
+        }
+      ],
+      "expected": {
+        "terrainRoutes": 4,
+        "routeMode": "builtIn",
+        "overrides": [],
+        "resources": 2,
+        "passes": 5,
+        "sceneColors": 1,
+        "optionalEffects": false
+      },
+      "files": [
+        "README.md",
+        "shaderpack.json",
+        "shaders/fullscreen.vsh",
+        "shaders/present.psh"
+      ],
+      "snippets": [
+        {
+          "id": "manifest",
+          "file": "shaderpack.json",
+          "language": "json"
+        },
+        {
+          "id": "frame-target",
+          "file": "shaderpack.json",
+          "language": "json",
+          "pointer": "/frameTarget"
+        },
+        {
+          "id": "routes",
+          "file": "shaderpack.json",
+          "language": "json",
+          "pointer": "/sceneCategories"
+        },
+        {
+          "id": "fullscreen-vsh",
+          "file": "shaders/fullscreen.vsh",
+          "language": "glsl"
+        },
+        {
+          "id": "present-psh",
+          "file": "shaders/present.psh",
+          "language": "glsl"
+        }
+      ],
+      "sourceRefs": [
+        {
+          "repository": "upstream",
+          "path": "docs/ShaderPackAuthorGuide.md",
+          "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7"
+        },
+        {
+          "repository": "upstream",
+          "path": "docs/ShaderPackAuthorGuideP11V5.md",
+          "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7"
+        }
+      ],
+      "runtimeEvidence": {
+        "driverStatus": "notProvided",
+        "runtimeEvaluated": false,
+        "liveWorldVerified": false,
+        "visual": "notRun"
+      }
+    },
+    {
+      "id": "course/02-resources",
+      "titles": {
+        "zh-CN": "02 · 独立后处理资源",
+        "en-US": "02 · A separate post-process resource"
+      },
+      "sourceType": "website-authored",
+      "root": "examples/course/02-resources",
+      "entrypoint": "shaderpack.json",
+      "page": "examples/02-resources.md",
+      "manifestVersion": 5,
+      "sceneAbiVersion": 2,
+      "programs": [
+        "course:post/grade",
+        "course:post/present"
+      ],
+      "capabilities": [
+        "dawnlight:command_list@1",
+        "dawnlight:scene_draw/terrain_opaque@2",
+        "dawnlight:scene_draw/terrain_alpha_tested@2",
+        "dawnlight:scene_draw/terrain_transparent@2",
+        "dawnlight:scene_draw/terrain_sorted_translucent@2"
+      ],
+      "requires": {
+        "worldContentSnapshot": false,
+        "driverReportForStaticChecks": false,
+        "graphicsApiForRuntime": "OpenGL ES 3.2"
+      },
+      "variants": [
+        {
+          "id": "default",
+          "options": {},
+          "capabilities": "host-default"
+        }
+      ],
+      "expected": {
+        "terrainRoutes": 4,
+        "routeMode": "builtIn",
+        "overrides": [],
+        "resources": 3,
+        "passes": 6,
+        "sceneColors": 1,
+        "optionalEffects": false
+      },
+      "files": [
+        "README.md",
+        "shaderpack.json",
+        "shaders/fullscreen.vsh",
+        "shaders/grade.psh",
+        "shaders/present.psh"
+      ],
+      "snippets": [
+        {
+          "id": "manifest",
+          "file": "shaderpack.json",
+          "language": "json"
+        },
+        {
+          "id": "frame-target",
+          "file": "shaderpack.json",
+          "language": "json",
+          "pointer": "/frameTarget"
+        },
+        {
+          "id": "routes",
+          "file": "shaderpack.json",
+          "language": "json",
+          "pointer": "/sceneCategories"
+        },
+        {
+          "id": "fullscreen-vsh",
+          "file": "shaders/fullscreen.vsh",
+          "language": "glsl"
+        },
+        {
+          "id": "grade-psh",
+          "file": "shaders/grade.psh",
+          "language": "glsl"
+        },
+        {
+          "id": "present-psh",
+          "file": "shaders/present.psh",
+          "language": "glsl"
+        }
+      ],
+      "sourceRefs": [
+        {
+          "repository": "upstream",
+          "path": "docs/ShaderPackAuthorGuide.md",
+          "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7"
+        },
+        {
+          "repository": "upstream",
+          "path": "docs/ShaderPackAuthorGuideP11V5.md",
+          "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7"
+        }
+      ],
+      "runtimeEvidence": {
+        "driverStatus": "notProvided",
+        "runtimeEvaluated": false,
+        "liveWorldVerified": false,
+        "visual": "notRun"
+      }
+    },
+    {
+      "id": "course/03-scene",
+      "titles": {
+        "zh-CN": "03 · 接入 opaque Terrain",
+        "en-US": "03 · Override opaque Terrain"
+      },
+      "sourceType": "website-authored",
+      "root": "examples/course/03-scene",
+      "entrypoint": "shaderpack.json",
+      "page": "examples/03-scene.md",
+      "manifestVersion": 5,
+      "sceneAbiVersion": 2,
+      "programs": [
+        "course:scene/terrain",
+        "course:post/grade",
+        "course:post/present"
+      ],
+      "capabilities": [
+        "dawnlight:command_list@1",
+        "dawnlight:scene_draw/terrain_opaque@2",
+        "dawnlight:scene_draw/terrain_alpha_tested@2",
+        "dawnlight:scene_draw/terrain_transparent@2",
+        "dawnlight:scene_draw/terrain_sorted_translucent@2"
+      ],
+      "requires": {
+        "worldContentSnapshot": false,
+        "driverReportForStaticChecks": false,
+        "graphicsApiForRuntime": "OpenGL ES 3.2"
+      },
+      "variants": [
+        {
+          "id": "default",
+          "options": {},
+          "capabilities": "host-default"
+        }
+      ],
+      "expected": {
+        "terrainRoutes": 4,
+        "routeMode": "builtIn",
+        "overrides": [
+          "dawnlight:scene/terrain_opaque"
+        ],
+        "resources": 3,
+        "passes": 6,
+        "sceneColors": 1,
+        "optionalEffects": false
+      },
+      "files": [
+        "README.md",
+        "shaderpack.json",
+        "shaders/fullscreen.vsh",
+        "shaders/grade.psh",
+        "shaders/present.psh",
+        "shaders/terrain.psh",
+        "shaders/terrain.vsh"
+      ],
+      "snippets": [
+        {
+          "id": "manifest",
+          "file": "shaderpack.json",
+          "language": "json"
+        },
+        {
+          "id": "frame-target",
+          "file": "shaderpack.json",
+          "language": "json",
+          "pointer": "/frameTarget"
+        },
+        {
+          "id": "routes",
+          "file": "shaderpack.json",
+          "language": "json",
+          "pointer": "/sceneCategories"
+        },
+        {
+          "id": "fullscreen-vsh",
+          "file": "shaders/fullscreen.vsh",
+          "language": "glsl"
+        },
+        {
+          "id": "grade-psh",
+          "file": "shaders/grade.psh",
+          "language": "glsl"
+        },
+        {
+          "id": "present-psh",
+          "file": "shaders/present.psh",
+          "language": "glsl"
+        },
+        {
+          "id": "terrain-psh",
+          "file": "shaders/terrain.psh",
+          "language": "glsl"
+        },
+        {
+          "id": "terrain-vsh",
+          "file": "shaders/terrain.vsh",
+          "language": "glsl"
+        }
+      ],
+      "sourceRefs": [
+        {
+          "repository": "upstream",
+          "path": "docs/ShaderPackAuthorGuide.md",
+          "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7"
+        },
+        {
+          "repository": "upstream",
+          "path": "docs/ShaderPackAuthorGuideP11V5.md",
+          "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7"
+        }
+      ],
+      "runtimeEvidence": {
+        "driverStatus": "notProvided",
+        "runtimeEvaluated": false,
+        "liveWorldVerified": false,
+        "visual": "notRun"
+      }
+    },
+    {
+      "id": "course/04-mrt",
+      "titles": {
+        "zh-CN": "04 · 写入 MRT 数据",
+        "en-US": "04 · Write MRT data"
+      },
+      "sourceType": "website-authored",
+      "root": "examples/course/04-mrt",
+      "entrypoint": "shaderpack.json",
+      "page": "examples/04-mrt.md",
+      "manifestVersion": 5,
+      "sceneAbiVersion": 2,
+      "programs": [
+        "course:scene/terrain",
+        "course:post/grade",
+        "course:post/present"
+      ],
+      "capabilities": [
+        "dawnlight:command_list@1",
+        "dawnlight:scene_draw/terrain_opaque@2",
+        "dawnlight:scene_draw/terrain_alpha_tested@2",
+        "dawnlight:scene_draw/terrain_transparent@2",
+        "dawnlight:scene_draw/terrain_sorted_translucent@2"
+      ],
+      "requires": {
+        "worldContentSnapshot": false,
+        "driverReportForStaticChecks": false,
+        "graphicsApiForRuntime": "OpenGL ES 3.2"
+      },
+      "variants": [
+        {
+          "id": "default",
+          "options": {},
+          "capabilities": "host-default"
+        }
+      ],
+      "expected": {
+        "terrainRoutes": 4,
+        "routeMode": "builtIn",
+        "overrides": [
+          "dawnlight:scene/terrain_opaque"
+        ],
+        "resources": 5,
+        "passes": 6,
+        "sceneColors": 3,
+        "optionalEffects": false
+      },
+      "files": [
+        "README.md",
+        "shaderpack.json",
+        "shaders/fullscreen.vsh",
+        "shaders/grade.psh",
+        "shaders/present.psh",
+        "shaders/terrain.psh",
+        "shaders/terrain.vsh"
+      ],
+      "snippets": [
+        {
+          "id": "manifest",
+          "file": "shaderpack.json",
+          "language": "json"
+        },
+        {
+          "id": "frame-target",
+          "file": "shaderpack.json",
+          "language": "json",
+          "pointer": "/frameTarget"
+        },
+        {
+          "id": "routes",
+          "file": "shaderpack.json",
+          "language": "json",
+          "pointer": "/sceneCategories"
+        },
+        {
+          "id": "fullscreen-vsh",
+          "file": "shaders/fullscreen.vsh",
+          "language": "glsl"
+        },
+        {
+          "id": "grade-psh",
+          "file": "shaders/grade.psh",
+          "language": "glsl"
+        },
+        {
+          "id": "present-psh",
+          "file": "shaders/present.psh",
+          "language": "glsl"
+        },
+        {
+          "id": "terrain-psh",
+          "file": "shaders/terrain.psh",
+          "language": "glsl"
+        },
+        {
+          "id": "terrain-vsh",
+          "file": "shaders/terrain.vsh",
+          "language": "glsl"
+        }
+      ],
+      "sourceRefs": [
+        {
+          "repository": "upstream",
+          "path": "docs/ShaderPackAuthorGuide.md",
+          "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7"
+        },
+        {
+          "repository": "upstream",
+          "path": "docs/ShaderPackAuthorGuideP11V5.md",
+          "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7"
+        }
+      ],
+      "runtimeEvidence": {
+        "driverStatus": "notProvided",
+        "runtimeEvaluated": false,
+        "liveWorldVerified": false,
+        "visual": "notRun"
+      }
     }
   ]
 }

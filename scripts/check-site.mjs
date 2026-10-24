@@ -6,6 +6,7 @@ import { publicBaseline } from './sync-site-baseline.mjs';
 import { expectedPages, pagePaths, localePrefixes } from './lib/site-pages.mjs';
 import { loadExamples, loadReceipts } from './lib/content-foundation.mjs';
 import { exampleOutputs } from './lib/example-generator.mjs';
+import { loadRuntimeEvidence } from './lib/runtime-evidence.mjs';
 
 const pkg = await readJson(path.join(ROOT, 'package.json'));
 assert.equal(process.versions.node, pkg.engines.node, `Use Node ${pkg.engines.node} from .node-version`);
@@ -13,8 +14,12 @@ const lock = await loadLock();
 assert.equal(lock.website.pagesBase, '/');
 assert.equal(lock.website.pagesUrl, `https://${lock.website.customDomain}/`);
 assert.equal((await fs.readFile(path.join(ROOT, 'site/public/CNAME'), 'utf8')).trim(), lock.website.customDomain);
-for (const item of [...Object.values(lock.discoveryRecords), lock.tool.distribution.inventory, lock.w1Verification, ...(lock.w2Verification ? [lock.w2Verification] : []), ...(lock.w3Verification ? [lock.w3Verification] : [])]) {
+for (const item of [...Object.values(lock.discoveryRecords), lock.tool.distribution.inventory, lock.w1Verification, ...[lock.w2Verification, lock.w3Verification, lock.w4Verification].filter(Boolean)]) {
   await assertFingerprint(path.join(ROOT, item.path), item);
+}
+if (lock.w4Verification) {
+  const stage = await readJson(path.join(ROOT, lock.w4Verification.path));
+  for (const item of stage.evidence) await assertFingerprint(path.join(ROOT, item.path), item);
 }
 const source = await readJson(path.join(ROOT, 'metadata/public-source.json'));
 assert.equal(source.commit, lock.upstream.commit);
@@ -48,7 +53,8 @@ for (const name of siteFiles.filter(f => !f.startsWith('public/'))) {
 const examples = await loadExamples();
 const generated = exampleOutputs(examples, await loadReceipts(examples), await readJson(path.join(ROOT, 'metadata/pages.json')));
 const generatedPublic = [...generated.keys()].filter(name => name.startsWith('site/public/')).map(name => name.slice('site/'.length));
-assert.deepEqual(siteFiles.filter(f => f.startsWith('public/')).sort(), ['public/CNAME', 'public/downloads/site-baseline.json', 'public/favicon.svg', ...generatedPublic].sort());
+const runtime = await loadRuntimeEvidence(examples, await loadReceipts(examples));
+assert.deepEqual(siteFiles.filter(f => f.startsWith('public/')).sort(), ['public/CNAME', 'public/downloads/site-baseline.json', 'public/favicon.svg', ...generatedPublic, ...runtime.publicFiles.map(file => 'public/' + file.path)].sort());
 const tracked = run('git', ['ls-files', '-z'], { allowFailure: true });
 let trackedFiles = 0;
 if (tracked.status === 0) {

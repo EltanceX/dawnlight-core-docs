@@ -10,24 +10,24 @@ const copy = computed(() => lang.value === 'en-US' ? {
   introduction: 'Start with resources and execution order, then learn how JSON connects GLSL to the host. Every explanation refers to a source baseline you can verify.',
   steps: [
     ['Find your reading path', 'Prerequisites, scope and learning order', '/start/'],
-    ['Build a pipeline model', 'Phase, Pass, Command, Program, Resource', '/concepts/pipeline'],
+    ['Load your first pack', 'Five complete chapters: color, resources, Terrain and MRT', '/tutorial/00-starter'],
     ['Understand validation results', 'Configuration, offline semantics and runtime evidence', '/tools/analyzer']
   ],
   edition: 'Written for Manifest v5',
   facts: [['Scene interface', 'Scene ABI v2'], ['Source baseline', lock.upstream.commit.slice(0, 8)], ['Initial runtime scope', 'Windows x64 · single main view'], ['Available documentation', 'Core concepts, tools and starter download']],
-  scope: 'The starter download has passed static checks. Game validation and step-by-step tutorials follow in W4.',
+  scope: 'Follow chapters 00–04 with complete snapshots. Each chapter separates static receipts from actual game observations.',
   baseline: 'View versions and verification scope →'
 } : {
   title: '先看懂一帧，再写出自己的光影。',
   introduction: '从资源与执行关系开始，逐步理解 JSON 如何连接 GLSL 与宿主。这里的解释始终对应一个可核对的源码基线。',
   steps: [
     ['找到阅读路线', '前置知识、文档范围与学习顺序', '/start/'],
-    ['建立管线模型', 'Phase、Pass、Command、Program、Resource', '/concepts/pipeline'],
+    ['加载第一个光影包', '五个完整章节：调色、资源、Terrain 与 MRT', '/tutorial/00-starter'],
     ['读懂验证结果', '配置合法、离线语义与实际运行证据', '/tools/analyzer']
   ],
   edition: '围绕 Manifest v5 编写',
   facts: [['场景接口', 'Scene ABI v2'], ['来源基线', lock.upstream.commit.slice(0, 8)], ['首版运行范围', 'Windows x64 · 单主 view'], ['当前文档', '核心概念、工具说明与起步包下载']],
-  scope: '起步包已通过静态检查；实机验证和连续教程将在 W4 补齐。',
+  scope: '沿第 00～04 章使用独立快照实践；各章分别说明静态收据与实际游戏观察。',
   baseline: '查看版本与验证范围 →'
 })
 </script>

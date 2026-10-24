@@ -1,0 +1,12 @@
+#version 320 es
+precision highp float;
+uniform sampler2D u_sceneColor;
+in vec2 v_uv;
+layout(location = 0) out vec4 o_color;
+void main() {
+    vec3 source = texture(u_sceneColor, v_uv).rgb;
+    const vec3 tint = vec3(1.04, 1.0, 0.92);
+    const float strength = 0.65;
+    vec3 contrast = (source - 0.5) * 1.08 + 0.5;
+    o_color = vec4(clamp(mix(source, contrast * tint, strength), 0.0, 1.0), 1.0);
+}

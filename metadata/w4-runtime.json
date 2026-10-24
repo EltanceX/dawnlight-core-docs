@@ -1,0 +1,409 @@
+{
+  "schemaVersion": 1,
+  "baselineId": "candidate-f8aaa5c4",
+  "sourceCommit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+  "date": "2026-10-24",
+  "timezone": "America/New_York",
+  "status": "observed-with-limits",
+  "host": {
+    "sourceHead": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+    "sourceWorktree": "clean",
+    "copiedBinaries": true,
+    "originalRuntimeModified": false,
+    "binaries": [
+      {
+        "file": "Survivalcraft.exe",
+        "sha256": "37c5f9bba3546e762d44737778b9ad7f35aa5fa6121b87a1192bddea8e8ef884"
+      },
+      {
+        "file": "Survivalcraft.dll",
+        "sha256": "3183ff20c2c540429a558408c06ba6d9d322907bbe625528f091a039ffbf461d"
+      },
+      {
+        "file": "Engine.dll",
+        "sha256": "c0e645058a2ac3127b3049d0920441d9f319a3c8f47f4263253d8000e585f239"
+      },
+      {
+        "file": "Content.zip",
+        "sha256": "2d894f4596bd239e0d861774d851d5e9e719ba4c6ea4a39ae0a1d8a949a25787"
+      }
+    ]
+  },
+  "method": {
+    "game": "real Windows game in an isolated runtime and new creative world",
+    "automation": "existing init.js frame callbacks and public frame-boundary switch coordinator",
+    "images": "computer-use screenshots, title bar cropped and resized; not offscreen renders",
+    "ui": "U > Shader Packs; selection retained BuiltIn until Apply; active starter confirmed after Apply",
+    "independentHumanReader": false
+  },
+  "limits": [
+    "One Windows x64 NVIDIA GPU, one creative world, one main view",
+    "No device-reset, Android, VR, complete category coverage, performance or independent human usability claim",
+    "Static receipts and legacy ZIP README notes remain historical static-only records"
+  ],
+  "examples": [
+    {
+      "id": "course/00-starter",
+      "sourceFingerprint": "a85731589fbb852352a486c378d51cb49a6b27e38a749aaf16a199bf98ba12be",
+      "archiveSha256": "432356b77d9247a98a764064b5cc7a290d033ad609064b4edaedf62d63bbe034",
+      "manifestHash": "0d8eba466b9ffe10becffce08ec51906369bc11fb4d9c9d1b04c564068a75262",
+      "driverStatus": "matched",
+      "driverReport": "/evidence/w4/00-starter-driver.json",
+      "driverReportSha256": "8cc7acc8b46261963f0d0329a189356814f360362ce9b31a4b96b9cc52937502",
+      "driverReportHash": "02c814eea59f4acd3223330ed3db638ad4d0a8456e6b4f6970db0e4fd08dcfb3",
+      "generationSourceFingerprint": "c32ee7b4bc56c136cf175670fd1e7952ce43036620d465943f40b4093bfc9ad5",
+      "generationId": 7,
+      "deviceEpoch": 0,
+      "graphicsApi": "OpenGL ES 3.2 NVIDIA 566.07",
+      "driverRenderer": "NVIDIA GeForce RTX 4050 Laptop GPU/PCIe/SSE2",
+      "linkedPrograms": 5,
+      "framebuffersComplete": true,
+      "interfaces": [
+        {
+          "program": "course:post/present",
+          "url": "/evidence/w4/00-starter-course-post-present-interface.json",
+          "sha256": "4e999f7bcc4971f2f549c4ec239cd45c318d0f578390681b389ee594607471b1",
+          "driverStatus": "matched",
+          "contractVersion": 1
+        }
+      ],
+      "lifecycle": "/evidence/w4/00-starter-lifecycle.json",
+      "image": "/media/w4/00-starter.jpg",
+      "imageSha256": "5b3be1ca528c0959b73500adcf4d57d9848481513f1a61950aa63cbd293ef984",
+      "caption": {
+        "zh": "起步包场景输出，保留天空、地形与第一人称 UI。",
+        "en": "Starter output retaining sky, terrain and first-person UI."
+      },
+      "summary": {
+        "zh": "在记录的 Windows 宿主与 NVIDIA 驱动上完成加载、同包重载、两种窗口尺寸及切回 BuiltIn；全部已报告 Program 链接成功，Analyzer 匹配驱动报告与各包自有 Program 接口。截图为同一源码快照的单场景观察。",
+        "en": "Loaded, reloaded, resized between two window sizes and returned to BuiltIn on the recorded Windows host and NVIDIA driver. All reported Programs linked; Analyzer matched the driver report and every pack-owned Program interface. The image is a single-scene observation of this source snapshot."
+      }
+    },
+    {
+      "id": "course/01-first-post",
+      "sourceFingerprint": "588f68099eaaf03bd7835e7d591d84bcc8f5fbe6453fcf1bb9f356621ef4474e",
+      "archiveSha256": "8f856c88429f6f3bcab9a48101e23badd686d4a08af824b375134606d17f78e0",
+      "manifestHash": "e91ce41f7aa25cf73f157e6302d56ad0017331eb4b77cb464a3eeb901a39ce82",
+      "driverStatus": "matched",
+      "driverReport": "/evidence/w4/01-first-post-driver.json",
+      "driverReportSha256": "1293e5604e29d89fa452f9a76a101ff1e32d29ada09922b775ea8fe3de057c4f",
+      "driverReportHash": "1ccfd0cfb10de432c3c1abdc356a3e47e5069a6353b2d57c1de6a9ad4d584a6a",
+      "generationSourceFingerprint": "94f186381b77a9b0722d02ceb40169d92bcc0ba14198121d3b37db8af8f51732",
+      "generationId": 10,
+      "deviceEpoch": 0,
+      "graphicsApi": "OpenGL ES 3.2 NVIDIA 566.07",
+      "driverRenderer": "NVIDIA GeForce RTX 4050 Laptop GPU/PCIe/SSE2",
+      "linkedPrograms": 5,
+      "framebuffersComplete": true,
+      "interfaces": [
+        {
+          "program": "course:post/present",
+          "url": "/evidence/w4/01-first-post-course-post-present-interface.json",
+          "sha256": "62a4aefdf7d71a37a48d9dcc6cc63800ae74fa67e7ce7c324c77114fc910d9e2",
+          "driverStatus": "matched",
+          "contractVersion": 1
+        }
+      ],
+      "lifecycle": "/evidence/w4/01-first-post-lifecycle.json",
+      "image": "/media/w4/01-first-post.jpg",
+      "imageSha256": "db3d29e37731008899b8ee3322b0ba4fb5188e6c791bc9ab9e5bb240f853ec83",
+      "caption": {
+        "zh": "轻微暖色与对比度的场景输出。",
+        "en": "Scene output with mild warmth and contrast."
+      },
+      "summary": {
+        "zh": "在记录的 Windows 宿主与 NVIDIA 驱动上完成加载、同包重载、两种窗口尺寸及切回 BuiltIn；全部已报告 Program 链接成功，Analyzer 匹配驱动报告与各包自有 Program 接口。截图为同一源码快照的单场景观察。",
+        "en": "Loaded, reloaded, resized between two window sizes and returned to BuiltIn on the recorded Windows host and NVIDIA driver. All reported Programs linked; Analyzer matched the driver report and every pack-owned Program interface. The image is a single-scene observation of this source snapshot."
+      }
+    },
+    {
+      "id": "course/02-resources",
+      "sourceFingerprint": "c753410b08a3abeae5ba8e5d71f8c2e34f38a1bc13970e07b1d08368c041b00a",
+      "archiveSha256": "4b9aed563b345baa48b36f696e4b8fdf927fb02fde93a84d552ce9c5cf9ddd6c",
+      "manifestHash": "94db61b0e021868ddd8ae12ccb4f5882d884a2b93f118acf6a7d6a97397646f0",
+      "driverStatus": "matched",
+      "driverReport": "/evidence/w4/02-resources-driver.json",
+      "driverReportSha256": "09d4121395e7eb73a8f72c874e4ff576b915291d90b022aa24c7f57a7ca2231d",
+      "driverReportHash": "3fc571e0aadd62f4d4a185b355bdab64c36625320138b7d429588a94408e869f",
+      "generationSourceFingerprint": "5e4573d1a56d8c01b4fad2dca0fe72d9cefedb97c57ffd4968bf9fd4ee222f6c",
+      "generationId": 13,
+      "deviceEpoch": 0,
+      "graphicsApi": "OpenGL ES 3.2 NVIDIA 566.07",
+      "driverRenderer": "NVIDIA GeForce RTX 4050 Laptop GPU/PCIe/SSE2",
+      "linkedPrograms": 6,
+      "framebuffersComplete": true,
+      "interfaces": [
+        {
+          "program": "course:post/grade",
+          "url": "/evidence/w4/02-resources-course-post-grade-interface.json",
+          "sha256": "ecdcad1c59b88da79fd727a568ab80bb1eb61e9550e6fc4ff041f2f47cd11067",
+          "driverStatus": "matched",
+          "contractVersion": 1
+        },
+        {
+          "program": "course:post/present",
+          "url": "/evidence/w4/02-resources-course-post-present-interface.json",
+          "sha256": "bb4ab3ee3ddddc4695e9cc832a9d9d6b7239556701e532eff77bd53648068e8c",
+          "driverStatus": "matched",
+          "contractVersion": 1
+        }
+      ],
+      "lifecycle": "/evidence/w4/02-resources-lifecycle.json",
+      "image": "/media/w4/02-resources.jpg",
+      "imageSha256": "08f86533e16ee0f21659c87e4e59152697954b2a479fa7e046a8acca2ccd9fdd",
+      "caption": {
+        "zh": "独立 grade 资源经 present 输出的场景。",
+        "en": "Scene presented through a separate grade resource."
+      },
+      "summary": {
+        "zh": "在记录的 Windows 宿主与 NVIDIA 驱动上完成加载、同包重载、两种窗口尺寸及切回 BuiltIn；全部已报告 Program 链接成功，Analyzer 匹配驱动报告与各包自有 Program 接口。截图为同一源码快照的单场景观察。",
+        "en": "Loaded, reloaded, resized between two window sizes and returned to BuiltIn on the recorded Windows host and NVIDIA driver. All reported Programs linked; Analyzer matched the driver report and every pack-owned Program interface. The image is a single-scene observation of this source snapshot."
+      }
+    },
+    {
+      "id": "course/03-scene",
+      "sourceFingerprint": "c02ebf72b061280228a2dbcb26ba4913b6e975255848756f3eaf9ab2a5b11856",
+      "archiveSha256": "6e95901ec8e25ccc1e24fce805e952d2938f93b475f09ff9fd1fda30da8a5d3d",
+      "manifestHash": "8e3ad866ec4391bfb46ec0a5603b8fc7df9e82454ee1e97dc181862c31e20577",
+      "driverStatus": "matched",
+      "driverReport": "/evidence/w4/03-scene-driver.json",
+      "driverReportSha256": "04a7a85698417e09a0de1e789fdcc318a26c362e338df86c120df8ff8c2c7b7f",
+      "driverReportHash": "0977ef33ba79192fbd2b48edd5522058a97b40ec412902f6734fcc35f0a6725d",
+      "generationSourceFingerprint": "014abd444f3c27ad74a014acdaf9f40f840993a641ea8a00d6eaa684254e48f9",
+      "generationId": 16,
+      "deviceEpoch": 0,
+      "graphicsApi": "OpenGL ES 3.2 NVIDIA 566.07",
+      "driverRenderer": "NVIDIA GeForce RTX 4050 Laptop GPU/PCIe/SSE2",
+      "linkedPrograms": 6,
+      "framebuffersComplete": true,
+      "interfaces": [
+        {
+          "program": "course:scene/terrain",
+          "url": "/evidence/w4/03-scene-course-scene-terrain-interface.json",
+          "sha256": "fe6f72a8e0228942fdc54bd9205413d8269e1995e0224d1d23b8ce8ef406922d",
+          "driverStatus": "matched",
+          "contractVersion": 1
+        },
+        {
+          "program": "course:post/grade",
+          "url": "/evidence/w4/03-scene-course-post-grade-interface.json",
+          "sha256": "9147588950973b7b796949aa1bfd6b70211a8124b9ec308f0d827c1476122ae7",
+          "driverStatus": "matched",
+          "contractVersion": 1
+        },
+        {
+          "program": "course:post/present",
+          "url": "/evidence/w4/03-scene-course-post-present-interface.json",
+          "sha256": "49f7902850bfa525013ed6282e46ff5357cac1a4bd9f2e43843344d218c15920",
+          "driverStatus": "matched",
+          "contractVersion": 1
+        }
+      ],
+      "lifecycle": "/evidence/w4/03-scene-lifecycle.json",
+      "image": "/media/w4/03-scene.jpg",
+      "imageSha256": "b644be49a09a50d1860d591f7ff372aeee44e7cb572c33d36c0cf7f87167b892",
+      "caption": {
+        "zh": "opaque Terrain 使用教学 Program；光照与 BuiltIn 不等价。",
+        "en": "Opaque Terrain uses the teaching Program; lighting differs from BuiltIn."
+      },
+      "summary": {
+        "zh": "在记录的 Windows 宿主与 NVIDIA 驱动上完成加载、同包重载、两种窗口尺寸及切回 BuiltIn；全部已报告 Program 链接成功，Analyzer 匹配驱动报告与各包自有 Program 接口。截图为同一源码快照的单场景观察。",
+        "en": "Loaded, reloaded, resized between two window sizes and returned to BuiltIn on the recorded Windows host and NVIDIA driver. All reported Programs linked; Analyzer matched the driver report and every pack-owned Program interface. The image is a single-scene observation of this source snapshot."
+      }
+    },
+    {
+      "id": "course/04-mrt",
+      "sourceFingerprint": "2625bd72b6789d7ad170c827c588944190645fdd33cbaa4d66f19ddcca6a6600",
+      "archiveSha256": "711a60e055d46234db7ce392aea0f09e912ac9206089c50b6c41e7510dfb1a09",
+      "manifestHash": "03cbd683c7a42691d843333cd8276a8aab71fe91b789539e419236b7cca04144",
+      "driverStatus": "matched",
+      "driverReport": "/evidence/w4/04-mrt-driver.json",
+      "driverReportSha256": "dd2e7b99679853078909d52c78472b1f19e96b799f5058925cf1f0b86407c035",
+      "driverReportHash": "bbfce625d1a91a3cf84482baeaf0ccc88ec654b32b2b0d03c18cb0cfbb8416f9",
+      "generationSourceFingerprint": "b3e9980aea28f39b55dba2afd3198fc4c7a1cf593420a25590c3b1e083e215ff",
+      "generationId": 31,
+      "deviceEpoch": 0,
+      "graphicsApi": "OpenGL ES 3.2 NVIDIA 566.07",
+      "driverRenderer": "NVIDIA GeForce RTX 4050 Laptop GPU/PCIe/SSE2",
+      "linkedPrograms": 6,
+      "framebuffersComplete": true,
+      "interfaces": [
+        {
+          "program": "course:scene/terrain",
+          "url": "/evidence/w4/04-mrt-course-scene-terrain-interface.json",
+          "sha256": "6f2cc665f5bb7fd1a140c0025ba685081dc824ddc6d61eba7d112bb05425c256",
+          "driverStatus": "matched",
+          "contractVersion": 1
+        },
+        {
+          "program": "course:post/grade",
+          "url": "/evidence/w4/04-mrt-course-post-grade-interface.json",
+          "sha256": "426ca8c6e9dacd1462feeff4e9099b3730cf008c4808d50126bf54fee92c089f",
+          "driverStatus": "matched",
+          "contractVersion": 1
+        },
+        {
+          "program": "course:post/present",
+          "url": "/evidence/w4/04-mrt-course-post-present-interface.json",
+          "sha256": "fc98736d292eb7d78b6b044a94fdbb680fc85ce0dc1f56038f3331d1ce5fad3c",
+          "driverStatus": "matched",
+          "contractVersion": 1
+        }
+      ],
+      "lifecycle": "/evidence/w4/04-mrt-lifecycle.json",
+      "image": "/media/w4/04-mrt.jpg",
+      "imageSha256": "2283055da77f1cce6138bc636be2a2a007bcf3283d0cc1d3c988f54fc9a8b264",
+      "caption": {
+        "zh": "直接显示宿主 oct 法线编码字节；灰色区域没有本章 opaque 数据。",
+        "en": "Host oct-normal bytes displayed directly; gray areas lack course opaque data."
+      },
+      "summary": {
+        "zh": "在记录的 Windows 宿主与 NVIDIA 驱动上完成加载、同包重载、两种窗口尺寸及切回 BuiltIn；全部已报告 Program 链接成功，Analyzer 匹配驱动报告与各包自有 Program 接口。截图为同一源码快照的单场景观察。",
+        "en": "Loaded, reloaded, resized between two window sizes and returned to BuiltIn on the recorded Windows host and NVIDIA driver. All reported Programs linked; Analyzer matched the driver report and every pack-owned Program interface. The image is a single-scene observation of this source snapshot."
+      }
+    }
+  ],
+  "publicFiles": [
+    {
+      "path": "evidence/w4/00-starter-course-post-present-interface.json",
+      "sha256": "4e999f7bcc4971f2f549c4ec239cd45c318d0f578390681b389ee594607471b1",
+      "length": 2858
+    },
+    {
+      "path": "evidence/w4/00-starter-driver.json",
+      "sha256": "8cc7acc8b46261963f0d0329a189356814f360362ce9b31a4b96b9cc52937502",
+      "length": 18328
+    },
+    {
+      "path": "evidence/w4/00-starter-lifecycle.json",
+      "sha256": "e85f3ef81490f8d05ff8b559738f14d5a466028228837b86dd37fedadc7aa327",
+      "length": 913
+    },
+    {
+      "path": "evidence/w4/01-first-post-course-post-present-interface.json",
+      "sha256": "62a4aefdf7d71a37a48d9dcc6cc63800ae74fa67e7ce7c324c77114fc910d9e2",
+      "length": 2859
+    },
+    {
+      "path": "evidence/w4/01-first-post-driver.json",
+      "sha256": "1293e5604e29d89fa452f9a76a101ff1e32d29ada09922b775ea8fe3de057c4f",
+      "length": 18339
+    },
+    {
+      "path": "evidence/w4/01-first-post-lifecycle.json",
+      "sha256": "8e8c683669db98a804dd43ba75c5a31bf5cadd23473617f8180181955a1ef8e1",
+      "length": 929
+    },
+    {
+      "path": "evidence/w4/02-resources-course-post-grade-interface.json",
+      "sha256": "ecdcad1c59b88da79fd727a568ab80bb1eb61e9550e6fc4ff041f2f47cd11067",
+      "length": 2849
+    },
+    {
+      "path": "evidence/w4/02-resources-course-post-present-interface.json",
+      "sha256": "bb4ab3ee3ddddc4695e9cc832a9d9d6b7239556701e532eff77bd53648068e8c",
+      "length": 2859
+    },
+    {
+      "path": "evidence/w4/02-resources-driver.json",
+      "sha256": "09d4121395e7eb73a8f72c874e4ff576b915291d90b022aa24c7f57a7ca2231d",
+      "length": 19588
+    },
+    {
+      "path": "evidence/w4/02-resources-lifecycle.json",
+      "sha256": "abd480aa9be1a6cedcf764577bca557fc7c04ff5eaf5df94221fbfdd1d1b8c23",
+      "length": 926
+    },
+    {
+      "path": "evidence/w4/03-scene-course-post-grade-interface.json",
+      "sha256": "9147588950973b7b796949aa1bfd6b70211a8124b9ec308f0d827c1476122ae7",
+      "length": 2849
+    },
+    {
+      "path": "evidence/w4/03-scene-course-post-present-interface.json",
+      "sha256": "49f7902850bfa525013ed6282e46ff5357cac1a4bd9f2e43843344d218c15920",
+      "length": 2859
+    },
+    {
+      "path": "evidence/w4/03-scene-course-scene-terrain-interface.json",
+      "sha256": "fe6f72a8e0228942fdc54bd9205413d8269e1995e0224d1d23b8ce8ef406922d",
+      "length": 5945
+    },
+    {
+      "path": "evidence/w4/03-scene-driver.json",
+      "sha256": "04a7a85698417e09a0de1e789fdcc318a26c362e338df86c120df8ff8c2c7b7f",
+      "length": 19798
+    },
+    {
+      "path": "evidence/w4/03-scene-lifecycle.json",
+      "sha256": "ba6ca60517987fddba16244846f6580decda53362049d66aa555b26433253ca2",
+      "length": 910
+    },
+    {
+      "path": "evidence/w4/04-mrt-course-post-grade-interface.json",
+      "sha256": "426ca8c6e9dacd1462feeff4e9099b3730cf008c4808d50126bf54fee92c089f",
+      "length": 2849
+    },
+    {
+      "path": "evidence/w4/04-mrt-course-post-present-interface.json",
+      "sha256": "fc98736d292eb7d78b6b044a94fdbb680fc85ce0dc1f56038f3331d1ce5fad3c",
+      "length": 2859
+    },
+    {
+      "path": "evidence/w4/04-mrt-course-scene-terrain-interface.json",
+      "sha256": "6f2cc665f5bb7fd1a140c0025ba685081dc824ddc6d61eba7d112bb05425c256",
+      "length": 7474
+    },
+    {
+      "path": "evidence/w4/04-mrt-driver.json",
+      "sha256": "dd2e7b99679853078909d52c78472b1f19e96b799f5058925cf1f0b86407c035",
+      "length": 24558
+    },
+    {
+      "path": "evidence/w4/04-mrt-lifecycle.json",
+      "sha256": "caed6d72944f51e8b199ec90ce4ebfcf06ceb7a0f5da3bb3cddff70720fa41b6",
+      "length": 902
+    },
+    {
+      "path": "evidence/w4/reader-reproduction.json",
+      "sha256": "ea55a6a16b5dcc28f3a6b1d6b456e7860c155847685fb14091859542f04ac3c6",
+      "length": 1427
+    },
+    {
+      "path": "media/w4/00-starter.jpg",
+      "sha256": "5b3be1ca528c0959b73500adcf4d57d9848481513f1a61950aa63cbd293ef984",
+      "length": 200071
+    },
+    {
+      "path": "media/w4/01-first-post.jpg",
+      "sha256": "db3d29e37731008899b8ee3322b0ba4fb5188e6c791bc9ab9e5bb240f853ec83",
+      "length": 204449
+    },
+    {
+      "path": "media/w4/02-resources.jpg",
+      "sha256": "08f86533e16ee0f21659c87e4e59152697954b2a479fa7e046a8acca2ccd9fdd",
+      "length": 203736
+    },
+    {
+      "path": "media/w4/03-scene.jpg",
+      "sha256": "b644be49a09a50d1860d591f7ff372aeee44e7cb572c33d36c0cf7f87167b892",
+      "length": 197845
+    },
+    {
+      "path": "media/w4/04-mrt.jpg",
+      "sha256": "2283055da77f1cce6138bc636be2a2a007bcf3283d0cc1d3c988f54fc9a8b264",
+      "length": 70468
+    },
+    {
+      "path": "media/w4/builtin.jpg",
+      "sha256": "d882b447e2c73c7a46733d696af28379bfebc72d267c6fb17d820518d4213e45",
+      "length": 199118
+    },
+    {
+      "path": "media/w4/loading-menu-active.jpg",
+      "sha256": "3f4a90eadb9ce06e581f4d2a5cc5a4b4156930e927c16aeaed99c429b9c35397",
+      "length": 221388
+    }
+  ],
+  "readerReproduction": "/evidence/w4/reader-reproduction.json"
+}

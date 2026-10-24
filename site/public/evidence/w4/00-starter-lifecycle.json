@@ -1,0 +1,51 @@
+{
+  "id": "00-starter",
+  "status": "passed",
+  "loaded": {
+    "active": "External:00-starter",
+    "published": 6,
+    "pending": 0,
+    "error": null,
+    "size": {
+      "x": 2048,
+      "y": 1222
+    }
+  },
+  "reloaded": {
+    "active": "External:00-starter",
+    "published": 7,
+    "pending": 0,
+    "error": null,
+    "size": {
+      "x": 2048,
+      "y": 1222
+    }
+  },
+  "resized": {
+    "active": "External:00-starter",
+    "published": 7,
+    "pending": 0,
+    "error": null,
+    "size": {
+      "x": 1024,
+      "y": 640
+    }
+  },
+  "builtIn": {
+    "active": "BuiltIn",
+    "published": 8,
+    "pending": 0,
+    "error": null,
+    "size": {
+      "x": 2048,
+      "y": 1222
+    }
+  },
+  "driver": {
+    "manifestHash": "0d8eba466b9ffe10becffce08ec51906369bc11fb4d9c9d1b04c564068a75262",
+    "generationId": 7,
+    "programs": 5,
+    "linked": true
+  },
+  "checkedAt": "2026-10-24T07:36:40.020Z"
+}

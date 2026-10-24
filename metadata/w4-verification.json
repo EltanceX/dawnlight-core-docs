@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 1,
+  "stage": "W4",
+  "observedOn": "2026-10-24",
+  "timezone": "America/New_York",
+  "status": "course-delivered-bounded-runtime-human-trial-pending",
+  "baselineId": "candidate-f8aaa5c4",
+  "sourceCommit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+  "evidence": [
+    {
+      "path": "metadata/w4-runtime.json",
+      "length": 19563,
+      "sha256": "64e962dc09ae1676481787927356f35e3475352d279d989b67fbebf7105a8140"
+    },
+    {
+      "path": "metadata/w4-reviewed-sources.json",
+      "length": 3430,
+      "sha256": "626e93002c9bd428d6946fa90e3345176898653b735ebc922bf75f043b89bfd5"
+    }
+  ],
+  "historicalInputHashes": [
+    {
+      "path": "metadata/examples-validation.json",
+      "length": 19166,
+      "sha256": "5df824693839d3d3ac405932997e81bb129e7a0dd76d4032e5f1ff8b0f37f621"
+    },
+    {
+      "path": "metadata/example-releases.json",
+      "length": 1554,
+      "sha256": "f1d5da30ec1c3674c3187d9605c6bbb1c8ab03f116a40652b2454dc9f7e561cf"
+    }
+  ],
+  "examples": [
+    {
+      "id": "course/00-starter",
+      "sourceFingerprint": "a85731589fbb852352a486c378d51cb49a6b27e38a749aaf16a199bf98ba12be",
+      "archiveSha256": "432356b77d9247a98a764064b5cc7a290d033ad609064b4edaedf62d63bbe034",
+      "manifestHash": "0d8eba466b9ffe10becffce08ec51906369bc11fb4d9c9d1b04c564068a75262",
+      "driverStatus": "matched"
+    },
+    {
+      "id": "course/01-first-post",
+      "sourceFingerprint": "588f68099eaaf03bd7835e7d591d84bcc8f5fbe6453fcf1bb9f356621ef4474e",
+      "archiveSha256": "8f856c88429f6f3bcab9a48101e23badd686d4a08af824b375134606d17f78e0",
+      "manifestHash": "e91ce41f7aa25cf73f157e6302d56ad0017331eb4b77cb464a3eeb901a39ce82",
+      "driverStatus": "matched"
+    },
+    {
+      "id": "course/02-resources",
+      "sourceFingerprint": "c753410b08a3abeae5ba8e5d71f8c2e34f38a1bc13970e07b1d08368c041b00a",
+      "archiveSha256": "4b9aed563b345baa48b36f696e4b8fdf927fb02fde93a84d552ce9c5cf9ddd6c",
+      "manifestHash": "94db61b0e021868ddd8ae12ccb4f5882d884a2b93f118acf6a7d6a97397646f0",
+      "driverStatus": "matched"
+    },
+    {
+      "id": "course/03-scene",
+      "sourceFingerprint": "c02ebf72b061280228a2dbcb26ba4913b6e975255848756f3eaf9ab2a5b11856",
+      "archiveSha256": "6e95901ec8e25ccc1e24fce805e952d2938f93b475f09ff9fd1fda30da8a5d3d",
+      "manifestHash": "8e3ad866ec4391bfb46ec0a5603b8fc7df9e82454ee1e97dc181862c31e20577",
+      "driverStatus": "matched"
+    },
+    {
+      "id": "course/04-mrt",
+      "sourceFingerprint": "2625bd72b6789d7ad170c827c588944190645fdd33cbaa4d66f19ddcca6a6600",
+      "archiveSha256": "711a60e055d46234db7ce392aea0f09e912ac9206089c50b6c41e7510dfb1a09",
+      "manifestHash": "03cbd683c7a42691d843333cd8276a8aab71fe91b789539e419236b7cca04144",
+      "driverStatus": "matched"
+    }
+  ],
+  "checks": {
+    "contentRegression": 27,
+    "lockedInputRegression": 6,
+    "analyzerInvocations": 50,
+    "driverReportMatches": 5,
+    "programInterfaceMatches": 10,
+    "localBrowser": 60,
+    "generatedFiles": 56,
+    "htmlPages": 42,
+    "localLinks": 1518,
+    "assetReferences": 513,
+    "anchors": 273
+  },
+  "runtime": {
+    "independentHumanReader": false,
+    "publicEvidenceFiles": 28,
+    "isolatedRuntimeClosed": true,
+    "originalRuntimeModified": false
+  },
+  "preservation": {
+    "w0ThroughW3FrozenRecords": true,
+    "starterSourceFingerprint": "a85731589fbb852352a486c378d51cb49a6b27e38a749aaf16a199bf98ba12be",
+    "starterArchiveSha256": "432356b77d9247a98a764064b5cc7a290d033ad609064b4edaedf62d63bbe034"
+  },
+  "publicCi": {
+    "mode": "matching-committed-receipts-plus-regeneration-and-browser",
+    "requiresPrivateAssets": false,
+    "liveAnalyzerRun": false,
+    "liveGameRun": false
+  },
+  "remaining": [
+    "independent-human-reader-trial",
+    "device-reset-and-other-platforms",
+    "complete-scene-category-coverage",
+    "performance-and-production-release-acceptance"
+  ],
+  "domainSettingsChanged": false
+}

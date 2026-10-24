@@ -176,6 +176,267 @@
         }
       ],
       "example": "course/00-starter"
+    },
+    {
+      "path": "examples/01-first-post.md",
+      "publication": "published",
+      "generated": true,
+      "manifestVersions": [
+        5
+      ],
+      "sceneAbiVersions": [
+        2
+      ],
+      "sourceRefs": [
+        {
+          "repository": "website",
+          "path": "examples/registry.json"
+        },
+        {
+          "repository": "website",
+          "path": "examples/course/01-first-post/shaderpack.json"
+        }
+      ],
+      "example": "course/01-first-post"
+    },
+    {
+      "path": "examples/02-resources.md",
+      "publication": "published",
+      "generated": true,
+      "manifestVersions": [
+        5
+      ],
+      "sceneAbiVersions": [
+        2
+      ],
+      "sourceRefs": [
+        {
+          "repository": "website",
+          "path": "examples/registry.json"
+        },
+        {
+          "repository": "website",
+          "path": "examples/course/02-resources/shaderpack.json"
+        }
+      ],
+      "example": "course/02-resources"
+    },
+    {
+      "path": "examples/03-scene.md",
+      "publication": "published",
+      "generated": true,
+      "manifestVersions": [
+        5
+      ],
+      "sceneAbiVersions": [
+        2
+      ],
+      "sourceRefs": [
+        {
+          "repository": "website",
+          "path": "examples/registry.json"
+        },
+        {
+          "repository": "website",
+          "path": "examples/course/03-scene/shaderpack.json"
+        }
+      ],
+      "example": "course/03-scene"
+    },
+    {
+      "path": "examples/04-mrt.md",
+      "publication": "published",
+      "generated": true,
+      "manifestVersions": [
+        5
+      ],
+      "sceneAbiVersions": [
+        2
+      ],
+      "sourceRefs": [
+        {
+          "repository": "website",
+          "path": "examples/registry.json"
+        },
+        {
+          "repository": "website",
+          "path": "examples/course/04-mrt/shaderpack.json"
+        }
+      ],
+      "example": "course/04-mrt"
+    },
+    {
+      "path": "tutorial/00-starter.md",
+      "publication": "published",
+      "generated": false,
+      "manifestVersions": [
+        5
+      ],
+      "sceneAbiVersions": [
+        2
+      ],
+      "sourceRefs": [
+        {
+          "repository": "website",
+          "path": "examples/registry.json"
+        },
+        {
+          "repository": "website",
+          "path": "examples/course/00-starter/shaderpack.json"
+        }
+      ],
+      "example": "course/00-starter"
+    },
+    {
+      "path": "tutorial/01-first-post.md",
+      "publication": "published",
+      "generated": false,
+      "manifestVersions": [
+        5
+      ],
+      "sceneAbiVersions": [
+        2
+      ],
+      "sourceRefs": [
+        {
+          "repository": "website",
+          "path": "examples/registry.json"
+        },
+        {
+          "repository": "website",
+          "path": "examples/course/01-first-post/shaderpack.json"
+        }
+      ],
+      "example": "course/01-first-post"
+    },
+    {
+      "path": "tutorial/02-resources.md",
+      "publication": "published",
+      "generated": false,
+      "manifestVersions": [
+        5
+      ],
+      "sceneAbiVersions": [
+        2
+      ],
+      "sourceRefs": [
+        {
+          "repository": "website",
+          "path": "examples/registry.json"
+        },
+        {
+          "repository": "website",
+          "path": "examples/course/02-resources/shaderpack.json"
+        }
+      ],
+      "example": "course/02-resources"
+    },
+    {
+      "path": "tutorial/03-scene.md",
+      "publication": "published",
+      "generated": false,
+      "manifestVersions": [
+        5
+      ],
+      "sceneAbiVersions": [
+        2
+      ],
+      "sourceRefs": [
+        {
+          "repository": "website",
+          "path": "examples/registry.json"
+        },
+        {
+          "repository": "website",
+          "path": "examples/course/03-scene/shaderpack.json"
+        }
+      ],
+      "example": "course/03-scene"
+    },
+    {
+      "path": "tutorial/04-mrt.md",
+      "publication": "published",
+      "generated": false,
+      "manifestVersions": [
+        5
+      ],
+      "sceneAbiVersions": [
+        2
+      ],
+      "sourceRefs": [
+        {
+          "repository": "website",
+          "path": "examples/registry.json"
+        },
+        {
+          "repository": "website",
+          "path": "examples/course/04-mrt/shaderpack.json"
+        }
+      ],
+      "example": "course/04-mrt"
+    },
+    {
+      "path": "start/environment.md",
+      "publication": "published",
+      "generated": false,
+      "manifestVersions": [
+        5
+      ],
+      "sceneAbiVersions": [
+        2
+      ],
+      "sourceRefs": [
+        {
+          "repository": "website",
+          "path": "examples/registry.json"
+        },
+        {
+          "repository": "website",
+          "path": "metadata/w4-runtime.json"
+        }
+      ]
+    },
+    {
+      "path": "start/glsl.md",
+      "publication": "published",
+      "generated": false,
+      "manifestVersions": [
+        5
+      ],
+      "sceneAbiVersions": [
+        2
+      ],
+      "sourceRefs": [
+        {
+          "repository": "website",
+          "path": "examples/registry.json"
+        },
+        {
+          "repository": "website",
+          "path": "metadata/w4-runtime.json"
+        }
+      ]
+    },
+    {
+      "path": "tutorial/runtime.md",
+      "publication": "published",
+      "generated": false,
+      "manifestVersions": [
+        5
+      ],
+      "sceneAbiVersions": [
+        2
+      ],
+      "sourceRefs": [
+        {
+          "repository": "website",
+          "path": "metadata/w4-runtime.json"
+        },
+        {
+          "repository": "website",
+          "path": "metadata/w4-reviewed-sources.json"
+        }
+      ]
     }
   ]
 }

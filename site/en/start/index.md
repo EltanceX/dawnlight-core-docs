@@ -22,7 +22,7 @@ dawnlight:
 
 DawnlightCore is a shader-focused modification of Survivalcraft. It connects resource declarations, shader registration and rendering commands through a general-purpose pipeline. Shader pack authors use JSON to organize execution and GLSL to implement visual effects.
 
-This documentation is for authors with basic GLSL knowledge who want to create independent shader packs. It covers verifiable core concepts, validation methods and an [external starter](../examples/course-starter). The starter has passed static checks; step-by-step courses, game validation and complete field references will follow.
+This documentation is for authors creating independent shader packs. Start with [environment setup](./environment) and [GLSL essentials](./glsl), then follow chapters 00–04 through loading, grading, separate resources, Terrain integration and MRT data. Each chapter supplies complete source, an independent download, a static receipt and separately recorded game observations. Complete field references will expand in later stages.
 
 <div id="需要哪些基础" class="legacy-anchor" aria-hidden="true"></div>
 
@@ -37,6 +37,16 @@ Writing a shader pack primarily involves JSON and GLSL. The host's C# code provi
 <div id="推荐阅读顺序" class="legacy-anchor" aria-hidden="true"></div>
 
 ## Suggested reading order {#reading-order}
+
+| Course | Practical goal |
+| --- | --- |
+| [00 · Load the starter](../tutorial/00-starter) | Load from an empty directory and return to BuiltIn |
+| [01 · First post-process](../tutorial/01-first-post) | Edit warmth strength and reload |
+| [02 · Separate resource](../tutorial/02-resources) | Trace writers, readers and ordering |
+| [03 · Scene integration](../tutorial/03-scene) | Override opaque Terrain |
+| [04 · MRT data](../tutorial/04-mrt) | Write normals and teaching identifiers |
+
+Use the following concepts alongside the course. The [runtime record](../tutorial/runtime) states the actual test scope.
 
 | Order | Page | What you should be able to answer |
 | --- | --- | --- |

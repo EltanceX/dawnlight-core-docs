@@ -7,6 +7,34 @@
       "sourceFingerprint": "a85731589fbb852352a486c378d51cb49a6b27e38a749aaf16a199bf98ba12be",
       "archiveSha256": "432356b77d9247a98a764064b5cc7a290d033ad609064b4edaedf62d63bbe034",
       "archiveLength": 3631
+    },
+    {
+      "id": "course/01-first-post",
+      "baselineId": "candidate-f8aaa5c4",
+      "sourceFingerprint": "588f68099eaaf03bd7835e7d591d84bcc8f5fbe6453fcf1bb9f356621ef4474e",
+      "archiveSha256": "8f856c88429f6f3bcab9a48101e23badd686d4a08af824b375134606d17f78e0",
+      "archiveLength": 2721
+    },
+    {
+      "id": "course/02-resources",
+      "baselineId": "candidate-f8aaa5c4",
+      "sourceFingerprint": "c753410b08a3abeae5ba8e5d71f8c2e34f38a1bc13970e07b1d08368c041b00a",
+      "archiveSha256": "4b9aed563b345baa48b36f696e4b8fdf927fb02fde93a84d552ce9c5cf9ddd6c",
+      "archiveLength": 3069
+    },
+    {
+      "id": "course/03-scene",
+      "baselineId": "candidate-f8aaa5c4",
+      "sourceFingerprint": "c02ebf72b061280228a2dbcb26ba4913b6e975255848756f3eaf9ab2a5b11856",
+      "archiveSha256": "6e95901ec8e25ccc1e24fce805e952d2938f93b475f09ff9fd1fda30da8a5d3d",
+      "archiveLength": 4246
+    },
+    {
+      "id": "course/04-mrt",
+      "baselineId": "candidate-f8aaa5c4",
+      "sourceFingerprint": "2625bd72b6789d7ad170c827c588944190645fdd33cbaa4d66f19ddcca6a6600",
+      "archiveSha256": "711a60e055d46234db7ce392aea0f09e912ac9206089c50b6c41e7510dfb1a09",
+      "archiveLength": 4993
     }
   ]
 }

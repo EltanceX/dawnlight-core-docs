@@ -1,0 +1,51 @@
+{
+  "id": "03-scene",
+  "status": "passed",
+  "loaded": {
+    "active": "External:03-scene",
+    "published": 15,
+    "pending": 0,
+    "error": null,
+    "size": {
+      "x": 2048,
+      "y": 1222
+    }
+  },
+  "reloaded": {
+    "active": "External:03-scene",
+    "published": 16,
+    "pending": 0,
+    "error": null,
+    "size": {
+      "x": 2048,
+      "y": 1222
+    }
+  },
+  "resized": {
+    "active": "External:03-scene",
+    "published": 16,
+    "pending": 0,
+    "error": null,
+    "size": {
+      "x": 1024,
+      "y": 640
+    }
+  },
+  "builtIn": {
+    "active": "BuiltIn",
+    "published": 17,
+    "pending": 0,
+    "error": null,
+    "size": {
+      "x": 2048,
+      "y": 1222
+    }
+  },
+  "driver": {
+    "manifestHash": "8e3ad866ec4391bfb46ec0a5603b8fc7df9e82454ee1e97dc181862c31e20577",
+    "generationId": 16,
+    "programs": 6,
+    "linked": true
+  },
+  "checkedAt": "2026-10-24T07:36:53.239Z"
+}

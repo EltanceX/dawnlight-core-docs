@@ -1,0 +1,51 @@
+{
+  "id": "04-mrt",
+  "status": "passed",
+  "loaded": {
+    "active": "External:04-mrt",
+    "published": 30,
+    "pending": 0,
+    "error": null,
+    "size": {
+      "x": 2048,
+      "y": 1222
+    }
+  },
+  "reloaded": {
+    "active": "External:04-mrt",
+    "published": 31,
+    "pending": 0,
+    "error": null,
+    "size": {
+      "x": 2048,
+      "y": 1222
+    }
+  },
+  "resized": {
+    "active": "External:04-mrt",
+    "published": 31,
+    "pending": 0,
+    "error": null,
+    "size": {
+      "x": 1024,
+      "y": 640
+    }
+  },
+  "builtIn": {
+    "active": "BuiltIn",
+    "published": 32,
+    "pending": 0,
+    "error": null,
+    "size": {
+      "x": 2048,
+      "y": 1222
+    }
+  },
+  "driver": {
+    "manifestHash": "03cbd683c7a42691d843333cd8276a8aab71fe91b789539e419236b7cca04144",
+    "generationId": 31,
+    "programs": 6,
+    "linked": true
+  },
+  "checkedAt": "2026-10-24T07:46:42.001Z"
+}

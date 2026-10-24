@@ -78,6 +78,386 @@
         "liveWorldVerified": false,
         "visual": "notRun"
       }
+    },
+    {
+      "id": "course/01-first-post",
+      "status": "passed",
+      "sourceFingerprint": "588f68099eaaf03bd7835e7d591d84bcc8f5fbe6453fcf1bb9f356621ef4474e",
+      "definitionSha256": "0b54c56d6e3ee6e2c450cb948176e5faf35b983aed0a78122c47b1acb632c662",
+      "archiveSha256": "8f856c88429f6f3bcab9a48101e23badd686d4a08af824b375134606d17f78e0",
+      "archiveLength": 2721,
+      "files": [
+        {
+          "path": "README.md",
+          "length": 1080,
+          "sha256": "def1740c1dfcf59daafcfb004439c8f00a780fb57198df6a643569d1208875f9"
+        },
+        {
+          "path": "shaderpack.json",
+          "length": 8611,
+          "sha256": "d0b925f6308975b7d2320d70235c872fb41e666c677e149e35a3614912072163"
+        },
+        {
+          "path": "shaders/fullscreen.vsh",
+          "length": 298,
+          "sha256": "77e9c0fcd7803893b121b69daf13380f20b109f2d4e23964014b367531053c92"
+        },
+        {
+          "path": "shaders/present.psh",
+          "length": 400,
+          "sha256": "d7d76c0d148af5d07d6f2b8f2f6f028380c87b76395986afe82518682044f7f0"
+        }
+      ],
+      "manifestHash": "e91ce41f7aa25cf73f157e6302d56ad0017331eb4b77cb464a3eeb901a39ce82",
+      "checks": [
+        {
+          "id": "pack",
+          "variant": "default",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "8663ef836bbcf42612fafa60ae1868572dd6d33c2f3a29116419bfa7a0429154",
+          "archiveOutputSha256": "8663ef836bbcf42612fafa60ae1868572dd6d33c2f3a29116419bfa7a0429154",
+          "manifestHash": "e91ce41f7aa25cf73f157e6302d56ad0017331eb4b77cb464a3eeb901a39ce82"
+        },
+        {
+          "id": "scene",
+          "variant": "default",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "c58308afec51e27cb2bd35eef074145aac7bced681c5a982bdcea49041a5b597",
+          "archiveOutputSha256": "c58308afec51e27cb2bd35eef074145aac7bced681c5a982bdcea49041a5b597",
+          "manifestHash": "e91ce41f7aa25cf73f157e6302d56ad0017331eb4b77cb464a3eeb901a39ce82"
+        },
+        {
+          "id": "graph",
+          "variant": "default",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "0776f58b1c0f478a3c28282d5f7fac13cca739a268f79f7301d0f0da411a3ee5",
+          "archiveOutputSha256": "0776f58b1c0f478a3c28282d5f7fac13cca739a268f79f7301d0f0da411a3ee5",
+          "manifestHash": "e91ce41f7aa25cf73f157e6302d56ad0017331eb4b77cb464a3eeb901a39ce82"
+        },
+        {
+          "id": "interface:course:post/present",
+          "variant": "default",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "4c1edec0a35b4ffa81f284760ee9c607cb881c2a8d91312cee75dac1acd4e45e",
+          "archiveOutputSha256": "4c1edec0a35b4ffa81f284760ee9c607cb881c2a8d91312cee75dac1acd4e45e",
+          "manifestHash": "e91ce41f7aa25cf73f157e6302d56ad0017331eb4b77cb464a3eeb901a39ce82"
+        }
+      ],
+      "runtimeEvidence": {
+        "driverStatus": "notProvided",
+        "runtimeEvaluated": false,
+        "liveWorldVerified": false,
+        "visual": "notRun"
+      }
+    },
+    {
+      "id": "course/02-resources",
+      "status": "passed",
+      "sourceFingerprint": "c753410b08a3abeae5ba8e5d71f8c2e34f38a1bc13970e07b1d08368c041b00a",
+      "definitionSha256": "53735ad0947716a982268f9cd8a3ab81171847381936f3729f3bb03515ef49c4",
+      "archiveSha256": "4b9aed563b345baa48b36f696e4b8fdf927fb02fde93a84d552ce9c5cf9ddd6c",
+      "archiveLength": 3069,
+      "files": [
+        {
+          "path": "README.md",
+          "length": 1085,
+          "sha256": "d6c16e581215f1842d9108a9fe8934126ef404ec73553d3701ae5b0ed6303a3b"
+        },
+        {
+          "path": "shaderpack.json",
+          "length": 10350,
+          "sha256": "2fafc2a28666c6ff5d39260512d2b87b0b9160c0ee540667163b98841b12fa0b"
+        },
+        {
+          "path": "shaders/fullscreen.vsh",
+          "length": 298,
+          "sha256": "77e9c0fcd7803893b121b69daf13380f20b109f2d4e23964014b367531053c92"
+        },
+        {
+          "path": "shaders/grade.psh",
+          "length": 400,
+          "sha256": "d7d76c0d148af5d07d6f2b8f2f6f028380c87b76395986afe82518682044f7f0"
+        },
+        {
+          "path": "shaders/present.psh",
+          "length": 181,
+          "sha256": "d8ef4f9a0e1b4be69e9b6a1f841e80252e1bf797f98f036a1938c14165bdb787"
+        }
+      ],
+      "manifestHash": "94db61b0e021868ddd8ae12ccb4f5882d884a2b93f118acf6a7d6a97397646f0",
+      "checks": [
+        {
+          "id": "pack",
+          "variant": "default",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "826a02eda941d27f807b1cf35c93eb4d950c47b2ce94da50fd198f3b10d12231",
+          "archiveOutputSha256": "826a02eda941d27f807b1cf35c93eb4d950c47b2ce94da50fd198f3b10d12231",
+          "manifestHash": "94db61b0e021868ddd8ae12ccb4f5882d884a2b93f118acf6a7d6a97397646f0"
+        },
+        {
+          "id": "scene",
+          "variant": "default",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "3470c552fef4e9fb5a7d83bbfe488d8bc0042e9af7a1989b07b9a30530ce4b5d",
+          "archiveOutputSha256": "3470c552fef4e9fb5a7d83bbfe488d8bc0042e9af7a1989b07b9a30530ce4b5d",
+          "manifestHash": "94db61b0e021868ddd8ae12ccb4f5882d884a2b93f118acf6a7d6a97397646f0"
+        },
+        {
+          "id": "graph",
+          "variant": "default",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "0a1d42a44ebbb80a693a2f56a775cb5188e4be79bba8af2d5a233b2e6e7e66ac",
+          "archiveOutputSha256": "0a1d42a44ebbb80a693a2f56a775cb5188e4be79bba8af2d5a233b2e6e7e66ac",
+          "manifestHash": "94db61b0e021868ddd8ae12ccb4f5882d884a2b93f118acf6a7d6a97397646f0"
+        },
+        {
+          "id": "interface:course:post/grade",
+          "variant": "default",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "f474b14163c1483d56cd104d5defd7dfa1acacb3dbcef3c3c7378728aafedcf1",
+          "archiveOutputSha256": "f474b14163c1483d56cd104d5defd7dfa1acacb3dbcef3c3c7378728aafedcf1",
+          "manifestHash": "94db61b0e021868ddd8ae12ccb4f5882d884a2b93f118acf6a7d6a97397646f0"
+        },
+        {
+          "id": "interface:course:post/present",
+          "variant": "default",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "a841dec45cdd9138aa49f3972fe1b0c93ff086eceef6a3258091dc00794982ca",
+          "archiveOutputSha256": "a841dec45cdd9138aa49f3972fe1b0c93ff086eceef6a3258091dc00794982ca",
+          "manifestHash": "94db61b0e021868ddd8ae12ccb4f5882d884a2b93f118acf6a7d6a97397646f0"
+        }
+      ],
+      "runtimeEvidence": {
+        "driverStatus": "notProvided",
+        "runtimeEvaluated": false,
+        "liveWorldVerified": false,
+        "visual": "notRun"
+      }
+    },
+    {
+      "id": "course/03-scene",
+      "status": "passed",
+      "sourceFingerprint": "c02ebf72b061280228a2dbcb26ba4913b6e975255848756f3eaf9ab2a5b11856",
+      "definitionSha256": "34d46dcab396c969827ca5663406855b26684d20704ec70acf804e866e75b333",
+      "archiveSha256": "6e95901ec8e25ccc1e24fce805e952d2938f93b475f09ff9fd1fda30da8a5d3d",
+      "archiveLength": 4246,
+      "files": [
+        {
+          "path": "README.md",
+          "length": 1094,
+          "sha256": "f96e8455e963b25b0ecf24d4573ef37bdd585222ecef2ce1f81ad0425f3a3c27"
+        },
+        {
+          "path": "shaderpack.json",
+          "length": 11504,
+          "sha256": "16430eaeb29ae35ba057b6879936a7fccff479c0caa79841e47e0dbeba697523"
+        },
+        {
+          "path": "shaders/fullscreen.vsh",
+          "length": 298,
+          "sha256": "77e9c0fcd7803893b121b69daf13380f20b109f2d4e23964014b367531053c92"
+        },
+        {
+          "path": "shaders/grade.psh",
+          "length": 400,
+          "sha256": "d7d76c0d148af5d07d6f2b8f2f6f028380c87b76395986afe82518682044f7f0"
+        },
+        {
+          "path": "shaders/present.psh",
+          "length": 181,
+          "sha256": "d8ef4f9a0e1b4be69e9b6a1f841e80252e1bf797f98f036a1938c14165bdb787"
+        },
+        {
+          "path": "shaders/terrain.psh",
+          "length": 374,
+          "sha256": "2abeb15d0bf6c54f729451fd1be6713c331138dbb19803d8bfc8bcbdafe77c9d"
+        },
+        {
+          "path": "shaders/terrain.vsh",
+          "length": 1483,
+          "sha256": "de6efbbfbd344e2339efb4ff0da77a7f3df5352740a44a42cebed6fcd3fc7b57"
+        }
+      ],
+      "manifestHash": "8e3ad866ec4391bfb46ec0a5603b8fc7df9e82454ee1e97dc181862c31e20577",
+      "checks": [
+        {
+          "id": "pack",
+          "variant": "default",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "f6ffca52fc914f4c11625b6dd17d4623f47131e8a05fcb3421b02145899ffbb8",
+          "archiveOutputSha256": "f6ffca52fc914f4c11625b6dd17d4623f47131e8a05fcb3421b02145899ffbb8",
+          "manifestHash": "8e3ad866ec4391bfb46ec0a5603b8fc7df9e82454ee1e97dc181862c31e20577"
+        },
+        {
+          "id": "scene",
+          "variant": "default",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "7a583cebbae036ebe409f06bd349869f3e18a521211beeea8b9d38b86e8c4c8c",
+          "archiveOutputSha256": "7a583cebbae036ebe409f06bd349869f3e18a521211beeea8b9d38b86e8c4c8c",
+          "manifestHash": "8e3ad866ec4391bfb46ec0a5603b8fc7df9e82454ee1e97dc181862c31e20577"
+        },
+        {
+          "id": "graph",
+          "variant": "default",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "2f91f5d3d6f8466516a9e2f69329c31017543e8078451425d47842f5a5de687d",
+          "archiveOutputSha256": "2f91f5d3d6f8466516a9e2f69329c31017543e8078451425d47842f5a5de687d",
+          "manifestHash": "8e3ad866ec4391bfb46ec0a5603b8fc7df9e82454ee1e97dc181862c31e20577"
+        },
+        {
+          "id": "interface:course:scene/terrain",
+          "variant": "default",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "9c283ee7655e9b6868b738fb05fbc2466140c4e25659434d0742478ea81cf252",
+          "archiveOutputSha256": "9c283ee7655e9b6868b738fb05fbc2466140c4e25659434d0742478ea81cf252",
+          "manifestHash": "8e3ad866ec4391bfb46ec0a5603b8fc7df9e82454ee1e97dc181862c31e20577"
+        },
+        {
+          "id": "interface:course:post/grade",
+          "variant": "default",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "e0e5ce3ccd79f0f61e4f4373c5018fb80b529d5c30e8bb6a9cdf6ef049117de8",
+          "archiveOutputSha256": "e0e5ce3ccd79f0f61e4f4373c5018fb80b529d5c30e8bb6a9cdf6ef049117de8",
+          "manifestHash": "8e3ad866ec4391bfb46ec0a5603b8fc7df9e82454ee1e97dc181862c31e20577"
+        },
+        {
+          "id": "interface:course:post/present",
+          "variant": "default",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "f35848457444e3222605a7ebedc711401967c10518d4bd2a2d50507c12851d9b",
+          "archiveOutputSha256": "f35848457444e3222605a7ebedc711401967c10518d4bd2a2d50507c12851d9b",
+          "manifestHash": "8e3ad866ec4391bfb46ec0a5603b8fc7df9e82454ee1e97dc181862c31e20577"
+        }
+      ],
+      "runtimeEvidence": {
+        "driverStatus": "notProvided",
+        "runtimeEvaluated": false,
+        "liveWorldVerified": false,
+        "visual": "notRun"
+      }
+    },
+    {
+      "id": "course/04-mrt",
+      "status": "passed",
+      "sourceFingerprint": "2625bd72b6789d7ad170c827c588944190645fdd33cbaa4d66f19ddcca6a6600",
+      "definitionSha256": "8ec119c45ba116ed91da8966cb76c7b6eab5b5247c2894af051b24e779cece4c",
+      "archiveSha256": "711a60e055d46234db7ce392aea0f09e912ac9206089c50b6c41e7510dfb1a09",
+      "archiveLength": 4993,
+      "files": [
+        {
+          "path": "README.md",
+          "length": 1250,
+          "sha256": "f15bcaa403ef5be45278dc897be38f1bef4c0ade94b2fee0b38969027ae02800"
+        },
+        {
+          "path": "shaderpack.json",
+          "length": 14571,
+          "sha256": "48252c343262f1c19e620daf31de801a72d74b9b7963edf12d93b08019ce00c1"
+        },
+        {
+          "path": "shaders/fullscreen.vsh",
+          "length": 298,
+          "sha256": "77e9c0fcd7803893b121b69daf13380f20b109f2d4e23964014b367531053c92"
+        },
+        {
+          "path": "shaders/grade.psh",
+          "length": 1171,
+          "sha256": "82e2564219dc1c0dce22fd82a6acd92381e0466ad485eeaa284f0f1a1e5d903a"
+        },
+        {
+          "path": "shaders/present.psh",
+          "length": 181,
+          "sha256": "d8ef4f9a0e1b4be69e9b6a1f841e80252e1bf797f98f036a1938c14165bdb787"
+        },
+        {
+          "path": "shaders/terrain.psh",
+          "length": 917,
+          "sha256": "7536b55eee763b996d7f1f7b22e02b3fb9ab34e12f03b746a18e8ee8b7980d5f"
+        },
+        {
+          "path": "shaders/terrain.vsh",
+          "length": 1483,
+          "sha256": "de6efbbfbd344e2339efb4ff0da77a7f3df5352740a44a42cebed6fcd3fc7b57"
+        }
+      ],
+      "manifestHash": "03cbd683c7a42691d843333cd8276a8aab71fe91b789539e419236b7cca04144",
+      "checks": [
+        {
+          "id": "pack",
+          "variant": "default",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "02964ed352ee3462df06bac118596afb0f40f3d5f2a8fef1e2d12a6ff41df738",
+          "archiveOutputSha256": "02964ed352ee3462df06bac118596afb0f40f3d5f2a8fef1e2d12a6ff41df738",
+          "manifestHash": "03cbd683c7a42691d843333cd8276a8aab71fe91b789539e419236b7cca04144"
+        },
+        {
+          "id": "scene",
+          "variant": "default",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "ac45faedff8f9ab64517ae79c9c2a7e2321f42ce814440836c8cd45ad770d02e",
+          "archiveOutputSha256": "ac45faedff8f9ab64517ae79c9c2a7e2321f42ce814440836c8cd45ad770d02e",
+          "manifestHash": "03cbd683c7a42691d843333cd8276a8aab71fe91b789539e419236b7cca04144"
+        },
+        {
+          "id": "graph",
+          "variant": "default",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "0b43ac2af14d5d2f5080d642a250c14358569a4781c84ee880bab06a77edfc56",
+          "archiveOutputSha256": "0b43ac2af14d5d2f5080d642a250c14358569a4781c84ee880bab06a77edfc56",
+          "manifestHash": "03cbd683c7a42691d843333cd8276a8aab71fe91b789539e419236b7cca04144"
+        },
+        {
+          "id": "interface:course:scene/terrain",
+          "variant": "default",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "c614e33ba6fc33378442d956a2806c10cc6f59ac348f969a976a7f267d475df2",
+          "archiveOutputSha256": "c614e33ba6fc33378442d956a2806c10cc6f59ac348f969a976a7f267d475df2",
+          "manifestHash": "03cbd683c7a42691d843333cd8276a8aab71fe91b789539e419236b7cca04144"
+        },
+        {
+          "id": "interface:course:post/grade",
+          "variant": "default",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "3c4fcda6e939e157b2b9aa0c7f67e98caf9f7e6fc8362427179c2fe826b8fd3a",
+          "archiveOutputSha256": "3c4fcda6e939e157b2b9aa0c7f67e98caf9f7e6fc8362427179c2fe826b8fd3a",
+          "manifestHash": "03cbd683c7a42691d843333cd8276a8aab71fe91b789539e419236b7cca04144"
+        },
+        {
+          "id": "interface:course:post/present",
+          "variant": "default",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "86ed368888a92bf803fc16108b9408dbb7839156d3c1092fa96a077acd15de53",
+          "archiveOutputSha256": "86ed368888a92bf803fc16108b9408dbb7839156d3c1092fa96a077acd15de53",
+          "manifestHash": "03cbd683c7a42691d843333cd8276a8aab71fe91b789539e419236b7cca04144"
+        }
+      ],
+      "runtimeEvidence": {
+        "driverStatus": "notProvided",
+        "runtimeEvaluated": false,
+        "liveWorldVerified": false,
+        "visual": "notRun"
+      }
     }
   ]
 }

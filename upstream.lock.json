@@ -294,7 +294,8 @@
       "title": "验证外置最小教学包与完整场景路径",
       "phase": "W3-W4",
       "gate": "tutorial-runtime-claims",
-      "action": "制作独立起步包，核对必需 host、fallback 和 frameTarget，在真实游戏运行。"
+      "action": "W4 五个独立包已完成一台 Windows/NVIDIA 设备上的加载、重载、resize 和 BuiltIn 恢复；完整类别、其他平台与独立真人试用仍须补充，见 metadata/w4-runtime.json。",
+      "status": "course-path-observed-complete-scene-coverage-pending"
     },
     {
       "id": "W0-05",
@@ -376,5 +377,10 @@
     "path": "metadata/w3-verification.json",
     "length": 4026,
     "sha256": "47cf37755d3d0f38131f0e4811953d93785d09a6d900c30e337cb5f99b8cd6fd"
+  },
+  "w4Verification": {
+    "path": "metadata/w4-verification.json",
+    "length": 3929,
+    "sha256": "a3ee01737d9858976a1236a7d44ec0045b3d19d21ea4dc075cb36d533c18929e"
   }
 }

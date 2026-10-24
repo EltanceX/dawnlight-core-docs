@@ -22,7 +22,7 @@ dawnlight:
 
 DawnlightCore 是 Survivalcraft 的光影改版。它将资源声明、着色器注册和渲染命令连接到一套通用管线，让光影包作者通过 JSON 组织执行关系，通过 GLSL 实现具体效果。
 
-这份文档面向有基础 GLSL 知识、希望制作独立光影包的作者。当前提供可核实的核心概念、验证方法和[外置起步包](../examples/course-starter)。起步包已有静态验证，连续课程、实机检查与完整字段参考将在后续阶段逐章补齐。
+这份文档面向希望制作独立光影包的作者。从[环境准备](./environment)和 [GLSL 基础](./glsl)开始，按第 00～04 章完成加载、调色、独立资源、Terrain 接入和 MRT 数据写入。每章提供完整源码、独立下载、静态收据及单独记录的实机观察；完整字段参考在后续阶段扩展。
 
 <div id="需要哪些基础" class="legacy-anchor" aria-hidden="true"></div>
 
@@ -37,6 +37,16 @@ DawnlightCore 是 Survivalcraft 的光影改版。它将资源声明、着色器
 <div id="推荐阅读顺序" class="legacy-anchor" aria-hidden="true"></div>
 
 ## 推荐阅读顺序 {#reading-order}
+
+| 课程 | 动手目标 |
+| --- | --- |
+| [00 · 加载起步包](../tutorial/00-starter) | 从空目录加载并切回 BuiltIn |
+| [01 · 第一个后处理](../tutorial/01-first-post) | 修改暖色强度并重载 |
+| [02 · 独立资源](../tutorial/02-resources) | 追踪写者、读者和顺序 |
+| [03 · 场景接入](../tutorial/03-scene) | 接管 opaque Terrain |
+| [04 · MRT 数据](../tutorial/04-mrt) | 写入法线和教学标识符 |
+
+以下概念页可与课程交叉阅读；[实机记录](../tutorial/runtime)说明实际测试范围。
 
 | 顺序 | 页面 | 读完后应能回答 |
 | --- | --- | --- |

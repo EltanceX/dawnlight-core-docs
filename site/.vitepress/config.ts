@@ -17,9 +17,19 @@ const chinese: DefaultTheme.Config = {
   sidebar: [
     { text: '开始使用', items: [
       { text: '阅读路线', link: '/start/' },
+      { text: '环境准备与加载', link: '/start/environment' },
+      { text: 'GLSL 基础', link: '/start/glsl' },
       { text: '示例与下载', link: '/examples/' },
       { text: '00 · 外置起步包', link: '/examples/course-starter' },
       { text: '版本与支持范围', link: '/compatibility/current-baseline' }
+    ] },
+    { text: '入门到场景接入', items: [
+      { text: '00 · 加载起步包', link: '/tutorial/00-starter' },
+      { text: '01 · 第一个后处理', link: '/tutorial/01-first-post' },
+      { text: '02 · 后处理资源', link: '/tutorial/02-resources' },
+      { text: '03 · opaque Terrain', link: '/tutorial/03-scene' },
+      { text: '04 · MRT 数据', link: '/tutorial/04-mrt' },
+      { text: '实机验证记录', link: '/tutorial/runtime' }
     ] },
     { text: '理解管线', items: [
       { text: '从配置到一帧画面', link: '/concepts/pipeline' },
@@ -51,9 +61,19 @@ const english: DefaultTheme.Config = {
   sidebar: [
     { text: 'Getting started', items: [
       { text: 'Reading guide', link: '/en/start/' },
+      { text: 'Environment and loading', link: '/en/start/environment' },
+      { text: 'GLSL essentials', link: '/en/start/glsl' },
       { text: 'Examples and downloads', link: '/en/examples/' },
       { text: '00 · External starter', link: '/en/examples/course-starter' },
       { text: 'Versions and support', link: '/en/compatibility/current-baseline' }
+    ] },
+    { text: 'From starter to scene', items: [
+      { text: '00 · Load the starter', link: '/en/tutorial/00-starter' },
+      { text: '01 · First post-process', link: '/en/tutorial/01-first-post' },
+      { text: '02 · Post-process resource', link: '/en/tutorial/02-resources' },
+      { text: '03 · Opaque Terrain', link: '/en/tutorial/03-scene' },
+      { text: '04 · MRT data', link: '/en/tutorial/04-mrt' },
+      { text: 'Runtime observations', link: '/en/tutorial/runtime' }
     ] },
     { text: 'Understanding the pipeline', items: [
       { text: 'From configuration to a frame', link: '/en/concepts/pipeline' },

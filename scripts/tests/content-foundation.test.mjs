@@ -3,7 +3,8 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { ROOT, hash, readJson, jsonBytes, writeJson, extractLocked, verifyInventory, zipEntries, unzipEntries } from '../lib/locked-inputs.mjs';
-import { loadExamples, loadReceipts, snippet, applyOutputs, managedOutput, frontmatter } from '../lib/content-foundation.mjs';
+import { loadExamples, loadReceipts, snippet, applyOutputs, managedOutput, frontmatter, courseIncludes } from '../lib/content-foundation.mjs';
+import { loadRuntimeEvidence } from '../lib/runtime-evidence.mjs';
 import { exampleOutputs } from '../lib/example-generator.mjs';
 import { analyzerRunner } from '../lib/analyzer-runner.mjs';
 
@@ -25,8 +26,71 @@ async function fixture(t) {
 test('the public source and committed receipt agree', async () => {
   const context = await loadExamples();
   const report = await loadReceipts(context);
-  assert.equal(report.examples.length, 1);
+  assert.equal(report.examples.length, 5);
   assert.equal(report.examples[0].checks.length, 4);
+});
+
+test('all five independent snapshots and dated runtime records agree', async () => {
+  const context = await loadExamples(), receipts = await loadReceipts(context);
+  const runtime = await loadRuntimeEvidence(context, receipts);
+  assert.equal(runtime.examples.length, 5);
+  assert.equal(runtime.publicFiles.length, 28);
+  for (const example of context.examples) {
+    assert.ok(example.entries.some(file => file.path === 'shaderpack.json'));
+    assert.ok(example.entries.some(file => file.path === 'shaders/present.psh'));
+    assert.equal(unzipEntries(example.archiveBytes).length, example.entries.length);
+  }
+});
+
+test('authored includes accept registered complete files and reject private, stale and partial inputs', async () => {
+  const context = await loadExamples();
+  assert.deepEqual(courseIncludes('<<< @/../examples/course/04-mrt/shaders/grade.psh{glsl}\n', context, 'chapter.md'), ['examples/course/04-mrt/shaders/grade.psh']);
+  for (const input of ['@/../vendor/dawnlight/secret.cs', '@/../examples/course/04-mrt/../private.psh', '@/../examples/course/04-mrt/shaders/missing.psh', '@/../examples/course/04-mrt/shaders/grade.psh#part']) {
+    assert.throws(() => courseIncludes('<<< ' + input + '\n', context, 'chapter.md'), /unsafe|unregistered/);
+  }
+  const partial = structuredClone(context);
+  partial.examples[4].snippets = partial.examples[4].snippets.map(spec => ({ ...spec, region: 'part' }));
+  assert.throws(() => courseIncludes('<<< @/../examples/course/04-mrt/shaders/grade.psh{glsl}\n', partial, 'chapter.md'), /unregistered full-source/);
+});
+
+async function runtimeFixture(t) {
+  const root = await fixture(t);
+  await fs.copyFile(path.join(ROOT, 'metadata/w4-runtime.json'), path.join(root, 'metadata/w4-runtime.json'));
+  for (const scope of ['evidence/w4', 'media/w4']) await fs.cp(path.join(ROOT, 'site/public', scope), path.join(root, 'site/public', scope), { recursive: true });
+  return root;
+}
+
+for (const [name, mutate, expected] of [
+  ['stale runtime source', record => record.examples[0].sourceFingerprint = '0'.repeat(64), /stale runtime evidence/],
+  ['stale runtime image binding', record => record.examples[0].imageSha256 = '0'.repeat(64), /Runtime asset identity/],
+  ['missing Program observation', record => record.examples[4].interfaces.pop(), /missing Program evidence/],
+  ['unregistered asset', record => record.examples[0].lifecycle = '/evidence/w4/missing.json', /Unregistered runtime asset/]
+]) {
+  test(`runtime evidence rejects ${name}`, async t => {
+    const root = await runtimeFixture(t), file = path.join(root, 'metadata/w4-runtime.json');
+    const record = await readJson(file); mutate(record); await writeJson(file, record);
+    const context = await loadExamples(root);
+    await assert.rejects(loadRuntimeEvidence(context, await loadReceipts(context)), expected);
+  });
+}
+
+test('runtime evidence detects corrupted public bytes', async t => {
+  const root = await runtimeFixture(t), context = await loadExamples(root);
+  await fs.appendFile(path.join(root, 'site/public/evidence/w4/04-mrt-driver.json'), ' ');
+  await assert.rejects(loadRuntimeEvidence(context, await loadReceipts(context)), /Fingerprint mismatch/);
+});
+
+test('resize evidence must record different dimensions even if inventory hashes are refreshed', async t => {
+  const root = await runtimeFixture(t), file = 'evidence/w4/04-mrt-lifecycle.json';
+  const lifecycle = await readJson(path.join(root, 'site/public', file));
+  lifecycle.resized.size = lifecycle.loaded.size;
+  const bytes = jsonBytes(lifecycle);
+  await fs.writeFile(path.join(root, 'site/public', file), bytes);
+  const record = await readJson(path.join(root, 'metadata/w4-runtime.json'));
+  Object.assign(record.publicFiles.find(item => item.path === file), { length: bytes.length, sha256: hash(bytes) });
+  await writeJson(path.join(root, 'metadata/w4-runtime.json'), record);
+  const context = await loadExamples(root);
+  await assert.rejects(loadRuntimeEvidence(context, await loadReceipts(context)), /resize must change dimensions/);
 });
 
 for (const [name, mutate, expected] of [

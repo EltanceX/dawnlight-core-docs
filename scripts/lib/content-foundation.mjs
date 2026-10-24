@@ -15,6 +15,18 @@ export function frontmatter(text, file) {
   return doc.toJSON();
 }
 
+// Only complete, registered source files may be embedded in authored pages.
+export function courseIncludes(content, context, file) {
+  return [...content.matchAll(/^<<<\s+(.+)$/gm)].map(match => {
+    const spec = match[1].trim();
+    assert.match(spec, /^@\/\.\.\/examples\/course\/[a-z0-9-]+\/(?:shaderpack\.json|shaders\/[a-z0-9.-]+)(?:\{glsl\})?$/, `${file}: unsafe or unsupported source include ${spec}`);
+    const name = spec.replace(/^@\/\.\.\//, '').replace(/\{glsl\}$/, '');
+    const example = context.examples.find(item => name.startsWith(item.root + '/'));
+    assert.ok(example && example.snippets.some(item => example.root + '/' + item.file === name && !item.pointer && !item.region), `${file}: unregistered full-source include ${name}`);
+    return name;
+  });
+}
+
 export function snippet(example, spec) {
   const input = example.entries.find(entry => entry.path === spec.file);
   assert.ok(input, `${example.id}: snippet ${spec.id}: missing file ${spec.file}`);
@@ -66,7 +78,7 @@ export async function loadExamples(root = ROOT) {
     assert.equal(definition.manifestVersion, lock.authoring.primaryManifestVersion, fail('manifest baseline mismatch'));
     assert.equal(definition.sceneAbiVersion, lock.authoring.sceneAbiVersion, fail('scene ABI mismatch'));
     assert.equal(definition.entrypoint, 'shaderpack.json', fail('entrypoint'));
-    assert.deepEqual(definition.variants, [{ id: 'default', options: {}, capabilities: 'host-default' }], fail('W3 supports only the unconditional starter; new branches need explicit validation support'));
+    assert.deepEqual(definition.variants, [{ id: 'default', options: {}, capabilities: 'host-default' }], fail('The course currently supports unconditional examples; new branches need explicit validation support'));
     assert.deepEqual(definition.runtimeEvidence, evidenceBoundary, fail('unverified runtime evidence'));
     for (const language of ['zh-CN', 'en-US']) assert.ok(definition.titles[language], fail(`missing title: ${language}`));
     const actual = await files(inside(root, definition.root));
@@ -85,6 +97,8 @@ export async function loadExamples(root = ROOT) {
     assert.equal(manifest.sceneAbiVersion, definition.sceneAbiVersion, fail('shaderpack.json: scene ABI'));
     assert.deepEqual(manifest.programs.map(program => program.id).sort(), [...definition.programs].sort(), fail('shaderpack.json: program IDs'));
     assert.deepEqual(manifest.options, [], fail('starter unexpectedly declares options'));
+    const overrides = manifest.sceneCategories.filter(route => route.mode === 'override').map(route => route.id).sort();
+    assert.deepEqual(overrides, [...definition.expected.overrides ?? []].sort(), fail('shaderpack.json: expected override routes'));
     const archiveBytes = zipEntries(entries);
     const example = { ...definition, entries, inventory, sourceFingerprint, definitionSha256: hash(jsonBytes(definition)), archiveBytes, archiveSha256: hash(archiveBytes), archiveLength: archiveBytes.length };
     assert.equal(new Set(definition.snippets.map(spec => spec.id)).size, definition.snippets.length, fail('duplicate snippet ID'));

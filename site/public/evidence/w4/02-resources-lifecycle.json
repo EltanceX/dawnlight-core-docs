@@ -1,0 +1,51 @@
+{
+  "id": "02-resources",
+  "status": "passed",
+  "loaded": {
+    "active": "External:02-resources",
+    "published": 12,
+    "pending": 0,
+    "error": null,
+    "size": {
+      "x": 2048,
+      "y": 1222
+    }
+  },
+  "reloaded": {
+    "active": "External:02-resources",
+    "published": 13,
+    "pending": 0,
+    "error": null,
+    "size": {
+      "x": 2048,
+      "y": 1222
+    }
+  },
+  "resized": {
+    "active": "External:02-resources",
+    "published": 13,
+    "pending": 0,
+    "error": null,
+    "size": {
+      "x": 1024,
+      "y": 640
+    }
+  },
+  "builtIn": {
+    "active": "BuiltIn",
+    "published": 14,
+    "pending": 0,
+    "error": null,
+    "size": {
+      "x": 2048,
+      "y": 1222
+    }
+  },
+  "driver": {
+    "manifestHash": "94db61b0e021868ddd8ae12ccb4f5882d884a2b93f118acf6a7d6a97397646f0",
+    "generationId": 13,
+    "programs": 6,
+    "linked": true
+  },
+  "checkedAt": "2026-10-24T07:36:48.830Z"
+}
