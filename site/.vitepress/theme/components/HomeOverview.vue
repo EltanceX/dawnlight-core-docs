@@ -11,10 +11,11 @@ const copy = computed(() => lang.value === 'en-US' ? {
   steps: [
     ['Find your reading path', 'Prerequisites, scope and learning order', '/start/'],
     ['Load your first pack', 'Five complete chapters: color, resources, Terrain and MRT', '/tutorial/00-starter'],
+    ['Look up JSON and ABI contracts', 'Fields, public IDs, version gates and complete examples', '/reference/'],
     ['Understand validation results', 'Configuration, offline semantics and runtime evidence', '/tools/analyzer']
   ],
   edition: 'Written for Manifest v5',
-  facts: [['Scene interface', 'Scene ABI v2'], ['Source baseline', lock.upstream.commit.slice(0, 8)], ['Initial runtime scope', 'Windows x64 · single main view'], ['Available documentation', 'Core concepts, tools and starter download']],
+  facts: [['Scene interface', 'Scene ABI v2'], ['Source baseline', lock.upstream.commit.slice(0, 8)], ['Initial runtime scope', 'Windows x64 · single main view'], ['Available documentation', 'Course 00–04, JSON and ABI reference']],
   scope: 'Follow chapters 00–04 with complete snapshots. Each chapter separates static receipts from actual game observations.',
   baseline: 'View versions and verification scope →'
 } : {
@@ -23,10 +24,11 @@ const copy = computed(() => lang.value === 'en-US' ? {
   steps: [
     ['找到阅读路线', '前置知识、文档范围与学习顺序', '/start/'],
     ['加载第一个光影包', '五个完整章节：调色、资源、Terrain 与 MRT', '/tutorial/00-starter'],
+    ['查阅 JSON 与 ABI 合同', '字段、公共 ID、版本门与完整示例', '/reference/'],
     ['读懂验证结果', '配置合法、离线语义与实际运行证据', '/tools/analyzer']
   ],
   edition: '围绕 Manifest v5 编写',
-  facts: [['场景接口', 'Scene ABI v2'], ['来源基线', lock.upstream.commit.slice(0, 8)], ['首版运行范围', 'Windows x64 · 单主 view'], ['当前文档', '核心概念、工具说明与起步包下载']],
+  facts: [['场景接口', 'Scene ABI v2'], ['来源基线', lock.upstream.commit.slice(0, 8)], ['首版运行范围', 'Windows x64 · 单主 view'], ['当前文档', '第 00～04 章、JSON 与 ABI 参考']],
   scope: '沿第 00～04 章使用独立快照实践；各章分别说明静态收据与实际游戏观察。',
   baseline: '查看版本与验证范围 →'
 })

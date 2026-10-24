@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "baselineId": "candidate-f8aaa5c4",
+  "sourceCommit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+  "bytePolicy": "exact-frozen-authoring-bytes",
+  "inputs": [
+    {
+      "id": "schema-v3",
+      "path": "reference/inputs/schema-v3.json",
+      "length": 54675,
+      "sha256": "7191d01af17204b203eeb54db283253e98766a16a62333e5aa64c73207c60537",
+      "sourcePath": "docs/schemas/dawnlight.shaderpack.v3.schema.json",
+      "origin": "git-blob",
+      "sourceCommit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+      "url": "https://gitea.com/EltanceX/DawnlightCore/src/commit/f8aaa5c4218f54536ccf994a2d512aed2e3678b7/docs/schemas/dawnlight.shaderpack.v3.schema.json"
+    },
+    {
+      "id": "schema-v4",
+      "path": "reference/inputs/schema-v4.json",
+      "length": 56098,
+      "sha256": "7b76c4b1e806f96a8a3de593c574a7fcf4d82d80720819e4b165b9d747441320",
+      "sourcePath": "docs/schemas/dawnlight.shaderpack.v4.schema.json",
+      "origin": "git-blob",
+      "sourceCommit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+      "url": "https://gitea.com/EltanceX/DawnlightCore/src/commit/f8aaa5c4218f54536ccf994a2d512aed2e3678b7/docs/schemas/dawnlight.shaderpack.v4.schema.json"
+    },
+    {
+      "id": "schema-v5",
+      "path": "reference/inputs/schema-v5.json",
+      "length": 115503,
+      "sha256": "afc9ad7c137379a98a6ba99e9daeffeb836b84eb41fdded060904e32c712b133",
+      "sourcePath": "docs/schemas-v5/dawnlight.shaderpack.v5.schema.json",
+      "origin": "git-blob",
+      "sourceCommit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+      "url": "https://gitea.com/EltanceX/DawnlightCore/src/commit/f8aaa5c4218f54536ccf994a2d512aed2e3678b7/docs/schemas-v5/dawnlight.shaderpack.v5.schema.json"
+    },
+    {
+      "id": "completion-v1",
+      "path": "reference/inputs/completion-v1.json",
+      "length": 74074,
+      "sha256": "950cb7bb86b4d4c04aca0f9d1f848c25b98d11259c358b568a6c60488308f7e2",
+      "sourcePath": "docs/schemas/dawnlight.shaderpack.completions.v1.json",
+      "origin": "git-blob",
+      "sourceCommit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+      "url": "https://gitea.com/EltanceX/DawnlightCore/src/commit/f8aaa5c4218f54536ccf994a2d512aed2e3678b7/docs/schemas/dawnlight.shaderpack.completions.v1.json"
+    },
+    {
+      "id": "completion-v2",
+      "path": "reference/inputs/completion-v2.json",
+      "length": 94891,
+      "sha256": "a363f852dbbc9edcfe47dd119d5183b2ae6b9a9516fed6ccd090de1fb73cfaac",
+      "sourcePath": "docs/schemas-v5/dawnlight.shaderpack.completions.v2.json",
+      "origin": "git-blob",
+      "sourceCommit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+      "url": "https://gitea.com/EltanceX/DawnlightCore/src/commit/f8aaa5c4218f54536ccf994a2d512aed2e3678b7/docs/schemas-v5/dawnlight.shaderpack.completions.v2.json"
+    },
+    {
+      "id": "catalog",
+      "path": "reference/inputs/catalog.json",
+      "length": 43608,
+      "sha256": "5be2affb0f59336b7e7fb8361f8637ac15df1d0f65b018683d4822349cdba6b3",
+      "sourcePath": null,
+      "origin": "analyzer-output",
+      "sourceCommit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+      "url": null
+    },
+    {
+      "id": "diagnostics",
+      "path": "reference/inputs/diagnostics.md",
+      "length": 23215,
+      "sha256": "831bd2ea22f1de394d681190eea8a28f6a8766b951aa0c353fea1a33df98b88f",
+      "sourcePath": null,
+      "origin": "analyzer-output",
+      "sourceCommit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+      "url": null
+    },
+    {
+      "id": "temporal",
+      "path": "reference/inputs/temporal.json",
+      "length": 12027,
+      "sha256": "db4bfd75007410d32b06eb037c96a49dd28f4ce53eae16e1d89787476553c242",
+      "sourcePath": "docs/contracts/DawnlightTemporalView-v1.json",
+      "origin": "git-blob",
+      "sourceCommit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+      "url": "https://gitea.com/EltanceX/DawnlightCore/src/commit/f8aaa5c4218f54536ccf994a2d512aed2e3678b7/docs/contracts/DawnlightTemporalView-v1.json"
+    },
+    {
+      "id": "settings-guide",
+      "path": "reference/inputs/settings-guide.md",
+      "length": 11251,
+      "sha256": "8c03a4c4d3719f0f2e625692f6227bc5fd889cb20684179831121391b2e71d8f",
+      "sourcePath": "docs/ShaderPackSettingsUiReference.md",
+      "origin": "git-blob",
+      "sourceCommit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+      "url": "https://gitea.com/EltanceX/DawnlightCore/src/commit/f8aaa5c4218f54536ccf994a2d512aed2e3678b7/docs/ShaderPackSettingsUiReference.md"
+    }
+  ],
+  "settingsFields": {
+    "length": 1213,
+    "sha256": "2263ff95a2308ca571389306ad2425ea4377c807c12acda94e9385f542f5ba4a"
+  }
+}

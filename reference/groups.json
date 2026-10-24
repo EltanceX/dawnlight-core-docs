@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "groups": {
+    "manifest": [
+      "manifest",
+      "sourceManifest",
+      "fragment",
+      "identifier",
+      "relativePath",
+      "nonEmptyString",
+      "positiveVersion"
+    ],
+    "options": [
+      "option",
+      "optionScalar",
+      "condition"
+    ],
+    "resources": [
+      "resource",
+      "content",
+      "size",
+      "sampling",
+      "historyLifetime",
+      "resourceView"
+    ],
+    "programs": [
+      "program",
+      "variant",
+      "defineValue",
+      "defineBinding",
+      "nullableDefineValue",
+      "glslIdentifier"
+    ],
+    "passes": [
+      "pass",
+      "stage",
+      "host",
+      "ordering",
+      "service"
+    ],
+    "commands": [
+      "command",
+      "copy",
+      "clear",
+      "dispatch",
+      "viewport",
+      "provider"
+    ],
+    "targets": [
+      "targets",
+      "colorTarget",
+      "depthTarget",
+      "state",
+      "drawBufferLayout"
+    ],
+    "bindings": [
+      "binding",
+      "semantic",
+      "sceneBinding",
+      "customBinding"
+    ],
+    "scene": [
+      "sceneRoute",
+      "frameTarget"
+    ],
+    "materials": [
+      "materials",
+      "materialsFragment",
+      "materialProperty",
+      "materialTag",
+      "materialDefinition",
+      "materialGroup",
+      "materialMapping",
+      "materialSelector",
+      "materialOption",
+      "materialValue",
+      "contentId",
+      "contentOwner"
+    ],
+    "custom-data": [
+      "customData",
+      "customVariable",
+      "dataExpression",
+      "dataId"
+    ]
+  }
+}

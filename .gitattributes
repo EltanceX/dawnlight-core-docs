@@ -1,5 +1,6 @@
 * text=auto
 .gitattributes text eol=lf
+.gitignore text eol=lf
 *.mjs text eol=lf
 *.md text eol=lf
 *.json text eol=lf
@@ -15,3 +16,6 @@
 /vendor/dawnlight/** -text
 # Runtime exports retain the exact bytes hashed in the observation inventory.
 /site/public/evidence/w4/** -text whitespace=cr-at-eol
+# Public contract inputs retain their locked upstream bytes.
+/reference/inputs/** -text whitespace=cr-at-eol
+/reference/examples/** text eol=lf

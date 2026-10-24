@@ -1,0 +1,17 @@
+#version 320 es
+precision highp float;
+precision highp int;
+uniform sampler2D u_sceneColor;
+layout(std140) uniform ReferenceTint {
+    highp uvec4 tableHeader;
+};
+layout(std430) readonly buffer ReferenceStorage {
+    highp uvec4 storageHeader;
+};
+in vec2 v_uv;
+layout(location = 0) out vec4 o_color;
+void main() {
+    vec4 scene = texture(u_sceneColor, v_uv);
+    float diagnostic = any(notEqual(tableHeader, storageHeader)) ? 1.0 : 0.0;
+    o_color = vec4(mix(scene.rgb, vec3(diagnostic, 0.0, 0.0), 0.08), scene.a);
+}

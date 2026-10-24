@@ -1,0 +1,163 @@
+{
+  "schemaVersion": 1,
+  "stage": "W5",
+  "observedOn": "2026-10-24",
+  "timezone": "America/New_York",
+  "status": "public-reference-delivered",
+  "baselineId": "candidate-f8aaa5c4",
+  "sourceCommit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+  "evidence": [
+    {
+      "path": "metadata/reference-inputs.json",
+      "length": 4639,
+      "sha256": "5bf98e219e97132c06d952a1027f4adedfcf977538cc2b5480985a0d5afdd9d5"
+    },
+    {
+      "path": "metadata/reference-examples.json",
+      "length": 126277,
+      "sha256": "7b58d628b24d1480e4da17d8546ef5a64f1f0384452c9600ff3409bc042e31ea"
+    },
+    {
+      "path": "reference/settings-ui-fields.json",
+      "length": 1213,
+      "sha256": "2263ff95a2308ca571389306ad2425ea4377c807c12acda94e9385f542f5ba4a"
+    },
+    {
+      "path": "reference/groups.json",
+      "length": 1524,
+      "sha256": "745be08a18d636ea73e860db1b1c68627d490fd9f77097091052f15af8d8f363"
+    },
+    {
+      "path": "reference/pages.json",
+      "length": 9244,
+      "sha256": "92129dce34094d281a6bfdab5193346eb86b09d467f11622c3b9c1493297bfa3"
+    }
+  ],
+  "coverage": {
+    "referenceTopics": 18,
+    "bilingualReferencePages": 36,
+    "namedPropertyOccurrences": 1052,
+    "dictionaryOccurrences": 16,
+    "coverageHash": "249b03921888fbcf7adac539aac30b0d92ed22484375997606d3e377c79a8c5c",
+    "definitionOwners": {
+      "manifest": "manifest",
+      "sourceManifest": "manifest",
+      "fragment": "manifest",
+      "identifier": "manifest",
+      "relativePath": "manifest",
+      "nonEmptyString": "manifest",
+      "positiveVersion": "manifest",
+      "option": "options",
+      "optionScalar": "options",
+      "condition": "options",
+      "resource": "resources",
+      "content": "resources",
+      "size": "resources",
+      "sampling": "resources",
+      "historyLifetime": "resources",
+      "resourceView": "resources",
+      "program": "programs",
+      "variant": "programs",
+      "defineValue": "programs",
+      "defineBinding": "programs",
+      "nullableDefineValue": "programs",
+      "glslIdentifier": "programs",
+      "pass": "passes",
+      "stage": "passes",
+      "host": "passes",
+      "ordering": "passes",
+      "service": "passes",
+      "command": "commands",
+      "copy": "commands",
+      "clear": "commands",
+      "dispatch": "commands",
+      "viewport": "commands",
+      "provider": "commands",
+      "targets": "targets",
+      "colorTarget": "targets",
+      "depthTarget": "targets",
+      "state": "targets",
+      "drawBufferLayout": "targets",
+      "binding": "bindings",
+      "semantic": "bindings",
+      "sceneBinding": "bindings",
+      "customBinding": "bindings",
+      "sceneRoute": "scene",
+      "frameTarget": "scene",
+      "materials": "materials",
+      "materialsFragment": "materials",
+      "materialProperty": "materials",
+      "materialTag": "materials",
+      "materialDefinition": "materials",
+      "materialGroup": "materials",
+      "materialMapping": "materials",
+      "materialSelector": "materials",
+      "materialOption": "materials",
+      "materialValue": "materials",
+      "contentId": "materials",
+      "contentOwner": "materials",
+      "customData": "custom-data",
+      "customVariable": "custom-data",
+      "dataExpression": "custom-data",
+      "dataId": "custom-data"
+    },
+    "settingsUiObjects": [
+      "root",
+      "page",
+      "group",
+      "control",
+      "choice",
+      "condition",
+      "hiddenOption"
+    ],
+    "behaviorClaim": "reviewed-prose-linked-to-structural-ownership-not-runtime-completeness"
+  },
+  "examples": {
+    "upstreamStaticPassed": 4,
+    "upstreamFiles": 369,
+    "websiteNegativeFixtures": 1,
+    "positiveUniformBufferRuntimeExample": false,
+    "negativeFixtureStatus": "expected-rejected-combination",
+    "negativeDiagnostic": "DLMAT1002",
+    "sourceAndExtractedArchiveAgree": true,
+    "sceneLabWarning": "DLABI2005"
+  },
+  "checks": {
+    "contentRegression": 43,
+    "referenceRegression": 16,
+    "lockedInputRegression": 6,
+    "analyzerInvocations": 23,
+    "positiveUpstreamAnalyzerChecks": 15,
+    "negativeFixtureSourceArchiveChecks": 8,
+    "localBrowser": 72,
+    "generatedFiles": 108,
+    "htmlPages": 78,
+    "localLinks": 4890,
+    "assetReferences": 945,
+    "anchors": 1169
+  },
+  "historicalDifferences": [
+    "catalog.supportedFormats.manifest=[3,4] retained",
+    "v5 completion contains 23 inputs; older guide lists 11",
+    "early temporal runtimeReady=false retains original document identity"
+  ],
+  "preservation": {
+    "w0ThroughW4FrozenRecords": true,
+    "courseSourcesAndArchiveIdentities": true,
+    "privateHostSourcePublished": false,
+    "fullVendorSnapshotPublished": false,
+    "domainSettingsChanged": false
+  },
+  "publicCi": {
+    "mode": "pinned-public-inputs-and-matching-committed-receipts-plus-regeneration-and-browser",
+    "requiresPrivateAssets": false,
+    "liveAnalyzerRun": false,
+    "liveGameRun": false
+  },
+  "limitations": [
+    "no-new-game-driver-or-performance-acceptance",
+    "no-positive-uniformBuffer-runtime-example-in-pinned-set",
+    "legacy-compatibility-page-module-size-to-review-at-W8",
+    "W4-independent-human-reader-trial-remains-pending"
+  ]
+}

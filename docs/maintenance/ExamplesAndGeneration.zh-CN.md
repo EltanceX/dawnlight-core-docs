@@ -55,6 +55,6 @@ Analyzer 退出码 1 是业务合同失败，2 是命令用法错误，二者分
 
 ## 公开 CI 与运行时边界
 
-公开 Linux CI 校验匹配的既有 Analyzer 收据、重新生成 ZIP，并执行 27 项内容回归和 60 项桌面/移动端浏览器检查。构建另校验公开驱动、接口、生命周期及图片哈希。它不重新执行 Windows Analyzer 或游戏。手动 Windows 工作流已接入两条 Analyzer 流程，仍需要 `DAWNLIGHT_ASSETS_TOKEN` 读取私有固定工具与快照；当前未配置此 secret。
+公开 Linux CI 校验匹配的既有 Analyzer 收据、重新生成 ZIP，并执行 43 项内容回归和 72 项桌面/移动端浏览器检查。构建另校验公开驱动、接口、生命周期及图片哈希。它不重新执行 Windows Analyzer 或游戏。手动 Windows 工作流已接入课程与 W5 参考的 Analyzer 流程，仍需要 `DAWNLIGHT_ASSETS_TOKEN` 读取私有固定工具与快照；当前未配置此 secret。W5 参考的独立生成和预期拒绝维护见 [Reference.zh-CN.md](Reference.zh-CN.md)。
 
 静态收据中的 `driverStatus=notProvided`、`runtimeEvaluated=false`、`liveWorldVerified=false`、`visual=notRun` 原样保留；课程用单独组件显示有日期、宿主和快照身份的实机观察。没有覆盖的类别、device reset、其他平台、性能和独立真人试读仍待完成。源码哈希匹配和静态检查通过不能替代实际运行记录。

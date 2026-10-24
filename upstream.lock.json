@@ -382,5 +382,10 @@
     "path": "metadata/w4-verification.json",
     "length": 3929,
     "sha256": "a3ee01737d9858976a1236a7d44ec0045b3d19d21ea4dc075cb36d533c18929e"
+  },
+  "w5Verification": {
+    "path": "metadata/w5-verification.json",
+    "length": 5185,
+    "sha256": "8c73b802c7d931a084604ab203d2a547d2abb6f394870a6ff111ce028916c62c"
   }
 }

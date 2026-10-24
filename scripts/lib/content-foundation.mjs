@@ -4,7 +4,7 @@ import path from 'node:path';
 import { parseDocument } from 'yaml';
 import { ROOT, readJson, files, hash, jsonBytes, inside, relativeName, zipEntries } from './locked-inputs.mjs';
 
-export const generatedScopes = ['site/examples', 'site/en/examples', 'site/public/downloads/examples', 'site/.vitepress/generated'];
+export const generatedScopes = ['site/examples', 'site/en/examples', 'site/public/downloads/examples', 'site/reference', 'site/en/reference', 'site/public/downloads/reference', 'site/.vitepress/generated'];
 export const evidenceBoundary = { driverStatus: 'notProvided', runtimeEvaluated: false, liveWorldVerified: false, visual: 'notRun' };
 
 export function frontmatter(text, file) {

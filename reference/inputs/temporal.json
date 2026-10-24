@@ -1,0 +1,134 @@
+{
+  "schemaVersion": 1,
+  "contract": "dawnlight:temporal_view@1",
+  "stage": "MU-SC-3.1",
+  "status": "FrozenContract;RuntimeProvidersNotRegistered",
+  "runtimeReady": false,
+  "scope": {
+    "activeViewsPerPipeline": 1,
+    "splitScreen": "NotApplicable",
+    "vrStereo": "OutsideThisContract",
+    "auxiliaryViews": "Cannot inherit main-view CPU state or native history slots"
+  },
+  "ownership": {
+    "stableViewKey": "Positive process-local Int64 allocated once per view owner; never reused; not serialized as float or GPU identity",
+    "pipeline": "Exact PostProcessing instance owns one CPU timeline and the matching registry/native history slots",
+    "validationKey": ["pipeline identity", "stable view key", "generation", "world epoch", "device epoch", "camera reference", "render extent", "unjittered projection", "jitter configuration"],
+    "invocation": "Positive Int64 per actual view render, distinct from stableViewKey and engine frame index",
+    "cameraReplacement": "Invalidate the shared owner timeline and GPU histories; no cache of retired cameras",
+    "hotPath": "Fixed-size inline snapshots and one pending/committed slot; O(1); no dictionaries, LINQ, heap arrays, GL queries or pixel readback"
+  },
+  "snapshot": {
+    "capture": "After active generation publication, camera PrepareForDrawing, target/scale preparation and SharedVariables.UpdateMatrices; before the first temporal consumer or World draw",
+    "immutability": "All commands in one invocation reuse the same captured values, independent of their targets",
+    "extent": "Actual full-view color/depth render width and height, excluding command downsample targets and desktop window size; each positive integer <=16777216 for exact Vec2 float representation",
+    "unavailable": "No world/view, auxiliary view or absent temporal dependency is unavailable; never manufacture initialized identity history",
+    "invalidHistory": "Available snapshot with history_valid=false, nonzero reset mask and previous fields copied from their current counterparts",
+    "invalidCurrentSample": "Nonfinite/noninvertible current inputs are unavailable; reject temporal participation and invalidate owner before writes instead of manufacturing fallback matrices",
+    "validity": "Host predecessor continuity only; consumers must also check their own GPU history validity, bounds, depth and scene class"
+  },
+  "sampleIndex": {
+    "type": "UInt32",
+    "first": 0,
+    "advance": "One unchecked +1 after successful output and history advance; no command-level advance",
+    "reset": "Restart at zero on discontinuity; failed/abandoned attempt never consumes a sample",
+    "wrap": "UInt32 modulo 4294967296; wrapping does not invalidate history or identify a view",
+    "skippedView": "No capture, write, index advance or timestamp commit; next render measures the real interval"
+  },
+  "transaction": {
+    "commit": "After World, AfterDraw, AfterFinal, ScreenOutput and native/logical frame-state restoration succeed; GPU history advance succeeds before nonthrowing CPU commit",
+    "duplicateAccess": "Same invocation reads are idempotent",
+    "duplicateRender": "Reject a second full temporal render of the same owner in the same engine frame before history writes; invalidate owner; next frame falls back",
+    "failure": "Discard pending CPU snapshot, invalidate timing and all owned GPU histories including pending commits; preserve slot identity without claiming rollback of pixels already written",
+    "failedCandidate": "Do not capture or mutate the active timeline, options or native history",
+    "successfulPublication": "New generation starts invalid even if the source, options or camera appear equivalent"
+  },
+  "renderDelta": {
+    "secondsInput": "dawnlight:data/view_render_delta_seconds@1",
+    "validInput": "dawnlight:data/view_render_delta_valid@1",
+    "maximumSeconds": 0.25,
+    "compatibility": "Keep existing small-state v1 semantics; temporal history can be invalid while small-state delta remains valid, e.g. a position cut"
+  },
+  "cameraCutPolicy": {
+    "id": "dawnlight:camera_cut@1",
+    "distanceBlocksExclusive": 16.0,
+    "forwardDotExclusiveMinimum": 0.5,
+    "upDotExclusiveMinimum": 0.5,
+    "orientation": "Compare separately normalized forward and up vectors; either dot < 0.5 resets, including roll; exactly 60 degrees is accepted",
+    "position": "Euclidean distance between successful previous and current world positions; >16 resets, exactly 16 is accepted",
+    "invalidCamera": "Nonfinite position/matrix/basis, zero basis or noninvertible projection is invalid",
+    "explicitReset": "A host camera cut can reset even below thresholds; package AST cannot override host continuity"
+  },
+  "coordinates": {
+    "hostMatrices": "Engine row vectors: world * View * Projection; View includes full world translation",
+    "uniformMatrices": "M11,M12,...,M44 uploaded with transpose=false form GLSL column matrices equal to transpose(Engine matrix)",
+    "depth": "Host projection clip.z/clip.w is [0,1]; standard OPENGL_POSITION_FIX maps z to 2*z-w, so sampled depth stays host [0,1]",
+    "reconstruction": "inverse(render_projection) * vec4(uv*2-1, rawDepth, 1); divide by w; inverse(view) yields absolute world",
+    "reprojection": "previous_projection * previous_view * world; divide by w; previous UV = previous NDC.xy*0.5+0.5",
+    "relativeAlternative": "For precision, rotate current view position into current camera-relative world; add currentPosition-previousPosition once; use rotation-only previous view",
+    "sky": "Direction vectors use w=0 through view transforms, omitting camera translations; sky/class/depth rejection is a consumer requirement",
+    "framebufferUV": "Full-view texture UV, bottom-left origin; +jitterPixels moves toward increasing texture x/y",
+    "presentation": "UI top-left conversion, framebuffer y flips, reduced Z or other depth encodings require an explicit adapter; no implicit reuse of the main-view reconstruction"
+  },
+  "jitter": {
+    "enable": "Separate G6 opt-in with complete scene coverage; reading G5 inputs alone never enables jitter",
+    "pixelsToNdc": "2*jitterPixels/renderExtent",
+    "projection": "For row vectors Pj=P*J, J.M41=2*jitterPixels.x/width, J.M42=2*jitterPixels.y/height; J otherwise identity",
+    "clip": "Equivalent to clip.xy += jitterNdc*clip.w; z and w unchanged",
+    "culling": "Camera logical projection, picking and culling remain unjittered; draw color/depth share render projection",
+    "configurationChange": "Pattern/version/amplitude/enable changes invalidate history, unlike normal per-sample jitter",
+    "upstreamMakeUp": "AA_TYPE>1 adds jitter; AA_TYPE=1 only resolves without geometric jitter. The 16 phases repeat four (+0.5,+0.5),(-0.5,-0.5),(-0.5,+0.5),(+0.5,-0.5) NDC numerators divided by extent; equivalent physical pixel offsets are +/-0.25, not +/-0.5",
+    "upstreamPixelOffsets": [[0.25,0.25],[-0.25,-0.25],[-0.25,0.25],[0.25,-0.25],[0.25,0.25],[-0.25,-0.25],[-0.25,0.25],[0.25,-0.25],[0.25,0.25],[-0.25,-0.25],[-0.25,0.25],[0.25,-0.25],[0.25,0.25],[-0.25,-0.25],[-0.25,0.25],[0.25,-0.25]]
+  },
+  "inputDefaults": {
+    "version": 1,
+    "frequency": "View",
+    "missingPolicy": "Error",
+    "availability": ["World", "Frame", "View"],
+    "requiredServices": [],
+    "registered": false
+  },
+  "inputs": [
+    {"id":"dawnlight:data/view_sample_index","type":"UInt","unit":"samples","fallback":"0"},
+    {"id":"dawnlight:data/view_history_valid","type":"Bool","unit":"dimensionless","fallback":"false"},
+    {"id":"dawnlight:data/view_history_reset_reason","type":"UInt","unit":"bit_mask","fallback":"nonzero resetReasons mask"},
+    {"id":"dawnlight:data/previous_view_position","type":"Vec3","unit":"world_blocks","space":"world","fallback":"view_position"},
+    {"id":"dawnlight:data/previous_view_matrix","type":"Mat4","unit":"coordinate_transform","sourceSpace":"world","targetSpace":"previous_view","fallback":"view_matrix"},
+    {"id":"dawnlight:data/previous_projection_matrix","type":"Mat4","unit":"coordinate_transform","sourceSpace":"previous_view","targetSpace":"previous_render_clip","fallback":"render_projection_matrix"},
+    {"id":"dawnlight:data/previous_unjittered_projection_matrix","type":"Mat4","unit":"coordinate_transform","sourceSpace":"previous_view","targetSpace":"previous_clip","fallback":"projection_matrix"},
+    {"id":"dawnlight:data/render_projection_matrix","type":"Mat4","unit":"coordinate_transform","sourceSpace":"view","targetSpace":"render_clip","fallback":"actual render projection, even when history is invalid"},
+    {"id":"dawnlight:data/render_projection_inverse_matrix","type":"Mat4","unit":"coordinate_transform","sourceSpace":"render_clip","targetSpace":"view","fallback":"inverse of actual render projection"},
+    {"id":"dawnlight:data/view_jitter_pixels","type":"Vec2","unit":"pixels","space":"view_pixels","fallback":"actual current jitter; zero when jitter is disabled"},
+    {"id":"dawnlight:data/previous_view_jitter_pixels","type":"Vec2","unit":"pixels","space":"previous_view_pixels","fallback":"view_jitter_pixels"},
+    {"id":"dawnlight:data/view_render_extent","type":"Vec2","unit":"pixels","space":"view_pixels","fallback":"actual positive full-view extent"}
+  ],
+  "preservedInputs": [
+    {"id":"dawnlight:data/game_time","type":"Float","frequency":"Frame","unit":"seconds"},
+    {"id":"dawnlight:data/system_time","type":"Float","frequency":"Frame","unit":"seconds"},
+    {"id":"dawnlight:data/day_time","type":"Float","frequency":"Frame","unit":"day_fraction"},
+    {"id":"dawnlight:data/weather_precipitation","type":"Float","frequency":"Frame","unit":"dimensionless"},
+    {"id":"dawnlight:data/view_position","type":"Vec3","frequency":"View","unit":"world_blocks","space":"world"},
+    {"id":"dawnlight:data/view_matrix","type":"Mat4","frequency":"View","unit":"coordinate_transform","sourceSpace":"world","targetSpace":"view"},
+    {"id":"dawnlight:data/projection_matrix","type":"Mat4","frequency":"View","unit":"coordinate_transform","sourceSpace":"view","targetSpace":"clip"},
+    {"id":"dawnlight:data/view_inverse_matrix","type":"Mat4","frequency":"View","unit":"coordinate_transform","sourceSpace":"view","targetSpace":"world"},
+    {"id":"dawnlight:data/projection_inverse_matrix","type":"Mat4","frequency":"View","unit":"coordinate_transform","sourceSpace":"clip","targetSpace":"view"},
+    {"id":"dawnlight:data/view_render_delta_seconds","type":"Float","frequency":"View","unit":"seconds"},
+    {"id":"dawnlight:data/view_render_delta_valid","type":"Bool","frequency":"View","unit":"dimensionless"}
+  ],
+  "resetReasons": {
+    "None":0,"NoSuccessfulRender":1,"UnfinishedRender":2,"InvalidInvocation":4,
+    "GenerationChanged":8,"WorldChanged":16,"DeviceChanged":32,"CameraChanged":64,
+    "ExtentChanged":128,"ProjectionChanged":256,"RepeatedFrame":512,"InvalidTime":1024,
+    "IntervalOutOfRange":2048,"PositionCut":4096,"OrientationCut":8192,"ExplicitReset":16384,
+    "DrawFailed":32768,"UnsupportedView":65536,"InvalidCamera":131072,
+    "JitterConfigurationChanged":262144,"ViewOwnerChanged":524288,"HistoryInvalidated":1048576
+  },
+  "nextStageRequirements": [
+    "MU-SC-3.2: real begin/commit/invalidate integration, current/previous immutable snapshots, active consumer dependency closure and exact provider registration",
+    "MU-SC-3.2: native history ownership, candidate rollback, no duplicate commits, skipped/failed render and all reset reasons with allocation tests",
+    "G5 registration updates catalog export, schema/completion, analyzer and driver-report through the existing descriptor path",
+    "MU-SC-3.3: Terrain/model/skinned/sky/hand/particles/moving-block draw and depth parity; third-party opt-in; shadows unjittered",
+    "MU-SC-3.4/3.5: TAA/blur package adapters and GPU histories with explicit class/depth rejection; no Minecraft hand-depth threshold",
+    "MU-SC-3.6: independent registered-ABI fixture, real scene/lifecycle capture and ordinary-process performance evidence"
+  ]
+}

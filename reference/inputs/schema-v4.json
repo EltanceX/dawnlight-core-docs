@@ -1,0 +1,2639 @@
+{
+  "$defs": {
+    "binding": {
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "enum": [
+                  "image2D",
+                  "storageBuffer"
+                ]
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "access"
+            ]
+          }
+        },
+        {
+          "if": {
+            "not": {
+              "properties": {
+                "kind": {
+                  "enum": [
+                    "image2D",
+                    "storageBuffer"
+                  ]
+                }
+              }
+            }
+          },
+          "then": {
+            "not": {
+              "anyOf": [
+                {
+                  "required": [
+                    "access"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "view": {
+                "const": "dawnlight:history/previous"
+              }
+            },
+            "required": [
+              "view"
+            ]
+          },
+          "then": {
+            "required": [
+              "framesAgo"
+            ]
+          }
+        },
+        {
+          "if": {
+            "not": {
+              "properties": {
+                "view": {
+                  "const": "dawnlight:history/previous"
+                }
+              },
+              "required": [
+                "view"
+              ]
+            }
+          },
+          "then": {
+            "not": {
+              "anyOf": [
+                {
+                  "required": [
+                    "framesAgo"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "properties": {
+        "access": {
+          "enum": [
+            "readOnly",
+            "writeOnly",
+            "readWrite"
+          ]
+        },
+        "binding": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "enabledWhen": {
+          "items": {
+            "$ref": "#/$defs/condition"
+          },
+          "type": "array"
+        },
+        "fallback": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/identifier"
+            },
+            {
+              "$ref": "#/$defs/resourceView"
+            }
+          ]
+        },
+        "framesAgo": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "kind": {
+          "enum": [
+            "sampler2D",
+            "samplerCube",
+            "image2D",
+            "uniformBuffer",
+            "storageBuffer"
+          ]
+        },
+        "resource": {
+          "$ref": "#/$defs/identifier"
+        },
+        "symbol": {
+          "$ref": "#/$defs/glslIdentifier"
+        },
+        "view": {
+          "enum": [
+            "dawnlight:direct",
+            "dawnlight:history/current",
+            "dawnlight:history/previous",
+            "dawnlight:shadow/consumer",
+            "dawnlight:shadow/producer"
+          ]
+        }
+      },
+      "required": [
+        "kind",
+        "symbol",
+        "binding",
+        "resource"
+      ],
+      "type": "object"
+    },
+    "clear": {
+      "additionalProperties": false,
+      "minProperties": 1,
+      "properties": {
+        "color": {
+          "items": {
+            "type": "number"
+          },
+          "maxItems": 4,
+          "minItems": 4,
+          "type": "array"
+        },
+        "depth": {
+          "maximum": 1,
+          "minimum": 0,
+          "type": "number"
+        },
+        "stencil": {
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "colorTarget": {
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "loadOp": {
+                "const": "clear"
+              }
+            },
+            "required": [
+              "loadOp"
+            ]
+          },
+          "then": {
+            "required": [
+              "clearValue"
+            ]
+          }
+        },
+        {
+          "if": {
+            "not": {
+              "properties": {
+                "loadOp": {
+                  "const": "clear"
+                }
+              },
+              "required": [
+                "loadOp"
+              ]
+            }
+          },
+          "then": {
+            "not": {
+              "anyOf": [
+                {
+                  "required": [
+                    "clearValue"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "properties": {
+        "clearValue": {
+          "items": {
+            "type": "number"
+          },
+          "maxItems": 4,
+          "minItems": 4,
+          "type": "array"
+        },
+        "framesAgo": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "loadOp": {
+          "enum": [
+            "load",
+            "clear",
+            "dontCare"
+          ]
+        },
+        "location": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "resource": {
+          "$ref": "#/$defs/identifier"
+        },
+        "storeOp": {
+          "enum": [
+            "store",
+            "dontCare"
+          ]
+        },
+        "view": {
+          "enum": [
+            "dawnlight:direct",
+            "dawnlight:history/current",
+            "dawnlight:history/previous",
+            "dawnlight:shadow/consumer",
+            "dawnlight:shadow/producer"
+          ]
+        }
+      },
+      "required": [
+        "location",
+        "resource",
+        "loadOp",
+        "storeOp"
+      ],
+      "type": "object"
+    },
+    "command": {
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "fullscreen"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "required": [
+              "program",
+              "targets"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "compute"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "required": [
+              "program",
+              "dispatch"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "copy"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "required": [
+              "copy"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "clear"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "required": [
+              "clear"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "present"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "required": [
+              "program"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "historyCommit"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "required": [
+              "resource"
+            ]
+          }
+        },
+        {
+          "if": {
+            "not": {
+              "properties": {
+                "type": {
+                  "const": "copy"
+                }
+              },
+              "required": [
+                "type"
+              ]
+            }
+          },
+          "then": {
+            "not": {
+              "anyOf": [
+                {
+                  "required": [
+                    "copy"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "if": {
+            "not": {
+              "properties": {
+                "type": {
+                  "const": "historyCommit"
+                }
+              },
+              "required": [
+                "type"
+              ]
+            }
+          },
+          "then": {
+            "not": {
+              "anyOf": [
+                {
+                  "required": [
+                    "resource"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "compute"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "not": {
+              "anyOf": [
+                {
+                  "required": [
+                    "viewport"
+                  ]
+                },
+                {
+                  "required": [
+                    "clear"
+                  ]
+                },
+                {
+                  "required": [
+                    "targets"
+                  ]
+                },
+                {
+                  "required": [
+                    "state"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "present"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "not": {
+              "anyOf": [
+                {
+                  "required": [
+                    "targets"
+                  ]
+                },
+                {
+                  "required": [
+                    "drawBuffers"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "copy"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "not": {
+              "anyOf": [
+                {
+                  "required": [
+                    "program"
+                  ]
+                },
+                {
+                  "required": [
+                    "bindings"
+                  ]
+                },
+                {
+                  "required": [
+                    "semantics"
+                  ]
+                },
+                {
+                  "required": [
+                    "sceneBindings"
+                  ]
+                },
+                {
+                  "required": [
+                    "targets"
+                  ]
+                },
+                {
+                  "required": [
+                    "drawBuffers"
+                  ]
+                },
+                {
+                  "required": [
+                    "state"
+                  ]
+                },
+                {
+                  "required": [
+                    "viewport"
+                  ]
+                },
+                {
+                  "required": [
+                    "clear"
+                  ]
+                },
+                {
+                  "required": [
+                    "dispatch"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "clear"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "not": {
+              "anyOf": [
+                {
+                  "required": [
+                    "drawBuffers"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "historyCommit"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "not": {
+              "anyOf": [
+                {
+                  "required": [
+                    "program"
+                  ]
+                },
+                {
+                  "required": [
+                    "bindings"
+                  ]
+                },
+                {
+                  "required": [
+                    "semantics"
+                  ]
+                },
+                {
+                  "required": [
+                    "sceneBindings"
+                  ]
+                },
+                {
+                  "required": [
+                    "targets"
+                  ]
+                },
+                {
+                  "required": [
+                    "drawBuffers"
+                  ]
+                },
+                {
+                  "required": [
+                    "state"
+                  ]
+                },
+                {
+                  "required": [
+                    "viewport"
+                  ]
+                },
+                {
+                  "required": [
+                    "clear"
+                  ]
+                },
+                {
+                  "required": [
+                    "dispatch"
+                  ]
+                },
+                {
+                  "required": [
+                    "copy"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "engineDraw"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "oneOf": [
+              {
+                "required": [
+                  "provider"
+                ]
+              },
+              {
+                "required": [
+                  "sceneProvider"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "if": {
+            "not": {
+              "properties": {
+                "type": {
+                  "const": "engineDraw"
+                }
+              },
+              "required": [
+                "type"
+              ]
+            }
+          },
+          "then": {
+            "not": {
+              "anyOf": [
+                {
+                  "required": [
+                    "provider"
+                  ]
+                },
+                {
+                  "required": [
+                    "sceneProvider"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "properties": {
+        "bindings": {
+          "items": {
+            "$ref": "#/$defs/binding"
+          },
+          "type": "array"
+        },
+        "clear": {
+          "$ref": "#/$defs/clear"
+        },
+        "copy": {
+          "$ref": "#/$defs/copy"
+        },
+        "dispatch": {
+          "$ref": "#/$defs/dispatch"
+        },
+        "drawBuffers": {
+          "$ref": "#/$defs/drawBufferLayout"
+        },
+        "program": {
+          "$ref": "#/$defs/identifier"
+        },
+        "provider": {
+          "$ref": "#/$defs/provider"
+        },
+        "resource": {
+          "$ref": "#/$defs/identifier"
+        },
+        "sceneBindings": {
+          "items": {
+            "$ref": "#/$defs/sceneBinding"
+          },
+          "type": "array"
+        },
+        "sceneProvider": {
+          "$ref": "#/$defs/provider"
+        },
+        "semantics": {
+          "items": {
+            "$ref": "#/$defs/semantic"
+          },
+          "type": "array"
+        },
+        "state": {
+          "$ref": "#/$defs/state"
+        },
+        "targets": {
+          "$ref": "#/$defs/targets"
+        },
+        "type": {
+          "enum": [
+            "fullscreen",
+            "compute",
+            "copy",
+            "clear",
+            "present",
+            "engineDraw",
+            "historyCommit"
+          ]
+        },
+        "viewport": {
+          "$ref": "#/$defs/viewport"
+        }
+      },
+      "required": [
+        "type"
+      ],
+      "type": "object"
+    },
+    "condition": {
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "oneOf": [
+            {
+              "required": [
+                "equals"
+              ]
+            },
+            {
+              "required": [
+                "oneOf"
+              ]
+            }
+          ]
+        }
+      ],
+      "properties": {
+        "equals": {
+          "$ref": "#/$defs/optionScalar"
+        },
+        "oneOf": {
+          "items": {
+            "$ref": "#/$defs/optionScalar"
+          },
+          "minItems": 1,
+          "type": "array",
+          "uniqueItems": true
+        },
+        "option": {
+          "$ref": "#/$defs/identifier"
+        }
+      },
+      "required": [
+        "option"
+      ],
+      "type": "object"
+    },
+    "content": {
+      "oneOf": [
+        {
+          "enum": [
+            "undefined",
+            "external"
+          ]
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "type": {
+              "const": "undefined"
+            }
+          },
+          "required": [
+            "type"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "type": {
+              "const": "external"
+            }
+          },
+          "required": [
+            "type"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "type": {
+              "const": "clear"
+            },
+            "value": {
+              "oneOf": [
+                {
+                  "items": {
+                    "type": "number"
+                  },
+                  "maxItems": 1,
+                  "minItems": 1,
+                  "type": "array"
+                },
+                {
+                  "items": {
+                    "type": "number"
+                  },
+                  "maxItems": 4,
+                  "minItems": 4,
+                  "type": "array"
+                }
+              ]
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "allOf": [
+            {
+              "oneOf": [
+                {
+                  "required": [
+                    "path"
+                  ]
+                },
+                {
+                  "required": [
+                    "faces"
+                  ]
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "encoding": {
+              "enum": [
+                "image",
+                "raw"
+              ]
+            },
+            "faces": {
+              "additionalProperties": false,
+              "properties": {
+                "negativeX": {
+                  "$ref": "#/$defs/relativePath"
+                },
+                "negativeY": {
+                  "$ref": "#/$defs/relativePath"
+                },
+                "negativeZ": {
+                  "$ref": "#/$defs/relativePath"
+                },
+                "positiveX": {
+                  "$ref": "#/$defs/relativePath"
+                },
+                "positiveY": {
+                  "$ref": "#/$defs/relativePath"
+                },
+                "positiveZ": {
+                  "$ref": "#/$defs/relativePath"
+                }
+              },
+              "required": [
+                "positiveX",
+                "negativeX",
+                "positiveY",
+                "negativeY",
+                "positiveZ",
+                "negativeZ"
+              ],
+              "type": "object"
+            },
+            "path": {
+              "$ref": "#/$defs/relativePath"
+            },
+            "type": {
+              "const": "asset"
+            }
+          },
+          "required": [
+            "type"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "generator": {
+              "$ref": "#/$defs/identifier"
+            },
+            "type": {
+              "const": "generated"
+            },
+            "version": {
+              "$ref": "#/$defs/positiveVersion"
+            }
+          },
+          "required": [
+            "type",
+            "generator",
+            "version"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "service": {
+              "$ref": "#/$defs/identifier"
+            },
+            "type": {
+              "const": "service"
+            },
+            "version": {
+              "$ref": "#/$defs/positiveVersion"
+            }
+          },
+          "required": [
+            "type",
+            "service",
+            "version"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "copy": {
+      "additionalProperties": false,
+      "properties": {
+        "aspects": {
+          "items": {
+            "enum": [
+              "color",
+              "depth"
+            ]
+          },
+          "minItems": 1,
+          "type": "array",
+          "uniqueItems": true
+        },
+        "destination": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/identifier"
+            },
+            {
+              "$ref": "#/$defs/resourceView"
+            }
+          ]
+        },
+        "filter": {
+          "enum": [
+            "nearest",
+            "linear"
+          ]
+        },
+        "restore": {
+          "enum": [
+            "none",
+            "frame"
+          ]
+        },
+        "source": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/identifier"
+            },
+            {
+              "$ref": "#/$defs/resourceView"
+            }
+          ]
+        }
+      },
+      "required": [
+        "source",
+        "destination",
+        "aspects"
+      ],
+      "type": "object"
+    },
+    "defineBinding": {
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "oneOf": [
+            {
+              "required": [
+                "option"
+              ]
+            },
+            {
+              "required": [
+                "capability"
+              ]
+            }
+          ]
+        }
+      ],
+      "properties": {
+        "capability": {
+          "$ref": "#/$defs/identifier"
+        },
+        "map": {
+          "additionalProperties": {
+            "$ref": "#/$defs/nullableDefineValue"
+          },
+          "type": "object"
+        },
+        "option": {
+          "$ref": "#/$defs/identifier"
+        }
+      },
+      "type": "object"
+    },
+    "defineValue": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/nullableDefineValue"
+        },
+        {
+          "$ref": "#/$defs/defineBinding"
+        }
+      ]
+    },
+    "depthTarget": {
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "loadOp": {
+                "const": "clear"
+              }
+            },
+            "required": [
+              "loadOp"
+            ]
+          },
+          "then": {
+            "required": [
+              "clearValue"
+            ]
+          }
+        },
+        {
+          "if": {
+            "not": {
+              "properties": {
+                "loadOp": {
+                  "const": "clear"
+                }
+              },
+              "required": [
+                "loadOp"
+              ]
+            }
+          },
+          "then": {
+            "not": {
+              "anyOf": [
+                {
+                  "required": [
+                    "clearValue"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "properties": {
+        "clearValue": {
+          "maximum": 1,
+          "minimum": 0,
+          "type": "number"
+        },
+        "framesAgo": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "loadOp": {
+          "enum": [
+            "load",
+            "clear",
+            "dontCare"
+          ]
+        },
+        "resource": {
+          "$ref": "#/$defs/identifier"
+        },
+        "storeOp": {
+          "enum": [
+            "store",
+            "dontCare"
+          ]
+        },
+        "view": {
+          "enum": [
+            "dawnlight:direct",
+            "dawnlight:history/current",
+            "dawnlight:history/previous",
+            "dawnlight:shadow/consumer",
+            "dawnlight:shadow/producer"
+          ]
+        }
+      },
+      "required": [
+        "resource",
+        "loadOp",
+        "storeOp"
+      ],
+      "type": "object"
+    },
+    "dispatch": {
+      "additionalProperties": false,
+      "properties": {
+        "barriers": {
+          "items": {
+            "enum": [
+              "shaderImageAccess",
+              "textureFetch",
+              "textureUpdate",
+              "shaderStorage",
+              "bufferUpdate",
+              "framebuffer"
+            ]
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "groups": {
+          "items": {
+            "minimum": 1,
+            "type": "integer"
+          },
+          "maxItems": 3,
+          "minItems": 3,
+          "type": "array"
+        }
+      },
+      "required": [
+        "groups"
+      ],
+      "type": "object"
+    },
+    "drawBufferLayout": {
+      "items": {
+        "oneOf": [
+          {
+            "const": "disabled"
+          },
+          {
+            "minimum": 0,
+            "type": "integer"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "fragment": {
+      "additionalProperties": false,
+      "properties": {
+        "options": {
+          "items": {
+            "$ref": "#/$defs/option"
+          },
+          "type": "array"
+        },
+        "passes": {
+          "items": {
+            "$ref": "#/$defs/pass"
+          },
+          "type": "array"
+        },
+        "programs": {
+          "items": {
+            "$ref": "#/$defs/program"
+          },
+          "type": "array"
+        },
+        "resources": {
+          "items": {
+            "$ref": "#/$defs/resource"
+          },
+          "type": "array"
+        },
+        "sceneCategories": {
+          "items": {
+            "$ref": "#/$defs/sceneRoute"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "frameTarget": {
+      "additionalProperties": false,
+      "properties": {
+        "targets": {
+          "$ref": "#/$defs/targets"
+        }
+      },
+      "required": [
+        "targets"
+      ],
+      "type": "object"
+    },
+    "glslIdentifier": {
+      "pattern": "^[A-Za-z_][A-Za-z0-9_]*$",
+      "type": "string"
+    },
+    "historyLifetime": {
+      "additionalProperties": false,
+      "properties": {
+        "capacity": {
+          "minimum": 2,
+          "type": "integer"
+        },
+        "kind": {
+          "const": "history"
+        }
+      },
+      "required": [
+        "kind",
+        "capacity"
+      ],
+      "type": "object"
+    },
+    "host": {
+      "additionalProperties": false,
+      "properties": {
+        "ordering": {
+          "$ref": "#/$defs/ordering"
+        },
+        "phase": {
+          "enum": [
+            "modelShadow",
+            "framePrepare",
+            "shadow",
+            "opaque",
+            "transparent",
+            "cloudReflection",
+            "shaftPrepare",
+            "shaftSun",
+            "cloud",
+            "particles",
+            "afterDraw",
+            "afterFinal",
+            "screenOutput"
+          ]
+        },
+        "target": {
+          "enum": [
+            "world",
+            "afterDraw"
+          ]
+        }
+      },
+      "required": [
+        "target",
+        "phase"
+      ],
+      "type": "object"
+    },
+    "identifier": {
+      "pattern": "^[a-z0-9][a-z0-9_.-]*:[a-z0-9][a-z0-9_./-]*$",
+      "type": "string"
+    },
+    "manifest": {
+      "additionalProperties": false,
+      "properties": {
+        "author": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "expectedCatalogSha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "frameTarget": {
+          "$ref": "#/$defs/frameTarget"
+        },
+        "id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "manifestVersion": {
+          "const": 4
+        },
+        "name": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "options": {
+          "items": {
+            "$ref": "#/$defs/option"
+          },
+          "type": "array"
+        },
+        "passes": {
+          "items": {
+            "$ref": "#/$defs/pass"
+          },
+          "type": "array"
+        },
+        "programs": {
+          "items": {
+            "$ref": "#/$defs/program"
+          },
+          "type": "array"
+        },
+        "resources": {
+          "items": {
+            "$ref": "#/$defs/resource"
+          },
+          "type": "array"
+        },
+        "sceneAbiVersion": {
+          "const": 2
+        },
+        "sceneCategories": {
+          "items": {
+            "$ref": "#/$defs/sceneRoute"
+          },
+          "type": "array"
+        },
+        "settings": {
+          "$ref": "#/$defs/relativePath"
+        },
+        "shaderRoot": {
+          "$ref": "#/$defs/relativePath"
+        },
+        "version": {
+          "$ref": "#/$defs/nonEmptyString"
+        }
+      },
+      "required": [
+        "manifestVersion",
+        "id",
+        "name",
+        "version",
+        "options",
+        "resources",
+        "sceneAbiVersion",
+        "sceneCategories"
+      ],
+      "type": "object"
+    },
+    "nonEmptyString": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "nullableDefineValue": {
+      "type": [
+        "string",
+        "boolean",
+        "integer",
+        "number",
+        "null"
+      ]
+    },
+    "option": {
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "boolean"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "allowed": {
+                "items": {
+                  "type": "boolean"
+                },
+                "minItems": 1,
+                "type": "array",
+                "uniqueItems": true
+              },
+              "default": {
+                "type": "boolean"
+              },
+              "max": {
+                "not": {}
+              },
+              "min": {
+                "not": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "integer"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "allowed": {
+                "items": {
+                  "type": "integer"
+                },
+                "minItems": 1,
+                "type": "array",
+                "uniqueItems": true
+              },
+              "default": {
+                "type": "integer"
+              },
+              "max": {
+                "type": "integer"
+              },
+              "min": {
+                "type": "integer"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "number"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "allowed": {
+                "items": {
+                  "type": "number"
+                },
+                "minItems": 1,
+                "type": "array",
+                "uniqueItems": true
+              },
+              "default": {
+                "type": "number"
+              },
+              "max": {
+                "type": "number"
+              },
+              "min": {
+                "type": "number"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "string"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "allowed": {
+                "items": {
+                  "type": "string"
+                },
+                "minItems": 1,
+                "type": "array",
+                "uniqueItems": true
+              },
+              "default": {
+                "type": "string"
+              },
+              "max": {
+                "not": {}
+              },
+              "min": {
+                "not": {}
+              }
+            }
+          }
+        },
+        {
+          "not": {
+            "required": [
+              "allowed",
+              "min"
+            ]
+          }
+        },
+        {
+          "not": {
+            "required": [
+              "allowed",
+              "max"
+            ]
+          }
+        },
+        {
+          "oneOf": [
+            {
+              "required": [
+                "min",
+                "max"
+              ]
+            },
+            {
+              "not": {
+                "anyOf": [
+                  {
+                    "required": [
+                      "min"
+                    ]
+                  },
+                  {
+                    "required": [
+                      "max"
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "properties": {
+        "allowed": {
+          "items": {
+            "$ref": "#/$defs/optionScalar"
+          },
+          "minItems": 1,
+          "type": "array",
+          "uniqueItems": true
+        },
+        "default": {
+          "$ref": "#/$defs/optionScalar"
+        },
+        "description": {
+          "type": "string"
+        },
+        "id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "impact": {
+          "items": {
+            "enum": [
+              "uniform",
+              "program",
+              "pipeline",
+              "resources"
+            ]
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "max": {
+          "type": "number"
+        },
+        "min": {
+          "type": "number"
+        },
+        "name": {
+          "type": "string"
+        },
+        "type": {
+          "enum": [
+            "boolean",
+            "integer",
+            "number",
+            "string"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "type",
+        "default",
+        "impact"
+      ],
+      "type": "object"
+    },
+    "optionScalar": {
+      "type": [
+        "boolean",
+        "integer",
+        "number",
+        "string"
+      ]
+    },
+    "ordering": {
+      "additionalProperties": false,
+      "properties": {
+        "after": {
+          "items": {
+            "$ref": "#/$defs/identifier"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "before": {
+          "items": {
+            "$ref": "#/$defs/identifier"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "requires": {
+          "items": {
+            "$ref": "#/$defs/identifier"
+          },
+          "type": "array",
+          "uniqueItems": true
+        }
+      },
+      "type": "object"
+    },
+    "pass": {
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "not": {
+            "required": [
+              "stage",
+              "host"
+            ]
+          }
+        }
+      ],
+      "properties": {
+        "commands": {
+          "items": {
+            "$ref": "#/$defs/command"
+          },
+          "type": "array"
+        },
+        "enabled": {
+          "type": "boolean"
+        },
+        "enabledWhen": {
+          "items": {
+            "$ref": "#/$defs/condition"
+          },
+          "type": "array"
+        },
+        "host": {
+          "$ref": "#/$defs/host"
+        },
+        "id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "inputs": {
+          "items": {
+            "oneOf": [
+              {
+                "$ref": "#/$defs/identifier"
+              },
+              {
+                "$ref": "#/$defs/resourceView"
+              }
+            ]
+          },
+          "type": "array"
+        },
+        "outputs": {
+          "items": {
+            "oneOf": [
+              {
+                "$ref": "#/$defs/identifier"
+              },
+              {
+                "$ref": "#/$defs/resourceView"
+              }
+            ]
+          },
+          "type": "array"
+        },
+        "programs": {
+          "items": {
+            "$ref": "#/$defs/identifier"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "services": {
+          "items": {
+            "$ref": "#/$defs/service"
+          },
+          "type": "array"
+        },
+        "stage": {
+          "$ref": "#/$defs/stage"
+        }
+      },
+      "required": [
+        "id",
+        "enabled"
+      ],
+      "type": "object"
+    },
+    "positiveVersion": {
+      "minimum": 1,
+      "type": "integer"
+    },
+    "program": {
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "graphics"
+              }
+            },
+            "required": [
+              "kind"
+            ]
+          },
+          "then": {
+            "allOf": [
+              {
+                "not": {
+                  "anyOf": [
+                    {
+                      "required": [
+                        "compute"
+                      ]
+                    }
+                  ]
+                }
+              }
+            ],
+            "required": [
+              "vertex",
+              "fragment"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "compute"
+              }
+            },
+            "required": [
+              "kind"
+            ]
+          },
+          "then": {
+            "allOf": [
+              {
+                "not": {
+                  "anyOf": [
+                    {
+                      "required": [
+                        "vertex"
+                      ]
+                    },
+                    {
+                      "required": [
+                        "fragment"
+                      ]
+                    },
+                    {
+                      "required": [
+                        "compileMode"
+                      ]
+                    }
+                  ]
+                }
+              }
+            ],
+            "required": [
+              "compute"
+            ]
+          }
+        }
+      ],
+      "properties": {
+        "bindings": {
+          "not": {}
+        },
+        "compileMode": {
+          "enum": [
+            "legacyCustom",
+            "officialCompatible",
+            "manifestDriven"
+          ]
+        },
+        "compute": {
+          "$ref": "#/$defs/relativePath"
+        },
+        "defines": {
+          "additionalProperties": {
+            "$ref": "#/$defs/defineValue"
+          },
+          "propertyNames": {
+            "$ref": "#/$defs/glslIdentifier"
+          },
+          "type": "object"
+        },
+        "drawBuffers": {
+          "not": {}
+        },
+        "engineDrawState": {
+          "not": {}
+        },
+        "fragment": {
+          "$ref": "#/$defs/relativePath"
+        },
+        "id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "kind": {
+          "enum": [
+            "graphics",
+            "compute"
+          ]
+        },
+        "state": {
+          "not": {}
+        },
+        "targets": {
+          "not": {}
+        },
+        "variants": {
+          "items": {
+            "$ref": "#/$defs/variant"
+          },
+          "type": "array"
+        },
+        "vertex": {
+          "$ref": "#/$defs/relativePath"
+        }
+      },
+      "required": [
+        "id",
+        "kind"
+      ],
+      "type": "object"
+    },
+    "provider": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "version": {
+          "$ref": "#/$defs/positiveVersion"
+        }
+      },
+      "required": [
+        "id",
+        "version"
+      ],
+      "type": "object"
+    },
+    "relativePath": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "resource": {
+      "oneOf": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "content": {
+              "$ref": "#/$defs/content"
+            },
+            "format": {
+              "$ref": "#/$defs/nonEmptyString"
+            },
+            "historyCapacity": {
+              "minimum": 2,
+              "type": "integer"
+            },
+            "id": {
+              "$ref": "#/$defs/identifier"
+            },
+            "kind": {
+              "enum": [
+                "texture2D",
+                "textureCube"
+              ]
+            },
+            "lifetime": {
+              "oneOf": [
+                {
+                  "enum": [
+                    "persistent",
+                    "frame",
+                    "transient",
+                    "history",
+                    "external"
+                  ]
+                },
+                {
+                  "$ref": "#/$defs/historyLifetime"
+                }
+              ]
+            },
+            "sampling": {
+              "$ref": "#/$defs/sampling"
+            },
+            "size": {
+              "$ref": "#/$defs/size"
+            }
+          },
+          "required": [
+            "id",
+            "kind",
+            "lifetime"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "byteSize": {
+              "minimum": 1,
+              "type": "integer"
+            },
+            "content": {
+              "$ref": "#/$defs/content"
+            },
+            "id": {
+              "$ref": "#/$defs/identifier"
+            },
+            "kind": {
+              "const": "buffer"
+            },
+            "lifetime": {
+              "oneOf": [
+                {
+                  "enum": [
+                    "persistent",
+                    "frame",
+                    "transient",
+                    "history",
+                    "external"
+                  ]
+                },
+                {
+                  "$ref": "#/$defs/historyLifetime"
+                }
+              ]
+            },
+            "usage": {
+              "enum": [
+                "staticDraw",
+                "dynamicDraw",
+                "streamDraw"
+              ]
+            }
+          },
+          "required": [
+            "id",
+            "kind",
+            "lifetime",
+            "byteSize"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "resourceView": {
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "view": {
+                "const": "dawnlight:history/previous"
+              }
+            },
+            "required": [
+              "view"
+            ]
+          },
+          "then": {
+            "required": [
+              "framesAgo"
+            ]
+          }
+        },
+        {
+          "if": {
+            "not": {
+              "properties": {
+                "view": {
+                  "const": "dawnlight:history/previous"
+                }
+              },
+              "required": [
+                "view"
+              ]
+            }
+          },
+          "then": {
+            "not": {
+              "anyOf": [
+                {
+                  "required": [
+                    "framesAgo"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "properties": {
+        "framesAgo": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "resource": {
+          "$ref": "#/$defs/identifier"
+        },
+        "view": {
+          "enum": [
+            "dawnlight:direct",
+            "dawnlight:history/current",
+            "dawnlight:history/previous",
+            "dawnlight:shadow/consumer",
+            "dawnlight:shadow/producer"
+          ]
+        }
+      },
+      "required": [
+        "resource"
+      ],
+      "type": "object"
+    },
+    "sampling": {
+      "additionalProperties": false,
+      "properties": {
+        "magFilter": {
+          "enum": [
+            "nearest",
+            "linear"
+          ]
+        },
+        "minFilter": {
+          "enum": [
+            "nearest",
+            "linear"
+          ]
+        },
+        "mipLevels": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "wrapS": {
+          "enum": [
+            "repeat",
+            "clampToEdge",
+            "mirroredRepeat"
+          ]
+        },
+        "wrapT": {
+          "enum": [
+            "repeat",
+            "clampToEdge",
+            "mirroredRepeat"
+          ]
+        }
+      },
+      "type": "object"
+    },
+    "sceneBinding": {
+      "additionalProperties": false,
+      "properties": {
+        "binding": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "contract": {
+          "$ref": "#/$defs/identifier"
+        },
+        "frequency": {
+          "enum": [
+            "frame",
+            "view",
+            "batch",
+            "draw"
+          ]
+        },
+        "symbol": {
+          "$ref": "#/$defs/glslIdentifier"
+        },
+        "version": {
+          "$ref": "#/$defs/positiveVersion"
+        }
+      },
+      "required": [
+        "symbol",
+        "contract",
+        "version",
+        "frequency"
+      ],
+      "type": "object"
+    },
+    "sceneRoute": {
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "mode": {
+                "const": "override"
+              }
+            },
+            "required": [
+              "mode"
+            ]
+          },
+          "then": {
+            "required": [
+              "stage"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "mode": {
+                "enum": [
+                  "builtin",
+                  "disabled"
+                ]
+              }
+            }
+          },
+          "then": {
+            "not": {
+              "anyOf": [
+                {
+                  "required": [
+                    "stage"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "mode": {
+          "enum": [
+            "override",
+            "builtin",
+            "disabled"
+          ]
+        },
+        "stage": {
+          "$ref": "#/$defs/identifier"
+        },
+        "version": {
+          "$ref": "#/$defs/positiveVersion"
+        }
+      },
+      "required": [
+        "id",
+        "version",
+        "mode"
+      ],
+      "type": "object"
+    },
+    "semantic": {
+      "additionalProperties": false,
+      "properties": {
+        "enabledWhen": {
+          "items": {
+            "$ref": "#/$defs/condition"
+          },
+          "type": "array"
+        },
+        "semantic": {
+          "$ref": "#/$defs/identifier"
+        },
+        "symbol": {
+          "$ref": "#/$defs/glslIdentifier"
+        },
+        "version": {
+          "$ref": "#/$defs/positiveVersion"
+        }
+      },
+      "required": [
+        "symbol",
+        "semantic",
+        "version"
+      ],
+      "type": "object"
+    },
+    "service": {
+      "additionalProperties": false,
+      "properties": {
+        "enabledWhen": {
+          "items": {
+            "$ref": "#/$defs/condition"
+          },
+          "type": "array"
+        },
+        "id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "mode": {
+          "enum": [
+            "required",
+            "optional"
+          ]
+        },
+        "unavailable": {
+          "enum": [
+            "disablePass"
+          ]
+        },
+        "version": {
+          "$ref": "#/$defs/positiveVersion"
+        }
+      },
+      "required": [
+        "id",
+        "version"
+      ],
+      "type": "object"
+    },
+    "size": {
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "mode": {
+                "const": "absolute"
+              }
+            },
+            "required": [
+              "mode"
+            ]
+          },
+          "then": {
+            "allOf": [
+              {
+                "not": {
+                  "anyOf": [
+                    {
+                      "required": [
+                        "scale"
+                      ]
+                    }
+                  ]
+                }
+              }
+            ],
+            "required": [
+              "width",
+              "height"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "mode": {
+                "enum": [
+                  "viewport",
+                  "output"
+                ]
+              }
+            }
+          },
+          "then": {
+            "not": {
+              "anyOf": [
+                {
+                  "required": [
+                    "width"
+                  ]
+                },
+                {
+                  "required": [
+                    "height"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "properties": {
+        "height": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "mode": {
+          "enum": [
+            "absolute",
+            "viewport",
+            "output"
+          ]
+        },
+        "scale": {
+          "items": {
+            "exclusiveMinimum": 0,
+            "type": "number"
+          },
+          "maxItems": 2,
+          "minItems": 2,
+          "type": "array"
+        },
+        "width": {
+          "minimum": 1,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "mode"
+      ],
+      "type": "object"
+    },
+    "sourceManifest": {
+      "additionalProperties": false,
+      "properties": {
+        "author": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "expectedCatalogSha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "fragments": {
+          "items": {
+            "$ref": "#/$defs/relativePath"
+          },
+          "minItems": 1,
+          "type": "array",
+          "uniqueItems": true
+        },
+        "frameTarget": {
+          "$ref": "#/$defs/frameTarget"
+        },
+        "id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "manifestVersion": {
+          "const": 4
+        },
+        "name": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "sceneAbiVersion": {
+          "const": 2
+        },
+        "settings": {
+          "$ref": "#/$defs/relativePath"
+        },
+        "shaderRoot": {
+          "$ref": "#/$defs/relativePath"
+        },
+        "sourceFormatVersion": {
+          "const": 1
+        },
+        "version": {
+          "$ref": "#/$defs/nonEmptyString"
+        }
+      },
+      "required": [
+        "sourceFormatVersion",
+        "manifestVersion",
+        "id",
+        "name",
+        "version",
+        "fragments",
+        "sceneAbiVersion"
+      ],
+      "type": "object"
+    },
+    "stage": {
+      "additionalProperties": false,
+      "properties": {
+        "ordering": {
+          "$ref": "#/$defs/ordering"
+        },
+        "phase": {
+          "enum": [
+            "modelShadow",
+            "framePrepare",
+            "shadow",
+            "opaque",
+            "transparent",
+            "cloudReflection",
+            "shaftPrepare",
+            "shaftSun",
+            "cloud",
+            "particles",
+            "afterDraw",
+            "afterFinal",
+            "screenOutput"
+          ]
+        },
+        "target": {
+          "enum": [
+            "world",
+            "afterDraw"
+          ]
+        },
+        "template": {
+          "$ref": "#/$defs/identifier"
+        },
+        "version": {
+          "$ref": "#/$defs/positiveVersion"
+        }
+      },
+      "required": [
+        "template",
+        "version",
+        "target",
+        "phase"
+      ],
+      "type": "object"
+    },
+    "state": {
+      "additionalProperties": false,
+      "properties": {
+        "blend": {
+          "enum": [
+            "inherit",
+            "opaque",
+            "alphaBlend",
+            "nonPremultiplied"
+          ]
+        },
+        "blendTargets": {
+          "items": {
+            "minimum": 0,
+            "type": "integer"
+          },
+          "minItems": 1,
+          "type": "array",
+          "uniqueItems": true
+        },
+        "depth": {
+          "enum": [
+            "inherit",
+            "default",
+            "depthWrite",
+            "depthTestWriteLess",
+            "disabled"
+          ]
+        },
+        "rasterizer": {
+          "enum": [
+            "inherit",
+            "cullCounterClockwiseScissor",
+            "cullClockwiseScissor",
+            "cullNoneScissor"
+          ]
+        }
+      },
+      "type": "object"
+    },
+    "targets": {
+      "additionalProperties": false,
+      "minProperties": 1,
+      "properties": {
+        "colors": {
+          "items": {
+            "$ref": "#/$defs/colorTarget"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "depth": {
+          "$ref": "#/$defs/depthTarget"
+        }
+      },
+      "type": "object"
+    },
+    "variant": {
+      "additionalProperties": false,
+      "properties": {
+        "defines": {
+          "additionalProperties": {
+            "$ref": "#/$defs/defineValue"
+          },
+          "propertyNames": {
+            "$ref": "#/$defs/glslIdentifier"
+          },
+          "type": "object"
+        },
+        "id": {
+          "$ref": "#/$defs/identifier"
+        }
+      },
+      "required": [
+        "id",
+        "defines"
+      ],
+      "type": "object"
+    },
+    "viewport": {
+      "additionalProperties": false,
+      "properties": {
+        "restore": {
+          "enum": [
+            "none",
+            "frame"
+          ]
+        },
+        "source": {
+          "enum": [
+            "target",
+            "frame"
+          ]
+        },
+        "synchronizeScissor": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "source",
+        "restore"
+      ],
+      "type": "object"
+    }
+  },
+  "$id": "https://schemas.dawnlight.dev/shaderpack/v4.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Structural authoring schema. Loader-backed validation remains authoritative for cross-references and runtime semantics.",
+  "oneOf": [
+    {
+      "$ref": "#/$defs/manifest"
+    },
+    {
+      "$ref": "#/$defs/sourceManifest"
+    }
+  ],
+  "title": "Dawnlight Shader Pack Manifest v4"
+}

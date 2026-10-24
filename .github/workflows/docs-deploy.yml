@@ -38,6 +38,9 @@ jobs:
             artifacts/w2/browser-results.json
             site/.vitepress/generated/output-manifest.json
             metadata/examples-validation.json
+            metadata/reference-examples.json
+            metadata/reference-inputs.json
+            site/public/downloads/reference/coverage.json
   deploy:
     needs: build
     runs-on: ubuntu-latest

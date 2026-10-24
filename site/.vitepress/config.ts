@@ -1,5 +1,6 @@
 import { defineConfig, type DefaultTheme } from 'vitepress'
 import lock from '../../upstream.lock.json'
+import reference from '../../reference/pages.json'
 
 const base = lock.website.pagesBase
 const siteUrl = lock.website.pagesUrl
@@ -9,7 +10,7 @@ const chinese: DefaultTheme.Config = {
   outline: { level: [2, 3], label: '本页内容' },
   nav: [
     { text: '开始阅读', link: '/start/' },
-    { text: '管线概念', link: '/concepts/pipeline' },
+    { text: 'JSON / ABI 参考', link: '/reference/' },
     { text: '当前基线', link: '/compatibility/current-baseline' },
     { text: '示例与下载', link: '/examples/' },
     { text: '上游源码', link: source }
@@ -31,6 +32,9 @@ const chinese: DefaultTheme.Config = {
       { text: '04 · MRT 数据', link: '/tutorial/04-mrt' },
       { text: '实机验证记录', link: '/tutorial/runtime' }
     ] },
+    { text: 'JSON 与 ABI 参考', collapsed: true, items: reference.pages.map(page => ({
+      text: page.titles['zh-CN'], link: '/reference/' + (page.id === 'index' ? '' : page.id)
+    })) },
     { text: '理解管线', items: [
       { text: '从配置到一帧画面', link: '/concepts/pipeline' },
       { text: '资源、目标与 drawBuffers', link: '/concepts/resources-targets' }
@@ -53,7 +57,7 @@ const english: DefaultTheme.Config = {
   outline: { level: [2, 3], label: 'On this page' },
   nav: [
     { text: 'Get started', link: '/en/start/' },
-    { text: 'Pipeline concepts', link: '/en/concepts/pipeline' },
+    { text: 'JSON / ABI reference', link: '/en/reference/' },
     { text: 'Current baseline', link: '/en/compatibility/current-baseline' },
     { text: 'Examples', link: '/en/examples/' },
     { text: 'Upstream source', link: source }
@@ -75,6 +79,9 @@ const english: DefaultTheme.Config = {
       { text: '04 · MRT data', link: '/en/tutorial/04-mrt' },
       { text: 'Runtime observations', link: '/en/tutorial/runtime' }
     ] },
+    { text: 'JSON and ABI reference', collapsed: true, items: reference.pages.map(page => ({
+      text: page.titles['en-US'], link: '/en/reference/' + (page.id === 'index' ? '' : page.id)
+    })) },
     { text: 'Understanding the pipeline', items: [
       { text: 'From configuration to a frame', link: '/en/concepts/pipeline' },
       { text: 'Resources, targets and drawBuffers', link: '/en/concepts/resources-targets' }

@@ -4,10 +4,12 @@ import path from 'node:path';
 import { ROOT, readJson, files, relativeName, inside } from './lib/locked-inputs.mjs';
 import { loadExamples, loadReceipts, frontmatter, evidenceBoundary, courseIncludes } from './lib/content-foundation.mjs';
 import { loadRuntimeEvidence } from './lib/runtime-evidence.mjs';
+import { loadReference } from './lib/reference-foundation.mjs';
 
 const context = await loadExamples();
 const receipts = await loadReceipts(context);
 await loadRuntimeEvidence(context, receipts);
+await loadReference(context);
 const registry = await readJson(path.join(ROOT, 'metadata/pages.json'));
 const sourceMap = await readJson(path.join(ROOT, 'metadata/source-map.json'));
 assert.equal(registry.schemaVersion, 1, 'metadata/pages.json: schema version');

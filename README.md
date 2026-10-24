@@ -1,12 +1,13 @@
 # DawnlightCore 作者文档站
 
-本工程按 [网站实现方案](docs/WebsiteImplementationPlan.zh-CN.md) 建设，使用 VitePress 维护中英文作者文档。当前 20 组内容页面覆盖环境与 GLSL 入门、00～04 连续课程、概念、工具、版本、五份独立快照及实机记录，可在桌面和手机顶栏切换。
+本工程按 [网站实现方案](docs/WebsiteImplementationPlan.zh-CN.md) 建设，使用 VitePress 维护中英文作者文档。当前 38 组内容页面覆盖环境与 GLSL 入门、00～04 连续课程、JSON 与 ABI 参考、概念、工具、版本、五份独立快照及实机记录，可在桌面和手机顶栏切换。
 
 - 网站：[DawnlightCore 作者文档](https://core.eltancex.top/)。
 - English：[DawnlightCore author documentation](https://core.eltancex.top/en/)。
 - 示例：[外置起步包、源码与下载](https://core.eltancex.top/examples/course-starter)。
 - 课程：[从加载起步包到 Terrain / MRT](https://core.eltancex.top/tutorial/00-starter)。
 - 实机范围：[宿主、报告、画面与复现](https://core.eltancex.top/tutorial/runtime)。
+- 字段参考：[公开 JSON、ABI、Catalog 与兼容性](https://core.eltancex.top/reference/)。
 - 公开上游：[EltanceX/DawnlightCore（Gitea）](https://gitea.com/EltanceX/DawnlightCore)。
 - 网站源码：[EltanceX/dawnlight-core-docs](https://github.com/EltanceX/dawnlight-core-docs)。
 
@@ -24,6 +25,8 @@ npm run docs:preview
 ```
 
 `docs:build` 先从公开示例源码和匹配的 Analyzer 收据生成双语示例页、源码清单与 ZIP，再检查页面登记、frontmatter、基线投影、公开资源和 Git 文件边界，构建后检查域名、根路径、双语 canonical/alternate、链接、锚点及静态资产。预览地址使用根路径 `/`，与自定义域名部署路径一致。
+
+W5 的 18 组参考由 `reference/prose/` 的双语行为说明和 `reference/inputs/` 的固定公开 Schema/Catalog 生成。字段归属清单覆盖 1052 个命名属性出现位置与 16 个字典位置，设置 UI 使用复核的 Loader 白名单投影。四份完整上游示例提供逐文件清单和精确 commit 链接；单独的 UBO/materialTable 完整反例保留预期 DLMAT1002 拒绝，不冒充可用预设。见[参考维护](docs/maintenance/Reference.zh-CN.md)与 [W5 验收](docs/baseline/W5ReferenceAudit.zh-CN.md)。
 
 浏览器验收覆盖 1440px 桌面和 390px 移动端、中英文搜索、逐页与章节语言切换、导航、主题、代码复制、基线下载及双语 404，并检查 320px 窄屏顶栏：
 

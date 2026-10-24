@@ -27,10 +27,14 @@ jobs:
         run: node scripts/verify-upstream.mjs
       - name: Validate canonical authoring inputs
         run: npm run authoring:check
+      - name: Reproduce public reference receipts
+        run: npm run reference:verify
       - name: Verify corruption rejection and Windows checkout
         run: node --test scripts/tests/locked-inputs.test.mjs
       - uses: actions/upload-artifact@v7.0.2
         if: always()
         with:
           name: locked-input-evidence
-          path: artifacts/w3
+          path: |
+            artifacts/w3
+            artifacts/w5

@@ -22,7 +22,7 @@ dawnlight:
 
 DawnlightCore is a shader-focused modification of Survivalcraft. It connects resource declarations, shader registration and rendering commands through a general-purpose pipeline. Shader pack authors use JSON to organize execution and GLSL to implement visual effects.
 
-This documentation is for authors creating independent shader packs. Start with [environment setup](./environment) and [GLSL essentials](./glsl), then follow chapters 00–04 through loading, grading, separate resources, Terrain integration and MRT data. Each chapter supplies complete source, an independent download, a static receipt and separately recorded game observations. Complete field references will expand in later stages.
+This documentation is for authors creating independent shader packs. Start with [environment setup](./environment) and [GLSL essentials](./glsl), then follow chapters 00–04 through loading, grading, separate resources, Terrain integration and MRT data. Each chapter supplies complete source, an independent download, a static receipt and separately recorded game observations. The [JSON and ABI reference](../reference/) covers fields, behavior constraints, public catalogs and version differences.
 
 <div id="需要哪些基础" class="legacy-anchor" aria-hidden="true"></div>
 

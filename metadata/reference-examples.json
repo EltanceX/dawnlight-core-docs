@@ -1,0 +1,2683 @@
+{
+  "schemaVersion": 1,
+  "baselineId": "candidate-f8aaa5c4",
+  "sourceCommit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+  "toolInventorySha256": "548c685ff8ccc23283cd6b803a595cc2fed35b2df1444dc0327e1baf847ffb54",
+  "evidence": "loader-and-offline-analysis-only",
+  "examples": [
+    {
+      "id": "upstream/scene-lab",
+      "directory": "SceneAbiLab_v0.1",
+      "sourceRoot": "Survivalcraft/shaderpacks/SceneAbiLab_v0.1",
+      "sourceUrl": "https://gitea.com/EltanceX/DawnlightCore/src/commit/f8aaa5c4218f54536ccf994a2d512aed2e3678b7/Survivalcraft/shaderpacks/SceneAbiLab_v0.1",
+      "manifestVersion": 4,
+      "sceneAbiVersion": 2,
+      "manifestHash": "c7eb3076bef676255d47a764f8cbf4be9ac44bb9d455758e37db84018f4f87d4",
+      "status": "static-passed",
+      "runtimeVerified": false,
+      "checks": [
+        {
+          "id": "pack",
+          "exitCode": 0,
+          "outputSha256": "4a7c490ffd43a00179600b18fbf58e30c82f9e3cc14b3cb800a7fece191b8269",
+          "diagnostics": []
+        },
+        {
+          "id": "scene",
+          "exitCode": 0,
+          "outputSha256": "ca4948129ee404100eb2ab16bb2368669b02fd4a4ec4b322a698c0ef6a891287",
+          "diagnostics": [
+            {
+              "severity": "warning",
+              "code": "DLABI2005",
+              "message": "Scene category 'dawnlight:scene/terrain_sorted_translucent@1' is disabled; matching world content may be invisible.",
+              "provenance": {
+                "kind": "fragment",
+                "file": "shaderpack.json",
+                "pointer": "/sceneCategories/3"
+              },
+              "sceneCode": "routeCategoryDisabled",
+              "family": "routeOwnership",
+              "identifier": "dawnlight:scene/terrain_sorted_translucent",
+              "version": 1,
+              "context": "dawnlight:scene/terrain_sorted_translucent@1",
+              "enginePath": "$.sceneCategories[3]"
+            }
+          ]
+        },
+        {
+          "id": "graph",
+          "exitCode": 0,
+          "outputSha256": "c5194375a5cbdd884648420a87b3803182df7cab883beed75cfc48272c320ee2",
+          "diagnostics": [
+            {
+              "severity": "warning",
+              "code": "DLABI2005",
+              "message": "Scene category 'dawnlight:scene/terrain_sorted_translucent@1' is disabled; matching world content may be invisible.",
+              "provenance": {
+                "kind": "fragment",
+                "file": "shaderpack.json",
+                "pointer": "/sceneCategories/3"
+              },
+              "sceneCode": "routeCategoryDisabled",
+              "family": "routeOwnership",
+              "identifier": "dawnlight:scene/terrain_sorted_translucent",
+              "version": 1,
+              "context": "dawnlight:scene/terrain_sorted_translucent@1",
+              "enginePath": "$.sceneCategories[3]",
+              "nodeIds": [
+                "sceneCategory:dawnlight:scene/terrain_sorted_translucent@1",
+                "sceneRoute:dawnlight:scene/terrain_sorted_translucent@1"
+              ]
+            }
+          ]
+        }
+      ],
+      "features": {
+        "programKinds": [
+          "graphics"
+        ],
+        "resourceKinds": [
+          "texture2D"
+        ],
+        "commandKinds": [
+          "engineDraw",
+          "fullscreen",
+          "present"
+        ],
+        "bindingKinds": [
+          "sampler2D"
+        ],
+        "sceneModes": [
+          "builtin",
+          "disabled",
+          "override"
+        ],
+        "settings": false
+      },
+      "files": [
+        {
+          "path": "README.md",
+          "sourcePath": "Survivalcraft/shaderpacks/SceneAbiLab_v0.1/README.md",
+          "length": 1437,
+          "sha256": "810d978b27364f43ffce26d5eb7abd0e6d7d2b0aa6113eeb101959b2fd185767"
+        },
+        {
+          "path": "shaderpack.json",
+          "sourcePath": "Survivalcraft/shaderpacks/SceneAbiLab_v0.1/shaderpack.json",
+          "length": 11974,
+          "sha256": "a7f53e710907f451512ed84801585f0c68ee382b6f4568c2388f652f876d4166"
+        },
+        {
+          "path": "shaders/composite.psh",
+          "sourcePath": "Survivalcraft/shaderpacks/SceneAbiLab_v0.1/shaders/composite.psh",
+          "length": 549,
+          "sha256": "9577d93df81e858e0ce896518f2ccfa1ef994696d12d6d594d16c392805fe90d"
+        },
+        {
+          "path": "shaders/fullscreen.vsh",
+          "sourcePath": "Survivalcraft/shaderpacks/SceneAbiLab_v0.1/shaders/fullscreen.vsh",
+          "length": 470,
+          "sha256": "d05d1a30fdfb51574037033343c1fbc78a54214f09296c9bd8169614055261c2"
+        },
+        {
+          "path": "shaders/present.psh",
+          "sourcePath": "Survivalcraft/shaderpacks/SceneAbiLab_v0.1/shaders/present.psh",
+          "length": 276,
+          "sha256": "814d85492d5be98eb96f5158db2c29708926aa746d7715f9eb6e6eef99a4b34a"
+        },
+        {
+          "path": "shaders/terrain.psh",
+          "sourcePath": "Survivalcraft/shaderpacks/SceneAbiLab_v0.1/shaders/terrain.psh",
+          "length": 700,
+          "sha256": "9d1af232a4d31c4b02b0a66413617db87b3e84aa9990027656421111763919a9"
+        },
+        {
+          "path": "shaders/terrain.vsh",
+          "sourcePath": "Survivalcraft/shaderpacks/SceneAbiLab_v0.1/shaders/terrain.vsh",
+          "length": 1561,
+          "sha256": "28dc7c1b73591f8799c1b379688fa15b132c437e8a5f62024e59e6dcf8821551"
+        }
+      ]
+    },
+    {
+      "id": "upstream/data-lab",
+      "directory": "CustomDataLab_Both",
+      "sourceRoot": "Survivalcraft/shaderpack-candidates/CustomDataLab_Both",
+      "sourceUrl": "https://gitea.com/EltanceX/DawnlightCore/src/commit/f8aaa5c4218f54536ccf994a2d512aed2e3678b7/Survivalcraft/shaderpack-candidates/CustomDataLab_Both",
+      "manifestVersion": 5,
+      "sceneAbiVersion": 2,
+      "manifestHash": "ac13ac580fde521589ae0e94b944a6f5a8f0ec0413b046d881e84e6300020bf5",
+      "status": "static-passed",
+      "runtimeVerified": false,
+      "checks": [
+        {
+          "id": "pack",
+          "exitCode": 0,
+          "outputSha256": "8852c05ebceb52eae1e6efbfa0cfcaec80873b65e8a4fb9cdbd57c978dceb0e8",
+          "diagnostics": []
+        },
+        {
+          "id": "scene",
+          "exitCode": 0,
+          "outputSha256": "089a2f528fc9755bb6d6d9f49cfc7e15996df8d7f4aaa34e2e5200880465fae6",
+          "diagnostics": [
+            {
+              "severity": "warning",
+              "code": "DLABI2005",
+              "message": "Scene category 'dawnlight:scene/terrain_sorted_translucent@1' is disabled; matching world content may be invisible.",
+              "provenance": {
+                "kind": "fragment",
+                "file": "shaderpack.json",
+                "pointer": "/sceneCategories/3"
+              },
+              "sceneCode": "routeCategoryDisabled",
+              "family": "routeOwnership",
+              "identifier": "dawnlight:scene/terrain_sorted_translucent",
+              "version": 1,
+              "context": "dawnlight:scene/terrain_sorted_translucent@1",
+              "enginePath": "$.sceneCategories[3]"
+            }
+          ]
+        },
+        {
+          "id": "graph",
+          "exitCode": 0,
+          "outputSha256": "2cfa070bb27359d0bd7c8cf40f93dc4541abad0fd36b97e6bc6f98a48e1d98e1",
+          "diagnostics": [
+            {
+              "severity": "warning",
+              "code": "DLABI2005",
+              "message": "Scene category 'dawnlight:scene/terrain_sorted_translucent@1' is disabled; matching world content may be invisible.",
+              "provenance": {
+                "kind": "fragment",
+                "file": "shaderpack.json",
+                "pointer": "/sceneCategories/3"
+              },
+              "sceneCode": "routeCategoryDisabled",
+              "family": "routeOwnership",
+              "identifier": "dawnlight:scene/terrain_sorted_translucent",
+              "version": 1,
+              "context": "dawnlight:scene/terrain_sorted_translucent@1",
+              "enginePath": "$.sceneCategories[3]",
+              "nodeIds": [
+                "sceneCategory:dawnlight:scene/terrain_sorted_translucent@1",
+                "sceneRoute:dawnlight:scene/terrain_sorted_translucent@1"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "materials",
+          "exitCode": 0,
+          "outputSha256": "23c5437218fe09b50589a67ed58d053bfff967e671920993ba6f29b140547e34",
+          "diagnostics": []
+        },
+        {
+          "id": "layout",
+          "exitCode": 0,
+          "outputSha256": "2a0534f36b034d2f26f5f401f204a7f33b69c740146127c0739499f6d8a3e365",
+          "diagnostics": []
+        },
+        {
+          "id": "data",
+          "exitCode": 0,
+          "outputSha256": "2e5673cceb8372eb88116d00846931a27e24ab006f1f059f84d8bdcab01df8f9",
+          "diagnostics": []
+        }
+      ],
+      "features": {
+        "programKinds": [
+          "graphics"
+        ],
+        "resourceKinds": [
+          "buffer",
+          "texture2D"
+        ],
+        "commandKinds": [
+          "engineDraw",
+          "present"
+        ],
+        "bindingKinds": [
+          "sampler2D",
+          "storageBuffer"
+        ],
+        "sceneModes": [
+          "builtin",
+          "disabled",
+          "override"
+        ],
+        "settings": true
+      },
+      "files": [
+        {
+          "path": "README.md",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/CustomDataLab_Both/README.md",
+          "length": 534,
+          "sha256": "49fd1a476db8ea83063b906da8d36f41eeac4e5cda37a95267c93c5d6c018d40"
+        },
+        {
+          "path": "settings.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/CustomDataLab_Both/settings.json",
+          "length": 727,
+          "sha256": "53706a64a14141da1fe0e217bcb273642175aeffa1b064dfefef390c796c6c37"
+        },
+        {
+          "path": "shaderpack.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/CustomDataLab_Both/shaderpack.json",
+          "length": 18382,
+          "sha256": "f70396834a0f3a810372bd5e552eda14586d4593314f3ea7f9514f37b622e2b9"
+        },
+        {
+          "path": "shaders/fullscreen.vsh",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/CustomDataLab_Both/shaders/fullscreen.vsh",
+          "length": 470,
+          "sha256": "d05d1a30fdfb51574037033343c1fbc78a54214f09296c9bd8169614055261c2"
+        },
+        {
+          "path": "shaders/present.psh",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/CustomDataLab_Both/shaders/present.psh",
+          "length": 1036,
+          "sha256": "567be60eed1a6e9480b54923b95cdd431c1747dba2dde7ec9503eee1c9e666d0"
+        },
+        {
+          "path": "shaders/terrain.psh",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/CustomDataLab_Both/shaders/terrain.psh",
+          "length": 977,
+          "sha256": "38df0e3b073d0211b86bf7073787796507ae4a9450058ff16d3f9b80e94f7cc4"
+        },
+        {
+          "path": "shaders/terrain.vsh",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/CustomDataLab_Both/shaders/terrain.vsh",
+          "length": 1573,
+          "sha256": "9fadb46e379aeba9afd379404a44e88c8b82dd46f8d4e0fc4e993b3b0460d7ee"
+        }
+      ]
+    },
+    {
+      "id": "upstream/dawnlight",
+      "directory": "Dawnlight_v3.1",
+      "sourceRoot": "Survivalcraft/shaderpacks/Dawnlight_v3.1",
+      "sourceUrl": "https://gitea.com/EltanceX/DawnlightCore/src/commit/f8aaa5c4218f54536ccf994a2d512aed2e3678b7/Survivalcraft/shaderpacks/Dawnlight_v3.1",
+      "manifestVersion": 3,
+      "sceneAbiVersion": null,
+      "manifestHash": "e9d84f004a8dc80b125b7ffb9b15f6f4b52559583aeeac53e8e8a54120286e4a",
+      "status": "static-passed",
+      "runtimeVerified": false,
+      "checks": [
+        {
+          "id": "pack",
+          "exitCode": 0,
+          "outputSha256": "d9b49444b76b2df62dca7c1321a4f21a47543efc53ea5d2222d41c27c8437671",
+          "diagnostics": []
+        },
+        {
+          "id": "scene",
+          "exitCode": 0,
+          "outputSha256": "1dff185d2919b60dfffca2cee4c639c2b85afbcf052be255effac4d6635eac0e",
+          "diagnostics": [
+            {
+              "severity": "information",
+              "code": "DLSCENE0100",
+              "message": "Manifest v3 uses the legacy Scene path and declares no Scene ABI category routes.",
+              "provenance": {
+                "kind": "fragment",
+                "file": "shaderpack.json",
+                "pointer": "/manifestVersion"
+              }
+            }
+          ]
+        },
+        {
+          "id": "graph",
+          "exitCode": 0,
+          "outputSha256": "6f6a8cf5a2bc5e20f981d7df8694d8ccbfd769e60957179d970d03ad9221d70c",
+          "diagnostics": []
+        }
+      ],
+      "features": {
+        "programKinds": [
+          "compute",
+          "graphics"
+        ],
+        "resourceKinds": [
+          "buffer",
+          "texture2D",
+          "textureCube"
+        ],
+        "commandKinds": [
+          "compute",
+          "copy",
+          "engineDraw",
+          "fullscreen",
+          "historyCommit",
+          "present"
+        ],
+        "bindingKinds": [
+          "image2D",
+          "sampler2D",
+          "samplerCube",
+          "storageBuffer"
+        ],
+        "sceneModes": [],
+        "settings": true
+      },
+      "files": [
+        {
+          "path": "manifest/options/clouds.json",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/manifest/options/clouds.json",
+          "length": 1332,
+          "sha256": "f4c6eb39fb6ad11c47060169822e7b905d886d14139849f5b254f8adcd86516f"
+        },
+        {
+          "path": "manifest/options/compatibility-water.json",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/manifest/options/compatibility-water.json",
+          "length": 1506,
+          "sha256": "22ea22db23f986a9aa73b41943e88ab652baddc72de514b39549b9baead45c52"
+        },
+        {
+          "path": "manifest/options/effects.json",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/manifest/options/effects.json",
+          "length": 459,
+          "sha256": "2d9db8cd17282dbe572b41699cc3ee6d53d8c2a4a0ffbaa3bac675d3d228ffc9"
+        },
+        {
+          "path": "manifest/options/lighting.json",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/manifest/options/lighting.json",
+          "length": 2128,
+          "sha256": "7c17ff7676b82b62361b1aa03bef2f6c34731248a7695cb61f8f1c0355f9935a"
+        },
+        {
+          "path": "manifest/options/post-screen.json",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/manifest/options/post-screen.json",
+          "length": 926,
+          "sha256": "f4f15f2ba9b23129c7c59f0d15d43d300bc52ee89a0f8d775da8c2c6c63ddcb9"
+        },
+        {
+          "path": "manifest/options/shadows-terrain.json",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/manifest/options/shadows-terrain.json",
+          "length": 1850,
+          "sha256": "122d8d6d5f1bace267ff186695dea9958068774745200a6936f024d350e1985a"
+        },
+        {
+          "path": "manifest/passes/atmosphere-shaft.json",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/manifest/passes/atmosphere-shaft.json",
+          "length": 9112,
+          "sha256": "47cf8c373cf98e76e2532e43e9bc998715dadc0945cb160c00a82f9cb086301c"
+        },
+        {
+          "path": "manifest/passes/cloud-deferred.json",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/manifest/passes/cloud-deferred.json",
+          "length": 14815,
+          "sha256": "92e90a827aa2f666b7b690eb5f78c7901c88529bb4b03630753f50fdcdd48cfe"
+        },
+        {
+          "path": "manifest/passes/composites.json",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/manifest/passes/composites.json",
+          "length": 5849,
+          "sha256": "ad313e775bedcec08b80f6c4bce2a5d5f02188d9ebc6b16a20e99572ded0145a"
+        },
+        {
+          "path": "manifest/passes/frame-services.json",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/manifest/passes/frame-services.json",
+          "length": 12262,
+          "sha256": "2c3b7b214c196cb949cf3a0970f36ed8c86e25272feae2861ed65ecf835df78d"
+        },
+        {
+          "path": "manifest/passes/output.json",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/manifest/passes/output.json",
+          "length": 10925,
+          "sha256": "9367551d381ee17601b532f6ec61c5c264a3f040f3703e685190c6e9a9141da4"
+        },
+        {
+          "path": "manifest/passes/shadows.json",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/manifest/passes/shadows.json",
+          "length": 6510,
+          "sha256": "f1448b8e0b0e3d1f5f48c7eef2c5b4837f967e455874bd4adec875188b554d1c"
+        },
+        {
+          "path": "manifest/passes/terrain-base.json",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/manifest/passes/terrain-base.json",
+          "length": 10474,
+          "sha256": "5982ce1a0fe3d69d31383f758b52c3ec3e21d333305b0086bf2cf0d97404ae22"
+        },
+        {
+          "path": "manifest/passes/terrain-transparent.json",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/manifest/passes/terrain-transparent.json",
+          "length": 15833,
+          "sha256": "d0f3ce637f0837edbbf0cfce75d5d009a3ecf8b5a0d9a6e9d50e4389e5b2e7a2"
+        },
+        {
+          "path": "manifest/programs/atmosphere-effects.json",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/manifest/programs/atmosphere-effects.json",
+          "length": 927,
+          "sha256": "634a32c0e63d95b8a9c519fcfadc58e2bf9d69f33315330007314a169bfa4a81"
+        },
+        {
+          "path": "manifest/programs/cloud-atmosphere-lighting.json",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/manifest/programs/cloud-atmosphere-lighting.json",
+          "length": 3935,
+          "sha256": "5bf34d29b9e9eaf41895df55835e0807f8be177e0408d67453cd380979175edd"
+        },
+        {
+          "path": "manifest/programs/ocean-point-lights.json",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/manifest/programs/ocean-point-lights.json",
+          "length": 671,
+          "sha256": "f6e2adb77086fab81b5f559f1742b2f90bf285ff613b7463d0a022146ca1fc53"
+        },
+        {
+          "path": "manifest/programs/post-process.json",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/manifest/programs/post-process.json",
+          "length": 3558,
+          "sha256": "df08ba4b5a0f59483d89010dd7f4d704638c96ca7760627e998f260c2a7c3f34"
+        },
+        {
+          "path": "manifest/programs/scene-drawables.json",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/manifest/programs/scene-drawables.json",
+          "length": 2524,
+          "sha256": "bc0dfa4ff677f1c1f56e1165763eaa0e437e038b29444aa1449ca82b3ee74bf6"
+        },
+        {
+          "path": "manifest/programs/shadows-terrain.json",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/manifest/programs/shadows-terrain.json",
+          "length": 5644,
+          "sha256": "8f79525bd5c486f0f4289e80eed0c2ef9c0ab34357ad7bfde626d78094b02223"
+        },
+        {
+          "path": "manifest/resources/composites-terrain.json",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/manifest/resources/composites-terrain.json",
+          "length": 2668,
+          "sha256": "059359976779e77324ae5de3902f1f9643a41273bb5d7aa754bc7dcdbcc73cf8"
+        },
+        {
+          "path": "manifest/resources/cubemap.json",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/manifest/resources/cubemap.json",
+          "length": 854,
+          "sha256": "fd8b8822ca3b79b57af32a7776029849488051bc15d43ffe43dba9dd5a7e5167"
+        },
+        {
+          "path": "manifest/resources/ocean-wave.json",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/manifest/resources/ocean-wave.json",
+          "length": 4585,
+          "sha256": "7432a3908edf4f13f6a2b874f03520b1cad48796c875efb6bbbe58ebaa8f5e0f"
+        },
+        {
+          "path": "manifest/resources/point-lights.json",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/manifest/resources/point-lights.json",
+          "length": 901,
+          "sha256": "826d1f50ff0cb9c97b31f8f88230eb32d9bca3731d6db3e4f94c8133d89841e3"
+        },
+        {
+          "path": "manifest/resources/scene-targets.json",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/manifest/resources/scene-targets.json",
+          "length": 3429,
+          "sha256": "b41dc83761e49095852f2087a22660c81ef714464a70b7c1b57741738b2f6ee9"
+        },
+        {
+          "path": "manifest/resources/shadows.json",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/manifest/resources/shadows.json",
+          "length": 1909,
+          "sha256": "2d5d2f4102b002dd71cf041d9d7bdaff9f2c7671d08150ad28250f0ab3f19c5d"
+        },
+        {
+          "path": "manifest/resources/shaft-lighting.json",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/manifest/resources/shaft-lighting.json",
+          "length": 619,
+          "sha256": "574a9a4a88a9d072615d83c9b7313e12483143dfdc47c8a518fe2caba92ededb"
+        },
+        {
+          "path": "manifest/resources/transparent-copies.json",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/manifest/resources/transparent-copies.json",
+          "length": 433,
+          "sha256": "54efcd44c681b7cc6679c665285537ef0f96abde8e12156839e3809af9bf0629"
+        },
+        {
+          "path": "manifest/ui/settings.json",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/manifest/ui/settings.json",
+          "length": 28587,
+          "sha256": "0b22e512e09732979b1c9cbd2a51333469130338129862416aa1305bb72447c1"
+        },
+        {
+          "path": "shaderpack.json",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaderpack.json",
+          "length": 1533,
+          "sha256": "a179a8dc91fe6da9f044a01493d20d30e99ea5e2bfada0bba3004aee6c77001c"
+        },
+        {
+          "path": "shaders/AlphaTested.psh",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/AlphaTested.psh",
+          "length": 640,
+          "sha256": "2d9e4b222e095101187053efb6879c15646260e2f77c1a9121302a21ec29e857"
+        },
+        {
+          "path": "shaders/AlphaTested.vsh",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/AlphaTested.vsh",
+          "length": 1477,
+          "sha256": "f87c41f835b509749cb199b6a23a43c8b891f2fd8650e358425a1552aec7e555"
+        },
+        {
+          "path": "shaders/Atmo/lut.vsh",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/Atmo/lut.vsh",
+          "length": 207,
+          "sha256": "437f2132ddc9917935c329554134d0db6705ebbccbab5a96a2cdd13f79a1bdba"
+        },
+        {
+          "path": "shaders/Atmo/multiscatter_lut.fsh",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/Atmo/multiscatter_lut.fsh",
+          "length": 1335,
+          "sha256": "eb921270515fcf6ba476500f17ad32f20f71df4563befe1174f3f1720a44c16f"
+        },
+        {
+          "path": "shaders/Atmo/skyview_lut.fsh",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/Atmo/skyview_lut.fsh",
+          "length": 6776,
+          "sha256": "a2699e3b135a9108e124ace81dab0c87dbfda2d0223141395dc38adc670adf1d"
+        },
+        {
+          "path": "shaders/Atmo/transmittance_lut_single.fsh",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/Atmo/transmittance_lut_single.fsh",
+          "length": 2406,
+          "sha256": "4857ab7bc6459f92c9000df936a03d803cff55d33414f12cf2bd4b1582ad7c5a"
+        },
+        {
+          "path": "shaders/Composite0.psh",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/Composite0.psh",
+          "length": 12153,
+          "sha256": "aa60fa51d732a5d9b32e05fb24824b37549fb885dcd7658cea87153c97d9fe2f"
+        },
+        {
+          "path": "shaders/Composite0.vsh",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/Composite0.vsh",
+          "length": 1975,
+          "sha256": "e85ae7db1800238ec1aca14aa331630d92fdb360c6ffc73e89613ddbdb0b55e3"
+        },
+        {
+          "path": "shaders/Composite0_1.psh",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/Composite0_1.psh",
+          "length": 16636,
+          "sha256": "5671c10fa4284704204fcb7ca1170ffc254f9e9f28efc9afdf25a4b75cc97ba2"
+        },
+        {
+          "path": "shaders/Composite0_1.vsh",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/Composite0_1.vsh",
+          "length": 1763,
+          "sha256": "b643738bd39617ce4bba715001dd81a3fd1e3b43835cfd4cda46482a1921e8c8"
+        },
+        {
+          "path": "shaders/Composite0_1_st.psh",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/Composite0_1_st.psh",
+          "length": 26752,
+          "sha256": "0355b891ac8c993871d9ab12b0ca5c3d193715000c3d6538a66b95a674565bd5"
+        },
+        {
+          "path": "shaders/Composite0_1_st2.psh",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/Composite0_1_st2.psh",
+          "length": 24564,
+          "sha256": "6d5ee2f49b4f1f019b53b2507bb8faf711d4dde3c561d6afa1eb37e33850b4ab"
+        },
+        {
+          "path": "shaders/Composite1.psh",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/Composite1.psh",
+          "length": 1504,
+          "sha256": "1f332643d23fd8972b9350556ee1b2f80c155501d317494ace1f2999386b0438"
+        },
+        {
+          "path": "shaders/Composite1.vsh",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/Composite1.vsh",
+          "length": 207,
+          "sha256": "437f2132ddc9917935c329554134d0db6705ebbccbab5a96a2cdd13f79a1bdba"
+        },
+        {
+          "path": "shaders/Composite2.psh",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/Composite2.psh",
+          "length": 1050,
+          "sha256": "a50c4b7d73f5dfc0487f2411ad8fc9ddcf1e8a29702a66422f93828af859b3c4"
+        },
+        {
+          "path": "shaders/Composite2.vsh",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/Composite2.vsh",
+          "length": 207,
+          "sha256": "437f2132ddc9917935c329554134d0db6705ebbccbab5a96a2cdd13f79a1bdba"
+        },
+        {
+          "path": "shaders/Composite3.psh",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/Composite3.psh",
+          "length": 1049,
+          "sha256": "abaccf1f9b81b6be384e62b076d4a78eb1f4f60f8860b71cea268afabc73b4f1"
+        },
+        {
+          "path": "shaders/Composite3.vsh",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/Composite3.vsh",
+          "length": 207,
+          "sha256": "437f2132ddc9917935c329554134d0db6705ebbccbab5a96a2cdd13f79a1bdba"
+        },
+        {
+          "path": "shaders/Cubemap.psh",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/Cubemap.psh",
+          "length": 460,
+          "sha256": "6874bd54131648c29c24a98534a60d2a252d084e60d4d537cceafcfb3fbf7f51"
+        },
+        {
+          "path": "shaders/Cubemap.vsh",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/Cubemap.vsh",
+          "length": 2363,
+          "sha256": "63f0972fcae57d2931dd831fedc3b2d4a30616495de743bb07f5a40bf0c9aeb2"
+        },
+        {
+          "path": "shaders/Deferred1.psh",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/Deferred1.psh",
+          "length": 8700,
+          "sha256": "ffcedd64e27b3f800e007302cc1d3ea22971eec1db8b5bf6693898a2d1b038bb"
+        },
+        {
+          "path": "shaders/Deferred1.vsh",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/Deferred1.vsh",
+          "length": 207,
+          "sha256": "437f2132ddc9917935c329554134d0db6705ebbccbab5a96a2cdd13f79a1bdba"
+        },
+        {
+          "path": "shaders/Final.psh",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/Final.psh",
+          "length": 15886,
+          "sha256": "e12379d037b5de177ba5bed25eafa862c7019d06346e84448b8f24454db6b342"
+        },
+        {
+          "path": "shaders/Final.vsh",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/Final.vsh",
+          "length": 209,
+          "sha256": "33d7f103e6dbd85f727cd20819aa6bf9641bf3f76470b9ea5296ff7730c77349"
+        },
+        {
+          "path": "shaders/FireflyShader.csh",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/FireflyShader.csh",
+          "length": 1954,
+          "sha256": "b7da4e608d5ed10b2120c0abf8772d19440e0d3e9ea776e4a69016b8b383183e"
+        },
+        {
+          "path": "shaders/FireflyShader.psh",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/FireflyShader.psh",
+          "length": 611,
+          "sha256": "dbea2acc6d7bc7a477b60c074860a1e586f515a7e5c3711f5b30b07b967452af"
+        },
+        {
+          "path": "shaders/FireflyShader.vsh",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/FireflyShader.vsh",
+          "length": 901,
+          "sha256": "b99319ad082cb48de8ea800431a88de13aaa78f781b35740623916360fd2c9d6"
+        },
+        {
+          "path": "shaders/Highlight.psh",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/Highlight.psh",
+          "length": 1349,
+          "sha256": "ea6b46fddf4de802cab5a6efe0d55360b92c833273571c234c454c0a5bd0dc97"
+        },
+        {
+          "path": "shaders/Highlight.vsh",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/Highlight.vsh",
+          "length": 2810,
+          "sha256": "9c0e932197b65d1b10b6dfa3941338e26a730f81364c9ff3a13680448e468e48"
+        },
+        {
+          "path": "shaders/Lit.psh",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/Lit.psh",
+          "length": 1821,
+          "sha256": "bfa33d7806c04df0b27e00abf09747936e9b6a1e4e30dcbb6091081ae125fe06"
+        },
+        {
+          "path": "shaders/Lit.vsh",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/Lit.vsh",
+          "length": 7805,
+          "sha256": "e42d6de6fdd84a63c0b0e30dd7ee47f723f3c7cbb49000f3fb3c819e5854fa67"
+        },
+        {
+          "path": "shaders/Model.psh",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/Model.psh",
+          "length": 1776,
+          "sha256": "dc0762d5e88c4eb6b21a0a4de087c4d9e3881458436f16f00e4d055b7a1c44c4"
+        },
+        {
+          "path": "shaders/Model.vsh",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/Model.vsh",
+          "length": 6284,
+          "sha256": "830ef41dae97f648aa7b7dece9740759adedeafc3022108313d96b9499e0d13e"
+        },
+        {
+          "path": "shaders/ModelShadow.psh",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/ModelShadow.psh",
+          "length": 753,
+          "sha256": "2661d5bba6dc576ebcc62e7956edc4e5b6e3a268c1f99f8afe0fdcbda6a03f28"
+        },
+        {
+          "path": "shaders/ModelShadow.vsh",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/ModelShadow.vsh",
+          "length": 2136,
+          "sha256": "956276d85c57a4efa71530086bc7322d75bd46d1ceb1234abc793d5ba46ebca8"
+        },
+        {
+          "path": "shaders/MovingBlock.psh",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/MovingBlock.psh",
+          "length": 640,
+          "sha256": "51c81fbf4ee21f91b1063299bd8ab9b183e07692aa694317ead4a30e082bf1f0"
+        },
+        {
+          "path": "shaders/MovingBlock.vsh",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/MovingBlock.vsh",
+          "length": 1199,
+          "sha256": "f71a039e20786bc806359e96a4a32bf1136e0d2ff635a839d72fb9aec7d49271"
+        },
+        {
+          "path": "shaders/Opaque.psh",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/Opaque.psh",
+          "length": 35282,
+          "sha256": "66a5455b3a8bd735a119e271a2cf5d25df7bb60747f566574ad9acce42e2ad9e"
+        },
+        {
+          "path": "shaders/Opaque.vsh",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/Opaque.vsh",
+          "length": 8403,
+          "sha256": "93390bfbad5d39fe8c35e5c84b934f5744a41dca6eb1ad4d429511ad87b1deff"
+        },
+        {
+          "path": "shaders/P10DSceneRuntimeLab.psh",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/P10DSceneRuntimeLab.psh",
+          "length": 1580,
+          "sha256": "82154b2c495bae566f9aea976035f7371852787b55a66e3a0b2a4b81c962c4e7"
+        },
+        {
+          "path": "shaders/P10DSceneRuntimeLab.vsh",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/P10DSceneRuntimeLab.vsh",
+          "length": 1617,
+          "sha256": "d25f934f14ca9a6a108ead36d88e75905c07179a3e0a7da3490ab318b903c090"
+        },
+        {
+          "path": "shaders/Parallax.psh",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/Parallax.psh",
+          "length": 560,
+          "sha256": "1353321b572ed0d92ff6d0b2bf1f34a33c23297a588aafd3e5b5c6fe4d90003b"
+        },
+        {
+          "path": "shaders/Parallax.vsh",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/Parallax.vsh",
+          "length": 1148,
+          "sha256": "188802b2b58cfb552de86116b65f8583fae484a22bb459d9d60aec9e32c5ef69"
+        },
+        {
+          "path": "shaders/PointLights.csh",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/PointLights.csh",
+          "length": 5385,
+          "sha256": "f8fe7f90b67d85676b1cbc821a05b73cefdb782b0b7982a490a5073acad93994"
+        },
+        {
+          "path": "shaders/Screen.psh",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/Screen.psh",
+          "length": 5032,
+          "sha256": "5928bbe3b573abc021ee314a0912566e5eddad13403507fecc5cbd352bc5b4bb"
+        },
+        {
+          "path": "shaders/Screen.vsh",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/Screen.vsh",
+          "length": 207,
+          "sha256": "437f2132ddc9917935c329554134d0db6705ebbccbab5a96a2cdd13f79a1bdba"
+        },
+        {
+          "path": "shaders/Shadow.psh",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/Shadow.psh",
+          "length": 873,
+          "sha256": "2866b559e1ccb272a363fb248788202ffb9f9102e91ed95a539bce1c56828ffb"
+        },
+        {
+          "path": "shaders/Shadow.vsh",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/Shadow.vsh",
+          "length": 4322,
+          "sha256": "a16027dc7b5149ddfe423616c4268a14233da9b8f3959984b5215e3e1a4d5979"
+        },
+        {
+          "path": "shaders/ShaftLighting.psh",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/ShaftLighting.psh",
+          "length": 6453,
+          "sha256": "a6eea0639792010f49e8695d1d705c2e0d8f12900bf732684bb76b0036645071"
+        },
+        {
+          "path": "shaders/ShaftLighting.vsh",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/ShaftLighting.vsh",
+          "length": 207,
+          "sha256": "437f2132ddc9917935c329554134d0db6705ebbccbab5a96a2cdd13f79a1bdba"
+        },
+        {
+          "path": "shaders/Transparent.psh",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/Transparent.psh",
+          "length": 14526,
+          "sha256": "fe597cc6676448649b4294efc96083a14d3d18ce867be723790115a821cae04a"
+        },
+        {
+          "path": "shaders/Transparent.vsh",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/Transparent.vsh",
+          "length": 8709,
+          "sha256": "d03301608c1302faf1d2df04f1b95b62c7450758727d27be1cf3cf31aa3da1b4"
+        },
+        {
+          "path": "shaders/UnlitSky.psh",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/UnlitSky.psh",
+          "length": 250,
+          "sha256": "4712a94f6558d1a283b34ef7669d0cef7e327ca045f1d87ae77624c3bc42ca3c"
+        },
+        {
+          "path": "shaders/UnlitSky.vsh",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/UnlitSky.vsh",
+          "length": 2015,
+          "sha256": "ab1fa936c6a6c0eef8803adc2e1914f346f09dd6a03e471f32847501cb38b6e7"
+        },
+        {
+          "path": "shaders/assets/Blocks_n.png",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/assets/Blocks_n.png",
+          "length": 370894,
+          "sha256": "33200c6b7a532b88ca75f27be1c6c683664cc1bd64644c9b63c22ccd235956b4"
+        },
+        {
+          "path": "shaders/assets/cubemap/negative_x.png",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/assets/cubemap/negative_x.png",
+          "length": 366188,
+          "sha256": "81d13d75210331f10147567e7e689cba7325a02c561c280031e489496c0b04d3"
+        },
+        {
+          "path": "shaders/assets/cubemap/negative_y.png",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/assets/cubemap/negative_y.png",
+          "length": 239227,
+          "sha256": "c61fde555b61fb26e8811c28db74f54fb5118bcb56b1c7c3e53c1f164add66be"
+        },
+        {
+          "path": "shaders/assets/cubemap/negative_z.png",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/assets/cubemap/negative_z.png",
+          "length": 364408,
+          "sha256": "19e63f953267ac7339930724e660c428bd6883a92a84a87900abe20ca9fa3665"
+        },
+        {
+          "path": "shaders/assets/cubemap/positive_x.png",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/assets/cubemap/positive_x.png",
+          "length": 358227,
+          "sha256": "ca164be9fd723e2927d55a5f51afbf8a98197483a27dce5fed1e977cafebd5fd"
+        },
+        {
+          "path": "shaders/assets/cubemap/positive_y.png",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/assets/cubemap/positive_y.png",
+          "length": 409511,
+          "sha256": "a23c012120d21572b2c26429dff4218e8319408fcbe4d72fe24099ef506322f4"
+        },
+        {
+          "path": "shaders/assets/cubemap/positive_z.png",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/assets/cubemap/positive_z.png",
+          "length": 356854,
+          "sha256": "056b6ac17a0812a3b93af1d59cbc6e56531f24e3e0aad78b0c35f968f659a55d"
+        },
+        {
+          "path": "shaders/assets/dudv.png",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/assets/dudv.png",
+          "length": 255338,
+          "sha256": "1c3ebba4763322481383317587f069720e3ad82b5b0236e5fb527baa8e5e8077"
+        },
+        {
+          "path": "shaders/assets/gray_noise_medium.png",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/assets/gray_noise_medium.png",
+          "length": 67474,
+          "sha256": "b785bc13249f177f1a525653acf7e869278d5d741891bde411a07c4b126c3f10"
+        },
+        {
+          "path": "shaders/assets/iChannel0.png",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/assets/iChannel0.png",
+          "length": 4241,
+          "sha256": "89977181642088a740b4279f5a1a45d879013d2f96166ab9a7a4d46ca57ba283"
+        },
+        {
+          "path": "shaders/assets/ocean/environment_negative_x.png",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/assets/ocean/environment_negative_x.png",
+          "length": 927802,
+          "sha256": "ff6fbf9980cb79b7fd82a728783f0e760fc3cbb7c72ee87b62439545abcdf384"
+        },
+        {
+          "path": "shaders/assets/ocean/environment_negative_y.png",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/assets/ocean/environment_negative_y.png",
+          "length": 1062193,
+          "sha256": "5ff1c01d2b388e33598ed84f73ef5bc272606b54af5740b5ac9ee3c8e08bc921"
+        },
+        {
+          "path": "shaders/assets/ocean/environment_negative_z.png",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/assets/ocean/environment_negative_z.png",
+          "length": 898678,
+          "sha256": "1923ae037ef4599f033e8675dc5c74ce49bf02c97c966f210eb33b94593f361f"
+        },
+        {
+          "path": "shaders/assets/ocean/environment_positive_x.png",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/assets/ocean/environment_positive_x.png",
+          "length": 1055343,
+          "sha256": "e40f9561dc11baac535f91f966d4bcd3c9e371264af3e07fd5c005d929a189c2"
+        },
+        {
+          "path": "shaders/assets/ocean/environment_positive_y.png",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/assets/ocean/environment_positive_y.png",
+          "length": 763043,
+          "sha256": "bf3d4b0be0dc19c21aa3b9e429cf35396759ea9a8130126bcc7d507a5ee1ddb9"
+        },
+        {
+          "path": "shaders/assets/ocean/environment_positive_z.png",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/assets/ocean/environment_positive_z.png",
+          "length": 939431,
+          "sha256": "9a61a428b82c22da3ed72b27a444f104dec588c659f29394265664e34c172cd5"
+        },
+        {
+          "path": "shaders/assets/ocean/perlin.rgba16f",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/assets/ocean/perlin.rgba16f",
+          "length": 32768,
+          "sha256": "f3cad7cfe9811ebb9bd46c18b938b5ce2abd4e5636585d4438c1e0c49b459368"
+        },
+        {
+          "path": "shaders/assets/preset_normal.png",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/assets/preset_normal.png",
+          "length": 524157,
+          "sha256": "e525fda50207e7b7999d626d83a7b5d695b4f0460fe3b21b5540127cbd844ae1"
+        },
+        {
+          "path": "shaders/createdisplacement.comp",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/createdisplacement.comp",
+          "length": 840,
+          "sha256": "1c14033b04c56483507a2a619244738357f64df0ba7079d329e1feb34b1e8108"
+        },
+        {
+          "path": "shaders/creategradients.comp",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/creategradients.comp",
+          "length": 1509,
+          "sha256": "0f170f7a06e38acf9f374d7dec9eb76783506e6d6754f48c9fb81b2bb9a09e33"
+        },
+        {
+          "path": "shaders/fourier_fft.comp",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/fourier_fft.comp",
+          "length": 1890,
+          "sha256": "4ed071e6b8f813423e514b195ccdf1a95e0cede195f4a01371d77dc00330336e"
+        },
+        {
+          "path": "shaders/lib/BlockOffsets.glsl",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/lib/BlockOffsets.glsl",
+          "length": 808,
+          "sha256": "5af774a288bbbfdbad9674d1c03f404252be24187982dfd0b13e9a8012d81a7d"
+        },
+        {
+          "path": "shaders/lib/CalculateShadow.glsl",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/lib/CalculateShadow.glsl",
+          "length": 4574,
+          "sha256": "1bbc61d91a90feeb8a179cad469eb48ddb9f242bda2f68914e01b61f9bb0746a"
+        },
+        {
+          "path": "shaders/lib/Common.glsl",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/lib/Common.glsl",
+          "length": 129,
+          "sha256": "2f653bb1d413736e1bf46461c65d323d0beed77a08589dd1a078a679f36b1c82"
+        },
+        {
+          "path": "shaders/lib/CubicBezier.glsl",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/lib/CubicBezier.glsl",
+          "length": 625,
+          "sha256": "c7fb6bf16536216dfe81f0e1b0b21797d93167ccfbe799f1a141bf24777f6e6b"
+        },
+        {
+          "path": "shaders/lib/DudvOffset.glsl",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/lib/DudvOffset.glsl",
+          "length": 558,
+          "sha256": "ce5fce9cae6d7fcddda573a98ab15a699a5d6ed7b47662e2ad072c632b25c276"
+        },
+        {
+          "path": "shaders/lib/HandLighting.glsl",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/lib/HandLighting.glsl",
+          "length": 1151,
+          "sha256": "b256f41ea248c8fcd306fee0b6de829c3a4844287bc1fdb82e70a85424e75e49"
+        },
+        {
+          "path": "shaders/lib/Jitter.glsl",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/lib/Jitter.glsl",
+          "length": 444,
+          "sha256": "51c53c7a6e93581c3b0ee26949ff18e010d103f20f50343debb5cf0508dbb165"
+        },
+        {
+          "path": "shaders/lib/LinearizeDepth.glsl",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/lib/LinearizeDepth.glsl",
+          "length": 240,
+          "sha256": "66b1716f054c554cfe7142978f5b2781500ca6edf3cc16800fbfea4809b47ead"
+        },
+        {
+          "path": "shaders/lib/LiquidBlock.glsl",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/lib/LiquidBlock.glsl",
+          "length": 362,
+          "sha256": "31940afbd04befb0f62751d0934ea556669fde2493451633cd74fc58a38ddd7d"
+        },
+        {
+          "path": "shaders/lib/Logo.glsl",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/lib/Logo.glsl",
+          "length": 632,
+          "sha256": "2bdf1166b3e6e4d2b3ab91dd7fd450b07a816e441e967ec5726e327b2744715b"
+        },
+        {
+          "path": "shaders/lib/NormalUtil.glsl",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/lib/NormalUtil.glsl",
+          "length": 273,
+          "sha256": "680ba6a2cf8cf92f16e139de4435b7ad225caa0cffca2d34de5e3a2396444779"
+        },
+        {
+          "path": "shaders/lib/OctEnDeCode.glsl",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/lib/OctEnDeCode.glsl",
+          "length": 709,
+          "sha256": "e311308b7f491c37195789198475ca9abe55f11e934a8d8015b358f82e4f5c82"
+        },
+        {
+          "path": "shaders/lib/PBR0.glsl",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/lib/PBR0.glsl",
+          "length": 2766,
+          "sha256": "89beb4ef19e81a27d8d48aee86934a0e25ebf2d764fbcf8651af6cb8bcbedda8"
+        },
+        {
+          "path": "shaders/lib/PerlinNoise.glsl",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/lib/PerlinNoise.glsl",
+          "length": 1684,
+          "sha256": "5b1c9b5eb4c89585993a03c0b497518600fc4eb111132b612dc3225ba2e67fb8"
+        },
+        {
+          "path": "shaders/lib/PlantWaving.glsl",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/lib/PlantWaving.glsl",
+          "length": 1151,
+          "sha256": "0c534c78f13ca1ee5cbb7c2d6eda46e8f7396f3125c0b6ef6df7b6b3756d5c93"
+        },
+        {
+          "path": "shaders/lib/PointLightsBinding.glsl",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/lib/PointLightsBinding.glsl",
+          "length": 536,
+          "sha256": "c00ccea1ce73f57811c6cd0634c4d2a18e9863723723f7315a0aed3126b48ea4"
+        },
+        {
+          "path": "shaders/lib/PresetNormalOffset.glsl",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/lib/PresetNormalOffset.glsl",
+          "length": 429,
+          "sha256": "62a40913fdb49e3037403e52e0dac47d2fe44e9a4ec769fdb70ca42968ddff0a"
+        },
+        {
+          "path": "shaders/lib/RgbTransform.glsl",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/lib/RgbTransform.glsl",
+          "length": 117,
+          "sha256": "7edfe098e820f765d042f1e373c0e16b0b46099a0730752ef33961a993d8b8ee"
+        },
+        {
+          "path": "shaders/lib/RippleBinding.glsl",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/lib/RippleBinding.glsl",
+          "length": 79,
+          "sha256": "e235b1725edc422b8208dc260a7a83b0fc1aaaa9edb24dae4fc7720edc026a0e"
+        },
+        {
+          "path": "shaders/lib/RippleN.glsl",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/lib/RippleN.glsl",
+          "length": 1873,
+          "sha256": "b8b81d72d1b2a1af37e3054e50b64bc990cb3a622fdd8f1cb586b56677d90913"
+        },
+        {
+          "path": "shaders/lib/ShaftUtil.glsl",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/lib/ShaftUtil.glsl",
+          "length": 1229,
+          "sha256": "67f1e3e2268c49eacb2a9061a19c4f4fb8141eb2e2da51c65f90e3fadaa19281"
+        },
+        {
+          "path": "shaders/lib/Tonemapping.glsl",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/lib/Tonemapping.glsl",
+          "length": 2003,
+          "sha256": "1c07a2fe159c9378e33e4cfe8eef000872f582feac9fea31e805688a8b19c023"
+        },
+        {
+          "path": "shaders/lib/Warp.glsl",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/lib/Warp.glsl",
+          "length": 1767,
+          "sha256": "8222363ef397bf2d82832504f3417fe74d5682fcad59419b766417e54e717e96"
+        },
+        {
+          "path": "shaders/lib/WaterBlock.glsl",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/lib/WaterBlock.glsl",
+          "length": 304,
+          "sha256": "f6539832d75a3b218b8b4c97439141b683af465c859d29df9b5a18d07e1f707b"
+        },
+        {
+          "path": "shaders/lib/WavingBlock.glsl",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/lib/WavingBlock.glsl",
+          "length": 387,
+          "sha256": "01d18e3faffaacd37edb2b8d55a6070970ae269b1836c0b56150b0139d768e6e"
+        },
+        {
+          "path": "shaders/lib/WavingLeaves.glsl",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/lib/WavingLeaves.glsl",
+          "length": 727,
+          "sha256": "eb504c00d172532b239c733eddee7ce09d028e23dcacb9862b8cd676187f8c50"
+        },
+        {
+          "path": "shaders/updatespectrum.comp",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaders/updatespectrum.comp",
+          "length": 1488,
+          "sha256": "c39ae77213fc95b207a1d96740c817be85c201232433bfe7971a3fc36b08a804"
+        }
+      ]
+    },
+    {
+      "id": "upstream/makeup",
+      "directory": "MakeUpUltraFast_SC_v0.21",
+      "sourceRoot": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21",
+      "sourceUrl": "https://gitea.com/EltanceX/DawnlightCore/src/commit/f8aaa5c4218f54536ccf994a2d512aed2e3678b7/Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21",
+      "manifestVersion": 5,
+      "sceneAbiVersion": 2,
+      "manifestHash": "9f791a81188c7701a8de42851fb085f689bbf248b9342e6a0b329faf3e0e7466",
+      "status": "static-passed",
+      "runtimeVerified": false,
+      "checks": [
+        {
+          "id": "pack",
+          "exitCode": 0,
+          "outputSha256": "0b42106e1fdce975f36cdf0509d1e1efaa9132cf2e42d5ea91da7ab921a1d4a4",
+          "diagnostics": []
+        },
+        {
+          "id": "scene",
+          "exitCode": 0,
+          "outputSha256": "3bc13683434142053f16613481617d383d24a281625499c7cd8c14c72b1ad094",
+          "diagnostics": []
+        },
+        {
+          "id": "graph",
+          "exitCode": 0,
+          "outputSha256": "2f22068411f08a9872ba65e935087376930fa7b127eed5b58bf4687a89d247fb",
+          "diagnostics": []
+        }
+      ],
+      "features": {
+        "programKinds": [
+          "graphics"
+        ],
+        "resourceKinds": [
+          "buffer",
+          "texture2D"
+        ],
+        "commandKinds": [
+          "clear",
+          "copy",
+          "engineDraw",
+          "fullscreen",
+          "historyCommit",
+          "present"
+        ],
+        "bindingKinds": [
+          "sampler2D",
+          "sampler2DShadow",
+          "storageBuffer"
+        ],
+        "sceneModes": [
+          "override"
+        ],
+        "settings": true
+      },
+      "files": [
+        {
+          "path": "BLOOM.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/BLOOM.json",
+          "length": 380,
+          "sha256": "8e478dff4bff85d9ec4d13cc74d327173fee668ff5b428c78f8dda537c8735b6"
+        },
+        {
+          "path": "DOF.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/DOF.json",
+          "length": 1813,
+          "sha256": "156cb9f039ac54247201816b1e6ba4b31147c4e5a4c4009a8eae81d9dfcda8a6"
+        },
+        {
+          "path": "EXPOSURE.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/EXPOSURE.json",
+          "length": 1728,
+          "sha256": "55f60b5db7106c5e8a5451632dbe09d06ef2adc6f79784e6c98d0fc3f9aabfe3"
+        },
+        {
+          "path": "HIERARCHY.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/HIERARCHY.json",
+          "length": 394,
+          "sha256": "4631cd9cbd1041e4c5b42d4c6af27c96d8cb9fefa9b68ab0b92406f343a8bb3c"
+        },
+        {
+          "path": "LICENSE",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/LICENSE",
+          "length": 7652,
+          "sha256": "e3a994d82e644b03a792a930f574002658412f62407f5fee083f2555c5f23118"
+        },
+        {
+          "path": "MOTION_BLUR.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/MOTION_BLUR.json",
+          "length": 1755,
+          "sha256": "150bc2ef2331c52717ba15cc3a37b6dcc73578e8944e969f55cd189d65d1c356"
+        },
+        {
+          "path": "README.md",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/README.md",
+          "length": 3178,
+          "sha256": "d20c09b3af8a86c17d672ba2d7f351f79cd49a6b6ac9799e76106d3f716c8479"
+        },
+        {
+          "path": "TAA.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/TAA.json",
+          "length": 2275,
+          "sha256": "cf62c3f1804c36c36192f500d7451234806ce503b7baef92d6e0551ab8c5549b"
+        },
+        {
+          "path": "UPSTREAM.md",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/UPSTREAM.md",
+          "length": 15328,
+          "sha256": "4ac325df00925673a14fa240dc534dc2d301dbf48b851963f32f9f480c94e26a"
+        },
+        {
+          "path": "manifest/customData/auto-exposure.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/customData/auto-exposure.json",
+          "length": 628,
+          "sha256": "f0627d3d0a53478f3e0d8c3680ecaf3a4c6a3288d739afc4ea626d0f13d24aeb"
+        },
+        {
+          "path": "manifest/customData/bloom.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/customData/bloom.json",
+          "length": 629,
+          "sha256": "c3c519fdd50002c07eda1e03e5e3727ebc434c8f20b837df22d81b1152b146fa"
+        },
+        {
+          "path": "manifest/customData/clouds.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/customData/clouds.json",
+          "length": 2916,
+          "sha256": "d1f6cccd23ac980b62754292355715ce364e0de13ae07f411d709852ca6203c2"
+        },
+        {
+          "path": "manifest/customData/depth-of-field.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/customData/depth-of-field.json",
+          "length": 1147,
+          "sha256": "e53dd9b436305ed4cf09d7fda74b8b12f3cccad2dd25e19deffdbcb7713e0dbe"
+        },
+        {
+          "path": "manifest/customData/materials-wind.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/customData/materials-wind.json",
+          "length": 892,
+          "sha256": "fe30edfb2e8fe304d4844b9d12c39baf9d98ce710213cb0857447925459b409b"
+        },
+        {
+          "path": "manifest/customData/motion-blur.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/customData/motion-blur.json",
+          "length": 1859,
+          "sha256": "d0c67ba0444f9a4ffd5173284a4ebe952ea392b999189d32bca62e59d2aabe8e"
+        },
+        {
+          "path": "manifest/customData/output-material-diagnostics.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/customData/output-material-diagnostics.json",
+          "length": 1994,
+          "sha256": "f613261d5a07c40a71911ae82b4255bede39f838b0572e8daaf3edeb475cc695"
+        },
+        {
+          "path": "manifest/customData/projection-depth-ao.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/customData/projection-depth-ao.json",
+          "length": 2657,
+          "sha256": "2492450f40148ca394f00b6f33a6b5ef1be08699ad7de5c00e1b7f5adeea2fe4"
+        },
+        {
+          "path": "manifest/customData/render-timing.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/customData/render-timing.json",
+          "length": 716,
+          "sha256": "590d21df45690faaa9ad1be8476205a6d260d1f15445da27d2bab6aabdc7688e"
+        },
+        {
+          "path": "manifest/customData/shadow-preview.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/customData/shadow-preview.json",
+          "length": 340,
+          "sha256": "1f4ff0727b307b04336b5238cc5b6a713bc2c93a3dca84cdf5e9c45e614732d6"
+        },
+        {
+          "path": "manifest/customData/shadows.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/customData/shadows.json",
+          "length": 623,
+          "sha256": "64eafbb9ac2c7902af91a3a5f3ba05abdcf96f25960f392791a57b491bfe73e9"
+        },
+        {
+          "path": "manifest/customData/taa.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/customData/taa.json",
+          "length": 3036,
+          "sha256": "393f165e91e9b132856c19e85c4ccdc44231bfaeb68252cfce8085f2581384e6"
+        },
+        {
+          "path": "manifest/customData/volumetric-light.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/customData/volumetric-light.json",
+          "length": 1429,
+          "sha256": "c1805ddc88cbeb4d4c313825136d985d590a378a2fa0c80285b91cf2cbba39ca"
+        },
+        {
+          "path": "manifest/customData/water.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/customData/water.json",
+          "length": 1246,
+          "sha256": "c11618864e68f0e0b2a98ac63332714fcf9883fcc270a98f8b65886d10a20975"
+        },
+        {
+          "path": "manifest/materials/content-mappings.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/materials/content-mappings.json",
+          "length": 4265,
+          "sha256": "d2a1e96bb66ced6a09c9f7afbc2148d42766291c9e7f2d7072c8db206ab9992f"
+        },
+        {
+          "path": "manifest/materials/definitions.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/materials/definitions.json",
+          "length": 2756,
+          "sha256": "b200c80f0985921889c1870f65a9c9107b278fd2f888d8a6931fac4c3e629827"
+        },
+        {
+          "path": "manifest/materials/schema.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/materials/schema.json",
+          "length": 1438,
+          "sha256": "a20a51634e69b440b253a406b826aa5b033ad53248514ddeb57c6a9ab41a094a"
+        },
+        {
+          "path": "manifest/options/auto-exposure.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/options/auto-exposure.json",
+          "length": 626,
+          "sha256": "e448ba29cfdeb4a0cb0ef92edd720ddf2090e503901ccf889855798f1ebc34a1"
+        },
+        {
+          "path": "manifest/options/clouds.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/options/clouds.json",
+          "length": 1505,
+          "sha256": "b38d64ff8420d45d924f8a5f098cc2eaed76b577d800009d5d92f9c4db4c065b"
+        },
+        {
+          "path": "manifest/options/colored-shadows.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/options/colored-shadows.json",
+          "length": 1148,
+          "sha256": "12d3265a34c46e7acbd29af38011c5e2b8e79e3495af9bbed0183690b0272149"
+        },
+        {
+          "path": "manifest/options/depth-ao.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/options/depth-ao.json",
+          "length": 852,
+          "sha256": "aa4fffad3b0ceffd6410cf851f8e74a2fd3e87c884dbb67b648e61da29077ddc"
+        },
+        {
+          "path": "manifest/options/depth-of-field.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/options/depth-of-field.json",
+          "length": 779,
+          "sha256": "38d088e127b719b5b05827407de0c46d634574c4fc93e2fb5e35b63ce6f76dbc"
+        },
+        {
+          "path": "manifest/options/image-hierarchy-bloom.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/options/image-hierarchy-bloom.json",
+          "length": 1291,
+          "sha256": "51c189e39888e775d82eec397e0772f0ac9021d41da7e0d2b8fc9814e8cf8083"
+        },
+        {
+          "path": "manifest/options/lighting-fog.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/options/lighting-fog.json",
+          "length": 938,
+          "sha256": "cb9a3d092d9a48efb60333680eccfe0e67c35cf83e5efbc018c2d409eda32fad"
+        },
+        {
+          "path": "manifest/options/materials-wind.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/options/materials-wind.json",
+          "length": 1131,
+          "sha256": "24e001211fee43790767cce7b98242083807f4ee722d5792836400e11563c999"
+        },
+        {
+          "path": "manifest/options/motion-blur.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/options/motion-blur.json",
+          "length": 1188,
+          "sha256": "f3b7f73b67a74c83147a98a3d84e2dc6c304ef110cf333ec34e4ce1c6846886a"
+        },
+        {
+          "path": "manifest/options/output.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/options/output.json",
+          "length": 1382,
+          "sha256": "65a700d677851c97776e5f5616f3f537e4f916f68b47761f1aa27277394c3e48"
+        },
+        {
+          "path": "manifest/options/shadows.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/options/shadows.json",
+          "length": 1421,
+          "sha256": "984c6e84dcff72977a9eef9a42ae331f78ff3d16affb517cfc6fbe22a7fc7d87"
+        },
+        {
+          "path": "manifest/options/taa.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/options/taa.json",
+          "length": 1040,
+          "sha256": "9eadc2c8dcc37734e480e599c5a8a78fcd5bf1c7d4384f5fcc8e8de0cdf274a3"
+        },
+        {
+          "path": "manifest/options/visual-parity.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/options/visual-parity.json",
+          "length": 1231,
+          "sha256": "0839716712ca8d13c5cf4b198bcaf5aa70f2d007cc474afecead5384897edd00"
+        },
+        {
+          "path": "manifest/options/volumetric-light.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/options/volumetric-light.json",
+          "length": 1204,
+          "sha256": "7270a862275e47dc4bcc80711be71ec1fd73d83f0f8465414150629b5a806560"
+        },
+        {
+          "path": "manifest/options/water.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/options/water.json",
+          "length": 2140,
+          "sha256": "e3f32c4dab088dc970579fe0de00564527827917b91dc29b2e98160a2e8ac359"
+        },
+        {
+          "path": "manifest/passes/auto-exposure.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/passes/auto-exposure.json",
+          "length": 7517,
+          "sha256": "cf391eb756a1899adc34df6a0bf667400ffe4ef6b9f83377f12d3f4dfe9574d5"
+        },
+        {
+          "path": "manifest/passes/bloom-auto-exposure.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/passes/bloom-auto-exposure.json",
+          "length": 21915,
+          "sha256": "6fe0577afa38c5b34f93235045ddb130af6bd032e65490921fb70849b8231240"
+        },
+        {
+          "path": "manifest/passes/bloom.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/passes/bloom.json",
+          "length": 20925,
+          "sha256": "ae63ec9dd9feb7149a6563d7b8cb9a49bfe9e4fa72b953986ceba179cc06620a"
+        },
+        {
+          "path": "manifest/passes/depth-ao.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/passes/depth-ao.json",
+          "length": 6348,
+          "sha256": "a75e16f186f152066d3c121a4d48576f33a7883d2ad5db88a266281166cda7ea"
+        },
+        {
+          "path": "manifest/passes/depth-of-field.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/passes/depth-of-field.json",
+          "length": 43959,
+          "sha256": "ca3de29ca7227f921ab4a0330cce88d966fdd0cd0dac61cd77ee14a73f81ee04"
+        },
+        {
+          "path": "manifest/passes/image-hierarchy.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/passes/image-hierarchy.json",
+          "length": 5062,
+          "sha256": "0aca42c60391629d7116d6b642a5e4bdbe378ba2fb8b155c1246e423a4e59d18"
+        },
+        {
+          "path": "manifest/passes/motion-blur.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/passes/motion-blur.json",
+          "length": 9106,
+          "sha256": "d9a1cc293415aefe88562df16685eb51e227b32da79c40a39074133f8bbea35a"
+        },
+        {
+          "path": "manifest/passes/output/auto-exposure.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/passes/output/auto-exposure.json",
+          "length": 28666,
+          "sha256": "0d89538c116fd37e4b5c21e7745c5938377882b8918ffdbd09f51fb36baccb23"
+        },
+        {
+          "path": "manifest/passes/output/base.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/passes/output/base.json",
+          "length": 16014,
+          "sha256": "4753d2622169c6f400998f2512b95165be822242559c926cd15170ecf40d02c4"
+        },
+        {
+          "path": "manifest/passes/output/depth-of-field.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/passes/output/depth-of-field.json",
+          "length": 46542,
+          "sha256": "ace77d33c9a07719c3f91d79a87e91d9b20fc5db895f6f45879d429d811c32bd"
+        },
+        {
+          "path": "manifest/passes/output/motion-disabled.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/passes/output/motion-disabled.json",
+          "length": 140398,
+          "sha256": "a067b0d6f49f87f33d5b4e8f7076c2a57432c4eb3aa70656b8a9cca3944e20fe"
+        },
+        {
+          "path": "manifest/passes/output/shadow-fallback/motion-disabled.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/passes/output/shadow-fallback/motion-disabled.json",
+          "length": 230247,
+          "sha256": "14e477388641c12aa5dc0a29ba1d3c07200e6c0e86e58625ad5907c8e076b9f7"
+        },
+        {
+          "path": "manifest/passes/output/shadow-fallback/motion-preview.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/passes/output/shadow-fallback/motion-preview.json",
+          "length": 8810,
+          "sha256": "1fb99c76125935a59fd6258af5942c3da77d3c94255180777a6c2fd669b44a96"
+        },
+        {
+          "path": "manifest/passes/output/shadow-fallback/taa-disabled.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/passes/output/shadow-fallback/taa-disabled.json",
+          "length": 229567,
+          "sha256": "cbd031335012e9eab6ddd716417db0fc2a945b506ed799b6f2e01b03442b4756"
+        },
+        {
+          "path": "manifest/passes/output/shadow-fallback/taa-motion-disabled.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/passes/output/shadow-fallback/taa-motion-disabled.json",
+          "length": 239767,
+          "sha256": "2e0df0f35119f294a7285e436fad66066d8464cc33fb9eac03298371177a7540"
+        },
+        {
+          "path": "manifest/passes/output/shadow-fallback/taa-preview-motion-disabled.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/passes/output/shadow-fallback/taa-preview-motion-disabled.json",
+          "length": 7376,
+          "sha256": "afbdd22c279c0dbc008f6e1f760bffd0d5b2381f6ba390dfe0c1bc15d0d4cb24"
+        },
+        {
+          "path": "manifest/passes/output/shadow-fallback/taa-preview.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/passes/output/shadow-fallback/taa-preview.json",
+          "length": 7076,
+          "sha256": "4850b7a6a6da072c699c0c79a71a48411f5a946542a0ac83f4c9c7a50e1da708"
+        },
+        {
+          "path": "manifest/passes/output/shadow-fallback/temporal.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/passes/output/shadow-fallback/temporal.json",
+          "length": 220047,
+          "sha256": "674f535068d752701da353cee3b788ad5d9de1a5e07dbcd293a6216d51d8ac48"
+        },
+        {
+          "path": "manifest/passes/output/shadow-volume-fallback/motion-disabled.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/passes/output/shadow-volume-fallback/motion-disabled.json",
+          "length": 480941,
+          "sha256": "ac76aed268c3fc570295f8fdca6698792a920e0c7b8529180f9c3883e0ce11db"
+        },
+        {
+          "path": "manifest/passes/output/shadow-volume-fallback/motion-preview.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/passes/output/shadow-volume-fallback/motion-preview.json",
+          "length": 18201,
+          "sha256": "3c5372256aab847fcc6c0d8501ce79488a3872834bee284ccc2e9c8fe4351fc9"
+        },
+        {
+          "path": "manifest/passes/output/shadow-volume-fallback/taa-disabled.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/passes/output/shadow-volume-fallback/taa-disabled.json",
+          "length": 479581,
+          "sha256": "99709b39c17214c5b64cec14d4b5006d9a129fd8a70d881a96a5471b22e82edf"
+        },
+        {
+          "path": "manifest/passes/output/shadow-volume-fallback/taa-motion-disabled.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/passes/output/shadow-volume-fallback/taa-motion-disabled.json",
+          "length": 499981,
+          "sha256": "e6846b7cf04c8723201f31aa3dfacd69620066cd9bd471c4167e1f12d8c0580d"
+        },
+        {
+          "path": "manifest/passes/output/shadow-volume-fallback/taa-preview-motion-disabled.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/passes/output/shadow-volume-fallback/taa-preview-motion-disabled.json",
+          "length": 15333,
+          "sha256": "cb9f3af3b4829f64d662bb9dce60f909769fb9bf1707b12f99035e61ab51c76c"
+        },
+        {
+          "path": "manifest/passes/output/shadow-volume-fallback/taa-preview.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/passes/output/shadow-volume-fallback/taa-preview.json",
+          "length": 14733,
+          "sha256": "ebbec25c3c2afaadac97175f4894004ef2053c441f8f7ab18ad6bc87ba442a85"
+        },
+        {
+          "path": "manifest/passes/output/shadow-volume-fallback/temporal.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/passes/output/shadow-volume-fallback/temporal.json",
+          "length": 460541,
+          "sha256": "08a44a6f0c2af77f07e009e9abe755826bfb3ac975816deffe1541be60434c74"
+        },
+        {
+          "path": "manifest/passes/output/taa-disabled.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/passes/output/taa-disabled.json",
+          "length": 139978,
+          "sha256": "73b1ccad68d1a85910f1a9e4855777cf8e335857d59978f0687bd9060c6dbca4"
+        },
+        {
+          "path": "manifest/passes/output/taa-motion-disabled.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/passes/output/taa-motion-disabled.json",
+          "length": 149695,
+          "sha256": "b369f9af4439b8eb3dad75a45c33d9b9194b7389db14f2ebf38781e1c77a14ec"
+        },
+        {
+          "path": "manifest/passes/output/volume-fallback/motion-disabled.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/passes/output/volume-fallback/motion-disabled.json",
+          "length": 452358,
+          "sha256": "a37d16af9c7fd79997db1dba2dcd70d88b9f88818b7eefd4182b1cc3f436d166"
+        },
+        {
+          "path": "manifest/passes/output/volume-fallback/motion-preview.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/passes/output/volume-fallback/motion-preview.json",
+          "length": 13166,
+          "sha256": "9e38056a5cf79a831365344a8736cf9da778586f514a034e306601d336c2d079"
+        },
+        {
+          "path": "manifest/passes/output/volume-fallback/taa-disabled.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/passes/output/volume-fallback/taa-disabled.json",
+          "length": 451098,
+          "sha256": "0d81cd06cf528e448a9f00b54e77aa12f21f8e654e916dc246d62af50053e768"
+        },
+        {
+          "path": "manifest/passes/output/volume-fallback/taa-motion-disabled.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/passes/output/volume-fallback/taa-motion-disabled.json",
+          "length": 469998,
+          "sha256": "bd5e58b567a443fd19e9429c0d6107cbb1251ba2694dd61fac866734e1a919f0"
+        },
+        {
+          "path": "manifest/passes/output/volume-fallback/taa-preview-motion-disabled.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/passes/output/volume-fallback/taa-preview-motion-disabled.json",
+          "length": 11015,
+          "sha256": "031d12c7567555f1053133a4690a3e895732194266ee3136d6ce64a55367ee90"
+        },
+        {
+          "path": "manifest/passes/output/volume-fallback/taa-preview.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/passes/output/volume-fallback/taa-preview.json",
+          "length": 10565,
+          "sha256": "86a049f859dfa04e82472709a8a24bf8b339671ffb3c50866560f75fe1bbd03f"
+        },
+        {
+          "path": "manifest/passes/output/volume-fallback/temporal.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/passes/output/volume-fallback/temporal.json",
+          "length": 433458,
+          "sha256": "46f8a50b444c26e405cf66caaf2020cfe46145d0eee9e2af99fe9b053aac298e"
+        },
+        {
+          "path": "manifest/passes/output/water-bloom.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/passes/output/water-bloom.json",
+          "length": 29461,
+          "sha256": "3519d5585873d86892c0cf58a6a08663b88d7db2e6e64e96acbafa1dc1083f48"
+        },
+        {
+          "path": "manifest/passes/shadow-preview.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/passes/shadow-preview.json",
+          "length": 5645,
+          "sha256": "012a7cc60fb179c5ef77f2290548faa1f60a4bd982d6a22a80e258620d611f32"
+        },
+        {
+          "path": "manifest/passes/shadows.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/passes/shadows.json",
+          "length": 32991,
+          "sha256": "afb2d642534d24823f701938b32d9317294e72464283b74129b49ddbb3fc74ef"
+        },
+        {
+          "path": "manifest/passes/sky-clouds.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/passes/sky-clouds.json",
+          "length": 10362,
+          "sha256": "148cae13dd6cecf83ae8162835bd61082f089e5e8a5421a65e5ddcd16780f375"
+        },
+        {
+          "path": "manifest/passes/taa.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/passes/taa.json",
+          "length": 9552,
+          "sha256": "3455ed15513120d0b96b24ce3313c84ec71e5cd7dc4ce7db36bae13819f85bae"
+        },
+        {
+          "path": "manifest/passes/terrain.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/passes/terrain.json",
+          "length": 68796,
+          "sha256": "3e4d4bd7ffd1125415c55682ce9c5b9dc06e8c85e68c554892ea3e40974c8b17"
+        },
+        {
+          "path": "manifest/passes/volumetric-light.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/passes/volumetric-light.json",
+          "length": 21407,
+          "sha256": "22bf7ec32daba72e8f1b32465b6f569ba1c297c8a917f5b1e5a1bf33bd832e9c"
+        },
+        {
+          "path": "manifest/passes/volumetric-preview.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/passes/volumetric-preview.json",
+          "length": 5575,
+          "sha256": "2842e2aa67def6d78be5a1ef40243845772278315607c494296cd228c594b09b"
+        },
+        {
+          "path": "manifest/passes/water-captures.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/passes/water-captures.json",
+          "length": 2895,
+          "sha256": "554264f2edda87039b44fcba63b9494597cb5886dc7f47282f9ca5480b1667f0"
+        },
+        {
+          "path": "manifest/programs/auto-exposure.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/programs/auto-exposure.json",
+          "length": 845,
+          "sha256": "a35ea704cd9886d8a98eda3d87576ae7593421301574081f3312dd36e923d040"
+        },
+        {
+          "path": "manifest/programs/batches.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/programs/batches.json",
+          "length": 626,
+          "sha256": "0b11b910208a014e8fedf463f99baead2254c391b981af62d293bed35e8af2ef"
+        },
+        {
+          "path": "manifest/programs/bloom-output.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/programs/bloom-output.json",
+          "length": 1617,
+          "sha256": "4fa450c4885e9c6e6a2e73df2c45c1e3a507e1bd32cdb9eebb5448e50ae7b7df"
+        },
+        {
+          "path": "manifest/programs/clouds.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/programs/clouds.json",
+          "length": 711,
+          "sha256": "f7ca219ae670779b5ab260db6cece1bfff8bd49fe17364fed8b8483352346403"
+        },
+        {
+          "path": "manifest/programs/depth-of-field.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/programs/depth-of-field.json",
+          "length": 1997,
+          "sha256": "d08dfc7b53c662fa59184614ceb6e9a068b447fc83e2ce7f0044f4b639797e02"
+        },
+        {
+          "path": "manifest/programs/fxaa-depth-ao.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/programs/fxaa-depth-ao.json",
+          "length": 825,
+          "sha256": "165a8d3178041150b8b368e7c36b8a0b99a0e84f3e3322c8bfb5b095a176b948"
+        },
+        {
+          "path": "manifest/programs/image-hierarchy-timing.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/programs/image-hierarchy-timing.json",
+          "length": 670,
+          "sha256": "4660fab2a8fc5aedcfffd723d387ded3488af226a4d39d343e81f81cd3b6c049"
+        },
+        {
+          "path": "manifest/programs/motion-blur.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/programs/motion-blur.json",
+          "length": 659,
+          "sha256": "9d85762545d42853088d99ceb280ea4230fafaf52bcd6b86ec0f3d384d64983a"
+        },
+        {
+          "path": "manifest/programs/present.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/programs/present.json",
+          "length": 508,
+          "sha256": "8d81b4e2ac475942ac0e23fe7514062353a60d7e3447868ee126137f4ae16577"
+        },
+        {
+          "path": "manifest/programs/scene-drawables.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/programs/scene-drawables.json",
+          "length": 1777,
+          "sha256": "82f1cdccff433620017f14a170bcac19a4ecf3059b65df417f5570503bed8138"
+        },
+        {
+          "path": "manifest/programs/shadow-casters.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/programs/shadow-casters.json",
+          "length": 10303,
+          "sha256": "a4cc5610acc900182ec79304dd6614d8394c3bec472b55d5fb33cf06d362b514"
+        },
+        {
+          "path": "manifest/programs/shadow-preview.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/programs/shadow-preview.json",
+          "length": 1002,
+          "sha256": "d9629ce0bbdac9f78b520d94e5d67bcf93bf3999bd375c0cd570dab27967e047"
+        },
+        {
+          "path": "manifest/programs/sky.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/programs/sky.json",
+          "length": 738,
+          "sha256": "efdbd1c9bbc93722c6ce37cf79ef74f6eb911e0f6f47646cabe259b2952a2aa7"
+        },
+        {
+          "path": "manifest/programs/taa.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/programs/taa.json",
+          "length": 1175,
+          "sha256": "493d0627ca536e9e9c0fbae02c3c9fcfbfbe1f8bbb9a815b6f539759c706c597"
+        },
+        {
+          "path": "manifest/programs/terrain.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/programs/terrain.json",
+          "length": 15361,
+          "sha256": "b9ad44bf2b2ea1e363a093c70abbf8e4bb04b40269afa03ed46d0a054faf004b"
+        },
+        {
+          "path": "manifest/programs/volumetric-light.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/programs/volumetric-light.json",
+          "length": 2783,
+          "sha256": "48fcce8928fea43562247698e0b559b2e43b85fcaa0893c21b0dbeede8cbb8e1"
+        },
+        {
+          "path": "manifest/resources/auto-exposure.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/resources/auto-exposure.json",
+          "length": 2126,
+          "sha256": "781f0cc6cc11723e2b6653f216d36d71d7371ac885a7507ef6a60253dedc07bb"
+        },
+        {
+          "path": "manifest/resources/bloom.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/resources/bloom.json",
+          "length": 2997,
+          "sha256": "cff30dfd5a7ec77c43de4f2eeb8d0cfe596e094a1690ffb6473fe8c0f9ca19c0"
+        },
+        {
+          "path": "manifest/resources/clouds.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/resources/clouds.json",
+          "length": 1080,
+          "sha256": "e90f0572e54acf1dceeeafd6ec1f530fd21ea17c8d486f98e58edb2f005bb859"
+        },
+        {
+          "path": "manifest/resources/depth-of-field.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/resources/depth-of-field.json",
+          "length": 1303,
+          "sha256": "3b86aae33f739bf0b69fcaf6242a5edfe63792147625c5b25c523f47aa0d4071"
+        },
+        {
+          "path": "manifest/resources/image-hierarchy.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/resources/image-hierarchy.json",
+          "length": 1732,
+          "sha256": "aadd1edb9526ae18af24925e2f60ec8930d036097438c7380f7e23da9704cc9d"
+        },
+        {
+          "path": "manifest/resources/material-table.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/resources/material-table.json",
+          "length": 243,
+          "sha256": "2b442a467093dc622f43414ca14c1c27b728495adec27ce6102e0699539626a0"
+        },
+        {
+          "path": "manifest/resources/motion-blur.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/resources/motion-blur.json",
+          "length": 367,
+          "sha256": "15e470bdefd9bf7e8562bb1d9ff7dc9be68bd757897ee7dc2f18b739d267399b"
+        },
+        {
+          "path": "manifest/resources/scene-composites.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/resources/scene-composites.json",
+          "length": 714,
+          "sha256": "fdcb7fa6b525f4ee017a501f00823d3164afbd69ec4079fdbd0ac2db23338431"
+        },
+        {
+          "path": "manifest/resources/scene-targets.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/resources/scene-targets.json",
+          "length": 708,
+          "sha256": "35336cf6edbd0f81490594876eda2ec451c0a52e7bbad7514913522022fc686a"
+        },
+        {
+          "path": "manifest/resources/shadows.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/resources/shadows.json",
+          "length": 729,
+          "sha256": "728d6da240176d9cdc7060c2a816b9b1263da957d65588ad49656eb475be696b"
+        },
+        {
+          "path": "manifest/resources/taa.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/resources/taa.json",
+          "length": 1299,
+          "sha256": "bb72b55e35e40f3baa085377939070e4d154239dcc1a49bca03f38170d5c4ff5"
+        },
+        {
+          "path": "manifest/resources/volumetric-light.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/resources/volumetric-light.json",
+          "length": 1191,
+          "sha256": "134facad5cce0664f772337d5b318203703c6be3ade6ab792777d3c341da8305"
+        },
+        {
+          "path": "manifest/resources/water.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/resources/water.json",
+          "length": 1241,
+          "sha256": "e74ed7ef8cb6bce63ace7525405ff6864df1fef3dd03caf4963628ea707366f4"
+        },
+        {
+          "path": "manifest/sceneCategories.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/sceneCategories.json",
+          "length": 660,
+          "sha256": "829f52292b17538afa58332f997974eb88bdc384c660da134ec2d1d464d43808"
+        },
+        {
+          "path": "manifest/ui/settings.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/ui/settings.json",
+          "length": 57599,
+          "sha256": "0d872daaba2f2dfceef20e5f456c90435778b125a5d153ee6f5ad2443ef97678"
+        },
+        {
+          "path": "reference/bloom.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/reference/bloom.json",
+          "length": 1321,
+          "sha256": "4b4d61da9ed1b3b1d0ff98dc1b4e906066fec1f843b3467f3e271bf4584b8e4e"
+        },
+        {
+          "path": "reference/cloud-volume-parity.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/reference/cloud-volume-parity.json",
+          "length": 1014,
+          "sha256": "0954b53e8e91d37aec22240202af800845249e2616dbf991546e6565e247a89b"
+        },
+        {
+          "path": "reference/comparison-shadow.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/reference/comparison-shadow.json",
+          "length": 661,
+          "sha256": "60820b1d224e4db9e810210a024c2088f8e4300baeaa1a7d6365f87a24d39e74"
+        },
+        {
+          "path": "reference/csm.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/reference/csm.json",
+          "length": 1120,
+          "sha256": "63b1e2e88b00803bef00df57954e31aeeb0a1f073dda1a1d00b22a155c8d485f"
+        },
+        {
+          "path": "reference/distorted-shadow.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/reference/distorted-shadow.json",
+          "length": 1761,
+          "sha256": "90d2396c2c151278de755fbce09e815f7a340606ee424f819641dc7769d782a2"
+        },
+        {
+          "path": "reference/dof.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/reference/dof.json",
+          "length": 1813,
+          "sha256": "156cb9f039ac54247201816b1e6ba4b31147c4e5a4c4009a8eae81d9dfcda8a6"
+        },
+        {
+          "path": "reference/exposure.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/reference/exposure.json",
+          "length": 1728,
+          "sha256": "55f60b5db7106c5e8a5451632dbe09d06ef2adc6f79784e6c98d0fc3f9aabfe3"
+        },
+        {
+          "path": "reference/legacy-linear-fxaa.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/reference/legacy-linear-fxaa.json",
+          "length": 8934,
+          "sha256": "bf0b2b0cde4444ec3f986b48ee4fddfe9caee29dbca1b1ab1ec7632177594261"
+        },
+        {
+          "path": "reference/material-wind.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/reference/material-wind.json",
+          "length": 2576,
+          "sha256": "d0668d4636dc63f9ef55f862a43fb0b2a8de9e3274ea919ccb19837c6f4bb99f"
+        },
+        {
+          "path": "reference/minimal-materials.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/reference/minimal-materials.json",
+          "length": 9519,
+          "sha256": "7b3cb937742a9ba94b1b993a67358bb15a33125f6011f9328f14f5632c657219"
+        },
+        {
+          "path": "reference/motion_blur.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/reference/motion_blur.json",
+          "length": 1755,
+          "sha256": "150bc2ef2331c52717ba15cc3a37b6dcc73578e8944e969f55cd189d65d1c356"
+        },
+        {
+          "path": "reference/non-temporal-world.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/reference/non-temporal-world.json",
+          "length": 3030,
+          "sha256": "b8b9fbda92abee2013cabc22fb902f0e9ffe46619b5669a96b1f0b92927032c5"
+        },
+        {
+          "path": "reference/scope.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/reference/scope.json",
+          "length": 7799,
+          "sha256": "abfb8c1b8565e1dc355e2952aecba51c00eca1cbdb777d6391d5fd8fac7a7ee9"
+        },
+        {
+          "path": "reference/taa.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/reference/taa.json",
+          "length": 2275,
+          "sha256": "cf62c3f1804c36c36192f500d7451234806ce503b7baef92d6e0551ab8c5549b"
+        },
+        {
+          "path": "reference/terrain-final.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/reference/terrain-final.json",
+          "length": 5720,
+          "sha256": "3a1dc50fcd1b838c82727e70c03f3c384fa965175eba52d9efbc3fce17361e30"
+        },
+        {
+          "path": "reference/unified-sky.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/reference/unified-sky.json",
+          "length": 1043,
+          "sha256": "2fba825d0a44622fd8579bf309b472e1eb739812badb4e89f38b70a2cdb79677"
+        },
+        {
+          "path": "reference/volumetric-clouds.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/reference/volumetric-clouds.json",
+          "length": 2022,
+          "sha256": "360b21119ae66cdea9e26ab6af2971c53d4dd5ad93d6cc4456f121b848e9b55b"
+        },
+        {
+          "path": "reference/volumetric.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/reference/volumetric.json",
+          "length": 1734,
+          "sha256": "0847d2f7001e956153b0097766ad4447a6f8aad7f8714da64ad6b1ba86800943"
+        },
+        {
+          "path": "reference/water-parity.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/reference/water-parity.json",
+          "length": 1148,
+          "sha256": "efcec40f9fdba211febd861e79c995adb111a1f72bd8d7b9cb3ad2bc878c83ad"
+        },
+        {
+          "path": "reference/water_256_RG_8bit.png",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/reference/water_256_RG_8bit.png",
+          "length": 68594,
+          "sha256": "ef9cbc14ed70f3b6fac8f93c8e26d7cf0c4167f2ee65eea1a03b4b4d2f27db64"
+        },
+        {
+          "path": "reference/world0-12001-no-effects.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/reference/world0-12001-no-effects.json",
+          "length": 184399,
+          "sha256": "515c4d8cb87d9ca31dca7d078fb8527b899b8f4247d6bbc7bc7c3a8f19901de2"
+        },
+        {
+          "path": "shaderpack.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/shaderpack.json",
+          "length": 6104,
+          "sha256": "1334a862f808c292aae20e304245e8f878176dfa99f722c6be68da66b80281bd"
+        },
+        {
+          "path": "shaders/assets/clouds_blocky_512.r8",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/shaders/assets/clouds_blocky_512.r8",
+          "length": 262144,
+          "sha256": "5c0c24f26edb4f0b22d334abebb099dcf8d933b18ff80e34a5d7bbefdf3aaf90"
+        },
+        {
+          "path": "shaders/assets/clouds_natural_512.r8",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/shaders/assets/clouds_natural_512.r8",
+          "length": 262144,
+          "sha256": "3811759cd792e9f4a5a70169f2674a2b0d28a953ddd68a2af07ff94992ae0c0b"
+        },
+        {
+          "path": "shaders/assets/taa_fallback.rgba8",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/shaders/assets/taa_fallback.rgba8",
+          "length": 4,
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        },
+        {
+          "path": "shaders/assets/water_256.rgba8",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/shaders/assets/water_256.rgba8",
+          "length": 262144,
+          "sha256": "4e587cd75802ec0cadaba1eee27f6b82d2ce02d10cc72569e521d550a328db72"
+        },
+        {
+          "path": "shaders/legacy/Batch.psh",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/shaders/legacy/Batch.psh",
+          "length": 665,
+          "sha256": "7f9f32ef404ede17950a66977818889f0902e041a72289605e2655885faf137e"
+        },
+        {
+          "path": "shaders/legacy/Batch.vsh",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/shaders/legacy/Batch.vsh",
+          "length": 748,
+          "sha256": "35ac93a3947297b0f150cad242db6add238340aa5587b5ec2f2a3871bbe5422e"
+        },
+        {
+          "path": "shaders/legacy/Highlight.psh",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/shaders/legacy/Highlight.psh",
+          "length": 544,
+          "sha256": "c6699a89e5df25483c76d33e713036ae876141aec3351c0b34d487ae2c9c1cbb"
+        },
+        {
+          "path": "shaders/legacy/Highlight.vsh",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/shaders/legacy/Highlight.vsh",
+          "length": 1133,
+          "sha256": "6ce67b67a1466cd1125c16ad13e1139f6e33d19ce935d7d79a70a89e7d56e0d3"
+        },
+        {
+          "path": "shaders/legacy/Lit.psh",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/shaders/legacy/Lit.psh",
+          "length": 880,
+          "sha256": "ed528620db0ae3fd6f7456c670f6a16b9004143cb385e56d86951c04b7e306ff"
+        },
+        {
+          "path": "shaders/legacy/Lit.vsh",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/shaders/legacy/Lit.vsh",
+          "length": 3193,
+          "sha256": "bf4be19e69bd8694d176d717a791bed5803f7cbe17f6b8abf9385b34a5b96493"
+        },
+        {
+          "path": "shaders/legacy/Model.psh",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/shaders/legacy/Model.psh",
+          "length": 655,
+          "sha256": "ba3927fe296eaf41b0ae251c7967367fb00c2b709a227e84ed226a7586dc78ce"
+        },
+        {
+          "path": "shaders/legacy/Model.vsh",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/shaders/legacy/Model.vsh",
+          "length": 2305,
+          "sha256": "5838fff97f5c635bff9e2de31de405461cc9d69e0fb23cf25caffb9eab7716d6"
+        },
+        {
+          "path": "shaders/legacy/MovingBlock.psh",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/shaders/legacy/MovingBlock.psh",
+          "length": 546,
+          "sha256": "ac03702ca5260b6939a15aa791eea8d7d16e999b00174969ef3d0b769fede57d"
+        },
+        {
+          "path": "shaders/legacy/MovingBlock.vsh",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/shaders/legacy/MovingBlock.vsh",
+          "length": 946,
+          "sha256": "cb3fe78f81f0d3f7f380c334b2e8651ad089d8a3dd91f6f3227368dd4183d526"
+        },
+        {
+          "path": "shaders/legacy/UnlitSky.psh",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/shaders/legacy/UnlitSky.psh",
+          "length": 1409,
+          "sha256": "3d6d15502486c7c21ef1234f31e7f62927269d99de869acb232ba87cbee0632e"
+        },
+        {
+          "path": "shaders/legacy/UnlitSky.vsh",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/shaders/legacy/UnlitSky.vsh",
+          "length": 1256,
+          "sha256": "813f9cd995014d73c78bd1a754a0f039cac566ae755610c62e9068920e33b036"
+        },
+        {
+          "path": "shaders/lib/color.glsl",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/shaders/lib/color.glsl",
+          "length": 1073,
+          "sha256": "f31cb14d87817bad48a484ecea3e1f9609d3f7fbd020aa4e573105ca48945300"
+        },
+        {
+          "path": "shaders/lib/makeup/basic_water.glsl",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/shaders/lib/makeup/basic_water.glsl",
+          "length": 11361,
+          "sha256": "3f274d04e4c496930adab7056356a284e9994af829c0fce0bce5dd1ca1597440"
+        },
+        {
+          "path": "shaders/lib/makeup/cloud_shading.glsl",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/shaders/lib/makeup/cloud_shading.glsl",
+          "length": 1577,
+          "sha256": "12f29d30eab2cc88382f8fee82cb17fee39e5d9e4b4c524da2ad6a96fe69f4ea"
+        },
+        {
+          "path": "shaders/lib/makeup/fxaa.glsl",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/shaders/lib/makeup/fxaa.glsl",
+          "length": 8983,
+          "sha256": "85c8db9dbfb48f3c20ec637b85e002ce5015af25ac92a2030a5bf2a6e21ed90d"
+        },
+        {
+          "path": "shaders/lib/makeup/leaf_wind.glsl",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/shaders/lib/makeup/leaf_wind.glsl",
+          "length": 1119,
+          "sha256": "2a046660fec2461e11717bf16aeb81ebaef89de5dacfbc27a3eed95049df6fbf"
+        },
+        {
+          "path": "shaders/lib/makeup/material_gloss.glsl",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/shaders/lib/makeup/material_gloss.glsl",
+          "length": 1008,
+          "sha256": "871c2b238d70fffd78d4598261c833ecafccc902c3d3fbf0964db676df9a1215"
+        },
+        {
+          "path": "shaders/lib/makeup/sky_color.glsl",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/shaders/lib/makeup/sky_color.glsl",
+          "length": 1945,
+          "sha256": "7c460ebe01a21a7480d039a5c14e37ac86c98dd409b68375fcbfbdbcafc04ba7"
+        },
+        {
+          "path": "shaders/lib/makeup/tone_maps.glsl",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/shaders/lib/makeup/tone_maps.glsl",
+          "length": 459,
+          "sha256": "7952a05ba86c4ed2924468db8704b4d07bbc0305adb382387747119bc41b9dc1"
+        },
+        {
+          "path": "shaders/lib/makeup/volume_response.glsl",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/shaders/lib/makeup/volume_response.glsl",
+          "length": 931,
+          "sha256": "64dda124d35a73633bf1bece81e598876bc358d363ebb9176e63533e790053b5"
+        },
+        {
+          "path": "shaders/lib/makeup/volumetric_clouds.glsl",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/shaders/lib/makeup/volumetric_clouds.glsl",
+          "length": 4878,
+          "sha256": "a7055749d8762528739693608dfbb16b1e7490c50e5dd2e77b0efff6e089bd57"
+        },
+        {
+          "path": "shaders/lib/makeup/water_response.glsl",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/shaders/lib/makeup/water_response.glsl",
+          "length": 1751,
+          "sha256": "2218bc825de89fe86702297e4435535c3749eb23abdf9f660a079d3e66976e3c"
+        },
+        {
+          "path": "shaders/lib/makeup/world_light.glsl",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/shaders/lib/makeup/world_light.glsl",
+          "length": 3634,
+          "sha256": "9e7368e687c65f701507e72bac13aa0a7a83a9ddd3fcc5eb537b9b04f578fe27"
+        },
+        {
+          "path": "shaders/lib/sc/csm_config.glsl",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/shaders/lib/sc/csm_config.glsl",
+          "length": 262,
+          "sha256": "ed0ad26f29479a5273b39ab02af7375e9b473bb660359371f70342e6358c9a43"
+        },
+        {
+          "path": "shaders/lib/sc/csm_sample.glsl",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/shaders/lib/sc/csm_sample.glsl",
+          "length": 3664,
+          "sha256": "e9149c26b0eb9741a6894ff79f561ddf987bab1031dcd78762fde65f165a7a82"
+        },
+        {
+          "path": "shaders/lib/sc/csm_warp.glsl",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/shaders/lib/sc/csm_warp.glsl",
+          "length": 566,
+          "sha256": "a086da4ceb5d332730f3133afe75e1a6bae2a4a1185e1f7d8debff729ffcbd8f"
+        },
+        {
+          "path": "shaders/lib/sc/shadow_config.glsl",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/shaders/lib/sc/shadow_config.glsl",
+          "length": 137,
+          "sha256": "1e2b88e97f77c1b7c197bb02d65e2e1e6a8e952d9d29c13915b750dc217ddbfc"
+        },
+        {
+          "path": "shaders/lib/sc/shadow_sample.glsl",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/shaders/lib/sc/shadow_sample.glsl",
+          "length": 3544,
+          "sha256": "4fcbbf7e66544cfad19e984d85d14eec5a89957960f80a281bbfe0953c548311"
+        },
+        {
+          "path": "shaders/lib/sc/shadow_warp.glsl",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/shaders/lib/sc/shadow_warp.glsl",
+          "length": 461,
+          "sha256": "0b4cd9c2991f821d3d6f2f489337aebff000d4be6eff66e881e4289b4f29d454"
+        },
+        {
+          "path": "shaders/lib/sc/water_config.glsl",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/shaders/lib/sc/water_config.glsl",
+          "length": 597,
+          "sha256": "f379d592ed096702ff0044e4b4084cf3c23397b3ceb044e9c2205b28be2003e0"
+        },
+        {
+          "path": "shaders/lib/sc/world_fog.glsl",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/shaders/lib/sc/world_fog.glsl",
+          "length": 991,
+          "sha256": "79ad00224c94fc8ab0108c922815649ff23cc7e6e9c16580b9cca2e256116094"
+        },
+        {
+          "path": "shaders/post/bloom_extract.psh",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/shaders/post/bloom_extract.psh",
+          "length": 1378,
+          "sha256": "a88882af00d96613c81b68e548a6b37da3aacf49fdabdc71a6ff02e3836a4cf6"
+        },
+        {
+          "path": "shaders/post/bloom_extract_auto.psh",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/shaders/post/bloom_extract_auto.psh",
+          "length": 1405,
+          "sha256": "63e7063ddccf9e7ec3db9f8dc221661c3588cc54b5498f4a2f77b66a3485de4b"
+        },
+        {
+          "path": "shaders/post/bloom_present.psh",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/shaders/post/bloom_present.psh",
+          "length": 692,
+          "sha256": "12e0d610f29ec75ab0a74da718b8b79eb3552885b8e5f48b773ae6f9bd234fa2"
+        },
+        {
+          "path": "shaders/post/bloom_present_auto.psh",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/shaders/post/bloom_present_auto.psh",
+          "length": 719,
+          "sha256": "bd6c5815989e6136a7360df73d99c27599acaafb359fe798766d5b15c883a45b"
+        },
+        {
+          "path": "shaders/post/bloom_upsample.psh",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/shaders/post/bloom_upsample.psh",
+          "length": 724,
+          "sha256": "72aa029b7e4af9f4d2fb29bc1cf85cd615e2612a165a45ce6ebf0a5506d307d8"
+        },
+        {
+          "path": "shaders/post/dof_debug.psh",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/shaders/post/dof_debug.psh",
+          "length": 1153,
+          "sha256": "3272591bac1477b26e59b7203579a8393f64995ef6a4b985a4d1142758b423cb"
+        },
+        {
+          "path": "shaders/post/dof_depth.glsl",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/shaders/post/dof_depth.glsl",
+          "length": 1176,
+          "sha256": "95fcb984235c89c0c94cda9f2c2eb64319f6793a02ce50ca81e0fd6b0867b3e6"
+        },
+        {
+          "path": "shaders/post/dof_gather.glsl",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/shaders/post/dof_gather.glsl",
+          "length": 1852,
+          "sha256": "4fdeef61119c34a232b5aef2843daa0c099f6108936eabe1dd92c06e0dd250da"
+        },
+        {
+          "path": "shaders/post/dof_prefilter.psh",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/shaders/post/dof_prefilter.psh",
+          "length": 1790,
+          "sha256": "92dcb037844bdfdf5d40304eb13fee38f6573373055b763761dbe53358d2a4a9"
+        },
+        {
+          "path": "shaders/post/dof_present.psh",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/shaders/post/dof_present.psh",
+          "length": 795,
+          "sha256": "8a2821f53ca17094c8389f30aed717204e0daea0613773c43f340c47d4fecfe2"
+        },
+        {
+          "path": "shaders/post/exposure_adapt.psh",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/shaders/post/exposure_adapt.psh",
+          "length": 1180,
+          "sha256": "a904756ac23ae8f7e6ce890a30b42b61a48db143212ece65d9be7f25636e0c11"
+        },
+        {
+          "path": "shaders/post/exposure_debug.psh",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/shaders/post/exposure_debug.psh",
+          "length": 590,
+          "sha256": "2bb280b42e3722c6860dc8a242a8c452175cb356b31af3e829e6b1afb8ed9957"
+        },
+        {
+          "path": "shaders/post/exposure_meter.psh",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/shaders/post/exposure_meter.psh",
+          "length": 1065,
+          "sha256": "17f7164cfe147f7d739febdb6d84cefce5506d6004de1502a55c4d7a3c4a7047"
+        },
+        {
+          "path": "shaders/post/exposure_reduce.psh",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/shaders/post/exposure_reduce.psh",
+          "length": 463,
+          "sha256": "2462580578a8f8d9ee4605b303ad6bd40975d1223c3ad9842133be3306be98f5"
+        },
+        {
+          "path": "shaders/post/focus_adapt.psh",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/shaders/post/focus_adapt.psh",
+          "length": 999,
+          "sha256": "f61941df1e17cab2cfbad498d028ddc8db97b2a27c7c79ea415390aab943ae9a"
+        },
+        {
+          "path": "shaders/post/focus_meter.psh",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/shaders/post/focus_meter.psh",
+          "length": 1169,
+          "sha256": "c48ed4aad11f7bdd3a9bd397bb1d2be12a584cf815d7330790f7bf933c44c8d0"
+        },
+        {
+          "path": "shaders/post/fullscreen.vsh",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/shaders/post/fullscreen.vsh",
+          "length": 400,
+          "sha256": "355292fda2b41ac159cb1eddf95651d53be278fad245711c756a96637b74db99"
+        },
+        {
+          "path": "shaders/post/fxaa.psh",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/shaders/post/fxaa.psh",
+          "length": 403,
+          "sha256": "56a355c98fa09f6610159f8483e657a2760255ea2be22a93368ba2a32a85932e"
+        },
+        {
+          "path": "shaders/post/hierarchy_downsample.psh",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/shaders/post/hierarchy_downsample.psh",
+          "length": 1115,
+          "sha256": "77d1a18ed553ce3fa7d4f3868043bd8a85eb8ae5228a4caba87f38a96b4407a0"
+        },
+        {
+          "path": "shaders/post/hierarchy_present.psh",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/shaders/post/hierarchy_present.psh",
+          "length": 473,
+          "sha256": "a7eb48ebf411110f1265c7d8317f7935b7a2ffbb34d6b0dd6c4def357cb340f6"
+        },
+        {
+          "path": "shaders/post/hierarchy_present_auto.psh",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/shaders/post/hierarchy_present_auto.psh",
+          "length": 500,
+          "sha256": "09768ecd98c7b7f7034678555502c75e93b899611a6fd5111fcf8886743eb83a"
+        },
+        {
+          "path": "shaders/post/motion_blur.psh",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/shaders/post/motion_blur.psh",
+          "length": 748,
+          "sha256": "51d9123009362548b06fe7c970a5bf35f14bc15b0a760681e3e066c23d63f179"
+        },
+        {
+          "path": "shaders/post/motion_debug.psh",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/shaders/post/motion_debug.psh",
+          "length": 958,
+          "sha256": "71fe9fc1bfa87033fcd60bc9bc0652e8f9aa785089b6dbeb4ddd9d74f66f6a24"
+        },
+        {
+          "path": "shaders/post/motion_filter.glsl",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/shaders/post/motion_filter.glsl",
+          "length": 3909,
+          "sha256": "d5a4564c5ff8b6d854044775688bd6e68d742ef12b3947f1ccf91868c79371f8"
+        },
+        {
+          "path": "shaders/post/pre_water_ao.psh",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/shaders/post/pre_water_ao.psh",
+          "length": 5082,
+          "sha256": "bb50bc447eeeb5204f26c5bf223378f0c727cc15bd9fe5ac31ea0e182124c3a0"
+        },
+        {
+          "path": "shaders/post/pre_water_present.psh",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/shaders/post/pre_water_present.psh",
+          "length": 309,
+          "sha256": "94c014e4c3513f945c36b71341921c019caf647e89005e22c475423fecd1d53a"
+        },
+        {
+          "path": "shaders/post/present.psh",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/shaders/post/present.psh",
+          "length": 1094,
+          "sha256": "866b6f82c94837e1139c7d52ad0341c80c0b0ce772c0174c3343a44a1b5f9466"
+        },
+        {
+          "path": "shaders/post/present_auto.psh",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/shaders/post/present_auto.psh",
+          "length": 1121,
+          "sha256": "c20be94faee77e1b7997cfc6c6e20fca24748ee5c04ee88efea1e4d4dbe35a02"
+        },
+        {
+          "path": "shaders/post/render_timing_present.psh",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/shaders/post/render_timing_present.psh",
+          "length": 412,
+          "sha256": "c1bad6ac1daecf23c1ed25a1771718889c71d7fb04c46527394f62866f941c6f"
+        },
+        {
+          "path": "shaders/post/shadow_debug.psh",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/shaders/post/shadow_debug.psh",
+          "length": 2629,
+          "sha256": "0ed051b953a6ab23aec5f53d139d93bc7486992ec3ca86a02a7d2d9d14ddad74"
+        },
+        {
+          "path": "shaders/post/taa_apply.psh",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/shaders/post/taa_apply.psh",
+          "length": 219,
+          "sha256": "ad0cb43dd259d646e12d9abc955db5e7ec1c8af907614292613be60cd32c257b"
+        },
+        {
+          "path": "shaders/post/taa_debug.psh",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/shaders/post/taa_debug.psh",
+          "length": 623,
+          "sha256": "ab3dfff7419efc937caf04d9d2db271a82165a49e85befd6d46021b4a15272bb"
+        },
+        {
+          "path": "shaders/post/taa_reprojection.glsl",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/shaders/post/taa_reprojection.glsl",
+          "length": 1528,
+          "sha256": "081382c4770d8add4e55a047a0170922fd50272e9af1605a261af22cfd1a2bff"
+        },
+        {
+          "path": "shaders/post/taa_resolve.psh",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/shaders/post/taa_resolve.psh",
+          "length": 3762,
+          "sha256": "991cd96d6cd3001afd2056a2facd64f8193bb655555777ffaeda91b6b0cd5dbd"
+        },
+        {
+          "path": "shaders/post/volume_compose.psh",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/shaders/post/volume_compose.psh",
+          "length": 732,
+          "sha256": "2ca700c93be3df15799f1f857d901e292124d8b61a54218dcd01ad8f38a9458f"
+        },
+        {
+          "path": "shaders/post/volume_debug.psh",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/shaders/post/volume_debug.psh",
+          "length": 374,
+          "sha256": "317f9ec58328fabb3a3d332ab5fb82e15e83d398bcbe75533e54f65eecc1c6ac"
+        },
+        {
+          "path": "shaders/post/volume_gather.glsl",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/shaders/post/volume_gather.glsl",
+          "length": 1200,
+          "sha256": "acad9c80ce7e0ab7867ec8c70fa03c73cc2b2f86135f1d5a4974ab6ec7af6c14"
+        },
+        {
+          "path": "shaders/post/volume_geometry.glsl",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/shaders/post/volume_geometry.glsl",
+          "length": 1285,
+          "sha256": "c3b02c90f7f9a6513d58ee11ec709d33759cdff5a26d95ce8db070b78ff341e2"
+        },
+        {
+          "path": "shaders/post/volume_march.psh",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/shaders/post/volume_march.psh",
+          "length": 3303,
+          "sha256": "d5b0ad16673b569680f8b2159504852b1d5e73a0ceb7bc9f8151ffc6fa24cf72"
+        },
+        {
+          "path": "shaders/post/volume_shadow.glsl",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/shaders/post/volume_shadow.glsl",
+          "length": 3756,
+          "sha256": "0bd862fc4009d8afa45fab8a66720b887eddc3ac9634207bdfa5707e7a7db1c5"
+        },
+        {
+          "path": "shaders/post/volumetric_clouds.psh",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/shaders/post/volumetric_clouds.psh",
+          "length": 1645,
+          "sha256": "44a1ff6a6fe60d3816d9a9e15b99e1de0b4110fe3ab9bcaf4b07f5963031bb56"
+        },
+        {
+          "path": "shaders/scene/model_shadow.psh",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/shaders/scene/model_shadow.psh",
+          "length": 140,
+          "sha256": "84e4f577d462ea6775065f3cf99b3a4f29f85ef6abfdea05369c951c864601fd"
+        },
+        {
+          "path": "shaders/scene/model_shadow.vsh",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/shaders/scene/model_shadow.vsh",
+          "length": 1307,
+          "sha256": "9cd958fb22b19abfb4433e0e8e408ed6ae316bfab54bf5757067a788703edcae"
+        },
+        {
+          "path": "shaders/scene/shadow/caster.psh",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/shaders/scene/shadow/caster.psh",
+          "length": 640,
+          "sha256": "d6030ae86661e749dbf2dfa450df27ff1e640d9dc8b532c670391c498b5e39d6"
+        },
+        {
+          "path": "shaders/scene/shadow/model.vsh",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/shaders/scene/shadow/model.vsh",
+          "length": 1376,
+          "sha256": "82244114c07c716b8b29ed4b5ca2d45b377a27592cce72f2bd2814d0b3d65997"
+        },
+        {
+          "path": "shaders/scene/shadow/terrain.vsh",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/shaders/scene/shadow/terrain.vsh",
+          "length": 1125,
+          "sha256": "cdafb39cd971d6b8306c89a2b0c7cbdac536e885de91ea361fe4cc59abe61091"
+        },
+        {
+          "path": "shaders/scene/terrain.psh",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/shaders/scene/terrain.psh",
+          "length": 4396,
+          "sha256": "5e8f1460778ac8df08d99f1edfb4e2b3169d001c71f530960c1a4565da475746"
+        },
+        {
+          "path": "shaders/scene/terrain.vsh",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/shaders/scene/terrain.vsh",
+          "length": 9331,
+          "sha256": "9ca4d82bbbf722afda29c0c62fc06553eeedaf62bb158b0e80233a55886a5afc"
+        },
+        {
+          "path": "shaders/scene/terrain_shadow.psh",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/shaders/scene/terrain_shadow.psh",
+          "length": 348,
+          "sha256": "297c844cc62f4fd4418d9eb317da81090913f8b4ad6f21a2510615c41e789b7f"
+        },
+        {
+          "path": "shaders/scene/terrain_shadow.vsh",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/shaders/scene/terrain_shadow.vsh",
+          "length": 1895,
+          "sha256": "adc422e6a1d3802ddfac202b0c12874dbedc433fbc38ad9c7cbc24cd01032563"
+        }
+      ]
+    },
+    {
+      "id": "reference/uniform-buffer",
+      "directory": "Uniform Buffer / materialTable negative fixture",
+      "sourceType": "website-authored",
+      "sourceRoot": "reference/examples/uniform-buffer",
+      "sourceUrl": "https://github.com/EltanceX/dawnlight-core-docs/tree/main/reference/examples/uniform-buffer",
+      "manifestVersion": 5,
+      "sceneAbiVersion": 2,
+      "manifestHash": "2ce59498a89607505dcd59579bbfc8bb3fee3f34659344a4b741fb1602c36e88",
+      "sourceFingerprint": "29ae544442708b458ca70afe949b89212ab219e191ef274763ce755a3f9602fc",
+      "archiveSha256": "e5fd7ed9eea85e055788db57072ec8f4457aeb646786d748c7e52f892c422465",
+      "archiveLength": 3461,
+      "status": "expected-rejected-combination",
+      "expectedDiagnostic": "DLMAT1002",
+      "runtimeVerified": false,
+      "checks": [
+        {
+          "id": "pack",
+          "exitCode": 0,
+          "outputSha256": "b4a0d3c21ddf9b3e79c15d5d60c4fc704971e81925587f613d9f120008952224",
+          "archiveExitCode": 0,
+          "archiveOutputSha256": "b4a0d3c21ddf9b3e79c15d5d60c4fc704971e81925587f613d9f120008952224",
+          "diagnostics": []
+        },
+        {
+          "id": "scene",
+          "exitCode": 1,
+          "outputSha256": "e237faa3dddff7ebb7709a1f7a8c6218ab0bd0e7b91ca7ed358005b67cf99737",
+          "archiveExitCode": 1,
+          "archiveOutputSha256": "e237faa3dddff7ebb7709a1f7a8c6218ab0bd0e7b91ca7ed358005b67cf99737",
+          "diagnostics": [
+            {
+              "severity": "error",
+              "code": "DLMAN0001",
+              "message": "DLMAT1002: materialTable requires a readOnly storageBuffer Program binding.",
+              "provenance": {
+                "kind": "fragment",
+                "file": "shaderpack.json",
+                "pointer": ""
+              }
+            }
+          ]
+        },
+        {
+          "id": "graph",
+          "exitCode": 1,
+          "outputSha256": "f0dd3f27a6f05c8737bf315e1b7e338bafdc052729b377e612d9fb0871123732",
+          "archiveExitCode": 1,
+          "archiveOutputSha256": "f0dd3f27a6f05c8737bf315e1b7e338bafdc052729b377e612d9fb0871123732",
+          "diagnostics": [
+            {
+              "severity": "error",
+              "code": "DLMAN0001",
+              "message": "DLMAT1002: materialTable requires a readOnly storageBuffer Program binding.",
+              "nodeIds": [],
+              "provenance": {
+                "kind": "fragment",
+                "file": "shaderpack.json",
+                "pointer": ""
+              }
+            }
+          ]
+        },
+        {
+          "id": "interface",
+          "exitCode": 1,
+          "outputSha256": "0a403326dfda388192e01cedc568be681810a3614bb0cc0fae7b296ca91b907a",
+          "archiveExitCode": 1,
+          "archiveOutputSha256": "0a403326dfda388192e01cedc568be681810a3614bb0cc0fae7b296ca91b907a",
+          "diagnostics": [
+            {
+              "severity": "error",
+              "code": "DLMAT1002",
+              "file": "shaderpack.json",
+              "jsonPointer": "",
+              "message": "DLMAT1002: materialTable requires a readOnly storageBuffer Program binding."
+            }
+          ]
+        }
+      ],
+      "features": {
+        "programKinds": [
+          "graphics"
+        ],
+        "resourceKinds": [
+          "buffer",
+          "texture2D"
+        ],
+        "commandKinds": [
+          "engineDraw",
+          "present"
+        ],
+        "bindingKinds": [
+          "sampler2D",
+          "uniformBuffer",
+          "storageBuffer"
+        ],
+        "sceneModes": [
+          "builtin"
+        ],
+        "settings": false
+      },
+      "files": [
+        {
+          "path": "README.md",
+          "length": 1893,
+          "sha256": "7bbed32e0ea50d511c42d88e92133f1dd4488e9b866a0bc77b1756ba10113c6c"
+        },
+        {
+          "path": "shaderpack.json",
+          "length": 9744,
+          "sha256": "3215758e4fbc4e1f4c75f405d8b9dcb1ef6f602ea9066f597f3743cbd386096f"
+        },
+        {
+          "path": "shaders/fullscreen.vsh",
+          "length": 298,
+          "sha256": "77e9c0fcd7803893b121b69daf13380f20b109f2d4e23964014b367531053c92"
+        },
+        {
+          "path": "shaders/present.psh",
+          "length": 519,
+          "sha256": "ea244ee5c61ecf3659af0a693ea229454a742da8d426ba1fa1b96c4541f8951e"
+        }
+      ]
+    }
+  ]
+}

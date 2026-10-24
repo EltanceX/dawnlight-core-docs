@@ -5,7 +5,8 @@ import { ROOT, readJson, loadLock, files, run, assertFingerprint, jsonBytes } fr
 import { publicBaseline } from './sync-site-baseline.mjs';
 import { expectedPages, pagePaths, localePrefixes } from './lib/site-pages.mjs';
 import { loadExamples, loadReceipts } from './lib/content-foundation.mjs';
-import { exampleOutputs } from './lib/example-generator.mjs';
+import { loadReference } from './lib/reference-foundation.mjs';
+import { siteOutputs } from './lib/site-generator.mjs';
 import { loadRuntimeEvidence } from './lib/runtime-evidence.mjs';
 
 const pkg = await readJson(path.join(ROOT, 'package.json'));
@@ -14,11 +15,15 @@ const lock = await loadLock();
 assert.equal(lock.website.pagesBase, '/');
 assert.equal(lock.website.pagesUrl, `https://${lock.website.customDomain}/`);
 assert.equal((await fs.readFile(path.join(ROOT, 'site/public/CNAME'), 'utf8')).trim(), lock.website.customDomain);
-for (const item of [...Object.values(lock.discoveryRecords), lock.tool.distribution.inventory, lock.w1Verification, ...[lock.w2Verification, lock.w3Verification, lock.w4Verification].filter(Boolean)]) {
+for (const item of [...Object.values(lock.discoveryRecords), lock.tool.distribution.inventory, lock.w1Verification, ...[lock.w2Verification, lock.w3Verification, lock.w4Verification, lock.w5Verification].filter(Boolean)]) {
   await assertFingerprint(path.join(ROOT, item.path), item);
 }
 if (lock.w4Verification) {
   const stage = await readJson(path.join(ROOT, lock.w4Verification.path));
+  for (const item of stage.evidence) await assertFingerprint(path.join(ROOT, item.path), item);
+}
+if (lock.w5Verification) {
+  const stage = await readJson(path.join(ROOT, lock.w5Verification.path));
   for (const item of stage.evidence) await assertFingerprint(path.join(ROOT, item.path), item);
 }
 const source = await readJson(path.join(ROOT, 'metadata/public-source.json'));
@@ -51,7 +56,7 @@ for (const name of siteFiles.filter(f => !f.startsWith('public/'))) {
   assert.doesNotMatch(content, /vendor[/\\]dawnlight|(?:ghp_|github_pat_)[A-Za-z0-9_]{25,}/, `Private import or credential in ${name}`);
 }
 const examples = await loadExamples();
-const generated = exampleOutputs(examples, await loadReceipts(examples), await readJson(path.join(ROOT, 'metadata/pages.json')));
+const generated = await siteOutputs(examples, await loadReceipts(examples), await loadReference(examples), await readJson(path.join(ROOT, 'metadata/pages.json')));
 const generatedPublic = [...generated.keys()].filter(name => name.startsWith('site/public/')).map(name => name.slice('site/'.length));
 const runtime = await loadRuntimeEvidence(examples, await loadReceipts(examples));
 assert.deepEqual(siteFiles.filter(f => f.startsWith('public/')).sort(), ['public/CNAME', 'public/downloads/site-baseline.json', 'public/favicon.svg', ...generatedPublic, ...runtime.publicFiles.map(file => 'public/' + file.path)].sort());

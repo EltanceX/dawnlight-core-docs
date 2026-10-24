@@ -437,6 +437,752 @@
           "path": "metadata/w4-reviewed-sources.json"
         }
       ]
+    },
+    {
+      "path": "reference/index.md",
+      "publication": "published",
+      "generated": true,
+      "manifestVersions": [
+        3,
+        4,
+        5
+      ],
+      "sceneAbiVersions": [
+        2
+      ],
+      "sourceRefs": [
+        {
+          "repository": "website",
+          "path": "metadata/reference-inputs.json"
+        },
+        {
+          "repository": "website",
+          "path": "reference/groups.json"
+        },
+        {
+          "repository": "website",
+          "path": "reference/pages.json"
+        },
+        {
+          "repository": "website",
+          "path": "metadata/reference-examples.json"
+        },
+        {
+          "repository": "website",
+          "path": "reference/settings-ui-fields.json"
+        },
+        {
+          "repository": "website",
+          "path": "reference/prose/zh/index.md"
+        },
+        {
+          "repository": "website",
+          "path": "reference/prose/en/index.md"
+        }
+      ]
+    },
+    {
+      "path": "reference/manifest.md",
+      "publication": "published",
+      "generated": true,
+      "manifestVersions": [
+        5
+      ],
+      "sceneAbiVersions": [
+        2
+      ],
+      "sourceRefs": [
+        {
+          "repository": "website",
+          "path": "metadata/reference-inputs.json"
+        },
+        {
+          "repository": "website",
+          "path": "reference/groups.json"
+        },
+        {
+          "repository": "website",
+          "path": "reference/pages.json"
+        },
+        {
+          "repository": "website",
+          "path": "metadata/reference-examples.json"
+        },
+        {
+          "repository": "website",
+          "path": "reference/settings-ui-fields.json"
+        },
+        {
+          "repository": "website",
+          "path": "reference/prose/zh/manifest.md"
+        },
+        {
+          "repository": "website",
+          "path": "reference/prose/en/manifest.md"
+        }
+      ]
+    },
+    {
+      "path": "reference/options.md",
+      "publication": "published",
+      "generated": true,
+      "manifestVersions": [
+        5
+      ],
+      "sceneAbiVersions": [
+        2
+      ],
+      "sourceRefs": [
+        {
+          "repository": "website",
+          "path": "metadata/reference-inputs.json"
+        },
+        {
+          "repository": "website",
+          "path": "reference/groups.json"
+        },
+        {
+          "repository": "website",
+          "path": "reference/pages.json"
+        },
+        {
+          "repository": "website",
+          "path": "metadata/reference-examples.json"
+        },
+        {
+          "repository": "website",
+          "path": "reference/settings-ui-fields.json"
+        },
+        {
+          "repository": "website",
+          "path": "reference/prose/zh/options.md"
+        },
+        {
+          "repository": "website",
+          "path": "reference/prose/en/options.md"
+        }
+      ]
+    },
+    {
+      "path": "reference/resources.md",
+      "publication": "published",
+      "generated": true,
+      "manifestVersions": [
+        5
+      ],
+      "sceneAbiVersions": [
+        2
+      ],
+      "sourceRefs": [
+        {
+          "repository": "website",
+          "path": "metadata/reference-inputs.json"
+        },
+        {
+          "repository": "website",
+          "path": "reference/groups.json"
+        },
+        {
+          "repository": "website",
+          "path": "reference/pages.json"
+        },
+        {
+          "repository": "website",
+          "path": "metadata/reference-examples.json"
+        },
+        {
+          "repository": "website",
+          "path": "reference/settings-ui-fields.json"
+        },
+        {
+          "repository": "website",
+          "path": "reference/prose/zh/resources.md"
+        },
+        {
+          "repository": "website",
+          "path": "reference/prose/en/resources.md"
+        }
+      ]
+    },
+    {
+      "path": "reference/programs.md",
+      "publication": "published",
+      "generated": true,
+      "manifestVersions": [
+        5
+      ],
+      "sceneAbiVersions": [
+        2
+      ],
+      "sourceRefs": [
+        {
+          "repository": "website",
+          "path": "metadata/reference-inputs.json"
+        },
+        {
+          "repository": "website",
+          "path": "reference/groups.json"
+        },
+        {
+          "repository": "website",
+          "path": "reference/pages.json"
+        },
+        {
+          "repository": "website",
+          "path": "metadata/reference-examples.json"
+        },
+        {
+          "repository": "website",
+          "path": "reference/settings-ui-fields.json"
+        },
+        {
+          "repository": "website",
+          "path": "reference/prose/zh/programs.md"
+        },
+        {
+          "repository": "website",
+          "path": "reference/prose/en/programs.md"
+        }
+      ]
+    },
+    {
+      "path": "reference/passes.md",
+      "publication": "published",
+      "generated": true,
+      "manifestVersions": [
+        5
+      ],
+      "sceneAbiVersions": [
+        2
+      ],
+      "sourceRefs": [
+        {
+          "repository": "website",
+          "path": "metadata/reference-inputs.json"
+        },
+        {
+          "repository": "website",
+          "path": "reference/groups.json"
+        },
+        {
+          "repository": "website",
+          "path": "reference/pages.json"
+        },
+        {
+          "repository": "website",
+          "path": "metadata/reference-examples.json"
+        },
+        {
+          "repository": "website",
+          "path": "reference/settings-ui-fields.json"
+        },
+        {
+          "repository": "website",
+          "path": "reference/prose/zh/passes.md"
+        },
+        {
+          "repository": "website",
+          "path": "reference/prose/en/passes.md"
+        }
+      ]
+    },
+    {
+      "path": "reference/commands.md",
+      "publication": "published",
+      "generated": true,
+      "manifestVersions": [
+        5
+      ],
+      "sceneAbiVersions": [
+        2
+      ],
+      "sourceRefs": [
+        {
+          "repository": "website",
+          "path": "metadata/reference-inputs.json"
+        },
+        {
+          "repository": "website",
+          "path": "reference/groups.json"
+        },
+        {
+          "repository": "website",
+          "path": "reference/pages.json"
+        },
+        {
+          "repository": "website",
+          "path": "metadata/reference-examples.json"
+        },
+        {
+          "repository": "website",
+          "path": "reference/settings-ui-fields.json"
+        },
+        {
+          "repository": "website",
+          "path": "reference/prose/zh/commands.md"
+        },
+        {
+          "repository": "website",
+          "path": "reference/prose/en/commands.md"
+        }
+      ]
+    },
+    {
+      "path": "reference/targets.md",
+      "publication": "published",
+      "generated": true,
+      "manifestVersions": [
+        5
+      ],
+      "sceneAbiVersions": [
+        2
+      ],
+      "sourceRefs": [
+        {
+          "repository": "website",
+          "path": "metadata/reference-inputs.json"
+        },
+        {
+          "repository": "website",
+          "path": "reference/groups.json"
+        },
+        {
+          "repository": "website",
+          "path": "reference/pages.json"
+        },
+        {
+          "repository": "website",
+          "path": "metadata/reference-examples.json"
+        },
+        {
+          "repository": "website",
+          "path": "reference/settings-ui-fields.json"
+        },
+        {
+          "repository": "website",
+          "path": "reference/prose/zh/targets.md"
+        },
+        {
+          "repository": "website",
+          "path": "reference/prose/en/targets.md"
+        }
+      ]
+    },
+    {
+      "path": "reference/bindings.md",
+      "publication": "published",
+      "generated": true,
+      "manifestVersions": [
+        5
+      ],
+      "sceneAbiVersions": [
+        2
+      ],
+      "sourceRefs": [
+        {
+          "repository": "website",
+          "path": "metadata/reference-inputs.json"
+        },
+        {
+          "repository": "website",
+          "path": "reference/groups.json"
+        },
+        {
+          "repository": "website",
+          "path": "reference/pages.json"
+        },
+        {
+          "repository": "website",
+          "path": "metadata/reference-examples.json"
+        },
+        {
+          "repository": "website",
+          "path": "reference/settings-ui-fields.json"
+        },
+        {
+          "repository": "website",
+          "path": "reference/prose/zh/bindings.md"
+        },
+        {
+          "repository": "website",
+          "path": "reference/prose/en/bindings.md"
+        }
+      ]
+    },
+    {
+      "path": "reference/scene.md",
+      "publication": "published",
+      "generated": true,
+      "manifestVersions": [
+        5
+      ],
+      "sceneAbiVersions": [
+        2
+      ],
+      "sourceRefs": [
+        {
+          "repository": "website",
+          "path": "metadata/reference-inputs.json"
+        },
+        {
+          "repository": "website",
+          "path": "reference/groups.json"
+        },
+        {
+          "repository": "website",
+          "path": "reference/pages.json"
+        },
+        {
+          "repository": "website",
+          "path": "metadata/reference-examples.json"
+        },
+        {
+          "repository": "website",
+          "path": "reference/settings-ui-fields.json"
+        },
+        {
+          "repository": "website",
+          "path": "reference/prose/zh/scene.md"
+        },
+        {
+          "repository": "website",
+          "path": "reference/prose/en/scene.md"
+        }
+      ]
+    },
+    {
+      "path": "reference/materials.md",
+      "publication": "published",
+      "generated": true,
+      "manifestVersions": [
+        5
+      ],
+      "sceneAbiVersions": [
+        2
+      ],
+      "sourceRefs": [
+        {
+          "repository": "website",
+          "path": "metadata/reference-inputs.json"
+        },
+        {
+          "repository": "website",
+          "path": "reference/groups.json"
+        },
+        {
+          "repository": "website",
+          "path": "reference/pages.json"
+        },
+        {
+          "repository": "website",
+          "path": "metadata/reference-examples.json"
+        },
+        {
+          "repository": "website",
+          "path": "reference/settings-ui-fields.json"
+        },
+        {
+          "repository": "website",
+          "path": "reference/prose/zh/materials.md"
+        },
+        {
+          "repository": "website",
+          "path": "reference/prose/en/materials.md"
+        }
+      ]
+    },
+    {
+      "path": "reference/custom-data.md",
+      "publication": "published",
+      "generated": true,
+      "manifestVersions": [
+        5
+      ],
+      "sceneAbiVersions": [
+        2
+      ],
+      "sourceRefs": [
+        {
+          "repository": "website",
+          "path": "metadata/reference-inputs.json"
+        },
+        {
+          "repository": "website",
+          "path": "reference/groups.json"
+        },
+        {
+          "repository": "website",
+          "path": "reference/pages.json"
+        },
+        {
+          "repository": "website",
+          "path": "metadata/reference-examples.json"
+        },
+        {
+          "repository": "website",
+          "path": "reference/settings-ui-fields.json"
+        },
+        {
+          "repository": "website",
+          "path": "reference/prose/zh/custom-data.md"
+        },
+        {
+          "repository": "website",
+          "path": "reference/prose/en/custom-data.md"
+        }
+      ]
+    },
+    {
+      "path": "reference/settings-ui.md",
+      "publication": "published",
+      "generated": true,
+      "manifestVersions": [
+        5
+      ],
+      "sceneAbiVersions": [
+        2
+      ],
+      "sourceRefs": [
+        {
+          "repository": "website",
+          "path": "metadata/reference-inputs.json"
+        },
+        {
+          "repository": "website",
+          "path": "reference/groups.json"
+        },
+        {
+          "repository": "website",
+          "path": "reference/pages.json"
+        },
+        {
+          "repository": "website",
+          "path": "metadata/reference-examples.json"
+        },
+        {
+          "repository": "website",
+          "path": "reference/settings-ui-fields.json"
+        },
+        {
+          "repository": "website",
+          "path": "reference/prose/zh/settings-ui.md"
+        },
+        {
+          "repository": "website",
+          "path": "reference/prose/en/settings-ui.md"
+        }
+      ]
+    },
+    {
+      "path": "reference/catalog.md",
+      "publication": "published",
+      "generated": true,
+      "manifestVersions": [
+        5
+      ],
+      "sceneAbiVersions": [
+        2
+      ],
+      "sourceRefs": [
+        {
+          "repository": "website",
+          "path": "metadata/reference-inputs.json"
+        },
+        {
+          "repository": "website",
+          "path": "reference/groups.json"
+        },
+        {
+          "repository": "website",
+          "path": "reference/pages.json"
+        },
+        {
+          "repository": "website",
+          "path": "metadata/reference-examples.json"
+        },
+        {
+          "repository": "website",
+          "path": "reference/settings-ui-fields.json"
+        },
+        {
+          "repository": "website",
+          "path": "reference/prose/zh/catalog.md"
+        },
+        {
+          "repository": "website",
+          "path": "reference/prose/en/catalog.md"
+        }
+      ]
+    },
+    {
+      "path": "reference/diagnostics.md",
+      "publication": "published",
+      "generated": true,
+      "manifestVersions": [
+        5
+      ],
+      "sceneAbiVersions": [
+        2
+      ],
+      "sourceRefs": [
+        {
+          "repository": "website",
+          "path": "metadata/reference-inputs.json"
+        },
+        {
+          "repository": "website",
+          "path": "reference/groups.json"
+        },
+        {
+          "repository": "website",
+          "path": "reference/pages.json"
+        },
+        {
+          "repository": "website",
+          "path": "metadata/reference-examples.json"
+        },
+        {
+          "repository": "website",
+          "path": "reference/settings-ui-fields.json"
+        },
+        {
+          "repository": "website",
+          "path": "reference/prose/zh/diagnostics.md"
+        },
+        {
+          "repository": "website",
+          "path": "reference/prose/en/diagnostics.md"
+        }
+      ]
+    },
+    {
+      "path": "reference/tool-contracts.md",
+      "publication": "published",
+      "generated": true,
+      "manifestVersions": [
+        3,
+        4,
+        5
+      ],
+      "sceneAbiVersions": [
+        2
+      ],
+      "sourceRefs": [
+        {
+          "repository": "website",
+          "path": "metadata/reference-inputs.json"
+        },
+        {
+          "repository": "website",
+          "path": "reference/groups.json"
+        },
+        {
+          "repository": "website",
+          "path": "reference/pages.json"
+        },
+        {
+          "repository": "website",
+          "path": "metadata/reference-examples.json"
+        },
+        {
+          "repository": "website",
+          "path": "reference/settings-ui-fields.json"
+        },
+        {
+          "repository": "website",
+          "path": "reference/prose/zh/tool-contracts.md"
+        },
+        {
+          "repository": "website",
+          "path": "reference/prose/en/tool-contracts.md"
+        }
+      ]
+    },
+    {
+      "path": "reference/manifest-versions.md",
+      "publication": "published",
+      "generated": true,
+      "manifestVersions": [
+        3,
+        4,
+        5
+      ],
+      "sceneAbiVersions": [
+        2
+      ],
+      "sourceRefs": [
+        {
+          "repository": "website",
+          "path": "metadata/reference-inputs.json"
+        },
+        {
+          "repository": "website",
+          "path": "reference/groups.json"
+        },
+        {
+          "repository": "website",
+          "path": "reference/pages.json"
+        },
+        {
+          "repository": "website",
+          "path": "metadata/reference-examples.json"
+        },
+        {
+          "repository": "website",
+          "path": "reference/settings-ui-fields.json"
+        },
+        {
+          "repository": "website",
+          "path": "reference/prose/zh/manifest-versions.md"
+        },
+        {
+          "repository": "website",
+          "path": "reference/prose/en/manifest-versions.md"
+        }
+      ]
+    },
+    {
+      "path": "reference/examples.md",
+      "publication": "published",
+      "generated": true,
+      "manifestVersions": [
+        3,
+        4,
+        5
+      ],
+      "sceneAbiVersions": [
+        2
+      ],
+      "sourceRefs": [
+        {
+          "repository": "website",
+          "path": "metadata/reference-inputs.json"
+        },
+        {
+          "repository": "website",
+          "path": "reference/groups.json"
+        },
+        {
+          "repository": "website",
+          "path": "reference/pages.json"
+        },
+        {
+          "repository": "website",
+          "path": "metadata/reference-examples.json"
+        },
+        {
+          "repository": "website",
+          "path": "reference/settings-ui-fields.json"
+        },
+        {
+          "repository": "website",
+          "path": "reference/prose/zh/examples.md"
+        },
+        {
+          "repository": "website",
+          "path": "reference/prose/en/examples.md"
+        }
+      ]
     }
   ]
 }

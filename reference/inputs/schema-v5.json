@@ -1,0 +1,5152 @@
+{
+  "$defs": {
+    "binding": {
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "enum": [
+                  "image2D",
+                  "storageBuffer"
+                ]
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "access"
+            ]
+          }
+        },
+        {
+          "if": {
+            "not": {
+              "properties": {
+                "kind": {
+                  "enum": [
+                    "image2D",
+                    "storageBuffer"
+                  ]
+                }
+              }
+            }
+          },
+          "then": {
+            "not": {
+              "anyOf": [
+                {
+                  "required": [
+                    "access"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "view": {
+                "const": "dawnlight:history/previous"
+              }
+            },
+            "required": [
+              "view"
+            ]
+          },
+          "then": {
+            "required": [
+              "framesAgo"
+            ]
+          }
+        },
+        {
+          "if": {
+            "not": {
+              "properties": {
+                "view": {
+                  "const": "dawnlight:history/previous"
+                }
+              },
+              "required": [
+                "view"
+              ]
+            }
+          },
+          "then": {
+            "not": {
+              "anyOf": [
+                {
+                  "required": [
+                    "framesAgo"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "sampler2DShadow"
+              }
+            },
+            "required": [
+              "kind"
+            ]
+          },
+          "then": {
+            "allOf": [
+              {
+                "not": {
+                  "anyOf": [
+                    {
+                      "required": [
+                        "fallback"
+                      ]
+                    },
+                    {
+                      "required": [
+                        "framesAgo"
+                      ]
+                    }
+                  ]
+                }
+              },
+              {
+                "properties": {
+                  "view": {
+                    "const": "dawnlight:direct"
+                  }
+                }
+              }
+            ],
+            "required": [
+              "comparison"
+            ]
+          }
+        },
+        {
+          "if": {
+            "not": {
+              "properties": {
+                "kind": {
+                  "const": "sampler2DShadow"
+                }
+              },
+              "required": [
+                "kind"
+              ]
+            }
+          },
+          "then": {
+            "not": {
+              "anyOf": [
+                {
+                  "required": [
+                    "comparison"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "properties": {
+        "access": {
+          "enum": [
+            "readOnly",
+            "writeOnly",
+            "readWrite"
+          ]
+        },
+        "binding": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "comparison": {
+          "additionalProperties": false,
+          "properties": {
+            "compare": {
+              "const": "lessEqual"
+            },
+            "filter": {
+              "enum": [
+                "nearest",
+                "linear"
+              ]
+            },
+            "version": {
+              "const": 1
+            }
+          },
+          "required": [
+            "version",
+            "filter",
+            "compare"
+          ],
+          "type": "object"
+        },
+        "enabledWhen": {
+          "items": {
+            "$ref": "#/$defs/condition"
+          },
+          "type": "array"
+        },
+        "fallback": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/identifier"
+            },
+            {
+              "$ref": "#/$defs/resourceView"
+            }
+          ]
+        },
+        "framesAgo": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "kind": {
+          "enum": [
+            "sampler2D",
+            "sampler2DShadow",
+            "samplerCube",
+            "image2D",
+            "uniformBuffer",
+            "storageBuffer"
+          ]
+        },
+        "resource": {
+          "$ref": "#/$defs/identifier"
+        },
+        "symbol": {
+          "$ref": "#/$defs/glslIdentifier"
+        },
+        "view": {
+          "enum": [
+            "dawnlight:direct",
+            "dawnlight:history/current",
+            "dawnlight:history/previous",
+            "dawnlight:shadow/consumer",
+            "dawnlight:shadow/producer"
+          ]
+        }
+      },
+      "required": [
+        "kind",
+        "symbol",
+        "binding",
+        "resource"
+      ],
+      "type": "object"
+    },
+    "clear": {
+      "additionalProperties": false,
+      "minProperties": 1,
+      "properties": {
+        "color": {
+          "items": {
+            "type": "number"
+          },
+          "maxItems": 4,
+          "minItems": 4,
+          "type": "array"
+        },
+        "depth": {
+          "maximum": 1,
+          "minimum": 0,
+          "type": "number"
+        },
+        "stencil": {
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "colorTarget": {
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "loadOp": {
+                "const": "clear"
+              }
+            },
+            "required": [
+              "loadOp"
+            ]
+          },
+          "then": {
+            "required": [
+              "clearValue"
+            ]
+          }
+        },
+        {
+          "if": {
+            "not": {
+              "properties": {
+                "loadOp": {
+                  "const": "clear"
+                }
+              },
+              "required": [
+                "loadOp"
+              ]
+            }
+          },
+          "then": {
+            "not": {
+              "anyOf": [
+                {
+                  "required": [
+                    "clearValue"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "properties": {
+        "clearValue": {
+          "items": {
+            "type": "number"
+          },
+          "maxItems": 4,
+          "minItems": 4,
+          "type": "array"
+        },
+        "framesAgo": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "loadOp": {
+          "enum": [
+            "load",
+            "clear",
+            "dontCare"
+          ]
+        },
+        "location": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "resource": {
+          "$ref": "#/$defs/identifier"
+        },
+        "storeOp": {
+          "enum": [
+            "store",
+            "dontCare"
+          ]
+        },
+        "view": {
+          "enum": [
+            "dawnlight:direct",
+            "dawnlight:history/current",
+            "dawnlight:history/previous",
+            "dawnlight:shadow/consumer",
+            "dawnlight:shadow/producer"
+          ]
+        }
+      },
+      "required": [
+        "location",
+        "resource",
+        "loadOp",
+        "storeOp"
+      ],
+      "type": "object"
+    },
+    "command": {
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "fullscreen"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "required": [
+              "program",
+              "targets"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "compute"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "required": [
+              "program",
+              "dispatch"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "copy"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "required": [
+              "copy"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "clear"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "required": [
+              "clear"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "present"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "required": [
+              "program"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "historyCommit"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "required": [
+              "resource"
+            ]
+          }
+        },
+        {
+          "if": {
+            "not": {
+              "properties": {
+                "type": {
+                  "const": "copy"
+                }
+              },
+              "required": [
+                "type"
+              ]
+            }
+          },
+          "then": {
+            "not": {
+              "anyOf": [
+                {
+                  "required": [
+                    "copy"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "if": {
+            "not": {
+              "properties": {
+                "type": {
+                  "const": "historyCommit"
+                }
+              },
+              "required": [
+                "type"
+              ]
+            }
+          },
+          "then": {
+            "not": {
+              "anyOf": [
+                {
+                  "required": [
+                    "resource"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "compute"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "not": {
+              "anyOf": [
+                {
+                  "required": [
+                    "viewport"
+                  ]
+                },
+                {
+                  "required": [
+                    "clear"
+                  ]
+                },
+                {
+                  "required": [
+                    "targets"
+                  ]
+                },
+                {
+                  "required": [
+                    "state"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "present"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "not": {
+              "anyOf": [
+                {
+                  "required": [
+                    "targets"
+                  ]
+                },
+                {
+                  "required": [
+                    "drawBuffers"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "copy"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "not": {
+              "anyOf": [
+                {
+                  "required": [
+                    "program"
+                  ]
+                },
+                {
+                  "required": [
+                    "bindings"
+                  ]
+                },
+                {
+                  "required": [
+                    "semantics"
+                  ]
+                },
+                {
+                  "required": [
+                    "sceneBindings"
+                  ]
+                },
+                {
+                  "required": [
+                    "targets"
+                  ]
+                },
+                {
+                  "required": [
+                    "drawBuffers"
+                  ]
+                },
+                {
+                  "required": [
+                    "state"
+                  ]
+                },
+                {
+                  "required": [
+                    "viewport"
+                  ]
+                },
+                {
+                  "required": [
+                    "clear"
+                  ]
+                },
+                {
+                  "required": [
+                    "dispatch"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "clear"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "not": {
+              "anyOf": [
+                {
+                  "required": [
+                    "drawBuffers"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "historyCommit"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "not": {
+              "anyOf": [
+                {
+                  "required": [
+                    "program"
+                  ]
+                },
+                {
+                  "required": [
+                    "bindings"
+                  ]
+                },
+                {
+                  "required": [
+                    "semantics"
+                  ]
+                },
+                {
+                  "required": [
+                    "sceneBindings"
+                  ]
+                },
+                {
+                  "required": [
+                    "targets"
+                  ]
+                },
+                {
+                  "required": [
+                    "drawBuffers"
+                  ]
+                },
+                {
+                  "required": [
+                    "state"
+                  ]
+                },
+                {
+                  "required": [
+                    "viewport"
+                  ]
+                },
+                {
+                  "required": [
+                    "clear"
+                  ]
+                },
+                {
+                  "required": [
+                    "dispatch"
+                  ]
+                },
+                {
+                  "required": [
+                    "copy"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "engineDraw"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "oneOf": [
+              {
+                "required": [
+                  "provider"
+                ]
+              },
+              {
+                "required": [
+                  "sceneProvider"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "if": {
+            "not": {
+              "properties": {
+                "type": {
+                  "const": "engineDraw"
+                }
+              },
+              "required": [
+                "type"
+              ]
+            }
+          },
+          "then": {
+            "not": {
+              "anyOf": [
+                {
+                  "required": [
+                    "provider"
+                  ]
+                },
+                {
+                  "required": [
+                    "sceneProvider"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "enum": [
+                  "copy",
+                  "clear",
+                  "historyCommit"
+                ]
+              }
+            }
+          },
+          "then": {
+            "not": {
+              "anyOf": [
+                {
+                  "required": [
+                    "customBindings"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "if": {
+            "allOf": [
+              {
+                "required": [
+                  "customBindings"
+                ]
+              }
+            ],
+            "properties": {
+              "type": {
+                "const": "engineDraw"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "allOf": [
+              {
+                "not": {
+                  "anyOf": [
+                    {
+                      "required": [
+                        "provider"
+                      ]
+                    }
+                  ]
+                }
+              }
+            ],
+            "required": [
+              "program",
+              "sceneProvider"
+            ]
+          }
+        }
+      ],
+      "properties": {
+        "bindings": {
+          "items": {
+            "$ref": "#/$defs/binding"
+          },
+          "type": "array"
+        },
+        "clear": {
+          "$ref": "#/$defs/clear"
+        },
+        "copy": {
+          "$ref": "#/$defs/copy"
+        },
+        "customBindings": {
+          "items": {
+            "$ref": "#/$defs/customBinding"
+          },
+          "maxItems": 128,
+          "type": "array"
+        },
+        "dispatch": {
+          "$ref": "#/$defs/dispatch"
+        },
+        "drawBuffers": {
+          "$ref": "#/$defs/drawBufferLayout"
+        },
+        "program": {
+          "$ref": "#/$defs/identifier"
+        },
+        "provider": {
+          "$ref": "#/$defs/provider"
+        },
+        "resource": {
+          "$ref": "#/$defs/identifier"
+        },
+        "sceneBindings": {
+          "items": {
+            "$ref": "#/$defs/sceneBinding"
+          },
+          "type": "array"
+        },
+        "sceneProvider": {
+          "$ref": "#/$defs/provider"
+        },
+        "semantics": {
+          "items": {
+            "$ref": "#/$defs/semantic"
+          },
+          "type": "array"
+        },
+        "state": {
+          "$ref": "#/$defs/state"
+        },
+        "targets": {
+          "$ref": "#/$defs/targets"
+        },
+        "type": {
+          "enum": [
+            "fullscreen",
+            "compute",
+            "copy",
+            "clear",
+            "present",
+            "engineDraw",
+            "historyCommit"
+          ]
+        },
+        "viewport": {
+          "$ref": "#/$defs/viewport"
+        }
+      },
+      "required": [
+        "type"
+      ],
+      "type": "object"
+    },
+    "condition": {
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "oneOf": [
+            {
+              "required": [
+                "equals"
+              ]
+            },
+            {
+              "required": [
+                "oneOf"
+              ]
+            }
+          ]
+        }
+      ],
+      "properties": {
+        "equals": {
+          "$ref": "#/$defs/optionScalar"
+        },
+        "oneOf": {
+          "items": {
+            "$ref": "#/$defs/optionScalar"
+          },
+          "minItems": 1,
+          "type": "array",
+          "uniqueItems": true
+        },
+        "option": {
+          "$ref": "#/$defs/identifier"
+        }
+      },
+      "required": [
+        "option"
+      ],
+      "type": "object"
+    },
+    "content": {
+      "oneOf": [
+        {
+          "enum": [
+            "undefined",
+            "external"
+          ]
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "type": {
+              "const": "undefined"
+            }
+          },
+          "required": [
+            "type"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "type": {
+              "const": "external"
+            }
+          },
+          "required": [
+            "type"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "type": {
+              "const": "clear"
+            },
+            "value": {
+              "oneOf": [
+                {
+                  "items": {
+                    "type": "number"
+                  },
+                  "maxItems": 1,
+                  "minItems": 1,
+                  "type": "array"
+                },
+                {
+                  "items": {
+                    "type": "number"
+                  },
+                  "maxItems": 4,
+                  "minItems": 4,
+                  "type": "array"
+                }
+              ]
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "allOf": [
+            {
+              "oneOf": [
+                {
+                  "required": [
+                    "path"
+                  ]
+                },
+                {
+                  "required": [
+                    "faces"
+                  ]
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "encoding": {
+              "enum": [
+                "image",
+                "raw"
+              ]
+            },
+            "faces": {
+              "additionalProperties": false,
+              "properties": {
+                "negativeX": {
+                  "$ref": "#/$defs/relativePath"
+                },
+                "negativeY": {
+                  "$ref": "#/$defs/relativePath"
+                },
+                "negativeZ": {
+                  "$ref": "#/$defs/relativePath"
+                },
+                "positiveX": {
+                  "$ref": "#/$defs/relativePath"
+                },
+                "positiveY": {
+                  "$ref": "#/$defs/relativePath"
+                },
+                "positiveZ": {
+                  "$ref": "#/$defs/relativePath"
+                }
+              },
+              "required": [
+                "positiveX",
+                "negativeX",
+                "positiveY",
+                "negativeY",
+                "positiveZ",
+                "negativeZ"
+              ],
+              "type": "object"
+            },
+            "path": {
+              "$ref": "#/$defs/relativePath"
+            },
+            "type": {
+              "const": "asset"
+            }
+          },
+          "required": [
+            "type"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "generator": {
+              "$ref": "#/$defs/identifier"
+            },
+            "type": {
+              "const": "generated"
+            },
+            "version": {
+              "$ref": "#/$defs/positiveVersion"
+            }
+          },
+          "required": [
+            "type",
+            "generator",
+            "version"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "service": {
+              "$ref": "#/$defs/identifier"
+            },
+            "type": {
+              "const": "service"
+            },
+            "version": {
+              "$ref": "#/$defs/positiveVersion"
+            }
+          },
+          "required": [
+            "type",
+            "service",
+            "version"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "type": {
+              "const": "materialTable"
+            },
+            "version": {
+              "const": 1
+            }
+          },
+          "required": [
+            "type",
+            "version"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "contentId": {
+      "maxLength": 512,
+      "pattern": "^(?:[A-Za-z0-9_.-]|%[0-9A-F]{2})+:(?:[A-Za-z0-9_.-]|%[0-9A-F]{2})+$",
+      "type": "string"
+    },
+    "contentOwner": {
+      "maxLength": 512,
+      "pattern": "^(?:[A-Za-z0-9_.-]|%[0-9A-F]{2})+$",
+      "type": "string"
+    },
+    "copy": {
+      "additionalProperties": false,
+      "properties": {
+        "aspects": {
+          "items": {
+            "enum": [
+              "color",
+              "depth"
+            ]
+          },
+          "minItems": 1,
+          "type": "array",
+          "uniqueItems": true
+        },
+        "destination": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/identifier"
+            },
+            {
+              "$ref": "#/$defs/resourceView"
+            }
+          ]
+        },
+        "filter": {
+          "enum": [
+            "nearest",
+            "linear"
+          ]
+        },
+        "restore": {
+          "enum": [
+            "none",
+            "frame"
+          ]
+        },
+        "source": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/identifier"
+            },
+            {
+              "$ref": "#/$defs/resourceView"
+            }
+          ]
+        }
+      },
+      "required": [
+        "source",
+        "destination",
+        "aspects"
+      ],
+      "type": "object"
+    },
+    "customBinding": {
+      "additionalProperties": false,
+      "properties": {
+        "required": {
+          "type": "boolean"
+        },
+        "symbol": {
+          "pattern": "^[A-Za-z_][A-Za-z0-9_]*$",
+          "type": "string"
+        },
+        "variable": {
+          "$ref": "#/$defs/dataId"
+        }
+      },
+      "required": [
+        "symbol",
+        "variable"
+      ],
+      "type": "object"
+    },
+    "customData": {
+      "additionalProperties": false,
+      "properties": {
+        "abiVersion": {
+          "const": 1
+        },
+        "variables": {
+          "items": {
+            "$ref": "#/$defs/customVariable"
+          },
+          "maxItems": 256,
+          "type": "array"
+        }
+      },
+      "required": [
+        "abiVersion"
+      ],
+      "type": "object"
+    },
+    "customVariable": {
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "bool"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "default": {
+                "type": "boolean"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "int"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "default": {
+                "maximum": 2147483647,
+                "minimum": -2147483648,
+                "type": "integer"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "uint"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "default": {
+                "maximum": 4294967295,
+                "minimum": 0,
+                "type": "integer"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "float"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "default": {
+                "maximum": 3.4028234663852886E+38,
+                "minimum": -3.4028234663852886E+38,
+                "type": "number"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "vec2"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "default": {
+                "items": {
+                  "maximum": 3.4028234663852886E+38,
+                  "minimum": -3.4028234663852886E+38,
+                  "type": "number"
+                },
+                "maxItems": 2,
+                "minItems": 2,
+                "type": "array"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "vec3"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "default": {
+                "items": {
+                  "maximum": 3.4028234663852886E+38,
+                  "minimum": -3.4028234663852886E+38,
+                  "type": "number"
+                },
+                "maxItems": 3,
+                "minItems": 3,
+                "type": "array"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "vec4"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "default": {
+                "items": {
+                  "maximum": 3.4028234663852886E+38,
+                  "minimum": -3.4028234663852886E+38,
+                  "type": "number"
+                },
+                "maxItems": 4,
+                "minItems": 4,
+                "type": "array"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "mat3"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "default": {
+                "items": {
+                  "maximum": 3.4028234663852886E+38,
+                  "minimum": -3.4028234663852886E+38,
+                  "type": "number"
+                },
+                "maxItems": 9,
+                "minItems": 9,
+                "type": "array"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "mat4"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "default": {
+                "items": {
+                  "maximum": 3.4028234663852886E+38,
+                  "minimum": -3.4028234663852886E+38,
+                  "type": "number"
+                },
+                "maxItems": 16,
+                "minItems": 16,
+                "type": "array"
+              }
+            }
+          }
+        }
+      ],
+      "properties": {
+        "default": {},
+        "expression": {
+          "$ref": "#/$defs/dataExpression"
+        },
+        "frequency": {
+          "enum": [
+            "generation",
+            "frame",
+            "view"
+          ]
+        },
+        "id": {
+          "$ref": "#/$defs/dataId"
+        },
+        "onError": {
+          "const": "useDefault"
+        },
+        "space": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "type": {
+          "enum": [
+            "bool",
+            "int",
+            "uint",
+            "float",
+            "vec2",
+            "vec3",
+            "vec4",
+            "mat3",
+            "mat4"
+          ]
+        },
+        "unit": {
+          "$ref": "#/$defs/nonEmptyString"
+        }
+      },
+      "required": [
+        "id",
+        "type",
+        "frequency",
+        "default",
+        "onError",
+        "expression"
+      ],
+      "type": "object"
+    },
+    "dataExpression": {
+      "oneOf": [
+        {
+          "additionalProperties": false,
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "type": {
+                    "const": "bool"
+                  }
+                },
+                "required": [
+                  "type"
+                ]
+              },
+              "then": {
+                "properties": {
+                  "literal": {
+                    "type": "boolean"
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "type": {
+                    "const": "int"
+                  }
+                },
+                "required": [
+                  "type"
+                ]
+              },
+              "then": {
+                "properties": {
+                  "literal": {
+                    "maximum": 2147483647,
+                    "minimum": -2147483648,
+                    "type": "integer"
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "type": {
+                    "const": "uint"
+                  }
+                },
+                "required": [
+                  "type"
+                ]
+              },
+              "then": {
+                "properties": {
+                  "literal": {
+                    "maximum": 4294967295,
+                    "minimum": 0,
+                    "type": "integer"
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "type": {
+                    "const": "float"
+                  }
+                },
+                "required": [
+                  "type"
+                ]
+              },
+              "then": {
+                "properties": {
+                  "literal": {
+                    "maximum": 3.4028234663852886E+38,
+                    "minimum": -3.4028234663852886E+38,
+                    "type": "number"
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "type": {
+                    "const": "vec2"
+                  }
+                },
+                "required": [
+                  "type"
+                ]
+              },
+              "then": {
+                "properties": {
+                  "literal": {
+                    "items": {
+                      "maximum": 3.4028234663852886E+38,
+                      "minimum": -3.4028234663852886E+38,
+                      "type": "number"
+                    },
+                    "maxItems": 2,
+                    "minItems": 2,
+                    "type": "array"
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "type": {
+                    "const": "vec3"
+                  }
+                },
+                "required": [
+                  "type"
+                ]
+              },
+              "then": {
+                "properties": {
+                  "literal": {
+                    "items": {
+                      "maximum": 3.4028234663852886E+38,
+                      "minimum": -3.4028234663852886E+38,
+                      "type": "number"
+                    },
+                    "maxItems": 3,
+                    "minItems": 3,
+                    "type": "array"
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "type": {
+                    "const": "vec4"
+                  }
+                },
+                "required": [
+                  "type"
+                ]
+              },
+              "then": {
+                "properties": {
+                  "literal": {
+                    "items": {
+                      "maximum": 3.4028234663852886E+38,
+                      "minimum": -3.4028234663852886E+38,
+                      "type": "number"
+                    },
+                    "maxItems": 4,
+                    "minItems": 4,
+                    "type": "array"
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "type": {
+                    "const": "mat3"
+                  }
+                },
+                "required": [
+                  "type"
+                ]
+              },
+              "then": {
+                "properties": {
+                  "literal": {
+                    "items": {
+                      "maximum": 3.4028234663852886E+38,
+                      "minimum": -3.4028234663852886E+38,
+                      "type": "number"
+                    },
+                    "maxItems": 9,
+                    "minItems": 9,
+                    "type": "array"
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "type": {
+                    "const": "mat4"
+                  }
+                },
+                "required": [
+                  "type"
+                ]
+              },
+              "then": {
+                "properties": {
+                  "literal": {
+                    "items": {
+                      "maximum": 3.4028234663852886E+38,
+                      "minimum": -3.4028234663852886E+38,
+                      "type": "number"
+                    },
+                    "maxItems": 16,
+                    "minItems": 16,
+                    "type": "array"
+                  }
+                }
+              }
+            }
+          ],
+          "properties": {
+            "literal": {},
+            "type": {
+              "enum": [
+                "bool",
+                "int",
+                "uint",
+                "float",
+                "vec2",
+                "vec3",
+                "vec4",
+                "mat3",
+                "mat4"
+              ]
+            }
+          },
+          "required": [
+            "literal",
+            "type"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "ref": {
+              "$ref": "#/$defs/dataId"
+            }
+          },
+          "required": [
+            "ref"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "as": {
+                    "const": "bool"
+                  }
+                },
+                "required": [
+                  "as"
+                ]
+              },
+              "then": {
+                "properties": {
+                  "map": {
+                    "additionalProperties": {
+                      "type": "boolean"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "as": {
+                    "const": "int"
+                  }
+                },
+                "required": [
+                  "as"
+                ]
+              },
+              "then": {
+                "properties": {
+                  "map": {
+                    "additionalProperties": {
+                      "maximum": 2147483647,
+                      "minimum": -2147483648,
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "as": {
+                    "const": "uint"
+                  }
+                },
+                "required": [
+                  "as"
+                ]
+              },
+              "then": {
+                "properties": {
+                  "map": {
+                    "additionalProperties": {
+                      "maximum": 4294967295,
+                      "minimum": 0,
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "as": {
+                    "const": "float"
+                  }
+                },
+                "required": [
+                  "as"
+                ]
+              },
+              "then": {
+                "properties": {
+                  "map": {
+                    "additionalProperties": {
+                      "maximum": 3.4028234663852886E+38,
+                      "minimum": -3.4028234663852886E+38,
+                      "type": "number"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "as": {
+                    "const": "uint"
+                  }
+                },
+                "required": [
+                  "as"
+                ]
+              },
+              "then": {
+                "required": [
+                  "map"
+                ]
+              }
+            }
+          ],
+          "properties": {
+            "as": {
+              "enum": [
+                "bool",
+                "int",
+                "uint",
+                "float"
+              ]
+            },
+            "map": {
+              "maxProperties": 256,
+              "minProperties": 1,
+              "type": "object"
+            },
+            "option": {
+              "$ref": "#/$defs/dataId"
+            }
+          },
+          "required": [
+            "option",
+            "as"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "input": {
+              "$ref": "#/$defs/dataId"
+            },
+            "version": {
+              "$ref": "#/$defs/positiveVersion"
+            }
+          },
+          "required": [
+            "input",
+            "version"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "material": {
+              "$ref": "#/$defs/dataId"
+            },
+            "materialProperty": {
+              "$ref": "#/$defs/dataId"
+            }
+          },
+          "required": [
+            "materialProperty",
+            "material"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "call": {
+                    "const": "length"
+                  }
+                },
+                "required": [
+                  "call"
+                ]
+              },
+              "then": {
+                "properties": {
+                  "args": {
+                    "maxItems": 1,
+                    "minItems": 1
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "call": {
+                    "const": "vec3"
+                  }
+                },
+                "required": [
+                  "call"
+                ]
+              },
+              "then": {
+                "properties": {
+                  "args": {
+                    "maxItems": 3,
+                    "minItems": 3
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "call": {
+                    "const": "greaterEqual"
+                  }
+                },
+                "required": [
+                  "call"
+                ]
+              },
+              "then": {
+                "properties": {
+                  "args": {
+                    "maxItems": 2,
+                    "minItems": 2
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "call": {
+                    "const": "cos"
+                  }
+                },
+                "required": [
+                  "call"
+                ]
+              },
+              "then": {
+                "properties": {
+                  "args": {
+                    "maxItems": 1,
+                    "minItems": 1
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "call": {
+                    "const": "float"
+                  }
+                },
+                "required": [
+                  "call"
+                ]
+              },
+              "then": {
+                "properties": {
+                  "args": {
+                    "maxItems": 1,
+                    "minItems": 1
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "call": {
+                    "const": "mat3"
+                  }
+                },
+                "required": [
+                  "call"
+                ]
+              },
+              "then": {
+                "properties": {
+                  "args": {
+                    "maxItems": 9,
+                    "minItems": 9
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "call": {
+                    "const": "safeNormalize"
+                  }
+                },
+                "required": [
+                  "call"
+                ]
+              },
+              "then": {
+                "properties": {
+                  "args": {
+                    "maxItems": 2,
+                    "minItems": 2
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "call": {
+                    "const": "sin"
+                  }
+                },
+                "required": [
+                  "call"
+                ]
+              },
+              "then": {
+                "properties": {
+                  "args": {
+                    "maxItems": 1,
+                    "minItems": 1
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "call": {
+                    "const": "less"
+                  }
+                },
+                "required": [
+                  "call"
+                ]
+              },
+              "then": {
+                "properties": {
+                  "args": {
+                    "maxItems": 2,
+                    "minItems": 2
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "call": {
+                    "const": "equal"
+                  }
+                },
+                "required": [
+                  "call"
+                ]
+              },
+              "then": {
+                "properties": {
+                  "args": {
+                    "maxItems": 2,
+                    "minItems": 2
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "call": {
+                    "const": "vec4"
+                  }
+                },
+                "required": [
+                  "call"
+                ]
+              },
+              "then": {
+                "properties": {
+                  "args": {
+                    "maxItems": 4,
+                    "minItems": 4
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "call": {
+                    "const": "bool"
+                  }
+                },
+                "required": [
+                  "call"
+                ]
+              },
+              "then": {
+                "properties": {
+                  "args": {
+                    "maxItems": 1,
+                    "minItems": 1
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "call": {
+                    "const": "clamp"
+                  }
+                },
+                "required": [
+                  "call"
+                ]
+              },
+              "then": {
+                "properties": {
+                  "args": {
+                    "maxItems": 3,
+                    "minItems": 3
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "call": {
+                    "const": "matrixMultiply"
+                  }
+                },
+                "required": [
+                  "call"
+                ]
+              },
+              "then": {
+                "properties": {
+                  "args": {
+                    "maxItems": 2,
+                    "minItems": 2
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "call": {
+                    "const": "greater"
+                  }
+                },
+                "required": [
+                  "call"
+                ]
+              },
+              "then": {
+                "properties": {
+                  "args": {
+                    "maxItems": 2,
+                    "minItems": 2
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "call": {
+                    "const": "uint"
+                  }
+                },
+                "required": [
+                  "call"
+                ]
+              },
+              "then": {
+                "properties": {
+                  "args": {
+                    "maxItems": 1,
+                    "minItems": 1
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "call": {
+                    "const": "vec2"
+                  }
+                },
+                "required": [
+                  "call"
+                ]
+              },
+              "then": {
+                "properties": {
+                  "args": {
+                    "maxItems": 2,
+                    "minItems": 2
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "call": {
+                    "const": "div"
+                  }
+                },
+                "required": [
+                  "call"
+                ]
+              },
+              "then": {
+                "properties": {
+                  "args": {
+                    "maxItems": 2,
+                    "minItems": 2
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "call": {
+                    "const": "int"
+                  }
+                },
+                "required": [
+                  "call"
+                ]
+              },
+              "then": {
+                "properties": {
+                  "args": {
+                    "maxItems": 1,
+                    "minItems": 1
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "call": {
+                    "const": "notEqual"
+                  }
+                },
+                "required": [
+                  "call"
+                ]
+              },
+              "then": {
+                "properties": {
+                  "args": {
+                    "maxItems": 2,
+                    "minItems": 2
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "call": {
+                    "const": "sub"
+                  }
+                },
+                "required": [
+                  "call"
+                ]
+              },
+              "then": {
+                "properties": {
+                  "args": {
+                    "maxItems": 2,
+                    "minItems": 2
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "call": {
+                    "const": "or"
+                  }
+                },
+                "required": [
+                  "call"
+                ]
+              },
+              "then": {
+                "properties": {
+                  "args": {
+                    "maxItems": 2,
+                    "minItems": 2
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "call": {
+                    "const": "componentMultiply"
+                  }
+                },
+                "required": [
+                  "call"
+                ]
+              },
+              "then": {
+                "properties": {
+                  "args": {
+                    "maxItems": 2,
+                    "minItems": 2
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "call": {
+                    "const": "sqrt"
+                  }
+                },
+                "required": [
+                  "call"
+                ]
+              },
+              "then": {
+                "properties": {
+                  "args": {
+                    "maxItems": 1,
+                    "minItems": 1
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "call": {
+                    "const": "min"
+                  }
+                },
+                "required": [
+                  "call"
+                ]
+              },
+              "then": {
+                "properties": {
+                  "args": {
+                    "maxItems": 2,
+                    "minItems": 2
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "call": {
+                    "const": "abs"
+                  }
+                },
+                "required": [
+                  "call"
+                ]
+              },
+              "then": {
+                "properties": {
+                  "args": {
+                    "maxItems": 1,
+                    "minItems": 1
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "call": {
+                    "const": "lessEqual"
+                  }
+                },
+                "required": [
+                  "call"
+                ]
+              },
+              "then": {
+                "properties": {
+                  "args": {
+                    "maxItems": 2,
+                    "minItems": 2
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "call": {
+                    "const": "mix"
+                  }
+                },
+                "required": [
+                  "call"
+                ]
+              },
+              "then": {
+                "properties": {
+                  "args": {
+                    "maxItems": 3,
+                    "minItems": 3
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "call": {
+                    "const": "and"
+                  }
+                },
+                "required": [
+                  "call"
+                ]
+              },
+              "then": {
+                "properties": {
+                  "args": {
+                    "maxItems": 2,
+                    "minItems": 2
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "call": {
+                    "const": "add"
+                  }
+                },
+                "required": [
+                  "call"
+                ]
+              },
+              "then": {
+                "properties": {
+                  "args": {
+                    "maxItems": 2,
+                    "minItems": 2
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "call": {
+                    "const": "mat4"
+                  }
+                },
+                "required": [
+                  "call"
+                ]
+              },
+              "then": {
+                "properties": {
+                  "args": {
+                    "maxItems": 16,
+                    "minItems": 16
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "call": {
+                    "const": "dot"
+                  }
+                },
+                "required": [
+                  "call"
+                ]
+              },
+              "then": {
+                "properties": {
+                  "args": {
+                    "maxItems": 2,
+                    "minItems": 2
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "call": {
+                    "const": "not"
+                  }
+                },
+                "required": [
+                  "call"
+                ]
+              },
+              "then": {
+                "properties": {
+                  "args": {
+                    "maxItems": 1,
+                    "minItems": 1
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "call": {
+                    "const": "max"
+                  }
+                },
+                "required": [
+                  "call"
+                ]
+              },
+              "then": {
+                "properties": {
+                  "args": {
+                    "maxItems": 2,
+                    "minItems": 2
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "call": {
+                    "const": "mul"
+                  }
+                },
+                "required": [
+                  "call"
+                ]
+              },
+              "then": {
+                "properties": {
+                  "args": {
+                    "maxItems": 2,
+                    "minItems": 2
+                  }
+                }
+              }
+            }
+          ],
+          "properties": {
+            "args": {
+              "items": {
+                "$ref": "#/$defs/dataExpression"
+              },
+              "maxItems": 16,
+              "type": "array"
+            },
+            "call": {
+              "enum": [
+                "length",
+                "vec3",
+                "greaterEqual",
+                "cos",
+                "float",
+                "mat3",
+                "safeNormalize",
+                "sin",
+                "less",
+                "equal",
+                "vec4",
+                "bool",
+                "clamp",
+                "matrixMultiply",
+                "greater",
+                "uint",
+                "vec2",
+                "div",
+                "int",
+                "notEqual",
+                "sub",
+                "or",
+                "componentMultiply",
+                "sqrt",
+                "min",
+                "abs",
+                "lessEqual",
+                "mix",
+                "and",
+                "add",
+                "mat4",
+                "dot",
+                "not",
+                "max",
+                "mul"
+              ]
+            }
+          },
+          "required": [
+            "call",
+            "args"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "select": {
+              "$ref": "#/$defs/dataExpression"
+            },
+            "whenFalse": {
+              "$ref": "#/$defs/dataExpression"
+            },
+            "whenTrue": {
+              "$ref": "#/$defs/dataExpression"
+            }
+          },
+          "required": [
+            "select",
+            "whenTrue",
+            "whenFalse"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "dataId": {
+      "maxLength": 512,
+      "pattern": "^[a-z0-9][a-z0-9_.-]*:[a-z0-9][a-z0-9_./-]*$",
+      "type": "string"
+    },
+    "defineBinding": {
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "oneOf": [
+            {
+              "required": [
+                "option"
+              ]
+            },
+            {
+              "required": [
+                "capability"
+              ]
+            }
+          ]
+        }
+      ],
+      "properties": {
+        "capability": {
+          "$ref": "#/$defs/identifier"
+        },
+        "map": {
+          "additionalProperties": {
+            "$ref": "#/$defs/nullableDefineValue"
+          },
+          "type": "object"
+        },
+        "option": {
+          "$ref": "#/$defs/identifier"
+        }
+      },
+      "type": "object"
+    },
+    "defineValue": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/nullableDefineValue"
+        },
+        {
+          "$ref": "#/$defs/defineBinding"
+        }
+      ]
+    },
+    "depthTarget": {
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "loadOp": {
+                "const": "clear"
+              }
+            },
+            "required": [
+              "loadOp"
+            ]
+          },
+          "then": {
+            "required": [
+              "clearValue"
+            ]
+          }
+        },
+        {
+          "if": {
+            "not": {
+              "properties": {
+                "loadOp": {
+                  "const": "clear"
+                }
+              },
+              "required": [
+                "loadOp"
+              ]
+            }
+          },
+          "then": {
+            "not": {
+              "anyOf": [
+                {
+                  "required": [
+                    "clearValue"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "properties": {
+        "clearValue": {
+          "maximum": 1,
+          "minimum": 0,
+          "type": "number"
+        },
+        "framesAgo": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "loadOp": {
+          "enum": [
+            "load",
+            "clear",
+            "dontCare"
+          ]
+        },
+        "resource": {
+          "$ref": "#/$defs/identifier"
+        },
+        "storeOp": {
+          "enum": [
+            "store",
+            "dontCare"
+          ]
+        },
+        "view": {
+          "enum": [
+            "dawnlight:direct",
+            "dawnlight:history/current",
+            "dawnlight:history/previous",
+            "dawnlight:shadow/consumer",
+            "dawnlight:shadow/producer"
+          ]
+        }
+      },
+      "required": [
+        "resource",
+        "loadOp",
+        "storeOp"
+      ],
+      "type": "object"
+    },
+    "dispatch": {
+      "additionalProperties": false,
+      "properties": {
+        "barriers": {
+          "items": {
+            "enum": [
+              "shaderImageAccess",
+              "textureFetch",
+              "textureUpdate",
+              "shaderStorage",
+              "bufferUpdate",
+              "framebuffer"
+            ]
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "groups": {
+          "items": {
+            "minimum": 1,
+            "type": "integer"
+          },
+          "maxItems": 3,
+          "minItems": 3,
+          "type": "array"
+        }
+      },
+      "required": [
+        "groups"
+      ],
+      "type": "object"
+    },
+    "drawBufferLayout": {
+      "items": {
+        "oneOf": [
+          {
+            "const": "disabled"
+          },
+          {
+            "minimum": 0,
+            "type": "integer"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "fragment": {
+      "additionalProperties": false,
+      "properties": {
+        "customData": {
+          "$ref": "#/$defs/customData"
+        },
+        "materials": {
+          "$ref": "#/$defs/materialsFragment"
+        },
+        "options": {
+          "items": {
+            "$ref": "#/$defs/option"
+          },
+          "type": "array"
+        },
+        "passes": {
+          "items": {
+            "$ref": "#/$defs/pass"
+          },
+          "type": "array"
+        },
+        "programs": {
+          "items": {
+            "$ref": "#/$defs/program"
+          },
+          "type": "array"
+        },
+        "resources": {
+          "items": {
+            "$ref": "#/$defs/resource"
+          },
+          "type": "array"
+        },
+        "sceneCategories": {
+          "items": {
+            "$ref": "#/$defs/sceneRoute"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "frameTarget": {
+      "additionalProperties": false,
+      "properties": {
+        "targets": {
+          "$ref": "#/$defs/targets"
+        }
+      },
+      "required": [
+        "targets"
+      ],
+      "type": "object"
+    },
+    "glslIdentifier": {
+      "pattern": "^[A-Za-z_][A-Za-z0-9_]*$",
+      "type": "string"
+    },
+    "historyLifetime": {
+      "additionalProperties": false,
+      "properties": {
+        "capacity": {
+          "minimum": 2,
+          "type": "integer"
+        },
+        "kind": {
+          "const": "history"
+        }
+      },
+      "required": [
+        "kind",
+        "capacity"
+      ],
+      "type": "object"
+    },
+    "host": {
+      "additionalProperties": false,
+      "properties": {
+        "ordering": {
+          "$ref": "#/$defs/ordering"
+        },
+        "phase": {
+          "enum": [
+            "modelShadow",
+            "framePrepare",
+            "shadow",
+            "opaque",
+            "sky",
+            "transparent",
+            "cloudReflection",
+            "shaftPrepare",
+            "shaftSun",
+            "cloud",
+            "particles",
+            "afterDraw",
+            "afterFinal",
+            "screenOutput"
+          ]
+        },
+        "target": {
+          "enum": [
+            "world",
+            "afterDraw"
+          ]
+        }
+      },
+      "required": [
+        "target",
+        "phase"
+      ],
+      "type": "object"
+    },
+    "identifier": {
+      "pattern": "^[a-z0-9][a-z0-9_.-]*:[a-z0-9][a-z0-9_./-]*$",
+      "type": "string"
+    },
+    "manifest": {
+      "additionalProperties": false,
+      "properties": {
+        "author": {
+          "type": "string"
+        },
+        "customData": {
+          "$ref": "#/$defs/customData"
+        },
+        "description": {
+          "type": "string"
+        },
+        "expectedCatalogSha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "frameTarget": {
+          "$ref": "#/$defs/frameTarget"
+        },
+        "id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "manifestVersion": {
+          "const": 5
+        },
+        "materials": {
+          "$ref": "#/$defs/materials"
+        },
+        "name": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "options": {
+          "items": {
+            "$ref": "#/$defs/option"
+          },
+          "type": "array"
+        },
+        "passes": {
+          "items": {
+            "$ref": "#/$defs/pass"
+          },
+          "type": "array"
+        },
+        "programs": {
+          "items": {
+            "$ref": "#/$defs/program"
+          },
+          "type": "array"
+        },
+        "resources": {
+          "items": {
+            "$ref": "#/$defs/resource"
+          },
+          "type": "array"
+        },
+        "sceneAbiVersion": {
+          "const": 2
+        },
+        "sceneCategories": {
+          "items": {
+            "$ref": "#/$defs/sceneRoute"
+          },
+          "type": "array"
+        },
+        "settings": {
+          "$ref": "#/$defs/relativePath"
+        },
+        "shaderRoot": {
+          "$ref": "#/$defs/relativePath"
+        },
+        "version": {
+          "$ref": "#/$defs/nonEmptyString"
+        }
+      },
+      "required": [
+        "manifestVersion",
+        "id",
+        "name",
+        "version",
+        "options",
+        "resources",
+        "sceneAbiVersion",
+        "sceneCategories"
+      ],
+      "type": "object"
+    },
+    "materialDefinition": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/dataId"
+        },
+        "shaderId": {
+          "maximum": 4294967295,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "tags": {
+          "items": {
+            "$ref": "#/$defs/dataId"
+          },
+          "maxItems": 64,
+          "type": "array",
+          "uniqueItems": true
+        },
+        "values": {
+          "additionalProperties": {
+            "$ref": "#/$defs/materialValue"
+          },
+          "maxProperties": 32,
+          "propertyNames": {
+            "$ref": "#/$defs/dataId"
+          },
+          "type": "object"
+        }
+      },
+      "required": [
+        "id",
+        "shaderId"
+      ],
+      "type": "object"
+    },
+    "materialGroup": {
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "anyOf": [
+            {
+              "properties": {
+                "ids": {
+                  "minItems": 1
+                }
+              },
+              "required": [
+                "ids"
+              ]
+            },
+            {
+              "properties": {
+                "effectiveIds": {
+                  "minItems": 1
+                }
+              },
+              "required": [
+                "effectiveIds"
+              ]
+            },
+            {
+              "properties": {
+                "owners": {
+                  "minItems": 1
+                }
+              },
+              "required": [
+                "owners"
+              ]
+            },
+            {
+              "properties": {
+                "geometryIds": {
+                  "minItems": 1
+                }
+              },
+              "required": [
+                "geometryIds"
+              ]
+            },
+            {
+              "properties": {
+                "groups": {
+                  "minItems": 1
+                }
+              },
+              "required": [
+                "groups"
+              ]
+            }
+          ]
+        }
+      ],
+      "properties": {
+        "effectiveIds": {
+          "items": {
+            "$ref": "#/$defs/contentId"
+          },
+          "maxItems": 65536,
+          "type": "array",
+          "uniqueItems": true
+        },
+        "geometryIds": {
+          "items": {
+            "$ref": "#/$defs/dataId"
+          },
+          "maxItems": 65536,
+          "type": "array",
+          "uniqueItems": true
+        },
+        "groups": {
+          "items": {
+            "$ref": "#/$defs/dataId"
+          },
+          "maxItems": 65536,
+          "type": "array",
+          "uniqueItems": true
+        },
+        "id": {
+          "$ref": "#/$defs/dataId"
+        },
+        "ids": {
+          "items": {
+            "$ref": "#/$defs/contentId"
+          },
+          "maxItems": 65536,
+          "type": "array",
+          "uniqueItems": true
+        },
+        "owners": {
+          "items": {
+            "$ref": "#/$defs/contentOwner"
+          },
+          "maxItems": 65536,
+          "type": "array",
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "id"
+      ],
+      "type": "object"
+    },
+    "materialMapping": {
+      "additionalProperties": false,
+      "properties": {
+        "enabledWhen": {
+          "items": {
+            "$ref": "#/$defs/condition"
+          },
+          "type": "array"
+        },
+        "id": {
+          "$ref": "#/$defs/dataId"
+        },
+        "match": {
+          "$ref": "#/$defs/materialSelector"
+        },
+        "material": {
+          "$ref": "#/$defs/dataId"
+        },
+        "onMissing": {
+          "enum": [
+            "error",
+            "warnAndSkip",
+            "skip"
+          ]
+        },
+        "priority": {
+          "maximum": 2147483647,
+          "minimum": -2147483648,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "id",
+        "match",
+        "material"
+      ],
+      "type": "object"
+    },
+    "materialOption": {
+      "additionalProperties": false,
+      "properties": {
+        "option": {
+          "$ref": "#/$defs/dataId"
+        }
+      },
+      "required": [
+        "option"
+      ],
+      "type": "object"
+    },
+    "materialProperty": {
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "bool"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "default": {
+                "type": "boolean"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "int"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "default": {
+                "maximum": 2147483647,
+                "minimum": -2147483648,
+                "type": "integer"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "uint"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "default": {
+                "maximum": 4294967295,
+                "minimum": 0,
+                "type": "integer"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "float"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "default": {
+                "maximum": 3.4028234663852886E+38,
+                "minimum": -3.4028234663852886E+38,
+                "type": "number"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "vec2"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "default": {
+                "items": {
+                  "maximum": 3.4028234663852886E+38,
+                  "minimum": -3.4028234663852886E+38,
+                  "type": "number"
+                },
+                "maxItems": 2,
+                "minItems": 2,
+                "type": "array"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "vec3"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "default": {
+                "items": {
+                  "maximum": 3.4028234663852886E+38,
+                  "minimum": -3.4028234663852886E+38,
+                  "type": "number"
+                },
+                "maxItems": 3,
+                "minItems": 3,
+                "type": "array"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "vec4"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "default": {
+                "items": {
+                  "maximum": 3.4028234663852886E+38,
+                  "minimum": -3.4028234663852886E+38,
+                  "type": "number"
+                },
+                "maxItems": 4,
+                "minItems": 4,
+                "type": "array"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "bool"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "not": {
+              "anyOf": [
+                {
+                  "required": [
+                    "range"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "properties": {
+        "default": {},
+        "glsl": {
+          "$ref": "#/$defs/glslIdentifier"
+        },
+        "id": {
+          "$ref": "#/$defs/dataId"
+        },
+        "range": {
+          "items": {
+            "type": "number"
+          },
+          "maxItems": 2,
+          "minItems": 2,
+          "type": "array"
+        },
+        "space": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "type": {
+          "enum": [
+            "bool",
+            "int",
+            "uint",
+            "float",
+            "vec2",
+            "vec3",
+            "vec4"
+          ]
+        },
+        "unit": {
+          "$ref": "#/$defs/nonEmptyString"
+        }
+      },
+      "required": [
+        "id",
+        "type",
+        "default",
+        "glsl"
+      ],
+      "type": "object"
+    },
+    "materialSelector": {
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "anyOf": [
+            {
+              "properties": {
+                "ids": {
+                  "minItems": 1
+                }
+              },
+              "required": [
+                "ids"
+              ]
+            },
+            {
+              "properties": {
+                "effectiveIds": {
+                  "minItems": 1
+                }
+              },
+              "required": [
+                "effectiveIds"
+              ]
+            },
+            {
+              "properties": {
+                "owners": {
+                  "minItems": 1
+                }
+              },
+              "required": [
+                "owners"
+              ]
+            },
+            {
+              "properties": {
+                "geometryIds": {
+                  "minItems": 1
+                }
+              },
+              "required": [
+                "geometryIds"
+              ]
+            },
+            {
+              "properties": {
+                "groups": {
+                  "minItems": 1
+                }
+              },
+              "required": [
+                "groups"
+              ]
+            }
+          ]
+        }
+      ],
+      "properties": {
+        "effectiveIds": {
+          "items": {
+            "$ref": "#/$defs/contentId"
+          },
+          "maxItems": 65536,
+          "type": "array",
+          "uniqueItems": true
+        },
+        "geometryIds": {
+          "items": {
+            "$ref": "#/$defs/dataId"
+          },
+          "maxItems": 65536,
+          "type": "array",
+          "uniqueItems": true
+        },
+        "groups": {
+          "items": {
+            "$ref": "#/$defs/dataId"
+          },
+          "maxItems": 65536,
+          "type": "array",
+          "uniqueItems": true
+        },
+        "ids": {
+          "items": {
+            "$ref": "#/$defs/contentId"
+          },
+          "maxItems": 65536,
+          "type": "array",
+          "uniqueItems": true
+        },
+        "owners": {
+          "items": {
+            "$ref": "#/$defs/contentOwner"
+          },
+          "maxItems": 65536,
+          "type": "array",
+          "uniqueItems": true
+        }
+      },
+      "type": "object"
+    },
+    "materialTag": {
+      "additionalProperties": false,
+      "properties": {
+        "glsl": {
+          "$ref": "#/$defs/glslIdentifier"
+        },
+        "id": {
+          "$ref": "#/$defs/dataId"
+        }
+      },
+      "required": [
+        "id",
+        "glsl"
+      ],
+      "type": "object"
+    },
+    "materialValue": {
+      "anyOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "maximum": 2147483647,
+          "minimum": -2147483648,
+          "type": "integer"
+        },
+        {
+          "maximum": 4294967295,
+          "minimum": 0,
+          "type": "integer"
+        },
+        {
+          "maximum": 3.4028234663852886E+38,
+          "minimum": -3.4028234663852886E+38,
+          "type": "number"
+        },
+        {
+          "items": {
+            "maximum": 3.4028234663852886E+38,
+            "minimum": -3.4028234663852886E+38,
+            "type": "number"
+          },
+          "maxItems": 2,
+          "minItems": 2,
+          "type": "array"
+        },
+        {
+          "items": {
+            "maximum": 3.4028234663852886E+38,
+            "minimum": -3.4028234663852886E+38,
+            "type": "number"
+          },
+          "maxItems": 3,
+          "minItems": 3,
+          "type": "array"
+        },
+        {
+          "items": {
+            "maximum": 3.4028234663852886E+38,
+            "minimum": -3.4028234663852886E+38,
+            "type": "number"
+          },
+          "maxItems": 4,
+          "minItems": 4,
+          "type": "array"
+        },
+        {
+          "$ref": "#/$defs/materialOption"
+        }
+      ]
+    },
+    "materials": {
+      "additionalProperties": false,
+      "properties": {
+        "abiVersion": {
+          "const": 1
+        },
+        "contentGroups": {
+          "items": {
+            "$ref": "#/$defs/materialGroup"
+          },
+          "maxItems": 1024,
+          "type": "array"
+        },
+        "definitions": {
+          "items": {
+            "$ref": "#/$defs/materialDefinition"
+          },
+          "maxItems": 4096,
+          "type": "array"
+        },
+        "fallback": {
+          "$ref": "#/$defs/dataId"
+        },
+        "mappings": {
+          "items": {
+            "$ref": "#/$defs/materialMapping"
+          },
+          "maxItems": 4096,
+          "type": "array"
+        },
+        "properties": {
+          "items": {
+            "$ref": "#/$defs/materialProperty"
+          },
+          "maxItems": 32,
+          "type": "array"
+        },
+        "tags": {
+          "items": {
+            "$ref": "#/$defs/materialTag"
+          },
+          "maxItems": 64,
+          "type": "array"
+        }
+      },
+      "required": [
+        "abiVersion",
+        "fallback",
+        "definitions"
+      ],
+      "type": "object"
+    },
+    "materialsFragment": {
+      "additionalProperties": false,
+      "properties": {
+        "abiVersion": {
+          "const": 1
+        },
+        "contentGroups": {
+          "items": {
+            "$ref": "#/$defs/materialGroup"
+          },
+          "maxItems": 1024,
+          "type": "array"
+        },
+        "definitions": {
+          "items": {
+            "$ref": "#/$defs/materialDefinition"
+          },
+          "maxItems": 4096,
+          "type": "array"
+        },
+        "fallback": {
+          "$ref": "#/$defs/dataId"
+        },
+        "mappings": {
+          "items": {
+            "$ref": "#/$defs/materialMapping"
+          },
+          "maxItems": 4096,
+          "type": "array"
+        },
+        "properties": {
+          "items": {
+            "$ref": "#/$defs/materialProperty"
+          },
+          "maxItems": 32,
+          "type": "array"
+        },
+        "tags": {
+          "items": {
+            "$ref": "#/$defs/materialTag"
+          },
+          "maxItems": 64,
+          "type": "array"
+        }
+      },
+      "required": [
+        "abiVersion"
+      ],
+      "type": "object"
+    },
+    "nonEmptyString": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "nullableDefineValue": {
+      "type": [
+        "string",
+        "boolean",
+        "integer",
+        "number",
+        "null"
+      ]
+    },
+    "option": {
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "boolean"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "allowed": {
+                "items": {
+                  "type": "boolean"
+                },
+                "minItems": 1,
+                "type": "array",
+                "uniqueItems": true
+              },
+              "default": {
+                "type": "boolean"
+              },
+              "max": {
+                "not": {}
+              },
+              "min": {
+                "not": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "integer"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "allowed": {
+                "items": {
+                  "type": "integer"
+                },
+                "minItems": 1,
+                "type": "array",
+                "uniqueItems": true
+              },
+              "default": {
+                "type": "integer"
+              },
+              "max": {
+                "type": "integer"
+              },
+              "min": {
+                "type": "integer"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "number"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "allowed": {
+                "items": {
+                  "type": "number"
+                },
+                "minItems": 1,
+                "type": "array",
+                "uniqueItems": true
+              },
+              "default": {
+                "type": "number"
+              },
+              "max": {
+                "type": "number"
+              },
+              "min": {
+                "type": "number"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "string"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "allowed": {
+                "items": {
+                  "type": "string"
+                },
+                "minItems": 1,
+                "type": "array",
+                "uniqueItems": true
+              },
+              "default": {
+                "type": "string"
+              },
+              "max": {
+                "not": {}
+              },
+              "min": {
+                "not": {}
+              }
+            }
+          }
+        },
+        {
+          "not": {
+            "required": [
+              "allowed",
+              "min"
+            ]
+          }
+        },
+        {
+          "not": {
+            "required": [
+              "allowed",
+              "max"
+            ]
+          }
+        },
+        {
+          "oneOf": [
+            {
+              "required": [
+                "min",
+                "max"
+              ]
+            },
+            {
+              "not": {
+                "anyOf": [
+                  {
+                    "required": [
+                      "min"
+                    ]
+                  },
+                  {
+                    "required": [
+                      "max"
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "properties": {
+        "allowed": {
+          "items": {
+            "$ref": "#/$defs/optionScalar"
+          },
+          "minItems": 1,
+          "type": "array",
+          "uniqueItems": true
+        },
+        "default": {
+          "$ref": "#/$defs/optionScalar"
+        },
+        "description": {
+          "type": "string"
+        },
+        "id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "impact": {
+          "items": {
+            "enum": [
+              "uniform",
+              "program",
+              "pipeline",
+              "resources"
+            ]
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "max": {
+          "type": "number"
+        },
+        "min": {
+          "type": "number"
+        },
+        "name": {
+          "type": "string"
+        },
+        "type": {
+          "enum": [
+            "boolean",
+            "integer",
+            "number",
+            "string"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "type",
+        "default",
+        "impact"
+      ],
+      "type": "object"
+    },
+    "optionScalar": {
+      "type": [
+        "boolean",
+        "integer",
+        "number",
+        "string"
+      ]
+    },
+    "ordering": {
+      "additionalProperties": false,
+      "properties": {
+        "after": {
+          "items": {
+            "$ref": "#/$defs/identifier"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "before": {
+          "items": {
+            "$ref": "#/$defs/identifier"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "requires": {
+          "items": {
+            "$ref": "#/$defs/identifier"
+          },
+          "type": "array",
+          "uniqueItems": true
+        }
+      },
+      "type": "object"
+    },
+    "pass": {
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "not": {
+            "required": [
+              "stage",
+              "host"
+            ]
+          }
+        }
+      ],
+      "properties": {
+        "commands": {
+          "items": {
+            "$ref": "#/$defs/command"
+          },
+          "type": "array"
+        },
+        "enabled": {
+          "type": "boolean"
+        },
+        "enabledWhen": {
+          "items": {
+            "$ref": "#/$defs/condition"
+          },
+          "type": "array"
+        },
+        "host": {
+          "$ref": "#/$defs/host"
+        },
+        "id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "inputs": {
+          "items": {
+            "oneOf": [
+              {
+                "$ref": "#/$defs/identifier"
+              },
+              {
+                "$ref": "#/$defs/resourceView"
+              }
+            ]
+          },
+          "type": "array"
+        },
+        "outputs": {
+          "items": {
+            "oneOf": [
+              {
+                "$ref": "#/$defs/identifier"
+              },
+              {
+                "$ref": "#/$defs/resourceView"
+              }
+            ]
+          },
+          "type": "array"
+        },
+        "programs": {
+          "items": {
+            "$ref": "#/$defs/identifier"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "services": {
+          "items": {
+            "$ref": "#/$defs/service"
+          },
+          "type": "array"
+        },
+        "stage": {
+          "$ref": "#/$defs/stage"
+        }
+      },
+      "required": [
+        "id",
+        "enabled"
+      ],
+      "type": "object"
+    },
+    "positiveVersion": {
+      "minimum": 1,
+      "type": "integer"
+    },
+    "program": {
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "graphics"
+              }
+            },
+            "required": [
+              "kind"
+            ]
+          },
+          "then": {
+            "allOf": [
+              {
+                "not": {
+                  "anyOf": [
+                    {
+                      "required": [
+                        "compute"
+                      ]
+                    }
+                  ]
+                }
+              }
+            ],
+            "required": [
+              "vertex",
+              "fragment"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "compute"
+              }
+            },
+            "required": [
+              "kind"
+            ]
+          },
+          "then": {
+            "allOf": [
+              {
+                "not": {
+                  "anyOf": [
+                    {
+                      "required": [
+                        "vertex"
+                      ]
+                    },
+                    {
+                      "required": [
+                        "fragment"
+                      ]
+                    },
+                    {
+                      "required": [
+                        "compileMode"
+                      ]
+                    }
+                  ]
+                }
+              }
+            ],
+            "required": [
+              "compute"
+            ]
+          }
+        }
+      ],
+      "properties": {
+        "bindings": {
+          "not": {}
+        },
+        "compileMode": {
+          "enum": [
+            "legacyCustom",
+            "officialCompatible",
+            "manifestDriven"
+          ]
+        },
+        "compute": {
+          "$ref": "#/$defs/relativePath"
+        },
+        "defines": {
+          "additionalProperties": {
+            "$ref": "#/$defs/defineValue"
+          },
+          "propertyNames": {
+            "$ref": "#/$defs/glslIdentifier"
+          },
+          "type": "object"
+        },
+        "drawBuffers": {
+          "not": {}
+        },
+        "engineDrawState": {
+          "not": {}
+        },
+        "fragment": {
+          "$ref": "#/$defs/relativePath"
+        },
+        "id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "kind": {
+          "enum": [
+            "graphics",
+            "compute"
+          ]
+        },
+        "state": {
+          "not": {}
+        },
+        "targets": {
+          "not": {}
+        },
+        "variants": {
+          "items": {
+            "$ref": "#/$defs/variant"
+          },
+          "type": "array"
+        },
+        "vertex": {
+          "$ref": "#/$defs/relativePath"
+        }
+      },
+      "required": [
+        "id",
+        "kind"
+      ],
+      "type": "object"
+    },
+    "provider": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "version": {
+          "$ref": "#/$defs/positiveVersion"
+        }
+      },
+      "required": [
+        "id",
+        "version"
+      ],
+      "type": "object"
+    },
+    "relativePath": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "resource": {
+      "oneOf": [
+        {
+          "additionalProperties": false,
+          "allOf": [
+            {
+              "not": {
+                "allOf": [
+                  {
+                    "properties": {
+                      "content": {
+                        "allOf": [
+                          {
+                            "properties": {
+                              "type": {
+                                "const": "materialTable"
+                              }
+                            },
+                            "required": [
+                              "type"
+                            ]
+                          }
+                        ],
+                        "type": "object"
+                      }
+                    }
+                  }
+                ],
+                "required": [
+                  "content"
+                ]
+              }
+            }
+          ],
+          "properties": {
+            "content": {
+              "$ref": "#/$defs/content"
+            },
+            "format": {
+              "$ref": "#/$defs/nonEmptyString"
+            },
+            "historyCapacity": {
+              "minimum": 2,
+              "type": "integer"
+            },
+            "id": {
+              "$ref": "#/$defs/identifier"
+            },
+            "kind": {
+              "enum": [
+                "texture2D",
+                "textureCube"
+              ]
+            },
+            "lifetime": {
+              "oneOf": [
+                {
+                  "enum": [
+                    "persistent",
+                    "frame",
+                    "transient",
+                    "history",
+                    "external"
+                  ]
+                },
+                {
+                  "$ref": "#/$defs/historyLifetime"
+                }
+              ]
+            },
+            "sampling": {
+              "$ref": "#/$defs/sampling"
+            },
+            "size": {
+              "$ref": "#/$defs/size"
+            }
+          },
+          "required": [
+            "id",
+            "kind",
+            "lifetime"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "allOf": [
+            {
+              "if": {
+                "allOf": [
+                  {
+                    "properties": {
+                      "content": {
+                        "allOf": [
+                          {
+                            "properties": {
+                              "type": {
+                                "const": "materialTable"
+                              }
+                            },
+                            "required": [
+                              "type"
+                            ]
+                          }
+                        ],
+                        "type": "object"
+                      }
+                    }
+                  }
+                ],
+                "required": [
+                  "content"
+                ]
+              },
+              "then": {
+                "not": {
+                  "anyOf": [
+                    {
+                      "required": [
+                        "byteSize"
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "else": {
+                "required": [
+                  "byteSize"
+                ]
+              },
+              "if": {
+                "allOf": [
+                  {
+                    "properties": {
+                      "content": {
+                        "allOf": [
+                          {
+                            "properties": {
+                              "type": {
+                                "const": "materialTable"
+                              }
+                            },
+                            "required": [
+                              "type"
+                            ]
+                          }
+                        ],
+                        "type": "object"
+                      }
+                    }
+                  }
+                ],
+                "required": [
+                  "content"
+                ]
+              },
+              "then": {
+                "required": [
+                  "content"
+                ]
+              }
+            }
+          ],
+          "properties": {
+            "byteSize": {
+              "minimum": 1,
+              "type": "integer"
+            },
+            "content": {
+              "$ref": "#/$defs/content"
+            },
+            "id": {
+              "$ref": "#/$defs/identifier"
+            },
+            "kind": {
+              "const": "buffer"
+            },
+            "lifetime": {
+              "oneOf": [
+                {
+                  "enum": [
+                    "persistent",
+                    "frame",
+                    "transient",
+                    "history",
+                    "external"
+                  ]
+                },
+                {
+                  "$ref": "#/$defs/historyLifetime"
+                }
+              ]
+            },
+            "usage": {
+              "enum": [
+                "staticDraw",
+                "dynamicDraw",
+                "streamDraw"
+              ]
+            }
+          },
+          "required": [
+            "id",
+            "kind",
+            "lifetime"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "resourceView": {
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "view": {
+                "const": "dawnlight:history/previous"
+              }
+            },
+            "required": [
+              "view"
+            ]
+          },
+          "then": {
+            "required": [
+              "framesAgo"
+            ]
+          }
+        },
+        {
+          "if": {
+            "not": {
+              "properties": {
+                "view": {
+                  "const": "dawnlight:history/previous"
+                }
+              },
+              "required": [
+                "view"
+              ]
+            }
+          },
+          "then": {
+            "not": {
+              "anyOf": [
+                {
+                  "required": [
+                    "framesAgo"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "properties": {
+        "framesAgo": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "resource": {
+          "$ref": "#/$defs/identifier"
+        },
+        "view": {
+          "enum": [
+            "dawnlight:direct",
+            "dawnlight:history/current",
+            "dawnlight:history/previous",
+            "dawnlight:shadow/consumer",
+            "dawnlight:shadow/producer"
+          ]
+        }
+      },
+      "required": [
+        "resource"
+      ],
+      "type": "object"
+    },
+    "sampling": {
+      "additionalProperties": false,
+      "properties": {
+        "magFilter": {
+          "enum": [
+            "nearest",
+            "linear"
+          ]
+        },
+        "minFilter": {
+          "enum": [
+            "nearest",
+            "linear"
+          ]
+        },
+        "mipLevels": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "wrapS": {
+          "enum": [
+            "repeat",
+            "clampToEdge",
+            "mirroredRepeat"
+          ]
+        },
+        "wrapT": {
+          "enum": [
+            "repeat",
+            "clampToEdge",
+            "mirroredRepeat"
+          ]
+        }
+      },
+      "type": "object"
+    },
+    "sceneBinding": {
+      "additionalProperties": false,
+      "properties": {
+        "binding": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "contract": {
+          "$ref": "#/$defs/identifier"
+        },
+        "frequency": {
+          "enum": [
+            "frame",
+            "view",
+            "batch",
+            "draw"
+          ]
+        },
+        "symbol": {
+          "$ref": "#/$defs/glslIdentifier"
+        },
+        "version": {
+          "$ref": "#/$defs/positiveVersion"
+        }
+      },
+      "required": [
+        "symbol",
+        "contract",
+        "version",
+        "frequency"
+      ],
+      "type": "object"
+    },
+    "sceneRoute": {
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "mode": {
+                "const": "override"
+              }
+            },
+            "required": [
+              "mode"
+            ]
+          },
+          "then": {
+            "required": [
+              "stage"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "mode": {
+                "enum": [
+                  "builtin",
+                  "disabled"
+                ]
+              }
+            }
+          },
+          "then": {
+            "not": {
+              "anyOf": [
+                {
+                  "required": [
+                    "stage"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "mode": {
+          "enum": [
+            "override",
+            "builtin",
+            "disabled"
+          ]
+        },
+        "stage": {
+          "$ref": "#/$defs/identifier"
+        },
+        "version": {
+          "$ref": "#/$defs/positiveVersion"
+        }
+      },
+      "required": [
+        "id",
+        "version",
+        "mode"
+      ],
+      "type": "object"
+    },
+    "semantic": {
+      "additionalProperties": false,
+      "properties": {
+        "enabledWhen": {
+          "items": {
+            "$ref": "#/$defs/condition"
+          },
+          "type": "array"
+        },
+        "semantic": {
+          "$ref": "#/$defs/identifier"
+        },
+        "symbol": {
+          "$ref": "#/$defs/glslIdentifier"
+        },
+        "version": {
+          "$ref": "#/$defs/positiveVersion"
+        }
+      },
+      "required": [
+        "symbol",
+        "semantic",
+        "version"
+      ],
+      "type": "object"
+    },
+    "service": {
+      "additionalProperties": false,
+      "properties": {
+        "enabledWhen": {
+          "items": {
+            "$ref": "#/$defs/condition"
+          },
+          "type": "array"
+        },
+        "id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "mode": {
+          "enum": [
+            "required",
+            "optional"
+          ]
+        },
+        "unavailable": {
+          "enum": [
+            "disablePass"
+          ]
+        },
+        "version": {
+          "$ref": "#/$defs/positiveVersion"
+        }
+      },
+      "required": [
+        "id",
+        "version"
+      ],
+      "type": "object"
+    },
+    "size": {
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "mode": {
+                "const": "absolute"
+              }
+            },
+            "required": [
+              "mode"
+            ]
+          },
+          "then": {
+            "allOf": [
+              {
+                "not": {
+                  "anyOf": [
+                    {
+                      "required": [
+                        "scale"
+                      ]
+                    }
+                  ]
+                }
+              }
+            ],
+            "required": [
+              "width",
+              "height"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "mode": {
+                "enum": [
+                  "viewport",
+                  "output"
+                ]
+              }
+            }
+          },
+          "then": {
+            "not": {
+              "anyOf": [
+                {
+                  "required": [
+                    "width"
+                  ]
+                },
+                {
+                  "required": [
+                    "height"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "properties": {
+        "height": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "mode": {
+          "enum": [
+            "absolute",
+            "viewport",
+            "output"
+          ]
+        },
+        "scale": {
+          "items": {
+            "exclusiveMinimum": 0,
+            "type": "number"
+          },
+          "maxItems": 2,
+          "minItems": 2,
+          "type": "array"
+        },
+        "width": {
+          "minimum": 1,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "mode"
+      ],
+      "type": "object"
+    },
+    "sourceManifest": {
+      "additionalProperties": false,
+      "properties": {
+        "author": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "expectedCatalogSha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "fragments": {
+          "items": {
+            "$ref": "#/$defs/relativePath"
+          },
+          "minItems": 1,
+          "type": "array",
+          "uniqueItems": true
+        },
+        "frameTarget": {
+          "$ref": "#/$defs/frameTarget"
+        },
+        "id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "manifestVersion": {
+          "const": 5
+        },
+        "name": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "sceneAbiVersion": {
+          "const": 2
+        },
+        "settings": {
+          "$ref": "#/$defs/relativePath"
+        },
+        "shaderRoot": {
+          "$ref": "#/$defs/relativePath"
+        },
+        "sourceFormatVersion": {
+          "const": 1
+        },
+        "version": {
+          "$ref": "#/$defs/nonEmptyString"
+        }
+      },
+      "required": [
+        "sourceFormatVersion",
+        "manifestVersion",
+        "id",
+        "name",
+        "version",
+        "fragments",
+        "sceneAbiVersion"
+      ],
+      "type": "object"
+    },
+    "stage": {
+      "additionalProperties": false,
+      "properties": {
+        "ordering": {
+          "$ref": "#/$defs/ordering"
+        },
+        "phase": {
+          "enum": [
+            "modelShadow",
+            "framePrepare",
+            "shadow",
+            "opaque",
+            "sky",
+            "transparent",
+            "cloudReflection",
+            "shaftPrepare",
+            "shaftSun",
+            "cloud",
+            "particles",
+            "afterDraw",
+            "afterFinal",
+            "screenOutput"
+          ]
+        },
+        "target": {
+          "enum": [
+            "world",
+            "afterDraw"
+          ]
+        },
+        "template": {
+          "$ref": "#/$defs/identifier"
+        },
+        "version": {
+          "$ref": "#/$defs/positiveVersion"
+        }
+      },
+      "required": [
+        "template",
+        "version",
+        "target",
+        "phase"
+      ],
+      "type": "object"
+    },
+    "state": {
+      "additionalProperties": false,
+      "properties": {
+        "blend": {
+          "enum": [
+            "inherit",
+            "opaque",
+            "alphaBlend",
+            "nonPremultiplied"
+          ]
+        },
+        "blendTargets": {
+          "items": {
+            "minimum": 0,
+            "type": "integer"
+          },
+          "minItems": 1,
+          "type": "array",
+          "uniqueItems": true
+        },
+        "depth": {
+          "enum": [
+            "inherit",
+            "default",
+            "depthWrite",
+            "depthTestWriteLess",
+            "disabled"
+          ]
+        },
+        "rasterizer": {
+          "enum": [
+            "inherit",
+            "cullCounterClockwiseScissor",
+            "cullClockwiseScissor",
+            "cullNoneScissor"
+          ]
+        }
+      },
+      "type": "object"
+    },
+    "targets": {
+      "additionalProperties": false,
+      "minProperties": 1,
+      "properties": {
+        "colors": {
+          "items": {
+            "$ref": "#/$defs/colorTarget"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "depth": {
+          "$ref": "#/$defs/depthTarget"
+        }
+      },
+      "type": "object"
+    },
+    "variant": {
+      "additionalProperties": false,
+      "properties": {
+        "defines": {
+          "additionalProperties": {
+            "$ref": "#/$defs/defineValue"
+          },
+          "propertyNames": {
+            "$ref": "#/$defs/glslIdentifier"
+          },
+          "type": "object"
+        },
+        "id": {
+          "$ref": "#/$defs/identifier"
+        }
+      },
+      "required": [
+        "id",
+        "defines"
+      ],
+      "type": "object"
+    },
+    "viewport": {
+      "additionalProperties": false,
+      "properties": {
+        "restore": {
+          "enum": [
+            "none",
+            "frame"
+          ]
+        },
+        "source": {
+          "enum": [
+            "target",
+            "frame"
+          ]
+        },
+        "synchronizeScissor": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "source",
+        "restore"
+      ],
+      "type": "object"
+    }
+  },
+  "$id": "https://schemas.dawnlight.dev/shaderpack/v5.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Structural authoring schema. Loader-backed validation remains authoritative for cross-references and runtime semantics.",
+  "oneOf": [
+    {
+      "$ref": "#/$defs/manifest"
+    },
+    {
+      "$ref": "#/$defs/sourceManifest"
+    }
+  ],
+  "title": "Dawnlight Shader Pack Manifest v5 (data declaration ABI v1)"
+}

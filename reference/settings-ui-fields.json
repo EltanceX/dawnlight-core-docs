@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "provenance": "Reviewed Loader whitelist projection, not an official JSON Schema",
+  "sourceCommit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+  "sourcePath": "Survivalcraft/Dawnlight/PipeLine/Shaders/Configuration/Loading/ShaderPackSettingsUiLoader.cs",
+  "sourceLength": 75713,
+  "sourceSha256": "b1f16655278a8fed2297b6116667a7c95ae976c1648a033a175192c579ebe540",
+  "objects": {
+    "root": [
+      "schemaVersion",
+      "defaultLocale",
+      "translations",
+      "pages",
+      "hiddenOptions"
+    ],
+    "page": [
+      "id",
+      "title",
+      "order",
+      "groups",
+      "visibleWhen"
+    ],
+    "group": [
+      "id",
+      "title",
+      "order",
+      "controls",
+      "visibleWhen"
+    ],
+    "control": [
+      "id",
+      "option",
+      "widget",
+      "label",
+      "description",
+      "unit",
+      "format",
+      "step",
+      "min",
+      "max",
+      "advanced",
+      "developerOnly",
+      "values",
+      "visibleWhen",
+      "enabledWhen"
+    ],
+    "choice": [
+      "value",
+      "label"
+    ],
+    "condition": [
+      "option",
+      "equals",
+      "notEquals",
+      "in"
+    ],
+    "hiddenOption": [
+      "option",
+      "reason"
+    ]
+  }
+}

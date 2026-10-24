@@ -1,0 +1,2856 @@
+{
+  "authoringContractVersion": 1,
+  "catalog": {
+    "capabilities": [
+      {
+        "id": "dawnlight:model_shadow/max_instances",
+        "valueKind": "integer",
+        "version": 1
+      },
+      {
+        "id": "dawnlight:model_shadow/max_joints",
+        "valueKind": "integer",
+        "version": 1
+      }
+    ],
+    "engineDrawProviders": [
+      {
+        "command": "engineDraw",
+        "id": "dawnlight:lighting/handheld_prepare",
+        "version": 1
+      },
+      {
+        "command": "engineDraw",
+        "id": "dawnlight:model_shadow/alpha_tested_instanced",
+        "requiredServices": [
+          "dawnlight:model_shadows@1"
+        ],
+        "version": 1
+      },
+      {
+        "command": "engineDraw",
+        "id": "dawnlight:model_shadow/alpha_tested_skinned",
+        "requiredServices": [
+          "dawnlight:model_shadows@1"
+        ],
+        "version": 1
+      },
+      {
+        "command": "engineDraw",
+        "id": "dawnlight:model_shadow/opaque_instanced",
+        "requiredServices": [
+          "dawnlight:model_shadows@1"
+        ],
+        "version": 1
+      },
+      {
+        "command": "engineDraw",
+        "id": "dawnlight:model_shadow/opaque_skinned",
+        "requiredServices": [
+          "dawnlight:model_shadows@1"
+        ],
+        "version": 1
+      },
+      {
+        "command": "engineDraw",
+        "id": "dawnlight:shaft/prepare",
+        "version": 1
+      },
+      {
+        "command": "engineDraw",
+        "id": "dawnlight:shaft/sun",
+        "version": 1
+      },
+      {
+        "command": "engineDraw",
+        "id": "dawnlight:terrain_shadow/layer_0",
+        "requiredServices": [
+          "dawnlight:terrain_shadows@1"
+        ],
+        "version": 1
+      },
+      {
+        "command": "engineDraw",
+        "id": "dawnlight:terrain_shadow/layer_1",
+        "requiredServices": [
+          "dawnlight:terrain_shadows@1"
+        ],
+        "version": 1
+      },
+      {
+        "command": "engineDraw",
+        "id": "dawnlight:terrain/alpha_tested",
+        "version": 1
+      },
+      {
+        "command": "engineDraw",
+        "id": "dawnlight:terrain/opaque",
+        "version": 1
+      },
+      {
+        "command": "engineDraw",
+        "id": "dawnlight:terrain/prepare",
+        "version": 1
+      },
+      {
+        "command": "engineDraw",
+        "id": "dawnlight:terrain/sorted_translucent",
+        "version": 1
+      },
+      {
+        "command": "engineDraw",
+        "id": "dawnlight:terrain/transparent",
+        "version": 1
+      }
+    ],
+    "resourceFormats": [
+      {
+        "bytesPerPixel": 4,
+        "depth": true,
+        "id": "depth24",
+        "valueKind": "texture",
+        "version": 1
+      },
+      {
+        "bytesPerPixel": 4,
+        "depth": true,
+        "id": "depth32f",
+        "valueKind": "texture",
+        "version": 1
+      },
+      {
+        "bytesPerPixel": 4,
+        "components": 1,
+        "depth": false,
+        "id": "r32f",
+        "valueKind": "texture",
+        "version": 1
+      },
+      {
+        "bytesPerPixel": 1,
+        "components": 1,
+        "depth": false,
+        "id": "r8",
+        "valueKind": "texture",
+        "version": 1
+      },
+      {
+        "bytesPerPixel": 3,
+        "components": 3,
+        "depth": false,
+        "id": "rgb8",
+        "valueKind": "texture",
+        "version": 1
+      },
+      {
+        "bytesPerPixel": 8,
+        "components": 4,
+        "depth": false,
+        "id": "rgba16f",
+        "valueKind": "texture",
+        "version": 1
+      },
+      {
+        "bytesPerPixel": 16,
+        "components": 4,
+        "depth": false,
+        "id": "rgba32f",
+        "valueKind": "texture",
+        "version": 1
+      },
+      {
+        "bytesPerPixel": 4,
+        "components": 4,
+        "depth": false,
+        "id": "rgba8",
+        "valueKind": "texture",
+        "version": 1
+      },
+      {
+        "bytesPerPixel": 4,
+        "components": 4,
+        "depth": false,
+        "id": "srgba8",
+        "valueKind": "texture",
+        "version": 1
+      }
+    ],
+    "sceneCategories": [
+      {
+        "id": "dawnlight:scene/terrain_alpha_tested",
+        "phase": "opaque",
+        "routeModes": [
+          "override",
+          "builtin",
+          "disabled"
+        ],
+        "target": "world",
+        "version": 1
+      },
+      {
+        "id": "dawnlight:scene/terrain_opaque",
+        "phase": "opaque",
+        "routeModes": [
+          "override",
+          "builtin",
+          "disabled"
+        ],
+        "target": "world",
+        "version": 1
+      },
+      {
+        "id": "dawnlight:scene/terrain_sorted_translucent",
+        "phase": "transparent",
+        "routeModes": [
+          "override",
+          "builtin",
+          "disabled"
+        ],
+        "target": "world",
+        "version": 1
+      },
+      {
+        "id": "dawnlight:scene/terrain_transparent",
+        "phase": "transparent",
+        "routeModes": [
+          "override",
+          "builtin",
+          "disabled"
+        ],
+        "target": "world",
+        "version": 1
+      }
+    ],
+    "sceneDrawProviders": [
+      {
+        "category": {
+          "id": "dawnlight:scene/terrain_alpha_tested",
+          "version": 1
+        },
+        "id": "dawnlight:scene_draw/terrain_alpha_tested",
+        "permittedServices": [
+          {
+            "id": "dawnlight:model_shadows",
+            "version": 1
+          },
+          {
+            "id": "dawnlight:terrain_shadows",
+            "version": 1
+          }
+        ],
+        "requiredServices": [],
+        "stateCapability": {
+          "allowedBlendModes": [
+            "opaque",
+            "alphaBlend",
+            "nonPremultiplied"
+          ],
+          "allowedDepthModes": [
+            "default",
+            "depthWrite",
+            "depthTestWriteLess",
+            "disabled"
+          ],
+          "allowedRasterizerModes": [
+            "cullCounterClockwiseScissor",
+            "cullClockwiseScissor",
+            "cullNoneScissor"
+          ],
+          "requiresExplicitBlend": true,
+          "requiresExplicitDepth": true,
+          "requiresExplicitRasterizer": true
+        },
+        "systemBindings": [
+          {
+            "id": "dawnlight:scene_binding/animated_texture",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/block_texture",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/chunk_coordinates",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/light_table",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/terrain_origin",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/top_height",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/view_position",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/view_projection",
+            "required": true,
+            "version": 1
+          }
+        ],
+        "targetCapability": {
+          "allowedColorLoadOps": [
+            "load",
+            "clear",
+            "dontCare"
+          ],
+          "allowedColorStoreOps": [
+            "store",
+            "dontCare"
+          ],
+          "allowedDepthLoadOps": [
+            "load",
+            "clear",
+            "dontCare"
+          ],
+          "allowedDepthStoreOps": [
+            "store",
+            "dontCare"
+          ],
+          "allowedOutputLocations": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "depthRequirement": "required",
+          "maximumColorAttachments": 8,
+          "minimumColorAttachments": 1
+        },
+        "version": 2,
+        "vertexAbi": {
+          "id": "dawnlight:vertex/terrain_chunk",
+          "version": 1
+        }
+      },
+      {
+        "category": {
+          "id": "dawnlight:scene/terrain_alpha_tested",
+          "version": 1
+        },
+        "id": "dawnlight:scene_draw/terrain_alpha_tested",
+        "permittedServices": [
+          {
+            "id": "dawnlight:model_shadows",
+            "version": 1
+          },
+          {
+            "id": "dawnlight:ocean_wave",
+            "version": 1
+          },
+          {
+            "id": "dawnlight:point_lights",
+            "version": 1
+          },
+          {
+            "id": "dawnlight:terrain_shadows",
+            "version": 1
+          }
+        ],
+        "requiredServices": [],
+        "stateCapability": {
+          "allowedBlendModes": [
+            "opaque",
+            "alphaBlend",
+            "nonPremultiplied"
+          ],
+          "allowedDepthModes": [
+            "default",
+            "depthWrite",
+            "depthTestWriteLess",
+            "disabled"
+          ],
+          "allowedRasterizerModes": [
+            "cullCounterClockwiseScissor",
+            "cullClockwiseScissor",
+            "cullNoneScissor"
+          ],
+          "requiresExplicitBlend": true,
+          "requiresExplicitDepth": true,
+          "requiresExplicitRasterizer": true
+        },
+        "systemBindings": [
+          {
+            "id": "dawnlight:scene_binding/animated_texture",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/block_texture",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/camera_direction",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/camera_normal_world_to_view_matrix",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/camera_position",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/camera_view_matrix",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/chunk_coordinates",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/fog_bottom_top_density",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/fog_color",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/fog_proc",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/fog_y_multiplier",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/frame_time_counter",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/game_time",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/haze_start_density",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/light_table",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/model_shadow_matrix",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/ocean_perlin_offset",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/player_position",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/precipitation_proc",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/screen_size",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/season",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/season_humidity",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/shadow_extent",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/skylight",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/sun_direction",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/sun_position",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/system_time",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/terrain_alpha_mode",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/terrain_origin",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/terrain_shadow_matrix_0",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/terrain_shadow_matrix_1",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/terrain_texture_lod",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/terrain_texture_lod_enabled",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/time_of_season",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/top_height",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/view_position",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/view_projection",
+            "required": true,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/view_underwater_depth",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/visibility_range",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/wind_phase",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/world_day_time",
+            "required": false,
+            "version": 1
+          }
+        ],
+        "targetCapability": {
+          "allowedColorLoadOps": [
+            "load",
+            "clear",
+            "dontCare"
+          ],
+          "allowedColorStoreOps": [
+            "store",
+            "dontCare"
+          ],
+          "allowedDepthLoadOps": [
+            "load",
+            "clear",
+            "dontCare"
+          ],
+          "allowedDepthStoreOps": [
+            "store",
+            "dontCare"
+          ],
+          "allowedOutputLocations": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "depthRequirement": "required",
+          "maximumColorAttachments": 8,
+          "minimumColorAttachments": 1
+        },
+        "version": 3,
+        "vertexAbi": {
+          "id": "dawnlight:vertex/terrain_chunk",
+          "version": 1
+        }
+      },
+      {
+        "category": {
+          "id": "dawnlight:scene/terrain_opaque",
+          "version": 1
+        },
+        "id": "dawnlight:scene_draw/terrain_opaque",
+        "permittedServices": [
+          {
+            "id": "dawnlight:model_shadows",
+            "version": 1
+          },
+          {
+            "id": "dawnlight:terrain_shadows",
+            "version": 1
+          }
+        ],
+        "requiredServices": [],
+        "stateCapability": {
+          "allowedBlendModes": [
+            "opaque",
+            "alphaBlend",
+            "nonPremultiplied"
+          ],
+          "allowedDepthModes": [
+            "default",
+            "depthWrite",
+            "depthTestWriteLess",
+            "disabled"
+          ],
+          "allowedRasterizerModes": [
+            "cullCounterClockwiseScissor",
+            "cullClockwiseScissor",
+            "cullNoneScissor"
+          ],
+          "requiresExplicitBlend": true,
+          "requiresExplicitDepth": true,
+          "requiresExplicitRasterizer": true
+        },
+        "systemBindings": [
+          {
+            "id": "dawnlight:scene_binding/animated_texture",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/block_texture",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/chunk_coordinates",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/light_table",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/terrain_origin",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/top_height",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/view_position",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/view_projection",
+            "required": true,
+            "version": 1
+          }
+        ],
+        "targetCapability": {
+          "allowedColorLoadOps": [
+            "load",
+            "clear",
+            "dontCare"
+          ],
+          "allowedColorStoreOps": [
+            "store",
+            "dontCare"
+          ],
+          "allowedDepthLoadOps": [
+            "load",
+            "clear",
+            "dontCare"
+          ],
+          "allowedDepthStoreOps": [
+            "store",
+            "dontCare"
+          ],
+          "allowedOutputLocations": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "depthRequirement": "required",
+          "maximumColorAttachments": 8,
+          "minimumColorAttachments": 1
+        },
+        "version": 2,
+        "vertexAbi": {
+          "id": "dawnlight:vertex/terrain_chunk",
+          "version": 1
+        }
+      },
+      {
+        "category": {
+          "id": "dawnlight:scene/terrain_opaque",
+          "version": 1
+        },
+        "id": "dawnlight:scene_draw/terrain_opaque",
+        "permittedServices": [
+          {
+            "id": "dawnlight:model_shadows",
+            "version": 1
+          },
+          {
+            "id": "dawnlight:ocean_wave",
+            "version": 1
+          },
+          {
+            "id": "dawnlight:point_lights",
+            "version": 1
+          },
+          {
+            "id": "dawnlight:terrain_shadows",
+            "version": 1
+          }
+        ],
+        "requiredServices": [],
+        "stateCapability": {
+          "allowedBlendModes": [
+            "opaque",
+            "alphaBlend",
+            "nonPremultiplied"
+          ],
+          "allowedDepthModes": [
+            "default",
+            "depthWrite",
+            "depthTestWriteLess",
+            "disabled"
+          ],
+          "allowedRasterizerModes": [
+            "cullCounterClockwiseScissor",
+            "cullClockwiseScissor",
+            "cullNoneScissor"
+          ],
+          "requiresExplicitBlend": true,
+          "requiresExplicitDepth": true,
+          "requiresExplicitRasterizer": true
+        },
+        "systemBindings": [
+          {
+            "id": "dawnlight:scene_binding/animated_texture",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/block_texture",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/camera_direction",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/camera_normal_world_to_view_matrix",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/camera_position",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/camera_view_matrix",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/chunk_coordinates",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/fog_bottom_top_density",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/fog_color",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/fog_proc",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/fog_y_multiplier",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/frame_time_counter",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/game_time",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/haze_start_density",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/light_table",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/model_shadow_matrix",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/ocean_perlin_offset",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/player_position",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/precipitation_proc",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/screen_size",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/season",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/season_humidity",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/shadow_extent",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/skylight",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/sun_direction",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/sun_position",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/system_time",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/terrain_alpha_mode",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/terrain_origin",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/terrain_shadow_matrix_0",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/terrain_shadow_matrix_1",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/terrain_texture_lod",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/terrain_texture_lod_enabled",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/time_of_season",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/top_height",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/view_position",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/view_projection",
+            "required": true,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/view_underwater_depth",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/visibility_range",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/wind_phase",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/world_day_time",
+            "required": false,
+            "version": 1
+          }
+        ],
+        "targetCapability": {
+          "allowedColorLoadOps": [
+            "load",
+            "clear",
+            "dontCare"
+          ],
+          "allowedColorStoreOps": [
+            "store",
+            "dontCare"
+          ],
+          "allowedDepthLoadOps": [
+            "load",
+            "clear",
+            "dontCare"
+          ],
+          "allowedDepthStoreOps": [
+            "store",
+            "dontCare"
+          ],
+          "allowedOutputLocations": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "depthRequirement": "required",
+          "maximumColorAttachments": 8,
+          "minimumColorAttachments": 1
+        },
+        "version": 3,
+        "vertexAbi": {
+          "id": "dawnlight:vertex/terrain_chunk",
+          "version": 1
+        }
+      },
+      {
+        "category": {
+          "id": "dawnlight:scene/terrain_sorted_translucent",
+          "version": 1
+        },
+        "id": "dawnlight:scene_draw/terrain_sorted_translucent",
+        "permittedServices": [
+          {
+            "id": "dawnlight:model_shadows",
+            "version": 1
+          },
+          {
+            "id": "dawnlight:terrain_shadows",
+            "version": 1
+          }
+        ],
+        "requiredServices": [],
+        "stateCapability": {
+          "allowedBlendModes": [
+            "opaque",
+            "alphaBlend",
+            "nonPremultiplied"
+          ],
+          "allowedDepthModes": [
+            "default",
+            "depthWrite",
+            "depthTestWriteLess",
+            "disabled"
+          ],
+          "allowedRasterizerModes": [
+            "cullCounterClockwiseScissor",
+            "cullClockwiseScissor",
+            "cullNoneScissor"
+          ],
+          "requiresExplicitBlend": true,
+          "requiresExplicitDepth": true,
+          "requiresExplicitRasterizer": true
+        },
+        "systemBindings": [
+          {
+            "id": "dawnlight:scene_binding/animated_texture",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/block_texture",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/chunk_coordinates",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/light_table",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/terrain_origin",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/top_height",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/view_position",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/view_projection",
+            "required": true,
+            "version": 1
+          }
+        ],
+        "targetCapability": {
+          "allowedColorLoadOps": [
+            "load",
+            "clear",
+            "dontCare"
+          ],
+          "allowedColorStoreOps": [
+            "store",
+            "dontCare"
+          ],
+          "allowedDepthLoadOps": [
+            "load",
+            "clear",
+            "dontCare"
+          ],
+          "allowedDepthStoreOps": [
+            "store",
+            "dontCare"
+          ],
+          "allowedOutputLocations": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "depthRequirement": "required",
+          "maximumColorAttachments": 8,
+          "minimumColorAttachments": 1
+        },
+        "version": 2,
+        "vertexAbi": {
+          "id": "dawnlight:vertex/terrain_chunk",
+          "version": 1
+        }
+      },
+      {
+        "category": {
+          "id": "dawnlight:scene/terrain_sorted_translucent",
+          "version": 1
+        },
+        "id": "dawnlight:scene_draw/terrain_sorted_translucent",
+        "permittedServices": [
+          {
+            "id": "dawnlight:model_shadows",
+            "version": 1
+          },
+          {
+            "id": "dawnlight:ocean_wave",
+            "version": 1
+          },
+          {
+            "id": "dawnlight:point_lights",
+            "version": 1
+          },
+          {
+            "id": "dawnlight:terrain_shadows",
+            "version": 1
+          }
+        ],
+        "requiredServices": [],
+        "stateCapability": {
+          "allowedBlendModes": [
+            "opaque",
+            "alphaBlend",
+            "nonPremultiplied"
+          ],
+          "allowedDepthModes": [
+            "default",
+            "depthWrite",
+            "depthTestWriteLess",
+            "disabled"
+          ],
+          "allowedRasterizerModes": [
+            "cullCounterClockwiseScissor",
+            "cullClockwiseScissor",
+            "cullNoneScissor"
+          ],
+          "requiresExplicitBlend": true,
+          "requiresExplicitDepth": true,
+          "requiresExplicitRasterizer": true
+        },
+        "systemBindings": [
+          {
+            "id": "dawnlight:scene_binding/animated_texture",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/block_texture",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/camera_direction",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/camera_normal_world_to_view_matrix",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/camera_position",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/camera_view_matrix",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/chunk_coordinates",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/fog_bottom_top_density",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/fog_color",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/fog_proc",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/fog_y_multiplier",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/frame_time_counter",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/game_time",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/haze_start_density",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/light_table",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/model_shadow_matrix",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/ocean_perlin_offset",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/player_position",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/precipitation_proc",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/screen_size",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/season",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/season_humidity",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/shadow_extent",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/skylight",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/sun_direction",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/sun_position",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/system_time",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/terrain_alpha_mode",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/terrain_origin",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/terrain_shadow_matrix_0",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/terrain_shadow_matrix_1",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/terrain_texture_lod",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/terrain_texture_lod_enabled",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/time_of_season",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/top_height",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/view_position",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/view_projection",
+            "required": true,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/view_underwater_depth",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/visibility_range",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/wind_phase",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/world_day_time",
+            "required": false,
+            "version": 1
+          }
+        ],
+        "targetCapability": {
+          "allowedColorLoadOps": [
+            "load",
+            "clear",
+            "dontCare"
+          ],
+          "allowedColorStoreOps": [
+            "store",
+            "dontCare"
+          ],
+          "allowedDepthLoadOps": [
+            "load",
+            "clear",
+            "dontCare"
+          ],
+          "allowedDepthStoreOps": [
+            "store",
+            "dontCare"
+          ],
+          "allowedOutputLocations": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "depthRequirement": "required",
+          "maximumColorAttachments": 8,
+          "minimumColorAttachments": 1
+        },
+        "version": 3,
+        "vertexAbi": {
+          "id": "dawnlight:vertex/terrain_chunk",
+          "version": 1
+        }
+      },
+      {
+        "category": {
+          "id": "dawnlight:scene/terrain_transparent",
+          "version": 1
+        },
+        "id": "dawnlight:scene_draw/terrain_transparent",
+        "permittedServices": [
+          {
+            "id": "dawnlight:ocean_wave",
+            "version": 1
+          },
+          {
+            "id": "dawnlight:terrain_shadows",
+            "version": 1
+          }
+        ],
+        "requiredServices": [],
+        "stateCapability": {
+          "allowedBlendModes": [
+            "opaque",
+            "alphaBlend",
+            "nonPremultiplied"
+          ],
+          "allowedDepthModes": [
+            "default",
+            "depthWrite",
+            "depthTestWriteLess",
+            "disabled"
+          ],
+          "allowedRasterizerModes": [
+            "cullCounterClockwiseScissor",
+            "cullClockwiseScissor",
+            "cullNoneScissor"
+          ],
+          "requiresExplicitBlend": true,
+          "requiresExplicitDepth": true,
+          "requiresExplicitRasterizer": true
+        },
+        "systemBindings": [
+          {
+            "id": "dawnlight:scene_binding/animated_texture",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/block_texture",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/chunk_coordinates",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/light_table",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/terrain_origin",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/top_height",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/view_position",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/view_projection",
+            "required": true,
+            "version": 1
+          }
+        ],
+        "targetCapability": {
+          "allowedColorLoadOps": [
+            "load",
+            "clear",
+            "dontCare"
+          ],
+          "allowedColorStoreOps": [
+            "store",
+            "dontCare"
+          ],
+          "allowedDepthLoadOps": [
+            "load",
+            "clear",
+            "dontCare"
+          ],
+          "allowedDepthStoreOps": [
+            "store",
+            "dontCare"
+          ],
+          "allowedOutputLocations": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "depthRequirement": "required",
+          "maximumColorAttachments": 8,
+          "minimumColorAttachments": 1
+        },
+        "version": 2,
+        "vertexAbi": {
+          "id": "dawnlight:vertex/terrain_chunk",
+          "version": 1
+        }
+      },
+      {
+        "category": {
+          "id": "dawnlight:scene/terrain_transparent",
+          "version": 1
+        },
+        "id": "dawnlight:scene_draw/terrain_transparent",
+        "permittedServices": [
+          {
+            "id": "dawnlight:model_shadows",
+            "version": 1
+          },
+          {
+            "id": "dawnlight:ocean_wave",
+            "version": 1
+          },
+          {
+            "id": "dawnlight:point_lights",
+            "version": 1
+          },
+          {
+            "id": "dawnlight:terrain_shadows",
+            "version": 1
+          }
+        ],
+        "requiredServices": [],
+        "stateCapability": {
+          "allowedBlendModes": [
+            "opaque",
+            "alphaBlend",
+            "nonPremultiplied"
+          ],
+          "allowedDepthModes": [
+            "default",
+            "depthWrite",
+            "depthTestWriteLess",
+            "disabled"
+          ],
+          "allowedRasterizerModes": [
+            "cullCounterClockwiseScissor",
+            "cullClockwiseScissor",
+            "cullNoneScissor"
+          ],
+          "requiresExplicitBlend": true,
+          "requiresExplicitDepth": true,
+          "requiresExplicitRasterizer": true
+        },
+        "systemBindings": [
+          {
+            "id": "dawnlight:scene_binding/animated_texture",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/block_texture",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/camera_direction",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/camera_normal_world_to_view_matrix",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/camera_position",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/camera_view_matrix",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/chunk_coordinates",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/fog_bottom_top_density",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/fog_color",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/fog_proc",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/fog_y_multiplier",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/frame_time_counter",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/game_time",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/haze_start_density",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/light_table",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/model_shadow_matrix",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/ocean_perlin_offset",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/player_position",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/precipitation_proc",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/screen_size",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/season",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/season_humidity",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/shadow_extent",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/skylight",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/sun_direction",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/sun_position",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/system_time",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/terrain_alpha_mode",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/terrain_origin",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/terrain_shadow_matrix_0",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/terrain_shadow_matrix_1",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/terrain_texture_lod",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/terrain_texture_lod_enabled",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/time_of_season",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/top_height",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/view_position",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/view_projection",
+            "required": true,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/view_underwater_depth",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/visibility_range",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/wind_phase",
+            "required": false,
+            "version": 1
+          },
+          {
+            "id": "dawnlight:scene_binding/world_day_time",
+            "required": false,
+            "version": 1
+          }
+        ],
+        "targetCapability": {
+          "allowedColorLoadOps": [
+            "load",
+            "clear",
+            "dontCare"
+          ],
+          "allowedColorStoreOps": [
+            "store",
+            "dontCare"
+          ],
+          "allowedDepthLoadOps": [
+            "load",
+            "clear",
+            "dontCare"
+          ],
+          "allowedDepthStoreOps": [
+            "store",
+            "dontCare"
+          ],
+          "allowedOutputLocations": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "depthRequirement": "required",
+          "maximumColorAttachments": 8,
+          "minimumColorAttachments": 1
+        },
+        "version": 3,
+        "vertexAbi": {
+          "id": "dawnlight:vertex/terrain_chunk",
+          "version": 1
+        }
+      }
+    ],
+    "sceneFallbacks": [
+      {
+        "activeOutputLocations": [
+          0
+        ],
+        "category": {
+          "id": "dawnlight:scene/terrain_alpha_tested",
+          "version": 1
+        },
+        "programId": "dawnlight:scene_fallback/terrain_alpha_tested",
+        "provenance": "builtInFallbackRecipe",
+        "provider": {
+          "id": "dawnlight:scene_draw/terrain_alpha_tested",
+          "version": 2
+        },
+        "sourceOwner": "builtin"
+      },
+      {
+        "activeOutputLocations": [
+          0
+        ],
+        "category": {
+          "id": "dawnlight:scene/terrain_opaque",
+          "version": 1
+        },
+        "programId": "dawnlight:scene_fallback/terrain_opaque",
+        "provenance": "builtInFallbackRecipe",
+        "provider": {
+          "id": "dawnlight:scene_draw/terrain_opaque",
+          "version": 2
+        },
+        "sourceOwner": "builtin"
+      },
+      {
+        "activeOutputLocations": [
+          0
+        ],
+        "category": {
+          "id": "dawnlight:scene/terrain_sorted_translucent",
+          "version": 1
+        },
+        "programId": "dawnlight:scene_fallback/terrain_sorted_translucent",
+        "provenance": "builtInFallbackRecipe",
+        "provider": {
+          "id": "dawnlight:scene_draw/terrain_sorted_translucent",
+          "version": 2
+        },
+        "sourceOwner": "builtin"
+      },
+      {
+        "activeOutputLocations": [
+          0
+        ],
+        "category": {
+          "id": "dawnlight:scene/terrain_transparent",
+          "version": 1
+        },
+        "programId": "dawnlight:scene_fallback/terrain_transparent",
+        "provenance": "builtInFallbackRecipe",
+        "provider": {
+          "id": "dawnlight:scene_draw/terrain_transparent",
+          "version": 2
+        },
+        "sourceOwner": "builtin"
+      }
+    ],
+    "sceneSystemBindings": [
+      {
+        "frequency": "draw",
+        "id": "dawnlight:scene_binding/animated_texture",
+        "slotKind": "none",
+        "sourceSpace": "encodedObjectData",
+        "targetSpace": "notApplicable",
+        "valueKind": "float",
+        "version": 1
+      },
+      {
+        "frequency": "draw",
+        "id": "dawnlight:scene_binding/block_texture",
+        "slotKind": "texture",
+        "sourceSpace": "texture",
+        "targetSpace": "notApplicable",
+        "valueKind": "sampler2D",
+        "version": 1
+      },
+      {
+        "frequency": "view",
+        "id": "dawnlight:scene_binding/camera_direction",
+        "slotKind": "none",
+        "sourceSpace": "world",
+        "targetSpace": "notApplicable",
+        "valueKind": "vector3",
+        "version": 1
+      },
+      {
+        "frequency": "view",
+        "id": "dawnlight:scene_binding/camera_normal_world_to_view_matrix",
+        "slotKind": "none",
+        "sourceSpace": "world",
+        "targetSpace": "cameraRelativeWorld",
+        "valueKind": "matrix3",
+        "version": 1
+      },
+      {
+        "frequency": "view",
+        "id": "dawnlight:scene_binding/camera_position",
+        "slotKind": "none",
+        "sourceSpace": "world",
+        "targetSpace": "notApplicable",
+        "valueKind": "vector3",
+        "version": 1
+      },
+      {
+        "frequency": "view",
+        "id": "dawnlight:scene_binding/camera_view_matrix",
+        "slotKind": "none",
+        "sourceSpace": "world",
+        "targetSpace": "cameraRelativeWorld",
+        "valueKind": "matrix4",
+        "version": 1
+      },
+      {
+        "frequency": "draw",
+        "id": "dawnlight:scene_binding/chunk_coordinates",
+        "slotKind": "none",
+        "sourceSpace": "terrainChunk",
+        "targetSpace": "notApplicable",
+        "valueKind": "vector2",
+        "version": 1
+      },
+      {
+        "frequency": "view",
+        "id": "dawnlight:scene_binding/fog_bottom_top_density",
+        "slotKind": "none",
+        "sourceSpace": "notApplicable",
+        "targetSpace": "notApplicable",
+        "valueKind": "vector3",
+        "version": 1
+      },
+      {
+        "frequency": "view",
+        "id": "dawnlight:scene_binding/fog_color",
+        "slotKind": "none",
+        "sourceSpace": "notApplicable",
+        "targetSpace": "notApplicable",
+        "valueKind": "vector3",
+        "version": 1
+      },
+      {
+        "frequency": "frame",
+        "id": "dawnlight:scene_binding/fog_proc",
+        "slotKind": "none",
+        "sourceSpace": "notApplicable",
+        "targetSpace": "notApplicable",
+        "valueKind": "float",
+        "version": 1
+      },
+      {
+        "frequency": "view",
+        "id": "dawnlight:scene_binding/fog_y_multiplier",
+        "slotKind": "none",
+        "sourceSpace": "notApplicable",
+        "targetSpace": "notApplicable",
+        "valueKind": "float",
+        "version": 1
+      },
+      {
+        "frequency": "frame",
+        "id": "dawnlight:scene_binding/frame_time_counter",
+        "slotKind": "none",
+        "sourceSpace": "notApplicable",
+        "targetSpace": "notApplicable",
+        "valueKind": "float",
+        "version": 1
+      },
+      {
+        "frequency": "frame",
+        "id": "dawnlight:scene_binding/game_time",
+        "slotKind": "none",
+        "sourceSpace": "notApplicable",
+        "targetSpace": "notApplicable",
+        "valueKind": "float",
+        "version": 1
+      },
+      {
+        "frequency": "view",
+        "id": "dawnlight:scene_binding/haze_start_density",
+        "slotKind": "none",
+        "sourceSpace": "notApplicable",
+        "targetSpace": "notApplicable",
+        "valueKind": "vector2",
+        "version": 1
+      },
+      {
+        "frequency": "batch",
+        "id": "dawnlight:scene_binding/light_table",
+        "slotKind": "none",
+        "sourceSpace": "encodedObjectData",
+        "targetSpace": "notApplicable",
+        "valueKind": "floatArray",
+        "version": 1
+      },
+      {
+        "frequency": "view",
+        "id": "dawnlight:scene_binding/model_shadow_matrix",
+        "slotKind": "none",
+        "sourceSpace": "world",
+        "targetSpace": "clip",
+        "valueKind": "matrix4",
+        "version": 1
+      },
+      {
+        "frequency": "frame",
+        "id": "dawnlight:scene_binding/ocean_perlin_offset",
+        "slotKind": "none",
+        "sourceSpace": "notApplicable",
+        "targetSpace": "notApplicable",
+        "valueKind": "vector2",
+        "version": 1
+      },
+      {
+        "frequency": "frame",
+        "id": "dawnlight:scene_binding/player_position",
+        "slotKind": "none",
+        "sourceSpace": "world",
+        "targetSpace": "notApplicable",
+        "valueKind": "vector3",
+        "version": 1
+      },
+      {
+        "frequency": "frame",
+        "id": "dawnlight:scene_binding/precipitation_proc",
+        "slotKind": "none",
+        "sourceSpace": "notApplicable",
+        "targetSpace": "notApplicable",
+        "valueKind": "float",
+        "version": 1
+      },
+      {
+        "frequency": "view",
+        "id": "dawnlight:scene_binding/screen_size",
+        "slotKind": "none",
+        "sourceSpace": "notApplicable",
+        "targetSpace": "notApplicable",
+        "valueKind": "vector2",
+        "version": 1
+      },
+      {
+        "frequency": "frame",
+        "id": "dawnlight:scene_binding/season",
+        "slotKind": "none",
+        "sourceSpace": "notApplicable",
+        "targetSpace": "notApplicable",
+        "valueKind": "int",
+        "version": 1
+      },
+      {
+        "frequency": "frame",
+        "id": "dawnlight:scene_binding/season_humidity",
+        "slotKind": "none",
+        "sourceSpace": "notApplicable",
+        "targetSpace": "notApplicable",
+        "valueKind": "float",
+        "version": 1
+      },
+      {
+        "frequency": "view",
+        "id": "dawnlight:scene_binding/shadow_extent",
+        "slotKind": "none",
+        "sourceSpace": "notApplicable",
+        "targetSpace": "notApplicable",
+        "valueKind": "float",
+        "version": 1
+      },
+      {
+        "frequency": "frame",
+        "id": "dawnlight:scene_binding/skylight",
+        "slotKind": "none",
+        "sourceSpace": "notApplicable",
+        "targetSpace": "notApplicable",
+        "valueKind": "int",
+        "version": 1
+      },
+      {
+        "frequency": "frame",
+        "id": "dawnlight:scene_binding/sun_direction",
+        "slotKind": "none",
+        "sourceSpace": "world",
+        "targetSpace": "notApplicable",
+        "valueKind": "vector3",
+        "version": 1
+      },
+      {
+        "frequency": "frame",
+        "id": "dawnlight:scene_binding/sun_position",
+        "slotKind": "none",
+        "sourceSpace": "world",
+        "targetSpace": "notApplicable",
+        "valueKind": "vector3",
+        "version": 1
+      },
+      {
+        "frequency": "frame",
+        "id": "dawnlight:scene_binding/system_time",
+        "slotKind": "none",
+        "sourceSpace": "notApplicable",
+        "targetSpace": "notApplicable",
+        "valueKind": "float",
+        "version": 1
+      },
+      {
+        "frequency": "draw",
+        "id": "dawnlight:scene_binding/terrain_alpha_mode",
+        "slotKind": "none",
+        "sourceSpace": "notApplicable",
+        "targetSpace": "notApplicable",
+        "valueKind": "int",
+        "version": 1
+      },
+      {
+        "frequency": "view",
+        "id": "dawnlight:scene_binding/terrain_origin",
+        "slotKind": "none",
+        "sourceSpace": "world",
+        "targetSpace": "notApplicable",
+        "valueKind": "vector2",
+        "version": 1
+      },
+      {
+        "frequency": "view",
+        "id": "dawnlight:scene_binding/terrain_shadow_matrix_0",
+        "slotKind": "none",
+        "sourceSpace": "world",
+        "targetSpace": "clip",
+        "valueKind": "matrix4",
+        "version": 1
+      },
+      {
+        "frequency": "view",
+        "id": "dawnlight:scene_binding/terrain_shadow_matrix_1",
+        "slotKind": "none",
+        "sourceSpace": "world",
+        "targetSpace": "clip",
+        "valueKind": "matrix4",
+        "version": 1
+      },
+      {
+        "frequency": "frame",
+        "id": "dawnlight:scene_binding/terrain_texture_lod",
+        "slotKind": "texture",
+        "sourceSpace": "texture",
+        "targetSpace": "notApplicable",
+        "valueKind": "sampler2D",
+        "version": 1
+      },
+      {
+        "frequency": "draw",
+        "id": "dawnlight:scene_binding/terrain_texture_lod_enabled",
+        "slotKind": "none",
+        "sourceSpace": "notApplicable",
+        "targetSpace": "notApplicable",
+        "valueKind": "float",
+        "version": 1
+      },
+      {
+        "frequency": "frame",
+        "id": "dawnlight:scene_binding/time_of_season",
+        "slotKind": "none",
+        "sourceSpace": "notApplicable",
+        "targetSpace": "notApplicable",
+        "valueKind": "float",
+        "version": 1
+      },
+      {
+        "frequency": "draw",
+        "id": "dawnlight:scene_binding/top_height",
+        "slotKind": "storageBuffer",
+        "sourceSpace": "terrainChunk",
+        "targetSpace": "notApplicable",
+        "valueKind": "storageBuffer",
+        "version": 1
+      },
+      {
+        "frequency": "view",
+        "id": "dawnlight:scene_binding/view_position",
+        "slotKind": "none",
+        "sourceSpace": "world",
+        "targetSpace": "notApplicable",
+        "valueKind": "vector3",
+        "version": 1
+      },
+      {
+        "frequency": "view",
+        "id": "dawnlight:scene_binding/view_projection",
+        "slotKind": "none",
+        "sourceSpace": "cameraRelativeWorld",
+        "targetSpace": "clip",
+        "valueKind": "matrix4",
+        "version": 1
+      },
+      {
+        "frequency": "view",
+        "id": "dawnlight:scene_binding/view_underwater_depth",
+        "slotKind": "none",
+        "sourceSpace": "notApplicable",
+        "targetSpace": "notApplicable",
+        "valueKind": "float",
+        "version": 1
+      },
+      {
+        "frequency": "view",
+        "id": "dawnlight:scene_binding/visibility_range",
+        "slotKind": "none",
+        "sourceSpace": "notApplicable",
+        "targetSpace": "notApplicable",
+        "valueKind": "float",
+        "version": 1
+      },
+      {
+        "frequency": "frame",
+        "id": "dawnlight:scene_binding/wind_phase",
+        "slotKind": "none",
+        "sourceSpace": "notApplicable",
+        "targetSpace": "notApplicable",
+        "valueKind": "float",
+        "version": 1
+      },
+      {
+        "frequency": "frame",
+        "id": "dawnlight:scene_binding/world_day_time",
+        "slotKind": "none",
+        "sourceSpace": "notApplicable",
+        "targetSpace": "notApplicable",
+        "valueKind": "float",
+        "version": 1
+      }
+    ],
+    "sceneVertexAbis": [
+      {
+        "attributes": [
+          {
+            "componentCount": 2,
+            "coordinateSpace": "texture",
+            "integerInput": false,
+            "location": 0,
+            "normalized": true,
+            "offset": 12,
+            "scalarType": "int16",
+            "semantic": "textureCoordinate",
+            "stream": 0
+          },
+          {
+            "componentCount": 3,
+            "coordinateSpace": "world",
+            "integerInput": false,
+            "location": 1,
+            "normalized": false,
+            "offset": 0,
+            "scalarType": "float32",
+            "semantic": "position",
+            "stream": 0
+          },
+          {
+            "componentCount": 4,
+            "coordinateSpace": "encodedObjectData",
+            "integerInput": false,
+            "location": 2,
+            "normalized": true,
+            "offset": 16,
+            "scalarType": "uint8",
+            "semantic": "color",
+            "stream": 0
+          },
+          {
+            "componentCount": 1,
+            "coordinateSpace": "encodedObjectData",
+            "integerInput": true,
+            "location": 3,
+            "normalized": false,
+            "offset": 0,
+            "scalarType": "uint16",
+            "semantic": "blockIdentifier",
+            "stream": 1
+          },
+          {
+            "componentCount": 3,
+            "coordinateSpace": "encodedObjectData",
+            "integerInput": false,
+            "location": 4,
+            "normalized": false,
+            "offset": 2,
+            "scalarType": "uint8",
+            "semantic": "encodedNormal",
+            "stream": 1
+          },
+          {
+            "componentCount": 1,
+            "coordinateSpace": "encodedObjectData",
+            "integerInput": false,
+            "location": 5,
+            "normalized": false,
+            "offset": 5,
+            "scalarType": "int8",
+            "semantic": "lightLevel",
+            "stream": 1
+          },
+          {
+            "componentCount": 1,
+            "coordinateSpace": "encodedObjectData",
+            "integerInput": false,
+            "location": 6,
+            "normalized": false,
+            "offset": 6,
+            "scalarType": "int8",
+            "semantic": "pureLight",
+            "stream": 1
+          },
+          {
+            "componentCount": 1,
+            "coordinateSpace": "encodedObjectData",
+            "integerInput": false,
+            "location": 7,
+            "normalized": false,
+            "offset": 7,
+            "scalarType": "uint8",
+            "semantic": "heightData",
+            "stream": 1
+          }
+        ],
+        "id": "dawnlight:vertex/terrain_chunk",
+        "streams": [
+          {
+            "stream": 0,
+            "stride": 20
+          },
+          {
+            "stream": 1,
+            "stride": 8
+          }
+        ],
+        "version": 1
+      }
+    ],
+    "semantics": [
+      {
+        "id": "dawnlight:atmosphere/fog_color",
+        "valueKind": "vector3",
+        "version": 1
+      },
+      {
+        "id": "dawnlight:atmosphere/fog_proc",
+        "valueKind": "float",
+        "version": 1
+      },
+      {
+        "id": "dawnlight:atmosphere/season",
+        "valueKind": "int",
+        "version": 1
+      },
+      {
+        "id": "dawnlight:atmosphere/skylight",
+        "valueKind": "int",
+        "version": 1
+      },
+      {
+        "id": "dawnlight:atmosphere/sun_direction",
+        "valueKind": "vector3",
+        "version": 1
+      },
+      {
+        "id": "dawnlight:atmosphere/sun_position",
+        "valueKind": "vector3",
+        "version": 1
+      },
+      {
+        "id": "dawnlight:atmosphere/time_of_season",
+        "valueKind": "float",
+        "version": 1
+      },
+      {
+        "id": "dawnlight:atmosphere/visibility_range",
+        "valueKind": "float",
+        "version": 1
+      },
+      {
+        "id": "dawnlight:camera/direction",
+        "valueKind": "vector3",
+        "version": 1
+      },
+      {
+        "id": "dawnlight:camera/far_plane",
+        "valueKind": "float",
+        "version": 1
+      },
+      {
+        "id": "dawnlight:camera/near_plane",
+        "valueKind": "float",
+        "version": 1
+      },
+      {
+        "id": "dawnlight:camera/normal_world_to_view_matrix",
+        "valueKind": "matrix3",
+        "version": 1
+      },
+      {
+        "id": "dawnlight:camera/position",
+        "valueKind": "vector3",
+        "version": 1
+      },
+      {
+        "id": "dawnlight:camera/projection_inverse_matrix",
+        "valueKind": "matrix4",
+        "version": 1
+      },
+      {
+        "id": "dawnlight:camera/projection_matrix",
+        "valueKind": "matrix4",
+        "version": 1
+      },
+      {
+        "id": "dawnlight:camera/view_inverse_matrix",
+        "valueKind": "matrix4",
+        "version": 1
+      },
+      {
+        "id": "dawnlight:camera/view_matrix",
+        "valueKind": "matrix4",
+        "version": 1
+      },
+      {
+        "id": "dawnlight:environment/temperature",
+        "valueKind": "float",
+        "version": 1
+      },
+      {
+        "id": "dawnlight:environment/temperature_target",
+        "valueKind": "float",
+        "version": 1
+      },
+      {
+        "id": "dawnlight:environment/view_underwater_depth",
+        "valueKind": "float",
+        "version": 1
+      },
+      {
+        "id": "dawnlight:frame/game_time",
+        "valueKind": "float",
+        "version": 1
+      },
+      {
+        "id": "dawnlight:frame/screen_size",
+        "valueKind": "vector2",
+        "version": 1
+      },
+      {
+        "id": "dawnlight:frame/system_time",
+        "valueKind": "float",
+        "version": 1
+      },
+      {
+        "id": "dawnlight:frame/view_height",
+        "valueKind": "float",
+        "version": 1
+      },
+      {
+        "id": "dawnlight:frame/view_width",
+        "valueKind": "float",
+        "version": 1
+      },
+      {
+        "id": "dawnlight:lighting/handheld_color_intensity",
+        "valueKind": "vector4",
+        "version": 1
+      },
+      {
+        "id": "dawnlight:lighting/handheld_position_radius",
+        "valueKind": "vector4",
+        "version": 1
+      },
+      {
+        "id": "dawnlight:point_lights/cluster_dimensions",
+        "requiredServices": [
+          "dawnlight:point_lights@1"
+        ],
+        "valueKind": "intVector3",
+        "version": 1
+      },
+      {
+        "id": "dawnlight:point_lights/cluster_x",
+        "requiredServices": [
+          "dawnlight:point_lights@1"
+        ],
+        "valueKind": "int",
+        "version": 1
+      },
+      {
+        "id": "dawnlight:point_lights/cluster_y",
+        "requiredServices": [
+          "dawnlight:point_lights@1"
+        ],
+        "valueKind": "int",
+        "version": 1
+      },
+      {
+        "id": "dawnlight:point_lights/cluster_z",
+        "requiredServices": [
+          "dawnlight:point_lights@1"
+        ],
+        "valueKind": "int",
+        "version": 1
+      },
+      {
+        "id": "dawnlight:point_lights/total_lights",
+        "requiredServices": [
+          "dawnlight:point_lights@1"
+        ],
+        "valueKind": "uint",
+        "version": 1
+      },
+      {
+        "id": "dawnlight:shaft/sun_screen_uv",
+        "valueKind": "vector2",
+        "version": 1
+      },
+      {
+        "id": "dawnlight:weather/precipitation_proc",
+        "valueKind": "float",
+        "version": 1
+      }
+    ],
+    "services": [
+      {
+        "id": "dawnlight:cubemap",
+        "version": 1
+      },
+      {
+        "id": "dawnlight:frame_uniforms",
+        "version": 1
+      },
+      {
+        "id": "dawnlight:model_shadows",
+        "version": 1
+      },
+      {
+        "id": "dawnlight:ocean_wave",
+        "version": 1
+      },
+      {
+        "id": "dawnlight:point_lights",
+        "version": 1
+      },
+      {
+        "id": "dawnlight:scene_target",
+        "version": 1
+      },
+      {
+        "id": "dawnlight:terrain_shadows",
+        "version": 1
+      }
+    ],
+    "stageTemplates": [
+      {
+        "id": "dawnlight:command_list",
+        "version": 1
+      },
+      {
+        "id": "dawnlight:compute",
+        "version": 1
+      },
+      {
+        "id": "dawnlight:cubemap_capture",
+        "version": 1
+      },
+      {
+        "id": "dawnlight:fullscreen",
+        "version": 1
+      },
+      {
+        "id": "dawnlight:model_shadow",
+        "version": 1
+      },
+      {
+        "id": "dawnlight:ocean_fft",
+        "version": 1
+      },
+      {
+        "id": "dawnlight:point_lights",
+        "version": 1
+      }
+    ]
+  },
+  "catalogContractVersion": 2,
+  "catalogHash": "751f68d2928f48ba49e1c6d56bcc01b5cd5c08f08b263ed6fca55e024eed0f00",
+  "closedTokens": {
+    "bindingAccess": [
+      "readOnly",
+      "writeOnly",
+      "readWrite"
+    ],
+    "bindingKind": [
+      "sampler2D",
+      "samplerCube",
+      "image2D",
+      "uniformBuffer",
+      "storageBuffer"
+    ],
+    "blend": [
+      "inherit",
+      "opaque",
+      "alphaBlend",
+      "nonPremultiplied"
+    ],
+    "bufferUsage": [
+      "staticDraw",
+      "dynamicDraw",
+      "streamDraw"
+    ],
+    "commandKind": [
+      "fullscreen",
+      "compute",
+      "copy",
+      "clear",
+      "present",
+      "engineDraw",
+      "historyCommit"
+    ],
+    "compileMode": [
+      "legacyCustom",
+      "officialCompatible",
+      "manifestDriven"
+    ],
+    "contentEncoding": [
+      "image",
+      "raw"
+    ],
+    "contentType": [
+      "undefined",
+      "clear",
+      "asset",
+      "generated",
+      "external",
+      "service"
+    ],
+    "copyAspect": [
+      "color",
+      "depth"
+    ],
+    "copyFilter": [
+      "nearest",
+      "linear"
+    ],
+    "copyRestore": [
+      "none",
+      "frame"
+    ],
+    "depth": [
+      "inherit",
+      "default",
+      "depthWrite",
+      "depthTestWriteLess",
+      "disabled"
+    ],
+    "impact": [
+      "uniform",
+      "program",
+      "pipeline",
+      "resources"
+    ],
+    "loadOp": [
+      "load",
+      "clear",
+      "dontCare"
+    ],
+    "memoryBarrier": [
+      "shaderImageAccess",
+      "textureFetch",
+      "textureUpdate",
+      "shaderStorage",
+      "bufferUpdate",
+      "framebuffer"
+    ],
+    "optionType": [
+      "boolean",
+      "integer",
+      "number",
+      "string"
+    ],
+    "pipelineTarget": [
+      "world",
+      "afterDraw"
+    ],
+    "programKind": [
+      "graphics",
+      "compute"
+    ],
+    "rasterizer": [
+      "inherit",
+      "cullCounterClockwiseScissor",
+      "cullClockwiseScissor",
+      "cullNoneScissor"
+    ],
+    "resourceKind": [
+      "texture2D",
+      "textureCube",
+      "buffer"
+    ],
+    "resourceLifetime": [
+      "persistent",
+      "frame",
+      "transient",
+      "history",
+      "external"
+    ],
+    "resourceView": [
+      "dawnlight:direct",
+      "dawnlight:history/current",
+      "dawnlight:history/previous",
+      "dawnlight:shadow/consumer",
+      "dawnlight:shadow/producer"
+    ],
+    "sceneBindingFrequency": [
+      "frame",
+      "view",
+      "batch",
+      "draw"
+    ],
+    "sceneRouteMode": [
+      "override",
+      "builtin",
+      "disabled"
+    ],
+    "serviceMode": [
+      "required",
+      "optional"
+    ],
+    "serviceUnavailable": [
+      "disablePass"
+    ],
+    "sizeMode": [
+      "absolute",
+      "viewport",
+      "output"
+    ],
+    "storeOp": [
+      "store",
+      "dontCare"
+    ],
+    "textureFilter": [
+      "nearest",
+      "linear"
+    ],
+    "textureWrap": [
+      "repeat",
+      "clampToEdge",
+      "mirroredRepeat"
+    ],
+    "viewportRestore": [
+      "none",
+      "frame"
+    ],
+    "viewportSource": [
+      "target",
+      "frame"
+    ],
+    "worldPhase": [
+      "modelShadow",
+      "framePrepare",
+      "shadow",
+      "opaque",
+      "transparent",
+      "cloudReflection",
+      "shaftPrepare",
+      "shaftSun",
+      "cloud",
+      "particles",
+      "afterDraw",
+      "afterFinal",
+      "screenOutput"
+    ]
+  },
+  "contractVersion": 1,
+  "manifestVersions": [
+    3,
+    4
+  ],
+  "sceneAbiHash": "4bc28c17beffea2311a422fff9f633d2e4f03784460d0254adda8af2e766d84c"
+}

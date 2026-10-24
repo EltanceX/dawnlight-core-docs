@@ -1,0 +1,283 @@
+{
+  "schemaVersion": 1,
+  "pages": [
+    {
+      "id": "index",
+      "titles": {
+        "zh-CN": "JSON 与 ABI 参考",
+        "en-US": "JSON and ABI reference"
+      },
+      "descriptions": {
+        "zh-CN": "JSON 与 ABI 参考：固定基线的公开结构、行为约束与完整示例。",
+        "en-US": "JSON and ABI reference: pinned public structure, behavior constraints and complete examples."
+      },
+      "examples": [
+        "course/00-starter",
+        "upstream/data-lab"
+      ]
+    },
+    {
+      "id": "manifest",
+      "titles": {
+        "zh-CN": "Manifest 根与组合",
+        "en-US": "Manifest roots and composition"
+      },
+      "descriptions": {
+        "zh-CN": "Manifest 根与组合：固定基线的公开结构、行为约束与完整示例。",
+        "en-US": "Manifest roots and composition: pinned public structure, behavior constraints and complete examples."
+      },
+      "examples": [
+        "upstream/makeup",
+        "course/00-starter"
+      ]
+    },
+    {
+      "id": "options",
+      "titles": {
+        "zh-CN": "Options 与条件",
+        "en-US": "Options and conditions"
+      },
+      "descriptions": {
+        "zh-CN": "Options 与条件：固定基线的公开结构、行为约束与完整示例。",
+        "en-US": "Options and conditions: pinned public structure, behavior constraints and complete examples."
+      },
+      "examples": [
+        "upstream/data-lab",
+        "upstream/dawnlight"
+      ]
+    },
+    {
+      "id": "resources",
+      "titles": {
+        "zh-CN": "Resources、内容与生命周期",
+        "en-US": "Resources, content and lifetime"
+      },
+      "descriptions": {
+        "zh-CN": "Resources、内容与生命周期：固定基线的公开结构、行为约束与完整示例。",
+        "en-US": "Resources, content and lifetime: pinned public structure, behavior constraints and complete examples."
+      },
+      "examples": [
+        "upstream/makeup",
+        "course/02-resources",
+        "reference/uniform-buffer"
+      ]
+    },
+    {
+      "id": "programs",
+      "titles": {
+        "zh-CN": "Programs 与着色器源码",
+        "en-US": "Programs and shader sources"
+      },
+      "descriptions": {
+        "zh-CN": "Programs 与着色器源码：固定基线的公开结构、行为约束与完整示例。",
+        "en-US": "Programs and shader sources: pinned public structure, behavior constraints and complete examples."
+      },
+      "examples": [
+        "upstream/makeup",
+        "course/03-scene"
+      ]
+    },
+    {
+      "id": "passes",
+      "titles": {
+        "zh-CN": "Pass、Stage 与执行关系",
+        "en-US": "Passes, Stages and execution order"
+      },
+      "descriptions": {
+        "zh-CN": "Pass、Stage 与执行关系：固定基线的公开结构、行为约束与完整示例。",
+        "en-US": "Passes, Stages and execution order: pinned public structure, behavior constraints and complete examples."
+      },
+      "examples": [
+        "upstream/makeup",
+        "course/04-mrt"
+      ]
+    },
+    {
+      "id": "commands",
+      "titles": {
+        "zh-CN": "七种 Command",
+        "en-US": "The seven Command kinds"
+      },
+      "descriptions": {
+        "zh-CN": "七种 Command：固定基线的公开结构、行为约束与完整示例。",
+        "en-US": "The seven Command kinds: pinned public structure, behavior constraints and complete examples."
+      },
+      "examples": [
+        "upstream/dawnlight",
+        "upstream/makeup",
+        "course/04-mrt"
+      ]
+    },
+    {
+      "id": "targets",
+      "titles": {
+        "zh-CN": "Targets、drawBuffers 与 state",
+        "en-US": "Targets, drawBuffers and state"
+      },
+      "descriptions": {
+        "zh-CN": "Targets、drawBuffers 与 state：固定基线的公开结构、行为约束与完整示例。",
+        "en-US": "Targets, drawBuffers and state: pinned public structure, behavior constraints and complete examples."
+      },
+      "examples": [
+        "course/04-mrt",
+        "upstream/makeup"
+      ]
+    },
+    {
+      "id": "bindings",
+      "titles": {
+        "zh-CN": "Bindings、Semantics 与比较采样",
+        "en-US": "Bindings, semantics and comparison sampling"
+      },
+      "descriptions": {
+        "zh-CN": "Bindings、Semantics 与比较采样：固定基线的公开结构、行为约束与完整示例。",
+        "en-US": "Bindings, semantics and comparison sampling: pinned public structure, behavior constraints and complete examples."
+      },
+      "examples": [
+        "course/03-scene",
+        "upstream/data-lab",
+        "upstream/makeup",
+        "reference/uniform-buffer"
+      ]
+    },
+    {
+      "id": "scene",
+      "titles": {
+        "zh-CN": "Scene ABI 与 Terrain",
+        "en-US": "Scene ABI and Terrain"
+      },
+      "descriptions": {
+        "zh-CN": "Scene ABI 与 Terrain：固定基线的公开结构、行为约束与完整示例。",
+        "en-US": "Scene ABI and Terrain: pinned public structure, behavior constraints and complete examples."
+      },
+      "examples": [
+        "course/03-scene",
+        "course/04-mrt",
+        "upstream/scene-lab"
+      ]
+    },
+    {
+      "id": "materials",
+      "titles": {
+        "zh-CN": "Materials ABI v1",
+        "en-US": "Materials ABI v1"
+      },
+      "descriptions": {
+        "zh-CN": "Materials ABI v1：固定基线的公开结构、行为约束与完整示例。",
+        "en-US": "Materials ABI v1: pinned public structure, behavior constraints and complete examples."
+      },
+      "examples": [
+        "upstream/data-lab",
+        "reference/uniform-buffer"
+      ]
+    },
+    {
+      "id": "custom-data",
+      "titles": {
+        "zh-CN": "Custom Data ABI v1",
+        "en-US": "Custom Data ABI v1"
+      },
+      "descriptions": {
+        "zh-CN": "Custom Data ABI v1：固定基线的公开结构、行为约束与完整示例。",
+        "en-US": "Custom Data ABI v1: pinned public structure, behavior constraints and complete examples."
+      },
+      "examples": [
+        "upstream/data-lab"
+      ]
+    },
+    {
+      "id": "settings-ui",
+      "titles": {
+        "zh-CN": "设置 UI v1",
+        "en-US": "Settings UI v1"
+      },
+      "descriptions": {
+        "zh-CN": "设置 UI v1：固定基线的公开结构、行为约束与完整示例。",
+        "en-US": "Settings UI v1: pinned public structure, behavior constraints and complete examples."
+      },
+      "examples": [
+        "upstream/data-lab"
+      ]
+    },
+    {
+      "id": "catalog",
+      "titles": {
+        "zh-CN": "公共能力与 ABI Catalog",
+        "en-US": "Public capabilities and ABI Catalog"
+      },
+      "descriptions": {
+        "zh-CN": "公共能力与 ABI Catalog：固定基线的公开结构、行为约束与完整示例。",
+        "en-US": "Public capabilities and ABI Catalog: pinned public structure, behavior constraints and complete examples."
+      },
+      "examples": [
+        "course/03-scene",
+        "upstream/data-lab"
+      ]
+    },
+    {
+      "id": "diagnostics",
+      "titles": {
+        "zh-CN": "诊断代码参考",
+        "en-US": "Diagnostic code reference"
+      },
+      "descriptions": {
+        "zh-CN": "诊断代码参考：固定基线的公开结构、行为约束与完整示例。",
+        "en-US": "Diagnostic code reference: pinned public structure, behavior constraints and complete examples."
+      },
+      "examples": [
+        "course/00-starter",
+        "upstream/scene-lab",
+        "reference/uniform-buffer"
+      ]
+    },
+    {
+      "id": "tool-contracts",
+      "titles": {
+        "zh-CN": "CLI、协议与证据合同",
+        "en-US": "CLI, protocols and evidence contracts"
+      },
+      "descriptions": {
+        "zh-CN": "CLI、协议与证据合同：固定基线的公开结构、行为约束与完整示例。",
+        "en-US": "CLI, protocols and evidence contracts: pinned public structure, behavior constraints and complete examples."
+      },
+      "examples": [
+        "course/00-starter",
+        "upstream/data-lab"
+      ]
+    },
+    {
+      "id": "manifest-versions",
+      "titles": {
+        "zh-CN": "Manifest v3、v4 与 v5",
+        "en-US": "Manifest v3, v4 and v5"
+      },
+      "descriptions": {
+        "zh-CN": "Manifest v3、v4 与 v5：固定基线的公开结构、行为约束与完整示例。",
+        "en-US": "Manifest v3, v4 and v5: pinned public structure, behavior constraints and complete examples."
+      },
+      "examples": [
+        "upstream/scene-lab",
+        "upstream/dawnlight",
+        "upstream/makeup"
+      ]
+    },
+    {
+      "id": "examples",
+      "titles": {
+        "zh-CN": "登记的完整参考示例",
+        "en-US": "Registered complete reference examples"
+      },
+      "descriptions": {
+        "zh-CN": "登记的完整参考示例：固定基线的公开结构、行为约束与完整示例。",
+        "en-US": "Registered complete reference examples: pinned public structure, behavior constraints and complete examples."
+      },
+      "examples": [
+        "upstream/scene-lab",
+        "upstream/data-lab",
+        "upstream/dawnlight",
+        "upstream/makeup",
+        "reference/uniform-buffer"
+      ]
+    }
+  ]
+}

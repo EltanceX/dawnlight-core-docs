@@ -1,0 +1,13 @@
+## Behavior and constraints {#behavior}
+
+Manifest v5 only, with customData.abiVersion=1. Variable id/type/frequency/default/onError/expression is explicit; applicable unit/space must agree with inputs. Types are bool, int, uint, float, vec2/3/4 and mat3/4. Floating lanes must be finite. int/uint retain exact 32-bit words without a float conversion. bool uses 0/1 and matrices use 9/16 column-major float32 lanes.
+
+The full Schema expands seven expression forms: typed literal, ref, input/version, option/as/map, materialProperty/material, call/args and select/whenTrue/whenFalse. Use published input IDs and function names/arities from [Catalog](./catalog#data-inputs). References must be acyclic with compatible types, units, spaces and frequencies. generation/frame/view cannot be slower than their dependencies. Implicit casts, component multiplication and matrixMultiply are different operations.
+
+All branches and unused variables participate in raw AST, reference-depth and budget validation before constant folding. Limits include 256 variables, 4096 AST nodes, depth 64 and 128 custom bindings per command. Weighted operations are generation 32768 and frame/view 8192 each. Materials additionally limits definitions to 4096, properties to 32, tags to 64, groups to 1024 and mappings to 4096. Pack configuration cannot enlarge host budgets.
+
+onError v1 supports useDefault only, requiring a finite, exactly typed default. customBindings symbol/variable connects a declared variable. required=false only permits driver optimization of the declaration; it does not permit type errors, arrays or cross-owner symbol/location collisions. Offline runtimeEvaluated=false describes analysis rather than actual evaluation.
+
+The pinned completion registers 23 version-one inputs. The older guide's list of 11 is incomplete. Logical projection_matrix differs from actual render_projection_matrix; previous_* comes from successful commits of the same main view. history_valid does not replace GPU-history validity. Unavailable differs from available-but-invalid. Render delta is valid only up to 0.25 seconds and must be paired with its valid flag; that older delta contract differs from full temporal history. The machine temporal document retains an early runtimeReady=false, while the current completion and later integration documentation include Providers. Interpret their dates and evidence domains separately.
+
+Temporal extent and jitter use physical pixels, with zero jitter before opt-in. Positions use world blocks; matrix source/target spaces are listed individually. Auxiliary cameras, split-screen and VR do not share this main-view timeline. These references add no temporal game or performance acceptance claim.
