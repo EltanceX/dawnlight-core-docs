@@ -3,7 +3,7 @@ import { jsonBytes, hash } from './locked-inputs.mjs';
 
 function pageHeader(record, title, description, language, context, example) {
   return '---\n' + stringify({
-    title, description, lang: language,
+    title, description, lang: language, editLink: false,
     dawnlight: {
       publication: record.publication, baseline: context.lock.baselineId,
       manifestVersions: [5], sceneAbiVersions: [2], sourceRefs: record.sourceRefs,

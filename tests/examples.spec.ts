@@ -1,14 +1,23 @@
-import { test, expect } from '@playwright/test'
+import { test, expect, type Page } from '@playwright/test'
 import { createHash } from 'node:crypto'
 import { readFile } from 'node:fs/promises'
 
 const sha256 = (bytes: Buffer) => createHash('sha256').update(bytes).digest('hex')
 
+async function waitForHydration(page: Page) {
+  // Remote pages can finish loading their HTML before VitePress's dynamic page
+  // import mounts Vue. Wait for listeners before using SSR-rendered controls.
+  await page.waitForFunction(() => Boolean((document.querySelector('#app') as Element & { __vue_app__?: unknown })?.__vue_app__))
+}
+
 test('generated example pages keep language, section and source code aligned', async ({ page }, testInfo) => {
   await page.goto('examples/')
+  await waitForHydration(page)
+  await expect(page.locator('.edit-link')).toHaveCount(0)
   await page.getByRole('link', { name: '00 · 外置起步包', exact: true }).last().click()
   await expect(page.getByRole('heading', { level: 1, name: '00 · 外置起步包' })).toBeVisible()
   await page.goto('examples/course-starter#shader-sources')
+  await waitForHydration(page)
   const menu = page.locator('.VPNavBarTranslations')
   await menu.getByRole('button').click()
   await menu.getByRole('link', { name: 'English', exact: true }).click()
@@ -16,15 +25,18 @@ test('generated example pages keep language, section and source code aligned', a
   await expect(page.locator('html')).toHaveAttribute('lang', 'en-US')
   expect(await page.locator('#VPContent').innerText()).not.toMatch(/\p{Script=Han}/u)
   await page.reload()
+  await waitForHydration(page)
   await expect(page.locator('#runtime-boundaries')).toHaveText('Runtime checks still required')
   await page.locator('.vp-code-group .tabs label').filter({ hasText: 'shaders/present.psh' }).click()
   const block = page.locator('.vp-code-group div.language-glsl:visible')
+  await expect(block.locator('code')).toContainText('o_color = texture(u_sceneColor, v_uv)')
   await block.hover()
   await block.locator('button.copy').click()
   await expect.poll(() => page.evaluate(() => navigator.clipboard.readText())).toContain('o_color = texture(u_sceneColor, v_uv)')
   await page.locator('details summary').click()
   await expect(page.locator('details code')).toContainText('"id": "course:starter"')
   await page.goto('en/examples/course-starter')
+  await expect(page.locator('.edit-link')).toHaveCount(0)
   await page.screenshot({ path: `artifacts/w3/${testInfo.project.name}-en-starter.png` })
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true)
 })
@@ -59,6 +71,7 @@ test('downloaded ZIP and every raw source file match the published inventory', a
 test('local search finds the generated example in each language', async ({ page }) => {
   for (const [prefix, button] of [['', '搜索文档'], ['en/', 'Search docs']]) {
     await page.goto(prefix || './')
+    await waitForHydration(page)
     await page.getByRole('button', { name: button, exact: true }).click()
     await page.locator('#localsearch-input').fill('course:post/present')
     await expect(page.locator(`.VPLocalSearchBox a[href*="/${prefix}examples/course-starter"]`).first()).toBeVisible()

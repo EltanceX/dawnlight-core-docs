@@ -15,7 +15,7 @@
 | `site/.vitepress/generated/output-manifest.json` | 确定性生成文件清单 |
 | `artifacts/w3/` | 私有原始检查输出、浏览器截图及本地报告，不发布 |
 
-生成目录均忽略 Git，由公开输入重建。示例文本固定为 UTF-8 LF；`.gitattributes` 保障 Windows 和 Linux 的源码及下载哈希一致。
+生成目录均忽略 Git，由公开输入重建。生成页关闭默认的 GitHub 编辑链接，避免链接到未入库的派生文件；请修改登记源码或生成模板。示例文本固定为 UTF-8 LF；`.gitattributes` 保障 Windows 和 Linux 的源码及下载哈希一致。
 
 ## 新增示例
 

@@ -88,6 +88,9 @@ test('generation is deterministic, preserves source bytes and detects edited der
   const registry = await readJson(path.join(root, 'metadata/pages.json'));
   const a = exampleOutputs(context, report, registry), b = exampleOutputs(context, report, registry);
   assert.equal(hash(jsonBytes([...a].map(([name, bytes]) => [name, hash(bytes)]))), hash(jsonBytes([...b].map(([name, bytes]) => [name, hash(bytes)]))));
+  for (const [name, bytes] of a) {
+    if (name.endsWith('.md') && !name.startsWith('site/public/')) assert.equal(frontmatter(bytes.toString(), name).editLink, false, `${name}: generated pages must not link to an untracked edit target`);
+  }
   await applyOutputs(a, { root });
   await applyOutputs(b, { root, check: true });
   assert.equal((await loadExamples(root)).examples[0].sourceFingerprint, context.examples[0].sourceFingerprint);
