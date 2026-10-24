@@ -8,6 +8,7 @@ import { loadReference, schemaCoverage, referencePages } from '../lib/reference-
 import { siteOutputs } from '../lib/site-generator.mjs';
 
 async function fixture(t) {
+  await fs.mkdir(path.join(ROOT,'.cache'),{recursive:true});
   const root=await fs.mkdtemp(path.join(ROOT,'.cache/reference-test-'));
   t.after(async()=>{
     assert.equal(path.dirname(path.resolve(root)),path.resolve(ROOT,'.cache'));
