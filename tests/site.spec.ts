@@ -49,6 +49,7 @@ test('navigation, theme, copy button and baseline download work', async ({ page 
   const copy = block.locator('button.copy')
   await copy.click()
   await expect(copy).toHaveClass(/copied/)
+  await expect.poll(() => page.evaluate(() => navigator.clipboard.readText())).toContain('example:scene/color')
   const response = await page.request.get('downloads/site-baseline.json')
   expect(response.ok()).toBe(true)
   const baseline = await response.json()

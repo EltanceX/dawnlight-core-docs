@@ -12,6 +12,7 @@ export default defineConfig({
   use: {
     baseURL: deployed ?? 'http://127.0.0.1:4173/dawnlight-core-docs/',
     browserName: 'chromium',
+    permissions: ['clipboard-read', 'clipboard-write'],
     colorScheme: 'light',
     channel: process.env.PLAYWRIGHT_CHANNEL || undefined,
     screenshot: 'only-on-failure',
