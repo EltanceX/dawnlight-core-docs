@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "baselineId": "candidate-f8aaa5c4",
-  "status": "locked-inputs-verified-with-runtime-open-items",
+  "status": "website-deployed-with-runtime-open-items",
   "stage": "W2",
   "frozenOn": "2026-10-23",
   "decision": "accepted-for-documentation-toolchain-not-runtime-release",
@@ -213,14 +213,14 @@
     "repositoryName": "dawnlight-core-docs",
     "repositoryNameSource": "user-confirmed",
     "ownerCandidate": "EltanceX",
-    "ownerSource": "inferred-from-upstream-remote",
+    "ownerSource": "github-api-confirmed",
     "plannedRepositoryUrl": "https://github.com/EltanceX/dawnlight-core-docs",
-    "remoteStatus": "created-public",
+    "remoteStatus": "verified-public",
     "intendedDefaultBranch": "main",
-    "intendedDefaultBranchStatus": "local-main-awaiting-first-push",
+    "intendedDefaultBranchStatus": "observed-main",
     "pagesBase": "/dawnlight-core-docs/",
     "plannedPagesUrl": "https://eltancex.github.io/dawnlight-core-docs/",
-    "deployed": false,
+    "deployed": true,
     "framework": "VitePress",
     "frameworkVersion": "1.6.4",
     "packageManager": "npm",
@@ -228,7 +228,18 @@
     "firstLanguage": "zh-CN",
     "visibility": "public",
     "npmVersion": "11.19.0",
-    "publicationPolicy": "website-and-public-docs-only-no-full-upstream-snapshot"
+    "publicationPolicy": "website-and-public-docs-only-no-full-upstream-snapshot",
+    "owner": "EltanceX",
+    "repositoryUrl": "https://github.com/EltanceX/dawnlight-core-docs",
+    "defaultBranch": "main",
+    "pagesUrl": "https://eltancex.github.io/dawnlight-core-docs/",
+    "buildType": "workflow",
+    "firstVerifiedDeployment": {
+      "commit": "1c7602c5d26eb1c9ae81b6e10c1e63f09a683dc0",
+      "runId": 40055814317,
+      "runUrl": "https://github.com/EltanceX/dawnlight-core-docs/actions/runs/40055814317",
+      "completedAt": "2026-10-24T02:51:16Z"
+    }
   },
   "discoveryRecords": {
     "sourceMap": {
@@ -268,13 +279,6 @@
     }
   },
   "pendingItems": [
-    {
-      "id": "W0-03",
-      "title": "配置网站远程仓库、分支和 Pages",
-      "phase": "W2",
-      "gate": "deployment",
-      "action": "实施时解析或创建目标基础设施，核实 owner、main 与项目 base；当前 404 不作为存在性证明。"
-    },
     {
       "id": "W0-04",
       "title": "验证外置最小教学包与完整场景路径",
@@ -336,11 +340,26 @@
       "status": "resolved-for-website-toolchain",
       "resolvedIn": "W1",
       "resolution": "432 exact Git blobs were imported; repeated import is deterministic, canonical inputs were revalidated, and core.autocrlf=true commit/clone preserves all vendor bytes."
+    },
+    {
+      "id": "W0-03",
+      "title": "配置网站远程仓库、分支和 Pages",
+      "phase": "W2",
+      "gate": "deployment",
+      "action": "实施时解析或创建目标基础设施，核实 owner、main 与项目 base；当前 404 不作为存在性证明。",
+      "status": "resolved",
+      "resolvedIn": "W2",
+      "resolution": "Public website repository and main branch verified; project Pages deployed from the checked artifact; live HTTP and desktop/mobile browser acceptance passed."
     }
   ],
   "w1Verification": {
     "path": "metadata/w1-verification.json",
     "length": 22160,
     "sha256": "a5decad5a682f6c0db015658de70bff9e7b78f398d6024f7aaa473de08548384"
+  },
+  "w2Verification": {
+    "path": "metadata/w2-verification.json",
+    "length": 5629,
+    "sha256": "1f7533565a2126133dfdf78194919dfd2ffd81503106fd535a23863defc014df"
   }
 }

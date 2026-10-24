@@ -7,7 +7,7 @@ import { publicBaseline } from './sync-site-baseline.mjs';
 const pkg = await readJson(path.join(ROOT, 'package.json'));
 assert.equal(process.versions.node, pkg.engines.node, `Use Node ${pkg.engines.node} from .node-version`);
 const lock = await loadLock();
-for (const item of [...Object.values(lock.discoveryRecords), lock.tool.distribution.inventory, lock.w1Verification]) {
+for (const item of [...Object.values(lock.discoveryRecords), lock.tool.distribution.inventory, lock.w1Verification, ...(lock.w2Verification ? [lock.w2Verification] : [])]) {
   await assertFingerprint(path.join(ROOT, item.path), item);
 }
 const source = await readJson(path.join(ROOT, 'metadata/public-source.json'));

@@ -1,0 +1,202 @@
+{
+  "schemaVersion": 1,
+  "stage": "W2",
+  "verifiedOn": "2026-10-23",
+  "timezone": "America/New_York",
+  "status": "complete",
+  "baselineId": "candidate-f8aaa5c4",
+  "sourceCommit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+  "publication": {
+    "repositoryUrl": "https://github.com/EltanceX/dawnlight-core-docs",
+    "visibility": "public",
+    "defaultBranch": "main",
+    "pagesBase": "/dawnlight-core-docs/",
+    "pagesUrl": "https://eltancex.github.io/dawnlight-core-docs/",
+    "upstreamPublicRepositoryUrl": "https://gitea.com/EltanceX/DawnlightCore",
+    "fullUpstreamSnapshotPublished": false,
+    "excludedTrees": [
+      "vendor/",
+      ".cache/",
+      "artifacts/",
+      "node_modules/"
+    ],
+    "archiveAndBinaryFiles": 0,
+    "credentialPatternFindings": 0,
+    "frozenMetadataStagedHashesMatch": true
+  },
+  "versions": {
+    "node": "24.22.1",
+    "npm": "11.19.0",
+    "vitepress": "1.6.4",
+    "vue": "3.5.44",
+    "playwright": "1.64.1",
+    "viteOverride": "6.4.5",
+    "esbuildOverride": "0.25.12"
+  },
+  "build": {
+    "status": "passed",
+    "htmlPages": 7,
+    "readablePages": 6,
+    "localLinks": 110,
+    "assetReferences": 62,
+    "anchors": 35,
+    "privateSnapshotRequired": false,
+    "npmAuditVulnerabilities": 0
+  },
+  "browser": {
+    "viewports": [
+      {
+        "name": "desktop",
+        "width": 1440,
+        "height": 1000
+      },
+      {
+        "name": "mobile",
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "local": {
+      "browser": "Microsoft Edge Chromium headless",
+      "startTime": "2026-10-24T02:49:51.951Z",
+      "duration": 10100.984,
+      "expected": 12,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "ci": {
+      "browser": "Playwright Chromium headless shell on Ubuntu",
+      "startTime": "2026-10-24T02:50:45.068Z",
+      "duration": 11970.543000000001,
+      "expected": 12,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "deployed": {
+      "browser": "Microsoft Edge Chromium headless",
+      "startTime": "2026-10-24T02:52:07.152Z",
+      "duration": 21215.892,
+      "expected": 12,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "queries": [
+      "资源",
+      "drawBuffers",
+      "DLTOOL2001"
+    ],
+    "coverage": [
+      "home-and-deep-page",
+      "direct-navigation-and-reload",
+      "no-horizontal-overflow",
+      "no-page-runtime-errors",
+      "search",
+      "mobile-sidebar",
+      "dark-mode",
+      "code-copy-and-clipboard-content",
+      "baseline-download",
+      "404-return"
+    ],
+    "screenshotsVisuallyReviewed": true
+  },
+  "freshCheckout": {
+    "status": "passed",
+    "commit": "dfd2f70822218286d2fa9eeafdd225477c0b35d3",
+    "platform": "Windows x64",
+    "vendorPresent": false,
+    "commands": [
+      "npm ci",
+      "npm run docs:build"
+    ],
+    "sourceHostPathRequired": false,
+    "privateAssetTokenRequired": false
+  },
+  "deployment": {
+    "conclusion": "success",
+    "createdAt": "2026-10-24T02:50:06Z",
+    "databaseId": 40055814317,
+    "headSha": "1c7602c5d26eb1c9ae81b6e10c1e63f09a683dc0",
+    "status": "completed",
+    "updatedAt": "2026-10-24T02:51:16Z",
+    "url": "https://github.com/EltanceX/dawnlight-core-docs/actions/runs/40055814317",
+    "buildType": "workflow",
+    "artifactBuiltAndTestedBeforeDeploy": true,
+    "httpVerifiedAt": "2026-10-24T02:52:47.352Z",
+    "httpPages": [
+      {
+        "path": "/",
+        "status": 200,
+        "url": "https://eltancex.github.io/dawnlight-core-docs/"
+      },
+      {
+        "path": "start/",
+        "status": 200,
+        "url": "https://eltancex.github.io/dawnlight-core-docs/start/"
+      },
+      {
+        "path": "concepts/pipeline",
+        "status": 200,
+        "url": "https://eltancex.github.io/dawnlight-core-docs/concepts/pipeline"
+      },
+      {
+        "path": "concepts/resources-targets",
+        "status": 200,
+        "url": "https://eltancex.github.io/dawnlight-core-docs/concepts/resources-targets"
+      },
+      {
+        "path": "tools/analyzer",
+        "status": 200,
+        "url": "https://eltancex.github.io/dawnlight-core-docs/tools/analyzer"
+      },
+      {
+        "path": "compatibility/current-baseline",
+        "status": 200,
+        "url": "https://eltancex.github.io/dawnlight-core-docs/compatibility/current-baseline"
+      },
+      {
+        "path": "404.html",
+        "status": 200,
+        "url": "https://eltancex.github.io/dawnlight-core-docs/404.html"
+      },
+      {
+        "path": "missing-w2-page",
+        "status": 404,
+        "url": "https://eltancex.github.io/dawnlight-core-docs/missing-w2-page"
+      },
+      {
+        "path": "concepts/missing-w2-page",
+        "status": 404,
+        "url": "https://eltancex.github.io/dawnlight-core-docs/concepts/missing-w2-page"
+      }
+    ],
+    "uniqueAssetUrlsChecked": 14,
+    "downloadStatus": 200,
+    "sitemapStatus": 200
+  },
+  "privateToolchainCi": {
+    "workflow": ".github/workflows/locked-inputs.yml",
+    "trigger": "workflow_dispatch",
+    "secret": "DAWNLIGHT_ASSETS_TOKEN",
+    "secretConfigured": false,
+    "executed": false,
+    "blocksPublicWebsite": false
+  },
+  "runtimeEvidence": {
+    "driverStatus": "notProvided",
+    "mappingStatus": "deferred",
+    "runtimeEvaluated": false,
+    "liveWorldVerified": false,
+    "gpuRunPerformed": false
+  },
+  "preservedW1Snapshot": {
+    "totalFiles": 438,
+    "managedFiles": 437,
+    "gitBlobFiles": 432,
+    "sha256": "590e8f64b7a4271e734373d3afd2ec780eef426acb767ba07d0f0b3838b286f7",
+    "status": "verified-unchanged"
+  },
+  "audit": "docs/baseline/W2WebsiteAudit.zh-CN.md"
+}

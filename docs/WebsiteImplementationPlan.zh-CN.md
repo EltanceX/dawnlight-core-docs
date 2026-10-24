@@ -1,6 +1,6 @@
 # DawnlightCore 文档网站实现方案与实施步骤
 
-> 文档状态：持续实施中的方案；W0/W1 已完成，W2 网站工程已建立，首轮部署验收进行中。
+> 文档状态：持续实施中的方案；W0/W1/W2 已完成，网站骨架已公开部署。
 >
 > 编写日期：2026-10-23。
 >
@@ -10,7 +10,7 @@
 >
 > 本次调研对应宿主 commit：`f8aaa5c4218f54536ccf994a2d512aed2e3678b7`。该 commit 是调研起点，不能仅凭此记录认定所有功能已经完成发布验收。
 >
-> 实施进度（2026-10-23）：W0 已冻结范围与候选基线，W1 已完成输入与工具链，W2 本地构建和双视口浏览器验收已通过。见 [W0](baseline/W0BaselineAudit.zh-CN.md)、[W1](baseline/W1ToolchainAudit.zh-CN.md)、[W2](baseline/W2WebsiteAudit.zh-CN.md) 验收记录。原始 v5 指南失败和独立网站变体的通过分别保留。
+> 实施进度（2026-10-23）：W0 已冻结范围与候选基线，W1 已完成输入与工具链，W2 已完成网站骨架与首次 Pages 部署，新 checkout、Linux CI、桌面/移动端及线上访问验收通过。见 [W0](baseline/W0BaselineAudit.zh-CN.md)、[W1](baseline/W1ToolchainAudit.zh-CN.md)、[W2](baseline/W2WebsiteAudit.zh-CN.md) 验收记录。原始 v5 指南失败和独立网站变体的通过分别保留。
 
 ## 1. 目标与实施原则
 
@@ -753,7 +753,7 @@ dotnet build ./Survivalcraft.Windows/Survivalcraft.Windows.csproj -c Debug
 
 ### W1：建立锁定输入与工具链
 
-执行状态：2026-10-23 已完成。见 [W1 验收记录](baseline/W1ToolchainAudit.zh-CN.md) 与 [维护说明](maintenance/LockedInputs.zh-CN.md)。精确字节快照、固定工具 Release、空目录远程恢复和 6 项回归测试已验收；19 项工具检查中 18 项成功，1 项确认原始指南的已知失败，网站独立变体通过。私有资产需读取凭据，网站仓库与 CI 首次执行仍由 W2 完成。
+执行状态：2026-10-23 已完成。见 [W1 验收记录](baseline/W1ToolchainAudit.zh-CN.md) 与 [维护说明](maintenance/LockedInputs.zh-CN.md)。精确字节快照、固定工具 Release、空目录远程恢复和 6 项回归测试已验收；19 项工具检查中 18 项成功，1 项确认原始指南的已知失败，网站独立变体通过。W2 已完成公开网站 CI 与部署；完整私有工具链 CI 仍需专用读取凭据，尚未执行。
 
 前置：W0。
 
@@ -772,7 +772,7 @@ dotnet build ./Survivalcraft.Windows/Survivalcraft.Windows.csproj -c Debug
 
 ### W2：建立网站骨架与首轮部署
 
-执行状态：2026-10-23 本地构建和 12 项浏览器验收通过，首轮公开部署验收进行中。实现与证据见 [W2 验收记录](baseline/W2WebsiteAudit.zh-CN.md)。
+执行状态：2026-10-23 已完成。公开仓库与 `main`、Pages 项目路径、新 checkout 构建、Linux CI 的 12 项浏览器检查、线上双视口 12 项浏览器检查及 HTTP/资产/404 验收通过。实现与部署证据见 [W2 验收记录](baseline/W2WebsiteAudit.zh-CN.md)。
 
 前置：W0；页面可使用 W1 尚在导入的占位数据，但不能伪装为完成页面。
 
