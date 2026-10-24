@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "baselineId": "candidate-f8aaa5c4",
+  "sourceCommit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+  "examples": [
+    {
+      "id": "course/00-starter",
+      "titles": { "zh-CN": "00 · 外置起步包", "en-US": "00 · External starter" },
+      "sourceType": "website-authored",
+      "root": "examples/course/00-starter",
+      "entrypoint": "shaderpack.json",
+      "page": "examples/course-starter.md",
+      "manifestVersion": 5,
+      "sceneAbiVersion": 2,
+      "programs": ["course:post/present"],
+      "capabilities": ["dawnlight:command_list@1", "dawnlight:scene_draw/terrain_opaque@2", "dawnlight:scene_draw/terrain_alpha_tested@2", "dawnlight:scene_draw/terrain_transparent@2", "dawnlight:scene_draw/terrain_sorted_translucent@2"],
+      "requires": { "worldContentSnapshot": false, "driverReportForStaticChecks": false, "graphicsApiForRuntime": "OpenGL ES 3.2" },
+      "variants": [{ "id": "default", "options": {}, "capabilities": "host-default" }],
+      "expected": { "terrainRoutes": 4, "routeMode": "builtIn", "resources": 2, "passes": 5, "optionalEffects": false },
+      "files": ["README.md", "shaderpack.json", "shaders/fullscreen.vsh", "shaders/present.psh"],
+      "snippets": [
+        { "id": "manifest", "file": "shaderpack.json", "language": "json" },
+        { "id": "frame-target", "file": "shaderpack.json", "language": "json", "pointer": "/frameTarget" },
+        { "id": "routes", "file": "shaderpack.json", "language": "json", "pointer": "/sceneCategories" },
+        { "id": "fullscreen", "file": "shaders/fullscreen.vsh", "language": "glsl" },
+        { "id": "present", "file": "shaders/present.psh", "language": "glsl" }
+      ],
+      "sourceRefs": [
+        { "repository": "upstream", "path": "docs/ShaderPackAuthorGuide.md", "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7" },
+        { "repository": "upstream", "path": "docs/ShaderPackAuthorGuideP11V5.md", "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7" }
+      ],
+      "runtimeEvidence": { "driverStatus": "notProvided", "runtimeEvaluated": false, "liveWorldVerified": false, "visual": "notRun" }
+    }
+  ]
+}

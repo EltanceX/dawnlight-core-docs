@@ -12,6 +12,7 @@ export default defineConfig({
   use: {
     baseURL: deployed ?? 'http://127.0.0.1:4173/',
     browserName: 'chromium',
+    acceptDownloads: true,
     permissions: ['clipboard-read', 'clipboard-write'],
     colorScheme: 'light',
     channel: process.env.PLAYWRIGHT_CHANNEL || undefined,

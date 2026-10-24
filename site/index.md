@@ -12,6 +12,18 @@ hero:
     - theme: alt
       text: 理解渲染管线
       link: /concepts/pipeline
+description: 学习 Survivalcraft DawnlightCore 的 JSON 数据驱动管线与 GLSL 光影包开发。
+lang: zh-CN
+dawnlight:
+  publication: published
+  baseline: candidate-f8aaa5c4
+  manifestVersions:
+    - 5
+  sceneAbiVersions:
+    - 2
+  sourceRefs:
+    - repository: website
+      path: metadata/public-source.json
 ---
 
 <HomeOverview />

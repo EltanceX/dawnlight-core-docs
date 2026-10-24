@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "baselineId": "candidate-f8aaa5c4",
-  "status": "website-deployed-with-runtime-open-items",
-  "stage": "W2",
+  "status": "website-and-example-foundation-with-runtime-open-items",
+  "stage": "W3",
   "frozenOn": "2026-10-23",
   "decision": "accepted-for-documentation-toolchain-not-runtime-release",
   "upstream": {
@@ -371,5 +371,10 @@
     "path": "metadata/w2-verification.json",
     "length": 5629,
     "sha256": "1f7533565a2126133dfdf78194919dfd2ffd81503106fd535a23863defc014df"
+  },
+  "w3Verification": {
+    "path": "metadata/w3-verification.json",
+    "length": 4026,
+    "sha256": "47cf37755d3d0f38131f0e4811953d93785d09a6d900c30e337cb5f99b8cd6fd"
   }
 }

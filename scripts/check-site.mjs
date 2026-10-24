@@ -4,6 +4,8 @@ import path from 'node:path';
 import { ROOT, readJson, loadLock, files, run, assertFingerprint, jsonBytes } from './lib/locked-inputs.mjs';
 import { publicBaseline } from './sync-site-baseline.mjs';
 import { expectedPages, pagePaths, localePrefixes } from './lib/site-pages.mjs';
+import { loadExamples, loadReceipts } from './lib/content-foundation.mjs';
+import { exampleOutputs } from './lib/example-generator.mjs';
 
 const pkg = await readJson(path.join(ROOT, 'package.json'));
 assert.equal(process.versions.node, pkg.engines.node, `Use Node ${pkg.engines.node} from .node-version`);
@@ -11,7 +13,7 @@ const lock = await loadLock();
 assert.equal(lock.website.pagesBase, '/');
 assert.equal(lock.website.pagesUrl, `https://${lock.website.customDomain}/`);
 assert.equal((await fs.readFile(path.join(ROOT, 'site/public/CNAME'), 'utf8')).trim(), lock.website.customDomain);
-for (const item of [...Object.values(lock.discoveryRecords), lock.tool.distribution.inventory, lock.w1Verification, ...(lock.w2Verification ? [lock.w2Verification] : [])]) {
+for (const item of [...Object.values(lock.discoveryRecords), lock.tool.distribution.inventory, lock.w1Verification, ...(lock.w2Verification ? [lock.w2Verification] : []), ...(lock.w3Verification ? [lock.w3Verification] : [])]) {
   await assertFingerprint(path.join(ROOT, item.path), item);
 }
 const source = await readJson(path.join(ROOT, 'metadata/public-source.json'));
@@ -21,7 +23,7 @@ assert.equal(source.anonymousAccessVerified, true);
 const expected = jsonBytes(await publicBaseline());
 assert.ok((await fs.readFile(path.join(ROOT, 'site/public/downloads/site-baseline.json'))).equals(expected), 'Public baseline projection must match lock');
 const siteFiles = (await files(path.join(ROOT, 'site'))).filter(f => !f.startsWith('.vitepress/dist/') && !f.startsWith('.vitepress/cache/'));
-const pages = siteFiles.filter(f => f.endsWith('.md'));
+const pages = siteFiles.filter(f => f.endsWith('.md') && !f.startsWith('public/'));
 assert.deepEqual(pages.sort(), expectedPages, 'Each published page needs a Chinese and English counterpart');
 for (const name of pages) {
   const content = await fs.readFile(path.join(ROOT, 'site', name), 'utf8');
@@ -43,7 +45,10 @@ for (const name of siteFiles.filter(f => !f.startsWith('public/'))) {
   const content = await fs.readFile(path.join(ROOT, 'site', name), 'utf8');
   assert.doesNotMatch(content, /vendor[/\\]dawnlight|(?:ghp_|github_pat_)[A-Za-z0-9_]{25,}/, `Private import or credential in ${name}`);
 }
-assert.deepEqual(siteFiles.filter(f => f.startsWith('public/')).sort(), ['public/CNAME', 'public/downloads/site-baseline.json', 'public/favicon.svg']);
+const examples = await loadExamples();
+const generated = exampleOutputs(examples, await loadReceipts(examples), await readJson(path.join(ROOT, 'metadata/pages.json')));
+const generatedPublic = [...generated.keys()].filter(name => name.startsWith('site/public/')).map(name => name.slice('site/'.length));
+assert.deepEqual(siteFiles.filter(f => f.startsWith('public/')).sort(), ['public/CNAME', 'public/downloads/site-baseline.json', 'public/favicon.svg', ...generatedPublic].sort());
 const tracked = run('git', ['ls-files', '-z'], { allowFailure: true });
 let trackedFiles = 0;
 if (tracked.status === 0) {
@@ -51,4 +56,4 @@ if (tracked.status === 0) {
   trackedFiles = names.length;
   for (const name of names) assert.doesNotMatch(name, /^(?:vendor|artifacts|\.cache|node_modules)\/|\.(?:dll|exe|zip|tar)$/i, `Unexpected published source file ${name}`);
 }
-console.log(JSON.stringify({ status: 'passed', locales: ['zh-CN', 'en-US'], publicPages: 12, notFoundPages: 2, sourceCommit: lock.upstream.commit, privateSnapshotRequired: false, trackedFiles }, null, 2));
+console.log(JSON.stringify({ status: 'passed', locales: ['zh-CN', 'en-US'], publicPages: pages.length - 2, notFoundPages: 2, sourceCommit: lock.upstream.commit, privateSnapshotRequired: false, trackedFiles }, null, 2));

@@ -81,3 +81,10 @@
   .home-scope dt { min-width: 0; }
   .baseline-note a { margin-left: 16px; }
 }
+.download-hash {
+  overflow-wrap: anywhere;
+  margin: 12px 0 20px;
+}
+.download-hash code {
+  white-space: normal;
+}

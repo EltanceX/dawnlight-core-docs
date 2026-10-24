@@ -5,3 +5,8 @@
 /site/.vitepress/dist/
 # Full upstream snapshots stay local or in the pinned private release assets.
 /vendor/
+# Rebuilt from the public registry and example sources.
+/site/examples/
+/site/en/examples/
+/site/public/downloads/examples/
+/site/.vitepress/generated/

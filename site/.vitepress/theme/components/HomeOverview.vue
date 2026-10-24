@@ -14,8 +14,8 @@ const copy = computed(() => lang.value === 'en-US' ? {
     ['Understand validation results', 'Configuration, offline semantics and runtime evidence', '/tools/analyzer']
   ],
   edition: 'Written for Manifest v5',
-  facts: [['Scene interface', 'Scene ABI v2'], ['Source baseline', lock.upstream.commit.slice(0, 8)], ['Initial runtime scope', 'Windows x64 · single main view'], ['Available documentation', 'Reading guide, core concepts and tools']],
-  scope: 'Step-by-step tutorials and example downloads will follow. Navigation includes only pages that are ready to read.',
+  facts: [['Scene interface', 'Scene ABI v2'], ['Source baseline', lock.upstream.commit.slice(0, 8)], ['Initial runtime scope', 'Windows x64 · single main view'], ['Available documentation', 'Core concepts, tools and starter download']],
+  scope: 'The starter download has passed static checks. Game validation and step-by-step tutorials follow in W4.',
   baseline: 'View versions and verification scope →'
 } : {
   title: '先看懂一帧，再写出自己的光影。',
@@ -26,8 +26,8 @@ const copy = computed(() => lang.value === 'en-US' ? {
     ['读懂验证结果', '配置合法、离线语义与实际运行证据', '/tools/analyzer']
   ],
   edition: '围绕 Manifest v5 编写',
-  facts: [['场景接口', 'Scene ABI v2'], ['来源基线', lock.upstream.commit.slice(0, 8)], ['首版运行范围', 'Windows x64 · 单主 view'], ['当前文档', '阅读路线、核心概念与工具说明']],
-  scope: '连续教程和示例下载将在后续阶段逐章补齐。导航只收录当前可以完整阅读的页面。',
+  facts: [['场景接口', 'Scene ABI v2'], ['来源基线', lock.upstream.commit.slice(0, 8)], ['首版运行范围', 'Windows x64 · 单主 view'], ['当前文档', '核心概念、工具说明与起步包下载']],
+  scope: '起步包已通过静态检查；实机验证和连续教程将在 W4 补齐。',
   baseline: '查看版本与验证范围 →'
 })
 </script>

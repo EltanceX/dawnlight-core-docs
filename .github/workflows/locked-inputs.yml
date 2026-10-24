@@ -11,6 +11,8 @@ jobs:
       - uses: actions/setup-node@v7.1.0
         with:
           node-version-file: .node-version
+      - run: npm install --global npm@11.19.0
+      - run: npm ci
       - name: Acquire pinned private tool asset
         env:
           GH_TOKEN: ${{ secrets.DAWNLIGHT_ASSETS_TOKEN }}
@@ -24,11 +26,11 @@ jobs:
       - name: Verify restored source bytes
         run: node scripts/verify-upstream.mjs
       - name: Validate canonical authoring inputs
-        run: node scripts/validate-upstream.mjs
+        run: npm run authoring:check
       - name: Verify corruption rejection and Windows checkout
         run: node --test scripts/tests/locked-inputs.test.mjs
       - uses: actions/upload-artifact@v7.0.2
         if: always()
         with:
           name: locked-input-evidence
-          path: artifacts/w1/validation
+          path: artifacts/w3

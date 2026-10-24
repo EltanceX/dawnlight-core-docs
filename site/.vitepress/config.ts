@@ -11,11 +11,14 @@ const chinese: DefaultTheme.Config = {
     { text: '开始阅读', link: '/start/' },
     { text: '管线概念', link: '/concepts/pipeline' },
     { text: '当前基线', link: '/compatibility/current-baseline' },
+    { text: '示例与下载', link: '/examples/' },
     { text: '上游源码', link: source }
   ],
   sidebar: [
     { text: '开始使用', items: [
       { text: '阅读路线', link: '/start/' },
+      { text: '示例与下载', link: '/examples/' },
+      { text: '00 · 外置起步包', link: '/examples/course-starter' },
       { text: '版本与支持范围', link: '/compatibility/current-baseline' }
     ] },
     { text: '理解管线', items: [
@@ -42,11 +45,14 @@ const english: DefaultTheme.Config = {
     { text: 'Get started', link: '/en/start/' },
     { text: 'Pipeline concepts', link: '/en/concepts/pipeline' },
     { text: 'Current baseline', link: '/en/compatibility/current-baseline' },
+    { text: 'Examples', link: '/en/examples/' },
     { text: 'Upstream source', link: source }
   ],
   sidebar: [
     { text: 'Getting started', items: [
       { text: 'Reading guide', link: '/en/start/' },
+      { text: 'Examples and downloads', link: '/en/examples/' },
+      { text: '00 · External starter', link: '/en/examples/course-starter' },
       { text: 'Versions and support', link: '/en/compatibility/current-baseline' }
     ] },
     { text: 'Understanding the pipeline', items: [
@@ -73,6 +79,7 @@ export default defineConfig({
   description: 'Survivalcraft DawnlightCore 光影包开发文档：理解渲染管线、JSON 数据驱动与公共着色器合同。',
   base,
   cleanUrls: true,
+  srcExclude: ['public/**'],
   lastUpdated: true,
   locales: {
     root: { label: '简体中文', lang: 'zh-CN', themeConfig: chinese },

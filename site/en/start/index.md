@@ -1,6 +1,17 @@
 ---
 title: Reading guide
 description: Find your path from basic GLSL to a JSON-driven rendering pipeline, and understand the current scope of DawnlightCore documentation.
+lang: en-US
+dawnlight:
+  publication: published
+  baseline: candidate-f8aaa5c4
+  manifestVersions:
+    - 5
+  sceneAbiVersions:
+    - 2
+  sourceRefs:
+    - repository: website
+      path: metadata/public-source.json
 ---
 
 <div id="从这里开始" class="legacy-anchor" aria-hidden="true"></div>
@@ -11,7 +22,7 @@ description: Find your path from basic GLSL to a JSON-driven rendering pipeline,
 
 DawnlightCore is a shader-focused modification of Survivalcraft. It connects resource declarations, shader registration and rendering commands through a general-purpose pipeline. Shader pack authors use JSON to organize execution and GLSL to implement visual effects.
 
-This documentation is for authors with basic GLSL knowledge who want to create independent shader packs. It currently covers verifiable core concepts and validation methods. Step-by-step courses, a starter pack and complete field references will follow.
+This documentation is for authors with basic GLSL knowledge who want to create independent shader packs. It covers verifiable core concepts, validation methods and an [external starter](../examples/course-starter). The starter has passed static checks; step-by-step courses, game validation and complete field references will follow.
 
 <div id="需要哪些基础" class="legacy-anchor" aria-hidden="true"></div>
 

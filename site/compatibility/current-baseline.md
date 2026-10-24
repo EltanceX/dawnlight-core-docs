@@ -1,6 +1,17 @@
 ---
 title: 版本与支持范围
 description: 当前文档的宿主 commit、Manifest v5、Scene ABI v2、工具身份和支持边界。
+lang: zh-CN
+dawnlight:
+  publication: published
+  baseline: candidate-f8aaa5c4
+  manifestVersions:
+    - 5
+  sceneAbiVersions:
+    - 2
+  sourceRefs:
+    - repository: website
+      path: metadata/public-source.json
 ---
 
 <div id="版本与支持范围" class="legacy-anchor" aria-hidden="true"></div>

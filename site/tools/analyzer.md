@@ -1,6 +1,21 @@
 ---
 title: Analyzer 与证据边界
 description: 使用 ShaderPackAnalyzer 检查光影包，区分 Loader、离线接口、驱动与游戏运行证据，并理解 DLTOOL2001。
+lang: zh-CN
+dawnlight:
+  publication: published
+  baseline: candidate-f8aaa5c4
+  manifestVersions:
+    - 5
+  sceneAbiVersions:
+    - 2
+  sourceRefs:
+    - repository: upstream
+      path: tools/ShaderPackAnalyzer/README.md
+      commit: f8aaa5c4218f54536ccf994a2d512aed2e3678b7
+    - repository: upstream
+      path: docs/ShaderPackDiagnosticReference.md
+      commit: f8aaa5c4218f54536ccf994a2d512aed2e3678b7
 ---
 
 <div id="analyzer-与证据边界" class="legacy-anchor" aria-hidden="true"></div>

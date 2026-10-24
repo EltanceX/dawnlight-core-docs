@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 1,
+  "stage": "W3",
+  "completedOn": "2026-10-24",
+  "status": "static-foundation-passed-runtime-unverified",
+  "baselineId": "candidate-f8aaa5c4",
+  "sourceCommit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+  "example": {
+    "id": "course/00-starter",
+    "status": "passed",
+    "sourceFingerprint": "a85731589fbb852352a486c378d51cb49a6b27e38a749aaf16a199bf98ba12be",
+    "definitionSha256": "98796e984cf4e38307531d04d38b5fc916ae02ccd38fc2f0e95533390072a499",
+    "archiveSha256": "432356b77d9247a98a764064b5cc7a290d033ad609064b4edaedf62d63bbe034",
+    "archiveLength": 3631,
+    "files": [
+      {
+        "path": "README.md",
+        "length": 2581,
+        "sha256": "f7eb49f0f4b0fe73f6c2c64cd030e8d1c84dd086f49890b741531a8961fe31d2"
+      },
+      {
+        "path": "shaderpack.json",
+        "length": 8592,
+        "sha256": "24aea018e57ec96daa2a404ba18e7c11e3524d932013a1efcd63e6c8e3198388"
+      },
+      {
+        "path": "shaders/fullscreen.vsh",
+        "length": 298,
+        "sha256": "77e9c0fcd7803893b121b69daf13380f20b109f2d4e23964014b367531053c92"
+      },
+      {
+        "path": "shaders/present.psh",
+        "length": 183,
+        "sha256": "e4237dad4d345a4aaeabb690380eef9bf057b9914e2e91ed4b0dad44c0f51096"
+      }
+    ],
+    "manifestHash": "0d8eba466b9ffe10becffce08ec51906369bc11fb4d9c9d1b04c564068a75262",
+    "checks": [
+      {
+        "id": "pack",
+        "variant": "default",
+        "exitCode": 0,
+        "archiveExitCode": 0,
+        "outputSha256": "b2e9954391037f4b4c175e5cb4ae98fa8aecf639a0c40c732026e839c14588bd",
+        "archiveOutputSha256": "b2e9954391037f4b4c175e5cb4ae98fa8aecf639a0c40c732026e839c14588bd",
+        "manifestHash": "0d8eba466b9ffe10becffce08ec51906369bc11fb4d9c9d1b04c564068a75262"
+      },
+      {
+        "id": "scene",
+        "variant": "default",
+        "exitCode": 0,
+        "archiveExitCode": 0,
+        "outputSha256": "04ccfa0ce873eb293a09ca01d60a7d689e05ca38ea154fa3bdacbf296ed27a10",
+        "archiveOutputSha256": "04ccfa0ce873eb293a09ca01d60a7d689e05ca38ea154fa3bdacbf296ed27a10",
+        "manifestHash": "0d8eba466b9ffe10becffce08ec51906369bc11fb4d9c9d1b04c564068a75262"
+      },
+      {
+        "id": "graph",
+        "variant": "default",
+        "exitCode": 0,
+        "archiveExitCode": 0,
+        "outputSha256": "dd366152e6c45ed0112acd4f637335c59915dc3c5dccb565a32bf2c510858c96",
+        "archiveOutputSha256": "dd366152e6c45ed0112acd4f637335c59915dc3c5dccb565a32bf2c510858c96",
+        "manifestHash": "0d8eba466b9ffe10becffce08ec51906369bc11fb4d9c9d1b04c564068a75262"
+      },
+      {
+        "id": "interface:course:post/present",
+        "variant": "default",
+        "exitCode": 0,
+        "archiveExitCode": 0,
+        "outputSha256": "e17788e8e25d212bd61d2ac1ac66077af02d1643a36a26082da0de5ff081ed79",
+        "archiveOutputSha256": "e17788e8e25d212bd61d2ac1ac66077af02d1643a36a26082da0de5ff081ed79",
+        "manifestHash": "0d8eba466b9ffe10becffce08ec51906369bc11fb4d9c9d1b04c564068a75262"
+      }
+    ],
+    "runtimeEvidence": {
+      "driverStatus": "notProvided",
+      "runtimeEvaluated": false,
+      "liveWorldVerified": false,
+      "visual": "notRun"
+    }
+  },
+  "toolInventorySha256": "548c685ff8ccc23283cd6b803a595cc2fed35b2df1444dc0327e1baf847ffb54",
+  "generation": {
+    "files": 13,
+    "pages": 18,
+    "deterministic": true,
+    "sourceOverwritten": false
+  },
+  "checks": {
+    "contentRegression": 19,
+    "lockedInputRegression": 6,
+    "upstreamOrdinarySuccesses": 18,
+    "expectedOriginalGuideFailures": 1,
+    "localBrowser": 46
+  },
+  "publicCi": {
+    "mode": "matching-committed-analyzer-receipt-plus-regeneration",
+    "requiresPrivateAssets": false,
+    "liveAnalyzerRun": false
+  },
+  "runtimeEvidence": {
+    "driverStatus": "notProvided",
+    "runtimeEvaluated": false,
+    "liveWorldVerified": false,
+    "visual": "notRun"
+  },
+  "remaining": [
+    "W4-game-loading-and-lifecycle-verification",
+    "W4-course-chapters-00-through-04"
+  ],
+  "domainSettingsChanged": false
+}

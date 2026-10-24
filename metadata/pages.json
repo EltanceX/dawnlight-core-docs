@@ -1,0 +1,181 @@
+{
+  "schemaVersion": 1,
+  "baselineId": "candidate-f8aaa5c4",
+  "locales": {
+    "zh-CN": "",
+    "en-US": "en/"
+  },
+  "pages": [
+    {
+      "path": "index.md",
+      "publication": "published",
+      "generated": false,
+      "manifestVersions": [
+        5
+      ],
+      "sceneAbiVersions": [
+        2
+      ],
+      "sourceRefs": [
+        {
+          "repository": "website",
+          "path": "metadata/public-source.json"
+        }
+      ]
+    },
+    {
+      "path": "start/index.md",
+      "publication": "published",
+      "generated": false,
+      "manifestVersions": [
+        5
+      ],
+      "sceneAbiVersions": [
+        2
+      ],
+      "sourceRefs": [
+        {
+          "repository": "website",
+          "path": "metadata/public-source.json"
+        }
+      ]
+    },
+    {
+      "path": "concepts/pipeline.md",
+      "publication": "published",
+      "generated": false,
+      "manifestVersions": [
+        5
+      ],
+      "sceneAbiVersions": [
+        2
+      ],
+      "sourceRefs": [
+        {
+          "repository": "upstream",
+          "path": "docs/DawnlightGenericCommandTypes.md",
+          "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7"
+        }
+      ]
+    },
+    {
+      "path": "concepts/resources-targets.md",
+      "publication": "published",
+      "generated": false,
+      "manifestVersions": [
+        5
+      ],
+      "sceneAbiVersions": [
+        2
+      ],
+      "sourceRefs": [
+        {
+          "repository": "upstream",
+          "path": "docs/ShaderPackAuthorGuideP11V5.md",
+          "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7"
+        },
+        {
+          "repository": "upstream",
+          "path": "docs/ShaderPackAuthorGuide.md",
+          "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7"
+        }
+      ]
+    },
+    {
+      "path": "tools/analyzer.md",
+      "publication": "published",
+      "generated": false,
+      "manifestVersions": [
+        5
+      ],
+      "sceneAbiVersions": [
+        2
+      ],
+      "sourceRefs": [
+        {
+          "repository": "upstream",
+          "path": "tools/ShaderPackAnalyzer/README.md",
+          "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7"
+        },
+        {
+          "repository": "upstream",
+          "path": "docs/ShaderPackDiagnosticReference.md",
+          "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7"
+        }
+      ]
+    },
+    {
+      "path": "compatibility/current-baseline.md",
+      "publication": "published",
+      "generated": false,
+      "manifestVersions": [
+        5
+      ],
+      "sceneAbiVersions": [
+        2
+      ],
+      "sourceRefs": [
+        {
+          "repository": "website",
+          "path": "metadata/public-source.json"
+        }
+      ]
+    },
+    {
+      "path": "404.md",
+      "publication": "utility",
+      "generated": false,
+      "manifestVersions": [
+        5
+      ],
+      "sceneAbiVersions": [
+        2
+      ],
+      "sourceRefs": [
+        {
+          "repository": "website",
+          "path": "metadata/public-source.json"
+        }
+      ]
+    },
+    {
+      "path": "examples/index.md",
+      "publication": "published",
+      "generated": true,
+      "manifestVersions": [
+        5
+      ],
+      "sceneAbiVersions": [
+        2
+      ],
+      "sourceRefs": [
+        {
+          "repository": "website",
+          "path": "examples/registry.json"
+        }
+      ]
+    },
+    {
+      "path": "examples/course-starter.md",
+      "publication": "published",
+      "generated": true,
+      "manifestVersions": [
+        5
+      ],
+      "sceneAbiVersions": [
+        2
+      ],
+      "sourceRefs": [
+        {
+          "repository": "website",
+          "path": "examples/registry.json"
+        },
+        {
+          "repository": "website",
+          "path": "examples/course/00-starter/shaderpack.json"
+        }
+      ],
+      "example": "course/00-starter"
+    }
+  ]
+}

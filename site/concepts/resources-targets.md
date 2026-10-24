@@ -1,6 +1,21 @@
 ---
 title: 资源、目标与 drawBuffers
 description: 区分资源声明、目标附件、输出 location 与活动 drawBuffers，理解渲染结果的读写关系。
+lang: zh-CN
+dawnlight:
+  publication: published
+  baseline: candidate-f8aaa5c4
+  manifestVersions:
+    - 5
+  sceneAbiVersions:
+    - 2
+  sourceRefs:
+    - repository: upstream
+      path: docs/ShaderPackAuthorGuideP11V5.md
+      commit: f8aaa5c4218f54536ccf994a2d512aed2e3678b7
+    - repository: upstream
+      path: docs/ShaderPackAuthorGuide.md
+      commit: f8aaa5c4218f54536ccf994a2d512aed2e3678b7
 ---
 
 <div id="资源、目标与-drawbuffers" class="legacy-anchor" aria-hidden="true"></div>

@@ -1,6 +1,17 @@
 ---
 title: 阅读路线
 description: 从基础 GLSL 到 JSON 数据驱动管线，了解 DawnlightCore 作者文档的阅读顺序与当前范围。
+lang: zh-CN
+dawnlight:
+  publication: published
+  baseline: candidate-f8aaa5c4
+  manifestVersions:
+    - 5
+  sceneAbiVersions:
+    - 2
+  sourceRefs:
+    - repository: website
+      path: metadata/public-source.json
 ---
 
 <div id="从这里开始" class="legacy-anchor" aria-hidden="true"></div>
@@ -11,7 +22,7 @@ description: 从基础 GLSL 到 JSON 数据驱动管线，了解 DawnlightCore �
 
 DawnlightCore 是 Survivalcraft 的光影改版。它将资源声明、着色器注册和渲染命令连接到一套通用管线，让光影包作者通过 JSON 组织执行关系，通过 GLSL 实现具体效果。
 
-这份文档面向有基础 GLSL 知识、希望制作独立光影包的作者。当前先提供可核实的核心概念与验证方法；连续课程、起步包与完整字段参考将在后续阶段逐章补齐。
+这份文档面向有基础 GLSL 知识、希望制作独立光影包的作者。当前提供可核实的核心概念、验证方法和[外置起步包](../examples/course-starter)。起步包已有静态验证，连续课程、实机检查与完整字段参考将在后续阶段逐章补齐。
 
 <div id="需要哪些基础" class="legacy-anchor" aria-hidden="true"></div>
 

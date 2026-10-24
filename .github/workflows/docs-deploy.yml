@@ -21,6 +21,7 @@ jobs:
           cache: npm
       - run: npm install --global npm@11.19.0
       - run: npm ci
+      - run: npm run test:content
       - run: npm run docs:build
       - run: npx playwright install --with-deps chromium --only-shell
       - run: npm run test:site
@@ -35,6 +36,8 @@ jobs:
           path: |
             artifacts/w2/site-build.json
             artifacts/w2/browser-results.json
+            site/.vitepress/generated/output-manifest.json
+            metadata/examples-validation.json
   deploy:
     needs: build
     runs-on: ubuntu-latest

@@ -13,6 +13,17 @@ hero:
     - theme: alt
       text: Understand the pipeline
       link: /en/concepts/pipeline
+lang: en-US
+dawnlight:
+  publication: published
+  baseline: candidate-f8aaa5c4
+  manifestVersions:
+    - 5
+  sceneAbiVersions:
+    - 2
+  sourceRefs:
+    - repository: website
+      path: metadata/public-source.json
 ---
 
 <HomeOverview />

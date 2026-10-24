@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "examples": [
+    {
+      "id": "course/00-starter",
+      "baselineId": "candidate-f8aaa5c4",
+      "sourceFingerprint": "a85731589fbb852352a486c378d51cb49a6b27e38a749aaf16a199bf98ba12be",
+      "archiveSha256": "432356b77d9247a98a764064b5cc7a290d033ad609064b4edaedf62d63bbe034",
+      "archiveLength": 3631
+    }
+  ]
+}

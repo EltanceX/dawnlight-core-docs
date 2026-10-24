@@ -3,7 +3,7 @@ import { createHash } from 'node:crypto';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { spawnSync } from 'node:child_process';
-import { deflateRawSync } from 'node:zlib';
+import { deflateRawSync, inflateRawSync } from 'node:zlib';
 import { setTimeout as delay } from 'node:timers/promises';
 
 export const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
@@ -119,10 +119,16 @@ export async function replaceDirectory(stage, target) {
   if (moved) await fs.rm(backup, { recursive: true });
 }
 export async function extractLocked(archive, stage) {
-  const names = run('tar', ['-tf', archive]).stdout.toString('utf8').trim().split(/\r?\n/);
-  for (const name of names) relativeName(name.replace(/\/$/, ''));
+  // Decode the central directory before writing anything. GNU tar on Linux cannot
+  // extract ZIP; this also avoids platform-specific pathname/symlink behavior.
+  const entries = unzipEntries(await fs.readFile(archive));
   await fs.mkdir(stage, { recursive: true });
-  run('tar', ['-xf', archive, '-C', stage]);
+  if ((await fs.readdir(stage)).length) throw new Error('ZIP extraction requires an empty staging directory');
+  for (const entry of entries) {
+    const target = inside(stage, entry.path);
+    await fs.mkdir(path.dirname(target), { recursive: true });
+    await fs.writeFile(target, entry.bytes, { flag: 'wx' });
+  }
   await files(stage);
 }
 export async function acquireArchive(asset, { offline = false } = {}) {
@@ -165,11 +171,50 @@ function crc32(bytes) {
   for (const b of bytes) n = crcTable[(n ^ b) & 255] ^ (n >>> 8);
   return (n ^ 0xffffffff) >>> 0;
 }
-export async function zipDirectory(root, target) {
+export function unzipEntries(bytes) {
+  const requireZip = (condition, message) => { if (!condition) throw new Error(`Invalid ZIP: ${message}`); };
+  let end = -1;
+  for (let i = bytes.length - 22; i >= Math.max(0, bytes.length - 65557); i--) {
+    if (bytes.readUInt32LE(i) === 0x06054b50 && i + 22 + bytes.readUInt16LE(i + 20) === bytes.length) { end = i; break; }
+  }
+  requireZip(end >= 0, 'end record missing');
+  requireZip(bytes.readUInt16LE(end + 4) === 0 && bytes.readUInt16LE(end + 6) === 0, 'multi-disk archive');
+  const count = bytes.readUInt16LE(end + 10), size = bytes.readUInt32LE(end + 12);
+  let offset = bytes.readUInt32LE(end + 16);
+  requireZip(count !== 65535 && offset + size === end && bytes.readUInt16LE(end + 8) === count, 'unsupported central directory');
+  const entries = [], names = new Set();
+  for (let i = 0; i < count; i++) {
+    requireZip(offset + 46 <= end && bytes.readUInt32LE(offset) === 0x02014b50, 'bad directory entry');
+    const flags = bytes.readUInt16LE(offset + 8), method = bytes.readUInt16LE(offset + 10);
+    const crc = bytes.readUInt32LE(offset + 16), compressed = bytes.readUInt32LE(offset + 20), length = bytes.readUInt32LE(offset + 24);
+    const nameLength = bytes.readUInt16LE(offset + 28), extraLength = bytes.readUInt16LE(offset + 30), commentLength = bytes.readUInt16LE(offset + 32);
+    const local = bytes.readUInt32LE(offset + 42), mode = bytes.readUInt32LE(offset + 38) >>> 16;
+    requireZip(offset + 46 + nameLength + extraLength + commentLength <= end, 'truncated name');
+    requireZip(!(flags & 1) && [0, 8].includes(method) && (mode & 0xf000) !== 0xa000, 'encrypted, symlink or unsupported compression');
+    const rawName = bytes.subarray(offset + 46, offset + 46 + nameLength).toString('utf8');
+    const name = relativeName(rawName.replace(/\/$/, ''));
+    requireZip(!names.has(name.toLowerCase()), `duplicate path: ${name}`); names.add(name.toLowerCase());
+    requireZip(local + 30 <= offset && bytes.readUInt32LE(local) === 0x04034b50, `local header: ${name}`);
+    const localNameLength = bytes.readUInt16LE(local + 26), localExtraLength = bytes.readUInt16LE(local + 28);
+    const start = local + 30 + localNameLength + localExtraLength;
+    requireZip(bytes.readUInt16LE(local + 8) === method && bytes.readUInt16LE(local + 6) === flags && start + compressed <= bytes.readUInt32LE(end + 16), `local metadata: ${name}`);
+    requireZip(bytes.subarray(local + 30, local + 30 + localNameLength).toString('utf8') === rawName, `name mismatch: ${name}`);
+    const payload = bytes.subarray(start, start + compressed);
+    const plain = method === 8 ? inflateRawSync(payload, { maxOutputLength: Math.max(1, length) }) : payload;
+    requireZip(plain.length === length && crc32(plain) === crc, `size/CRC mismatch: ${name}`);
+    if (!rawName.endsWith('/')) entries.push({ path: name, bytes: plain });
+    else requireZip(plain.length === 0, `nonempty directory: ${name}`);
+    offset += 46 + nameLength + extraLength + commentLength;
+  }
+  requireZip(offset === end, 'directory size mismatch');
+  return entries;
+}
+export function zipEntries(entries) {
   const locals = [], central = [];
   let offset = 0;
-  for (const name of await files(root)) {
-    const plain = await fs.readFile(inside(root, name)), compressed = deflateRawSync(plain, { level: 6 });
+  for (const { path: name, bytes: plain } of [...entries].sort((a, b) => a.path < b.path ? -1 : a.path > b.path ? 1 : 0)) {
+    relativeName(name);
+    const compressed = deflateRawSync(plain, { level: 6 });
     const filename = Buffer.from(name), crc = crc32(plain);
     const local = Buffer.alloc(30);
     local.writeUInt32LE(0x04034b50); local.writeUInt16LE(20, 4); local.writeUInt16LE(0x800, 6);
@@ -186,7 +231,11 @@ export async function zipDirectory(root, target) {
   const directory = Buffer.concat(central), end = Buffer.alloc(22);
   end.writeUInt32LE(0x06054b50); end.writeUInt16LE(central.length / 2, 8); end.writeUInt16LE(central.length / 2, 10);
   end.writeUInt32LE(directory.length, 12); end.writeUInt32LE(offset, 16);
+  return Buffer.concat([...locals, directory, end]);
+}
+export async function zipDirectory(root, target) {
+  const entries = await Promise.all((await files(root)).map(async name => ({ path: name, bytes: await fs.readFile(inside(root, name)) })));
   await fs.mkdir(path.dirname(target), { recursive: true });
-  await fs.writeFile(target, Buffer.concat([...locals, directory, end]));
+  await fs.writeFile(target, zipEntries(entries));
   return fingerprint(target);
 }

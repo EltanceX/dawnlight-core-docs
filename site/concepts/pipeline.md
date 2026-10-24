@@ -1,6 +1,18 @@
 ---
 title: 从配置到一帧画面
 description: 理解 DawnlightCore 中 Phase、Pass、Command、Program 和 Resource 的职责及其执行关系。
+lang: zh-CN
+dawnlight:
+  publication: published
+  baseline: candidate-f8aaa5c4
+  manifestVersions:
+    - 5
+  sceneAbiVersions:
+    - 2
+  sourceRefs:
+    - repository: upstream
+      path: docs/DawnlightGenericCommandTypes.md
+      commit: f8aaa5c4218f54536ccf994a2d512aed2e3678b7
 ---
 
 <div id="从配置到一帧画面" class="legacy-anchor" aria-hidden="true"></div>

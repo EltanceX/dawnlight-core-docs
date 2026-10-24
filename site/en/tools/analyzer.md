@@ -1,6 +1,21 @@
 ---
 title: Analyzer and evidence
 description: Validate shader packs with ShaderPackAnalyzer, distinguish offline checks from driver and game evidence, and understand DLTOOL2001.
+lang: en-US
+dawnlight:
+  publication: published
+  baseline: candidate-f8aaa5c4
+  manifestVersions:
+    - 5
+  sceneAbiVersions:
+    - 2
+  sourceRefs:
+    - repository: upstream
+      path: tools/ShaderPackAnalyzer/README.md
+      commit: f8aaa5c4218f54536ccf994a2d512aed2e3678b7
+    - repository: upstream
+      path: docs/ShaderPackDiagnosticReference.md
+      commit: f8aaa5c4218f54536ccf994a2d512aed2e3678b7
 ---
 
 <div id="analyzer-与证据边界" class="legacy-anchor" aria-hidden="true"></div>

@@ -1,6 +1,6 @@
 # DawnlightCore 文档网站实现方案与实施步骤
 
-> 文档状态：持续实施中的方案；W0/W1/W2 已完成，网站骨架已公开部署。
+> 文档状态：持续实施中的方案；W0/W1/W2/W3 已完成，网站、双语页面和首份示例已建立。
 >
 > 补充实现：按用户要求为当前六个页面增加完整英文版与顶栏语言切换，中文路径不变，英文位于 `/en/`；维护规则见 [双语页面维护](maintenance/Locales.zh-CN.md)。
 >
@@ -12,7 +12,7 @@
 >
 > 本次调研对应宿主 commit：`f8aaa5c4218f54536ccf994a2d512aed2e3678b7`。该 commit 是调研起点，不能仅凭此记录认定所有功能已经完成发布验收。
 >
-> 实施进度（2026-10-23）：W0 已冻结范围与候选基线，W1 已完成输入与工具链，W2 已完成网站骨架与首次 Pages 部署，新 checkout、Linux CI、桌面/移动端及线上访问验收通过。见 [W0](baseline/W0BaselineAudit.zh-CN.md)、[W1](baseline/W1ToolchainAudit.zh-CN.md)、[W2](baseline/W2WebsiteAudit.zh-CN.md) 验收记录。原始 v5 指南失败和独立网站变体的通过分别保留。
+> 实施进度（2026-10-24）：W0 已冻结范围与候选基线，W1 已完成输入与工具链，W2 已完成网站骨架与首次 Pages 部署。W3 已建立示例/页面登记、合法外置起步包、同源代码与 ZIP 生成、Analyzer 收据及失败拦截。见 [W0](baseline/W0BaselineAudit.zh-CN.md)、[W1](baseline/W1ToolchainAudit.zh-CN.md)、[W2](baseline/W2WebsiteAudit.zh-CN.md)、[W3](baseline/W3ContentFoundationAudit.zh-CN.md) 验收记录。原始 v5 指南失败和独立网站变体的通过分别保留；实机验证继续在 W4 完成。
 
 ## 1. 目标与实施原则
 
@@ -793,6 +793,8 @@ dotnet build ./Survivalcraft.Windows/Survivalcraft.Windows.csproj -c Debug
 
 ### W3：建立示例与内容生成基础
 
+状态：已完成。实现与边界见 [W3 验收](baseline/W3ContentFoundationAudit.zh-CN.md) 和 [ADR 0005](adr/0005-example-generation.md)。
+
 前置：W1、W2。
 
 步骤：
@@ -1030,4 +1032,4 @@ W4～W7 的 v1 内容 → W8 → W9 → W10
 
 宿主资料入口见第 2.2 节，并以文首 commit 为本次调研来源。实施时应再次核对当前版本；本规划中的网站脚本、目录、元数据格式和工作流均为拟实现方案。
 
-本文件的初始交付是实施规划。W0/W1 已交付基线、精确字节输入和工具链；W2 建立网站骨架、真实概念页和部署流程。完整教学包、内容生成与连续教程继续按 W3/W4 实施，不因网站已建立而视为完成。
+本文件的初始交付是实施规划。W0/W1 已交付基线、精确字节输入和工具链；W2 建立网站骨架、真实概念页和部署流程；W3 建立起步包与内容生成。完整连续课程和真实游戏验证继续按 W4 实施，不因静态检查通过而视为完成。
