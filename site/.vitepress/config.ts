@@ -49,7 +49,21 @@ const chinese: DefaultTheme.Config = {
       { text: '资源、目标与 drawBuffers', link: '/concepts/resources-targets' }
     ] },
     { text: '验证与排错', items: [
-      { text: 'Analyzer 与证据边界', link: '/tools/analyzer' }
+      { text: 'Analyzer 与证据边界', link: '/tools/analyzer' },
+      { text: 'Schema 与编辑器', link: '/tools/schema' },
+      { text: '世界内容快照', link: '/tools/content-snapshots' },
+      { text: 'Scene / Data 驱动报告', link: '/tools/driver-reports' },
+      { text: '按症状排错', link: '/troubleshooting/' },
+      { text: '配置错误修复实验', link: '/troubleshooting/configuration-lab' }
+    ] },
+    { text: '效果实践与案例', items: [
+      { text: '基础效果与成本', link: '/recipes/' },
+      { text: '独立色彩平衡', link: '/recipes/color-balance' },
+      { text: '暗角与宽高比', link: '/recipes/vignette' },
+      { text: '亮度描边', link: '/recipes/luma-outline' },
+      { text: '基础效果实机记录', link: '/recipes/runtime' },
+      { text: 'History、时序与阴影', link: '/recipes/advanced-boundaries' },
+      { text: '大型包案例索引', link: '/cases/' }
     ] }
   ],
   editLink: { pattern: 'https://github.com/EltanceX/dawnlight-core-docs/edit/main/site/:path', text: '在 GitHub 编辑本页' },
@@ -105,7 +119,21 @@ const english: DefaultTheme.Config = {
       { text: 'Resources, targets and drawBuffers', link: '/en/concepts/resources-targets' }
     ] },
     { text: 'Validation and troubleshooting', items: [
-      { text: 'Analyzer and evidence', link: '/en/tools/analyzer' }
+      { text: 'Analyzer and evidence', link: '/en/tools/analyzer' },
+      { text: 'Schema and editor setup', link: '/en/tools/schema' },
+      { text: 'World content snapshots', link: '/en/tools/content-snapshots' },
+      { text: 'Scene / Data driver reports', link: '/en/tools/driver-reports' },
+      { text: 'Troubleshoot by symptom', link: '/en/troubleshooting/' },
+      { text: 'Configuration repair lab', link: '/en/troubleshooting/configuration-lab' }
+    ] },
+    { text: 'Effects and case studies', items: [
+      { text: 'Basic effects and cost', link: '/en/recipes/' },
+      { text: 'Independent color balance', link: '/en/recipes/color-balance' },
+      { text: 'Vignette and aspect ratio', link: '/en/recipes/vignette' },
+      { text: 'Luminance outline', link: '/en/recipes/luma-outline' },
+      { text: 'Basic effect runtime records', link: '/en/recipes/runtime' },
+      { text: 'History, temporal and shadows', link: '/en/recipes/advanced-boundaries' },
+      { text: 'Large-pack case index', link: '/en/cases/' }
     ] }
   ],
   editLink: { pattern: 'https://github.com/EltanceX/dawnlight-core-docs/edit/main/site/:path', text: 'Edit this page on GitHub' },

@@ -1,0 +1,884 @@
+{
+  "schemaVersion": 1,
+  "baselineId": "candidate-f8aaa5c4",
+  "sourceCommit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+  "toolInventorySha256": "548c685ff8ccc23283cd6b803a595cc2fed35b2df1444dc0327e1baf847ffb54",
+  "examples": [
+    {
+      "id": "features/color-balance",
+      "status": "passed",
+      "sourceFingerprint": "fa54b90617955a1d0a257f9e234bdb4135ce35a8d637227bf329292fb4fb3ba7",
+      "definitionSha256": "04f81b52d193517a8918cca1851978633a9ef093bf7d0ae7e891323696a34de2",
+      "archiveSha256": "3880779537d67fe635fec584cade69455f845630ecb87dc0e0a0f850a8eea082",
+      "archiveLength": 3957,
+      "files": [
+        {
+          "path": "README.md",
+          "length": 1405,
+          "sha256": "74d843e7115b6e9b19efd21b850ebdd2d22c18d6ffb3b55af7946622b41d4578"
+        },
+        {
+          "path": "settings.json",
+          "length": 1202,
+          "sha256": "57d34a8b9c52233a843fe350c597b35f5dabf006ec381a172a5070dc0ac55441"
+        },
+        {
+          "path": "shaderpack.json",
+          "length": 12268,
+          "sha256": "57542a2fa7910902175f6bbb833fb14b7ef0d30b2a067b6696171c381293b95f"
+        },
+        {
+          "path": "shaders/fullscreen.vsh",
+          "length": 298,
+          "sha256": "77e9c0fcd7803893b121b69daf13380f20b109f2d4e23964014b367531053c92"
+        },
+        {
+          "path": "shaders/grade.psh",
+          "length": 352,
+          "sha256": "fd461d0c088d449b7d951c653233d9646da5c6d192194bff5a4002568e0dae7a"
+        },
+        {
+          "path": "shaders/present.psh",
+          "length": 181,
+          "sha256": "d8ef4f9a0e1b4be69e9b6a1f841e80252e1bf797f98f036a1938c14165bdb787"
+        }
+      ],
+      "manifestHash": "d90d574df3e1a70e10fa3da033a4fd46c1613f1ba774e1955b69e7b60d2e5665",
+      "checks": [
+        {
+          "id": "pack",
+          "variant": "default",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "0d2e030df613e3e336905c679868da02378c417c158579598f408b75b03adc32",
+          "archiveOutputSha256": "0d2e030df613e3e336905c679868da02378c417c158579598f408b75b03adc32",
+          "manifestHash": "d90d574df3e1a70e10fa3da033a4fd46c1613f1ba774e1955b69e7b60d2e5665"
+        },
+        {
+          "id": "scene",
+          "variant": "default",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "ebcef57e4ba228df9397fb997d389f03c8c97d5eb9871bd7b1123f05dc8f4167",
+          "archiveOutputSha256": "ebcef57e4ba228df9397fb997d389f03c8c97d5eb9871bd7b1123f05dc8f4167",
+          "manifestHash": "d90d574df3e1a70e10fa3da033a4fd46c1613f1ba774e1955b69e7b60d2e5665"
+        },
+        {
+          "id": "graph",
+          "variant": "default",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "ac2d461775300a1459ec7e208a391aebd424d5d9494285f20f6a2c3c59c609ea",
+          "archiveOutputSha256": "ac2d461775300a1459ec7e208a391aebd424d5d9494285f20f6a2c3c59c609ea",
+          "manifestHash": "d90d574df3e1a70e10fa3da033a4fd46c1613f1ba774e1955b69e7b60d2e5665"
+        },
+        {
+          "id": "interface:practice:post/grade",
+          "variant": "default",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "f0988c38bdb27344126a5f580b41aa95585f1651ad6cf2e8afacab3d6b149f99",
+          "archiveOutputSha256": "f0988c38bdb27344126a5f580b41aa95585f1651ad6cf2e8afacab3d6b149f99",
+          "manifestHash": "d90d574df3e1a70e10fa3da033a4fd46c1613f1ba774e1955b69e7b60d2e5665"
+        },
+        {
+          "id": "interface:practice:post/present",
+          "variant": "default",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "8f8f6f13f5174ea91a07f9e0e9e94aa81d86cefb83ea4c92fb23d68495e62275",
+          "archiveOutputSha256": "8f8f6f13f5174ea91a07f9e0e9e94aa81d86cefb83ea4c92fb23d68495e62275",
+          "manifestHash": "d90d574df3e1a70e10fa3da033a4fd46c1613f1ba774e1955b69e7b60d2e5665"
+        },
+        {
+          "id": "data",
+          "variant": "default",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "f56b9daac12e103fbb36372a7392884ebf9a901d20cf51180fb1d0421e9b3ca2",
+          "archiveOutputSha256": "f56b9daac12e103fbb36372a7392884ebf9a901d20cf51180fb1d0421e9b3ca2",
+          "manifestHash": "d90d574df3e1a70e10fa3da033a4fd46c1613f1ba774e1955b69e7b60d2e5665"
+        },
+        {
+          "id": "pack",
+          "variant": "grade-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "0d2e030df613e3e336905c679868da02378c417c158579598f408b75b03adc32",
+          "archiveOutputSha256": "0d2e030df613e3e336905c679868da02378c417c158579598f408b75b03adc32",
+          "manifestHash": "d90d574df3e1a70e10fa3da033a4fd46c1613f1ba774e1955b69e7b60d2e5665"
+        },
+        {
+          "id": "scene",
+          "variant": "grade-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "ebcef57e4ba228df9397fb997d389f03c8c97d5eb9871bd7b1123f05dc8f4167",
+          "archiveOutputSha256": "ebcef57e4ba228df9397fb997d389f03c8c97d5eb9871bd7b1123f05dc8f4167",
+          "manifestHash": "d90d574df3e1a70e10fa3da033a4fd46c1613f1ba774e1955b69e7b60d2e5665"
+        },
+        {
+          "id": "graph",
+          "variant": "grade-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "b92077e2c9799556fa5e6f3e0170428912c6beed28aa65679dd0384047160ae4",
+          "archiveOutputSha256": "b92077e2c9799556fa5e6f3e0170428912c6beed28aa65679dd0384047160ae4",
+          "manifestHash": "d90d574df3e1a70e10fa3da033a4fd46c1613f1ba774e1955b69e7b60d2e5665"
+        },
+        {
+          "id": "interface:practice:post/grade",
+          "variant": "grade-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "f0988c38bdb27344126a5f580b41aa95585f1651ad6cf2e8afacab3d6b149f99",
+          "archiveOutputSha256": "f0988c38bdb27344126a5f580b41aa95585f1651ad6cf2e8afacab3d6b149f99",
+          "manifestHash": "d90d574df3e1a70e10fa3da033a4fd46c1613f1ba774e1955b69e7b60d2e5665"
+        },
+        {
+          "id": "interface:practice:post/present",
+          "variant": "grade-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "8f8f6f13f5174ea91a07f9e0e9e94aa81d86cefb83ea4c92fb23d68495e62275",
+          "archiveOutputSha256": "8f8f6f13f5174ea91a07f9e0e9e94aa81d86cefb83ea4c92fb23d68495e62275",
+          "manifestHash": "d90d574df3e1a70e10fa3da033a4fd46c1613f1ba774e1955b69e7b60d2e5665"
+        },
+        {
+          "id": "data",
+          "variant": "grade-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "f56b9daac12e103fbb36372a7392884ebf9a901d20cf51180fb1d0421e9b3ca2",
+          "archiveOutputSha256": "f56b9daac12e103fbb36372a7392884ebf9a901d20cf51180fb1d0421e9b3ca2",
+          "manifestHash": "d90d574df3e1a70e10fa3da033a4fd46c1613f1ba774e1955b69e7b60d2e5665"
+        },
+        {
+          "id": "pack",
+          "variant": "strength-max",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "0d2e030df613e3e336905c679868da02378c417c158579598f408b75b03adc32",
+          "archiveOutputSha256": "0d2e030df613e3e336905c679868da02378c417c158579598f408b75b03adc32",
+          "manifestHash": "d90d574df3e1a70e10fa3da033a4fd46c1613f1ba774e1955b69e7b60d2e5665"
+        },
+        {
+          "id": "scene",
+          "variant": "strength-max",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "ebcef57e4ba228df9397fb997d389f03c8c97d5eb9871bd7b1123f05dc8f4167",
+          "archiveOutputSha256": "ebcef57e4ba228df9397fb997d389f03c8c97d5eb9871bd7b1123f05dc8f4167",
+          "manifestHash": "d90d574df3e1a70e10fa3da033a4fd46c1613f1ba774e1955b69e7b60d2e5665"
+        },
+        {
+          "id": "graph",
+          "variant": "strength-max",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "4df5240b9197e99145e064fe656d73ad3c9a67efabb73142ef747b48507ff8ac",
+          "archiveOutputSha256": "4df5240b9197e99145e064fe656d73ad3c9a67efabb73142ef747b48507ff8ac",
+          "manifestHash": "d90d574df3e1a70e10fa3da033a4fd46c1613f1ba774e1955b69e7b60d2e5665"
+        },
+        {
+          "id": "interface:practice:post/grade",
+          "variant": "strength-max",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "fbc89ad4199912d60c0028dd80203fd3d53c3c26282e616df6f1284e656eb06d",
+          "archiveOutputSha256": "fbc89ad4199912d60c0028dd80203fd3d53c3c26282e616df6f1284e656eb06d",
+          "manifestHash": "d90d574df3e1a70e10fa3da033a4fd46c1613f1ba774e1955b69e7b60d2e5665"
+        },
+        {
+          "id": "interface:practice:post/present",
+          "variant": "strength-max",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "8f8f6f13f5174ea91a07f9e0e9e94aa81d86cefb83ea4c92fb23d68495e62275",
+          "archiveOutputSha256": "8f8f6f13f5174ea91a07f9e0e9e94aa81d86cefb83ea4c92fb23d68495e62275",
+          "manifestHash": "d90d574df3e1a70e10fa3da033a4fd46c1613f1ba774e1955b69e7b60d2e5665"
+        },
+        {
+          "id": "data",
+          "variant": "strength-max",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "f56b9daac12e103fbb36372a7392884ebf9a901d20cf51180fb1d0421e9b3ca2",
+          "archiveOutputSha256": "f56b9daac12e103fbb36372a7392884ebf9a901d20cf51180fb1d0421e9b3ca2",
+          "manifestHash": "d90d574df3e1a70e10fa3da033a4fd46c1613f1ba774e1955b69e7b60d2e5665"
+        }
+      ],
+      "branches": [
+        {
+          "id": "default",
+          "options": {},
+          "activeResources": [
+            "resource:practice:post/color",
+            "resource:practice:scene/color",
+            "resource:practice:scene/depth"
+          ],
+          "activeCommands": [
+            "command:practice:grade:0",
+            "command:practice:present-grade:0",
+            "command:practice:terrain_alpha_tested:0",
+            "command:practice:terrain_opaque:0",
+            "command:practice:terrain_sorted_translucent:0",
+            "command:practice:terrain_transparent:0"
+          ],
+          "activePrograms": [
+            "program:dawnlight:scene_fallback/terrain_alpha_tested",
+            "program:dawnlight:scene_fallback/terrain_opaque",
+            "program:dawnlight:scene_fallback/terrain_sorted_translucent",
+            "program:dawnlight:scene_fallback/terrain_transparent",
+            "program:practice:post/grade",
+            "program:practice:post/present"
+          ],
+          "activeServices": []
+        },
+        {
+          "id": "grade-off",
+          "options": {
+            "practice:grade": false
+          },
+          "activeResources": [
+            "resource:practice:scene/color",
+            "resource:practice:scene/depth"
+          ],
+          "activeCommands": [
+            "command:practice:present-raw:0",
+            "command:practice:terrain_alpha_tested:0",
+            "command:practice:terrain_opaque:0",
+            "command:practice:terrain_sorted_translucent:0",
+            "command:practice:terrain_transparent:0"
+          ],
+          "activePrograms": [
+            "program:dawnlight:scene_fallback/terrain_alpha_tested",
+            "program:dawnlight:scene_fallback/terrain_opaque",
+            "program:dawnlight:scene_fallback/terrain_sorted_translucent",
+            "program:dawnlight:scene_fallback/terrain_transparent",
+            "program:practice:post/present"
+          ],
+          "activeServices": []
+        },
+        {
+          "id": "strength-max",
+          "options": {
+            "practice:strength": 1
+          },
+          "activeResources": [
+            "resource:practice:post/color",
+            "resource:practice:scene/color",
+            "resource:practice:scene/depth"
+          ],
+          "activeCommands": [
+            "command:practice:grade:0",
+            "command:practice:present-grade:0",
+            "command:practice:terrain_alpha_tested:0",
+            "command:practice:terrain_opaque:0",
+            "command:practice:terrain_sorted_translucent:0",
+            "command:practice:terrain_transparent:0"
+          ],
+          "activePrograms": [
+            "program:dawnlight:scene_fallback/terrain_alpha_tested",
+            "program:dawnlight:scene_fallback/terrain_opaque",
+            "program:dawnlight:scene_fallback/terrain_sorted_translucent",
+            "program:dawnlight:scene_fallback/terrain_transparent",
+            "program:practice:post/grade",
+            "program:practice:post/present"
+          ],
+          "activeServices": []
+        }
+      ],
+      "runtimeEvidence": {
+        "driverStatus": "notProvided",
+        "runtimeEvaluated": false,
+        "liveWorldVerified": false,
+        "visual": "notRun"
+      }
+    },
+    {
+      "id": "features/vignette",
+      "status": "passed",
+      "sourceFingerprint": "00e02eaa46a886f4e0d64a51562724501b18f1664117d237d6e39ff6002474c0",
+      "definitionSha256": "8963d8334becdbb259e589d2b7a74d3612ca9628e5c51e0cfa05d0f739a3cd8b",
+      "archiveSha256": "a0b5b58fb179147b09fa884f3757f0a0006e1012c58cc4217bc5f46eee715351",
+      "archiveLength": 3968,
+      "files": [
+        {
+          "path": "README.md",
+          "length": 1374,
+          "sha256": "92f2447fb649313b186d4c8252a172a2b257cc95efe7ae5c45e38d8876c4c00e"
+        },
+        {
+          "path": "settings.json",
+          "length": 1202,
+          "sha256": "57d34a8b9c52233a843fe350c597b35f5dabf006ec381a172a5070dc0ac55441"
+        },
+        {
+          "path": "shaderpack.json",
+          "length": 12253,
+          "sha256": "0a21a77a0bf4e8d55186b949ebbe4492ed545132e3d613eec310dede54483ea6"
+        },
+        {
+          "path": "shaders/fullscreen.vsh",
+          "length": 298,
+          "sha256": "77e9c0fcd7803893b121b69daf13380f20b109f2d4e23964014b367531053c92"
+        },
+        {
+          "path": "shaders/grade.psh",
+          "length": 426,
+          "sha256": "db154168e82b97e5167cf780618a2cc82c20fbb9291675879b344525f98a4d8d"
+        },
+        {
+          "path": "shaders/present.psh",
+          "length": 181,
+          "sha256": "d8ef4f9a0e1b4be69e9b6a1f841e80252e1bf797f98f036a1938c14165bdb787"
+        }
+      ],
+      "manifestHash": "4f1045b9d6d108b00b157fb0157e0c8a1599fefd74fbd25d89c5ed41f36a8507",
+      "checks": [
+        {
+          "id": "pack",
+          "variant": "default",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "b63667eeddcece3de93bea560ae25bf93105e4b7c4be188c693461a2f39d6213",
+          "archiveOutputSha256": "b63667eeddcece3de93bea560ae25bf93105e4b7c4be188c693461a2f39d6213",
+          "manifestHash": "4f1045b9d6d108b00b157fb0157e0c8a1599fefd74fbd25d89c5ed41f36a8507"
+        },
+        {
+          "id": "scene",
+          "variant": "default",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "163e800a9cb2f2466b36758a3c650e20efdaaf57e63fc4efae57c641adc71a9f",
+          "archiveOutputSha256": "163e800a9cb2f2466b36758a3c650e20efdaaf57e63fc4efae57c641adc71a9f",
+          "manifestHash": "4f1045b9d6d108b00b157fb0157e0c8a1599fefd74fbd25d89c5ed41f36a8507"
+        },
+        {
+          "id": "graph",
+          "variant": "default",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "d7066a37efe5254ae3feb8e989acc611bb3c3e780d790b0c68a2e9dde77bdf51",
+          "archiveOutputSha256": "d7066a37efe5254ae3feb8e989acc611bb3c3e780d790b0c68a2e9dde77bdf51",
+          "manifestHash": "4f1045b9d6d108b00b157fb0157e0c8a1599fefd74fbd25d89c5ed41f36a8507"
+        },
+        {
+          "id": "interface:practice:post/grade",
+          "variant": "default",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "84bc763a1895a6318e5abbad5471e191663a3e539f6bb1c882e6d21d8830ed3b",
+          "archiveOutputSha256": "84bc763a1895a6318e5abbad5471e191663a3e539f6bb1c882e6d21d8830ed3b",
+          "manifestHash": "4f1045b9d6d108b00b157fb0157e0c8a1599fefd74fbd25d89c5ed41f36a8507"
+        },
+        {
+          "id": "interface:practice:post/present",
+          "variant": "default",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "271843cb7350e05ffa6b7b384b7eb227118ced6bde4451a5e43652738028915c",
+          "archiveOutputSha256": "271843cb7350e05ffa6b7b384b7eb227118ced6bde4451a5e43652738028915c",
+          "manifestHash": "4f1045b9d6d108b00b157fb0157e0c8a1599fefd74fbd25d89c5ed41f36a8507"
+        },
+        {
+          "id": "data",
+          "variant": "default",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "f040923bf29d168dcf7112586211c5b55f0b573940f35ae6ac6343301ee06964",
+          "archiveOutputSha256": "f040923bf29d168dcf7112586211c5b55f0b573940f35ae6ac6343301ee06964",
+          "manifestHash": "4f1045b9d6d108b00b157fb0157e0c8a1599fefd74fbd25d89c5ed41f36a8507"
+        },
+        {
+          "id": "pack",
+          "variant": "grade-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "b63667eeddcece3de93bea560ae25bf93105e4b7c4be188c693461a2f39d6213",
+          "archiveOutputSha256": "b63667eeddcece3de93bea560ae25bf93105e4b7c4be188c693461a2f39d6213",
+          "manifestHash": "4f1045b9d6d108b00b157fb0157e0c8a1599fefd74fbd25d89c5ed41f36a8507"
+        },
+        {
+          "id": "scene",
+          "variant": "grade-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "163e800a9cb2f2466b36758a3c650e20efdaaf57e63fc4efae57c641adc71a9f",
+          "archiveOutputSha256": "163e800a9cb2f2466b36758a3c650e20efdaaf57e63fc4efae57c641adc71a9f",
+          "manifestHash": "4f1045b9d6d108b00b157fb0157e0c8a1599fefd74fbd25d89c5ed41f36a8507"
+        },
+        {
+          "id": "graph",
+          "variant": "grade-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "ca1d9c90fafadc220e33daf70017092a012ae25bff2e1403ddaf998a9f9a9a43",
+          "archiveOutputSha256": "ca1d9c90fafadc220e33daf70017092a012ae25bff2e1403ddaf998a9f9a9a43",
+          "manifestHash": "4f1045b9d6d108b00b157fb0157e0c8a1599fefd74fbd25d89c5ed41f36a8507"
+        },
+        {
+          "id": "interface:practice:post/grade",
+          "variant": "grade-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "84bc763a1895a6318e5abbad5471e191663a3e539f6bb1c882e6d21d8830ed3b",
+          "archiveOutputSha256": "84bc763a1895a6318e5abbad5471e191663a3e539f6bb1c882e6d21d8830ed3b",
+          "manifestHash": "4f1045b9d6d108b00b157fb0157e0c8a1599fefd74fbd25d89c5ed41f36a8507"
+        },
+        {
+          "id": "interface:practice:post/present",
+          "variant": "grade-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "271843cb7350e05ffa6b7b384b7eb227118ced6bde4451a5e43652738028915c",
+          "archiveOutputSha256": "271843cb7350e05ffa6b7b384b7eb227118ced6bde4451a5e43652738028915c",
+          "manifestHash": "4f1045b9d6d108b00b157fb0157e0c8a1599fefd74fbd25d89c5ed41f36a8507"
+        },
+        {
+          "id": "data",
+          "variant": "grade-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "f040923bf29d168dcf7112586211c5b55f0b573940f35ae6ac6343301ee06964",
+          "archiveOutputSha256": "f040923bf29d168dcf7112586211c5b55f0b573940f35ae6ac6343301ee06964",
+          "manifestHash": "4f1045b9d6d108b00b157fb0157e0c8a1599fefd74fbd25d89c5ed41f36a8507"
+        },
+        {
+          "id": "pack",
+          "variant": "strength-max",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "b63667eeddcece3de93bea560ae25bf93105e4b7c4be188c693461a2f39d6213",
+          "archiveOutputSha256": "b63667eeddcece3de93bea560ae25bf93105e4b7c4be188c693461a2f39d6213",
+          "manifestHash": "4f1045b9d6d108b00b157fb0157e0c8a1599fefd74fbd25d89c5ed41f36a8507"
+        },
+        {
+          "id": "scene",
+          "variant": "strength-max",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "163e800a9cb2f2466b36758a3c650e20efdaaf57e63fc4efae57c641adc71a9f",
+          "archiveOutputSha256": "163e800a9cb2f2466b36758a3c650e20efdaaf57e63fc4efae57c641adc71a9f",
+          "manifestHash": "4f1045b9d6d108b00b157fb0157e0c8a1599fefd74fbd25d89c5ed41f36a8507"
+        },
+        {
+          "id": "graph",
+          "variant": "strength-max",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "eaaf6ffd52ac6bf9804670a10229f58f521fea51c2af3d73ae04f795d7a14c5f",
+          "archiveOutputSha256": "eaaf6ffd52ac6bf9804670a10229f58f521fea51c2af3d73ae04f795d7a14c5f",
+          "manifestHash": "4f1045b9d6d108b00b157fb0157e0c8a1599fefd74fbd25d89c5ed41f36a8507"
+        },
+        {
+          "id": "interface:practice:post/grade",
+          "variant": "strength-max",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "7e8338515d25c4e01b88fb73bed615bff1c2c384a7ebbe4232d63e2a89d695b8",
+          "archiveOutputSha256": "7e8338515d25c4e01b88fb73bed615bff1c2c384a7ebbe4232d63e2a89d695b8",
+          "manifestHash": "4f1045b9d6d108b00b157fb0157e0c8a1599fefd74fbd25d89c5ed41f36a8507"
+        },
+        {
+          "id": "interface:practice:post/present",
+          "variant": "strength-max",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "271843cb7350e05ffa6b7b384b7eb227118ced6bde4451a5e43652738028915c",
+          "archiveOutputSha256": "271843cb7350e05ffa6b7b384b7eb227118ced6bde4451a5e43652738028915c",
+          "manifestHash": "4f1045b9d6d108b00b157fb0157e0c8a1599fefd74fbd25d89c5ed41f36a8507"
+        },
+        {
+          "id": "data",
+          "variant": "strength-max",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "f040923bf29d168dcf7112586211c5b55f0b573940f35ae6ac6343301ee06964",
+          "archiveOutputSha256": "f040923bf29d168dcf7112586211c5b55f0b573940f35ae6ac6343301ee06964",
+          "manifestHash": "4f1045b9d6d108b00b157fb0157e0c8a1599fefd74fbd25d89c5ed41f36a8507"
+        }
+      ],
+      "branches": [
+        {
+          "id": "default",
+          "options": {},
+          "activeResources": [
+            "resource:practice:post/color",
+            "resource:practice:scene/color",
+            "resource:practice:scene/depth"
+          ],
+          "activeCommands": [
+            "command:practice:grade:0",
+            "command:practice:present-grade:0",
+            "command:practice:terrain_alpha_tested:0",
+            "command:practice:terrain_opaque:0",
+            "command:practice:terrain_sorted_translucent:0",
+            "command:practice:terrain_transparent:0"
+          ],
+          "activePrograms": [
+            "program:dawnlight:scene_fallback/terrain_alpha_tested",
+            "program:dawnlight:scene_fallback/terrain_opaque",
+            "program:dawnlight:scene_fallback/terrain_sorted_translucent",
+            "program:dawnlight:scene_fallback/terrain_transparent",
+            "program:practice:post/grade",
+            "program:practice:post/present"
+          ],
+          "activeServices": []
+        },
+        {
+          "id": "grade-off",
+          "options": {
+            "practice:grade": false
+          },
+          "activeResources": [
+            "resource:practice:scene/color",
+            "resource:practice:scene/depth"
+          ],
+          "activeCommands": [
+            "command:practice:present-raw:0",
+            "command:practice:terrain_alpha_tested:0",
+            "command:practice:terrain_opaque:0",
+            "command:practice:terrain_sorted_translucent:0",
+            "command:practice:terrain_transparent:0"
+          ],
+          "activePrograms": [
+            "program:dawnlight:scene_fallback/terrain_alpha_tested",
+            "program:dawnlight:scene_fallback/terrain_opaque",
+            "program:dawnlight:scene_fallback/terrain_sorted_translucent",
+            "program:dawnlight:scene_fallback/terrain_transparent",
+            "program:practice:post/present"
+          ],
+          "activeServices": []
+        },
+        {
+          "id": "strength-max",
+          "options": {
+            "practice:strength": 1
+          },
+          "activeResources": [
+            "resource:practice:post/color",
+            "resource:practice:scene/color",
+            "resource:practice:scene/depth"
+          ],
+          "activeCommands": [
+            "command:practice:grade:0",
+            "command:practice:present-grade:0",
+            "command:practice:terrain_alpha_tested:0",
+            "command:practice:terrain_opaque:0",
+            "command:practice:terrain_sorted_translucent:0",
+            "command:practice:terrain_transparent:0"
+          ],
+          "activePrograms": [
+            "program:dawnlight:scene_fallback/terrain_alpha_tested",
+            "program:dawnlight:scene_fallback/terrain_opaque",
+            "program:dawnlight:scene_fallback/terrain_sorted_translucent",
+            "program:dawnlight:scene_fallback/terrain_transparent",
+            "program:practice:post/grade",
+            "program:practice:post/present"
+          ],
+          "activeServices": []
+        }
+      ],
+      "runtimeEvidence": {
+        "driverStatus": "notProvided",
+        "runtimeEvaluated": false,
+        "liveWorldVerified": false,
+        "visual": "notRun"
+      }
+    },
+    {
+      "id": "features/luma-outline",
+      "status": "passed",
+      "sourceFingerprint": "68744757e7b76898bcefe20600ca1432aa07aea4ef346fe0548212a41d06fcd4",
+      "definitionSha256": "2905c54faaf82924b8043003d746de2da8fe19223f2b4646ff742ec8bf1fe8ca",
+      "archiveSha256": "fd087f114e9aafcb63416a984fa147af83e2bbe4b34b631952c58f096b555d99",
+      "archiveLength": 4075,
+      "files": [
+        {
+          "path": "README.md",
+          "length": 1405,
+          "sha256": "e2ff40d46fae5aa1ccdc62511eb26f4b0e3fafe6bb787b1b93b8501a51b0ee8c"
+        },
+        {
+          "path": "settings.json",
+          "length": 1202,
+          "sha256": "57d34a8b9c52233a843fe350c597b35f5dabf006ec381a172a5070dc0ac55441"
+        },
+        {
+          "path": "shaderpack.json",
+          "length": 12265,
+          "sha256": "c5108a5ef3b32552f57e2d9afd71385d7a2b8c253f86ececd95d9c935c390775"
+        },
+        {
+          "path": "shaders/fullscreen.vsh",
+          "length": 298,
+          "sha256": "77e9c0fcd7803893b121b69daf13380f20b109f2d4e23964014b367531053c92"
+        },
+        {
+          "path": "shaders/grade.psh",
+          "length": 901,
+          "sha256": "cdfb53cacd28cba5d3d9d90ba9332f295ae935a788cb8daf905a22d3498f7343"
+        },
+        {
+          "path": "shaders/present.psh",
+          "length": 181,
+          "sha256": "d8ef4f9a0e1b4be69e9b6a1f841e80252e1bf797f98f036a1938c14165bdb787"
+        }
+      ],
+      "manifestHash": "fb9e797c77515104db3ffef60a6e5791a711a97fe3e86da052e69f36ffba3420",
+      "checks": [
+        {
+          "id": "pack",
+          "variant": "default",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "2ca07386bf2b4a7f0318946ac2a60ec8a092cc6650bd9e20966e6991540f8642",
+          "archiveOutputSha256": "2ca07386bf2b4a7f0318946ac2a60ec8a092cc6650bd9e20966e6991540f8642",
+          "manifestHash": "fb9e797c77515104db3ffef60a6e5791a711a97fe3e86da052e69f36ffba3420"
+        },
+        {
+          "id": "scene",
+          "variant": "default",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "6bff16d9770440e9a8a6939d3ea57ce5b4918bc83933c66bf797cdff13286c87",
+          "archiveOutputSha256": "6bff16d9770440e9a8a6939d3ea57ce5b4918bc83933c66bf797cdff13286c87",
+          "manifestHash": "fb9e797c77515104db3ffef60a6e5791a711a97fe3e86da052e69f36ffba3420"
+        },
+        {
+          "id": "graph",
+          "variant": "default",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "cdeec1130c3863175e3d249b9dc6bcddb8e416b2e76059063d0240868c8312bc",
+          "archiveOutputSha256": "cdeec1130c3863175e3d249b9dc6bcddb8e416b2e76059063d0240868c8312bc",
+          "manifestHash": "fb9e797c77515104db3ffef60a6e5791a711a97fe3e86da052e69f36ffba3420"
+        },
+        {
+          "id": "interface:practice:post/grade",
+          "variant": "default",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "3dfe12b437d58f05078a15d56bab490f824881c773a613741a8b1a8d3793e929",
+          "archiveOutputSha256": "3dfe12b437d58f05078a15d56bab490f824881c773a613741a8b1a8d3793e929",
+          "manifestHash": "fb9e797c77515104db3ffef60a6e5791a711a97fe3e86da052e69f36ffba3420"
+        },
+        {
+          "id": "interface:practice:post/present",
+          "variant": "default",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "ae9404426bf421a8f0f0a4dd87dd2356dbc451e47bb49664245e456b9256a87c",
+          "archiveOutputSha256": "ae9404426bf421a8f0f0a4dd87dd2356dbc451e47bb49664245e456b9256a87c",
+          "manifestHash": "fb9e797c77515104db3ffef60a6e5791a711a97fe3e86da052e69f36ffba3420"
+        },
+        {
+          "id": "data",
+          "variant": "default",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "e4d5f03a4399c513a53998cae830d1e9c7355ee246e59baf88a37ba5ffb34f05",
+          "archiveOutputSha256": "e4d5f03a4399c513a53998cae830d1e9c7355ee246e59baf88a37ba5ffb34f05",
+          "manifestHash": "fb9e797c77515104db3ffef60a6e5791a711a97fe3e86da052e69f36ffba3420"
+        },
+        {
+          "id": "pack",
+          "variant": "grade-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "2ca07386bf2b4a7f0318946ac2a60ec8a092cc6650bd9e20966e6991540f8642",
+          "archiveOutputSha256": "2ca07386bf2b4a7f0318946ac2a60ec8a092cc6650bd9e20966e6991540f8642",
+          "manifestHash": "fb9e797c77515104db3ffef60a6e5791a711a97fe3e86da052e69f36ffba3420"
+        },
+        {
+          "id": "scene",
+          "variant": "grade-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "6bff16d9770440e9a8a6939d3ea57ce5b4918bc83933c66bf797cdff13286c87",
+          "archiveOutputSha256": "6bff16d9770440e9a8a6939d3ea57ce5b4918bc83933c66bf797cdff13286c87",
+          "manifestHash": "fb9e797c77515104db3ffef60a6e5791a711a97fe3e86da052e69f36ffba3420"
+        },
+        {
+          "id": "graph",
+          "variant": "grade-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "ff046cc1c048797cf7e10759ce253bbb868043377d81e5673afcf5a6110f30e1",
+          "archiveOutputSha256": "ff046cc1c048797cf7e10759ce253bbb868043377d81e5673afcf5a6110f30e1",
+          "manifestHash": "fb9e797c77515104db3ffef60a6e5791a711a97fe3e86da052e69f36ffba3420"
+        },
+        {
+          "id": "interface:practice:post/grade",
+          "variant": "grade-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "3dfe12b437d58f05078a15d56bab490f824881c773a613741a8b1a8d3793e929",
+          "archiveOutputSha256": "3dfe12b437d58f05078a15d56bab490f824881c773a613741a8b1a8d3793e929",
+          "manifestHash": "fb9e797c77515104db3ffef60a6e5791a711a97fe3e86da052e69f36ffba3420"
+        },
+        {
+          "id": "interface:practice:post/present",
+          "variant": "grade-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "ae9404426bf421a8f0f0a4dd87dd2356dbc451e47bb49664245e456b9256a87c",
+          "archiveOutputSha256": "ae9404426bf421a8f0f0a4dd87dd2356dbc451e47bb49664245e456b9256a87c",
+          "manifestHash": "fb9e797c77515104db3ffef60a6e5791a711a97fe3e86da052e69f36ffba3420"
+        },
+        {
+          "id": "data",
+          "variant": "grade-off",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "e4d5f03a4399c513a53998cae830d1e9c7355ee246e59baf88a37ba5ffb34f05",
+          "archiveOutputSha256": "e4d5f03a4399c513a53998cae830d1e9c7355ee246e59baf88a37ba5ffb34f05",
+          "manifestHash": "fb9e797c77515104db3ffef60a6e5791a711a97fe3e86da052e69f36ffba3420"
+        },
+        {
+          "id": "pack",
+          "variant": "strength-max",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "2ca07386bf2b4a7f0318946ac2a60ec8a092cc6650bd9e20966e6991540f8642",
+          "archiveOutputSha256": "2ca07386bf2b4a7f0318946ac2a60ec8a092cc6650bd9e20966e6991540f8642",
+          "manifestHash": "fb9e797c77515104db3ffef60a6e5791a711a97fe3e86da052e69f36ffba3420"
+        },
+        {
+          "id": "scene",
+          "variant": "strength-max",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "6bff16d9770440e9a8a6939d3ea57ce5b4918bc83933c66bf797cdff13286c87",
+          "archiveOutputSha256": "6bff16d9770440e9a8a6939d3ea57ce5b4918bc83933c66bf797cdff13286c87",
+          "manifestHash": "fb9e797c77515104db3ffef60a6e5791a711a97fe3e86da052e69f36ffba3420"
+        },
+        {
+          "id": "graph",
+          "variant": "strength-max",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "33823bfc93306c5bca8fae91435b61d4f553f8eba3fe69a8f94b58d8df2aec44",
+          "archiveOutputSha256": "33823bfc93306c5bca8fae91435b61d4f553f8eba3fe69a8f94b58d8df2aec44",
+          "manifestHash": "fb9e797c77515104db3ffef60a6e5791a711a97fe3e86da052e69f36ffba3420"
+        },
+        {
+          "id": "interface:practice:post/grade",
+          "variant": "strength-max",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "8c75e9b5a4c8ec0dfcd02d457d7a76e018b3110a95a161a0fe11fd137fea2a38",
+          "archiveOutputSha256": "8c75e9b5a4c8ec0dfcd02d457d7a76e018b3110a95a161a0fe11fd137fea2a38",
+          "manifestHash": "fb9e797c77515104db3ffef60a6e5791a711a97fe3e86da052e69f36ffba3420"
+        },
+        {
+          "id": "interface:practice:post/present",
+          "variant": "strength-max",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "ae9404426bf421a8f0f0a4dd87dd2356dbc451e47bb49664245e456b9256a87c",
+          "archiveOutputSha256": "ae9404426bf421a8f0f0a4dd87dd2356dbc451e47bb49664245e456b9256a87c",
+          "manifestHash": "fb9e797c77515104db3ffef60a6e5791a711a97fe3e86da052e69f36ffba3420"
+        },
+        {
+          "id": "data",
+          "variant": "strength-max",
+          "exitCode": 0,
+          "archiveExitCode": 0,
+          "outputSha256": "e4d5f03a4399c513a53998cae830d1e9c7355ee246e59baf88a37ba5ffb34f05",
+          "archiveOutputSha256": "e4d5f03a4399c513a53998cae830d1e9c7355ee246e59baf88a37ba5ffb34f05",
+          "manifestHash": "fb9e797c77515104db3ffef60a6e5791a711a97fe3e86da052e69f36ffba3420"
+        }
+      ],
+      "branches": [
+        {
+          "id": "default",
+          "options": {},
+          "activeResources": [
+            "resource:practice:post/color",
+            "resource:practice:scene/color",
+            "resource:practice:scene/depth"
+          ],
+          "activeCommands": [
+            "command:practice:grade:0",
+            "command:practice:present-grade:0",
+            "command:practice:terrain_alpha_tested:0",
+            "command:practice:terrain_opaque:0",
+            "command:practice:terrain_sorted_translucent:0",
+            "command:practice:terrain_transparent:0"
+          ],
+          "activePrograms": [
+            "program:dawnlight:scene_fallback/terrain_alpha_tested",
+            "program:dawnlight:scene_fallback/terrain_opaque",
+            "program:dawnlight:scene_fallback/terrain_sorted_translucent",
+            "program:dawnlight:scene_fallback/terrain_transparent",
+            "program:practice:post/grade",
+            "program:practice:post/present"
+          ],
+          "activeServices": []
+        },
+        {
+          "id": "grade-off",
+          "options": {
+            "practice:grade": false
+          },
+          "activeResources": [
+            "resource:practice:scene/color",
+            "resource:practice:scene/depth"
+          ],
+          "activeCommands": [
+            "command:practice:present-raw:0",
+            "command:practice:terrain_alpha_tested:0",
+            "command:practice:terrain_opaque:0",
+            "command:practice:terrain_sorted_translucent:0",
+            "command:practice:terrain_transparent:0"
+          ],
+          "activePrograms": [
+            "program:dawnlight:scene_fallback/terrain_alpha_tested",
+            "program:dawnlight:scene_fallback/terrain_opaque",
+            "program:dawnlight:scene_fallback/terrain_sorted_translucent",
+            "program:dawnlight:scene_fallback/terrain_transparent",
+            "program:practice:post/present"
+          ],
+          "activeServices": []
+        },
+        {
+          "id": "strength-max",
+          "options": {
+            "practice:strength": 1
+          },
+          "activeResources": [
+            "resource:practice:post/color",
+            "resource:practice:scene/color",
+            "resource:practice:scene/depth"
+          ],
+          "activeCommands": [
+            "command:practice:grade:0",
+            "command:practice:present-grade:0",
+            "command:practice:terrain_alpha_tested:0",
+            "command:practice:terrain_opaque:0",
+            "command:practice:terrain_sorted_translucent:0",
+            "command:practice:terrain_transparent:0"
+          ],
+          "activePrograms": [
+            "program:dawnlight:scene_fallback/terrain_alpha_tested",
+            "program:dawnlight:scene_fallback/terrain_opaque",
+            "program:dawnlight:scene_fallback/terrain_sorted_translucent",
+            "program:dawnlight:scene_fallback/terrain_transparent",
+            "program:practice:post/grade",
+            "program:practice:post/present"
+          ],
+          "activeServices": []
+        }
+      ],
+      "runtimeEvidence": {
+        "driverStatus": "notProvided",
+        "runtimeEvaluated": false,
+        "liveWorldVerified": false,
+        "visual": "notRun"
+      }
+    }
+  ]
+}

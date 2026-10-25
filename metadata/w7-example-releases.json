@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "examples": [
+    {
+      "id": "features/color-balance",
+      "sourceFingerprint": "fa54b90617955a1d0a257f9e234bdb4135ce35a8d637227bf329292fb4fb3ba7",
+      "archiveSha256": "3880779537d67fe635fec584cade69455f845630ecb87dc0e0a0f850a8eea082",
+      "archiveLength": 3957
+    },
+    {
+      "id": "features/vignette",
+      "sourceFingerprint": "00e02eaa46a886f4e0d64a51562724501b18f1664117d237d6e39ff6002474c0",
+      "archiveSha256": "a0b5b58fb179147b09fa884f3757f0a0006e1012c58cc4217bc5f46eee715351",
+      "archiveLength": 3968
+    },
+    {
+      "id": "features/luma-outline",
+      "sourceFingerprint": "68744757e7b76898bcefe20600ca1432aa07aea4ef346fe0548212a41d06fcd4",
+      "archiveSha256": "fd087f114e9aafcb63416a984fa147af83e2bbe4b34b631952c58f096b555d99",
+      "archiveLength": 4075
+    }
+  ]
+}

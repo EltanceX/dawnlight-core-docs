@@ -1,0 +1,11 @@
+#version 320 es
+precision highp float;
+uniform sampler2D u_sceneColor;
+in vec2 v_uv;
+layout(location = 0) out vec4 o_color;
+void main() {
+    vec3 c = texture(u_sceneColor, v_uv).rgb;
+    vec3 balanced = (c - 0.5) * 1.12 + 0.5;
+    balanced *= vec3(1.05, 1.0, 0.94);
+    o_color = vec4(clamp(mix(c, balanced, float(GRADE_STRENGTH)), 0.0, 1.0), 1.0);
+}

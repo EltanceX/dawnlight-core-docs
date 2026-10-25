@@ -80,3 +80,7 @@ When reading an example, trace a path: who produces a resource → which command
 The initial runtime baseline is Windows x64, .NET 10, OpenGL ES 3.2 and a single main view. See [Versions and support](../compatibility/current-baseline#support-boundaries) for Android, full VR, multiple views and other capability boundaries.
 
 This website is a static reference. The browser does not run Survivalcraft shader packs. Tool output, real driver compilation, game visuals and performance each require their own evidence.
+
+## Tools, troubleshooting and practice {#practice}
+
+Use [seven symptom paths](/en/troubleshooting/) and the [repair lab](/en/troubleshooting/configuration-lab) when a check fails. Try [three independent effects](/en/recipes/) after the course, then study the versioned [Dawnlight / ToonLab / MakeUp slices](/en/cases/) and [history/temporal/shadow boundaries](/en/recipes/advanced-boundaries).

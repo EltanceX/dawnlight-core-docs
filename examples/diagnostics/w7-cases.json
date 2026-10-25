@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "baseExample": "features/color-balance",
+  "cases": [
+    {"id": "unknown-provider", "expectedCode": "DLMAN0001", "changes": [{"pointer": "/passes/0/commands/0/sceneProvider/id", "value": "dawnlight:scene_draw/missing"}]},
+    {"id": "unknown-program", "expectedCode": "DLMAN0001", "changes": [{"pointer": "/passes/4/commands/0/program", "value": "practice:post/missing"}]},
+    {"id": "history-on-persistent", "expectedCode": "DLMAN0001", "changes": [{"pointer": "/passes/4/commands/1", "value": {"type": "historyCommit", "resource": "practice:post/color"}}]}
+  ]
+}

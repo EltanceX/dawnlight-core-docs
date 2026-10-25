@@ -1,0 +1,273 @@
+{
+  "id": "features/luma-outline",
+  "sourceFingerprint": "68744757e7b76898bcefe20600ca1432aa07aea4ef346fe0548212a41d06fcd4",
+  "archiveSha256": "fd087f114e9aafcb63416a984fa147af83e2bbe4b34b631952c58f096b555d99",
+  "loaded": {
+    "active": "External:w7-luma-outline",
+    "published": 27,
+    "pending": 0,
+    "error": null,
+    "size": {
+      "x": 2048,
+      "y": 1222
+    }
+  },
+  "reloaded": {
+    "active": "External:w7-luma-outline",
+    "published": 28,
+    "pending": 0,
+    "error": null,
+    "size": {
+      "x": 2048,
+      "y": 1222
+    }
+  },
+  "resized": {
+    "active": "External:w7-luma-outline",
+    "published": 28,
+    "pending": 0,
+    "error": null,
+    "size": {
+      "x": 1024,
+      "y": 640
+    }
+  },
+  "builtIn": {
+    "active": "BuiltIn",
+    "published": 32,
+    "pending": 0,
+    "error": null,
+    "size": {
+      "x": 2048,
+      "y": 1222
+    }
+  },
+  "variants": [
+    {
+      "id": "default",
+      "options": {},
+      "status": {
+        "active": "External:w7-luma-outline",
+        "published": 28,
+        "pending": 0,
+        "error": null,
+        "size": {
+          "x": 2048,
+          "y": 1222
+        }
+      },
+      "header": {
+        "packId": "practice:luma-outline",
+        "manifestVersion": 5,
+        "manifestHash": "fb9e797c77515104db3ffef60a6e5791a711a97fe3e86da052e69f36ffba3420",
+        "catalogHash": "4bc28c17beffea2311a422fff9f633d2e4f03784460d0254adda8af2e766d84c",
+        "sceneAbiHash": "4bc28c17beffea2311a422fff9f633d2e4f03784460d0254adda8af2e766d84c",
+        "generationId": 28,
+        "generationSourceFingerprint": "aac59eb29a26838bca5acb5aa577518183936ff8d709bc9221f10273bdc96cd5",
+        "deviceEpoch": 0,
+        "graphicsApi": "OpenGL ES 3.2 NVIDIA 566.07",
+        "driverVendor": "NVIDIA Corporation",
+        "driverRenderer": "NVIDIA GeForce RTX 4050 Laptop GPU/PCIe/SSE2",
+        "shaderLanguageVersion": "OpenGL ES GLSL ES 3.20",
+        "engineBuild": "2.4.0.0",
+        "options": [
+          {
+            "id": "practice:grade",
+            "type": "boolean",
+            "value": "true"
+          },
+          {
+            "id": "practice:strength",
+            "type": "number",
+            "value": "0.65"
+          }
+        ],
+        "capabilities": [
+          {
+            "id": "dawnlight:model_shadow/max_instances",
+            "type": "integer",
+            "value": "7"
+          },
+          {
+            "id": "dawnlight:model_shadow/max_joints",
+            "type": "integer",
+            "value": "128"
+          }
+        ]
+      },
+      "linkedPrograms": [
+        "dawnlight:scene_fallback/terrain_alpha_tested",
+        "dawnlight:scene_fallback/terrain_opaque",
+        "dawnlight:scene_fallback/terrain_sorted_translucent",
+        "dawnlight:scene_fallback/terrain_transparent",
+        "practice:post/grade",
+        "practice:post/present"
+      ],
+      "driver": {
+        "published": true,
+        "linked": true,
+        "framebuffersComplete": true,
+        "sha256": "a815e22a61270d1bf4cb0d8c3c5f358d48e238106fd48470fb9079294285c449",
+        "reportHash": "ae941c7dfeab3f163df798601483b480db5f56d2ebea65f51434aa2ffe998d99"
+      }
+    },
+    {
+      "id": "grade-off",
+      "options": {
+        "practice:grade": false
+      },
+      "status": {
+        "active": "External:w7-luma-outline",
+        "published": 29,
+        "pending": 0,
+        "error": null,
+        "size": {
+          "x": 2048,
+          "y": 1222
+        }
+      },
+      "header": {
+        "packId": "practice:luma-outline",
+        "manifestVersion": 5,
+        "manifestHash": "fb9e797c77515104db3ffef60a6e5791a711a97fe3e86da052e69f36ffba3420",
+        "catalogHash": "4bc28c17beffea2311a422fff9f633d2e4f03784460d0254adda8af2e766d84c",
+        "sceneAbiHash": "4bc28c17beffea2311a422fff9f633d2e4f03784460d0254adda8af2e766d84c",
+        "generationId": 29,
+        "generationSourceFingerprint": "aac59eb29a26838bca5acb5aa577518183936ff8d709bc9221f10273bdc96cd5",
+        "deviceEpoch": 0,
+        "graphicsApi": "OpenGL ES 3.2 NVIDIA 566.07",
+        "driverVendor": "NVIDIA Corporation",
+        "driverRenderer": "NVIDIA GeForce RTX 4050 Laptop GPU/PCIe/SSE2",
+        "shaderLanguageVersion": "OpenGL ES GLSL ES 3.20",
+        "engineBuild": "2.4.0.0",
+        "options": [
+          {
+            "id": "practice:grade",
+            "type": "boolean",
+            "value": "false"
+          },
+          {
+            "id": "practice:strength",
+            "type": "number",
+            "value": "0.65"
+          }
+        ],
+        "capabilities": [
+          {
+            "id": "dawnlight:model_shadow/max_instances",
+            "type": "integer",
+            "value": "7"
+          },
+          {
+            "id": "dawnlight:model_shadow/max_joints",
+            "type": "integer",
+            "value": "128"
+          }
+        ]
+      },
+      "linkedPrograms": [
+        "dawnlight:scene_fallback/terrain_alpha_tested",
+        "dawnlight:scene_fallback/terrain_opaque",
+        "dawnlight:scene_fallback/terrain_sorted_translucent",
+        "dawnlight:scene_fallback/terrain_transparent",
+        "practice:post/present"
+      ],
+      "driver": {
+        "published": true,
+        "linked": true,
+        "framebuffersComplete": true,
+        "sha256": "d774a297717bdef63aa344d2a05af9a51f3a547a4eb524fb601bdc5d6fff31a7",
+        "reportHash": "fd3a44044dd72cf223492cb1146a4bd9c8e6155e8462f87a55afc17d54b7aba1"
+      }
+    },
+    {
+      "id": "strength-max",
+      "options": {
+        "practice:strength": 1
+      },
+      "status": {
+        "active": "External:w7-luma-outline",
+        "published": 31,
+        "pending": 0,
+        "error": null,
+        "size": {
+          "x": 2048,
+          "y": 1222
+        }
+      },
+      "header": {
+        "packId": "practice:luma-outline",
+        "manifestVersion": 5,
+        "manifestHash": "fb9e797c77515104db3ffef60a6e5791a711a97fe3e86da052e69f36ffba3420",
+        "catalogHash": "4bc28c17beffea2311a422fff9f633d2e4f03784460d0254adda8af2e766d84c",
+        "sceneAbiHash": "4bc28c17beffea2311a422fff9f633d2e4f03784460d0254adda8af2e766d84c",
+        "generationId": 31,
+        "generationSourceFingerprint": "125998a5d3c100ba0b5fb0f56fe9dc63056274cdbb9a80045e922459e2950669",
+        "deviceEpoch": 0,
+        "graphicsApi": "OpenGL ES 3.2 NVIDIA 566.07",
+        "driverVendor": "NVIDIA Corporation",
+        "driverRenderer": "NVIDIA GeForce RTX 4050 Laptop GPU/PCIe/SSE2",
+        "shaderLanguageVersion": "OpenGL ES GLSL ES 3.20",
+        "engineBuild": "2.4.0.0",
+        "options": [
+          {
+            "id": "practice:grade",
+            "type": "boolean",
+            "value": "true"
+          },
+          {
+            "id": "practice:strength",
+            "type": "number",
+            "value": "1"
+          }
+        ],
+        "capabilities": [
+          {
+            "id": "dawnlight:model_shadow/max_instances",
+            "type": "integer",
+            "value": "7"
+          },
+          {
+            "id": "dawnlight:model_shadow/max_joints",
+            "type": "integer",
+            "value": "128"
+          }
+        ]
+      },
+      "linkedPrograms": [
+        "dawnlight:scene_fallback/terrain_alpha_tested",
+        "dawnlight:scene_fallback/terrain_opaque",
+        "dawnlight:scene_fallback/terrain_sorted_translucent",
+        "dawnlight:scene_fallback/terrain_transparent",
+        "practice:post/grade",
+        "practice:post/present"
+      ],
+      "driver": {
+        "published": true,
+        "linked": true,
+        "framebuffersComplete": true,
+        "sha256": "3442d5cf7d15984b18404b66c371f129461909bfc2069a5a847b031eb96b5711",
+        "reportHash": "705be44197e5aa832a3dd77e1e246e497d8f14ccf7a0d6213d8ad3b0fc0d34ff"
+      }
+    }
+  ],
+  "checkedAt": "2026-10-24T23:44:56.889Z",
+  "status": "passed",
+  "capture": {
+    "sourceFingerprint": "68744757e7b76898bcefe20600ca1432aa07aea4ef346fe0548212a41d06fcd4",
+    "options": {
+      "practice:grade": true,
+      "practice:strength": 0.65
+    },
+    "status": {
+      "active": "External:w7-luma-outline",
+      "published": 38,
+      "pending": 0,
+      "error": null,
+      "size": {
+        "x": 2048,
+        "y": 1222
+      }
+    }
+  }
+}

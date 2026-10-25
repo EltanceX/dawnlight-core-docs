@@ -1,0 +1,838 @@
+{
+  "schemaVersion": 1,
+  "baselineId": "candidate-f8aaa5c4",
+  "sourceCommit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+  "projection": "selected-authored-pass-resource-relationships",
+  "cases": [
+    {
+      "id": "dawnlight",
+      "sourceRoot": "Survivalcraft/shaderpacks/Dawnlight_v3.1",
+      "manifestVersion": 3,
+      "sceneAbiVersion": null,
+      "status": "authored-slice-not-active-runtime-proof",
+      "files": [
+        {
+          "path": "shaderpack.json",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/shaderpack.json",
+          "length": 1533,
+          "sha256": "a179a8dc91fe6da9f044a01493d20d30e99ea5e2bfada0bba3004aee6c77001c",
+          "sourceUrl": "https://gitea.com/EltanceX/DawnlightCore/src/commit/f8aaa5c4218f54536ccf994a2d512aed2e3678b7/Survivalcraft/shaderpacks/Dawnlight_v3.1/shaderpack.json",
+          "passes": [],
+          "resources": []
+        },
+        {
+          "path": "manifest/passes/composites.json",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/manifest/passes/composites.json",
+          "length": 5849,
+          "sha256": "ad313e775bedcec08b80f6c4bce2a5d5f02188d9ebc6b16a20e99572ded0145a",
+          "sourceUrl": "https://gitea.com/EltanceX/DawnlightCore/src/commit/f8aaa5c4218f54536ccf994a2d512aed2e3678b7/Survivalcraft/shaderpacks/Dawnlight_v3.1/manifest/passes/composites.json",
+          "passes": [
+            {
+              "id": "dawnlight:composite1",
+              "enabledWhen": [],
+              "stage": {
+                "template": "dawnlight:fullscreen",
+                "version": 1,
+                "target": "afterDraw",
+                "phase": "afterDraw",
+                "ordering": {
+                  "before": [
+                    "dawnlight:final"
+                  ]
+                }
+              },
+              "inputs": [
+                "dawnlight:final/texture_0",
+                "dawnlight:final/depth_texture",
+                "dawnlight:final/identifier_map",
+                "dawnlight:final/bloom_map"
+              ],
+              "outputs": [
+                "dawnlight:composite1/highlight_texture"
+              ],
+              "commands": [
+                {
+                  "type": "fullscreen",
+                  "program": "dawnlight:post_process/composite1"
+                }
+              ]
+            },
+            {
+              "id": "dawnlight:composite2",
+              "enabledWhen": [],
+              "stage": {
+                "template": "dawnlight:fullscreen",
+                "version": 1,
+                "target": "afterDraw",
+                "phase": "afterDraw",
+                "ordering": {
+                  "before": [
+                    "dawnlight:final"
+                  ],
+                  "after": [
+                    "dawnlight:composite1"
+                  ]
+                }
+              },
+              "inputs": [
+                "dawnlight:composite1/highlight_texture"
+              ],
+              "outputs": [
+                "dawnlight:composite2/blur_temp_texture"
+              ],
+              "commands": [
+                {
+                  "type": "fullscreen",
+                  "program": "dawnlight:post_process/composite2"
+                }
+              ]
+            },
+            {
+              "id": "dawnlight:composite3",
+              "enabledWhen": [],
+              "stage": {
+                "template": "dawnlight:fullscreen",
+                "version": 1,
+                "target": "afterDraw",
+                "phase": "afterDraw",
+                "ordering": {
+                  "before": [
+                    "dawnlight:final"
+                  ],
+                  "after": [
+                    "dawnlight:composite2"
+                  ]
+                }
+              },
+              "inputs": [
+                "dawnlight:composite2/blur_temp_texture"
+              ],
+              "outputs": [
+                "dawnlight:composite3/blur_temp_texture"
+              ],
+              "commands": [
+                {
+                  "type": "fullscreen",
+                  "program": "dawnlight:post_process/composite3"
+                }
+              ]
+            }
+          ],
+          "resources": []
+        },
+        {
+          "path": "manifest/passes/output.json",
+          "sourcePath": "Survivalcraft/shaderpacks/Dawnlight_v3.1/manifest/passes/output.json",
+          "length": 10925,
+          "sha256": "9367551d381ee17601b532f6ec61c5c264a3f040f3703e685190c6e9a9141da4",
+          "sourceUrl": "https://gitea.com/EltanceX/DawnlightCore/src/commit/f8aaa5c4218f54536ccf994a2d512aed2e3678b7/Survivalcraft/shaderpacks/Dawnlight_v3.1/manifest/passes/output.json",
+          "passes": [
+            {
+              "id": "dawnlight:final",
+              "enabledWhen": [],
+              "stage": {
+                "template": "dawnlight:fullscreen",
+                "version": 1,
+                "target": "afterDraw",
+                "phase": "afterDraw"
+              },
+              "inputs": [],
+              "outputs": [
+                {
+                  "resource": "dawnlight:screen_output/texture_history",
+                  "view": "dawnlight:history/current"
+                }
+              ],
+              "commands": [
+                {
+                  "type": "fullscreen",
+                  "program": "dawnlight:post_process/final"
+                }
+              ]
+            },
+            {
+              "id": "dawnlight:screen_output",
+              "enabledWhen": [],
+              "stage": {
+                "template": "dawnlight:command_list",
+                "version": 1,
+                "target": "afterDraw",
+                "phase": "screenOutput"
+              },
+              "inputs": [
+                "dawnlight:point_lights/counts_ssbo"
+              ],
+              "outputs": [],
+              "commands": [
+                {
+                  "type": "present",
+                  "program": "dawnlight:post_process/screen_output"
+                },
+                {
+                  "type": "historyCommit",
+                  "resource": "dawnlight:screen_output/texture_history"
+                }
+              ]
+            }
+          ],
+          "resources": []
+        }
+      ]
+    },
+    {
+      "id": "toonlab",
+      "sourceRoot": "Survivalcraft/shaderpack-candidates/ToonLab_v0.1_v4",
+      "manifestVersion": 4,
+      "sceneAbiVersion": 2,
+      "status": "authored-slice-not-active-runtime-proof",
+      "files": [
+        {
+          "path": "shaderpack.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/ToonLab_v0.1_v4/shaderpack.json",
+          "length": 3870,
+          "sha256": "cde0103b5870c9e1cf4f8870c43fed4cb82b208dd346d16d32e87b92360ac60e",
+          "sourceUrl": "https://gitea.com/EltanceX/DawnlightCore/src/commit/f8aaa5c4218f54536ccf994a2d512aed2e3678b7/Survivalcraft/shaderpack-candidates/ToonLab_v0.1_v4/shaderpack.json",
+          "passes": [],
+          "resources": []
+        },
+        {
+          "path": "manifest/passes/output.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/ToonLab_v0.1_v4/manifest/passes/output.json",
+          "length": 5884,
+          "sha256": "c2048b4b012dfc58f91ebcd4d4fac311d5e8c716504d5b747eb9f92b89c0b242",
+          "sourceUrl": "https://gitea.com/EltanceX/DawnlightCore/src/commit/f8aaa5c4218f54536ccf994a2d512aed2e3678b7/Survivalcraft/shaderpack-candidates/ToonLab_v0.1_v4/manifest/passes/output.json",
+          "passes": [
+            {
+              "id": "dawnlight:final",
+              "enabledWhen": [],
+              "stage": {
+                "template": "dawnlight:fullscreen",
+                "version": 1,
+                "target": "afterDraw",
+                "phase": "afterDraw",
+                "ordering": {
+                  "before": [
+                    "toonlab:toon_outline"
+                  ]
+                }
+              },
+              "inputs": [
+                "dawnlight:final/texture_0"
+              ],
+              "outputs": [
+                "toonlab:lighting/color"
+              ],
+              "commands": [
+                {
+                  "type": "fullscreen",
+                  "program": "toonlab:post_process/toon_final"
+                }
+              ]
+            },
+            {
+              "id": "toonlab:toon_outline",
+              "enabledWhen": [],
+              "stage": {
+                "template": "dawnlight:fullscreen",
+                "version": 1,
+                "target": "afterDraw",
+                "phase": "afterDraw",
+                "ordering": {
+                  "after": [
+                    "dawnlight:final"
+                  ]
+                }
+              },
+              "inputs": [
+                "toonlab:lighting/color",
+                "dawnlight:final/depth_texture",
+                "dawnlight:final/normal_map",
+                "dawnlight:final/identifier_map",
+                "toonlab:particles/coverage"
+              ],
+              "outputs": [
+                "toonlab:final/color",
+                {
+                  "resource": "dawnlight:screen_output/texture_history",
+                  "view": "dawnlight:history/current"
+                }
+              ],
+              "commands": [
+                {
+                  "type": "fullscreen",
+                  "program": "toonlab:post_process/toon_outline"
+                }
+              ]
+            },
+            {
+              "id": "dawnlight:screen_output",
+              "enabledWhen": [],
+              "stage": {
+                "template": "dawnlight:command_list",
+                "version": 1,
+                "target": "afterDraw",
+                "phase": "screenOutput"
+              },
+              "inputs": [
+                "toonlab:final/color"
+              ],
+              "outputs": [],
+              "commands": [
+                {
+                  "type": "present",
+                  "program": "toonlab:post_process/screen_output"
+                },
+                {
+                  "type": "historyCommit",
+                  "resource": "dawnlight:screen_output/texture_history"
+                }
+              ]
+            }
+          ],
+          "resources": []
+        },
+        {
+          "path": "manifest/passes/toon-ambient-occlusion.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/ToonLab_v0.1_v4/manifest/passes/toon-ambient-occlusion.json",
+          "length": 4929,
+          "sha256": "ba16e4fd33fcfbdaa8a8351dbffbd56e04bdd6f788c2c9f1bf0f36918ba43a06",
+          "sourceUrl": "https://gitea.com/EltanceX/DawnlightCore/src/commit/f8aaa5c4218f54536ccf994a2d512aed2e3678b7/Survivalcraft/shaderpack-candidates/ToonLab_v0.1_v4/manifest/passes/toon-ambient-occlusion.json",
+          "passes": [
+            {
+              "id": "toonlab:ambient_occlusion",
+              "enabledWhen": [
+                {
+                  "option": "toonlab:ambient_occlusion/mode",
+                  "oneOf": [
+                    "soft",
+                    "banded"
+                  ]
+                }
+              ],
+              "stage": {
+                "template": "dawnlight:command_list",
+                "version": 1,
+                "target": "world",
+                "phase": "opaque",
+                "ordering": {
+                  "after": [
+                    "toonlab:terrain_alpha_tested"
+                  ],
+                  "before": [
+                    "dawnlight:opaque_deferred"
+                  ]
+                }
+              },
+              "inputs": [
+                "dawnlight:final/depth_texture",
+                "dawnlight:final/normal_map",
+                "toonlab:ambient_occlusion/raw"
+              ],
+              "outputs": [
+                "toonlab:ambient_occlusion/raw",
+                "toonlab:ambient_occlusion/filtered"
+              ],
+              "commands": [
+                {
+                  "type": "fullscreen",
+                  "program": "toonlab:ambient_occlusion/evaluate"
+                },
+                {
+                  "type": "fullscreen",
+                  "program": "toonlab:ambient_occlusion/denoise"
+                }
+              ]
+            }
+          ],
+          "resources": []
+        }
+      ]
+    },
+    {
+      "id": "makeup",
+      "sourceRoot": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21",
+      "manifestVersion": 5,
+      "sceneAbiVersion": 2,
+      "status": "authored-slice-not-active-runtime-proof",
+      "files": [
+        {
+          "path": "shaderpack.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/shaderpack.json",
+          "length": 6104,
+          "sha256": "1334a862f808c292aae20e304245e8f878176dfa99f722c6be68da66b80281bd",
+          "sourceUrl": "https://gitea.com/EltanceX/DawnlightCore/src/commit/f8aaa5c4218f54536ccf994a2d512aed2e3678b7/Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/shaderpack.json",
+          "passes": [],
+          "resources": []
+        },
+        {
+          "path": "manifest/passes/taa.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/passes/taa.json",
+          "length": 9552,
+          "sha256": "3455ed15513120d0b96b24ce3313c84ec71e5cd7dc4ce7db36bae13819f85bae",
+          "sourceUrl": "https://gitea.com/EltanceX/DawnlightCore/src/commit/f8aaa5c4218f54536ccf994a2d512aed2e3678b7/Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/passes/taa.json",
+          "passes": [
+            {
+              "id": "makeupsc:taa",
+              "enabledWhen": [
+                {
+                  "option": "makeupsc:taa_mode",
+                  "oneOf": [
+                    1,
+                    2
+                  ]
+                }
+              ],
+              "stage": {
+                "template": "dawnlight:command_list",
+                "version": 1,
+                "target": "afterDraw",
+                "phase": "afterDraw",
+                "ordering": {
+                  "after": [
+                    "makeupsc:volumetric_2",
+                    "makeupsc:volumetric_4"
+                  ]
+                }
+              },
+              "inputs": [
+                "makeupsc:scene/color",
+                "makeupsc:scene/depth",
+                {
+                  "resource": "makeupsc:taa/color",
+                  "view": "dawnlight:history/previous",
+                  "framesAgo": 1
+                },
+                {
+                  "resource": "makeupsc:taa/depth",
+                  "view": "dawnlight:history/previous",
+                  "framesAgo": 1
+                },
+                {
+                  "resource": "makeupsc:taa/color",
+                  "view": "dawnlight:history/current"
+                }
+              ],
+              "outputs": [
+                {
+                  "resource": "makeupsc:taa/color",
+                  "view": "dawnlight:history/current"
+                },
+                {
+                  "resource": "makeupsc:taa/depth",
+                  "view": "dawnlight:history/current"
+                },
+                "makeupsc:scene/color"
+              ],
+              "commands": [
+                {
+                  "type": "fullscreen",
+                  "program": "makeupsc:post/taa_resolve"
+                },
+                {
+                  "type": "fullscreen",
+                  "program": "makeupsc:post/taa_apply"
+                },
+                {
+                  "type": "historyCommit",
+                  "resource": "makeupsc:taa/color"
+                },
+                {
+                  "type": "historyCommit",
+                  "resource": "makeupsc:taa/depth"
+                }
+              ]
+            },
+            {
+              "id": "makeupsc:present_taa_debug",
+              "enabledWhen": [
+                {
+                  "option": "makeupsc:taa_mode",
+                  "oneOf": [
+                    1,
+                    2
+                  ]
+                },
+                {
+                  "option": "makeupsc:taa_preview",
+                  "oneOf": [
+                    1,
+                    2
+                  ]
+                },
+                {
+                  "option": "makeupsc:motion_preview",
+                  "equals": 0
+                },
+                {
+                  "option": "makeupsc:volume_preview",
+                  "equals": 0
+                },
+                {
+                  "option": "makeupsc:shadow_preview",
+                  "equals": 0
+                }
+              ],
+              "stage": {
+                "template": "dawnlight:command_list",
+                "version": 1,
+                "target": "afterDraw",
+                "phase": "screenOutput",
+                "ordering": {
+                  "after": [
+                    "makeupsc:taa",
+                    "makeupsc:motion_blur",
+                    "makeupsc:volumetric_2",
+                    "makeupsc:volumetric_4"
+                  ]
+                }
+              },
+              "inputs": [
+                {
+                  "resource": "makeupsc:taa/color",
+                  "view": "dawnlight:history/current"
+                },
+                "makeupsc:scene/depth"
+              ],
+              "outputs": [],
+              "commands": [
+                {
+                  "type": "present",
+                  "program": "makeupsc:post/taa_debug"
+                }
+              ]
+            }
+          ],
+          "resources": []
+        },
+        {
+          "path": "manifest/passes/bloom.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/passes/bloom.json",
+          "length": 20925,
+          "sha256": "ae63ec9dd9feb7149a6563d7b8cb9a49bfe9e4fa72b953986ceba179cc06620a",
+          "sourceUrl": "https://gitea.com/EltanceX/DawnlightCore/src/commit/f8aaa5c4218f54536ccf994a2d512aed2e3678b7/Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/passes/bloom.json",
+          "passes": [
+            {
+              "id": "makeupsc:bloom_chain_2",
+              "enabledWhen": [
+                {
+                  "option": "makeupsc:pre_water_debug",
+                  "equals": 0
+                },
+                {
+                  "option": "makeupsc:debug_output",
+                  "equals": 0
+                },
+                {
+                  "option": "makeupsc:terrain_debug",
+                  "equals": 0
+                },
+                {
+                  "option": "makeupsc:water_debug",
+                  "equals": 0
+                },
+                {
+                  "option": "makeupsc:image_hierarchy",
+                  "oneOf": [
+                    0,
+                    1
+                  ]
+                },
+                {
+                  "option": "makeupsc:bloom",
+                  "equals": true
+                },
+                {
+                  "option": "makeupsc:bloom_steps",
+                  "equals": 2
+                },
+                {
+                  "option": "makeupsc:auto_exposure",
+                  "equals": false
+                }
+              ],
+              "stage": {
+                "template": "dawnlight:command_list",
+                "version": 1,
+                "target": "afterDraw",
+                "phase": "afterDraw",
+                "ordering": {
+                  "after": [
+                    "makeupsc:image_hierarchy",
+                    "makeupsc:taa",
+                    "makeupsc:motion_blur",
+                    "makeupsc:volumetric_2",
+                    "makeupsc:volumetric_4"
+                  ]
+                }
+              },
+              "inputs": [
+                "makeupsc:scene/color",
+                "makeupsc:bloom/down1",
+                "makeupsc:bloom/down2"
+              ],
+              "outputs": [
+                "makeupsc:bloom/down1",
+                "makeupsc:bloom/down2",
+                "makeupsc:bloom/up1"
+              ],
+              "commands": [
+                {
+                  "type": "fullscreen",
+                  "program": "makeupsc:post/bloom_extract"
+                },
+                {
+                  "type": "fullscreen",
+                  "program": "makeupsc:post/hierarchy_downsample"
+                },
+                {
+                  "type": "fullscreen",
+                  "program": "makeupsc:post/bloom_upsample"
+                }
+              ]
+            },
+            {
+              "id": "makeupsc:bloom_chain_3",
+              "enabledWhen": [
+                {
+                  "option": "makeupsc:pre_water_debug",
+                  "equals": 0
+                },
+                {
+                  "option": "makeupsc:debug_output",
+                  "equals": 0
+                },
+                {
+                  "option": "makeupsc:terrain_debug",
+                  "equals": 0
+                },
+                {
+                  "option": "makeupsc:water_debug",
+                  "equals": 0
+                },
+                {
+                  "option": "makeupsc:image_hierarchy",
+                  "oneOf": [
+                    0,
+                    1
+                  ]
+                },
+                {
+                  "option": "makeupsc:bloom",
+                  "equals": true
+                },
+                {
+                  "option": "makeupsc:bloom_steps",
+                  "equals": 3
+                },
+                {
+                  "option": "makeupsc:auto_exposure",
+                  "equals": false
+                }
+              ],
+              "stage": {
+                "template": "dawnlight:command_list",
+                "version": 1,
+                "target": "afterDraw",
+                "phase": "afterDraw",
+                "ordering": {
+                  "after": [
+                    "makeupsc:image_hierarchy",
+                    "makeupsc:taa",
+                    "makeupsc:motion_blur",
+                    "makeupsc:volumetric_2",
+                    "makeupsc:volumetric_4"
+                  ]
+                }
+              },
+              "inputs": [
+                "makeupsc:scene/color",
+                "makeupsc:bloom/down1",
+                "makeupsc:bloom/down2",
+                "makeupsc:bloom/down3",
+                "makeupsc:bloom/up2"
+              ],
+              "outputs": [
+                "makeupsc:bloom/down1",
+                "makeupsc:bloom/down2",
+                "makeupsc:bloom/down3",
+                "makeupsc:bloom/up1",
+                "makeupsc:bloom/up2"
+              ],
+              "commands": [
+                {
+                  "type": "fullscreen",
+                  "program": "makeupsc:post/bloom_extract"
+                },
+                {
+                  "type": "fullscreen",
+                  "program": "makeupsc:post/hierarchy_downsample"
+                },
+                {
+                  "type": "fullscreen",
+                  "program": "makeupsc:post/hierarchy_downsample"
+                },
+                {
+                  "type": "fullscreen",
+                  "program": "makeupsc:post/bloom_upsample"
+                },
+                {
+                  "type": "fullscreen",
+                  "program": "makeupsc:post/bloom_upsample"
+                }
+              ]
+            },
+            {
+              "id": "makeupsc:bloom_chain_4",
+              "enabledWhen": [
+                {
+                  "option": "makeupsc:pre_water_debug",
+                  "equals": 0
+                },
+                {
+                  "option": "makeupsc:debug_output",
+                  "equals": 0
+                },
+                {
+                  "option": "makeupsc:terrain_debug",
+                  "equals": 0
+                },
+                {
+                  "option": "makeupsc:water_debug",
+                  "equals": 0
+                },
+                {
+                  "option": "makeupsc:image_hierarchy",
+                  "oneOf": [
+                    0,
+                    1
+                  ]
+                },
+                {
+                  "option": "makeupsc:bloom",
+                  "equals": true
+                },
+                {
+                  "option": "makeupsc:bloom_steps",
+                  "equals": 4
+                },
+                {
+                  "option": "makeupsc:auto_exposure",
+                  "equals": false
+                }
+              ],
+              "stage": {
+                "template": "dawnlight:command_list",
+                "version": 1,
+                "target": "afterDraw",
+                "phase": "afterDraw",
+                "ordering": {
+                  "after": [
+                    "makeupsc:image_hierarchy",
+                    "makeupsc:taa",
+                    "makeupsc:motion_blur",
+                    "makeupsc:volumetric_2",
+                    "makeupsc:volumetric_4"
+                  ]
+                }
+              },
+              "inputs": [
+                "makeupsc:scene/color",
+                "makeupsc:bloom/down1",
+                "makeupsc:bloom/down2",
+                "makeupsc:bloom/down3",
+                "makeupsc:bloom/down4",
+                "makeupsc:bloom/up2",
+                "makeupsc:bloom/up3"
+              ],
+              "outputs": [
+                "makeupsc:bloom/down1",
+                "makeupsc:bloom/down2",
+                "makeupsc:bloom/down3",
+                "makeupsc:bloom/down4",
+                "makeupsc:bloom/up1",
+                "makeupsc:bloom/up2",
+                "makeupsc:bloom/up3"
+              ],
+              "commands": [
+                {
+                  "type": "fullscreen",
+                  "program": "makeupsc:post/bloom_extract"
+                },
+                {
+                  "type": "fullscreen",
+                  "program": "makeupsc:post/hierarchy_downsample"
+                },
+                {
+                  "type": "fullscreen",
+                  "program": "makeupsc:post/hierarchy_downsample"
+                },
+                {
+                  "type": "fullscreen",
+                  "program": "makeupsc:post/hierarchy_downsample"
+                },
+                {
+                  "type": "fullscreen",
+                  "program": "makeupsc:post/bloom_upsample"
+                },
+                {
+                  "type": "fullscreen",
+                  "program": "makeupsc:post/bloom_upsample"
+                },
+                {
+                  "type": "fullscreen",
+                  "program": "makeupsc:post/bloom_upsample"
+                }
+              ]
+            }
+          ],
+          "resources": []
+        },
+        {
+          "path": "manifest/resources/taa.json",
+          "sourcePath": "Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/resources/taa.json",
+          "length": 1299,
+          "sha256": "bb72b55e35e40f3baa085377939070e4d154239dcc1a49bca03f38170d5c4ff5",
+          "sourceUrl": "https://gitea.com/EltanceX/DawnlightCore/src/commit/f8aaa5c4218f54536ccf994a2d512aed2e3678b7/Survivalcraft/shaderpack-candidates/MakeUpUltraFast_SC_v0.21/manifest/resources/taa.json",
+          "passes": [],
+          "resources": [
+            {
+              "id": "makeupsc:taa/color",
+              "kind": "texture2D",
+              "lifetime": {
+                "kind": "history",
+                "capacity": 2
+              },
+              "format": "rgba16f",
+              "size": {
+                "mode": "viewport"
+              }
+            },
+            {
+              "id": "makeupsc:taa/depth",
+              "kind": "texture2D",
+              "lifetime": {
+                "kind": "history",
+                "capacity": 2
+              },
+              "format": "r32f",
+              "size": {
+                "mode": "viewport"
+              }
+            },
+            {
+              "id": "makeupsc:taa/fallback",
+              "kind": "texture2D",
+              "lifetime": "persistent",
+              "format": "rgba8",
+              "size": {
+                "mode": "absolute",
+                "width": 1,
+                "height": 1
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

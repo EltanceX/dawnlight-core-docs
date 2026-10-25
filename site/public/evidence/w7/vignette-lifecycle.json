@@ -1,0 +1,273 @@
+{
+  "id": "features/vignette",
+  "sourceFingerprint": "00e02eaa46a886f4e0d64a51562724501b18f1664117d237d6e39ff6002474c0",
+  "archiveSha256": "a0b5b58fb179147b09fa884f3757f0a0006e1012c58cc4217bc5f46eee715351",
+  "loaded": {
+    "active": "External:w7-vignette",
+    "published": 21,
+    "pending": 0,
+    "error": null,
+    "size": {
+      "x": 2048,
+      "y": 1222
+    }
+  },
+  "reloaded": {
+    "active": "External:w7-vignette",
+    "published": 22,
+    "pending": 0,
+    "error": null,
+    "size": {
+      "x": 2048,
+      "y": 1222
+    }
+  },
+  "resized": {
+    "active": "External:w7-vignette",
+    "published": 22,
+    "pending": 0,
+    "error": null,
+    "size": {
+      "x": 1024,
+      "y": 640
+    }
+  },
+  "builtIn": {
+    "active": "BuiltIn",
+    "published": 26,
+    "pending": 0,
+    "error": null,
+    "size": {
+      "x": 2048,
+      "y": 1222
+    }
+  },
+  "variants": [
+    {
+      "id": "default",
+      "options": {},
+      "status": {
+        "active": "External:w7-vignette",
+        "published": 22,
+        "pending": 0,
+        "error": null,
+        "size": {
+          "x": 2048,
+          "y": 1222
+        }
+      },
+      "header": {
+        "packId": "practice:vignette",
+        "manifestVersion": 5,
+        "manifestHash": "4f1045b9d6d108b00b157fb0157e0c8a1599fefd74fbd25d89c5ed41f36a8507",
+        "catalogHash": "4bc28c17beffea2311a422fff9f633d2e4f03784460d0254adda8af2e766d84c",
+        "sceneAbiHash": "4bc28c17beffea2311a422fff9f633d2e4f03784460d0254adda8af2e766d84c",
+        "generationId": 22,
+        "generationSourceFingerprint": "f97963318df633e04144d525682bdcdbbf76ddf022537153349720d1cee420ba",
+        "deviceEpoch": 0,
+        "graphicsApi": "OpenGL ES 3.2 NVIDIA 566.07",
+        "driverVendor": "NVIDIA Corporation",
+        "driverRenderer": "NVIDIA GeForce RTX 4050 Laptop GPU/PCIe/SSE2",
+        "shaderLanguageVersion": "OpenGL ES GLSL ES 3.20",
+        "engineBuild": "2.4.0.0",
+        "options": [
+          {
+            "id": "practice:grade",
+            "type": "boolean",
+            "value": "true"
+          },
+          {
+            "id": "practice:strength",
+            "type": "number",
+            "value": "0.65"
+          }
+        ],
+        "capabilities": [
+          {
+            "id": "dawnlight:model_shadow/max_instances",
+            "type": "integer",
+            "value": "7"
+          },
+          {
+            "id": "dawnlight:model_shadow/max_joints",
+            "type": "integer",
+            "value": "128"
+          }
+        ]
+      },
+      "linkedPrograms": [
+        "dawnlight:scene_fallback/terrain_alpha_tested",
+        "dawnlight:scene_fallback/terrain_opaque",
+        "dawnlight:scene_fallback/terrain_sorted_translucent",
+        "dawnlight:scene_fallback/terrain_transparent",
+        "practice:post/grade",
+        "practice:post/present"
+      ],
+      "driver": {
+        "published": true,
+        "linked": true,
+        "framebuffersComplete": true,
+        "sha256": "be2623489f09349e40fab4c8d36f113ebbc9c9c22ba41774968eb8ffbf0026ff",
+        "reportHash": "305b146aaa33d01348ee05f85184203c4d4852d00f010c0c57d2f46f2d4c2c5c"
+      }
+    },
+    {
+      "id": "grade-off",
+      "options": {
+        "practice:grade": false
+      },
+      "status": {
+        "active": "External:w7-vignette",
+        "published": 23,
+        "pending": 0,
+        "error": null,
+        "size": {
+          "x": 2048,
+          "y": 1222
+        }
+      },
+      "header": {
+        "packId": "practice:vignette",
+        "manifestVersion": 5,
+        "manifestHash": "4f1045b9d6d108b00b157fb0157e0c8a1599fefd74fbd25d89c5ed41f36a8507",
+        "catalogHash": "4bc28c17beffea2311a422fff9f633d2e4f03784460d0254adda8af2e766d84c",
+        "sceneAbiHash": "4bc28c17beffea2311a422fff9f633d2e4f03784460d0254adda8af2e766d84c",
+        "generationId": 23,
+        "generationSourceFingerprint": "f97963318df633e04144d525682bdcdbbf76ddf022537153349720d1cee420ba",
+        "deviceEpoch": 0,
+        "graphicsApi": "OpenGL ES 3.2 NVIDIA 566.07",
+        "driverVendor": "NVIDIA Corporation",
+        "driverRenderer": "NVIDIA GeForce RTX 4050 Laptop GPU/PCIe/SSE2",
+        "shaderLanguageVersion": "OpenGL ES GLSL ES 3.20",
+        "engineBuild": "2.4.0.0",
+        "options": [
+          {
+            "id": "practice:grade",
+            "type": "boolean",
+            "value": "false"
+          },
+          {
+            "id": "practice:strength",
+            "type": "number",
+            "value": "0.65"
+          }
+        ],
+        "capabilities": [
+          {
+            "id": "dawnlight:model_shadow/max_instances",
+            "type": "integer",
+            "value": "7"
+          },
+          {
+            "id": "dawnlight:model_shadow/max_joints",
+            "type": "integer",
+            "value": "128"
+          }
+        ]
+      },
+      "linkedPrograms": [
+        "dawnlight:scene_fallback/terrain_alpha_tested",
+        "dawnlight:scene_fallback/terrain_opaque",
+        "dawnlight:scene_fallback/terrain_sorted_translucent",
+        "dawnlight:scene_fallback/terrain_transparent",
+        "practice:post/present"
+      ],
+      "driver": {
+        "published": true,
+        "linked": true,
+        "framebuffersComplete": true,
+        "sha256": "197515733ada8cc9ffcbd4854389e7194aff4679eec0b14168f3addb214fdd7f",
+        "reportHash": "1a13f53833c69a98e4a8285b901bcd98ac8a11509611888b4f44dc92ffb837c1"
+      }
+    },
+    {
+      "id": "strength-max",
+      "options": {
+        "practice:strength": 1
+      },
+      "status": {
+        "active": "External:w7-vignette",
+        "published": 25,
+        "pending": 0,
+        "error": null,
+        "size": {
+          "x": 2048,
+          "y": 1222
+        }
+      },
+      "header": {
+        "packId": "practice:vignette",
+        "manifestVersion": 5,
+        "manifestHash": "4f1045b9d6d108b00b157fb0157e0c8a1599fefd74fbd25d89c5ed41f36a8507",
+        "catalogHash": "4bc28c17beffea2311a422fff9f633d2e4f03784460d0254adda8af2e766d84c",
+        "sceneAbiHash": "4bc28c17beffea2311a422fff9f633d2e4f03784460d0254adda8af2e766d84c",
+        "generationId": 25,
+        "generationSourceFingerprint": "cb9a84826708265038ebc8f3537c375159f2a43b28cf5c77807c9ea853e9112f",
+        "deviceEpoch": 0,
+        "graphicsApi": "OpenGL ES 3.2 NVIDIA 566.07",
+        "driverVendor": "NVIDIA Corporation",
+        "driverRenderer": "NVIDIA GeForce RTX 4050 Laptop GPU/PCIe/SSE2",
+        "shaderLanguageVersion": "OpenGL ES GLSL ES 3.20",
+        "engineBuild": "2.4.0.0",
+        "options": [
+          {
+            "id": "practice:grade",
+            "type": "boolean",
+            "value": "true"
+          },
+          {
+            "id": "practice:strength",
+            "type": "number",
+            "value": "1"
+          }
+        ],
+        "capabilities": [
+          {
+            "id": "dawnlight:model_shadow/max_instances",
+            "type": "integer",
+            "value": "7"
+          },
+          {
+            "id": "dawnlight:model_shadow/max_joints",
+            "type": "integer",
+            "value": "128"
+          }
+        ]
+      },
+      "linkedPrograms": [
+        "dawnlight:scene_fallback/terrain_alpha_tested",
+        "dawnlight:scene_fallback/terrain_opaque",
+        "dawnlight:scene_fallback/terrain_sorted_translucent",
+        "dawnlight:scene_fallback/terrain_transparent",
+        "practice:post/grade",
+        "practice:post/present"
+      ],
+      "driver": {
+        "published": true,
+        "linked": true,
+        "framebuffersComplete": true,
+        "sha256": "3fbb6a720c30df7d6cc60bf31c6af2361873ed20dab3b5888653809594e34024",
+        "reportHash": "096c8af054a44e0c535998109472577ab99f320d5633a0ccb49000be45dd51a3"
+      }
+    }
+  ],
+  "checkedAt": "2026-10-24T23:44:46.116Z",
+  "status": "passed",
+  "capture": {
+    "sourceFingerprint": "00e02eaa46a886f4e0d64a51562724501b18f1664117d237d6e39ff6002474c0",
+    "options": {
+      "practice:grade": true,
+      "practice:strength": 0.65
+    },
+    "status": {
+      "active": "External:w7-vignette",
+      "published": 36,
+      "pending": 0,
+      "error": null,
+      "size": {
+        "x": 2048,
+        "y": 1222
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "defaultLocale": "en-US",
+  "translations": {
+    "zh-CN": {
+      "page.amber": "效果实践",
+      "practice:grade": "效果",
+      "practice:strength": "效果强度（重新编译）"
+    },
+    "en-US": {
+      "page.amber": "Effect practice",
+      "practice:grade": "Effect enabled",
+      "practice:strength": "Effect strength (recompile)"
+    }
+  },
+  "pages": [
+    {
+      "id": "amber",
+      "title": "page.amber",
+      "groups": [
+        {
+          "id": "look",
+          "controls": [
+            {
+              "id": "grade",
+              "option": "practice:grade",
+              "widget": "toggle",
+              "label": "practice:grade"
+            },
+            {
+              "id": "strength",
+              "option": "practice:strength",
+              "widget": "slider",
+              "label": "practice:strength",
+              "min": 0,
+              "max": 1,
+              "step": 0.05,
+              "format": "0.00",
+              "enabledWhen": [
+                {
+                  "option": "practice:grade",
+                  "equals": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

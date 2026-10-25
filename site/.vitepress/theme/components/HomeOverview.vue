@@ -12,7 +12,8 @@ const copy = computed(() => lang.value === 'en-US' ? {
     ['Find your reading path', 'Prerequisites, scope and learning order', '/start/'],
     ['Load your first pack', 'Five complete chapters: color, resources, Terrain and MRT', '/tutorial/00-starter'],
     ['Look up JSON and ABI contracts', 'Fields, public IDs, version gates and complete examples', '/reference/'],
-    ['Understand validation results', 'Configuration, offline semantics and runtime evidence', '/tools/analyzer']
+    ['Troubleshoot a problem', 'Seven symptom paths and three real repair cases', '/troubleshooting/'],
+    ['Explore effects', 'Color balance, vignette, outlines and larger-pack diagrams', '/recipes/']
   ],
   edition: 'Written for Manifest v5',
   facts: [['Scene interface', 'Scene ABI v2'], ['Source baseline', lock.upstream.commit.slice(0, 8)], ['Initial runtime scope', 'Windows x64 · single main view'], ['Available documentation', 'Course 00–10, JSON and ABI reference']],
@@ -25,7 +26,8 @@ const copy = computed(() => lang.value === 'en-US' ? {
     ['找到阅读路线', '前置知识、文档范围与学习顺序', '/start/'],
     ['加载第一个光影包', '五个完整章节：调色、资源、Terrain 与 MRT', '/tutorial/00-starter'],
     ['查阅 JSON 与 ABI 合同', '字段、公共 ID、版本门与完整示例', '/reference/'],
-    ['读懂验证结果', '配置合法、离线语义与实际运行证据', '/tools/analyzer']
+    ['排查问题', '七类症状入口与三个真实修复实验', '/troubleshooting/'],
+    ['实践独立效果', '色彩平衡、暗角、描边与大型包关系图', '/recipes/']
   ],
   edition: '围绕 Manifest v5 编写',
   facts: [['场景接口', 'Scene ABI v2'], ['来源基线', lock.upstream.commit.slice(0, 8)], ['首版运行范围', 'Windows x64 · 单主 view'], ['当前文档', '第 00～10 章、JSON 与 ABI 参考']],

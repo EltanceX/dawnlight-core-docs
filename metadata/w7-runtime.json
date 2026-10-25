@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "baselineId": "candidate-f8aaa5c4",
+  "sourceCommit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+  "status": "observed-with-limits",
+  "observedOn": "2026-10-24",
+  "host": {
+    "sourceHead": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+    "sourceWorktree": "clean",
+    "copiedBinaries": true,
+    "originalRuntimeModified": false,
+    "binaries": [
+      {
+        "file": "Survivalcraft.exe",
+        "sha256": "37c5f9bba3546e762d44737778b9ad7f35aa5fa6121b87a1192bddea8e8ef884"
+      },
+      {
+        "file": "Survivalcraft.dll",
+        "sha256": "3183ff20c2c540429a558408c06ba6d9d322907bbe625528f091a039ffbf461d"
+      },
+      {
+        "file": "Engine.dll",
+        "sha256": "c0e645058a2ac3127b3049d0920441d9f319a3c8f47f4263253d8000e585f239"
+      },
+      {
+        "file": "Content.zip",
+        "sha256": "2d894f4596bd239e0d861774d851d5e9e719ba4c6ea4a39ae0a1d8a949a25787"
+      }
+    ]
+  },
+  "method": {
+    "independentHumanReader": false,
+    "isolatedRuntime": true,
+    "creativeWorld": true,
+    "mainViewOnly": true,
+    "visual": "actual-window-screenshots",
+    "numericValueReadback": false,
+    "performanceGatePassed": null
+  },
+  "examples": [
+    {
+      "id": "features/color-balance",
+      "sourceFingerprint": "fa54b90617955a1d0a257f9e234bdb4135ce35a8d637227bf329292fb4fb3ba7",
+      "archiveSha256": "3880779537d67fe635fec584cade69455f845630ecb87dc0e0a0f850a8eea082",
+      "manifestHash": "d90d574df3e1a70e10fa3da033a4fd46c1613f1ba774e1955b69e7b60d2e5665",
+      "lifecycle": "/evidence/w7/color-balance-lifecycle.json",
+      "image": "/media/w7/color-balance.jpg",
+      "branches": 3
+    },
+    {
+      "id": "features/vignette",
+      "sourceFingerprint": "00e02eaa46a886f4e0d64a51562724501b18f1664117d237d6e39ff6002474c0",
+      "archiveSha256": "a0b5b58fb179147b09fa884f3757f0a0006e1012c58cc4217bc5f46eee715351",
+      "manifestHash": "4f1045b9d6d108b00b157fb0157e0c8a1599fefd74fbd25d89c5ed41f36a8507",
+      "lifecycle": "/evidence/w7/vignette-lifecycle.json",
+      "image": "/media/w7/vignette.jpg",
+      "branches": 3
+    },
+    {
+      "id": "features/luma-outline",
+      "sourceFingerprint": "68744757e7b76898bcefe20600ca1432aa07aea4ef346fe0548212a41d06fcd4",
+      "archiveSha256": "fd087f114e9aafcb63416a984fa147af83e2bbe4b34b631952c58f096b555d99",
+      "manifestHash": "fb9e797c77515104db3ffef60a6e5791a711a97fe3e86da052e69f36ffba3420",
+      "lifecycle": "/evidence/w7/luma-outline-lifecycle.json",
+      "image": "/media/w7/luma-outline.jpg",
+      "branches": 3
+    }
+  ],
+  "invalidCandidate": {
+    "status": "inconclusive",
+    "reason": "frame-bridge-request-timed-out",
+    "originalManifestBytesRestored": true,
+    "runtimeRejectionVerified": false,
+    "offlineNegativeCases": 3
+  },
+  "publicFiles": [
+    {
+      "path": "evidence/w7/color-balance-lifecycle.json",
+      "length": 8241,
+      "sha256": "3a960c7c58e9c65c1250208a6f57364ff7314346a09876c89beba9b8a0d9d589"
+    },
+    {
+      "path": "media/w7/color-balance.jpg",
+      "length": 139843,
+      "sha256": "a5680f0d1d7679118770dd29de63cbc1e7848393825e381a84f371b1efa9a89a"
+    },
+    {
+      "path": "evidence/w7/vignette-lifecycle.json",
+      "length": 8186,
+      "sha256": "36ab83727104408b41fe06d645292f29accfda856feb1f69edd4b75896884830"
+    },
+    {
+      "path": "media/w7/vignette.jpg",
+      "length": 115973,
+      "sha256": "0f86734a922b46408864f0768fc0bdafa7f8b9bc913602fc6d25cf460a1efb22"
+    },
+    {
+      "path": "evidence/w7/luma-outline-lifecycle.json",
+      "length": 8230,
+      "sha256": "f3c979ff25d776492c82a42fd6fae651f77eaec1c4bf30c21b2171e7f248e77e"
+    },
+    {
+      "path": "media/w7/luma-outline.jpg",
+      "length": 138765,
+      "sha256": "20e40c7fe98505f9e0a8f64eddda3da17e7985403c87fe8b293a3b40aa245d3f"
+    }
+  ]
+}

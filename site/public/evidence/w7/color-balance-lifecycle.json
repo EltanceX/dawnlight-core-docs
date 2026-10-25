@@ -1,0 +1,273 @@
+{
+  "id": "features/color-balance",
+  "sourceFingerprint": "fa54b90617955a1d0a257f9e234bdb4135ce35a8d637227bf329292fb4fb3ba7",
+  "archiveSha256": "3880779537d67fe635fec584cade69455f845630ecb87dc0e0a0f850a8eea082",
+  "loaded": {
+    "active": "External:w7-color-balance",
+    "published": 15,
+    "pending": 0,
+    "error": null,
+    "size": {
+      "x": 2048,
+      "y": 1222
+    }
+  },
+  "reloaded": {
+    "active": "External:w7-color-balance",
+    "published": 16,
+    "pending": 0,
+    "error": null,
+    "size": {
+      "x": 2048,
+      "y": 1222
+    }
+  },
+  "resized": {
+    "active": "External:w7-color-balance",
+    "published": 16,
+    "pending": 0,
+    "error": null,
+    "size": {
+      "x": 1024,
+      "y": 640
+    }
+  },
+  "builtIn": {
+    "active": "BuiltIn",
+    "published": 20,
+    "pending": 0,
+    "error": null,
+    "size": {
+      "x": 2048,
+      "y": 1222
+    }
+  },
+  "variants": [
+    {
+      "id": "default",
+      "options": {},
+      "status": {
+        "active": "External:w7-color-balance",
+        "published": 16,
+        "pending": 0,
+        "error": null,
+        "size": {
+          "x": 2048,
+          "y": 1222
+        }
+      },
+      "header": {
+        "packId": "practice:color-balance",
+        "manifestVersion": 5,
+        "manifestHash": "d90d574df3e1a70e10fa3da033a4fd46c1613f1ba774e1955b69e7b60d2e5665",
+        "catalogHash": "4bc28c17beffea2311a422fff9f633d2e4f03784460d0254adda8af2e766d84c",
+        "sceneAbiHash": "4bc28c17beffea2311a422fff9f633d2e4f03784460d0254adda8af2e766d84c",
+        "generationId": 16,
+        "generationSourceFingerprint": "14fe0d73f36a53921f8bd3cf313a1a03b82f326c128e1e7d7f5b642dd8370f60",
+        "deviceEpoch": 0,
+        "graphicsApi": "OpenGL ES 3.2 NVIDIA 566.07",
+        "driverVendor": "NVIDIA Corporation",
+        "driverRenderer": "NVIDIA GeForce RTX 4050 Laptop GPU/PCIe/SSE2",
+        "shaderLanguageVersion": "OpenGL ES GLSL ES 3.20",
+        "engineBuild": "2.4.0.0",
+        "options": [
+          {
+            "id": "practice:grade",
+            "type": "boolean",
+            "value": "true"
+          },
+          {
+            "id": "practice:strength",
+            "type": "number",
+            "value": "0.65"
+          }
+        ],
+        "capabilities": [
+          {
+            "id": "dawnlight:model_shadow/max_instances",
+            "type": "integer",
+            "value": "7"
+          },
+          {
+            "id": "dawnlight:model_shadow/max_joints",
+            "type": "integer",
+            "value": "128"
+          }
+        ]
+      },
+      "linkedPrograms": [
+        "dawnlight:scene_fallback/terrain_alpha_tested",
+        "dawnlight:scene_fallback/terrain_opaque",
+        "dawnlight:scene_fallback/terrain_sorted_translucent",
+        "dawnlight:scene_fallback/terrain_transparent",
+        "practice:post/grade",
+        "practice:post/present"
+      ],
+      "driver": {
+        "published": true,
+        "linked": true,
+        "framebuffersComplete": true,
+        "sha256": "890f04b18915ed51bbf035cc2f283b268edbd110aca111a2e0354fe214a13a05",
+        "reportHash": "6b8076de9a4215e4b4a3a2075d8d207eb0fea95b48ae2628a40a6dd3195c7e0f"
+      }
+    },
+    {
+      "id": "grade-off",
+      "options": {
+        "practice:grade": false
+      },
+      "status": {
+        "active": "External:w7-color-balance",
+        "published": 17,
+        "pending": 0,
+        "error": null,
+        "size": {
+          "x": 2048,
+          "y": 1222
+        }
+      },
+      "header": {
+        "packId": "practice:color-balance",
+        "manifestVersion": 5,
+        "manifestHash": "d90d574df3e1a70e10fa3da033a4fd46c1613f1ba774e1955b69e7b60d2e5665",
+        "catalogHash": "4bc28c17beffea2311a422fff9f633d2e4f03784460d0254adda8af2e766d84c",
+        "sceneAbiHash": "4bc28c17beffea2311a422fff9f633d2e4f03784460d0254adda8af2e766d84c",
+        "generationId": 17,
+        "generationSourceFingerprint": "14fe0d73f36a53921f8bd3cf313a1a03b82f326c128e1e7d7f5b642dd8370f60",
+        "deviceEpoch": 0,
+        "graphicsApi": "OpenGL ES 3.2 NVIDIA 566.07",
+        "driverVendor": "NVIDIA Corporation",
+        "driverRenderer": "NVIDIA GeForce RTX 4050 Laptop GPU/PCIe/SSE2",
+        "shaderLanguageVersion": "OpenGL ES GLSL ES 3.20",
+        "engineBuild": "2.4.0.0",
+        "options": [
+          {
+            "id": "practice:grade",
+            "type": "boolean",
+            "value": "false"
+          },
+          {
+            "id": "practice:strength",
+            "type": "number",
+            "value": "0.65"
+          }
+        ],
+        "capabilities": [
+          {
+            "id": "dawnlight:model_shadow/max_instances",
+            "type": "integer",
+            "value": "7"
+          },
+          {
+            "id": "dawnlight:model_shadow/max_joints",
+            "type": "integer",
+            "value": "128"
+          }
+        ]
+      },
+      "linkedPrograms": [
+        "dawnlight:scene_fallback/terrain_alpha_tested",
+        "dawnlight:scene_fallback/terrain_opaque",
+        "dawnlight:scene_fallback/terrain_sorted_translucent",
+        "dawnlight:scene_fallback/terrain_transparent",
+        "practice:post/present"
+      ],
+      "driver": {
+        "published": true,
+        "linked": true,
+        "framebuffersComplete": true,
+        "sha256": "889c354b52faee89b22c8fd8dc0a3506f27f9142971aa78f98e2c20aa7792edb",
+        "reportHash": "0ff9a0694f8e42d779276c41386dd7f0a986e30093d966ba1a015241c00df855"
+      }
+    },
+    {
+      "id": "strength-max",
+      "options": {
+        "practice:strength": 1
+      },
+      "status": {
+        "active": "External:w7-color-balance",
+        "published": 19,
+        "pending": 0,
+        "error": null,
+        "size": {
+          "x": 2048,
+          "y": 1222
+        }
+      },
+      "header": {
+        "packId": "practice:color-balance",
+        "manifestVersion": 5,
+        "manifestHash": "d90d574df3e1a70e10fa3da033a4fd46c1613f1ba774e1955b69e7b60d2e5665",
+        "catalogHash": "4bc28c17beffea2311a422fff9f633d2e4f03784460d0254adda8af2e766d84c",
+        "sceneAbiHash": "4bc28c17beffea2311a422fff9f633d2e4f03784460d0254adda8af2e766d84c",
+        "generationId": 19,
+        "generationSourceFingerprint": "dc376383017949c79770856283d85c33ee9955f619b3850c07b284a148bb4996",
+        "deviceEpoch": 0,
+        "graphicsApi": "OpenGL ES 3.2 NVIDIA 566.07",
+        "driverVendor": "NVIDIA Corporation",
+        "driverRenderer": "NVIDIA GeForce RTX 4050 Laptop GPU/PCIe/SSE2",
+        "shaderLanguageVersion": "OpenGL ES GLSL ES 3.20",
+        "engineBuild": "2.4.0.0",
+        "options": [
+          {
+            "id": "practice:grade",
+            "type": "boolean",
+            "value": "true"
+          },
+          {
+            "id": "practice:strength",
+            "type": "number",
+            "value": "1"
+          }
+        ],
+        "capabilities": [
+          {
+            "id": "dawnlight:model_shadow/max_instances",
+            "type": "integer",
+            "value": "7"
+          },
+          {
+            "id": "dawnlight:model_shadow/max_joints",
+            "type": "integer",
+            "value": "128"
+          }
+        ]
+      },
+      "linkedPrograms": [
+        "dawnlight:scene_fallback/terrain_alpha_tested",
+        "dawnlight:scene_fallback/terrain_opaque",
+        "dawnlight:scene_fallback/terrain_sorted_translucent",
+        "dawnlight:scene_fallback/terrain_transparent",
+        "practice:post/grade",
+        "practice:post/present"
+      ],
+      "driver": {
+        "published": true,
+        "linked": true,
+        "framebuffersComplete": true,
+        "sha256": "1aba6af306223e8ae8e739150d1fcc2eaf2fabdc7a4c6a9d74c4f430c31c2010",
+        "reportHash": "859b1374e8a0c54b53cca83b873410db01104d54acb2472d9c0feaa801a5a087"
+      }
+    }
+  ],
+  "checkedAt": "2026-10-24T23:44:35.415Z",
+  "status": "passed",
+  "capture": {
+    "sourceFingerprint": "fa54b90617955a1d0a257f9e234bdb4135ce35a8d637227bf329292fb4fb3ba7",
+    "options": {
+      "practice:grade": true,
+      "practice:strength": 0.65
+    },
+    "status": {
+      "active": "External:w7-color-balance",
+      "published": 34,
+      "pending": 0,
+      "error": null,
+      "size": {
+        "x": 2048,
+        "y": 1222
+      }
+    }
+  }
+}

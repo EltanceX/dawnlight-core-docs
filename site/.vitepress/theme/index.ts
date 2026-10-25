@@ -6,6 +6,9 @@ import HomeOverview from './components/HomeOverview.vue'
 import RuntimeNote from './components/RuntimeNote.vue'
 import CourseBranchNote from './components/CourseBranchNote.vue'
 import PackRuntimeNote from './components/PackRuntimeNote.vue'
+import DiagnosticLabNote from './components/DiagnosticLabNote.vue'
+import PracticeRuntimeNote from './components/PracticeRuntimeNote.vue'
+import CaseStudyNote from './components/CaseStudyNote.vue'
 import './style.css'
 
 export default {
@@ -17,5 +20,8 @@ export default {
     app.component('RuntimeNote', RuntimeNote)
     app.component('CourseBranchNote', CourseBranchNote)
     app.component('PackRuntimeNote', PackRuntimeNote)
+    app.component('DiagnosticLabNote', DiagnosticLabNote)
+    app.component('PracticeRuntimeNote', PracticeRuntimeNote)
+    app.component('CaseStudyNote', CaseStudyNote)
   }
 } satisfies Theme

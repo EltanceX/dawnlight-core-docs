@@ -10,7 +10,7 @@ test('six packs cover every optional closure and preserve the five previous rele
   const c = await loadExamples(), r = await loadReceipts(c);
   const packs = c.examples.filter(e => e.validationStage === 'w6');
   assert.equal(packs.length, 6);
-  assert.equal(r.examples.filter(e => e.branches).reduce((n, e) => n + e.branches.length, 0), 26);
+  assert.equal(r.examples.filter(e => packs.some(p => p.id === e.id)).reduce((n, e) => n + e.branches.length, 0), 26);
   for (const e of packs) {
     const receipt = r.examples.find(x => x.id === e.id);
     const off = receipt.branches.find(b => b.id === 'grade-off');
@@ -25,7 +25,7 @@ test('six packs cover every optional closure and preserve the five previous rele
 });
 
 test('composed final pack is complete and rejects traversal, nesting and duplicate modules', async () => {
-  const c = await loadExamples(), e = c.examples.at(-1);
+  const c = await loadExamples(), e = c.examples.find(e => e.id === 'course/10-distribution');
   assert.equal(e.manifest.fragments.length, 5); assert.equal(e.manifest.programs.length, 4);
   assert.equal(e.manifest.materials.fallback, 'course:neutral');
   const root = JSON.parse(e.entries.find(x => x.path === 'shaderpack.json').bytes);

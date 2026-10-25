@@ -15,16 +15,18 @@
     "docs:build": "npm run docs:generate && npm run docs:check && vitepress build site && node scripts/check-site-build.mjs",
     "docs:preview": "vitepress preview site --host 127.0.0.1",
     "test:site": "playwright test",
-    "test:content": "node --test scripts/tests/content-foundation.test.mjs scripts/tests/reference-foundation.test.mjs scripts/tests/pack-course.test.mjs",
+    "test:content": "node --test scripts/tests/content-foundation.test.mjs scripts/tests/reference-foundation.test.mjs scripts/tests/pack-course.test.mjs scripts/tests/practices.test.mjs",
     "reference:check": "node scripts/validate-reference-upstream.mjs",
     "reference:verify": "node scripts/validate-reference-upstream.mjs --verify-receipt",
     "examples:check": "node scripts/validate-examples.mjs",
-    "examples:package": "node scripts/validate-examples.mjs --verify-receipt && npm run examples:w6:verify && npm run docs:generate",
+    "examples:package": "node scripts/validate-examples.mjs --verify-receipt && npm run examples:w6:verify && npm run examples:w7:verify && npm run docs:generate",
     "authoring:check": "node scripts/validate-upstream.mjs --output artifacts/w3/upstream && npm run examples:check -- --verify-receipt",
     "upstream:verify": "node scripts/verify-upstream.mjs",
     "upstream:restore": "node scripts/restore-upstream.mjs",
     "examples:w6:check": "node scripts/validate-w6-examples.mjs",
-    "examples:w6:verify": "node scripts/validate-w6-examples.mjs --verify-receipt"
+    "examples:w6:verify": "node scripts/validate-w6-examples.mjs --verify-receipt",
+    "examples:w7:check": "node scripts/validate-practices.mjs && node scripts/validate-diagnostic-lab.mjs",
+    "examples:w7:verify": "node scripts/validate-practices.mjs --verify-receipt && node scripts/validate-diagnostic-lab.mjs --verify-receipt"
   },
   "devDependencies": {
     "@playwright/test": "1.64.1",

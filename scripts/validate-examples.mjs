@@ -18,7 +18,7 @@ try {
   const tool = await verifyTool(toolRoot, lock);
   temporary = await fs.mkdtemp(path.join(os.tmpdir(), 'dawnlight-examples-'));
   const results = [];
-  for (const example of context.examples.filter(e => e.validationStage !== 'w6')) {
+  for (const example of context.examples.filter(e => !e.validationStage)) {
     const prefix = example.id.replaceAll('/', '-');
     const archive = path.join(temporary, prefix + '.zip');
     const unpacked = path.join(temporary, prefix);

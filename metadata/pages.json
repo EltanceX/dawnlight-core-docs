@@ -1564,6 +1564,580 @@
           "path": "metadata/w6-examples-validation.json"
         }
       ]
+    },
+    {
+      "path": "examples/practice-color-balance.md",
+      "publication": "published",
+      "generated": true,
+      "manifestVersions": [
+        5
+      ],
+      "sceneAbiVersions": [
+        2
+      ],
+      "sourceRefs": [
+        {
+          "repository": "website",
+          "path": "examples/registry.json"
+        }
+      ],
+      "example": "features/color-balance"
+    },
+    {
+      "path": "examples/practice-vignette.md",
+      "publication": "published",
+      "generated": true,
+      "manifestVersions": [
+        5
+      ],
+      "sceneAbiVersions": [
+        2
+      ],
+      "sourceRefs": [
+        {
+          "repository": "website",
+          "path": "examples/registry.json"
+        }
+      ],
+      "example": "features/vignette"
+    },
+    {
+      "path": "examples/practice-luma-outline.md",
+      "publication": "published",
+      "generated": true,
+      "manifestVersions": [
+        5
+      ],
+      "sceneAbiVersions": [
+        2
+      ],
+      "sourceRefs": [
+        {
+          "repository": "website",
+          "path": "examples/registry.json"
+        }
+      ],
+      "example": "features/luma-outline"
+    },
+    {
+      "path": "tools/schema.md",
+      "publication": "published",
+      "generated": false,
+      "manifestVersions": [
+        5
+      ],
+      "sceneAbiVersions": [
+        2
+      ],
+      "sourceRefs": [
+        {
+          "repository": "upstream",
+          "path": "tools/ShaderPackAnalyzer/README.md",
+          "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7"
+        },
+        {
+          "repository": "upstream",
+          "path": "docs/ShaderPackDiagnosticReference.md",
+          "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7"
+        }
+      ]
+    },
+    {
+      "path": "tools/content-snapshots.md",
+      "publication": "published",
+      "generated": false,
+      "manifestVersions": [
+        5
+      ],
+      "sceneAbiVersions": [
+        2
+      ],
+      "sourceRefs": [
+        {
+          "repository": "upstream",
+          "path": "tools/ShaderPackAnalyzer/README.md",
+          "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7"
+        },
+        {
+          "repository": "upstream",
+          "path": "docs/ShaderPackDiagnosticReference.md",
+          "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7"
+        }
+      ]
+    },
+    {
+      "path": "tools/driver-reports.md",
+      "publication": "published",
+      "generated": false,
+      "manifestVersions": [
+        5
+      ],
+      "sceneAbiVersions": [
+        2
+      ],
+      "sourceRefs": [
+        {
+          "repository": "upstream",
+          "path": "tools/ShaderPackAnalyzer/README.md",
+          "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7"
+        },
+        {
+          "repository": "upstream",
+          "path": "docs/ShaderPackDiagnosticReference.md",
+          "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7"
+        }
+      ]
+    },
+    {
+      "path": "troubleshooting/loading.md",
+      "publication": "published",
+      "generated": false,
+      "manifestVersions": [
+        5
+      ],
+      "sceneAbiVersions": [
+        2
+      ],
+      "sourceRefs": [
+        {
+          "repository": "upstream",
+          "path": "tools/ShaderPackAnalyzer/README.md",
+          "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7"
+        },
+        {
+          "repository": "upstream",
+          "path": "docs/ShaderPackDiagnosticReference.md",
+          "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7"
+        },
+        {
+          "repository": "website",
+          "path": "examples/diagnostics/w7-cases.json"
+        },
+        {
+          "repository": "website",
+          "path": "metadata/w7-diagnostics.json"
+        }
+      ]
+    },
+    {
+      "path": "troubleshooting/image-scene.md",
+      "publication": "published",
+      "generated": false,
+      "manifestVersions": [
+        5
+      ],
+      "sceneAbiVersions": [
+        2
+      ],
+      "sourceRefs": [
+        {
+          "repository": "upstream",
+          "path": "tools/ShaderPackAnalyzer/README.md",
+          "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7"
+        },
+        {
+          "repository": "upstream",
+          "path": "docs/ShaderPackDiagnosticReference.md",
+          "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7"
+        },
+        {
+          "repository": "website",
+          "path": "examples/diagnostics/w7-cases.json"
+        },
+        {
+          "repository": "website",
+          "path": "metadata/w7-diagnostics.json"
+        }
+      ]
+    },
+    {
+      "path": "troubleshooting/targets-bindings.md",
+      "publication": "published",
+      "generated": false,
+      "manifestVersions": [
+        5
+      ],
+      "sceneAbiVersions": [
+        2
+      ],
+      "sourceRefs": [
+        {
+          "repository": "upstream",
+          "path": "tools/ShaderPackAnalyzer/README.md",
+          "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7"
+        },
+        {
+          "repository": "upstream",
+          "path": "docs/ShaderPackDiagnosticReference.md",
+          "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7"
+        },
+        {
+          "repository": "website",
+          "path": "examples/diagnostics/w7-cases.json"
+        },
+        {
+          "repository": "website",
+          "path": "metadata/w7-diagnostics.json"
+        }
+      ]
+    },
+    {
+      "path": "troubleshooting/graph-hazards.md",
+      "publication": "published",
+      "generated": false,
+      "manifestVersions": [
+        5
+      ],
+      "sceneAbiVersions": [
+        2
+      ],
+      "sourceRefs": [
+        {
+          "repository": "upstream",
+          "path": "tools/ShaderPackAnalyzer/README.md",
+          "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7"
+        },
+        {
+          "repository": "upstream",
+          "path": "docs/ShaderPackDiagnosticReference.md",
+          "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7"
+        },
+        {
+          "repository": "website",
+          "path": "examples/diagnostics/w7-cases.json"
+        },
+        {
+          "repository": "website",
+          "path": "metadata/w7-diagnostics.json"
+        }
+      ]
+    },
+    {
+      "path": "troubleshooting/lifecycle-history.md",
+      "publication": "published",
+      "generated": false,
+      "manifestVersions": [
+        5
+      ],
+      "sceneAbiVersions": [
+        2
+      ],
+      "sourceRefs": [
+        {
+          "repository": "upstream",
+          "path": "tools/ShaderPackAnalyzer/README.md",
+          "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7"
+        },
+        {
+          "repository": "upstream",
+          "path": "docs/ShaderPackDiagnosticReference.md",
+          "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7"
+        },
+        {
+          "repository": "website",
+          "path": "examples/diagnostics/w7-cases.json"
+        },
+        {
+          "repository": "website",
+          "path": "metadata/w7-diagnostics.json"
+        }
+      ]
+    },
+    {
+      "path": "troubleshooting/materials.md",
+      "publication": "published",
+      "generated": false,
+      "manifestVersions": [
+        5
+      ],
+      "sceneAbiVersions": [
+        2
+      ],
+      "sourceRefs": [
+        {
+          "repository": "upstream",
+          "path": "tools/ShaderPackAnalyzer/README.md",
+          "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7"
+        },
+        {
+          "repository": "upstream",
+          "path": "docs/ShaderPackDiagnosticReference.md",
+          "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7"
+        },
+        {
+          "repository": "website",
+          "path": "examples/diagnostics/w7-cases.json"
+        },
+        {
+          "repository": "website",
+          "path": "metadata/w7-diagnostics.json"
+        }
+      ]
+    },
+    {
+      "path": "troubleshooting/driver.md",
+      "publication": "published",
+      "generated": false,
+      "manifestVersions": [
+        5
+      ],
+      "sceneAbiVersions": [
+        2
+      ],
+      "sourceRefs": [
+        {
+          "repository": "upstream",
+          "path": "tools/ShaderPackAnalyzer/README.md",
+          "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7"
+        },
+        {
+          "repository": "upstream",
+          "path": "docs/ShaderPackDiagnosticReference.md",
+          "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7"
+        },
+        {
+          "repository": "website",
+          "path": "examples/diagnostics/w7-cases.json"
+        },
+        {
+          "repository": "website",
+          "path": "metadata/w7-diagnostics.json"
+        }
+      ]
+    },
+    {
+      "path": "troubleshooting/index.md",
+      "publication": "published",
+      "generated": false,
+      "manifestVersions": [
+        5
+      ],
+      "sceneAbiVersions": [
+        2
+      ],
+      "sourceRefs": [
+        {
+          "repository": "upstream",
+          "path": "tools/ShaderPackAnalyzer/README.md",
+          "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7"
+        },
+        {
+          "repository": "upstream",
+          "path": "docs/ShaderPackDiagnosticReference.md",
+          "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7"
+        },
+        {
+          "repository": "website",
+          "path": "examples/diagnostics/w7-cases.json"
+        },
+        {
+          "repository": "website",
+          "path": "metadata/w7-diagnostics.json"
+        }
+      ]
+    },
+    {
+      "path": "troubleshooting/configuration-lab.md",
+      "publication": "published",
+      "generated": false,
+      "manifestVersions": [
+        5
+      ],
+      "sceneAbiVersions": [
+        2
+      ],
+      "sourceRefs": [
+        {
+          "repository": "upstream",
+          "path": "tools/ShaderPackAnalyzer/README.md",
+          "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7"
+        },
+        {
+          "repository": "upstream",
+          "path": "docs/ShaderPackDiagnosticReference.md",
+          "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7"
+        },
+        {
+          "repository": "website",
+          "path": "examples/diagnostics/w7-cases.json"
+        },
+        {
+          "repository": "website",
+          "path": "metadata/w7-diagnostics.json"
+        }
+      ]
+    },
+    {
+      "path": "recipes/color-balance.md",
+      "publication": "published",
+      "generated": false,
+      "manifestVersions": [
+        5
+      ],
+      "sceneAbiVersions": [
+        2
+      ],
+      "sourceRefs": [
+        {
+          "repository": "website",
+          "path": "examples/features/color-balance/shaderpack.json"
+        },
+        {
+          "repository": "website",
+          "path": "metadata/w7-examples-validation.json"
+        },
+        {
+          "repository": "website",
+          "path": "metadata/w7-runtime.json"
+        }
+      ],
+      "example": "features/color-balance"
+    },
+    {
+      "path": "recipes/vignette.md",
+      "publication": "published",
+      "generated": false,
+      "manifestVersions": [
+        5
+      ],
+      "sceneAbiVersions": [
+        2
+      ],
+      "sourceRefs": [
+        {
+          "repository": "website",
+          "path": "examples/features/vignette/shaderpack.json"
+        },
+        {
+          "repository": "website",
+          "path": "metadata/w7-examples-validation.json"
+        },
+        {
+          "repository": "website",
+          "path": "metadata/w7-runtime.json"
+        }
+      ],
+      "example": "features/vignette"
+    },
+    {
+      "path": "recipes/luma-outline.md",
+      "publication": "published",
+      "generated": false,
+      "manifestVersions": [
+        5
+      ],
+      "sceneAbiVersions": [
+        2
+      ],
+      "sourceRefs": [
+        {
+          "repository": "website",
+          "path": "examples/features/luma-outline/shaderpack.json"
+        },
+        {
+          "repository": "website",
+          "path": "metadata/w7-examples-validation.json"
+        },
+        {
+          "repository": "website",
+          "path": "metadata/w7-runtime.json"
+        }
+      ],
+      "example": "features/luma-outline"
+    },
+    {
+      "path": "recipes/index.md",
+      "publication": "published",
+      "generated": false,
+      "manifestVersions": [
+        5
+      ],
+      "sceneAbiVersions": [
+        2
+      ],
+      "sourceRefs": [
+        {
+          "repository": "website",
+          "path": "examples/registry.json"
+        },
+        {
+          "repository": "website",
+          "path": "metadata/w7-examples-validation.json"
+        }
+      ]
+    },
+    {
+      "path": "recipes/advanced-boundaries.md",
+      "publication": "published",
+      "generated": false,
+      "manifestVersions": [
+        5
+      ],
+      "sceneAbiVersions": [
+        2
+      ],
+      "sourceRefs": [
+        {
+          "repository": "upstream",
+          "path": "docs/DawnlightGenericCommandTypes.md",
+          "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7"
+        },
+        {
+          "repository": "upstream",
+          "path": "docs/DawnlightTemporalViewABI.md",
+          "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7"
+        },
+        {
+          "repository": "upstream",
+          "path": "docs/DawnlightLightFrustumGeometryABI.md",
+          "commit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7"
+        },
+        {
+          "repository": "website",
+          "path": "metadata/w7-case-studies.json"
+        }
+      ]
+    },
+    {
+      "path": "cases/index.md",
+      "publication": "published",
+      "generated": false,
+      "manifestVersions": [
+        3,
+        4,
+        5
+      ],
+      "sceneAbiVersions": [
+        1,
+        2
+      ],
+      "sourceRefs": [
+        {
+          "repository": "website",
+          "path": "metadata/w7-case-studies.json"
+        }
+      ]
+    },
+    {
+      "path": "recipes/runtime.md",
+      "publication": "published",
+      "generated": false,
+      "manifestVersions": [
+        5
+      ],
+      "sceneAbiVersions": [
+        2
+      ],
+      "sourceRefs": [
+        {
+          "repository": "website",
+          "path": "metadata/w7-runtime.json"
+        },
+        {
+          "repository": "website",
+          "path": "metadata/w7-examples-validation.json"
+        }
+      ]
     }
   ]
 }

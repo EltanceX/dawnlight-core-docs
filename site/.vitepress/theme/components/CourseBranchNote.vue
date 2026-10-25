@@ -2,10 +2,11 @@
 import { computed } from 'vue'
 import { useData } from 'vitepress'
 import evidence from '../../../../metadata/w6-examples-validation.json'
+import practices from '../../../../metadata/w7-examples-validation.json'
 const props = defineProps<{ example: string }>()
 const { lang } = useData()
 const en = computed(() => lang.value === 'en-US')
-const item = computed(() => evidence.examples.find(e => e.id === props.example))
+const item = computed(() => [...evidence.examples, ...practices.examples].find(e => e.id === props.example))
 </script>
 
 <template>

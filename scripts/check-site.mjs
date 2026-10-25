@@ -9,6 +9,7 @@ import { loadReference } from './lib/reference-foundation.mjs';
 import { siteOutputs } from './lib/site-generator.mjs';
 import { loadRuntimeEvidence } from './lib/runtime-evidence.mjs';
 import { loadPackRuntimeEvidence } from './lib/pack-runtime-evidence.mjs';
+import { loadPracticeRuntimeEvidence } from './lib/practice-runtime-evidence.mjs';
 
 const pkg = await readJson(path.join(ROOT, 'package.json'));
 assert.equal(process.versions.node, pkg.engines.node, `Use Node ${pkg.engines.node} from .node-version`);
@@ -16,10 +17,10 @@ const lock = await loadLock();
 assert.equal(lock.website.pagesBase, '/');
 assert.equal(lock.website.pagesUrl, `https://${lock.website.customDomain}/`);
 assert.equal((await fs.readFile(path.join(ROOT, 'site/public/CNAME'), 'utf8')).trim(), lock.website.customDomain);
-for (const item of [...Object.values(lock.discoveryRecords), lock.tool.distribution.inventory, lock.w1Verification, ...[lock.w2Verification, lock.w3Verification, lock.w4Verification, lock.w5Verification, lock.w6Verification].filter(Boolean)]) {
+for (const item of [...Object.values(lock.discoveryRecords), lock.tool.distribution.inventory, lock.w1Verification, ...[lock.w2Verification, lock.w3Verification, lock.w4Verification, lock.w5Verification, lock.w6Verification, lock.w7Verification].filter(Boolean)]) {
   await assertFingerprint(path.join(ROOT, item.path), item);
 }
-for (const number of [4, 5, 6]) {
+for (const number of [4, 5, 6, 7]) {
   const pointer = lock[`w${number}Verification`];
   if (!pointer) continue;
   const stage = await readJson(path.join(ROOT, pointer.path));
@@ -62,7 +63,8 @@ const generated = await siteOutputs(examples, await loadReceipts(examples), awai
 const generatedPublic = [...generated.keys()].filter(name => name.startsWith('site/public/')).map(name => name.slice('site/'.length));
 const runtime = await loadRuntimeEvidence(examples, await loadReceipts(examples));
 const packRuntime = await loadPackRuntimeEvidence(examples, await loadReceipts(examples));
-assert.deepEqual(siteFiles.filter(f => f.startsWith('public/')).sort(), ['public/CNAME', 'public/downloads/site-baseline.json', 'public/favicon.svg', ...generatedPublic, ...[...runtime.publicFiles, ...packRuntime.publicFiles].map(file => 'public/' + file.path)].sort());
+const practiceRuntime = await loadPracticeRuntimeEvidence(examples, await loadReceipts(examples));
+assert.deepEqual(siteFiles.filter(f => f.startsWith('public/')).sort(), ['public/CNAME', 'public/downloads/site-baseline.json', 'public/favicon.svg', ...generatedPublic, ...[...runtime.publicFiles, ...packRuntime.publicFiles, ...practiceRuntime.publicFiles].map(file => 'public/' + file.path)].sort());
 const tracked = run('git', ['ls-files', '-z'], { allowFailure: true });
 let trackedFiles = 0;
 if (tracked.status === 0) {

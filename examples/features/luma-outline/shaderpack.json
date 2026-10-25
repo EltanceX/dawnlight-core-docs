@@ -1,0 +1,519 @@
+{
+  "manifestVersion": 5,
+  "sceneAbiVersion": 2,
+  "expectedCatalogSha256": "4bc28c17beffea2311a422fff9f633d2e4f03784460d0254adda8af2e766d84c",
+  "id": "practice:luma-outline",
+  "name": "Practice luma-outline",
+  "version": "1.0.0",
+  "author": "EltanceX",
+  "description": "Independent LDR luma-outline example. Static and runtime evidence are recorded separately.",
+  "shaderRoot": "shaders",
+  "options": [
+    {
+      "id": "practice:grade",
+      "type": "boolean",
+      "default": true,
+      "impact": [
+        "pipeline",
+        "resources"
+      ]
+    },
+    {
+      "id": "practice:strength",
+      "type": "number",
+      "default": 0.65,
+      "min": 0,
+      "max": 1,
+      "impact": [
+        "program"
+      ]
+    }
+  ],
+  "resources": [
+    {
+      "id": "practice:scene/color",
+      "kind": "texture2D",
+      "lifetime": "persistent",
+      "size": {
+        "mode": "viewport"
+      },
+      "format": "rgba8"
+    },
+    {
+      "id": "practice:scene/depth",
+      "kind": "texture2D",
+      "lifetime": "persistent",
+      "size": {
+        "mode": "viewport"
+      },
+      "format": "depth24"
+    },
+    {
+      "id": "practice:post/color",
+      "kind": "texture2D",
+      "lifetime": "persistent",
+      "size": {
+        "mode": "viewport"
+      },
+      "format": "rgba8"
+    }
+  ],
+  "programs": [
+    {
+      "id": "practice:post/grade",
+      "kind": "graphics",
+      "vertex": "fullscreen.vsh",
+      "fragment": "grade.psh",
+      "compileMode": "manifestDriven",
+      "defines": {
+        "GRADE_STRENGTH": {
+          "option": "practice:strength"
+        }
+      }
+    },
+    {
+      "id": "practice:post/present",
+      "kind": "graphics",
+      "vertex": "fullscreen.vsh",
+      "fragment": "present.psh",
+      "compileMode": "manifestDriven"
+    }
+  ],
+  "frameTarget": {
+    "targets": {
+      "colors": [
+        {
+          "location": 0,
+          "resource": "practice:scene/color",
+          "loadOp": "clear",
+          "storeOp": "store",
+          "clearValue": [
+            0,
+            0,
+            0,
+            1
+          ]
+        }
+      ],
+      "depth": {
+        "resource": "practice:scene/depth",
+        "loadOp": "clear",
+        "storeOp": "store",
+        "clearValue": 1
+      }
+    }
+  },
+  "passes": [
+    {
+      "id": "practice:terrain_opaque",
+      "enabled": true,
+      "stage": {
+        "template": "dawnlight:command_list",
+        "version": 1,
+        "target": "world",
+        "phase": "opaque"
+      },
+      "services": [],
+      "programs": [],
+      "commands": [
+        {
+          "type": "engineDraw",
+          "sceneProvider": {
+            "id": "dawnlight:scene_draw/terrain_opaque",
+            "version": 2
+          },
+          "targets": {
+            "colors": [
+              {
+                "location": 0,
+                "resource": "practice:scene/color",
+                "loadOp": "load",
+                "storeOp": "store"
+              }
+            ],
+            "depth": {
+              "resource": "practice:scene/depth",
+              "loadOp": "clear",
+              "storeOp": "store",
+              "clearValue": 1
+            }
+          },
+          "state": {
+            "blend": "opaque",
+            "depth": "default",
+            "rasterizer": "cullCounterClockwiseScissor"
+          },
+          "viewport": {
+            "source": "target",
+            "restore": "frame",
+            "synchronizeScissor": true
+          }
+        }
+      ],
+      "inputs": [
+        "practice:scene/color",
+        "practice:scene/depth"
+      ],
+      "outputs": [
+        "practice:scene/color",
+        "practice:scene/depth"
+      ]
+    },
+    {
+      "id": "practice:terrain_alpha_tested",
+      "enabled": true,
+      "stage": {
+        "template": "dawnlight:command_list",
+        "version": 1,
+        "target": "world",
+        "phase": "opaque",
+        "ordering": {
+          "after": [
+            "practice:terrain_opaque"
+          ]
+        }
+      },
+      "services": [],
+      "programs": [],
+      "commands": [
+        {
+          "type": "engineDraw",
+          "sceneProvider": {
+            "id": "dawnlight:scene_draw/terrain_alpha_tested",
+            "version": 2
+          },
+          "targets": {
+            "colors": [
+              {
+                "location": 0,
+                "resource": "practice:scene/color",
+                "loadOp": "load",
+                "storeOp": "store"
+              }
+            ],
+            "depth": {
+              "resource": "practice:scene/depth",
+              "loadOp": "load",
+              "storeOp": "store"
+            }
+          },
+          "state": {
+            "blend": "opaque",
+            "depth": "default",
+            "rasterizer": "cullCounterClockwiseScissor"
+          },
+          "viewport": {
+            "source": "target",
+            "restore": "frame",
+            "synchronizeScissor": true
+          }
+        }
+      ],
+      "inputs": [
+        "practice:scene/color",
+        "practice:scene/depth"
+      ],
+      "outputs": [
+        "practice:scene/color",
+        "practice:scene/depth"
+      ]
+    },
+    {
+      "id": "practice:terrain_transparent",
+      "enabled": true,
+      "stage": {
+        "template": "dawnlight:command_list",
+        "version": 1,
+        "target": "world",
+        "phase": "transparent"
+      },
+      "services": [],
+      "programs": [],
+      "commands": [
+        {
+          "type": "engineDraw",
+          "sceneProvider": {
+            "id": "dawnlight:scene_draw/terrain_transparent",
+            "version": 2
+          },
+          "targets": {
+            "colors": [
+              {
+                "location": 0,
+                "resource": "practice:scene/color",
+                "loadOp": "load",
+                "storeOp": "store"
+              }
+            ],
+            "depth": {
+              "resource": "practice:scene/depth",
+              "loadOp": "load",
+              "storeOp": "store"
+            }
+          },
+          "state": {
+            "blend": "alphaBlend",
+            "depth": "default",
+            "rasterizer": "cullCounterClockwiseScissor"
+          },
+          "viewport": {
+            "source": "target",
+            "restore": "frame",
+            "synchronizeScissor": true
+          }
+        }
+      ],
+      "inputs": [
+        "practice:scene/color",
+        "practice:scene/depth"
+      ],
+      "outputs": [
+        "practice:scene/color",
+        "practice:scene/depth"
+      ]
+    },
+    {
+      "id": "practice:terrain_sorted_translucent",
+      "enabled": true,
+      "stage": {
+        "template": "dawnlight:command_list",
+        "version": 1,
+        "target": "world",
+        "phase": "transparent",
+        "ordering": {
+          "after": [
+            "practice:terrain_transparent"
+          ]
+        }
+      },
+      "services": [],
+      "programs": [],
+      "commands": [
+        {
+          "type": "engineDraw",
+          "sceneProvider": {
+            "id": "dawnlight:scene_draw/terrain_sorted_translucent",
+            "version": 2
+          },
+          "targets": {
+            "colors": [
+              {
+                "location": 0,
+                "resource": "practice:scene/color",
+                "loadOp": "load",
+                "storeOp": "store"
+              }
+            ],
+            "depth": {
+              "resource": "practice:scene/depth",
+              "loadOp": "load",
+              "storeOp": "store"
+            }
+          },
+          "state": {
+            "blend": "alphaBlend",
+            "depth": "default",
+            "rasterizer": "cullCounterClockwiseScissor"
+          },
+          "viewport": {
+            "source": "target",
+            "restore": "frame",
+            "synchronizeScissor": true
+          }
+        }
+      ],
+      "inputs": [
+        "practice:scene/color",
+        "practice:scene/depth"
+      ],
+      "outputs": [
+        "practice:scene/color",
+        "practice:scene/depth"
+      ]
+    },
+    {
+      "id": "practice:grade",
+      "enabled": true,
+      "stage": {
+        "template": "dawnlight:command_list",
+        "version": 1,
+        "target": "afterDraw",
+        "phase": "afterDraw"
+      },
+      "services": [],
+      "programs": [
+        "practice:post/grade"
+      ],
+      "commands": [
+        {
+          "type": "fullscreen",
+          "program": "practice:post/grade",
+          "bindings": [
+            {
+              "kind": "sampler2D",
+              "symbol": "u_sceneColor",
+              "binding": 0,
+              "resource": "practice:scene/color"
+            }
+          ],
+          "state": {
+            "blend": "opaque",
+            "depth": "disabled",
+            "rasterizer": "cullNoneScissor"
+          },
+          "viewport": {
+            "source": "target",
+            "restore": "frame",
+            "synchronizeScissor": true
+          },
+          "targets": {
+            "colors": [
+              {
+                "location": 0,
+                "resource": "practice:post/color",
+                "loadOp": "dontCare",
+                "storeOp": "store"
+              }
+            ]
+          }
+        }
+      ],
+      "inputs": [
+        "practice:scene/color"
+      ],
+      "outputs": [
+        "practice:post/color"
+      ],
+      "enabledWhen": [
+        {
+          "option": "practice:grade",
+          "equals": true
+        }
+      ]
+    },
+    {
+      "id": "practice:present-grade",
+      "enabled": true,
+      "stage": {
+        "template": "dawnlight:command_list",
+        "version": 1,
+        "target": "afterDraw",
+        "phase": "screenOutput",
+        "ordering": {
+          "after": [
+            "practice:grade"
+          ]
+        }
+      },
+      "services": [],
+      "programs": [
+        "practice:post/present"
+      ],
+      "commands": [
+        {
+          "type": "present",
+          "program": "practice:post/present",
+          "bindings": [
+            {
+              "kind": "sampler2D",
+              "symbol": "u_postColor",
+              "binding": 0,
+              "resource": "practice:post/color"
+            }
+          ],
+          "state": {
+            "blend": "opaque",
+            "depth": "disabled",
+            "rasterizer": "cullNoneScissor"
+          },
+          "viewport": {
+            "source": "frame",
+            "restore": "none",
+            "synchronizeScissor": true
+          }
+        }
+      ],
+      "inputs": [
+        "practice:post/color"
+      ],
+      "outputs": [],
+      "enabledWhen": [
+        {
+          "option": "practice:grade",
+          "equals": true
+        }
+      ]
+    },
+    {
+      "id": "practice:present-raw",
+      "enabled": true,
+      "stage": {
+        "template": "dawnlight:command_list",
+        "version": 1,
+        "target": "afterDraw",
+        "phase": "screenOutput"
+      },
+      "services": [],
+      "programs": [
+        "practice:post/present"
+      ],
+      "commands": [
+        {
+          "type": "present",
+          "program": "practice:post/present",
+          "bindings": [
+            {
+              "kind": "sampler2D",
+              "symbol": "u_postColor",
+              "binding": 0,
+              "resource": "practice:scene/color"
+            }
+          ],
+          "state": {
+            "blend": "opaque",
+            "depth": "disabled",
+            "rasterizer": "cullNoneScissor"
+          },
+          "viewport": {
+            "source": "frame",
+            "restore": "none",
+            "synchronizeScissor": true
+          }
+        }
+      ],
+      "inputs": [
+        "practice:scene/color"
+      ],
+      "outputs": [],
+      "enabledWhen": [
+        {
+          "option": "practice:grade",
+          "equals": false
+        }
+      ]
+    }
+  ],
+  "sceneCategories": [
+    {
+      "id": "dawnlight:scene/terrain_opaque",
+      "version": 1,
+      "mode": "builtin"
+    },
+    {
+      "id": "dawnlight:scene/terrain_alpha_tested",
+      "version": 1,
+      "mode": "builtin"
+    },
+    {
+      "id": "dawnlight:scene/terrain_transparent",
+      "version": 1,
+      "mode": "builtin"
+    },
+    {
+      "id": "dawnlight:scene/terrain_sorted_translucent",
+      "version": 1,
+      "mode": "builtin"
+    }
+  ],
+  "settings": "settings.json"
+}

@@ -1,0 +1,128 @@
+{
+  "schemaVersion": 1,
+  "stage": "W7",
+  "observedOn": "2026-10-24",
+  "timezone": "America/New_York",
+  "status": "tools-troubleshooting-practices-delivered-bounded-runtime",
+  "baselineId": "candidate-f8aaa5c4",
+  "sourceCommit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+  "evidence": [
+    {
+      "path": "metadata/w7-example-releases.json",
+      "length": 834,
+      "sha256": "57e5b05171a93e7111f393a20cb87fb0041c5fb0426ce2dc07018f1521dd7e65"
+    },
+    {
+      "path": "metadata/w7-examples-validation.json",
+      "length": 38128,
+      "sha256": "104b43d0ba4bb8345ffb0668b2d973a09ac75d20329a2f153db3bf75b0645a2d"
+    },
+    {
+      "path": "metadata/w7-diagnostics.json",
+      "length": 9492,
+      "sha256": "e6a0cf3101acc16d5320f6814a0760b128984372446e144a89eab6902f03c9cb"
+    },
+    {
+      "path": "metadata/w7-runtime.json",
+      "length": 3806,
+      "sha256": "79982340fa70976734f9771437e4a83540e4a95d953982b405f595f9a8c458dc"
+    },
+    {
+      "path": "metadata/w7-case-studies.json",
+      "length": 28430,
+      "sha256": "c9526c29122439601aa89546667f269c37596808ea59a4dacdf738e44348a0f6"
+    },
+    {
+      "path": "metadata/w7-tool-checks.json",
+      "length": 2763,
+      "sha256": "1fa99f4088fe344164ac6232a3cfa6b700855f955863c9fb95ff6607fc067e4e"
+    },
+    {
+      "path": "docs/baseline/W7PracticeAudit.zh-CN.md",
+      "length": 5702,
+      "sha256": "71c9287aee111d1805c73f6671212be43ff2b8bdb9b484e8d8a41cf37bca7bbb"
+    },
+    {
+      "path": "docs/maintenance/PracticeAndTroubleshooting.zh-CN.md",
+      "length": 4640,
+      "sha256": "32e112ad3db65395a8f4a4c3b52107e087a66edab41cb0914486625643c52318"
+    }
+  ],
+  "coverage": {
+    "newBilingualPagePairs": 22,
+    "toolsCompleted": 4,
+    "symptomEntries": 7,
+    "independentEffects": 3,
+    "expectedRejectedExamples": 3,
+    "caseStudies": 3,
+    "htmlPages": 148
+  },
+  "static": {
+    "validExampleInvocations": 108,
+    "negativeAndRepairInvocations": 27,
+    "receiptReproduced": true,
+    "graphContract": 2,
+    "graphBranchInputs": "JSON-RPC inputs.options",
+    "programInterfaceContract": 2,
+    "reportKindMismatchObserved": "DLDATA2002"
+  },
+  "runtime": {
+    "isolatedWindowsHost": true,
+    "lifecycles": 3,
+    "branches": 9,
+    "programsLinked": true,
+    "framebuffersComplete": true,
+    "linkedClosureMatchesStatic": true,
+    "actualResize": true,
+    "builtInRestored": true,
+    "invalidCandidateRejectionVerified": false,
+    "invalidCandidateAttempt": "inconclusive-frame-bridge-timeout",
+    "independentHumanReader": false,
+    "numericReadback": false,
+    "performanceGatePassed": null
+  },
+  "checks": {
+    "contentRegression": 58,
+    "localBrowserUniqueCoverage": 98,
+    "initialBrowser": {
+      "passed": 96,
+      "failed": 2,
+      "reason": "test-expected-nonexistent-section-anchors"
+    },
+    "correctedAnchorRecheck": {
+      "passed": 2,
+      "failed": 0
+    },
+    "finalW7BrowserCoverage": 14,
+    "generatedFiles": 244,
+    "htmlPages": 148,
+    "localLinks": 11621,
+    "assetReferences": 1827,
+    "anchors": 1651,
+    "npmAuditVulnerabilities": 0
+  },
+  "preservation": {
+    "w0ThroughW6FrozenRecords": true,
+    "oldElevenSourceAndArchiveIdentities": true,
+    "oldCourseSourceFiles": 94,
+    "privateSnapshotPublished": false,
+    "rawDriverOrWorldReportsPublished": false,
+    "domainSettingsChanged": false
+  },
+  "publicCi": {
+    "requiresPrivateAssets": false,
+    "liveAnalyzerRun": false,
+    "liveGameRun": false,
+    "mode": "pinned-public-inputs-matching-receipts-regeneration-and-browser"
+  },
+  "limitations": [
+    "single-windows-nvidia-device-single-world-main-view",
+    "invalid-candidate-runtime-rejection-inconclusive",
+    "independent-human-reader-trial-pending",
+    "no-numeric-readback-or-performance-gate",
+    "no-other-platform-device-loss-vr-multi-view-acceptance",
+    "case-slices-not-complete-active-runtime-graphs",
+    "not-upstream-P11-release-or-full-v1-acceptance"
+  ],
+  "deploymentEvidence": "main Pages workflow and ignored artifacts/w7 online browser reports are recorded after publishing"
+}

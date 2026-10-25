@@ -65,10 +65,11 @@ function detailPage(example, entry, language, context, record) {
 function courseDetailPage(example, entry, language, context, record) {
   const en = language === 'en-US', prefix = en ? '/en' : '';
   const title = example.titles[language];
-  const chapter = example.id.slice('course/'.length);
+  const chapter = example.id.split('/')[1];
+  const readingPath = example.validationStage === 'w7' ? '/recipes/' + chapter : '/tutorial/' + chapter;
   return pageHeader(record, title, en ? 'Complete independent course source, immutable download and static validation receipt.' : '完整独立章节源码、不可变下载和静态验证收据。', language, context, example) +
     `<!-- Generated from ${example.root}; edit the example or generator, not this file. -->\n\n# ${title} {#course-snapshot}\n\n<BaselineNote />\n\n` +
-    `[${en ? 'Read this chapter' : '阅读对应章节'}](${prefix}/tutorial/${chapter})\n\n` +
+    `[${en ? 'Read this chapter' : '阅读对应章节'}](${prefix}${readingPath})\n\n` +
     (en ? 'This ZIP contains every required file; no earlier chapter is needed. Extract it as a direct child of the game’s `shaderpacks` directory. Static receipts and actual game observations have separate evidence scopes.\n\n' : '本 ZIP 包含全部所需文件，不依赖前一章。解压为游戏 `shaderpacks` 目录的直接子目录。静态收据与实机观察分别记录。\n\n') +
     `## ${en ? 'Download and identity' : '下载与身份'} {#download}\n\n<a href="${entry.downloadUrl}" download="${chapter}.zip">${en ? 'Download chapter ZIP' : '下载本章 ZIP'}</a> · <a href="${entry.inventoryUrl}" download>${en ? 'Source inventory' : '源码清单'}</a> · <a href="${entry.validationUrl}" download>${en ? 'Static receipt' : '静态收据'}</a>\n\nZIP SHA-256:\n\n<div class="download-hash"><code>${entry.archiveSha256}</code></div>\n\n${en ? 'Source fingerprint' : '源码指纹'}:\n\n<div class="download-hash"><code>${entry.sourceFingerprint}</code></div>\n\n` +
     `## ${en ? 'Complete source' : '完整源码'} {#source-files}\n\n` +
@@ -102,7 +103,7 @@ export function exampleOutputs(context, report, pageRegistry) {
       `<!-- Generated from examples/registry.json. -->\n\n# ${title} {#examples}\n\n<BaselineNote />\n\n` +
       (en ? 'Every download is generated from the same source files displayed on its page. Immutable URLs include the host baseline and full source fingerprint. Static validation is recorded separately from game and driver evidence.\n\n' : '下载包和网页代码都来自同一份登记源码。下载地址包含宿主基线与完整源码指纹；静态验证和游戏、驱动证据分别记录。\n\n') +
       `## ${en ? 'Course examples' : '课程示例'} {#course-examples}\n\n| ${en ? 'Example' : '示例'} | Manifest / Scene ABI | ${en ? 'Evidence' : '证据'} |\n| --- | --- | --- |\n` +
-      index.map(item => `| [${item.titles[language]}](/${prefix}${item.page.replace(/\.md$/, '')}) | v5 / v2 | ${en ? 'Static checks passed' : '静态检查通过'} · [${en ? 'Runtime scope' : '实机范围'}](/${prefix}tutorial/runtime) |`).join('\n') + '\n\n' +
+      index.map(item => `| [${item.titles[language]}](/${prefix}${item.page.replace(/\.md$/, '')}) | v5 / v2 | ${en ? 'Static checks passed' : '静态检查通过'} · [${en ? 'Runtime scope' : '实机范围'}](/${prefix}${item.id.startsWith('features/') ? 'recipes/runtime' : item.id.match(/course\/0[0-4]-/) ? 'tutorial/runtime' : 'tutorial/pack-runtime'}) |`).join('\n') + '\n\n' +
       `## ${en ? 'Check your download' : '核对下载'} {#verify-download}\n\n` +
       (en ? 'Compare the ZIP SHA-256 shown on the example page, extract it into a fresh directory and check the adjacent source inventory. The validation receipt identifies the exact tool and input files.\n\n' : '核对示例页列出的 ZIP SHA-256，解压到新目录后比较同目录提供的源码清单。验证收据记录对应的工具身份和输入文件。\n\n') +
       '[examples/index.json](/downloads/examples/index.json)\n');

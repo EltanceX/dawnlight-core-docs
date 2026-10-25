@@ -5,12 +5,14 @@ import { ROOT, readJson, files, relativeName, inside } from './lib/locked-inputs
 import { loadExamples, loadReceipts, frontmatter, evidenceBoundary, courseIncludes } from './lib/content-foundation.mjs';
 import { loadRuntimeEvidence } from './lib/runtime-evidence.mjs';
 import { loadPackRuntimeEvidence } from './lib/pack-runtime-evidence.mjs';
+import { loadPracticeRuntimeEvidence } from './lib/practice-runtime-evidence.mjs';
 import { loadReference } from './lib/reference-foundation.mjs';
 
 const context = await loadExamples();
 const receipts = await loadReceipts(context);
 await loadRuntimeEvidence(context, receipts);
 await loadPackRuntimeEvidence(context, receipts);
+await loadPracticeRuntimeEvidence(context, receipts);
 await loadReference(context);
 const registry = await readJson(path.join(ROOT, 'metadata/pages.json'));
 const sourceMap = await readJson(path.join(ROOT, 'metadata/source-map.json'));

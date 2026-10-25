@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "baselineId": "candidate-f8aaa5c4",
+  "sourceCommit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+  "toolInventorySha256": "548c685ff8ccc23283cd6b803a595cc2fed35b2df1444dc0327e1baf847ffb54",
+  "checks": [
+    {
+      "id": "schema-export",
+      "exitCode": 0,
+      "rawOutputSha256": "357fee9a94d45ed25fc49bab8ea0a6e3e71ac85c018055ff7c61e05f089ce6a5"
+    },
+    {
+      "id": "schema-verify",
+      "exitCode": 0,
+      "rawOutputSha256": "cdb0a8a4cd77e127dca78983bda1398c6240ba9e87cb5073cfedf4db9fe5211d"
+    },
+    {
+      "id": "scene-inspect",
+      "exitCode": 0,
+      "rawOutputSha256": "8d86df04f39e325948f0709822647be12b75a4e8ae0225a8104264bb51390d7e"
+    },
+    {
+      "id": "scene-interface",
+      "exitCode": 0,
+      "rawOutputSha256": "0de7e900f59b7f1536621a9ce8618b4d416a22eaa75bd6e7cfb4ba61225120ef"
+    },
+    {
+      "id": "materials-layout",
+      "exitCode": 0,
+      "rawOutputSha256": "19024a81cdf8abb8a4b7c28043b7c8288d2ce565d763e74980658cc170aea08d"
+    },
+    {
+      "id": "materials-world",
+      "exitCode": 0,
+      "rawOutputSha256": "8995ec467f5d1fa46dc8846282ff12856339ee01d338175dad22af7d8cb950d5"
+    },
+    {
+      "id": "data-inspect",
+      "exitCode": 0,
+      "rawOutputSha256": "3a5ee8ae26d53e127f53b109ce5b9482d852bbbe5072f392b4082ef622d11ce2"
+    },
+    {
+      "id": "data-interface",
+      "exitCode": 0,
+      "rawOutputSha256": "63acba357499cc653a96b4d9a544c7a3d2486e7b99b32682e57ae7bfad655f77"
+    }
+  ],
+  "schemaArtifacts": [
+    {
+      "fileName": "dawnlight.shaderpack.v5.schema.json",
+      "mediaType": "application/json",
+      "sha256": "afc9ad7c137379a98a6ba99e9daeffeb836b84eb41fdded060904e32c712b133",
+      "length": 115503
+    },
+    {
+      "fileName": "dawnlight.shaderpack.completions.v2.json",
+      "mediaType": "application/json",
+      "sha256": "a363f852dbbc9edcfe47dd119d5183b2ae6b9a9516fed6ccd090de1fb73cfaac",
+      "length": 94891
+    },
+    {
+      "fileName": "dawnlight.shaderpack.schema-index.v2.json",
+      "mediaType": "application/json",
+      "sha256": "de23b3be447ac89e0871737c6f42456df460b0f283f72f423056161b881e0849",
+      "length": 769
+    }
+  ],
+  "sceneReportMatched": true,
+  "programInterfaceContract": 2,
+  "programInterfaceDataReportMatched": true,
+  "materialsWorldAndDataReports": "same-world-W6-historical-inputs-rechecked",
+  "wrongSceneReportToContract2": {
+    "exitCode": 1,
+    "code": "DLDATA2002",
+    "correctDataReportExitCode": 0,
+    "rawOutputSha256": "958fc65cd724b2e81c74e143f7d7a914749e54d4deae8752d2a99a178b3424fe",
+    "file": "shaderpack.json",
+    "pointer": ""
+  },
+  "limits": {
+    "editorUiTested": false,
+    "currentDeviceEpochCompared": false,
+    "numericReadback": false
+  },
+  "rawReportsPublished": false
+}

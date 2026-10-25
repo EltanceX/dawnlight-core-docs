@@ -1,0 +1,256 @@
+{
+  "schemaVersion": 1,
+  "baselineId": "candidate-f8aaa5c4",
+  "sourceCommit": "f8aaa5c4218f54536ccf994a2d512aed2e3678b7",
+  "toolInventorySha256": "548c685ff8ccc23283cd6b803a595cc2fed35b2df1444dc0327e1baf847ffb54",
+  "baseExample": "features/color-balance",
+  "baseSourceFingerprint": "fa54b90617955a1d0a257f9e234bdb4135ce35a8d637227bf329292fb4fb3ba7",
+  "cases": [
+    {
+      "id": "unknown-provider",
+      "expectedCode": "DLMAN0001",
+      "changes": [
+        {
+          "pointer": "/passes/0/commands/0/sceneProvider/id",
+          "value": "dawnlight:scene_draw/missing"
+        }
+      ],
+      "status": "expected-rejected",
+      "archiveSha256": "1514ff3bd2bddf9f49a4ba3b4c6d105aa9aba3e91234d84b685a34d926d03bea",
+      "archiveLength": 3964,
+      "downloadUrl": "/downloads/examples/w7-diagnostics/unknown-provider/1514ff3bd2bddf9f49a4ba3b4c6d105aa9aba3e91234d84b685a34d926d03bea/expected-rejected.zip",
+      "checks": [
+        {
+          "id": "pack",
+          "exitCode": 1,
+          "outputSha256": "40e6d8c4ea02ce9168e9d2f6e8bde6948a21a5b2e1c2f6ec76d977c44ace4d3c",
+          "diagnostics": [
+            {
+              "code": "DLMAN0001",
+              "file": "shaderpack.json",
+              "pointer": "/passes/0/commands/0/sceneProvider/id",
+              "message": "SceneDraw Provider 'dawnlight:scene_draw/missing' is not registered."
+            }
+          ],
+          "archiveExitCode": 1,
+          "archiveOutputSha256": "40e6d8c4ea02ce9168e9d2f6e8bde6948a21a5b2e1c2f6ec76d977c44ace4d3c"
+        },
+        {
+          "id": "graph",
+          "exitCode": 1,
+          "outputSha256": "b25cc8ee6eca099f8add37215685c041efc8707be7191e674ae2fb18958ada58",
+          "diagnostics": [
+            {
+              "code": "DLMAN0001",
+              "file": "shaderpack.json",
+              "pointer": "/passes/0/commands/0/sceneProvider/id",
+              "message": "SceneDraw Provider 'dawnlight:scene_draw/missing' is not registered."
+            }
+          ],
+          "archiveExitCode": 1,
+          "archiveOutputSha256": "b25cc8ee6eca099f8add37215685c041efc8707be7191e674ae2fb18958ada58"
+        },
+        {
+          "id": "interface",
+          "exitCode": 1,
+          "outputSha256": "6fddad0e3d3132e826f22e086101728a05ee7db42cf5e3e7c0bba91b164e10f9",
+          "diagnostics": [
+            {
+              "code": "DLMAN0001",
+              "file": "shaderpack.json",
+              "pointer": "/passes/0/commands/0/sceneProvider/id",
+              "message": "SceneDraw Provider 'dawnlight:scene_draw/missing' is not registered."
+            }
+          ],
+          "archiveExitCode": 1,
+          "archiveOutputSha256": "6fddad0e3d3132e826f22e086101728a05ee7db42cf5e3e7c0bba91b164e10f9"
+        }
+      ],
+      "repaired": [
+        {
+          "id": "pack",
+          "exitCode": 0,
+          "outputSha256": "0d2e030df613e3e336905c679868da02378c417c158579598f408b75b03adc32",
+          "diagnostics": []
+        },
+        {
+          "id": "graph",
+          "exitCode": 0,
+          "outputSha256": "ac2d461775300a1459ec7e208a391aebd424d5d9494285f20f6a2c3c59c609ea",
+          "diagnostics": []
+        },
+        {
+          "id": "interface",
+          "exitCode": 0,
+          "outputSha256": "f0988c38bdb27344126a5f580b41aa95585f1651ad6cf2e8afacab3d6b149f99",
+          "diagnostics": []
+        }
+      ]
+    },
+    {
+      "id": "unknown-program",
+      "expectedCode": "DLMAN0001",
+      "changes": [
+        {
+          "pointer": "/passes/4/commands/0/program",
+          "value": "practice:post/missing"
+        }
+      ],
+      "status": "expected-rejected",
+      "archiveSha256": "0481381a1cdab5afe0635e3167eaa1130580ca96e3ea89ba2aea190b1f50516d",
+      "archiveLength": 3964,
+      "downloadUrl": "/downloads/examples/w7-diagnostics/unknown-program/0481381a1cdab5afe0635e3167eaa1130580ca96e3ea89ba2aea190b1f50516d/expected-rejected.zip",
+      "checks": [
+        {
+          "id": "pack",
+          "exitCode": 1,
+          "outputSha256": "7c8a19a4294e7ca2cd8e8aacb93473c889b5c0cc75413a311d858db4ef4dfa8c",
+          "diagnostics": [
+            {
+              "code": "DLMAN0001",
+              "file": "shaderpack.json",
+              "pointer": "/passes/4/commands/0/program",
+              "message": "Program 'practice:post/missing' is not declared in $.passes[4].programs."
+            }
+          ],
+          "archiveExitCode": 1,
+          "archiveOutputSha256": "7c8a19a4294e7ca2cd8e8aacb93473c889b5c0cc75413a311d858db4ef4dfa8c"
+        },
+        {
+          "id": "graph",
+          "exitCode": 1,
+          "outputSha256": "62a4213385c75f80beba674e3d326326f9514da0c8f398f1d89767d82a48a45c",
+          "diagnostics": [
+            {
+              "code": "DLMAN0001",
+              "file": "shaderpack.json",
+              "pointer": "/passes/4/commands/0/program",
+              "message": "Program 'practice:post/missing' is not declared in $.passes[4].programs."
+            }
+          ],
+          "archiveExitCode": 1,
+          "archiveOutputSha256": "62a4213385c75f80beba674e3d326326f9514da0c8f398f1d89767d82a48a45c"
+        },
+        {
+          "id": "interface",
+          "exitCode": 1,
+          "outputSha256": "d9ae1cde9a1d4ec56ece18fba605fcd9df1bee175b48cbe0f8ce17c5d20b7965",
+          "diagnostics": [
+            {
+              "code": "DLMAN0001",
+              "file": "shaderpack.json",
+              "pointer": "/passes/4/commands/0/program",
+              "message": "Program 'practice:post/missing' is not declared in $.passes[4].programs."
+            }
+          ],
+          "archiveExitCode": 1,
+          "archiveOutputSha256": "d9ae1cde9a1d4ec56ece18fba605fcd9df1bee175b48cbe0f8ce17c5d20b7965"
+        }
+      ],
+      "repaired": [
+        {
+          "id": "pack",
+          "exitCode": 0,
+          "outputSha256": "0d2e030df613e3e336905c679868da02378c417c158579598f408b75b03adc32",
+          "diagnostics": []
+        },
+        {
+          "id": "graph",
+          "exitCode": 0,
+          "outputSha256": "ac2d461775300a1459ec7e208a391aebd424d5d9494285f20f6a2c3c59c609ea",
+          "diagnostics": []
+        },
+        {
+          "id": "interface",
+          "exitCode": 0,
+          "outputSha256": "f0988c38bdb27344126a5f580b41aa95585f1651ad6cf2e8afacab3d6b149f99",
+          "diagnostics": []
+        }
+      ]
+    },
+    {
+      "id": "history-on-persistent",
+      "expectedCode": "DLMAN0001",
+      "changes": [
+        {
+          "pointer": "/passes/4/commands/1",
+          "value": {
+            "type": "historyCommit",
+            "resource": "practice:post/color"
+          }
+        }
+      ],
+      "status": "expected-rejected",
+      "archiveSha256": "80ffb5751f733089490d4b7137ec1d4ca075f64250a2e0be0ef515c30bbd9e58",
+      "archiveLength": 3977,
+      "downloadUrl": "/downloads/examples/w7-diagnostics/history-on-persistent/80ffb5751f733089490d4b7137ec1d4ca075f64250a2e0be0ef515c30bbd9e58/expected-rejected.zip",
+      "checks": [
+        {
+          "id": "pack",
+          "exitCode": 1,
+          "outputSha256": "ed22336b0a4ec66d6bd541f6c02cc9559c6041aef862e9bfd48411e7750b1689",
+          "diagnostics": [
+            {
+              "code": "DLMAN0001",
+              "file": "shaderpack.json",
+              "pointer": "/passes/4/commands/1/resource",
+              "message": "History commit resource 'practice:post/color' must declare the history lifetime; found 'Persistent'."
+            }
+          ],
+          "archiveExitCode": 1,
+          "archiveOutputSha256": "ed22336b0a4ec66d6bd541f6c02cc9559c6041aef862e9bfd48411e7750b1689"
+        },
+        {
+          "id": "graph",
+          "exitCode": 1,
+          "outputSha256": "a67ba57d2243527f5d0500daee2fd42250107ce24571b016a955c9858a524905",
+          "diagnostics": [
+            {
+              "code": "DLMAN0001",
+              "file": "shaderpack.json",
+              "pointer": "/passes/4/commands/1/resource",
+              "message": "History commit resource 'practice:post/color' must declare the history lifetime; found 'Persistent'."
+            }
+          ],
+          "archiveExitCode": 1,
+          "archiveOutputSha256": "a67ba57d2243527f5d0500daee2fd42250107ce24571b016a955c9858a524905"
+        },
+        {
+          "id": "interface",
+          "exitCode": 1,
+          "outputSha256": "3478463aaa1cf0031c817a79408c8e4c19dce2fdcabe07a7fadd57e4183c0c6f",
+          "diagnostics": [
+            {
+              "code": "DLMAN0001",
+              "file": "shaderpack.json",
+              "pointer": "/passes/4/commands/1/resource",
+              "message": "History commit resource 'practice:post/color' must declare the history lifetime; found 'Persistent'."
+            }
+          ],
+          "archiveExitCode": 1,
+          "archiveOutputSha256": "3478463aaa1cf0031c817a79408c8e4c19dce2fdcabe07a7fadd57e4183c0c6f"
+        }
+      ],
+      "repaired": [
+        {
+          "id": "pack",
+          "exitCode": 0,
+          "outputSha256": "0d2e030df613e3e336905c679868da02378c417c158579598f408b75b03adc32",
+          "diagnostics": []
+        },
+        {
+          "id": "graph",
+          "exitCode": 0,
+          "outputSha256": "ac2d461775300a1459ec7e208a391aebd424d5d9494285f20f6a2c3c59c609ea",
+          "diagnostics": []
+        },
+        {
+          "id": "interface",
+          "exitCode": 0,
+          "outputSha256": "f0988c38bdb27344126a5f580b41aa95585f1651ad6cf2e8afacab3d6b149f99",
+          "diagnostics": []
+        }
+      ]
+    }
+  ]
+}

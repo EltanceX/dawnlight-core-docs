@@ -99,3 +99,20 @@ shaderpack-analyzer.exe data interface ./MyPack --format json
 遇到这类诊断时，应检查输入文档的用途与代码块合同，避免将某个派生版本的成功当成原始输入已经成功。
 
 <SourceNote path="docs/ShaderPackDiagnosticReference.md" label="诊断代码参考" />
+
+## 可复现的排查顺序 {#workflow}
+
+1. 记录宿主 commit、Manifest/ABI 版本、精确源码清单与选项。先运行 pack validate，按文件和 RFC 6901 JSON pointer 修复第一条错误。
+2. 用 scene explain 确认路由归属与 fallback；查看 graph 的资源、活动命令和 Program 闭包，再用合同 2 解释 v5 Program interface。
+3. 在创造世界加载同一份源码，导出当前已发布 generation 的报告，先匹配包/来源/选项，再解释设备证据。
+4. 修复后重跑原失败命令，再检查重载、resize 和返回 BuiltIn；保留旧报告作为历史。
+
+[配置修复实验](/troubleshooting/configuration-lab)提供三份完整的预期拒绝 ZIP，记录实际 DLMAN0001、file/pointer、失败 graph/interface 查询与修复成功。[症状索引](/troubleshooting/)提供七条排查路线。
+
+## 退出码与选项传输 {#exits-options}
+
+退出码 0 表示请求的检查成功；1 表示合同或输入失败；2 表示命令用法错误。即使退出 0 也要阅读 diagnostics。联合阅读 code、file 和 jsonPointer；空 pointer 可能指整个请求。fragment 诊断应保留实际来源，不能把所有位置都理解为根 Manifest。不要仅凭“未知 Provider”猜成 DLABI1002：实验中实际返回 DLMAN0001。
+
+选项文件是以完整 option ID 为键的 JSON 对象，boolean/integer/number 应与声明一致。固定解析器区分整数与浮点 JSON token，number 端点应保留 1.0，而非整数 1。Scene、Program interface 和 Data 命令接受 --options；此基线 graph CLI 不消费该覆盖，应通过 JSON-RPC dawnlight/dumpGraph、合同 2、显式 inputs.options 请求分支图。不能把默认 CLI 图标成选定分支。
+
+[Schema 与编辑器关联](/tools/schema)、[WorldFinal 快照](/tools/content-snapshots)、[Scene/Data 报告](/tools/driver-reports)形成完整工具路径。Program interface 合同 2 接收 Data report；driver-report inspect 接收 Scene report。报告种类传错属于合同错误，不能据此判定 shader 有缺陷。

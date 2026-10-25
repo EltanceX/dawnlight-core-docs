@@ -1,6 +1,6 @@
 # DawnlightCore 作者文档站
 
-本工程按 [网站实现方案](docs/WebsiteImplementationPlan.zh-CN.md) 建设，使用 VitePress 维护中英文作者文档。当前 51 组内容页面覆盖环境与 GLSL 入门、00～10 连续课程、JSON 与 ABI 参考、概念、工具、版本、十一份独立快照及实机记录，可在桌面和手机顶栏切换。
+本工程按 [网站实现方案](docs/WebsiteImplementationPlan.zh-CN.md) 建设，使用 VitePress 维护中英文作者文档。当前 73 组内容页面覆盖环境与 GLSL 入门、00～10 连续课程、JSON 与 ABI 参考、概念、工具、版本、十四份独立快照、工具、排错、效果案例及实机记录，可在桌面和手机顶栏切换。
 
 - 网站：[DawnlightCore 作者文档](https://core.eltancex.top/)。
 - English：[DawnlightCore author documentation](https://core.eltancex.top/en/)。
@@ -8,6 +8,8 @@
 - 课程：[从加载起步包到 Terrain / MRT](https://core.eltancex.top/tutorial/00-starter)。
 - 实机范围：[宿主、报告、画面与复现](https://core.eltancex.top/tutorial/runtime)。
 - 独立光影包：[05～10 课程](https://core.eltancex.top/tutorial/05-options) · [最终 Amber 包](https://core.eltancex.top/examples/10-distribution) · [W6 运行范围](https://core.eltancex.top/tutorial/pack-runtime)。
+- 排错与工具：[七类症状](https://core.eltancex.top/troubleshooting/) · [真实配置修复](https://core.eltancex.top/troubleshooting/configuration-lab) · [报告指南](https://core.eltancex.top/tools/driver-reports)。
+- 效果实践：[色彩、暗角、描边](https://core.eltancex.top/recipes/) · [大型包关系图](https://core.eltancex.top/cases/)。
 - 字段参考：[公开 JSON、ABI、Catalog 与兼容性](https://core.eltancex.top/reference/)。
 - 公开上游：[EltanceX/DawnlightCore（Gitea）](https://gitea.com/EltanceX/DawnlightCore)。
 - 网站源码：[EltanceX/dawnlight-core-docs](https://github.com/EltanceX/dawnlight-core-docs)。
@@ -52,6 +54,8 @@ PR 执行公开构建与浏览器检查；`main` 执行同样检查后，通过 
 W4 在用户更正的 DawnlightCore 构建副本上完成五包加载、同包重载、窗口尺寸变化、返回 BuiltIn、驱动与包接口匹配，并从新目录重走第一个效果。`metadata/w4-runtime.json` 绑定源码、驱动报告、生命周期与真实窗口截图；构建会检查证据文件长度、哈希和身份关联。仅覆盖一台 Windows / NVIDIA 设备、一个创意世界，独立真人试读、device reset、其他平台与性能仍待验证。见 [W4 验收](docs/baseline/W4CourseAudit.zh-CN.md) 和[实机观察维护](docs/maintenance/RuntimeCourse.zh-CN.md)。
 
 W6 增加可选效果与 UI、typed customData、稳定内容材质、独立多级后处理、fragment 组合、预设配方和分发 README。26 个分支的 438 次源码/ZIP Analyzer 调用通过；六个包在隔离宿主完成实际生命周期与分支切换，最终 ZIP 已按新目录流程复现。Data 接口 matched 不冒充数值读回，独立真人试读与额外平台仍待验证。见[课程维护](docs/maintenance/CoursePacks.zh-CN.md)和 [W6 验收](docs/baseline/W6PackCourseAudit.zh-CN.md)。
+
+W7 补齐 Analyzer、Schema、WorldFinal 和 Scene/Data report 使用流程、七类症状入口、三个独立效果及三份完整反例。九个效果分支通过 108 次源码/ZIP 检查，反例与修复通过 27 次实际检查；三包完成有范围的游戏生命周期观察。大型包图从固定公开 Git blob 提取条件与读写关系，history/时序/阴影保留公共合同边界。见[维护说明](docs/maintenance/PracticeAndTroubleshooting.zh-CN.md)和 [W7 验收](docs/baseline/W7PracticeAudit.zh-CN.md)。
 
 当前域名为 `core.eltancex.top`，地址与 base 集中维护在 `upstream.lock.json.website`，`site/public/CNAME` 随产物保留域名声明。域名迁移与 HTTPS 运维见 [自定义域名决策](docs/adr/0004-custom-domain.md)。
 

@@ -80,3 +80,7 @@ DawnlightCore 是 Survivalcraft 的光影改版。它将资源声明、着色器
 首版运行基线为 Windows x64、.NET 10、OpenGL ES 3.2、单主 view。Android、完整 VR、多 view 与其他能力的边界见[版本页](../compatibility/current-baseline#支持边界)。
 
 网站是静态参考，浏览器不会运行 Survivalcraft 光影包。工具输出、真实驱动编译、游戏画面和性能各有独立的验证范围。
+
+## 工具、排错与效果实践 {#practice}
+
+遇到失败时，沿[七类症状](/troubleshooting/)和[配置修复实验](/troubleshooting/configuration-lab)定位。完成课程后，可尝试[三个独立效果](/recipes/)，再阅读按版本提取的 [Dawnlight / ToonLab / MakeUp 切片](/cases/)及 [history/时序/阴影边界](/recipes/advanced-boundaries)。

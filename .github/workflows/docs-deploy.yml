@@ -40,6 +40,9 @@ jobs:
             metadata/examples-validation.json
             metadata/w6-examples-validation.json
             metadata/w6-runtime.json
+            metadata/w7-examples-validation.json
+            metadata/w7-diagnostics.json
+            metadata/w7-runtime.json
             metadata/reference-examples.json
             metadata/reference-inputs.json
             site/public/downloads/reference/coverage.json
