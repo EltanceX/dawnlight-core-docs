@@ -31,6 +31,7 @@ test('three rejected downloads contain the intended faults and are separate from
 });
 
 async function fixture(t){
+  await fs.mkdir(path.join(ROOT,'.cache'),{recursive:true});
   const root=await fs.mkdtemp(path.join(ROOT,'.cache/practice-test-'));
   t.after(async()=>{assert.equal(path.dirname(root),path.join(ROOT,'.cache'));assert.ok(path.basename(root).startsWith('practice-test-'));await fs.rm(root,{recursive:true,force:true});});
   for(const name of ['examples','metadata','site/public/evidence/w7','site/public/media/w7'])await fs.cp(path.join(ROOT,name),path.join(root,name),{recursive:true});

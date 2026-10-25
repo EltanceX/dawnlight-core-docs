@@ -395,7 +395,7 @@
   },
   "w7Verification": {
     "path": "metadata/w7-verification.json",
-    "length": 4083,
-    "sha256": "c5b2ef764f5664e58fa6d94ce73a23364052fefd02bffdf79fad2e703e2adea6"
+    "length": 4204,
+    "sha256": "23952d405d2e4d152211df43f4bcd1fb221db41f0fafa043a3f4cdbd01a59fbb"
   }
 }

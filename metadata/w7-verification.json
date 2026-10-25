@@ -39,8 +39,8 @@
     },
     {
       "path": "docs/baseline/W7PracticeAudit.zh-CN.md",
-      "length": 5702,
-      "sha256": "71c9287aee111d1805c73f6671212be43ff2b8bdb9b484e8d8a41cf37bca7bbb"
+      "length": 5861,
+      "sha256": "e8f4b022717852efcb651bf0d0e98d86f97a347bcd1c581a8a46def4ab4d7b15"
     },
     {
       "path": "docs/maintenance/PracticeAndTroubleshooting.zh-CN.md",
@@ -99,7 +99,9 @@
     "localLinks": 11621,
     "assetReferences": 1827,
     "anchors": 1651,
-    "npmAuditVulnerabilities": 0
+    "npmAuditVulnerabilities": 0,
+    "cleanCheckoutPracticeRegression": 7,
+    "initialCiFixtureFailure": "missing-cache-parent-fixed-before-deployment"
   },
   "preservation": {
     "w0ThroughW6FrozenRecords": true,
